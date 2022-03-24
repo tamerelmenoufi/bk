@@ -1,0 +1,2 @@
+<?php
+    // TESTE DOIS COM ARQUIVO PHP
