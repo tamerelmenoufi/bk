@@ -3,12 +3,12 @@ if ($_SERVER['HTTP_HOST'] === 'localhost' || $_SERVER['HTTP_HOST'] === '192.168.
     define('DB_HOST', 'localhost');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', '');
-    define('DB_DATABASE', 'sis_yobom');
+    define('DB_DATABASE', 'sis_bk');
 } else {
-    define('DB_HOST', 'yobom.com.br');
+    define('DB_HOST', 'bk.mohatron.com');
     define('DB_USERNAME', 'root');
     define('DB_PASSWORD', 'SenhaDoBanco');
-    define('DB_DATABASE', 'app');
+    define('DB_DATABASE', 'bk');
 }
 
 $con = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
