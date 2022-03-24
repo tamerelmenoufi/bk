@@ -90,7 +90,6 @@
             AppPedido = window.localStorage.getItem('AppPedido');
             AppCliente = window.localStorage.getItem('AppCliente');
 
-
             local = $(this).attr('local');
             janela = $(this).attr('janela');
             Carregando();
