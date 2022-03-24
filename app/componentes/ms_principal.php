@@ -90,47 +90,21 @@
             AppPedido = window.localStorage.getItem('AppPedido');
             AppCliente = window.localStorage.getItem('AppCliente');
 
-            if(
-                (AppPedido != 'undefined' && AppPedido != null) &&
-                (AppCliente != 'undefined' && AppCliente != null)
-            ){
-                local = $(this).attr('local');
-                janela = $(this).attr('janela');
-                Carregando();
-                $.ajax({
-                    url:"componentes/"+janela+".php",
-                    type:"POST",
-                    data:{
-                        local,
-                    },
-                    success:function(dados){
-                        $(".ms_corpo").append(dados);
-                    }
-                });
-            }else if(!AppPedido || AppPedido === 'undefined' || AppPedido === null){
-                $.ajax({
-                    url:"componentes/ms_popup_100.php",
-                    type:"POST",
-                    data:{
-                        local:"componentes/camera.php",
-                    },
-                    success:function(dados){
-                        $(".ms_corpo").append(dados);
-                    }
-                });
-            }else if(!AppCliente || AppCliente === 'undefined' || AppCliente === null){
-                $.ajax({
-                    url:"componentes/ms_popup_100.php",
-                    type:"POST",
-                    data:{
-                        local:"src/cliente/cadastro.php",
-                    },
-                    success:function(dados){
-                        $(".ms_corpo").append(dados);
-                    }
-                });
-            }
-        })
+
+            local = $(this).attr('local');
+            janela = $(this).attr('janela');
+            Carregando();
+            $.ajax({
+                url:"componentes/"+janela+".php",
+                type:"POST",
+                data:{
+                    local,
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
 
 
     })
