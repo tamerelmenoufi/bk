@@ -1,5 +1,6 @@
 <?php
 include("../lib/includes.php");
+// Dados teste
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: ./login");
