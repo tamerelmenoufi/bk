@@ -24,7 +24,6 @@
         left:70px;
         top:0px;
         height:60px;
-        background:#fff;
         padding-top:15px;
         z-index:1;
     }
@@ -52,7 +51,7 @@
                     <input type="text" class="form-control form-control-lg" id="ConfirmaSenha">
                     </div>
                 </div>
-                <button SalvarDados type="buttom" class="btn btn-primary btn-lg">Salvar dados</button>
+                <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
         </div>
     </div>
