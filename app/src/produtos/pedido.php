@@ -188,7 +188,7 @@
             </button>
         </div>
         <div class="col-8 PedidoBottomItens">
-            <button <?=((!$valor_total)?'disabled':false)?> class="btn btn-success" pagar>Pagar <b>R$  <span pedido_valor_toal valor="<?=$valor_total?>"><?= number_format($valor_total, 2, ',', '.') ?></span></b></button>
+            <button <?=((!$valor_total)?'disabled':false)?> class="btn btn-secondary" pagar>Pagar <b>R$  <span pedido_valor_toal valor="<?=$valor_total?>"><?= number_format($valor_total, 2, ',', '.') ?></span></b></button>
         </div>
     </div>
 </div>
