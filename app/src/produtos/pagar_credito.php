@@ -101,7 +101,7 @@
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
             <div class="col-12">
-                <div class="card text-white bg-warning mb-3" style="padding:20px;">
+                <div class="card text-white bg-danger mb-3" style="padding:20px;">
 
                     <small>Nome</small>
                     <input type="text" id="cartao_nome" placeholder="NOME NO CARTÃO" value='JOHN SNOW' />
