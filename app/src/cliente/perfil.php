@@ -48,7 +48,7 @@
                     <label for="email">E-mail</label>
                     <input type="email" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="<?=$c->email?>">
                 </div>
-                <button SalvarDados type="buttom" class="btn btn-primary btn-lg">Salvar dados</button>
+                <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
         </div>
     </div>
