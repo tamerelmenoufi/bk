@@ -40,7 +40,7 @@
         bottom:0;
         left:0;
         width:100%;
-        background:#fff;
+        background:#f5ebdc;
     }
     .PedidoBottomItens{
         padding:10px;
