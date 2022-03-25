@@ -138,10 +138,10 @@
                 <div cod="<?=$d->codigo?>" style="position:absolute; bottom:0px; left:0px; width:100%;">
 
                         <button
-                                class="btn text-danger menos"
+                                class="btn btn-outline-secondary text-danger menos"
                                 type="button"
                         >
-                            <i class="fa-solid fa-circle-minus"></i>
+                            <i class="fa-solid fa-minus"></i>
                         </button>
 
                         <div
@@ -149,10 +149,10 @@
                         ><?=$d->quantidade?></div>
 
                         <button
-                                class="btn text-success mais"
+                                class="btn btn-outline-secondary text-success mais"
                                 type="button"
                         >
-                            <i class="fa-solid fa-circle-plus"></i>
+                            <i class="fa-solid fa-plus"></i>
                         </button>
 
                         <span
