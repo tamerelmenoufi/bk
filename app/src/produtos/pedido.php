@@ -156,7 +156,7 @@
                         </button>
 
                         <span
-                                class="btn text-primary rotulo_valor"
+                                class="btn text-warning rotulo_valor"
                         >
                             R$ <span valor atual="<?=$d->valor_unitario?>">
                                 <?= number_format($d->valor_total, 2, ',', '.') ?>
