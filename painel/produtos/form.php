@@ -187,7 +187,7 @@ if ($codigo) {
                 if (is_file("icon/{$d->icon}")) {
                     ?>
                     <center>
-                        <i mg
+                        <img
                            src="produtos/icon/<?= $d->icon ?>?<?= $md5 ?>"
                            style="width:200px; margin-bottom:20px;"
                         >
