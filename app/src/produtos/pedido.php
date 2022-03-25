@@ -57,6 +57,7 @@
         width:50px;
         left:110px;
         font-size:20px;
+        border:solid 1px #333;
     }
     .quantidade{
         position:absolute;
@@ -73,6 +74,7 @@
         width:50px;
         left:10px;
         font-size:20px;
+        border:solid 1px #333;
     }
 
     .rotulo_valor{
@@ -138,7 +140,7 @@
                 <div cod="<?=$d->codigo?>" style="position:absolute; bottom:0px; left:0px; width:100%;">
 
                         <button
-                                class="btn btn-outline-secondary text-danger menos"
+                                class="btn text-danger menos"
                                 type="button"
                         >
                             <i class="fa-solid fa-minus"></i>
@@ -149,7 +151,7 @@
                         ><?=$d->quantidade?></div>
 
                         <button
-                                class="btn btn-outline-secondary text-success mais"
+                                class="btn text-success mais"
                                 type="button"
                         >
                             <i class="fa-solid fa-plus"></i>
