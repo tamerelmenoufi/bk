@@ -50,6 +50,10 @@ $m = mysqli_fetch_object(mysqli_query($con, "SELECT * FROM categoria_medidas WHE
     .linha_atraves {
         text-decoration-line: line-through;
     }
+
+    .active{
+        background-color:#333;
+    }
 </style>
 
 <div class="col">
