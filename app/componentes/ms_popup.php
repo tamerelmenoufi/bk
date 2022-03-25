@@ -23,7 +23,7 @@
         border-top-right-radius:35px;
         background-size:cover;
         background-position:center top;
-        background-color:#fff;
+        background-color:#f5ebdc;
         z-index: 100;
         overflow:auto;
     }
