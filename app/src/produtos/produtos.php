@@ -152,7 +152,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                                             categoria='<?= $d->codigo ?>'
                                             medida='<?= $val["quantidade"]; ?>'
                                             valor='<?= $val['valor']; ?>'
-                                            class="btn btn-outline-success btn-xs"
+                                            class="btn btn-outline-danger btn-xs"
                                             style="height:40px; font-size:11px; line-height: 1.2;"
                                     >
                                         <?= $M[$key2]['descricao']; ?><br>
