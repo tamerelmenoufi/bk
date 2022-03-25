@@ -8,6 +8,9 @@
         width:100%;
         text-align:center;
     }
+    button[acao]{
+        text-align:left !important;
+    }
 </style>
 
 <div class="ClienteTopoTitulo">
