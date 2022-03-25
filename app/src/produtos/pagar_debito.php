@@ -138,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-secondery btn-block btn-lg" id="Pagar">
+                <button class="btn btn-secondary btn-block btn-lg" id="Pagar">
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>
             </div>
