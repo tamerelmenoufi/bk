@@ -74,7 +74,7 @@
         top:0px;
         width:100%;
         height:60px;
-        background:#fff;
+        background:#f5ebdc;
         padding-left:70px;
         padding-top:15px;
         z-index:1;
@@ -101,7 +101,7 @@
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
             <div class="col-12">
-                <div class="card text-white bg-info mb-3" style="padding:20px;">
+                <div class="card text-white bg-warning mb-3" style="padding:20px;">
 
                     <small>Nome</small>
                     <input type="text" id="cartao_nome" placeholder="NOME NO CARTÃO" value='JOHN SNOW' />
