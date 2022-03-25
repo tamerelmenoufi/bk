@@ -6,7 +6,7 @@
         position:fixed;
         width:100%;
         height:60px;
-        background:red;
+        background:#f5ebdc;
         left:0;
         top:0;
     }
