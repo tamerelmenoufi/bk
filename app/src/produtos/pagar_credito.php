@@ -137,7 +137,10 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary btn-block btn-lg" id="Pagar">PAGAR R$ <?=number_format($d->total, 2, ',','.')?></button>
+                <button class="btn btn-secondary btn-block btn-lg" id="Pagar">
+                    <i class="fa-solid fa-arrow-right-from-arc"></i>
+                    PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
+                </button>
             </div>
         </div>
     </div>
