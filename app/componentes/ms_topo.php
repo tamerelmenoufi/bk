@@ -6,7 +6,7 @@
 ?>
 <style>
     .topoImg{
-        height:50px;
+        height:100px;
         margin-left:10px;
         margin-top:5px;
 
