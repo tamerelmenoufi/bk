@@ -191,7 +191,7 @@
                                     <p class="card-text texto_detalhes"></p>
                                 </div>
                                 <?php if ($m->qt_produtos > 1) { ?>
-                                <button class="btn btn-primary btn-block mais_sabores" style="margin-bottom:5px;">
+                                <button class="btn btn-secondary btn-block mais_sabores" style="margin-bottom:5px;">
                                     Pode adicionar até mais
                                     <?= ($m->qt_produtos - 1) . ' ' . (($m->qt_produtos == 2) ? 'sabor' : 'sabores') ?>
                                 </button>
