@@ -51,7 +51,7 @@
     while($d = mysqli_fetch_object($result)){
 ?>
     <button
-            class="btn btn-warning btn-lg btn-block"
+            class="btn btn-danger btn-lg btn-block"
             acao<?=$md5?>
             local="src/produtos/produtos.php?categoria=<?=$d->codigo?>"
             janela="ms_popup_100"
