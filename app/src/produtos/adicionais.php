@@ -52,7 +52,7 @@ $m = mysqli_fetch_object(mysqli_query($con, "SELECT * FROM categoria_medidas WHE
     }
 
     .active{
-        background-color:#333;
+        background-color:#333 !important;
     }
 </style>
 
