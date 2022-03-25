@@ -19,7 +19,7 @@
         top:0px;
         width:100%;
         height:60px;
-        background:#fff;
+        background:#f5ebdc;
         padding-left:70px;
         padding-top:15px;
         z-index:1;
@@ -51,7 +51,7 @@
                     <div style="margin-top:60px; margin-bottom:60px; text-align:center; font-size:100px;">
                         <i class="fa-solid fa-hand-holding-dollar"></i>
                     </div>
-                    <button class="btn btn-success btn-lg btn-block"><i class="fa-solid fa-receipt"></i> Solicitar Comanda</button>
+                    <button class="btn btn-secondary btn-lg btn-block"><i class="fa-solid fa-receipt"></i> Solicitar Comanda</button>
                 </div>
             </div>
         </div>
