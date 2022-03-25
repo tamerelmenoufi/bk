@@ -216,7 +216,7 @@
                         <div
                                 class="form-control"
                                 id="quantidade"
-                                style="border:0;"
+                                style="border:0; background-color:#f5ebdc"
                         >1</div>
 
                         <div class="input-group-append">
