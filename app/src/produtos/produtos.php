@@ -48,6 +48,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         height: 55px;
         padding: 20px;
         font-weight: bold;
+        background-color:#f5ebdc;
         z-index: 1;
     }
 
