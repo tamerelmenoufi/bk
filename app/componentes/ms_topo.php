@@ -8,13 +8,15 @@
     .topoImg{
         height:50px;
         margin-left:10px;
+        margin-top:10px;
+
     }
     .DadosTopo{
         text-align:right;
         font-size:12px;
         padding:5px;
         margin-right:10px;
-        color:#333;
+        color:#fff;
     }
 </style>
 <div class="row">

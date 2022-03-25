@@ -6,7 +6,7 @@
         position:fixed;
         width:100%;
         height:60px;
-        background:#f5ebdc;
+        background:#502314;
         left:0;
         top:0;
     }
