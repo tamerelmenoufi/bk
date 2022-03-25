@@ -138,6 +138,7 @@
                     </div>
                 </div>
                 <button class="btn btn-secondary btn-block btn-lg" id="Pagar">
+                    <i class="fa fa-calculator" aria-hidden="true"></i>
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>
             </div>
