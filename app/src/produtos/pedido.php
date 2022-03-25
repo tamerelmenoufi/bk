@@ -57,7 +57,6 @@
         width:50px;
         left:110px;
         font-size:20px;
-        border:solid 1px #333;
     }
     .quantidade{
         position:absolute;
@@ -74,7 +73,6 @@
         width:50px;
         left:10px;
         font-size:20px;
-        border:solid 1px #333;
     }
 
     .rotulo_valor{
