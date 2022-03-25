@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <button class="btn btn-secondary btn-block btn-lg" id="Pagar">
-                    <i class="fa-solid fa-bucket"></i>
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>
             </div>
