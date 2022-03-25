@@ -19,7 +19,7 @@
 </style>
 <div class="row">
     <div class="col-4">
-        <img class="topoImg" src="img/logo.png" />
+        <img class="topoImg" src="img/logo.png?<?=$md5?>" />
     </div>
     <div class="col-8">
         <?php
