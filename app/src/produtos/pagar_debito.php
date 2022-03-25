@@ -75,7 +75,7 @@
         top:0px;
         width:100%;
         height:60px;
-        background:#fff;
+        background:#f5ebdc;
         padding-left:70px;
         padding-top:15px;
         z-index:1;
@@ -138,7 +138,9 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-block btn-lg" id="Pagar">PAGAR R$ <?=number_format($d->total, 2, ',','.')?></button>
+                <button class="btn btn-secondery btn-block btn-lg" id="Pagar">
+                    PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
+                </button>
             </div>
         </div>
     </div>
