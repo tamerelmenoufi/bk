@@ -15,7 +15,7 @@
         position:fixed;
         width:100%;
         height:65px;
-        background:red;
+        background:#502314;
         left:0;
         bottom:0;
     }

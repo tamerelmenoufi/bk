@@ -14,7 +14,7 @@
         font-size:12px;
         padding:5px;
         margin-right:10px;
-        color:#fff;
+        color:#333;
     }
 </style>
 <div class="row">
