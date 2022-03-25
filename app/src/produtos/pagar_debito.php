@@ -33,7 +33,7 @@
         if($r->authorization->status == 'Approved'){
             //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
             $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
-            $_SESSION['AppPedido'] = false;
+            //$_SESSION['AppPedido'] = false;
             $_SESSION['AppCarrinho'] = false;
             echo json_encode([
                 'status' => $r->authorization->status,
@@ -97,7 +97,7 @@
     }
 </style>
 <div class="PedidoTopoTitulo">
-    <h4>Pagar <?=$_SESSION['AppPedido']?> com Débito</h4>
+    <h4>Pagar com Débito</h4>
 </div>
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
@@ -198,7 +198,7 @@
                     let retorno = JSON.parse(dados);
                     if (retorno.status) {
                         window.localStorage.removeItem('AppVenda');
-                        window.localStorage.removeItem('AppPedido');
+                        //window.localStorage.removeItem('AppPedido');
                     }
                     $.alert(retorno.msg);
                     PageClose(2);

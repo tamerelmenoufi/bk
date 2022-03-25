@@ -13,9 +13,9 @@
             $_SESSION['AppCliente'] = mysqli_insert_id($con);
         }
 
-        if($_SESSION['AppCliente'] && $_SESSION['AppPedido']){
+        if($_SESSION['AppCliente']/* && $_SESSION['AppPedido']*/){
             /////////////////INCLUIR O REGISTRO DO PEDIDO//////////////////////
-            $query = "SELECT codigo FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND mesa = '{$_SESSION['AppPedido']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1";
+            $query = "SELECT codigo FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' /*AND mesa = '{$_SESSION['AppPedido']}'*/ AND deletado != '1' AND operadora_situacao = '' LIMIT 1";
             $result = mysqli_query($con, $query);
 
             if (mysqli_num_rows($result)) {
@@ -23,7 +23,7 @@
                 list($codigo) = mysqli_fetch_row(mysqli_query($con, $query));
                 $_SESSION['AppVenda'] = $codigo;
             } else {
-                mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}', data_pedido = NOW()");
+                mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', /*mesa = '{$_SESSION['AppPedido']}',*/ data_pedido = NOW()");
                 $_SESSION['AppVenda'] = mysqli_insert_id($con);
             }
             /////////////////////////////////////////////////////////////////
