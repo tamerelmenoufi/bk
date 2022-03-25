@@ -9,6 +9,7 @@
         background:#502314;
         left:0;
         top:0;
+        z-index:2;
     }
 
     .rodape{
@@ -40,6 +41,7 @@
         overflow:auto;
         background:#f5ebdc;
         padding:10px;
+        z-index:1;
     }
 
 </style>
