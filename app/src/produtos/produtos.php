@@ -68,7 +68,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         right: 80px;
         top: 15px;
         background-color: #333;
-        color: #333;
+        color: #fff;
         text-align: center;
         font-weight: bold;
         border-radius: 5px;
