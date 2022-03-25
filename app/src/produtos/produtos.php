@@ -46,7 +46,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         left: 0;
         width: 100%;
         height: 55px;
-        background-color: #fff;
         padding: 20px;
         font-weight: bold;
         z-index: 1;
@@ -57,7 +56,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         top: 10px;
         right: 25px;
         font-size: 30px;
-        color: green;
+        color: #333;
         font-weight: bold;
         z-index: 10;
         display: <?=(($_SESSION['AppCarrinho'])?'block':'none')?>;
@@ -67,8 +66,8 @@ while ($m = mysqli_fetch_array($m_r)) {
         position: fixed;
         right: 80px;
         top: 15px;
-        background-color: green;
-        color: #fff;
+        background-color: #333;
+        color: #333;
         text-align: center;
         font-weight: bold;
         border-radius: 5px;
@@ -83,7 +82,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         right: -8px;
         font-size: 30px;
         top: -3px;
-        color: green;
+        color: #333;
     }
 
 </style>
@@ -149,7 +148,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                                             categoria='<?= $d->codigo ?>'
                                             medida='<?= $val["quantidade"]; ?>'
                                             valor='<?= $val['valor']; ?>'
-                                            class="btn btn-outline-success btn-xs"
+                                            class="btn btn-outline-warning btn-xs"
                                             style="height:40px; font-size:11px; line-height: 1.2;"
                                     >
                                         <?= $M[$key2]['descricao']; ?><br>
