@@ -202,7 +202,7 @@
 
                     </div>
 
-                <div style="position:fixed; bottom:0; left:0; width:100%; z-index:1; background-color:#fff;">
+                <div style="position:fixed; bottom:0; left:0; width:100%; z-index:1; background-color:#f5ebdc;">
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
                             <button
