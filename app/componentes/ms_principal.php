@@ -38,7 +38,7 @@
         bottom:65px;
         width:100%;
         overflow:auto;
-        background:#fff;
+        background:#502314;
         padding:10px;
     }
 
