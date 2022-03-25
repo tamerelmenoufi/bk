@@ -22,28 +22,13 @@
 <div class="col">
     <div class="col-12">
 
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">
-                <i class="fa-solid fa-user-pen"></i> Perfil pessoal
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                <i class="fa-solid fa-envelope"></i> Fale Conosco
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-                <i class="fa-solid fa-key"></i> Alterar Senha
-            </a>
-        </div>
-
         <button acao opc="perfil" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-user-pen"></i> Perfil pessoal
         </button>
-        <button class="btn btn-dark btn-lg btn-block">
+        <button acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
         </button>
-        <button class="btn btn-dark btn-lg btn-block">
+        <button acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-envelope"></i> Fale Conosco
         </button>
         <button acao opc="senha" class="btn btn-dark btn-lg btn-block">
