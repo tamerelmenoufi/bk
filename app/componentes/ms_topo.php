@@ -8,7 +8,7 @@
     .topoImg{
         position:absolute;
         height:80px;
-        margin-left:10px;
+        margin-left:15px;
         margin-top:5px;
         transform: rotate(-10deg);
         z-index:2;
