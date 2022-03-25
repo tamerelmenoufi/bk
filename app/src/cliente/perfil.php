@@ -23,7 +23,6 @@
         left:70px;
         top:0px;
         height:60px;
-        background:#fff;
         padding-top:15px;
         z-index:1;
     }
