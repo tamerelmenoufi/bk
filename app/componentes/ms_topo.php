@@ -6,9 +6,11 @@
 ?>
 <style>
     .topoImg{
-        height:100px;
+        position:absolute;
+        height:80px;
         margin-left:10px;
         margin-top:5px;
+        z-index:2;
 
     }
     .DadosTopo{
