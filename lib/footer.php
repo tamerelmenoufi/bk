@@ -26,3 +26,9 @@
 
 
     <script src="<?= "{$caminho_vendor}/jkeyboard/js.js"; ?>" ></script>
+
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&callback=initMap&v=weekly&language=pt&region=BR"
+      async
+    ></script>
