@@ -14,7 +14,7 @@
 
 </style>
 
-<div id="map"></div>
+<div id="map">MAPA NO AR</div>
 
 <script>
 
