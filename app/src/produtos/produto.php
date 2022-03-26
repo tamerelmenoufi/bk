@@ -162,8 +162,8 @@
                                     position:fixed;
                                     left:-100%;
                                     top:-10%;
-                                    width:300%;
-                                    height:65%;
+                                    width:200%;
+                                    height:50%;
                                     background-color:#EBF4F1;
                                     z-index:1;
                                     border-radius:100%;
@@ -171,7 +171,7 @@
                                     background-size:cover;
                                     background-position:center center;
                                     opacity:0.3;
-                                    filter: blur(10px);
+                                    filter: blur(5px);
                                     text-align:center;
                                     ">
                         </div>
