@@ -138,7 +138,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         $detalhes = json_decode($p->detalhes, true);
         $detalhes_2 = [];
 
-        if(is_file("./icon/{$p->icon}")){
+        if(is_file("../painel/produtos/icon/{$p->icon}")){
             $url = "../painel/produtos/icon/{$p->icon}";
         }else{
             $url = "./img/sem_produto.svg";
