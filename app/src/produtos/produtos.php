@@ -34,12 +34,17 @@ while ($m = mysqli_fetch_array($m_r)) {
 
 <style>
     .foto<?=$md5?> {
+        position: absolute;
+        left:center;
+        top:center;
+        margin-left:-50px;
+        margin-top:-50px;
         background-size: cover;
         background-position: center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        width:80px;
-        height:80px;
+        width:100px;
+        height:100px;
     }
 
     .topo<?=$md5?> {
@@ -134,7 +139,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         ?>
         <div class="card mb-3 item_button<?= $md5 ?>">
             <div class="row no-gutters">
-                <div class="col-4">
+                <div class="col-4" style="position:relative">
                      <div
                         class=" foto<?= $md5 ?>"
                         style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)"
