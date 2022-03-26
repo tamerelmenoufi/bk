@@ -41,6 +41,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         margin-top:-50px;
         background-size: 100%;
         background-position: center;
+        background-repeat:no-repeat;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         width:100px;
