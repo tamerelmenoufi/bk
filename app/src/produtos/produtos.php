@@ -155,7 +155,7 @@ while ($m = mysqli_fetch_array($m_r)) {
             <div class="row no-gutters">
                 <div class="col-3" style="position:relative">
                      <div
-                        class=" foto<?= $md5 ?> <?=$icone?>"
+                        class="foto<?= $md5 ?> <?=$icone?>"
                         style="background-image:url(<?= $url?>)"
                     ></div>
                 </div>
