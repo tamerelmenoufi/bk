@@ -34,6 +34,10 @@
         <button acao opc="senha" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-key"></i> Alterar Senha
         </button>
+        <a sair style="color:red">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+            Desconectar
+        </a>
     </div>
 </div>
 
@@ -55,5 +59,47 @@
                 }
             });
         });
+
+
+
+        $("a[sair]").click(function(){
+
+            $.confirm({
+                content:"Deseja realmente desconectar do aplicativo?",
+                title:false,
+                buttons:{
+                    'SIM':function(){
+
+                        $.ajax({
+                            url:"src/produtos/pedido.php",
+                            type:"POST",
+                            data:{
+                                acao:'ExcluirPedido',
+                            },
+                            success:function(dados){
+                                window.localStorage.removeItem('AppPedido');
+                                window.localStorage.removeItem('AppCliente');
+                                window.localStorage.removeItem('AppPedido');
+
+                                $.ajax({
+                                    url:"src/home/index.php",
+                                    success:function(dados){
+                                        $(".ms_corpo").html(dados);
+                                    }
+                                });
+
+                            }
+                        });
+
+                    },
+                    'NÃO':function(){
+
+                    }
+                }
+            });
+
+        });
+
+
     })
 </script>
