@@ -51,7 +51,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-size: 50%;
         background-position: center;
         background-repeat:no-repeat;
-        color:#ccc;
     }
 
     .topo<?=$md5?> {
