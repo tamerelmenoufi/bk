@@ -146,7 +146,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         if(is_file("../../../painel/produtos/icon/{$p->icon}")){
             $url = "../painel/produtos/icon/{$p->icon}";
         }else{
-            $url = "./img/sem_produto.svg";
+            $url = "./img/sem_produto.png";
             $icone = 'icone';
         }
 
