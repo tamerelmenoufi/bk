@@ -140,13 +140,13 @@ while ($m = mysqli_fetch_array($m_r)) {
         ?>
         <div class="card mb-3 item_button<?= $md5 ?>">
             <div class="row no-gutters">
-                <div class="col-4" style="position:relative">
+                <div class="col-3" style="position:relative">
                      <div
                         class=" foto<?= $md5 ?>"
                         style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)"
                     ></div>
                 </div>
-                <div class="col-8">
+                <div class="col-9">
                     <div class="card-body">
                         <h5 class="card-title"><?= $p->produto ?></h5>
                         <p class="card-text produto_descricao"><?= $p->descricao ?></p>
