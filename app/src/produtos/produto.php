@@ -155,6 +155,27 @@
 
                 <div class="card mb-3">
                     <div class="row">
+
+
+                        <div
+                            style="
+                                    position:fixed;
+                                    left:-100%;
+                                    top:-10%;
+                                    width:300%;
+                                    height:65%;
+                                    background-color:#EBF4F1;
+                                    z-index:101;
+                                    border-radius:100%;
+                                    background-image:url(../painel/produtos/icon/<?= $p->icon ?>);
+                                    background-size:cover;
+                                    background-position:center center;
+                                    opacity:0.3;
+                                    filter: blur(10px);
+                                    text-align:center;
+                                    ">
+                        </div>
+
                         <div
                             class="col foto<?= $md5 ?>"
                             style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)"
