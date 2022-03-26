@@ -34,10 +34,10 @@
         <button acao opc="senha" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-key"></i> Alterar Senha
         </button>
-        <a sair style="color:red">
+        <button sair class="btn btn-danger btn-lg btn-block">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
             Desconectar
-        </a>
+        </button>
     </div>
 </div>
 
@@ -62,7 +62,7 @@
 
 
 
-        $("a[sair]").click(function(){
+        $("button[sair]").click(function(){
 
             $.confirm({
                 content:"Deseja realmente desconectar do aplicativo?",
