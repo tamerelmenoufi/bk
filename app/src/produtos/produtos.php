@@ -38,6 +38,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-position: center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
+        width:80px;
     }
 
     .topo<?=$md5?> {
@@ -132,8 +133,11 @@ while ($m = mysqli_fetch_array($m_r)) {
         ?>
         <div class="card mb-3 item_button<?= $md5 ?>">
             <div class="row no-gutters">
-                <div class="col-4 foto<?= $md5 ?>"
-                     style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)">
+                <div class="col-4">
+                     <div
+                        class=" foto<?= $md5 ?>"
+                        style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)"
+                    ></div>
                 </div>
                 <div class="col-8">
                     <div class="card-body">
