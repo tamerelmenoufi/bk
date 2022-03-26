@@ -166,7 +166,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">
+                    <p class="card-text" style="text-align:right">
                         <small class="text-muted">
 
                             <?php
