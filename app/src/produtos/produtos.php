@@ -42,6 +42,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-size: 100%;
         background-position: center;
         background-repeat:no-repeat;
+        background-image:url(./img/sem_produto.svg);
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         width:150px;
