@@ -37,15 +37,15 @@ while ($m = mysqli_fetch_array($m_r)) {
         position: absolute;
         left:50%;
         top:50%;
-        margin-left:-50px;
-        margin-top:-50px;
+        margin-left:-75px;
+        margin-top:-75px;
         background-size: 100%;
         background-position: center;
         background-repeat:no-repeat;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        width:100px;
-        height:100px;
+        width:150px;
+        height:150px;
     }
 
     .topo<?=$md5?> {
