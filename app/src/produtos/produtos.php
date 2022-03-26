@@ -35,8 +35,8 @@ while ($m = mysqli_fetch_array($m_r)) {
 <style>
     .foto<?=$md5?> {
         position: absolute;
-        left:center;
-        top:center;
+        left:50%;
+        top:50%;
         margin-left:-50px;
         margin-top:-50px;
         background-size: cover;
