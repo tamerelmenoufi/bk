@@ -165,7 +165,6 @@
                                     width:300%;
                                     height:65%;
                                     background-color:#EBF4F1;
-                                    z-index:101;
                                     border-radius:100%;
                                     background-image:url(../painel/produtos/icon/<?= $p->icon ?>);
                                     background-size:cover;
