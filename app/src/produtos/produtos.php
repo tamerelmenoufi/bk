@@ -90,6 +90,17 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-color:#eee !important;
     }
 
+    .produto_descricao{
+        text-align:justify;
+        height:auto;
+        font-style: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+    }
 </style>
 
 <!-- Informativo de pedidos ativos -->
@@ -127,7 +138,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                 <div class="col-8">
                     <div class="card-body">
                         <h5 class="card-title"><?= $p->produto ?></h5>
-                        <p class="card-text"><?= $p->descricao ?></p>
+                        <p class="card-text produto_descricao"><?= $p->descricao ?></p>
                     </div>
                 </div>
                 <div class="card-body">
