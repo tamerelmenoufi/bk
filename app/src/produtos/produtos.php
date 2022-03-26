@@ -91,7 +91,7 @@ while ($m = mysqli_fetch_array($m_r)) {
     }
 
     .produto_descricao{
-        text-align:justify;
+        text-align:left;
         height:auto;
         font-style: normal;
         overflow: hidden;
