@@ -8,7 +8,7 @@
         width:100%;
         text-align:center;
     }
-    button[acao]{
+    button[acao], button[sair]{
         text-align:left !important;
     }
 </style>
