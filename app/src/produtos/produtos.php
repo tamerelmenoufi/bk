@@ -42,7 +42,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-size: 100%;
         background-position: center;
         background-repeat:no-repeat;
-        background-image:url(./img/sem_produto.svg);
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         width:150px;
@@ -138,13 +137,20 @@ while ($m = mysqli_fetch_array($m_r)) {
     while ($p = mysqli_fetch_object($result)) {
         $detalhes = json_decode($p->detalhes, true);
         $detalhes_2 = [];
+
+        if(is_file("./icon/{$p->icon}")){
+            $url = "../painel/produtos/icon/{$p->icon}";
+        }else{
+            $url = "./img/sem_produto.svg";
+        }
+
         ?>
         <div class="card mb-3 item_button<?= $md5 ?>">
             <div class="row no-gutters">
                 <div class="col-3" style="position:relative">
                      <div
                         class=" foto<?= $md5 ?>"
-                        style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)"
+                        style="background-image:url(<?= $url?>)"
                     ></div>
                 </div>
                 <div class="col-9">
