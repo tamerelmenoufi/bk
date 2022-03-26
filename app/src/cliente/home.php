@@ -25,11 +25,11 @@
         <button acao opc="perfil" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-user-pen"></i> Perfil pessoal
         </button>
-        <button acao class="btn btn-dark btn-lg btn-block">
-            <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
+        <button opc="enderecos" acao class="btn btn-dark btn-lg btn-block">
+            <i class="fa-solid fa-envelope"></i> Endereços
         </button>
-        <button acao class="btn btn-dark btn-lg btn-block">
-            <i class="fa-solid fa-envelope"></i> Fale Conosco
+        <button opc="pedidos" acao class="btn btn-dark btn-lg btn-block">
+            <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
         </button>
         <button acao opc="senha" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-key"></i> Alterar Senha
