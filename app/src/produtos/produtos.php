@@ -39,7 +39,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         top:50%;
         margin-left:-50px;
         margin-top:-50px;
-        background-size: cover;
+        background-size: 100%;
         background-position: center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
