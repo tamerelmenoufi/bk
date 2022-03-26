@@ -160,7 +160,7 @@
                         <div
                             style="
                                     position:fixed;
-                                    left:-100%;
+                                    left:-50%;
                                     top:-10%;
                                     width:200%;
                                     height:50%;
