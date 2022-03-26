@@ -92,19 +92,35 @@
             AppPedido = window.localStorage.getItem('AppPedido');
             AppCliente = window.localStorage.getItem('AppCliente');
 
-            local = $(this).attr('local');
-            janela = $(this).attr('janela');
-            Carregando();
-            $.ajax({
-                url:"componentes/"+janela+".php",
-                type:"POST",
-                data:{
-                    local,
-                },
-                success:function(dados){
-                    $(".ms_corpo").append(dados);
-                }
-            });
+            if(!AppCliente || AppCliente === null || AppCliente === undefined){
+
+                local = $(this).attr('local');
+                janela = $(this).attr('janela');
+                Carregando();
+                $.ajax({
+                    url:"componentes/"+janela+".php",
+                    type:"POST",
+                    data:{
+                        local,
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
+
+            }else{
+                Carregando();
+                $.ajax({
+                    url:"componentes/ms_popup_100.php",
+                    type:"POST",
+                    data:{
+                        "src/cliente/cadastro.php",
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
+            }
         })
 
 
