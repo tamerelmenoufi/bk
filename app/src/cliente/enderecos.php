@@ -14,7 +14,7 @@
 
 </style>
 
-<div id="map">MAPA NO AR</div>
+<div id="map">MAPA NO AR Versão 2</div>
 
 <script>
 
@@ -35,5 +35,5 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
-
+initMap();
 </script>
