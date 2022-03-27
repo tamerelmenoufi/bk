@@ -73,7 +73,7 @@
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
   width: 100%;
-  z-index:1;
+  z-index:10;
 }
 
 #pac-input:focus {
