@@ -168,6 +168,6 @@ function initAutocomplete() {
   });
 }
 
-
+initAutocomplete();
 
 </script>
