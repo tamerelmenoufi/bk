@@ -20,8 +20,7 @@
     <script>
         local = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas, Brasil";
         map = new google.maps.Map(document.getElementById("map"), {
-            address: local,
-            //center: { lat: -34.397, lng: 150.644 },
+            center: { lat: -34.397, lng: 150.644 },
             zoom: 8,
         });
 
