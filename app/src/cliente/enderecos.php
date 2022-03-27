@@ -10,6 +10,7 @@
         top:0;
         height: 100%;
         width:100%;
+        z-index:0;
     }
 
 
@@ -68,7 +69,8 @@
   margin-left: 12px;
   padding: 0 11px 0 13px;
   text-overflow: ellipsis;
-  width: 400px;
+  width: 100%;
+  z-index:1;
 }
 
 #pac-input:focus {
