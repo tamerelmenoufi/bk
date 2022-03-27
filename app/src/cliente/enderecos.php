@@ -50,12 +50,13 @@
 
 
   $("#submit").click(function(){
-
+    endereco = $('#adress').val();
+    alert(status);
 
     GMaps.geocode({
         address: $('#adress').val(),
         callback: function(results, status) {
-            alert(status);
+
             if (status == 'OK') {
                 var latlng = results[0].geometry.location;
                 map.setCenter(latlng.lat(), latlng.lng());
