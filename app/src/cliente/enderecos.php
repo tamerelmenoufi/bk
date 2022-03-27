@@ -27,6 +27,7 @@
             position: { lat: -34.397, lng: 150.644 },
             map,
             title: "Hello World!",
+            draggable:true,
         });
 
     </script>
