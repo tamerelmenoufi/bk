@@ -32,21 +32,12 @@
 <script>
 
 
-  const cairo = { lat: 30.064742, lng: 31.249509 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    scaleControl: true,
-    center: cairo,
-    zoom: 10,
-  });
-  const infowindow = new google.maps.InfoWindow();
-
-  infowindow.setContent("<b>القاهرة</b>");
-
-  const marker = new google.maps.Marker({ map, position: cairo });
-
-  marker.addListener("click", () => {
-    infowindow.open(map, marker);
-  });
+  map = new GMaps({
+            div: '#map',
+            zoom: 16,
+            lat: -3.098170162749315,
+            lng: -60.010407004276466,
+        });
 
 
   $("#submit").click(function(){
@@ -60,6 +51,12 @@
             if (status == 'OK') {
                 var latlng = results[0].geometry.location;
                 map.setCenter(latlng.lat(), latlng.lng());
+
+                map.addMarker({ // Função para adicionar o marcador
+                    lat: latlng.lat(),
+                    lng: latlng.lng(),
+                });
+
             }
         }
     });
