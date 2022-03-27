@@ -23,11 +23,17 @@
             zoom: 8,
         });
 
-        new google.maps.Marker({
+        marker = new google.maps.Marker({
             position: { lat: -34.397, lng: 150.644 },
             map,
             title: "Hello World!",
             draggable:true,
+        });
+
+
+        google.maps.event.addListener(marker, 'dragend', function(marker) {
+            var latLng = marker.latLng;
+            alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
         });
 
     </script>
