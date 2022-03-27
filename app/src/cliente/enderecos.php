@@ -18,7 +18,8 @@
     <div id="map"></div>
 
     <script>
-        local = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas, Brasil";
+
+        endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
         map = new google.maps.Map(document.getElementById("map"), {
             center: { lat: -34.397, lng: 150.644 },
             zoom: 8,
@@ -31,15 +32,27 @@
             draggable:true,
         });
 
-
         google.maps.event.addListener(marker, 'dragend', function(marker) {
             var latLng = marker.latLng;
             alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
         });
 
-    </script>
 
-<script>
+        geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, (results, status) => {
+            if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+
+                    $('Endereco').val(results[0].formatted_address);
+
+                    var location = new google.maps.LatLng(latitude, longitude);
+                    marker.setPosition(location);
+                    map.setCenter(location);
+                    map.setZoom(16);
+                }
+            }
+        });
 
 
 </script>
