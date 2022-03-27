@@ -39,6 +39,7 @@
 
 
         geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, (results, status) => {
+            alert('STATUS:' + status);
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
                     var latitude = results[0].geometry.location.lat();
