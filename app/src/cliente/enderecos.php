@@ -51,7 +51,7 @@
 
   $("#submit").click(function(){
     endereco = $('#adress').val();
-    alert(status);
+    alert(endereco);
 
     GMaps.geocode({
         address: $('#adress').val(),
