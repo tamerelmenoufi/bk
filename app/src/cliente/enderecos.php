@@ -63,7 +63,7 @@
 
 #pac-input {
     position:fixed;
-    bottom:50px;
+    top:50px;
     left:0;
   background-color: #fff;
   font-family: Roboto;
