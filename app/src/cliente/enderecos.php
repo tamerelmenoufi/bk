@@ -15,6 +15,7 @@
         top:0px;
         height:60px;
         padding-top:15px;
+        background:#f5ebdc;
         z-index:1;
     }
     .mapa{
