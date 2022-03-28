@@ -1,13 +1,13 @@
 <?php
     include("../../../lib/includes.php");
+
+    $md5 = md5($md5.$_GET['p']);
 ?>
 
 <style>
 
-    #map {
-        position:absolute;
-        left:0;
-        top:0;
+    #map<?=$md5?> {
+        position:relative;
         height: 100%;
         width:100%;
         z-index:0;
@@ -15,16 +15,16 @@
 
 </style>
 
-    <div id="map"></div>
+    <div id="map<?=$md5?>"></div>
 
     <script>
 
-        endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
-        geocoder = new google.maps.Geocoder();
-        map = new google.maps.Map(document.getElementById("map"), {
+        endereco<?=$md5?> = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
+        geocoder<?=$md5?> = new google.maps.Geocoder();
+        map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
             zoomControl: false,
             mapTypeControl: false,
-            draggable: true,
+            draggable: false,
             scaleControl: false,
             scrollwheel: false,
             navigationControl: false,
@@ -38,20 +38,20 @@
         }*/
         );
 
-        marker = new google.maps.Marker({
+        marker<?=$md5?> = new google.maps.Marker({
             position: { lat: -34.397, lng: 150.644 },
-            map,
+            map<?=$md5?>,
             title: "Hello World!",
-            draggable:true,
+            draggable:false,
         });
 
-        google.maps.event.addListener(marker, 'dragend', function(marker) {
-            var latLng = marker.latLng;
-            alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
-        });
+        // google.maps.event.addListener(marker, 'dragend', function(marker) {
+        //     var latLng = marker.latLng;
+        //     alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
+        // });
 
 
-        geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, (results, status) => {
+        geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Brasil', 'region': 'BR' }, (results, status) => {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
@@ -59,12 +59,12 @@
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
 
-                    $('Endereco').val(results[0].formatted_address);
+                    //$('Endereco').val(results[0].formatted_address);
 
                     var location = new google.maps.LatLng(latitude, longitude);
-                    marker.setPosition(location);
-                    map.setCenter(location);
-                    map.setZoom(16);
+                    marker<?=$md5?>.setPosition(location);
+                    map<?=$md5?>.setCenter(location);
+                    map<?=$md5?>.setZoom(16);
                 }
             }
         });

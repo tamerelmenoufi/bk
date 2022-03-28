@@ -51,7 +51,13 @@
 
 <script>
 
+    $(function(){
 
+        $(".mapa").each(function(opc){
+            alert(opc);
+        });
+
+    })
 
 
 </script>
