@@ -45,10 +45,10 @@
             draggable:false,
         });
 
-        google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
-            var latLng = marker.latLng;
-            alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
-        });
+        // google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
+        //     var latLng = marker.latLng;
+        //     alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
+        // });
 
 
         geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Brasil', 'region': 'BR' }, (results, status) => {
@@ -56,12 +56,12 @@
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
 
-                    var latitude = results[0].geometry.location.lat();
-                    var longitude = results[0].geometry.location.lng();
+                    var latitude<?=$md5?> = results[0].geometry.location.lat();
+                    var longitude<?=$md5?> = results[0].geometry.location.lng();
 
-                    var location = new google.maps.LatLng(latitude, longitude);
-                    marker<?=$md5?>.setPosition(location);
-                    map<?=$md5?>.setCenter(location);
+                    var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
+                    marker<?=$md5?>.setPosition(location<?=$md5?>);
+                    map<?=$md5?>.setCenter(location<?=$md5?>);
                     map<?=$md5?>.setZoom(16);
                 }
             }
