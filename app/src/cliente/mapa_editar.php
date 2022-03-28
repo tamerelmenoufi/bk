@@ -31,7 +31,7 @@
 
 </style>
 
-    <div id="map<?=$md5?>"><?php print_r($coordenadas); ?></div>
+    <div id="map<?=$md5?>"><?php echo $d->coordenadas; ?></div>
 
     <script>
 
