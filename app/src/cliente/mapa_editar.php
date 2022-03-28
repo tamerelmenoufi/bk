@@ -85,7 +85,7 @@
         geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
             if (status == google.maps.GeocoderStatus.OK) {
-                if (results[0] ) {
+                if (results[0] && !coordenadas<?=$md5?>) {
 
                     var latitude<?=$md5?> = results[0].geometry.location.lat();
                     var longitude<?=$md5?> = results[0].geometry.location.lng();
