@@ -122,7 +122,7 @@
                     }
                 });
             }else{
-                $.alert('Favor informe o número do seu telefone!');
+                $.alert('Favor Preencher os campos obrigatórios*!');
             }
 
         });
