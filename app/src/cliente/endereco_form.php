@@ -21,7 +21,6 @@
                         bairro = '{$_POST['bairro']}',
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}'
-                        WHERE codigo = '{$_POST['codigo']}'
                         ");
 
         }
