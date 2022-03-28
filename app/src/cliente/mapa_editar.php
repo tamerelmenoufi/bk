@@ -2,7 +2,8 @@
     include("../../../lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-        mysqli_query($con, "update clientes_enderecos set coordenadas = '{$_POST['latLng']}' where codigo = '{$_POST['codigo']}'");
+        echo $query = "update clientes_enderecos set coordenadas = '{$_POST['latLng']}' where codigo = '{$_POST['codigo']}'";
+        mysqli_query($con, $query);
         exit();
     }
 
@@ -71,8 +72,8 @@
                     codigo:'<?=$d->codigo?>',
                     acao:'coordenadas'
                 },
-                success:function(){
-
+                success:function(dados){
+                    $.alert(dados);
                 }
             });
         });
