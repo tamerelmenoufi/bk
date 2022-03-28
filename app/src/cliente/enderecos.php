@@ -76,23 +76,12 @@
                             ?>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <button acao="endereco_form" cod="<?=$d->codigo?>" class="btn btn-warning">
-                                    Editar
-                                </button>
-                            </div>
-                            <div class="col">
-                                <button acao="mapa_editar" cod="<?=$d->codigo?>" class="btn btn-warning">
-                                    Mapa
-                                </button>
-                            </div>
-                            <div class="col">
-                                <button XXacao="enderecos" cod="<?=$d->codigo?>" class="btn btn-warning">
-                                    Padrão
-                                </button>
-                            </div>
-                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <li acao="endereco_form" cod="<?=$d->codigo?>" class="list-group-item">Editar o Endereço</li>
+                            <li acao="mapa_editar" cod="<?=$d->codigo?>" class="list-group-item">Editar o Mapa</li>
+                            <li XXacao="enderecos" cod="<?=$d->codigo?>" class="list-group-item">Definir como endereço principal</li>
+                        </ul>
 
                     </p>
                 </div>
@@ -153,7 +142,7 @@
         });
 
 
-        $("button[acao]").click(function(){
+        $("li[acao]").click(function(){
             acao = $(this).attr("acao");
             cod = $(this).attr("cod");
             $.ajax({
