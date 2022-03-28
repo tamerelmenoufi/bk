@@ -1,10 +1,22 @@
 <?php
     include("../../../lib/includes.php");
+
+    if($_POST['acao'] == 'coordenadas'){
+
+    }
+
+
+    $query = "select * from clientes_enderecos where codigo = '{$_POST['cod']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
+
 ?>
 
 <style>
 
-    #map {
+    #map<?=$md5?> {
         position:absolute;
         left:0;
         top:0;
@@ -15,13 +27,14 @@
 
 </style>
 
-    <div id="map"></div>
+    <div id="map<?=$md5?>"></div>
 
     <script>
 
-        endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
-        geocoder = new google.maps.Geocoder();
-        map = new google.maps.Map(document.getElementById("map"), {
+        //endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
+        endereco<?=$md5?> = "<?=$endereco?>";
+        geocoder<?=$md5?> = new google.maps.Geocoder();
+        map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
             zoomControl: false,
             mapTypeControl: false,
             draggable: true,
@@ -38,32 +51,32 @@
         }*/
         );
 
-        marker = new google.maps.Marker({
+        marker<?=$md5?> = new google.maps.Marker({
             position: { lat: -34.397, lng: 150.644 },
-            map,
+            map:map<?=$md5?>,
             title: "Hello World!",
             draggable:true,
         });
 
-        google.maps.event.addListener(marker, 'dragend', function(marker) {
+        google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
             var latLng = marker.latLng;
             alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
         });
 
 
-        geocoder.geocode({ 'address': endereco + ', Brasil', 'region': 'BR' }, (results, status) => {
+        geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {
 
-                    var latitude = results[0].geometry.location.lat();
-                    var longitude = results[0].geometry.location.lng();
+                    var latitude<?=$md5?> = results[0].geometry.location.lat();
+                    var longitude<?=$md5?> = results[0].geometry.location.lng();
 
                     //$('Endereco').val(results[0].formatted_address);
 
-                    var location = new google.maps.LatLng(latitude, longitude);
-                    marker.setPosition(location);
-                    map.setCenter(location);
+                    var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
+                    marker.setPosition(location<?=$md5?>);
+                    map.setCenter(location<?=$md5?>);
                     map.setZoom(16);
                 }
             }
