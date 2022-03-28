@@ -29,7 +29,8 @@
             scrollwheel: false,
             navigationControl: false,
             streetViewControl: false,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            fullscreenControl: false,
         }
         /*{
             center: { lat: -34.397, lng: 150.644 },
