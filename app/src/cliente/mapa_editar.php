@@ -75,7 +75,7 @@
         google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
             var latLng = marker.latLng;
             //alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
-            coordenadas = `{${latLng.lat()},${latLng.lng()}}`;
+            coordenadas = `${latLng.lat()},${latLng.lng()}`;
             $.ajax({
                 url:"src/cliente/mapa_editar.php",
                 type:"POST",
