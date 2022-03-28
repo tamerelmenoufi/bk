@@ -14,7 +14,7 @@
 
     $endereco =  "{$d->rua}, {$d->numero}, {$d->bairro}";
 
-    $coordenadas = json_decode($d->coordenadas);
+    $coordenadas = explode(',', $d->coordenadas);
 
 ?>
 
