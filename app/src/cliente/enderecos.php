@@ -64,12 +64,16 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <div class="col-1">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="col-11">
                         <?php
                             echo "{$d->rua}, {$d->numero}, {$d->bairro} ".
                             (($d->complemento)?', '.$d->complemento:false).
                             (($d->referencia)?', '.$d->referencia:false);
                         ?>
+                        </div>
                     </p>
                 </div>
             </div>
