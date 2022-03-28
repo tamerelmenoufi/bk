@@ -19,6 +19,7 @@
         position:relative;
         height: 100%;
         width:100%;
+        opacity:0.6;
         z-index:0;
     }
 
