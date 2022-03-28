@@ -43,15 +43,15 @@
     <div class="col-12">Cadastro/Editar Endereço</div>
 
     <div class="col-12 mb-3">
-        <label for="rua">Rua</label>
+        <label for="rua">Rua*</label>
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="rua" value="<?=$d->rua?>">
     </div>
     <div class="col-12 mb-3">
-        <label for="numero">Número</label>
+        <label for="numero">Número*</label>
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="numero" value="<?=$d->numero?>">
     </div>
     <div class="col-12 mb-3">
-        <label for="bairro">Bairro</label>
+        <label for="bairro">Bairro*</label>
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="bairro" value="<?=$d->bairro?>">
     </div>
     <div class="col-12 mb-3">
