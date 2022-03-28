@@ -81,7 +81,11 @@
             referencia = $("#referencia").val();
             codigo = $(this).attr("cod");
 
-            if(telefone.length === 15){
+            if(
+                rua &&
+                numero &&
+                bairro
+            ){
                 $.ajax({
                     url:"src/cliente/endereco_form.php",
                     type:"POST",
