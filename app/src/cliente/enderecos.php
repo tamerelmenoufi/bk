@@ -12,7 +12,7 @@
     .EnderecoTitulo{
         width:100%;
         position:fixed;
-        left:70px;
+        padding-left:70px;
         top:0px;
         height:60px;
         padding-top:15px;
