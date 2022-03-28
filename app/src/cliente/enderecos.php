@@ -28,8 +28,8 @@
         position:fixed;
         bottom:20px;
         right:20px;
-        size:30px;
-
+        font-size:30px;
+        color:#502314;
     }
 </style>
 <div class="EnderecoTitulo">
