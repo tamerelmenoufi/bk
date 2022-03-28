@@ -2,7 +2,7 @@
     include("../../../lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-        echo $query = "update clientes_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
+        $query = "update clientes_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         exit();
     }
@@ -73,7 +73,7 @@
                     acao:'coordenadas'
                 },
                 success:function(dados){
-                    $.alert(dados);
+
                 }
             });
         });
