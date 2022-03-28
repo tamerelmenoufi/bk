@@ -31,6 +31,14 @@
         font-size:50px;
         color:#502314;
     }
+    .SemProduto{
+        position:fixed;
+        top:40%;
+        left:0;
+        text-align:center;
+        width:100%;
+        color:#ccc;
+    }
 </style>
 <div class="EnderecoTitulo">
     <h4>Lista de Endereços</h4>
@@ -39,7 +47,10 @@
     <div class="row">
         <div class="col-12">
             <?php
-                for($i=0;$i<5;$i++){
+                $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' order by padrao desc";
+                $result = mysqli_query($query);
+                $n = mysqli_num_rows($result);
+                while($d = mysqli_fetch_object($result)){
             ?>
             <div class="card" style="margin-bottom:10px;">
                 <div class="card-img-top mapa">
@@ -52,6 +63,10 @@
             <?php
                 }
             ?>
+            <div class="SemProduto" style="display:<?=(($n)?'none':'block')?>">
+                <i class="fa-solid fa-face-frown icone"></i>
+                <p>Poxa, ainda não tem produtos em seu pedido!</p>
+            </div>
         </div>
     </div>
 </div>
@@ -80,6 +95,21 @@
         $(".mapa").each(function(opc){
             obj = $(this);
             ViewMap(opc, obj);
+        });
+
+
+        $(".NovoEndereco").click(function(){
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:'src/cliente/endereco_form.php',
+                },
+                success:function(dados){
+                    //PageClose();
+                    $(".ms_corpo").append(dados);
+                }
+            });
         });
 
     })
