@@ -77,10 +77,10 @@
                             </div>
                         </div>
 
-                        <ul class="list-group">
-                            <li acao="endereco_form" cod="<?=$d->codigo?>" class="list-group-item">Editar o Endereço</li>
-                            <li acao="mapa_editar" cod="<?=$d->codigo?>" class="list-group-item">Editar o Mapa</li>
-                            <li XXacao="enderecos" cod="<?=$d->codigo?>" class="list-group-item">Definir como endereço principal</li>
+                        <ul class="list-group" style="margin-top:25px;">
+                            <li acao="endereco_form" cod="<?=$d->codigo?>" class="list-group-item text-primary"><i class="fa-solid fa-map-pin"></i> Editar o Endereço</li>
+                            <li acao="mapa_editar" cod="<?=$d->codigo?>" class="list-group-item text-primary"><i class="fa-solid fa-map-location-dot"></i> Editar o Mapa</li>
+                            <li XXacao="enderecos" cod="<?=$d->codigo?>" class="list-group-item text-primary"><i class="fa-solid fa-location-crosshairs"></i> Definir como endereço principal</li>
                         </ul>
 
                     </p>
