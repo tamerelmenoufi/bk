@@ -24,7 +24,7 @@
         map = new google.maps.Map(document.getElementById("map"), {
             zoomControl: false,
             mapTypeControl: false,
-            draggable: false,
+            draggable: true,
             scaleControl: false,
             scrollwheel: false,
             navigationControl: false,
