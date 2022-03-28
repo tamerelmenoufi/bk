@@ -24,7 +24,7 @@
         map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
             zoomControl: false,
             mapTypeControl: false,
-            draggable: true,
+            draggable: false,
             scaleControl: false,
             scrollwheel: false,
             navigationControl: false,
@@ -42,7 +42,7 @@
             position: { lat: -34.397, lng: 150.644 },
             map:map<?=$md5?>,
             title: "Hello World!",
-            draggable:true,
+            draggable:false,
         });
 
         // google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
