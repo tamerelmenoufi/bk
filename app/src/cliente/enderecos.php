@@ -39,6 +39,9 @@
         width:100%;
         color:#ccc;
     }
+    .icone{
+        font-size:70px;
+    }
 </style>
 <div class="EnderecoTitulo">
     <h4>Lista de Endereços</h4>
