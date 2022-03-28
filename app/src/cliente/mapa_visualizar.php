@@ -59,7 +59,7 @@
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
 
-                    //$('Endereco').val(results[0].formatted_address);
+                    $('Endereco').val(results[0].formatted_address);
 
                     marker<?=$md5?> = new google.maps.Marker();
 
