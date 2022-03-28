@@ -2,7 +2,8 @@
     include("../../../lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-
+        mysqli_query($con, "update clientes_enderecos set coordenadas = '{$_POST['latLng']}' where codigo = '{$_POST['codigo']}'");
+        exit();
     }
 
 
@@ -60,7 +61,19 @@
 
         google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
             var latLng = marker.latLng;
-            alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
+            //alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
+
+            $.ajax({
+                url:"src/cliente/mapa_editar.php",
+                data:{
+                    latLng,
+                    codigo:'<?=$d->codigo?>',
+                    acao:'coordenadas'
+                },
+                success:function(){
+
+                }
+            });
         });
 
 
