@@ -44,7 +44,7 @@
             if($d->coordenadas){
             ?>
             center: { lat: <?=$coordenadas[0]?>, lng: <?=$coordenadas[1]?> },
-            zoom: 16,
+            zoom: 18,
 
             <?php
             }
