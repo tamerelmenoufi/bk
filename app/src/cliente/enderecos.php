@@ -55,11 +55,9 @@
                 $n = mysqli_num_rows($result);
                 while($d = mysqli_fetch_object($result)){
 
-                    $endereco =  base64_encode("{$d->rua}, {$d->numero}, {$d->bairro}");
-
             ?>
             <div class="card" style="margin-bottom:10px;">
-                <div class="card-img-top mapa" endereco = '<?=$endereco?>'>
+                <div class="card-img-top mapa" cod = '<?=$d->codigo?>'>
 
                 </div>
                 <div class="card-body">
@@ -136,7 +134,7 @@
 
         $(".mapa").each(function(p){
             obj = $(this);
-            e = $(this).attr("endereco");
+            e = $(this).attr("cod");
             ViewMap(p, e, obj);
         });
 
