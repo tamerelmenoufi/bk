@@ -28,7 +28,7 @@
 <div class="EnderecoTitulo">
     <h4>Lista de Endereços</h4>
 </div>
-<div class="col" style="margin-bottom:60px; margin-top:70px;">
+<div class="col" style="margin-bottom:60px; margin-top:10px;">
     <div class="row">
         <div class="col-12">
             <?php
@@ -49,7 +49,7 @@
     </div>
 </div>
 
-    <script>
+<script>
 
 
 
