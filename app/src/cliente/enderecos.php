@@ -77,7 +77,7 @@
                             </div>
                         </div>
 
-                        <ul class="list-group list-group-flush">
+                        <ul class="list-group">
                             <li acao="endereco_form" cod="<?=$d->codigo?>" class="list-group-item">Editar o Endereço</li>
                             <li acao="mapa_editar" cod="<?=$d->codigo?>" class="list-group-item">Editar o Mapa</li>
                             <li XXacao="enderecos" cod="<?=$d->codigo?>" class="list-group-item">Definir como endereço principal</li>
