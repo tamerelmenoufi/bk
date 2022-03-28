@@ -68,7 +68,7 @@
             ?>
             <div class="SemProduto" style="display:<?=(($n)?'none':'block')?>">
                 <i class="fa-solid fa-face-frown icone"></i>
-                <p>Poxa, ainda não tem produtos em seu pedido!</p>
+                <p>Poxa, ainda não tem endereços cadastrados!</p>
             </div>
         </div>
     </div>
