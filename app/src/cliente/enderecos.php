@@ -21,10 +21,21 @@
 
         endereco = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
         geocoder = new google.maps.Geocoder();
-        map = new google.maps.Map(document.getElementById("map"), /*{
+        map = new google.maps.Map(document.getElementById("map"), {
+            zoomControl: false,
+            mapTypeControl: false,
+            draggable: false,
+            scaleControl: false,
+            scrollwheel: false,
+            navigationControl: false,
+            streetViewControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        /*{
             center: { lat: -34.397, lng: 150.644 },
             zoom: 8,
-        }*/ false);
+        }*/
+        );
 
         marker = new google.maps.Marker({
             position: { lat: -34.397, lng: 150.644 },
