@@ -26,9 +26,9 @@
     }
     .NovoEndereco{
         position:fixed;
-        bottom:5px;
+        bottom:0px;
         right:10px;
-        font-size:60px;
+        font-size:50px;
         color:#502314;
     }
 </style>
