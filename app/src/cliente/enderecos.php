@@ -65,17 +65,35 @@
                 <div class="card-body">
                     <p class="card-text">
                         <div class="row">
-                        <div class="col-1">
-                            <i class="fa-solid fa-location-dot"></i>
+                            <div class="col-1">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="col-11">
+                            <?php
+                                echo "{$d->rua}, {$d->numero}, {$d->bairro} ".
+                                (($d->complemento)?', '.$d->complemento:false).
+                                (($d->referencia)?', '.$d->referencia:false);
+                            ?>
+                            </div>
                         </div>
-                        <div class="col-11">
-                        <?php
-                            echo "{$d->rua}, {$d->numero}, {$d->bairro} ".
-                            (($d->complemento)?', '.$d->complemento:false).
-                            (($d->referencia)?', '.$d->referencia:false);
-                        ?>
+                        <div class="row">
+                            <div class="col">
+                                <button acao="endereco_form" cod="<?=$d->codigo?>" class="btn btn-warning">
+                                    Editar
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button acao="mapa_editar" cod="<?=$d->codigo?>" class="btn btn-warning">
+                                    Mapa
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button XXacao="enderecos" cod="<?=$d->codigo?>" class="btn btn-warning">
+                                    Padrão
+                                </button>
+                            </div>
                         </div>
-                        </div>
+
                     </p>
                 </div>
             </div>
@@ -126,6 +144,24 @@
                 type:"POST",
                 data:{
                     local:'src/cliente/endereco_form.php',
+                },
+                success:function(dados){
+                    //PageClose();
+                    $(".ms_corpo").append(dados);
+                }
+            });
+        });
+
+
+        $("button[acao]").click(function(){
+            acao = $(this).attr("acao");
+            cod = $(this).attr("cod");
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:`src/cliente/${acao}.php`,
+                    cod
                 },
                 success:function(dados){
                     //PageClose();
