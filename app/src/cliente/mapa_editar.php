@@ -91,7 +91,7 @@
         });
 
 
-        geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
+        geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status, coordenadas<?=$md5?>) => {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 alert('Coordenadas: '+ coordenadas<?=$md5?> + ' && ' + results[0]);
