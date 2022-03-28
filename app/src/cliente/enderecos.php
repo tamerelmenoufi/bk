@@ -24,6 +24,13 @@
         height:200px;
         background-color:#ccc;
     }
+    .NovoEndereco{
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        size:30px;
+
+    }
 </style>
 <div class="EnderecoTitulo">
     <h4>Lista de Endereços</h4>
@@ -47,6 +54,10 @@
             ?>
         </div>
     </div>
+</div>
+
+<div class="NovoEndereco">
+    <i class="fa-solid fa-circle-plus"></i>
 </div>
 
 <script>
