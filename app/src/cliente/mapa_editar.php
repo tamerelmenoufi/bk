@@ -49,6 +49,15 @@
             streetViewControl: false,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             fullscreenControl: false,
+            <?php
+            if($coordenadas){
+            ?>
+            center: { lat: <?=$coordenadas[0]?>, lng: <?=$coordenadas[1]?> },
+            zoom: 16,
+
+            <?php
+            }
+            ?>
         }
         /*{
             center: { lat: -34.397, lng: 150.644 },
