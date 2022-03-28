@@ -340,8 +340,7 @@
                             },
                             success:function(dados){
                                 window.localStorage.removeItem('AppPedido');
-                                window.localStorage.removeItem('AppCliente');
-                                window.localStorage.removeItem('AppPedido');
+                                //window.localStorage.removeItem('AppCliente');
 
                                 $.ajax({
                                     url:"src/home/index.php",
