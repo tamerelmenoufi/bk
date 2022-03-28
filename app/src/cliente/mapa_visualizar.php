@@ -38,17 +38,17 @@
         }*/
         );
 
-        // marker<?=$md5?> = new google.maps.Marker({
-        //     position: { lat: -34.397, lng: 150.644 },
-        //     map<?=$md5?>,
-        //     title: "Hello World!",
-        //     draggable:false,
-        // });
+        marker<?=$md5?> = new google.maps.Marker({
+            position: { lat: -34.397, lng: 150.644 },
+            map<?=$md5?>,
+            title: "Hello World!",
+            draggable:false,
+        });
 
-        // google.maps.event.addListener(marker, 'dragend', function(marker) {
-        //     var latLng = marker.latLng;
-        //     alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
-        // });
+        google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
+            var latLng = marker.latLng;
+            alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
+        });
 
 
         geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Brasil', 'region': 'BR' }, (results, status) => {
@@ -58,10 +58,6 @@
 
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
-
-                    $('Endereco').val(results[0].formatted_address);
-
-                    marker<?=$md5?> = new google.maps.Marker();
 
                     var location = new google.maps.LatLng(latitude, longitude);
                     marker<?=$md5?>.setPosition(location);
