@@ -42,7 +42,7 @@
             position: { lat: -34.397, lng: 150.644 },
             map<?=$md5?>,
             title: "Hello World!",
-            draggable:false,
+            draggable:true,
         });
 
         // google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
