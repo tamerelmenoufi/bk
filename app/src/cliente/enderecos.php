@@ -64,6 +64,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
+                        <div class="row">
                         <div class="col-1">
                             <i class="fa-solid fa-location-dot"></i>
                         </div>
@@ -73,6 +74,7 @@
                             (($d->complemento)?', '.$d->complemento:false).
                             (($d->referencia)?', '.$d->referencia:false);
                         ?>
+                        </div>
                         </div>
                     </p>
                 </div>
