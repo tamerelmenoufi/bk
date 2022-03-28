@@ -53,8 +53,22 @@
 
     $(function(){
 
+        ViewMap = (p, obj) => {
+            $.ajax({
+                url:"src/cliente/mapa_visualizar.php",
+                data:{
+                    p
+                },
+                success:function(dados){
+                    obj.html(dados);
+                }
+
+            })
+        }
+
         $(".mapa").each(function(opc){
-            alert(opc);
+            obj = $(this);
+            ViewMap(opc, obj);
         });
 
     })
