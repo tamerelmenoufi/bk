@@ -51,7 +51,7 @@
         <div class="col-12">
             <?php
                 $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' order by padrao desc";
-                $result = mysqli_query($query);
+                $result = mysqli_query($con, $query);
                 $n = mysqli_num_rows($result);
                 while($d = mysqli_fetch_object($result)){
             ?>
