@@ -50,7 +50,7 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             fullscreenControl: false,
             <?php
-            if($coordenadas){
+            if($d->coordenadas){
             ?>
             center: { lat: <?=$coordenadas[0]?>, lng: <?=$coordenadas[1]?> },
             zoom: 16,
