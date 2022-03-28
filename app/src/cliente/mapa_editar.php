@@ -2,7 +2,7 @@
     include("../../../lib/includes.php");
 
     if($_POST['acao'] == 'coordenadas'){
-        echo $query = "update clientes_enderecos set coordenadas = '{$_POST['latLng']}' where codigo = '{$_POST['codigo']}'";
+        echo $query = "update clientes_enderecos set coordenadas = '{$_POST['coordenadas']}' where codigo = '{$_POST['codigo']}'";
         mysqli_query($con, $query);
         exit();
     }
@@ -63,12 +63,12 @@
         google.maps.event.addListener(marker<?=$md5?>, 'dragend', function(marker) {
             var latLng = marker.latLng;
             //alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
-
+            coordenadas = `{${latLng.lat()},${latLng.lng()}}`;
             $.ajax({
                 url:"src/cliente/mapa_editar.php",
                 type:"POST",
                 data:{
-                    latLng,
+                    coordenadas,
                     codigo:'<?=$d->codigo?>',
                     acao:'coordenadas'
                 },
