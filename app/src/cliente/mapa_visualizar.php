@@ -24,7 +24,7 @@
         map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
             zoomControl: false,
             mapTypeControl: false,
-            draggable: false,
+            draggable: true,
             scaleControl: false,
             scrollwheel: false,
             navigationControl: false,
