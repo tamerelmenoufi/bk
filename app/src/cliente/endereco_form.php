@@ -9,7 +9,8 @@
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
                         complemento = '{$_POST['complemento']}',
-                        referencia = '{$_POST['referencia']}'
+                        referencia = '{$_POST['referencia']}',
+                        coordenadas = ''
                         WHERE codigo = '{$_POST['codigo']}'
                         ");
         } else {
