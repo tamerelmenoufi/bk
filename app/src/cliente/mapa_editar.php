@@ -57,7 +57,7 @@
         );
 
         marker<?=$md5?> = new google.maps.Marker({
-            position: { lat: -34.397, lng: 150.644 },
+            position: { lat: <?=$coordenadas[0]?>, lng: <?=$coordenadas[1]?> },
             map:map<?=$md5?>,
             title: "Hello World!",
             draggable:true,
