@@ -65,6 +65,7 @@
 
             $.ajax({
                 url:"src/cliente/mapa_editar.php",
+                type:"POST",
                 data:{
                     latLng,
                     codigo:'<?=$d->codigo?>',
