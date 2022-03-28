@@ -75,9 +75,9 @@
                     //$('Endereco').val(results[0].formatted_address);
 
                     var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
-                    marker.setPosition(location<?=$md5?>);
-                    map.setCenter(location<?=$md5?>);
-                    map.setZoom(16);
+                    marker<?=$md5?>.setPosition(location<?=$md5?>);
+                    map<?=$md5?>.setCenter(location<?=$md5?>);
+                    map<?=$md5?>.setZoom(16);
                 }
             }
         });
