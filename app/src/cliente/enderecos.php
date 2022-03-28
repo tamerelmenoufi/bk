@@ -63,7 +63,14 @@
 
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <?php
+                            echo "{$d->rua}, {$d->numero}, {$d->bairro} ".
+                            (($d->complemento)?', '.$d->complemento:false).
+                            (($d->referencia)?', '.$d->referencia:false);
+                        ?>
+                    </p>
                 </div>
             </div>
             <?php
