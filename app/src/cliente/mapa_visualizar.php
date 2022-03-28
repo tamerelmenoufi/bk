@@ -1,7 +1,7 @@
 <?php
     include("../../../lib/includes.php");
 
-    $md5 = md5($md5.$_GET['p']);
+    $md5 = md5($md5.$_POST['p']);
 ?>
 
 <style>
@@ -19,7 +19,7 @@
 
     <script>
 
-        endereco<?=$md5?> = "Rua Monsenhor Coutinho, 600, Centro, Manaus, Amazonas";
+        endereco<?=$md5?> = "<?=base64_decode($_POST['e'])?>";
         geocoder<?=$md5?> = new google.maps.Geocoder();
         map<?=$md5?> = new google.maps.Map(document.getElementById("map<?=$md5?>"), {
             zoomControl: false,
@@ -51,7 +51,7 @@
         // });
 
 
-        geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Brasil', 'region': 'BR' }, (results, status) => {
+        geocoder<?=$md5?>.geocode({ 'address': endereco<?=$md5?> + ', Manaus, Amazonas, Brasil', 'region': 'BR' }, (results, status) => {
 
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[0]) {

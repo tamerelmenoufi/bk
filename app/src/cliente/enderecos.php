@@ -54,9 +54,12 @@
                 $result = mysqli_query($con, $query);
                 $n = mysqli_num_rows($result);
                 while($d = mysqli_fetch_object($result)){
+
+                    $endereco =  base64_encode("{$d->rua}, {$d->numero}, {$d->bairro}");
+
             ?>
             <div class="card" style="margin-bottom:10px;">
-                <div class="card-img-top mapa">
+                <div class="card-img-top mapa" endereco = '<?=$endereco?>'>
 
                 </div>
                 <div class="card-body">
@@ -82,11 +85,13 @@
 
     $(function(){
 
-        ViewMap = (p, obj) => {
+        ViewMap = (p, e, obj) => {
             $.ajax({
                 url:"src/cliente/mapa_visualizar.php",
+                type:"POST",
                 data:{
-                    p
+                    p,
+                    e
                 },
                 success:function(dados){
                     obj.html(dados);
@@ -95,9 +100,10 @@
             })
         }
 
-        $(".mapa").each(function(opc){
+        $(".mapa").each(function(p){
             obj = $(this);
-            ViewMap(opc, obj);
+            e = $(this).attr("endereco");
+            ViewMap(p, e, obj);
         });
 
 
