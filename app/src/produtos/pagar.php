@@ -91,6 +91,37 @@
     </div>
 
 
+
+
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-light mb-3">
+                <div class="card-header">Endereço para Entrega</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h5 class="card-title">
+                                <small>Endereço</small>
+                                <?php
+                                    $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
+                                    $result = mysqli_query($query);
+                                    $d = mysqli_fetch_object($result);
+                                ?>
+                                <div><?="{$d->rua}, {$d->numero}, {$d->bairro} ".
+                                (($d->complemento)?', '.$d->complemento:false).
+                                (($d->referencia)?', '.$d->referencia:false)?></div>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
