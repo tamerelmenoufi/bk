@@ -4,7 +4,8 @@
     $query = "select
                     sum(a.valor_total) as total,
                     b.nome,
-                    b.telefone
+                    b.telefone,
+                    a.venda
                 from vendas_produtos a
                     left join clientes b on a.cliente = b.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
