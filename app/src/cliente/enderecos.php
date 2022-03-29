@@ -189,10 +189,12 @@
                 title:false,
                 buttons:{
                     'SIM':function(){
+
                         $.ajax({
-                            url:"src/cliente/enderecos.php",
+                            url:"componentes/ms_popup_100.php",
                             type:"POST",
                             data:{
+                                local:`src/cliente/enderecos.php`,
                                 cod,
                                 acao:'principal'
                             },
@@ -201,6 +203,7 @@
                                 $(".ms_corpo").append(dados);
                             }
                         });
+
                     },
                     'NÃO':function(){
 
