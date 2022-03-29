@@ -191,6 +191,7 @@
                     'SIM':function(){
                         $.ajax({
                             url:"src/cliente/enderecos.php",
+                            type:"POST",
                             data:{
                                 cod,
                                 acao:'principal'
