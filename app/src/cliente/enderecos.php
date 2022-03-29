@@ -3,7 +3,7 @@
 
     if($_POST['acao'] == 'principal'){
 
-        mysqli_query($con, "update clientes_enderecos set padrao = '' where cliente = '{$_SESSION['AppCliente']}'");
+        mysqli_query($con, "update clientes_enderecos set padrao = '0' where cliente = '{$_SESSION['AppCliente']}'");
         $query = "update clientes_enderecos set padrao = '1' where codigo = '{$_POST['cod']}'";
         mysqli_query($con, $query);
         exit();
