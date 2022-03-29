@@ -6,7 +6,7 @@
         mysqli_query($con, "update clientes_enderecos set padrao = '0' where cliente = '{$_SESSION['AppCliente']}'");
         $query = "update clientes_enderecos set padrao = '1' where codigo = '{$_POST['cod']}'";
         mysqli_query($con, $query);
-        exit();
+        //exit();
     }
 
 
@@ -67,7 +67,7 @@
                 while($d = mysqli_fetch_object($result)){
 
             ?>
-            <div class="card" style="margin-bottom:10px;">
+            <div class="card <?=(($d->padrao)?'bg-light':false)?>" style="margin-bottom:10px;">
                 <div class="card-img-top mapa" cod = '<?=$d->codigo?>'>
 
                 </div>
@@ -197,7 +197,8 @@
                                 acao:'principal'
                             },
                             success:function(dados){
-
+                                PageClose();
+                                $(".ms_corpo").append(dados);
                             }
                         });
                     },
