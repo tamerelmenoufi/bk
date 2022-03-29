@@ -9,6 +9,13 @@
         //exit();
     }
 
+    if($_POST['acao'] == 'excluir'){
+
+        $query = "update clientes_enderecos set deletado = '1' where codigo = '{$_POST['cod']}'";
+        mysqli_query($con, $query);
+        //exit();
+    }
+
 
 
 ?>
@@ -61,7 +68,7 @@
     <div class="row">
         <div class="col-12">
             <?php
-                $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' order by padrao desc";
+                $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc";
                 $result = mysqli_query($con, $query);
                 $n = mysqli_num_rows($result);
                 while($d = mysqli_fetch_object($result)){
@@ -103,6 +110,12 @@
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-location-crosshairs"></i></div>
                                     <div class="col-11">Definir como endereço principal</div>
+                                </div>
+                            </li>
+                            <li excluir cod="<?=$d->codigo?>" class="list-group-item text-primary">
+                                <div class="row">
+                                    <div class="col-1"><i class="fa-solid fa-trash-can"></i></div>
+                                    <div class="col-11">Excluir Endereço</div>
                                 </div>
                             </li>
                         </ul>
@@ -212,6 +225,40 @@
             });
 
         });
+
+
+        $("li[excluir]").click(function(){
+            cod = $(this).attr("cod");
+            $.confirm({
+                content:"Deseja realmente excluir o endereço?",
+                title:false,
+                buttons:{
+                    'SIM':function(){
+
+                        $.ajax({
+                            url:"componentes/ms_popup_100.php",
+                            type:"POST",
+                            data:{
+                                local:`src/cliente/enderecos.php`,
+                                cod,
+                                acao:'excluir'
+                            },
+                            success:function(dados){
+                                PageClose();
+                                $(".ms_corpo").append(dados);
+                            }
+                        });
+
+                    },
+                    'NÃO':function(){
+
+                    }
+                }
+            });
+
+        });
+
+
 
     })
 
