@@ -105,7 +105,7 @@
                                 <small>Endereço</small>
                                 <?php
                                     $query1 = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
-                                    $result1 = mysqli_query($query1);
+                                    $result1 = mysqli_query($con, $query1);
                                     $d1 = mysqli_fetch_object($result1);
                                 ?>
                                 <div><?="{$d1->rua}, {$d1->numero}, {$d1->bairro} ".
