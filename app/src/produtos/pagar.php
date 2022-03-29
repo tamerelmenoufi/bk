@@ -104,13 +104,13 @@
                             <h5 class="card-title">
                                 <small>Endereço</small>
                                 <?php
-                                    $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
-                                    $result = mysqli_query($query);
-                                    $d = mysqli_fetch_object($result);
+                                    $query1 = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
+                                    $result1 = mysqli_query($query1);
+                                    $d1 = mysqli_fetch_object($result1);
                                 ?>
-                                <div><?="{$d->rua}, {$d->numero}, {$d->bairro} ".
-                                (($d->complemento)?', '.$d->complemento:false).
-                                (($d->referencia)?', '.$d->referencia:false)?></div>
+                                <div><?="{$d1->rua}, {$d1->numero}, {$d1->bairro} ".
+                                (($d1->complemento)?', '.$d1->complemento:false).
+                                (($d1->referencia)?', '.$d1->referencia:false)?></div>
                             </h5>
                         </div>
                     </div>
