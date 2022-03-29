@@ -112,7 +112,7 @@
                                     <div class="col-11">Definir como endereço principal</div>
                                 </div>
                             </li>
-                            <li excluir cod="<?=$d->codigo?>" class="list-group-item text-primary">
+                            <li excluir cod="<?=$d->codigo?>" class="list-group-item text-danger">
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-trash-can"></i></div>
                                     <div class="col-11">Excluir Endereço</div>
