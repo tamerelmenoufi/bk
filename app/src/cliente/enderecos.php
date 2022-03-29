@@ -1,5 +1,16 @@
 <?php
     include("../../../lib/includes.php");
+
+    if($_POST['acao'] == 'principal'){
+
+        mysqli_query($con, "update clientes_enderecos set padrao = '' where cliente = '{$_SESSION['AppCliente']}'");
+        $query = "update clientes_enderecos set padrao = '1' where codigo = '{$_POST['cod']}'";
+        mysqli_query($con, $query);
+        exit();
+    }
+
+
+
 ?>
 
 <style>
@@ -88,7 +99,7 @@
                                     <div class="col-11">Editar o Mapa</div>
                                 </div>
                             </li>
-                            <li XXacao="enderecos" cod="<?=$d->codigo?>" class="list-group-item text-primary">
+                            <li padrao cod="<?=$d->codigo?>" class="list-group-item text-primary">
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-location-crosshairs"></i></div>
                                     <div class="col-11">Definir como endereço principal</div>
@@ -169,6 +180,32 @@
                     $(".ms_corpo").append(dados);
                 }
             });
+        });
+
+        $("li[padrao]").click(function(){
+            cod = $(this).attr("cod");
+            $.confirm({
+                content:"Deseja realmente ativar como endereço principal?",
+                title:false,
+                buttons:{
+                    'SIM':function(){
+                        $.ajax({
+                            url:"src/cliente/enderecos.php",
+                            data:{
+                                cod,
+                                acao:'principal'
+                            },
+                            success:function(dados){
+
+                            }
+                        });
+                    },
+                    'NÃO':function(){
+
+                    }
+                }
+            });
+
         });
 
     })
