@@ -67,7 +67,7 @@
                         <div class="col-6">
                             <h5 class="card-title">
                                 <small>Pedido</small>
-                                <div style="font-size:18px; color:blue;"><?=$_SESSION['AppPedido']?></div>
+                                <div style="font-size:18px; color:blue;"><?=str_pad($d->venda, 6, "0", STR_PAD_LEFT)?></div>
                             </h5>
                         </div>
                         <div class="col-6">
