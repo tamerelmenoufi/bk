@@ -194,7 +194,7 @@ if ($codigo) {
             <div class="form-group">
 
                 <div class="row">
-                    <div class="col" style="height:100px; overflow:auto;">
+                    <div class="col" style="height:300px; overflow:auto;">
                         <ul class="list-group">
                         <?php
                             $q = "select * from categorias where situacao = '1' and deletado != '1' and categoria != 'COMBOS'";
@@ -207,10 +207,10 @@ if ($codigo) {
                         ?>
                         </ul>
                     </div>
-                    <div class="col">
+                    <div class="col" style="height:300px; overflow:auto;">
                         LISTA PRODUTOS
                     </div>
-                    <div class="col">
+                    <div class="col" style="height:300px; overflow:auto;">
                         LISTA DO COMBO
                     </div>
                 </div>
