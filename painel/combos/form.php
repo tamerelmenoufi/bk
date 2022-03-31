@@ -8,29 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $codigo = $data['codigo'] ?: null;
 
-    if ($data['file-base']) {
-
-        list($x, $icon) = explode(';base64,', $data['file-base']);
-        $icon = base64_decode($icon);
-        $pos = strripos($data['file-name'], '.');
-        $ext = substr($data['file-name'], $pos, strlen($data['file-name']));
-
-        $atual = $data['file-atual'];
-
-        unset($data['file-base']);
-        unset($data['file-type']);
-        unset($data['file-name']);
-        unset($data['file-atual']);
-
-        if (file_put_contents("icon/{$md5}{$ext}", $icon)) {
-            $attr[] = "icon = '{$md5}{$ext}'";
-            if ($atual) {
-                unlink("icon/{$atual}");
-            }
-        }
-
-    }
-
     unset($data['codigo']);
 
     foreach ($data as $name => $value) {
