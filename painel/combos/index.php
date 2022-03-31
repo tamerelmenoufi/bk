@@ -14,7 +14,7 @@
         exit;
     }
 
-    echo $query = "SELECT * FROM produtos where deletado != '1' and categoria = '{$_SESSION['categoria']}' ORDER BY produto ASC";
+    $query = "SELECT * FROM produtos where deletado != '1' and categoria = '{$_SESSION['categoria']}' ORDER BY produto ASC";
     $result = mysqli_query($con, $query);
 
     ?>

@@ -201,16 +201,16 @@ if ($codigo) {
                             $r = mysqli_query($con, $q);
                             while($c = mysqli_fetch_object($r)){
                         ?>
-                            <li class="list-group-item list-group-item-action"><?=$c->categoria?></li>
+                            <li categoria="<?=$c->codigo?>" class="list-group-item list-group-item-action"><?=$c->categoria?></li>
                         <?php
                             }
                         ?>
                         </ul>
                     </div>
-                    <div class="col" style="height:300px; overflow:auto;">
+                    <div produtos class="col" style="height:300px; overflow:auto;">
                         LISTA PRODUTOS
                     </div>
-                    <div class="col" style="height:300px; overflow:auto;">
+                    <div combo class="col" style="height:300px; overflow:auto;">
                         LISTA DO COMBO
                     </div>
                 </div>
@@ -394,6 +394,22 @@ if ($codigo) {
                 }
             })
         });
+
+
+        $("li[categoria]").click(function(){
+            categoria = $(this).attr("categoria");
+            $.ajax({
+                url:"home/produtos.php",
+                data:{
+                    categoria
+                },
+                success:function(dados){
+                    $("div[produtos]").html(dados);
+                }
+            });
+        });
+
+
     });
 </script>
 
