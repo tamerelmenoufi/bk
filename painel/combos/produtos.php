@@ -21,7 +21,7 @@
 
         $("li[produto]").click(function(){
             produto = $(this).attr("produto");
-            codigos = $(this).attr("codigos");
+            codigos = $("div[combo]").attr("codigos");
             codigos = JSON.parse("[" + codigos + "]");
 
             alert(codigos.includes(produto));
