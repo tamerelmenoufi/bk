@@ -22,9 +22,12 @@
         $("li[produto]").click(function(){
             produto = $(this).attr("produto");
             codigos = $("div[combo]").attr("codigos");
-            codigos = JSON.parse("[" + codigos + "]");
-
-            alert(codigos.includes(produto));
+            existe = JSON.parse("[" + codigos + "]");
+            if(existe === false){
+                codigos.push(produto);
+                $("div[combo]").attr("codigos", codigos);
+            }
+            alert(codigos);
 
         });
 
