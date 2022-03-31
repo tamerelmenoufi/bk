@@ -44,7 +44,7 @@
                     <?php
                 }
                 ?>
-                <a class="collapse-item" href="#" url="combo/index.php">Combos</a>
+                <a class="collapse-item" href="#" url="combos/index.php">Combos</a>
                 <a class="collapse-item" href="#" url="vendas/index.php">Vendas</a>
             </div>
         </div>
