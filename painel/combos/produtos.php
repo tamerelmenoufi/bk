@@ -24,7 +24,7 @@
             codigos = $("div[combo]").attr("codigos");
             existe = JSON.parse("[" + codigos + "]");
             if(existe === false){
-                codigos.push(produto);
+                codigos = codigos.push(produto);
                 $("div[combo]").attr("codigos", codigos);
             }
             alert(codigos);
