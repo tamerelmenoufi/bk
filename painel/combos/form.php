@@ -98,7 +98,8 @@ if ($codigo) {
                         required
                 >
             </div>
-            <div class="form-group">
+
+            <!-- <div class="form-group">
                 <label for="descricao">Descrição <i class="text-danger"></i></label>
 
                 <textarea
@@ -107,9 +108,9 @@ if ($codigo) {
                         name="descricao"
                 ><?= $d->descricao; ?></textarea>
 
-            </div>
+            </div> -->
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="medidas">Valores <i class="text-danger">*</i></label>
 
                 <?php
@@ -154,11 +155,11 @@ if ($codigo) {
                     </div>
                 <?php endwhile; ?>
 
-            </div>
+            </div> -->
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="situacao">
-                    Situação <i class="text-danger">*</i>
+                    Imagem <i class="text-danger">*</i>
                 </label>
                 <?php
                 if (is_file("icon/{$d->icon}")) {
@@ -188,7 +189,35 @@ if ($codigo) {
                         value=""
                         atual="<?= $d->icon; ?>"
                 />
+            </div> -->
+
+            <div class="form-group">
+
+                <div class="row">
+                    <div class="col">
+                        <ul class="list-group">
+                        <?php
+                            $q = "select * from categorias where situacao = '1' and deletado != '1' and categoria != 'COMBOS'";
+                            $r = mysqli_query($con, $q);
+                            while($c = mysqli_fetch_object($r)){
+                        ?>
+                            <li class="list-group-item"><?=$c->categoria?></li>
+                        <?php
+                            }
+                        ?>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        LISTA PRODUTOS
+                    </div>
+                    <div class="col">
+                        LISTA DO COMBO
+                    </div>
+                </div>
+
             </div>
+
+
 
 
             <div class="form-group">
