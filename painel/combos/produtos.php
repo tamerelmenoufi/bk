@@ -19,5 +19,14 @@
 <script>
     $(function () {
 
+        $("li[produto]").click(function(){
+            produto = $(this).attr("produto");
+            codigos = $(this).attr("codigos");
+
+            alert(codigos.includes(produto));
+
+        });
+
+
     });
 </script>
