@@ -201,7 +201,7 @@ if ($codigo) {
                             $r = mysqli_query($con, $q);
                             while($c = mysqli_fetch_object($r)){
                         ?>
-                            <li class="list-group-item"><?=$c->categoria?></li>
+                            <li class="list-group-item list-group-item-action"><?=$c->categoria?></li>
                         <?php
                             }
                         ?>
