@@ -399,7 +399,7 @@ if ($codigo) {
         $("li[categoria]").click(function(){
             categoria = $(this).attr("categoria");
             $.ajax({
-                url:"home/produtos.php",
+                url:"combos/produtos.php",
                 data:{
                     categoria
                 },
