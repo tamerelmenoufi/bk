@@ -10,7 +10,7 @@
     $r = mysqli_query($con, $q);
     while($p = mysqli_fetch_object($r)){
 ?>
-    <li produto="<?=$p->codigo?>" class="list-group-item list-group-item-action"><?=$c->produto?></li>
+    <li produto="<?=$p->codigo?>" class="list-group-item list-group-item-action"><?=$p->produto?></li>
 <?php
     }
 ?>
