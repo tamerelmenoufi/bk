@@ -5,7 +5,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fa-solid fa-burger"></i>
         </div>
-        <div class="sidebar-brand-text mx-3" title="Sistema de Gestão Política">YOBOM</div>
+        <div class="sidebar-brand-text mx-3" title="Sistema de Gestão Política">BURGUER KING</div>
     </a>
 
     <!-- Divider -->
