@@ -210,7 +210,7 @@ if ($codigo) {
                     <div produtos class="col" style="height:300px; overflow:auto;">
                         LISTA PRODUTOS
                     </div>
-                    <div combo codigos="" class="col" style="height:300px; overflow:auto;">
+                    <div combo codigos="0" class="col" style="height:300px; overflow:auto;">
                         LISTA DO COMBO
                     </div>
                 </div>
