@@ -36,7 +36,7 @@
 <script>
 
 html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
-    //document.body.appendChild(canvas);
+    document.body.appendChild(canvas);
     console.log(canvas);
 });
 
