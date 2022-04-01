@@ -202,7 +202,15 @@ if ($codigo) {
                         <b>PRODUTOS</b>
                     </div>
                     <div class="col">
-                        <b>COMBO</b>
+                        <div class="row">
+                            <div class="col"><b>COMBO</b></div>
+                            <div class="col">
+                                <button class="btn btn-secondary">
+                                    <i class="fa-regular fa-images"></i> Imagem
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -222,10 +230,10 @@ if ($codigo) {
                         </ul>
                     </div>
                     <div produtos class="col" style="height:300px; overflow:auto;">
-                        LISTA PRODUTOS
+
                     </div>
                     <div combo codigos="<?=(($d->descricao)?:'0')?>" class="col" style="height:300px; overflow:auto;">
-                        LISTA DO COMBO
+
                     </div>
                 </div>
 
