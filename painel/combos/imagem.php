@@ -15,6 +15,7 @@
         width:500px;
         height:450px;
         background-color:#ccc;
+        text-align:center;
     }
 </style>
 <div class="col">
@@ -24,7 +25,7 @@
             <?php
                 foreach($img as $i => $icon){
             ?>
-            <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img))?>%">
+            <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img)-1)?>%">
             <?php
                 }
             ?>
