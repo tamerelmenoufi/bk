@@ -254,6 +254,7 @@ if ($codigo) {
 <script>
     $(function () {
 
+        existe = JSON.parse("[" + $("div[combo]").attr("codigos") + "]");
 
         $.ajax({
             url:"combos/combo.php",
