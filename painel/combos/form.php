@@ -205,7 +205,7 @@ if ($codigo) {
                         <div class="row">
                             <div class="col"><b>COMBO</b></div>
                             <div class="col">
-                                <button class="btn btn-secondary">
+                                <button EditarImagem class="btn btn-secondary">
                                     <i class="fa-regular fa-images"></i> Imagem
                                 </button>
                             </div>
@@ -312,6 +312,23 @@ if ($codigo) {
             });
         });
 
+
+        $("button[EditarImagem]").click(function(){
+            produtos = $("div[combo]").attr("codigos");
+            $.ajax({
+                url:"combos/imagem.php",
+                data:{
+                    produtos
+                },
+                success:function(dados){
+                    $.dialog({
+                        content:dados,
+                        title:false,
+                        columnClass:'col-md-12'
+                    });
+                }
+            });
+        });
 
         $('#form-<?=$md5?>').submit(function (e) {
 
