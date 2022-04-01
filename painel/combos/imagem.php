@@ -5,7 +5,7 @@
     $result = mysqli_query($con, $query);
     $img = [];
     while($d = mysqli_fetch_object($result)){
-        $img[] = $d->icone;
+        $img[] = $d->icon;
         $nome[] = $d->produto;
     }
 
