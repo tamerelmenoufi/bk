@@ -27,7 +27,7 @@
                 codigos = codigos.push(produto);
                 $("div[combo]").attr("codigos", codigos);
             }
-            alert(codigos);
+            console.log(codigos);
 
         });
 
