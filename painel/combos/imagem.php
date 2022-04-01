@@ -51,9 +51,7 @@ html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
 $(function(){
 
 
-    $( ".redimencionar" ).resizable({
-      aspectRatio: 16 / 9
-    });
+    $( ".redimencionar" ).resizable();
 
 })
 
