@@ -194,7 +194,7 @@ if ($codigo) {
             <div class="form-group">
 
 
-                <div class="row" style="mb-1">
+                <div class="row mb-1">
                     <div class="col">
                         <b>CATEGORIAS</b>
                     </div>
