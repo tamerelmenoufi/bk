@@ -20,7 +20,7 @@
     $(function () {
 
         $("li[produto]").click(function(){
-            produto = $(this).attr("produto");
+            produto = parseInt($(this).attr("produto"));
             codigos = $("div[combo]").attr("codigos");
             existe = JSON.parse("[" + codigos + "]");
             console.log(existe.includes(produto));
