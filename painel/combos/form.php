@@ -266,43 +266,6 @@ if ($codigo) {
             }
         });
 
-        $("input[situacao]").bootstrapToggle();
-
-        $('input[type="file"]').fileinput({
-            showPreview: false,
-            showRemove: false,
-            showUpload: false,
-        });
-
-        if (window.File && window.FileList && window.FileReader) {
-
-            $('input[type="file"]').change(function () {
-
-                if ($(this).val()) {
-                    $("div[carregando_metas]").css("display", "block");
-                    var files = $(this).prop("files");
-                    for (var i = 0; i < files.length; i++) {
-                        (function (file) {
-                            var fileReader = new FileReader();
-                            fileReader.onload = function (f) {
-                                var Base64 = f.target.result;
-                                var type = file.type;
-                                var name = file.name;
-
-                                $("#encode_file").val(Base64);
-                                $("#encode_file").attr("nome", name);
-                                $("#encode_file").attr("tipo", type);
-
-
-                            };
-                            fileReader.readAsDataURL(file);
-                        })(files[i]);
-                    }
-                }
-            });
-        } else {
-            alert('Nao suporta HTML5');
-        }
 
 
         $('input[situacao]').change(function () {
@@ -314,70 +277,34 @@ if ($codigo) {
             }
         })
 
-        $('#form-<?=$md5?>').validate({
-            rules: {
-                senha: {
-                    minlength: 4
+        $("li[categoria]").click(function(){
+            categoria = $(this).attr("categoria");
+            $.ajax({
+                url:"combos/produtos.php",
+                data:{
+                    categoria
                 },
-                senha_2: {
-                    minlength: 4,
-                    equalTo: '[name="senha"]'
+                success:function(dados){
+                    $("div[produtos]").html(dados);
                 }
-            },
-            messages: {
-                senha: {
-                    minlength: 'Digite minímo 4 caracteres'
-                },
-                senha_2: {
-                    minlength: 'Digite minímo 4 caracteres',
-                    equalTo: 'As senhas não conferem'
-                }
-            }
+            });
         });
 
-        $('#form-<?=$md5?>').validate();
 
         $('#form-<?=$md5?>').submit(function (e) {
 
             e.preventDefault();
 
-            if (!$(this).valid()) return false;
-
             var codigo = $('#codigo').val();
+            var codigos = $("div[combo]").attr("codigos");
             var dados = $(this).serializeArray();
 
             if (codigo) {
                 dados.push({name: 'codigo', value: codigo});
             }
 
-            detalhes = [];
-            dds = [];
-
-            $("input[valores]").each(function () {
-                opc = $(this).attr('opc');
-                stu = $('input[situacao][opc="' + opc + '"]').val();
-                //dds[opc] = [$(this).val(), stu];
-                dds[opc] = {
-                    "valor": $(this).val(),
-                    "quantidade": stu,
-                };
-
-                /*dds.push({
-                    "valor": $(this).val(),
-                    "quantidade": stu,
-                });*/
-            });
-
-            detalhes = JSON.stringify(Object.assign({}, dds));
-
-            dados.push({name: 'detalhes', value: detalhes});
-
-            if ($("#encode_file").val()) {
-                dados.push({name: 'file-name', value: $("#encode_file").attr("nome")});
-                dados.push({name: 'file-type', value: $("#encode_file").attr("tipo")});
-                dados.push({name: 'file-atual', value: $("#encode_file").attr("atual")});
-                dados.push({name: 'file-base', value: $("#encode_file").val()});
-
+            if (codigos) {
+                dados.push({name: 'descricao', value: codigos});
             }
 
 
@@ -405,20 +332,6 @@ if ($codigo) {
                     }
                 }
             })
-        });
-
-
-        $("li[categoria]").click(function(){
-            categoria = $(this).attr("categoria");
-            $.ajax({
-                url:"combos/produtos.php",
-                data:{
-                    categoria
-                },
-                success:function(dados){
-                    $("div[produtos]").html(dados);
-                }
-            });
         });
 
 
