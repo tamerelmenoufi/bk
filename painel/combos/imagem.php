@@ -32,11 +32,10 @@
 
 
 
-    <div id="mydiv" style="background-image:url(Koala.jpg) ;background-size: 100%;
+    <div id="mydiv" style="background-color:red ;background-size: 100%;
 background-size :200px 200px;
 background-repeat: no-repeat;">
 <p>text!</p>
-<img src="mug.png" height="100" width="100"/></div>
 <div id="canvas">
 <p>Canvas:</p>
 </div>
