@@ -21,6 +21,30 @@
 
         $("li[excluir]").click(function(){
 
+            opc = parseInt($(this).attr("excluir"));
+
+            produto = parseInt($(this).attr("produto"));
+            codigos = $("div[combo]").attr("codigos");
+            atualiza = [];
+            atualiza = JSON.parse("[" + codigos + "]");
+
+            atualiza.splice(atualiza.indexOf(opc), 1);
+
+            $("div[combo]").attr("codigos", atualiza);
+
+
+            $.ajax({
+                url:"combos/combo.php",
+                data:{
+                    produtos:atualiza,
+                },
+                success:function(dados){
+                    $("div[combo]").html(dados);
+                }
+            });
+
+
+
         })
 
     });
