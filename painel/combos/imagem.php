@@ -15,7 +15,7 @@
     <?php
         foreach($img as $i => $icon){
     ?>
-        <img src="../produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>">
+        <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>">
     <?php
         }
     ?>
