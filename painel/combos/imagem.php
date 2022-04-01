@@ -12,7 +12,7 @@
 ?>
 
 <div class="col">
-    <div id="mydiv" class="row">
+    <div class="row">
     <?php
         foreach($img as $i => $icon){
     ?>
@@ -26,6 +26,28 @@
     <div class="row">
         <img id="ImgResult" src="" style="height:300px;" />
     </div>
+
+
+
+
+
+
+    <div id="mydiv" style="background-image:url(Koala.jpg) ;background-size: 100%;
+background-size :200px 200px;
+background-repeat: no-repeat;">
+<p>text!</p>
+<img src="mug.png" height="100" width="100"/></div>
+<div id="canvas">
+<p>Canvas:</p>
+</div>
+
+ <div style="width:200px; float:left" id="image">
+ <p style="float:left">Image: </p>
+ </div>
+ <div style="float:left;margin-top: 120px;" class="return-data">
+ </div>
+
+
 
 </div>
 
