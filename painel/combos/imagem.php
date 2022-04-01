@@ -12,12 +12,20 @@
 ?>
 
 <div class="col">
+    <div class="row">
     <?php
         foreach($img as $i => $icon){
     ?>
+    <div class="col">
         <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>">
+    </div>
     <?php
         }
     ?>
+    </div>
+    <div class="row">
+        <img id="ImgResult" src="" style="height:300px;" />
+    </div>
+
 </div>
 
