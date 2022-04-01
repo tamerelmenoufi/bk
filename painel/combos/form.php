@@ -254,6 +254,17 @@ if ($codigo) {
 <script>
     $(function () {
 
+
+        $.ajax({
+            url:"combos/combo.php",
+            data:{
+                produtos:existe,
+            },
+            success:function(dados){
+                $("div[combo]").html(dados);
+            }
+        });
+
         $("input[situacao]").bootstrapToggle();
 
         $('input[type="file"]').fileinput({
