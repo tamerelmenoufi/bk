@@ -194,7 +194,7 @@ if ($codigo) {
             <div class="form-group">
 
 
-                <div class="row">
+                <div class="row" style="mb-1">
                     <div class="col">
                         <b>CATEGORIAS</b>
                     </div>
@@ -205,7 +205,7 @@ if ($codigo) {
                         <div class="row">
                             <div class="col"><b>COMBO</b></div>
                             <div class="col">
-                                <button EditarImagem class="btn btn-secondary">
+                                <button type="button" EditarImagem class="btn btn-secondary btn-sm btn-block">
                                     <i class="fa-regular fa-images"></i> Imagem
                                 </button>
                             </div>
