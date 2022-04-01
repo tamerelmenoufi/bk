@@ -19,7 +19,7 @@
 <script>
     $(function () {
 
-        $("li[produto]").click(function(){
+        $("li[produto]").off('click').on('click', function(){
             produto = parseInt($(this).attr("produto"));
             codigos = $("div[combo]").attr("codigos");
             existe = [];
