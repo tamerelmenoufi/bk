@@ -196,13 +196,13 @@ if ($codigo) {
 
                 <div class="row">
                     <div class="col">
-                        <h4>CATEGORIAS</h4>
+                        <b>CATEGORIAS</b>
                     </div>
                     <div class="col">
-                        <h4>PRODUTOS</h4>
+                        <b>PRODUTOS</b>
                     </div>
                     <div class="col">
-                        <h4>COMBO</h4>
+                        <b>COMBO</b>
                     </div>
                 </div>
 
