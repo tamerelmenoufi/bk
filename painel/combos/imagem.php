@@ -24,7 +24,7 @@
     ?>
     </div>
     <div class="row">
-        <img id="ImgResult" src="" style="height:300px;" />
+        <img id="ImgResult" src="" />
     </div>
 
 
