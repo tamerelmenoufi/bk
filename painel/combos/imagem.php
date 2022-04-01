@@ -56,6 +56,9 @@ $( function() {
     $( ".redimencionar" ).resizable({
       aspectRatio: 16 / 9
     });
+
+    $( ".redimencionar" ).draggable({ containment: "#IdTeste", scroll: false });
+
 });
 
 </script>
