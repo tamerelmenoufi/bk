@@ -10,26 +10,32 @@
     }
 
 ?>
-
+<style>
+    #IdTeste{
+        width:500px;
+        height:450px;
+        background-color:#ccc;
+    }
+</style>
 <div class="col">
-    <div id="IdTeste" class="row">
-    <?php
-        foreach($img as $i => $icon){
-    ?>
-    <div class="col">
-        <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>">
-    </div>
-    <?php
-        }
-    ?>
+    <div  class="row">
+        <div class="col">
+            <div id="IdTeste">
+            <?php
+                foreach($img as $i => $icon){
+            ?>
+            <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img))?>%">
+            <?php
+                }
+            ?>
+            </div>
+        </div>
     </div>
     <div class="row">
-        <img id="ImgResult" src="" />
+        <div class="col">
+            <img id="ImgResult" src="" />
+        </div>
     </div>
-
-
-
-
 
 </div>
 
