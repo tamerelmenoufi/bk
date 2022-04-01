@@ -42,17 +42,20 @@
 
 <script>
 
-html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
-    //document.body.appendChild(canvas);
-    $("#ImgResult").attr("src", canvas.toDataURL('image/png'));
-    console.log(canvas);
+
+
+$( function() {
+
+    html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
+        //document.body.appendChild(canvas);
+        $("#ImgResult").attr("src", canvas.toDataURL('image/png'));
+        console.log(canvas);
+    });
+
+
+    $( "#resizable" ).resizable({
+      aspectRatio: 16 / 9
+    });
 });
-
-$(function(){
-
-
-    $( ".redimencionar" ).resizable();
-
-})
 
 </script>
