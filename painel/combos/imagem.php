@@ -36,7 +36,8 @@
 <script>
 
 html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
-    document.body.appendChild(canvas);
+    //document.body.appendChild(canvas);
+    $("#ImgResult").attr("src", canvas);
     console.log(canvas);
 });
 
