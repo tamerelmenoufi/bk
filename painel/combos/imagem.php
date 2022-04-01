@@ -25,7 +25,7 @@
             <?php
                 foreach($img as $i => $icon){
             ?>
-            <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img)-1)?>%">
+            <img class="redimencionar" src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img)-1)?>%">
             <?php
                 }
             ?>
@@ -48,5 +48,13 @@ html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
     console.log(canvas);
 });
 
+$(function(){
+
+
+    $( ".redimencionar" ).resizable({
+      aspectRatio: 16 / 9
+    });
+
+})
 
 </script>

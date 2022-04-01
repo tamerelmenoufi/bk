@@ -34,3 +34,4 @@
     ></script>
 
     <script src="<?= "{$caminho_vendor}/html2canvas/html2canvas.min.js"; ?>" ></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
