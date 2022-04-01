@@ -32,3 +32,5 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSnblPMOwEdteX5UPYXf7XUtJYcbypx6w&callback=initMap&v=weekly&language=pt&region=BR"
       async
     ></script>
+
+    <script src="<?= "{$caminho_vendor}/html2canvas/html2canvas.min.js"; ?>" ></script>
