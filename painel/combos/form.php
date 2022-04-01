@@ -193,6 +193,20 @@ if ($codigo) {
 
             <div class="form-group">
 
+
+                <div class="row">
+                    <div class="col" style="height:300px; overflow:auto;">
+                        <h4>CATEGORIAS</h4>
+                    </div>
+                    <div produtos class="col" style="height:300px; overflow:auto;">
+                        <h4>PRODUTOS</h4>
+                    </div>
+                    <div combo codigos="<?=(($d->descricao)?:'0')?>" class="col" style="height:300px; overflow:auto;">
+                        <h4>COMBO</h4>
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <div class="col" style="height:300px; overflow:auto;">
                         <ul class="list-group">
