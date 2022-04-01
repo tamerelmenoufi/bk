@@ -13,8 +13,8 @@
 <style>
     #IdTeste{
         width:500px;
-        height:450px;
-        background-color:#ccc;
+        height:300px;
+        background-color:#eee;
         text-align:center;
     }
 </style>
