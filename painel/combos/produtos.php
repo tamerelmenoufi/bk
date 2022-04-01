@@ -22,9 +22,10 @@
         $("li[produto]").click(function(){
             produto = parseInt($(this).attr("produto"));
             codigos = $("div[combo]").attr("codigos");
+            existe = [];
             existe = JSON.parse("[" + codigos + "]");
             console.log(existe.includes(produto));
-            if(existe.includes(produto) == false){
+            if(existe.includes(produto) === false){
                 existe.push(produto);
                 $("div[combo]").attr("codigos", existe);
             }
