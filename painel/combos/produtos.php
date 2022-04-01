@@ -24,10 +24,10 @@
             codigos = $("div[combo]").attr("codigos");
             existe = JSON.parse("[" + codigos + "]");
             if(existe.includes(produto) === false){
-                codigos = codigos.push(produto);
-                $("div[combo]").attr("codigos", codigos);
+                existe.push(produto);
+                $("div[combo]").attr("codigos", existe);
             }
-            console.log(codigos);
+            console.log(existe);
 
         });
 
