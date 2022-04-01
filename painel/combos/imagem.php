@@ -25,7 +25,9 @@
             <?php
                 foreach($img as $i => $icon){
             ?>
-            <img class="redimencionar" src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img)-1)?>%">
+            <div class="redimencionar" style="width:<?=(100/count($img)-1)?>%; height:auto;">
+                <img src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:100%; height:100px;">
+            </div>
             <?php
                 }
             ?>
