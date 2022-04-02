@@ -68,7 +68,7 @@ $( function() {
 
 
 
-    $( ".redimencionar, #IdTeste" ).resizable({
+    $( ".redimencionar" ).resizable({
       aspectRatio: 16 / 9
     });
 
