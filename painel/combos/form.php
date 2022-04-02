@@ -203,6 +203,7 @@ if ($codigo) {
                 <input
                         type="hidden"
                         id="encode_file"
+                        name="encode_file"
                         value=""
                         atual="<?= $d->icon; ?>"
                 />
