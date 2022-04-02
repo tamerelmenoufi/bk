@@ -38,13 +38,15 @@
             ?>
             </div>
         </div>
-    </div>
-    <div class="row">
         <div class="col">
             <img id="ImgResult" src="" />
         </div>
     </div>
-
+    <div class="row" style="margin-top:20px;">
+        <div class="col">
+            <button GerarImagem class="btn btn-lg btn-block btn-primary">SALVAR IMAGEM</button>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -53,11 +55,14 @@
 
 $( function() {
 
-    html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
-        //document.body.appendChild(canvas);
-        $("#ImgResult").attr("src", canvas.toDataURL('image/png'));
-        console.log(canvas);
-    });
+    $("button[GerarImagem]").click(function(){
+        html2canvas(document.getElementById('IdTeste')).then(function(canvas) {
+            //document.body.appendChild(canvas);
+            $("#ImgResult").attr("src", canvas.toDataURL('image/png'));
+            console.log(canvas);
+        });
+    })
+
 
 
     $( ".redimencionar, #IdTeste" ).resizable({
