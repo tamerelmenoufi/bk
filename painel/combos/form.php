@@ -178,7 +178,7 @@ if ($codigo) {
                 <?php
                 if (is_file("icon/{$d->icon}")) {
                     $src="combos/icon/{$d->icon}?{$md5}";
-                    $style = "width:200px; margin-bottom:20px;";
+                    $style = "width:507px; margin-bottom:250px;";
                 }else{
                     $src="";
                     $style = "width:0px; height:0px;";
