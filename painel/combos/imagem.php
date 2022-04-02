@@ -26,7 +26,7 @@
     }
 </style>
 <div class="col">
-    <div  class="row">
+    <div class="row" style="height:300px;">
         <div class="col">
             <div id="IdTeste">
             <?php
