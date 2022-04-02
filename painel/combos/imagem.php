@@ -17,6 +17,12 @@
         background-color:#eee;
         text-align:center;
     }
+    .redimencionar{
+        width:<?=(100/count($img)-1)?>%;
+        position: absolute;
+        top:0;
+        right:0;
+    }
 </style>
 <div class="col">
     <div  class="row">
@@ -25,7 +31,7 @@
             <?php
                 foreach($img as $i => $icon){
             ?>
-            <img class="redimencionar" src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>" style="width:<?=(100/count($img)-1)?>%">
+            <img class="redimencionar" src="./produtos/icon/<?=$icon?>" alt="<?=$nome[$i]?>">
             <?php
                 }
             ?>
