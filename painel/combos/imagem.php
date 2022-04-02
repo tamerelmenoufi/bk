@@ -44,7 +44,10 @@
     </div>
     <div class="row" style="margin-top:20px;">
         <div class="col">
-            <button GerarImagem class="btn btn-lg btn-block btn-primary">SALVAR IMAGEM</button>
+            <button GerarImagem class="btn btn-lg btn-block btn-success">GERAR IMAGEM</button>
+        </div>
+        <div class="col">
+            <button SalvarImagem class="btn btn-lg btn-block btn-primary">SALVAR IMAGEM</button>
         </div>
     </div>
 </div>
