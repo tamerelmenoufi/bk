@@ -48,7 +48,7 @@
 <div class="topo"></div>
 <div class="pagina">
 <?php
-    $query = "select * from categorias where deletado != '1'";
+    $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
 ?>
