@@ -67,9 +67,9 @@ $( function() {
     })
 
     $("button[SalvarImagem]").click(function(){
-        $("#encode_file").val($("#ImgResult").attr("src"));
-        $("#ImgResult").css("width","200px");
-        $("#ImgResult").css("margin-bottom","20px");
+        $("#ImagemCombo").val($("#ImgResult").attr("src"));
+        $("#ImagemCombo").css("width","200px");
+        $("#ImagemCombo").css("margin-bottom","20px");
     })
 
 

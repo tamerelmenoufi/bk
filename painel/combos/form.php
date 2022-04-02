@@ -186,6 +186,7 @@ if ($codigo) {
                     ?>
                     <center>
                         <img
+                            id="ImagemCombo"
                            src="<?=$src?>"
                            style="<?=$src?>"
                         >
