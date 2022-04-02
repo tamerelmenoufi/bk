@@ -70,6 +70,7 @@ $( function() {
         $("#ImagemCombo").attr("src", $("#ImgResult").attr("src"));
         $("#ImagemCombo").css("width","200px");
         $("#ImagemCombo").css("margin-bottom","20px");
+        $("#encode_file").val($("#ImgResult").attr("src"));
     })
 
 
