@@ -57,7 +57,7 @@ $( function() {
       aspectRatio: 16 / 9
     });
 
-    $( ".redimencionar" ).draggable({ containment: "#IdTeste", scroll: false });
+    $( ".ui-wrapper" ).draggable({ containment: "#IdTeste", scroll: false });
 
 });
 
