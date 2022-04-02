@@ -12,6 +12,7 @@
 ?>
 <style>
     #IdTeste{
+        position: relative;
         width:100%;
         height:250px;
         background-color:#eee;
