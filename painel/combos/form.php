@@ -10,6 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     unset($data['codigo']);
 
+
+    if ($data['file-base']) {
+        list($x, $icon) = explode(';base64,', $data['file-base']);
+        $icon = base64_decode($icon);
+    }
+
+
+
+
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
     }
@@ -26,6 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (mysqli_query($con, $query)) {
         $codigo = $codigo ?: mysqli_insert_id($con);
+
+
+        if (file_put_contents("icon/".md5($codigo).".png", $icon)) {
+            mysqli_query($con, "UPDATE produtos SET icon = '".md5($codigo).".png' WHERE codigo = '{$codigo}'");
+        }
 
         sis_logs('produtos', $codigo, $query);
 
@@ -160,36 +174,38 @@ if ($codigo) {
             <!-- <div class="form-group">
                 <label for="situacao">
                     Imagem <i class="text-danger">*</i>
-                </label>
+                </label>-->
                 <?php
                 if (is_file("icon/{$d->icon}")) {
+                    $src="''";
+                    $style = "'width:0px; height:0px;'";
+                }else{
+                    $src="'produtos/icon/{$d->icon}?{$md5}'";
+                    $style = "'width:200px; margin-bottom:20px;'";
+                }
                     ?>
                     <center>
                         <img
-                           src="produtos/icon/<?= $d->icon ?>?<?= $md5 ?>"
-                           style="width:200px; margin-bottom:20px;"
+                           src="<?=$src?>"
+                           style="<?=$src?>"
                         >
                     </center>
-                    <?php
-                }
-                ?>
-                <input
+
+                <!--<input
                         type="file"
                         name="file_<?= $md5 ?>"
                         id="file_<?= $md5 ?>"
                         accept="image/*"
                         style="margin-buttom:20px"
                 >
-
+                -->
                 <input
                         type="hidden"
                         id="encode_file"
-                        nome=""
-                        tipo=""
                         value=""
                         atual="<?= $d->icon; ?>"
                 />
-            </div> -->
+            </div>
 
             <div class="form-group">
 
