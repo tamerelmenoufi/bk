@@ -15,7 +15,7 @@
         position: relative;
         width:100%;
         height:250px;
-        background-color:#eee;
+        background-color:#f2e5d4;
         text-align:center;
     }
     .redimencionar{
