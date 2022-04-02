@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         list($x, $icon) = explode(';base64,', $data['file-base']);
         $icon = base64_decode($icon);
     }
-
+    unset($data['file-base']);
 
 
 
@@ -200,13 +200,7 @@ if ($codigo) {
                         style="margin-buttom:20px"
                 >
                 -->
-                <input
-                        type="hidden"
-                        id="encode_file"
-                        name="encode_file"
-                        value=""
-                        atual="<?= $d->icon; ?>"
-                />
+
             </div>
 
             <div class="form-group">
@@ -354,6 +348,7 @@ if ($codigo) {
 
             var codigo = $('#codigo').val();
             var codigos = $("div[combo]").attr("codigos");
+            var file-base = $("#ImagemCombo").attr("src");
             var dados = $(this).serializeArray();
 
             if (codigo) {
@@ -362,6 +357,10 @@ if ($codigo) {
 
             if (codigos) {
                 dados.push({name: 'descricao', value: codigos});
+            }
+
+            if (file-base) {
+                dados.push({name: 'file-base', value: file-base});
             }
 
 
