@@ -171,17 +171,17 @@ if ($codigo) {
 
             </div> -->
 
-            <!-- <div class="form-group">
-                <label for="situacao">
+            <div class="form-group">
+            <!--     <label for="situacao">
                     Imagem <i class="text-danger">*</i>
                 </label>-->
                 <?php
                 if (is_file("icon/{$d->icon}")) {
-                    $src="''";
-                    $style = "'width:0px; height:0px;'";
+                    $src="";
+                    $style = "width:0px; height:0px;";
                 }else{
-                    $src="'produtos/icon/{$d->icon}?{$md5}'";
-                    $style = "'width:200px; margin-bottom:20px;'";
+                    $src="produtos/icon/{$d->icon}?{$md5}";
+                    $style = "width:200px; margin-bottom:20px;";
                 }
                     ?>
                     <center>
