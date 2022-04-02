@@ -177,11 +177,11 @@ if ($codigo) {
                 </label>-->
                 <?php
                 if (is_file("icon/{$d->icon}")) {
-                    $src="";
-                    $style = "width:0px; height:0px;";
-                }else{
                     $src="produtos/icon/{$d->icon}?{$md5}";
                     $style = "width:200px; margin-bottom:20px;";
+                }else{
+                    $src="";
+                    $style = "width:0px; height:0px;";
                 }
                     ?>
                     <center>
