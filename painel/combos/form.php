@@ -323,7 +323,7 @@ if ($codigo) {
                 success:function(dados){
                     $.dialog({
                         content:dados,
-                        title:false,
+                        title:"Gerenciador da Imagem",
                         columnClass:'col-md-12'
                     });
                 }
