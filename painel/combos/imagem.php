@@ -67,7 +67,7 @@ $( function() {
     })
 
     $("button[SalvarImagem]").click(function(){
-        $("#ImagemCombo").val($("#ImgResult").attr("src"));
+        $("#ImagemCombo").attr("src", $("#ImgResult").attr("src"));
         $("#ImagemCombo").css("width","200px");
         $("#ImagemCombo").css("margin-bottom","20px");
     })
