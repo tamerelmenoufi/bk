@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['codigo']);
 
 
-    if ($data['file-base']) {
-        list($x, $icon) = explode(';base64,', $data['file-base']);
+    if ($data['file_base']) {
+        list($x, $icon) = explode(';base64,', $data['file_base']);
         $icon = base64_decode($icon);
     }
-    unset($data['file-base']);
+    unset($data['file_base']);
 
 
 
@@ -348,7 +348,7 @@ if ($codigo) {
 
             var codigo = $('#codigo').val();
             var codigos = $("div[combo]").attr("codigos");
-            var file-base = $("#ImagemCombo").attr("src");
+            var file_base = $("#ImagemCombo").attr("src");
             var dados = $(this).serializeArray();
 
             if (codigo) {
@@ -359,8 +359,8 @@ if ($codigo) {
                 dados.push({name: 'descricao', value: codigos});
             }
 
-            if (file-base) {
-                dados.push({name: 'file-base', value: file-base});
+            if (file_base) {
+                dados.push({name: 'file_base', value: file_base});
             }
 
 
