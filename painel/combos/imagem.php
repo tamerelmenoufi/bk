@@ -12,7 +12,7 @@
 ?>
 <style>
     #IdTeste{
-        width:500px;
+        width:100%;
         height:250px;
         background-color:#eee;
         text-align:center;
@@ -59,7 +59,7 @@ $( function() {
     });
 
 
-    $( ".redimencionar" ).resizable({
+    $( ".redimencionar, #IdTeste" ).resizable({
       aspectRatio: 16 / 9
     });
 
