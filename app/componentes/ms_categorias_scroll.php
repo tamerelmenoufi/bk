@@ -33,8 +33,9 @@
     float:none;
     text-align:center;
     border:solid 1px red;
-    background-size:90%;
+    background-size:95%;
     background-position:center;
+    background-repeat:no-repeat;
 }
 .ms_categoria_scroll_card p{
     position:relative;
