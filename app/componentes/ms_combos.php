@@ -15,14 +15,14 @@
         background-position:center;
         background-repeat:no-repeat;
         background-size:auto 100%;
-        margin-bottom:20px;
+        margin-bottom:30px;
         margin-top:20px;
     }
     .ms_combos p{
         padding-left:5px;
         padding-right:5px;
         background-color:#f2e5d4;
-        border-radius:6px;
+        border-radius:10px;
         position:absolute;
         top:-20px;
         left:10px;
