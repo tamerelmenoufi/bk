@@ -180,11 +180,9 @@ while ($m = mysqli_fetch_array($m_r)) {
     .ms_produtos text{
         padding:5px;
         position:absolute;
-        bottom:10px;
         left:5px;
         font-weight:normal;
         font-size:10px;
-        color:#d62300;
         text-align:left;
         height:auto;
         font-style: normal;
