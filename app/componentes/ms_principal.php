@@ -33,9 +33,16 @@
         margin:0;
     }
 
-    .pagina{
+    .categorias_home{
         position:fixed;
         top:60px;
+        width:100%;
+        height:115px;
+    }
+
+    .pagina{
+        position:fixed;
+        top:175px;
         bottom:65px;
         width:100%;
         overflow:auto;
@@ -43,12 +50,7 @@
         padding:10px;
         z-index:1;
     }
-    .categorias_home{
-        position:fixed;
-        top:60px;
-        width:100%;
-        height:115px;
-    }
+
 
 
     .categoria_combo{
