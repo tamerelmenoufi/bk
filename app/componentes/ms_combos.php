@@ -22,7 +22,7 @@
         border-radius:6px;
         position:absolute;
         opacity:0.6;
-        top:7px;
+        top:-15px;
         left:10px;
         font-weight:bold;
         font-size:20px;
