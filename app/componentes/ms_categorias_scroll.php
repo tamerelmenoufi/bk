@@ -27,11 +27,12 @@
 }
 .ms_categoria_scroll_card div{
     position:relative;
-    width:auto;
+    width:80px;
     height:80px;
     border-radius:50%;
     float:none;
     text-align:center;
+    border:solid 1px red;
 }
 .ms_categoria_scroll_card p{
     position:relative;
@@ -73,7 +74,7 @@
         class="ms_categoria_scroll_card"
     >
         <div style="background-color:trasparent;">
-            <img  src="<?='../painel/categorias/icon/'.$d->icon?>" style="margin-top:5px; width: auto; height: 70px; " />
+            <img  src="<?='../painel/categorias/icon/'.$d->icon?>" style="margin-top:5px; width: 70px; height: auto; " />
         </div>
         <p><?=$d->categoria?></p>
     </div>
