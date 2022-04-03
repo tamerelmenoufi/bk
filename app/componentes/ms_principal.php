@@ -35,14 +35,15 @@
 
     .categorias_home{
         position:fixed;
-        top:60px;
+        top:70px;
         width:100%;
         height:115px;
+        background:#f5ebdc;
     }
 
     .pagina{
         position:fixed;
-        top:175px;
+        top:185px;
         bottom:65px;
         width:100%;
         overflow:auto;
