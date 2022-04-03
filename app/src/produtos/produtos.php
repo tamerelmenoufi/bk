@@ -181,6 +181,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         padding:5px;
         position:absolute;
         left:5px;
+        bottom:5px;
         font-weight:normal;
         font-size:10px;
         text-align:left;
