@@ -5,6 +5,7 @@
      $result = mysqli_query($con, $query);
 ?>
 <style>
+
 .ms_categoria_scroll_palco {
     overflow-x: auto;
 }
@@ -67,11 +68,9 @@
     while ($d = mysqli_fetch_object($result) ) {
     ?>
     <div
-            opc="<?=$d->codigo?>"
-            categoria="<?=$d->codigo?>"
-            categoria_descricao="<?=$d->categoria?>"
-            icone="<?='../painel/categorias/icon/'.$d->icon?>"
-            class="ms_categoria_scroll_card"
+        local="src/produtos/produtos.php?categoria=<?=$d->codigo?>"
+        janela="ms_popup_100"
+        class="ms_categoria_scroll_card"
     >
         <div style="background-color:<?=$cor[$i]?>">
             <img class="img-circle" src="<?='../painel/categorias/icon/'.$d->icon?>" style="margin-top:7px; width: 65px; height: 66px; border-radius:20px;" />
@@ -80,7 +79,7 @@
     </div>
   <?php
     $i++;
-    if($i == 4) $i=0;
+    if($i == count($cor)) $i=0;
     }
   ?>
   </div>
@@ -90,7 +89,39 @@
     $(function(){
         Carregando('none');
         $(".ms_categoria_scroll_card").off('click').on('click',function(){
-            opc = $(this).attr("opc");
+
+            AppPedido = window.localStorage.getItem('AppPedido');
+            AppCliente = window.localStorage.getItem('AppCliente');
+
+            if(!AppCliente || AppCliente === null || AppCliente === undefined){
+
+                Carregando();
+                $.ajax({
+                    url:"componentes/ms_popup_100.php",
+                    type:"POST",
+                    data:{
+                        local:"src/cliente/cadastro.php",
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
+
+            }else{
+                local = $(this).attr('local');
+                janela = $(this).attr('janela');
+                Carregando();
+                $.ajax({
+                    url:"componentes/"+janela+".php",
+                    type:"POST",
+                    data:{
+                        local,
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
+            }
 
         });
     })
