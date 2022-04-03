@@ -25,10 +25,12 @@ $m_q = "select * from categoria_medidas where codigo in({$d->medidas}) AND delet
 $m_r = mysqli_query($con, $m_q);
 
 while ($m = mysqli_fetch_array($m_r)) {
-    $M[$m['codigo']] = [
-        "ordem" => $m['ordem'],
-        "descricao" => $m['medida']
-    ];
+    if($m->medida == 'UNIDADE'){
+        $M[$m['codigo']] = [
+            "ordem" => $m['ordem'],
+            "descricao" => $m['medida']
+        ];
+    }
 }
 ?>
 
@@ -214,59 +216,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         }
 
         ?>
-        <div class="card mb-3 item_button<?= $md5 ?>">
-            <div class="row no-gutters">
-                <div class="col-3" style="position:relative">
-                     <div
-                        class="foto<?= $md5 ?> <?=$icone?>"
-                        style="background-image:url(<?= $url?>)"
-                    ></div>
-                </div>
-                <div class="col-9">
-                    <div class="card-body">
-                        <h5 class="card-title"><?= $p->produto ?></h5>
-                        <p class="card-text produto_descricao"><?= $p->descricao ?></p>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-text" style="text-align:right">
-                        <small class="text-muted">
-
-                            <?php
-                            foreach ($detalhes as $key => $val) :
-                                $val['ordem'] = $M[$key]['ordem'];
-                                $detalhes_2[$key] = $val;
-                            endforeach;
-
-                            aasort($detalhes_2, "ordem");
-
-                            foreach ($detalhes_2 as $key2 => $val) {
-                                if ($val["quantidade"] > 0) {
-                                    ?>
-                                    <button
-                                            acao_medida
-                                            opc="<?= $val["quantidade"]; ?>"
-                                            produto="<?= $p->codigo ?>"
-                                            titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
-                                            categoria='<?= $d->codigo ?>'
-                                            medida='<?= $val["quantidade"]; ?>'
-                                            valor='<?= $val['valor']; ?>'
-                                            class="btn btn-outline-danger btn-xs"
-                                            style="height:40px; font-size:11px; line-height: 1.2;"
-                                    >
-                                        <?= $M[$key2]['descricao']; ?><br>
-                                        R$ <?= number_format($val['valor'], 2, ',', '.') ?>
-                                    </button>
-                                    <?php
-                                }
-                            }
-                            ?>
-
-                        </small>
-                    </p>
-                </div>
-            </div>
-        </div>
 
 
 <!-- PRODUTOS TESTE -->
@@ -278,12 +227,41 @@ while ($m = mysqli_fetch_array($m_r)) {
         style="background-image:url(<?=$url?>)"
     >
         <p><?=$p->produto?></p>
-        <span> <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
-    </div>
-
+        <text class="card-text produto_descricao"><?= $p->descricao ?></text>
 
 
         <?php
+            foreach ($detalhes as $key => $val) :
+                $val['ordem'] = $M[$key]['ordem'];
+                $detalhes_2[$key] = $val;
+            endforeach;
+
+            aasort($detalhes_2, "ordem");
+
+            foreach ($detalhes_2 as $key2 => $val) {
+                if ($val["quantidade"] > 0) {
+        ?>
+                    <span
+                        acao_medida
+                        opc="<?= $val["quantidade"]; ?>"
+                        produto="<?= $p->codigo ?>"
+                        titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
+                        categoria='<?= $d->codigo ?>'
+                        medida='<?= $val["quantidade"]; ?>'
+                        valor='<?= $val['valor']; ?>'
+                        class="btn btn-outline-danger btn-xs"
+                        style="height:40px; font-size:11px; line-height: 1.2;"
+
+                    > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
+
+        <?php
+                }
+            }
+        ?>
+
+    </div>
+
+    <?php
     }
     ?>
 </div>
