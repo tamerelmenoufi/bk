@@ -35,7 +35,8 @@
 
     .categorias_home{
         position:fixed;
-        top:70px;
+        top:60px;
+        padding-top:10px;
         width:100%;
         height:115px;
         background:#f5ebdc;
