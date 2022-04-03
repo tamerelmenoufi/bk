@@ -264,11 +264,9 @@ while ($m = mysqli_fetch_array($m_r)) {
         ?>
                     <span
                         acao_medida
-                        opc="<?= $val["quantidade"]; ?>"
                         produto="<?= $p->codigo ?>"
                         titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
                         categoria='<?= $p->categoria ?>'
-                        medida='<?= $val["quantidade"]; ?>'
                         valor='<?= $val['valor']; ?>'
                     > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
 
@@ -291,7 +289,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         produto = $(this).attr("produto");
         title = $(this).attr("titulo");
         categoria = $(this).attr("categoria");
-        medida = $(this).attr("medida");
         valor = $(this).attr("valor");
 
         Carregando();
@@ -302,7 +299,6 @@ while ($m = mysqli_fetch_array($m_r)) {
                 local: "src/produtos/produto.php",
                 categoria,
                 produto,
-                medida,
                 valor
             },
             success: function (dados) {
