@@ -36,9 +36,10 @@
     .categorias_home{
         position:fixed;
         top:60px;
-        padding-top:10px;
+        padding-top:5px;
+        padding-bottom:5px;
         width:100%;
-        height:115px;
+        height:125px;
         background:#f5ebdc;
     }
 
