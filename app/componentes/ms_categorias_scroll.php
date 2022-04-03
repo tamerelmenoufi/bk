@@ -32,7 +32,7 @@
     border-radius:50%;
     float:none;
     text-align:center;
-    background-color:#eee;
+    background-color:#f2e5d4;
     background-size:100%;
     background-position:center;
     background-repeat:no-repeat;
