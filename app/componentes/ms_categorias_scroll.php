@@ -1,7 +1,7 @@
 <?php
     include("../../lib/includes.php");
 
-    $query = "select
+    echo $query = "select
                         a.*,
                         (select icon from produtos where categoria = a.codigo order by rand() limit 1) as icon_produto
                         from categorias a where a.deletado != '1' and a.situacao = '1' and a.categoria != 'COMBOS'";
