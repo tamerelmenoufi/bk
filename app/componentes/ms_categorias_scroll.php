@@ -1,10 +1,10 @@
 <?php
     include("../../lib/includes.php");
 
-    echo $query = "select
+    $query = "select
                         a.*,
                         (select icon from produtos where categoria = a.codigo order by rand() limit 1) as icon_produto
-                        from a.categorias where a.deletado != '1' and a.situacao = '1' and a.categoria != 'COMBOS'";
+                        from categorias a where a.deletado != '1' and a.situacao = '1' and a.categoria != 'COMBOS'";
     $result = mysqli_query($con, $query);
 ?>
 <style>
