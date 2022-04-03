@@ -14,7 +14,7 @@
         height:150px;
         background-position:center;
         background-repeat:no-repeat;
-        background-size:100%;
+        background-size:auto 100%;
         margin-bottom:20px;
     }
     .ms_combos p{
