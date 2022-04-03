@@ -38,8 +38,6 @@
         exit();
     }
 
-    print_r($_POST);
-
     $produto = $_POST['produto'];
     $medida = $_POST['medida'];
     $valor = $_POST['valor'];
@@ -190,7 +188,7 @@
                                 <!-- <h5 class="card-title">
                                     <?= $p->nome_categoria ?> - <?= $p->produto ?> (<?= $m->medida ?>)
                                 </h5> -->
-                                <p class="card-text"><?= $p->descricao ?></p>
+                                <p class="card-text"><?= print_r($_POST, true). $p->descricao ?></p>
                                 <p class="observacoes"></p>
                                 <div class="row">
                                 <div class="col-8">
