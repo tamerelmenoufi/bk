@@ -274,7 +274,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                 }
             }
         ?>
-        <text class="card-text produto_descricao"><?= $p->descricao ?></text>
+        <text><?= $p->descricao ?></text>
     </div>
 
     <?php
