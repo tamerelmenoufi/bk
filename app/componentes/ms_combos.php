@@ -37,8 +37,9 @@
         background-color:#eee;
         border-radius:5px;
         position:absolute;
+        opacity:0.6;
         bottom:10px;
-        right:15px;
+        right:10px;
         font-weight:bold;
         font-size:35px;
         color:#502314;
