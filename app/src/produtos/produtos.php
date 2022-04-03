@@ -157,7 +157,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         border-radius:6px;
         position:absolute;
         /* opacity:0.6; */
-        bottom:80px;
+        bottom:60px;
         right:5px;
         font-weight:bold;
         font-size:20px;
@@ -180,7 +180,7 @@ while ($m = mysqli_fetch_array($m_r)) {
 
     .ms_produtos text{
         position:absolute;
-        left:5px;
+        left:10px;
         bottom:5px;
         font-weight:normal;
         font-size:10px;
