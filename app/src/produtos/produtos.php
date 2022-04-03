@@ -125,7 +125,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         width:100%;
         border-radius:20px;
         background-color:#f2e5d4;
-        height:150px;
+        height:190px;
         background-position:left top;
         background-repeat:no-repeat;
         background-size:auto 100%;
