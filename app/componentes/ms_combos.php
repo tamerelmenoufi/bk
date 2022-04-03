@@ -29,12 +29,11 @@
         font-weight:bold;
         font-size:20px;
         color:#9C9C9C;
-        text-transform: uppercase;
-        text-shadow:
+        /* text-transform: uppercase;
                -1px -1px 0px #FFF,
                -1px 1px 0px #FFF,
                 1px -1px 0px #FFF,
-                1px 0px 0px #FFF;
+                1px 0px 0px #FFF; */
     }
 
     .ms_combos span{
