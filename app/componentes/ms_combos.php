@@ -46,7 +46,7 @@
         bottom:10px;
         right:5px;
         font-weight:bold;
-        font-size:35px;
+        font-size:20px;
         color:#d62300;
         text-shadow:
                -1px -1px 0px #FFF,
