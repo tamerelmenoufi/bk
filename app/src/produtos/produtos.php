@@ -125,10 +125,10 @@ while ($m = mysqli_fetch_array($m_r)) {
         width:100%;
         border-radius:20px;
         background-color:#f2e5d4;
-        height:190px;
+        height:150px;
         background-position:left top;
         background-repeat:no-repeat;
-        background-size:auto 100%;
+        background-size:auto 80%;
         margin-bottom:30px;
         margin-top:20px;
         padding-bottom:80px;
