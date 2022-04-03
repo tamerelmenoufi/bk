@@ -33,6 +33,9 @@
     }
 
     .ms_combos span{
+        padding:5px;
+        background-color:#eee;
+        border-radius:5px;
         position:absolute;
         bottom:10px;
         right:15px;
