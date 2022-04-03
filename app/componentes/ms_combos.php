@@ -21,7 +21,7 @@
         right:15px;
         font-weight:bold;
         font-size:25px;
-        color:#333;
+        color:#9C9C9C;
     }
 
 </style>
