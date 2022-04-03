@@ -16,12 +16,12 @@
         background-repeat:no-repeat;
         background-size:auto 100%;
         margin-bottom:20px;
+        margin-top:10px;
     }
     .ms_combos p{
-        background-color:#eee;
+        background-color:#f2e5d4;
         border-radius:6px;
         position:absolute;
-        opacity:0.6;
         top:-15px;
         left:10px;
         font-weight:bold;
@@ -37,10 +37,9 @@
 
     .ms_combos span{
         padding:5px;
-        background-color:#eee;
+        background-color:#f2e5d4;
         border-radius:6px;
         position:absolute;
-        opacity:0.6;
         bottom:10px;
         right:5px;
         font-weight:bold;
