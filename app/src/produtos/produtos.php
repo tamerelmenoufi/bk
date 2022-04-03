@@ -256,7 +256,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
         categoria='<?= $p->categoria ?>'
         medida='<?= $val["quantidade"]; ?>'
-        valor='<?= $val['valor']; ?>'
+        valor_produto='<?= $val['valor']; ?>'
 
     >
         <p><?=$p->produto?></p>
