@@ -227,8 +227,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         style="background-image:url(<?=$url?>)"
     >
         <p><?=$p->produto?></p>
-        <text class="card-text produto_descricao"><?= $p->descricao ?></text>
-
 
         <?php
             foreach ($detalhes as $key => $val) :
@@ -258,7 +256,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                 }
             }
         ?>
-
+        <text class="card-text produto_descricao"><?= $p->descricao ?></text>
     </div>
 
     <?php
