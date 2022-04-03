@@ -12,7 +12,7 @@
         border-radius:20px;
         background-color:#f2e5d4;
         height:150px;
-        background-position:center;
+        background-position:left;
         background-repeat:no-repeat;
         background-size:auto 100%;
         margin-bottom:30px;
