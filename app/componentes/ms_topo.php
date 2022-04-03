@@ -30,12 +30,7 @@
         <?php
             if($c->telefone){
         ?>
-            <div class="DadosTopo"><?=$c->telefone?> <span ClienteNomeApp><?=$c->nome?></span></div>
-        <?php
-            }
-            if($m->mesa){
-        ?>
-            <div class="DadosTopo">Pedido <b><?=$m->mesa?></b></div>
+            <div class="DadosTopo"><?=$c->telefone?><br><span ClienteNomeApp><?=$c->nome?></span></div>
         <?php
             }
         ?>
