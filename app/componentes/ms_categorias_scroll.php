@@ -108,6 +108,7 @@
                 });
 
             }else{
+
                 local = $(this).attr('local');
                 janela = $(this).attr('janela');
                 Carregando();
@@ -121,6 +122,7 @@
                         $(".ms_corpo").append(dados);
                     }
                 });
+
             }
 
         });
