@@ -117,8 +117,8 @@
     }
     .foto<?=$md5?> span[val]{
         position:absolute;
-        right:10px;
-        bottom:5px;
+        left:10px;
+        bottom:0px;
         font-size:16px;
         font-weight:bold;
         color:#502314;
