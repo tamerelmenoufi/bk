@@ -33,6 +33,17 @@
         color:#502314;
     }
 
+    .ms_combos span sup{
+        font-weight:normal;
+        font-size:25px;
+        color:#502314;
+    }
+    .ms_combos span sub{
+        font-weight:normal;
+        font-size:25px;
+        color:#502314;
+    }
+
 
 </style>
 
