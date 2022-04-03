@@ -49,11 +49,22 @@
         margin-bottom:15px;
 
     }
+
+
+    .categoria_combo{
+        position:relative;
+        width:100%;
+        margin-bottom:15px;
+
+    }
+
 </style>
 <div class="topo"></div>
 <div class="pagina">
 
     <div class="categorias_home"></div>
+
+    <div class="categoria_combo"></div>
 
 <?php
     $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
@@ -101,6 +112,16 @@
                 $(".categorias_home").html(dados);
             }
         });
+
+
+        $.ajax({
+            url:"componentes/ms_combos.php",
+            success:function(dados){
+                $(".categoria_combo").html(dados);
+            }
+        });
+
+
 
         $("button[acao<?=$md5?>]").off('click').on('click',function(){
 
