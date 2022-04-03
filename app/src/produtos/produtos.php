@@ -236,7 +236,17 @@ while ($m = mysqli_fetch_array($m_r)) {
 
 
 <!-- PRODUTOS TESTE -->
+    <?php
+        foreach ($detalhes as $key => $val) :
+            $val['ordem'] = $M[$key]['ordem'];
+            $detalhes_2[$key] = $val;
+        endforeach;
 
+        aasort($detalhes_2, "ordem");
+
+        foreach ($detalhes_2 as $key2 => $val) {
+            if ($val["quantidade"] > 0) {
+    ?>
     <div
         acao_medida
         class="ms_produtos"
@@ -251,17 +261,7 @@ while ($m = mysqli_fetch_array($m_r)) {
     >
         <p><?=$p->produto?></p>
 
-        <?php
-            foreach ($detalhes as $key => $val) :
-                $val['ordem'] = $M[$key]['ordem'];
-                $detalhes_2[$key] = $val;
-            endforeach;
 
-            aasort($detalhes_2, "ordem");
-
-            foreach ($detalhes_2 as $key2 => $val) {
-                if ($val["quantidade"] > 0) {
-        ?>
                     <span
                         acao_medida
                         produto="<?= $p->codigo ?>"
@@ -270,14 +270,14 @@ while ($m = mysqli_fetch_array($m_r)) {
                         valor='<?= $val['valor']; ?>'
                     > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
 
-        <?php
-                }
-            }
-        ?>
         <text><?= $p->descricao ?></text>
     </div>
 
     <?php
+
+                }
+            }
+
     }
     ?>
 </div>
