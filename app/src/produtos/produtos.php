@@ -238,10 +238,16 @@ while ($m = mysqli_fetch_array($m_r)) {
 <!-- PRODUTOS TESTE -->
 
     <div
-        local="src/produtos/produto.php?categoria=<?=$p->codigo?>"
-        janela="ms_popup_100"
+        acao_medida
         class="ms_produtos"
         style="background-image:url(<?=$url?>)"
+        opc="<?= $val["quantidade"]; ?>"
+        produto="<?= $p->codigo ?>"
+        titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
+        categoria='<?= $p->categoria ?>'
+        medida='<?= $val["quantidade"]; ?>'
+        valor='<?= $val['valor']; ?>'
+
     >
         <p><?=$p->produto?></p>
 
@@ -261,7 +267,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                         opc="<?= $val["quantidade"]; ?>"
                         produto="<?= $p->codigo ?>"
                         titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
-                        categoria='<?= $d->codigo ?>'
+                        categoria='<?= $p->categoria ?>'
                         medida='<?= $val["quantidade"]; ?>'
                         valor='<?= $val['valor']; ?>'
                     > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
@@ -280,7 +286,7 @@ while ($m = mysqli_fetch_array($m_r)) {
 
 <script>
 
-    $("button[acao_medida]").click(function () {
+    $("div[acao_medida]").click(function () {
         opc = $(this).attr("opc");
         produto = $(this).attr("produto");
         title = $(this).attr("titulo");
