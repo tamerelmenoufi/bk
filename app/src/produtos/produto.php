@@ -40,7 +40,7 @@
 
     $produto = $_POST['produto'];
     $medida = $_POST['medida'];
-    $valor = $_POST['valor'];
+    $valor = $_POST['custo'];
 
     $query = "SELECT a.*, b.categoria AS nome_categoria FROM produtos a "
         . "LEFT JOIN categorias b ON a.categoria = b.codigo "
@@ -291,26 +291,6 @@
 
         });
 
-        $(".mais_sabores").click(function () {
-            produto = '<?=$_POST['produto']?>';
-            medida = '<?=$_POST['medida']?>';
-            valor = '<?=$_POST['valor']?>';
-
-            Carregando();
-            $.ajax({
-                url:"componentes/ms_popup.php",
-                type:"POST",
-                data:{
-                    local:"src/produtos/adicionais.php",
-                    produto,
-                    medida,
-                    valor,
-                },
-                success:function(dados){
-                    $(".ms_corpo").append(dados);
-                }
-            });
-        });
 
         $("button[observacoes]").click(function(){
             Carregando();
