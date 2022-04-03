@@ -15,6 +15,7 @@
         background-position:center;
         background-repeat:no-repeat;
         background-size:100%;
+        margin-bottom:20px;
     }
     .ms_combos p{
         position:absolute;
