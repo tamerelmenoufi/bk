@@ -18,7 +18,7 @@
     .ms_combos p{
         position:absolute;
         top:10px;
-        right:15px;
+        left:15px;
         font-weight:bold;
         font-size:25px;
         color:#9C9C9C;
