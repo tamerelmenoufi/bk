@@ -31,6 +31,11 @@
         font-weight:bold;
         font-size:35px;
         color:#502314;
+        text-shadow:
+               -1px -1px 0px #FFF,
+               -1px 1px 0px #FFF,
+                1px -1px 0px #FFF,
+                1px 0px 0px #FFF;
     }
 
     .ms_combos span sup{
