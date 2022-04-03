@@ -24,6 +24,16 @@
         color:#9C9C9C;
     }
 
+    .ms_combos span{
+        position:absolute;
+        bottom:10px;
+        right:15px;
+        font-weight:bold;
+        font-size:35px;
+        color:#502314;
+    }
+
+
 </style>
 
 <?php
@@ -40,6 +50,7 @@ while ($d = mysqli_fetch_object($result) ) {
         style="background-image:url(<?=$icone?>)"
     >
         <p><?=$d->produto?></p>
+        <span>R$ 56,99</span>
     </div>
 <?php
     }
