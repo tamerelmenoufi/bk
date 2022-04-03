@@ -18,9 +18,13 @@
         margin-bottom:20px;
     }
     .ms_combos p{
+        padding:5px;
+        background-color:#eee;
+        border-radius:6px;
         position:absolute;
-        top:10px;
-        left:15px;
+        opacity:0.6;
+        top:5px;
+        left:5px;
         font-weight:bold;
         font-size:25px;
         color:#502314;
