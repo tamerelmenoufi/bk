@@ -38,6 +38,8 @@
         exit();
     }
 
+    print_r($_POST);
+
     $produto = $_POST['produto'];
     $medida = $_POST['medida'];
     $valor = $_POST['valor'];
