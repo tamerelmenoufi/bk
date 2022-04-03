@@ -11,7 +11,7 @@
         width:100%;
         border-radius:20px;
         background-color:#f2e5d4;
-        height:90px;
+        height:150px;
     }
     .ms_combos p{
         position:absolute;
