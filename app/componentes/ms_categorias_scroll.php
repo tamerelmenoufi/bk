@@ -33,6 +33,8 @@
     float:none;
     text-align:center;
     border:solid 1px red;
+    background-size:cover;
+    background-position:center;
 }
 .ms_categoria_scroll_card p{
     position:relative;
@@ -73,8 +75,8 @@
         janela="ms_popup_100"
         class="ms_categoria_scroll_card"
     >
-        <div style="background-color:trasparent;">
-            <img  src="<?='../painel/categorias/icon/'.$d->icon?>" style="margin-top:5px; width: 70px; height: auto; " />
+        <div style="background-image:url(<?='../painel/categorias/icon/'.$d->icon?>);">
+            <!-- <img  src="<?='../painel/categorias/icon/'.$d->icon?>" style="margin-top:5px; width: 70px; height: auto; " /> -->
         </div>
         <p><?=$d->categoria?></p>
     </div>
