@@ -272,13 +272,13 @@ while ($m = mysqli_fetch_array($m_r)) {
 <!-- PRODUTOS TESTE -->
 
     <div
-        local="src/produtos/produto.php?categoria=<?=$d->codigo?>"
+        local="src/produtos/produto.php?categoria=<?=$p->codigo?>"
         janela="ms_popup_100"
         class="ms_produtos"
-        style="background-image:url(<?=$icone?>)"
+        style="background-image:url(<?=$url?>)"
     >
-        <p><?=$d->produto?></p>
-        <span> <sub>R$</sub> 56<sup>,99</sup></span>
+        <p><?=$p->produto?></p>
+        <span> <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
     </div>
 
 
