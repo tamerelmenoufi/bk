@@ -76,9 +76,9 @@
 
         if(is_file("../../painel/categorias/icon/{$d->icon}")){
             //$icone = "../painel/categorias/icon/{$d->icon}";
-            $icone = "../painel/produtos/icon/{$d->icon_produto}?{$md5}";
+            $icone = "../painel/produtos/icon/{$d->icon_produto}";
         }else{
-            $icone = "../painel/produtos/icon/{$d->icon_produto}?{$md5}";
+            $icone = "../painel/produtos/icon/{$d->icon_produto}";
         }
 
     ?>
