@@ -21,7 +21,7 @@
         left:15px;
         font-weight:bold;
         font-size:25px;
-        color:#9C9C9C;
+        color:#502314;
     }
 
     .ms_combos span{
@@ -39,7 +39,7 @@
         color:#502314;
     }
     .ms_combos span sub{
-        font-weight:normal;
+        font-weight:bold;
         font-size:25px;
         color:#502314;
     }
