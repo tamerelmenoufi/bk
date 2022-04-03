@@ -131,7 +131,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-size:auto 100%;
         margin-bottom:30px;
         margin-top:20px;
-        padding-bottom:30px;
+        padding-bottom:80px;
     }
     .ms_produtos p{
         padding-left:5px;
