@@ -26,7 +26,7 @@
         top:5px;
         left:5px;
         font-weight:bold;
-        font-size:25px;
+        font-size:20px;
         color:#502314;
         text-transform: uppercase;
         text-shadow:
