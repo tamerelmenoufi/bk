@@ -189,7 +189,7 @@
                         >
                             <span sabor><?= $p->produto ?></span>
                             <span categoria><?= $p->nome_categoria ?></span>
-                            <span valor><sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
+                            <span valor><sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,99</sup></span>
 
                         </div>
                     </div>
