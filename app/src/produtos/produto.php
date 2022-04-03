@@ -40,7 +40,7 @@
 
     $produto = $_POST['produto'];
     $medida = $_POST['medida'];
-    $valor = $_POST['custo'];
+    $valor = $_POST['valor'];
 
     $query = "SELECT a.*, b.categoria AS nome_categoria FROM produtos a "
         . "LEFT JOIN categorias b ON a.categoria = b.codigo "

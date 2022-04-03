@@ -289,7 +289,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         produto = $(this).attr("produto");
         title = $(this).attr("titulo");
         categoria = $(this).attr("categoria");
-        custo = $(this).attr("valor");
+        valor = $(this).attr("valor");
 
         Carregando();
         $.ajax({
@@ -299,7 +299,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                 local: "src/produtos/produto.php",
                 categoria,
                 produto,
-                custo
+                valor
             },
             success: function (dados) {
                 $(".ms_corpo").append(dados);
