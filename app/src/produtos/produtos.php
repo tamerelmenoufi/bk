@@ -35,25 +35,9 @@ while ($m = mysqli_fetch_array($m_r)) {
 ?>
 
 <style>
-    .foto<?=$md5?> {
-        position: absolute;
-        left:50%;
-        top:50%;
-        margin-left:-75px;
-        margin-top:-75px;
-        background-size: 100%;
-        background-position: center;
-        background-repeat:no-repeat;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        width:150px;
-        height:150px;
-    }
-    .icone{
-        background-size: 50%;
-        background-position: center;
-        background-repeat:no-repeat;
-    }
+
+
+/* MS PRODUTOS */
 
     .topo<?=$md5?> {
         position: fixed;
@@ -66,60 +50,6 @@ while ($m = mysqli_fetch_array($m_r)) {
         background-color:#f5ebdc;
         z-index: 1;
     }
-
-    .IconePedidos {
-        position: fixed;
-        top: 10px;
-        right: 25px;
-        font-size: 30px;
-        color: #333;
-        font-weight: bold;
-        z-index: 10;
-        display: <?=(($_SESSION['AppCarrinho'])?'block':'none')?>;
-    }
-
-    .MensagemAddProduto {
-        position: fixed;
-        right: 80px;
-        top: 15px;
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 5px;
-        padding: 5px;
-        width: auto;
-        z-index: 3;
-        display: none;
-    }
-
-    .MensagemAddProduto span {
-        position: absolute;
-        right: -8px;
-        font-size: 30px;
-        top: -3px;
-        color: #333;
-    }
-
-    .card{
-        background-color:#eee !important;
-    }
-
-    .produto_descricao{
-        text-align:left;
-        height:auto;
-        font-style: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-
-    }
-
-
-/* MS PRODUTOS */
-
     .ms_produtos{
         position:relative;
         width:100%;
@@ -177,6 +107,24 @@ while ($m = mysqli_fetch_array($m_r)) {
         font-size:10px;
     }
 
+    .ms_produtos text{
+        padding:5px;
+        position:absolute;
+        bottom:10px;
+        left:5px;
+        font-weight:normal;
+        font-size:10px;
+        color:#d62300;
+        text-align:left;
+        height:auto;
+        font-style: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+    }
 
 
 </style>
