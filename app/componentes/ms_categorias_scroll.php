@@ -1,8 +1,8 @@
 <?php
-     include("../../lib/includes.php");
+    include("../../lib/includes.php");
 
-    $query="SELECT * FROM `categorias` where situacao ='1' and deletado != '1'";
-     $result = mysqli_query($con, $query);
+    $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
+    $result = mysqli_query($con, $query);
 ?>
 <style>
 
