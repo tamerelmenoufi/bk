@@ -1,7 +1,10 @@
 <?php
     include("../../lib/includes.php");
 
-    $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
+    $query = "select
+                        a.*
+                        (select icon from produtos where categoria = a.codigo order by rand() limit 1) as icon_produto
+                        from a.categorias where a.deletado != '1' and a.situacao = '1' and a.categoria != 'COMBOS'";
     $result = mysqli_query($con, $query);
 ?>
 <style>
@@ -70,14 +73,21 @@
             ];
     $i=0;
     while ($d = mysqli_fetch_object($result) ) {
+
+        if(is_file("../../painel/categorias/icon/{$d->icon}")){
+            $icone = "../painel/categorias/icon/{$d->icon}";
+        }else{
+            $icone = "../painel/produtos/icon/{$d->icon_produto}";
+        }
+
     ?>
     <div
         local="src/produtos/produtos.php?categoria=<?=$d->codigo?>"
         janela="ms_popup_100"
         class="ms_categoria_scroll_card"
     >
-        <div style="background-image:url(<?='../painel/categorias/icon/'.$d->icon?>);">
-            <!-- <img  src="<?='../painel/categorias/icon/'.$d->icon?>" style="margin-top:5px; width: 70px; height: auto; " /> -->
+        <div style="background-image:url(<?=$icone?>);">
+            <!-- <img  src="<?=$icone?>" style="margin-top:5px; width: 70px; height: auto; " /> -->
         </div>
         <p><?=$d->categoria?></p>
     </div>
