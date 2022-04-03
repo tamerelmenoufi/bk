@@ -57,11 +57,11 @@
 
     .ms_combos span sup{
         font-weight:normal;
-        font-size:20px;
+        font-size:10px;
     }
     .ms_combos span sub{
         font-weight:bold;
-        font-size:25px;
+        font-size:10px;
     }
 
 
@@ -71,7 +71,7 @@
 
 while ($d = mysqli_fetch_object($result) ) {
 
-    $icone = "../painel/combos/icon/{$d->icon}";
+    $icone = "../painel/combos/icon/{$d->icon}?{$md5}";
 
 ?>
     <div
