@@ -19,6 +19,7 @@
         margin-top:10px;
     }
     .ms_combos p{
+        padding:5px;
         background-color:#f2e5d4;
         border-radius:6px;
         position:absolute;
@@ -37,9 +38,10 @@
 
     .ms_combos span{
         padding:5px;
-        background-color:#f2e5d4;
+        background-color:#eee;
         border-radius:6px;
         position:absolute;
+        opacity:0.6;
         bottom:10px;
         right:5px;
         font-weight:bold;
