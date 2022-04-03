@@ -109,31 +109,18 @@
     .foto<?=$md5?> span[valor]{
         position:absolute;
         left:20px;
-        bottom:10px;
+        bottom:0px;
         font-size:16px;
         font-weight:bold;
         color:#d62300;
 
     }
-    .foto<?=$md5?> span[val]{
-        position:absolute;
-        left:10px;
-        bottom:0px;
-        font-size:16px;
-        font-weight:bold;
-        color:#502314;
-        text-shadow:
-               -1px -1px 0px #FFF,
-               -1px 1px 0px #FFF,
-                1px -1px 0px #FFF,
-                1px 0px 0px #FFF;
-    }
 
-    .foto<?=$md5?> span[val] sup{
+    .foto<?=$md5?> span[valor] sup{
         font-weight:normal;
         font-size:10px;
     }
-    .foto<?=$md5?> span[val] sub{
+    .foto<?=$md5?> span[valor] sub{
         font-weight:bold;
         font-size:10px;
     }
