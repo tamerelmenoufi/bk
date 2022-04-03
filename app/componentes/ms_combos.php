@@ -25,7 +25,7 @@
         border-radius:10px;
         position:absolute;
         top:-20px;
-        left:10px;
+        right:10px;
         font-weight:bold;
         font-size:20px;
         color:#502314;
