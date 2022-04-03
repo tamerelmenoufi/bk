@@ -44,10 +44,10 @@
         z-index:1;
     }
     .categorias_home{
-        position:relative;
+        position:fixed;
+        top:60px;
         width:100%;
-        margin-bottom:15px;
-
+        height:115px;
     }
 
 
@@ -60,9 +60,10 @@
 
 </style>
 <div class="topo"></div>
-<div class="pagina">
 
-    <div class="categorias_home"></div>
+<div class="categorias_home"></div>
+
+<div class="pagina">
 
     <div class="categoria_combo"></div>
 
