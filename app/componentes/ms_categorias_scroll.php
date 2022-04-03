@@ -32,11 +32,11 @@
     position:relative;
     width:80px;
     height:80px;
-    border-radius:50%;
+    /* border-radius:50%; */
     float:none;
     text-align:center;
-    background-color:#f2e5d4;
-    background-size:100%;
+    /* background-color:#f2e5d4; */
+    background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
 }
