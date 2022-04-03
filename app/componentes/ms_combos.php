@@ -35,7 +35,7 @@
 
     .ms_combos span sup{
         font-weight:normal;
-        font-size:25px;
+        font-size:20px;
         color:#502314;
     }
     .ms_combos span sub{
