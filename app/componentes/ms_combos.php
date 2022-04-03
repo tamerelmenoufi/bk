@@ -12,6 +12,8 @@
         border-radius:20px;
         background-color:#f2e5d4;
         height:150px;
+        background-position:center;
+        background-size:cover;
     }
     .ms_combos p{
         position:absolute;
@@ -35,6 +37,7 @@ while ($d = mysqli_fetch_object($result) ) {
         local="src/produtos/produto.php?categoria=<?=$d->codigo?>"
         janela="ms_popup_100"
         class="ms_combos"
+        style="background-image:url(<?=$icone?>)"
     >
         <p><?=$d->produto?></p>
     </div>
