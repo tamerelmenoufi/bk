@@ -114,6 +114,69 @@ while ($m = mysqli_fetch_array($m_r)) {
         -webkit-box-orient: vertical;
 
     }
+
+
+/* MS PRODUTOS */
+
+    .ms_produtos{
+        position:relative;
+        width:100%;
+        border-radius:20px;
+        background-color:#f2e5d4;
+        height:150px;
+        background-position:left;
+        background-repeat:no-repeat;
+        background-size:auto 100%;
+        margin-bottom:30px;
+        margin-top:20px;
+    }
+    .ms_produtos p{
+        padding-left:5px;
+        padding-right:5px;
+        background-color:#f2e5d4;
+        border-radius:10px;
+        position:absolute;
+        top:-20px;
+        right:10px;
+        font-weight:bold;
+        font-size:20px;
+        color:#9C9C9C;
+        /* text-transform: uppercase;
+               -1px -1px 0px #FFF,
+               -1px 1px 0px #FFF,
+                1px -1px 0px #FFF,
+                1px 0px 0px #FFF; */
+    }
+
+    .ms_produtos span{
+        padding:5px;
+        /* background-color:#eee; */
+        border-radius:6px;
+        position:absolute;
+        /* opacity:0.6; */
+        bottom:10px;
+        right:5px;
+        font-weight:bold;
+        font-size:20px;
+        color:#d62300;
+        text-shadow:
+               -1px -1px 0px #FFF,
+               -1px 1px 0px #FFF,
+                1px -1px 0px #FFF,
+                1px 0px 0px #FFF;
+    }
+
+    .ms_produtos span sup{
+        font-weight:normal;
+        font-size:10px;
+    }
+    .ms_produtos span sub{
+        font-weight:bold;
+        font-size:10px;
+    }
+
+
+
 </style>
 
 <!-- Informativo de pedidos ativos -->
@@ -204,6 +267,20 @@ while ($m = mysqli_fetch_array($m_r)) {
                 </div>
             </div>
         </div>
+
+
+<!-- PRODUTOS TESTE -->
+
+    <div
+        local="src/produtos/produto.php?categoria=<?=$d->codigo?>"
+        janela="ms_popup_100"
+        class="ms_produtos"
+        style="background-image:url(<?=$icone?>)"
+    >
+        <p><?=$d->produto?></p>
+        <span> <sub>R$</sub> 56<sup>,99</sup></span>
+    </div>
+
 
 
         <?php
