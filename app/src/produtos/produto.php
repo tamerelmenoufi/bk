@@ -245,8 +245,8 @@
                             <span
                                     class="btn btn-primaryX text-primary"
                                     id="rotulo_valor">
-                                R$ <span valor atual="<?=$_POST['valor']?>">
-                                    <?= number_format($_POST['valor'], 2, ',', '.') ?>
+                                R$ <span valor atual="<?=$valor?>">
+                                    <?= number_format($valor, 2, ',', '.') ?>
                                 </span>
                             </span>
                         </div>

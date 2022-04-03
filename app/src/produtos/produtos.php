@@ -267,7 +267,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                         produto="<?= $p->codigo ?>"
                         titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
                         categoria='<?= $p->categoria ?>'
-                        valor='<?= $val['valor']; ?>'
+                        valor_produto='<?= $val['valor']; ?>'
                     > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
 
         <text><?= $p->descricao ?></text>
@@ -289,7 +289,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         produto = $(this).attr("produto");
         title = $(this).attr("titulo");
         categoria = $(this).attr("categoria");
-        valor = $(this).attr("valor");
+        valor = $(this).attr("valor_produto");
 
         Carregando();
         $.ajax({
