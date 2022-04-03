@@ -28,7 +28,7 @@
         right:10px;
         font-weight:bold;
         font-size:20px;
-        color:#502314;
+        color:#9C9C9C;
         text-transform: uppercase;
         text-shadow:
                -1px -1px 0px #FFF,
