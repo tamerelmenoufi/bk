@@ -23,8 +23,8 @@
         border-radius:6px;
         position:absolute;
         opacity:0.6;
-        top:5px;
-        left:5px;
+        top:7px;
+        left:10px;
         font-weight:bold;
         font-size:20px;
         color:#502314;
