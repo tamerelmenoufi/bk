@@ -156,7 +156,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         border-radius:6px;
         position:absolute;
         /* opacity:0.6; */
-        bottom:10px;
+        bottom:50px;
         right:5px;
         font-weight:bold;
         font-size:20px;
@@ -265,9 +265,6 @@ while ($m = mysqli_fetch_array($m_r)) {
                         categoria='<?= $d->codigo ?>'
                         medida='<?= $val["quantidade"]; ?>'
                         valor='<?= $val['valor']; ?>'
-                        class="btn btn-outline-danger btn-xs"
-                        style="height:40px; font-size:11px; line-height: 1.2;"
-
                     > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
 
         <?php
@@ -280,7 +277,6 @@ while ($m = mysqli_fetch_array($m_r)) {
     <?php
     }
     ?>
-</div>
 </div>
 
 <script>
