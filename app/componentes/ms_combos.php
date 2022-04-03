@@ -28,7 +28,7 @@
 
 while ($d = mysqli_fetch_object($result) ) {
 
-    $icone = "../painel/categorias/icon/{$d->icon}";
+    $icone = "../painel/combos/icon/{$d->icon}";
 
 ?>
     <div
