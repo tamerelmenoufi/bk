@@ -106,7 +106,7 @@
                 1px -1px 0px #FFF,
                 1px 0px 0px #FFF;
     }
-    .foto<?=$md5?> span[valor]{
+    .foto<?=$md5?> span[vl]{
         position:absolute;
         left:20px;
         bottom:0px;
@@ -116,11 +116,11 @@
 
     }
 
-    .foto<?=$md5?> span[valor] sup{
+    .foto<?=$md5?> span[vl] sup{
         font-weight:normal;
         font-size:10px;
     }
-    .foto<?=$md5?> span[valor] sub{
+    .foto<?=$md5?> span[vl] sub{
         font-weight:bold;
         font-size:10px;
     }
@@ -176,7 +176,7 @@
                         >
                             <span sabor><?= $p->produto ?></span>
                             <span categoria><?= $p->nome_categoria ?></span>
-                            <span valor><sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,99</sup></span>
+                            <span vl><sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,99</sup></span>
 
                         </div>
                     </div>
