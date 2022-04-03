@@ -86,7 +86,7 @@
         top:20px;
         font-size:16px;
         font-weight:bold;
-        color:#333;
+        color:#502314;
         text-shadow:
                -1px -1px 0px #FFF,
                -1px 1px 0px #FFF,
@@ -112,7 +112,7 @@
         bottom:5px;
         font-size:16px;
         font-weight:bold;
-        color:#333;
+        color:#502314;
         text-shadow:
                -1px -1px 0px #FFF,
                -1px 1px 0px #FFF,
@@ -125,7 +125,7 @@
         bottom:5px;
         font-size:16px;
         font-weight:bold;
-        color:#333;
+        color:#502314;
         text-shadow:
                -1px -1px 0px #FFF,
                -1px 1px 0px #FFF,
