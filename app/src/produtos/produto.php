@@ -106,18 +106,14 @@
                 1px -1px 0px #FFF,
                 1px 0px 0px #FFF;
     }
-    .foto<?=$md5?> span[medida]{
+    .foto<?=$md5?> span[valor]{
         position:absolute;
-        left:10px;
-        bottom:5px;
+        right:10px;
+        bottom:10px;
         font-size:16px;
         font-weight:bold;
-        color:#502314;
-        text-shadow:
-               -1px -1px 0px #FFF,
-               -1px 1px 0px #FFF,
-                1px -1px 0px #FFF,
-                1px 0px 0px #FFF;
+        color:#d62300;
+
     }
     .foto<?=$md5?> span[val]{
         position:absolute;
@@ -132,6 +128,16 @@
                 1px -1px 0px #FFF,
                 1px 0px 0px #FFF;
     }
+
+    .foto<?=$md5?> span[val] sup{
+        font-weight:normal;
+        font-size:10px;
+    }
+    .foto<?=$md5?> span[val] sub{
+        font-weight:bold;
+        font-size:10px;
+    }
+
 
     small[valor_novo] {
         display: none;
@@ -183,8 +189,7 @@
                         >
                             <span sabor><?= $p->produto ?></span>
                             <span categoria><?= $p->nome_categoria ?></span>
-                            <span medida><?= $m->medida ?></span>
-                            <!-- <span val>R$ <?= number_format($_POST['valor'], 2, ',', '.') ?></span> -->
+                            <span valor><sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
 
                         </div>
                     </div>
