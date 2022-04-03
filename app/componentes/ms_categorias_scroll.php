@@ -33,7 +33,7 @@
     float:none;
     text-align:center;
     border:solid 1px red;
-    background-size:95%;
+    background-size:100%;
     background-position:center;
     background-repeat:no-repeat;
 }
