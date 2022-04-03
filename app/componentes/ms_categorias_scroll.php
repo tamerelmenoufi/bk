@@ -75,7 +75,8 @@
     while ($d = mysqli_fetch_object($result) ) {
 
         if(is_file("../../painel/categorias/icon/{$d->icon}")){
-            $icone = "../painel/categorias/icon/{$d->icon}";
+            //$icone = "../painel/categorias/icon/{$d->icon}";
+            $icone = "../painel/produtos/icon/{$d->icon_produto}";
         }else{
             $icone = "../painel/produtos/icon/{$d->icon_produto}";
         }
