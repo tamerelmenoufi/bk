@@ -50,7 +50,7 @@ while ($d = mysqli_fetch_object($result) ) {
         style="background-image:url(<?=$icone?>)"
     >
         <p><?=$d->produto?></p>
-        <span>R$ 56,99</span>
+        <span> <sub>R$</sub> 56<sup>,99</sup></span>
     </div>
 <?php
     }
