@@ -43,10 +43,18 @@
         padding:10px;
         z-index:1;
     }
+    .categorias_home{
+        position:relative;
+        width:100%;
+        margin-bottom:15px;
 
+    }
 </style>
 <div class="topo"></div>
 <div class="pagina">
+
+    <div class="categorias_home"></div>
+
 <?php
     $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
     $result = mysqli_query($con,$query);
@@ -87,6 +95,13 @@
         });
 
 
+        $.ajax({
+            url:"componentes/ms_categorias_scroll.php",
+            success:function(dados){
+                $(".categorias_home").html(dados);
+            }
+        });
+
         $("button[acao<?=$md5?>]").off('click').on('click',function(){
 
             AppPedido = window.localStorage.getItem('AppPedido');
@@ -122,7 +137,6 @@
                 });
             }
         })
-
 
     })
 
