@@ -18,7 +18,6 @@
         margin-bottom:20px;
     }
     .ms_combos p{
-        padding:5px;
         background-color:#eee;
         border-radius:6px;
         position:absolute;
