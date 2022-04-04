@@ -47,7 +47,7 @@ session_destroy();
 
 <style>
     .bg-login-imagem {
-        background: url('../../img/yobom.png'), no-repeat;
+        background: url('../../img/login.png'), no-repeat;
         background-repeat: no-repeat;
         background-size: contain;
     }
