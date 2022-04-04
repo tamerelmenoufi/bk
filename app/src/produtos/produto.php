@@ -188,7 +188,7 @@
                                 <!-- <h5 class="card-title">
                                     <?= $p->nome_categoria ?> - <?= $p->produto ?> (<?= $m->medida ?>)
                                 </h5> -->
-                                <p class="card-text"><?= print_r($_POST, true). $p->descricao ?></p>
+                                <p class="card-text"><?= $p->descricao ?></p>
                                 <p class="observacoes"></p>
                                 <div class="row">
                                 <div class="col-8">
