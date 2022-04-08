@@ -37,6 +37,8 @@ function imagem($source)
                 return "data:image/png;base64,$image_data_base64";
             }
         }
+    } else {
+        return "#";
     }
 }
 
