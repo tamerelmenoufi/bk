@@ -61,7 +61,7 @@ function imagem($source)
     }
 
     .ui-wrapper .ui-icon {
-        display: none !important;
+        display: none;
     }
 </style>
 
