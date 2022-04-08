@@ -135,16 +135,18 @@ function imagem($source)
         $(".ui-wrapper").draggable();
 
         $(".ui-wrapper").mouseover(function () {
+            $(this).css({"border": "1px solid"});
+            $(this).find(".ui-icon").show();
+        });
+
+        $(".ui-wrapper").click(function () {
             let obj = $(this);
 
             $(".ui-wrapper").css({"zIndex": 0});
 
             obj.css({
-                "border": "1px solid",
                 "zIndex": 1,
             });
-
-            obj.find(".ui-icon").show();
         });
 
         $(".ui-wrapper").mouseout(function () {
