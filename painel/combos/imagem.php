@@ -14,7 +14,7 @@ function imagem($source)
 {
     $img = imagecreatefrompng($source);
 
-    if (!$img) {
+    if ($img) {
         $cropped = imagecropauto($img, IMG_CROP_DEFAULT);
 
         if ($cropped !== false) {
@@ -68,8 +68,7 @@ function imagem($source)
                 <?php foreach ($img as $i => $icon) { ?>
                     <img
                             class="redimencionar"
-                            src="<?= "produtos/icon/{$icon}"; ?>"
-                            <!--src="--><?/*= imagem("../produtos/icon/{$icon}") */?>"
+                            src="<?= imagem("../produtos/icon/{$icon}"); ?>"
                             alt="<?= $nome[$i] ?>"
                     >
                 <?php } ?>
