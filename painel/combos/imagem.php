@@ -129,7 +129,7 @@ function imagem($source)
 
         $(".ui-wrapper").draggable();
 
-        $(".ui-wrapper").onmouseover(function () {
+        $(".ui-wrapper").mouseover(function () {
             $(this).css("border: 1px solid");
         })
     });
