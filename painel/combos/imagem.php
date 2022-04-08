@@ -80,7 +80,12 @@ function imagem($source)
     </div>
     <div class="row" style="margin-top:20px;">
         <div class="col">
-            <button GerarImagem class="btn btn-lg btn-block btn-success">GERAR IMAGEM</button>
+            <button
+                    GerarImagem
+                    class="btn btn-lg btn-block btn-success"
+            >
+                GERAR IMAGEM
+            </button>
         </div>
         <div class="col">
             <button
@@ -124,6 +129,9 @@ function imagem($source)
 
         $(".ui-wrapper").draggable();
 
+        $(".ui-wrapper").onmouseover(function () {
+            $(this).css("border: 1px solid");
+        })
     });
 
 </script>
