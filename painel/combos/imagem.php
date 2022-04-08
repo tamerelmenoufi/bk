@@ -139,7 +139,7 @@ function imagem($source)
             $(this).find(".ui-icon").show();
         });
 
-        $(".ui-wrapper").click(function () {
+        $(".ui-wrapper").mousedown(function () {
             let obj = $(this);
 
             $(".ui-wrapper").css({"zIndex": 0});
