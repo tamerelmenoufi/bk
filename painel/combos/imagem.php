@@ -59,6 +59,10 @@ function imagem($source)
         top: 0;
         right: 0;
     }
+
+    .ui-wrapper .ui-icon {
+        display: none;
+    }
 </style>
 
 <div class="col">
@@ -78,6 +82,7 @@ function imagem($source)
             <img id="ImgResult" src=""/>
         </div>
     </div>
+
     <div class="row" style="margin-top:20px;">
         <div class="col">
             <button
