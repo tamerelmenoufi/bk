@@ -66,7 +66,7 @@ function imagem($source)
                 <?php foreach ($img as $i => $icon) { ?>
                     <img
                             class="redimencionar"
-                            src="<?= imagem("./produtos/icon/{$icon}") ?>"
+                            src="<?= imagem("../produtos/icon/{$icon}") ?>"
                             alt="<?= $nome[$i] ?>"
                     >
                 <?php } ?>
