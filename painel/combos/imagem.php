@@ -136,7 +136,7 @@ function imagem($source)
 
         $(".ui-wrapper").mouseover(function () {
             $(this).css({"border": "1px solid"});
-            $(this).find(".ui-icon").show();
+            $(this).find(".ui-icon").css("display", "block !important");
         });
 
         $(".ui-wrapper").mousedown(function () {
@@ -151,7 +151,7 @@ function imagem($source)
 
         $(".ui-wrapper").mouseout(function () {
             $(this).css({"border": "none"});
-            $(this).find(".ui-icon").hide();
+            $(this).find(".ui-icon").css("display", "none !important");
         })
     });
 
