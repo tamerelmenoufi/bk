@@ -130,8 +130,11 @@ function imagem($source)
         $(".ui-wrapper").draggable();
 
         $(".ui-wrapper").mouseover(function () {
-            console.log($(this));
             $(this).css({"border": "1px solid"});
+        });
+
+        $(".ui-wrapper").mouseout(function () {
+            $(this).css({"border": "none"});
         })
     });
 
