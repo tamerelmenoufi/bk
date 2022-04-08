@@ -1,12 +1,43 @@
 <?php
 include("../../lib/includes.php");
 
-$query = "select * from produtos where codigo in ({$_GET['produtos']})";
+
+$query = "SELECT * FROM produtos WHERE codigo IN ({$_GET['produtos']})";
 $result = mysqli_query($con, $query);
 $img = [];
 while ($d = mysqli_fetch_object($result)) {
     $img[] = $d->icon;
     $nome[] = $d->produto;
+}
+
+function imagem($source)
+{
+    $img = @imagecreatefrompng($source);
+
+    if (!$img) {
+        $cropped = imagecropauto($img, IMG_CROP_DEFAULT);
+
+        if ($cropped !== false) {
+            imagedestroy($img);
+            $img = $cropped;
+        }
+
+        ob_start();
+
+        imagepng($img);
+        imagedestroy($img);
+
+        $image_data = ob_get_contents();
+        ob_clean();
+
+        if (!empty($image_data)) {
+            $image_data_base64 = base64_encode($image_data);
+
+            if ($image_data_base64 != false) {
+                return "data:image/png;base64,$image_data_base64";
+            }
+        }
+    }
 }
 
 ?>
@@ -32,13 +63,13 @@ while ($d = mysqli_fetch_object($result)) {
     <div class="row" style="height:300px;">
         <div class="col">
             <div id="IdTeste">
-                <?php
-                foreach ($img as $i => $icon) {
-                    ?>
-                    <img class="redimencionar" src="./produtos/icon/<?= $icon ?>" alt="<?= $nome[$i] ?>">
-                    <?php
-                }
-                ?>
+                <?php foreach ($img as $i => $icon) { ?>
+                    <img
+                            class="redimencionar"
+                            src="<?= imagem("./produtos/icon/{$icon}") ?>"
+                            alt="<?= $nome[$i] ?>"
+                    >
+                <?php } ?>
             </div>
         </div>
         <div class="col">
