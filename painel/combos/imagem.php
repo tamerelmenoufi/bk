@@ -60,9 +60,9 @@ function imagem($source)
         right: 0;
     }
 
-    .ui-wrapper .ui-icon {
+    /*.ui-wrapper .ui-icon {
         display: none;
-    }
+    }*/
 </style>
 
 <div class="col">
@@ -136,7 +136,7 @@ function imagem($source)
 
         $(".ui-wrapper").mouseover(function () {
             $(this).css({"border": "1px solid"});
-            $(this).find(".ui-icon").css("display", "block !important");
+            $(this).find(".ui-icon").show();
         });
 
         $(".ui-wrapper").mousedown(function () {
@@ -151,7 +151,7 @@ function imagem($source)
 
         $(".ui-wrapper").mouseout(function () {
             $(this).css({"border": "none"});
-            $(this).find(".ui-icon").css("display", "none !important");
+            $(this).find(".ui-icon").hide();
         })
     });
 
