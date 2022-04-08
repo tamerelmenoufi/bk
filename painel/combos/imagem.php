@@ -12,7 +12,7 @@ while ($d = mysqli_fetch_object($result)) {
 
 function imagem($source)
 {
-    $img = @imagecreatefrompng($source);
+    $img = imagecreatefrompng($source);
 
     if (!$img) {
         $cropped = imagecropauto($img, IMG_CROP_DEFAULT);
