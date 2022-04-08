@@ -131,7 +131,7 @@ function imagem($source)
 
         $(".ui-wrapper").mouseover(function () {
             console.log($(this));
-            $(this).css("border: 1px solid");
+            $(this).css({"border": "1px solid"});
         })
     });
 
