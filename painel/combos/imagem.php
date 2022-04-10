@@ -145,11 +145,13 @@ function imagem($source)
             var zindex = [];
 
             $(".ui-wrapper").map((index, item) => {
-                zindex.push($(item).css("zIndex") == "auto" ? 1 : $(item).css("zIndex") == "auto");
+                zindex.push($(item).css("zIndex") == "auto" ? 0 : parseInt($(item).css("zIndex")));
             });
 
+            let zindex_val = Math.max(...zindex) + 1;
+
             obj.css({
-                "zIndex": zindex + 1,
+                "zIndex": zindex_val,
             });
         });
 
