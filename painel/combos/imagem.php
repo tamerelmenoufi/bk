@@ -141,11 +141,15 @@ function imagem($source)
 
         $(".ui-wrapper").mousedown(function () {
             let obj = $(this);
+            //$(".ui-wrapper").css({"zIndex": 0});
+            var zindex = [];
 
-            $(".ui-wrapper").css({"zIndex": 0});
+            $(".ui-wrapper").map((index, item) => {
+                zindex.push($(item).css("zIndex") == "auto" ? 1 : $(item).css("zIndex") == "auto");
+            });
 
             obj.css({
-                "zIndex": 1,
+                "zIndex": zindex + 1,
             });
         });
 
