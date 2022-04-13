@@ -76,7 +76,7 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
                     <th>Data do pedido</th>
                     <th>Forma de pagamento</th>
                     <th>Total</th>
-                    <!--<th class="mw-20">Ações</th>-->
+                    <th class="mw-20">Ações</th>
                 </tr>
                 </thead>
 
@@ -98,29 +98,12 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
                     method: "POST",
                     data: {start: start, length: length}
                 },
-                "drawCallback": function (settings) {
-                    var page_info = dataTable.page.info();
-
-                    $('#totalpages').text(page_info.pages);
-
-                    var html = '';
-
-                    var start = 0;
-
-                    var length = page_info.length;
-
-                    for (var count = 1; count <= page_info.pages; count++) {
-                        var page_number = count - 1;
-
-                        html += '<option value="' + page_number + '" data-start="' + start + '" data-length="' + length + '">' + count + '</option>';
-
-                        start = start + page_info.length;
-                    }
-
-                    $('#pagelist').html(html);
-
-                    $('#pagelist').val(page_info.page);
-                }
+                "columnDefs": [
+                    {
+                        "targets": [4],
+                        "orderable": false,
+                    },
+                ],
             });
         }
 
