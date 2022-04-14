@@ -12,3 +12,18 @@ function formata_datahora($datahora, $formato = null)
 
     return date($formato, strtotime($datahora));
 }
+
+function getFormaPagamentoData()
+{
+    return [
+        'credito' => 'Crédito',
+        'debito' => 'Cartão de débito',
+        'pix' => 'Pix',
+    ];
+}
+
+function getFormaPagamentoOptions($valor)
+{
+    $list = getFormaPagamentoData();
+    return $list[$valor];
+}

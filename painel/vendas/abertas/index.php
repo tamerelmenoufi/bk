@@ -55,7 +55,7 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb shadow bg-gray-custom">
-        <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="./">Inicio</a></li>
         <li class="breadcrumb-item active" aria-current="page"><?= $ConfTitulo ?></li>
     </ol>
 </nav>
@@ -100,7 +100,7 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
                 },
                 "columnDefs": [
                     {
-                        "targets": [4],
+                        "targets": 4,
                         "orderable": false,
                     },
                 ],

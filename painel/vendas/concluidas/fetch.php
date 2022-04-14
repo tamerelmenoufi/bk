@@ -1,5 +1,5 @@
 <?php
-$situacao = "producao";
+$situacao = "entregue";
 
 include("../../../lib/includes.php");
 
