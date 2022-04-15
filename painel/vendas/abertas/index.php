@@ -50,7 +50,6 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
     exit();
 }
 
-
 ?>
 
 <nav aria-label="breadcrumb">
@@ -108,6 +107,25 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
         }
 
         load_data();
+
+        $("#datatable").on("click", "tbody tr td button[visualizar]", function () {
+            var codigo = $(this).data("codigo");
+
+            $.alert({
+                title: "Visualizar",
+                columnClass: "large",
+                content: function () {
+                    var self = this;
+
+                    return $.ajax({
+                        url: "<?= $UrlScript; ?>visualizar.php",
+                        data: {codigo},
+                    }).done(function (response) {
+                        self.setContent(response);
+                    });
+                },
+            });
+        });
     })
 </script>
 

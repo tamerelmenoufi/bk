@@ -10,7 +10,7 @@ $column = array(
     "total"
 );
 
-$query = "SELECT * FROM vendas v "
+$query = "SELECT v.*, c.nome, c.telefone FROM vendas v "
     . "INNER JOIN clientes c ON c.codigo = v.cliente "
     . "WHERE v.deletado != '1' AND v.situacao = '{$situacao}' ";
 
@@ -49,8 +49,8 @@ foreach ($result1 as $row) {
     $sub_array[] = $row['nome'] ?: $row['telefone'];
     $sub_array[] = formata_datahora($row['data_pedido'], DATA_HM);
     $sub_array[] = getFormaPagamentoOptions($row['forma_pagamento']);
-    $sub_array[] = $row['valor'];
-    $sub_array[] = '<button type="button" class="btn btn-link btn-sm" data-codigo="' . $row["codigo"] . '"><i class="fa fa-eye text-info"></i></button>';
+    $sub_array[] = "R$ " . number_format($row['valor'], 2, ',', '.');
+    $sub_array[] = '<button visualizar type="button" class="btn btn-link btn-sm" data-codigo="' . $row["codigo"] . '"><i class="fa fa-eye text-info"></i></button>';
 
     $data[] = $sub_array;
 }
