@@ -51,6 +51,23 @@
     </li>
 
     <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#VendasConfiguracoes"
+           aria-expanded="true" aria-controls="VendasConfiguracoes">
+            <i class="fa-solid fa-cash-register"></i>
+            <span>Vendas</span>
+        </a>
+        <div id="VendasConfiguracoes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <!-- <h6 class="collapse-header">Configurações:</h6> -->
+                <a class="collapse-item" href="#" url="vendas/abertas/">Abertas</a>
+                <a class="collapse-item" href="#" url="vendas/confirmadas">Confirmadas</a>
+                <a class="collapse-item" href="#" url="vendas/processo_entrega">Em processo de entrega</a>
+                <a class="collapse-item" href="#" url="vendas/concluidas">Entregues / Concluidas</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuConfiguracoes"
            aria-expanded="true" aria-controls="MenuConfiguracoes">
             <i class="fas fa-fw fa-cog"></i>

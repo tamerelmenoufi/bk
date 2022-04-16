@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['file_base']);
 
 
-
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
     }
@@ -37,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $codigo = $codigo ?: mysqli_insert_id($con);
 
 
-        if (file_put_contents("icon/".md5($codigo).".png", $icon)) {
-            mysqli_query($con, "UPDATE produtos SET icon = '".md5($codigo).".png' WHERE codigo = '{$codigo}'");
+        if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
+            mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
         }
 
         sis_logs('produtos', $codigo, $query);
@@ -128,15 +127,15 @@ if ($codigo) {
                 <label for="medidas">Valores <i class="text-danger">*</i></label>
 
                 <?php
-                $query1 = "SELECT * FROM categoria_medidas "
-                    . "WHERE deletado != '1' AND codigo IN({$ConfCategoria->medidas}) "
-                    . "ORDER BY ordem, medida";
-                $result1 = mysqli_query($con, $query1);
+            $query1 = "SELECT * FROM categoria_medidas "
+                . "WHERE deletado != '1' AND codigo IN({$ConfCategoria->medidas}) "
+                . "ORDER BY ordem, medida";
+            $result1 = mysqli_query($con, $query1);
 
-                $detalhes = json_decode($d->detalhes, true);
+            $detalhes = json_decode($d->detalhes, true);
 
-                while ($dados = mysqli_fetch_object($result1)):
-                    ?>
+            while ($dados = mysqli_fetch_object($result1)):
+                ?>
                     <div class="row cor">
                         <div class="col-md-8">
                             <?= $dados->medida; ?>
@@ -172,25 +171,25 @@ if ($codigo) {
             </div> -->
 
             <div class="form-group">
-            <!--     <label for="situacao">
-                    Imagem <i class="text-danger">*</i>
-                </label>-->
+                <!--     <label for="situacao">
+                        Imagem <i class="text-danger">*</i>
+                    </label>-->
                 <?php
                 if (is_file("icon/{$d->icon}")) {
-                    $src="combos/icon/{$d->icon}?{$md5}";
+                    $src = "combos/icon/{$d->icon}?{$md5}";
                     $style = "width:507px; margin-bottom:250px;";
-                }else{
-                    $src="";
+                } else {
+                    $src = "";
                     $style = "width:0px; height:0px;";
                 }
-                    ?>
-                    <center>
-                        <img
+                ?>
+                <center>
+                    <img
                             id="ImagemCombo"
-                           src="<?=$src?>"
-                           style="<?=$src?>"
-                        >
-                    </center>
+                            src="<?= $src ?>"
+                            style="<?= $src ?>"
+                    >
+                </center>
 
                 <!--<input
                         type="file"
@@ -213,11 +212,16 @@ if ($codigo) {
                     <div class="col">
                         <b>PRODUTOS</b>
                     </div>
+
                     <div class="col">
                         <div class="row">
                             <div class="col"><b>COMBO</b></div>
                             <div class="col">
-                                <button type="button" EditarImagem class="btn btn-secondary btn-sm btn-block">
+                                <button
+                                        type="button"
+                                        EditarImagem
+                                        class="btn btn-secondary btn-sm btn-block"
+                                >
                                     <i class="fa-regular fa-images"></i> Imagem
                                 </button>
                             </div>
@@ -230,28 +234,30 @@ if ($codigo) {
                 <div class="row">
                     <div class="col" style="height:300px; overflow:auto;">
                         <ul class="list-group">
-                        <?php
+                            <?php
                             $q = "select * from categorias where situacao = '1' and deletado != '1' and categoria != 'COMBOS'";
                             $r = mysqli_query($con, $q);
-                            while($c = mysqli_fetch_object($r)){
-                        ?>
-                            <li categoria="<?=$c->codigo?>" class="list-group-item list-group-item-action"><?=$c->categoria?></li>
-                        <?php
+                            while ($c = mysqli_fetch_object($r)) {
+                                ?>
+                                <li categoria="<?= $c->codigo ?>"
+                                    class="list-group-item list-group-item-action"><?= $c->categoria ?></li>
+                                <?php
                             }
-                        ?>
+                            ?>
                         </ul>
                     </div>
+
                     <div produtos class="col" style="height:300px; overflow:auto;">
 
                     </div>
-                    <div combo codigos="<?=(($d->descricao)?:'0')?>" class="col" style="height:300px; overflow:auto;">
+
+                    <div combo codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
+                         style="height:300px; overflow:auto;">
 
                     </div>
                 </div>
 
             </div>
-
-
 
 
             <div class="form-group">
@@ -291,16 +297,14 @@ if ($codigo) {
         existe = JSON.parse("[" + $("div[combo]").attr("codigos") + "]");
 
         $.ajax({
-            url:"combos/combo.php",
-            data:{
-                produtos:existe,
+            url: "combos/combo.php",
+            data: {
+                produtos: existe,
             },
-            success:function(dados){
+            success: function (dados) {
                 $("div[combo]").html(dados);
             }
         });
-
-
 
         $('input[situacao]').change(function () {
             opc = $(this).attr("opc");
@@ -311,32 +315,32 @@ if ($codigo) {
             }
         })
 
-        $("li[categoria]").click(function(){
+        $("li[categoria]").click(function () {
             categoria = $(this).attr("categoria");
             $.ajax({
-                url:"combos/produtos.php",
-                data:{
+                url: "combos/produtos.php",
+                data: {
                     categoria
                 },
-                success:function(dados){
+                success: function (dados) {
                     $("div[produtos]").html(dados);
                 }
             });
         });
 
-
-        $("button[EditarImagem]").click(function(){
+        $("button[EditarImagem]").click(function () {
             produtos = $("div[combo]").attr("codigos");
+
             $.ajax({
-                url:"combos/imagem.php",
-                data:{
+                url: "combos/imagem.php",
+                data: {
                     produtos
                 },
-                success:function(dados){
-                    $.dialog({
-                        content:dados,
-                        title:"Gerenciador da Imagem",
-                        columnClass:'col-md-12'
+                success: function (dados) {
+                    dialogEditorImagem = $.dialog({
+                        content: dados,
+                        title: "Gerenciador da Imagem",
+                        columnClass: 'col-md-12'
                     });
                 }
             });
