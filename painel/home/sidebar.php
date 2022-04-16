@@ -35,7 +35,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <!-- <h6 class="collapse-header">Configurações:</h6> -->
                 <?php
-                $query = "SELECT * FROM categorias WHERE deletado != '1' ORDER BY categoria";
+                $query = "SELECT * FROM categorias WHERE deletado != '1' and categoria != 'combos'  ORDER BY categoria";
                 $result = mysqli_query($con, $query);
                 while ($c = mysqli_fetch_object($result)) {
                     ?>
