@@ -48,8 +48,7 @@ foreach ($result1 as $row) {
 
     $sub_array[] = $row['nome'] ?: $row['telefone'];
     $sub_array[] = formata_datahora($row['data_pedido'], DATA_HM);
-    $sub_array[] = getFormaPagamentoOptions($row['forma_pagamento']);
-    $sub_array[] = "R$ " . number_format($row['valor'], 2, ',', '.');
+    $sub_array[] = getFormaPagamentoOptions($row['forma_pagamento']) ?: "(Não definido)";
     $sub_array[] = '<button visualizar type="button" class="btn btn-link btn-sm" data-codigo="' . $row["codigo"] . '"><i class="fa fa-eye text-info"></i></button>';
 
     $data[] = $sub_array;
