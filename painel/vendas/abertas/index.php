@@ -112,8 +112,8 @@ if (isset($_POST["action"]) && ($_POST["action"] === "index")) {
             var codigo = $(this).data("codigo");
 
             $.alert({
-                title: "Visualizar",
-                columnClass: "large",
+                title: `Venda #${codigo}`,
+                columnClass: "xlarge",
                 content: function () {
                     var self = this;
 
