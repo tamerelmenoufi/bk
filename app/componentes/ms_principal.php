@@ -72,7 +72,7 @@
 
     <div class="categoria_combo"></div>
 
-<?php
+<!-- <?php
     $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
     $result = mysqli_query($con,$query);
     while($d = mysqli_fetch_object($result)){
@@ -87,7 +87,7 @@
     </button>
 <?php
     }
-?>
+?> -->
 </div>
 <div class="rodape"></div>
 
