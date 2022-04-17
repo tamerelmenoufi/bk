@@ -246,6 +246,9 @@ while ($m = mysqli_fetch_array($m_r)) {
 
         foreach ($detalhes_2 as $key2 => $val) {
             if ($val["quantidade"] > 0) {
+
+                list($valor,$decimal) = explode(".", $val['valor']);
+
     ?>
     <div
         acao_medida
@@ -268,7 +271,7 @@ while ($m = mysqli_fetch_array($m_r)) {
                         titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
                         categoria='<?= $p->categoria ?>'
                         valor_produto='<?= $val['valor']; ?>'
-                    > <sub>R$</sub> <?= number_format($val['valor'], 0, ',', '.') ?><sup>,99</sup></span>
+                    > <sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,<?= number_format($decimal, 0, ',', '.') ?></sup></span>
 
         <text><?= $p->descricao ?></text>
     </div>
