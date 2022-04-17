@@ -28,7 +28,7 @@
         right:10px;
         font-weight:bold;
         font-size:20px;
-        color:#9C9C9C;
+        color:#502314;
         /* text-transform: uppercase;
                -1px -1px 0px #FFF,
                -1px 1px 0px #FFF,
@@ -68,19 +68,36 @@
 
 <?php
 
-while ($d = mysqli_fetch_object($result) ) {
+while ($p = mysqli_fetch_object($result) ) {
 
     $icone = "../painel/combos/icon/{$d->icon}?{$md5}";
 
+    $q = "select * from produtos where codigo in ({$p->descricao})";
+    $r = mysqli_query($con, $q);
+    while($v = mysqli_fetch_object($r)){
+
+    }
+
+
 ?>
     <div
-        local="src/produtos/produto.php?categoria=<?=$d->codigo?>"
+        local="src/produtos/produto.php?categoria=<?=$p->categoria?>"
         janela="ms_popup_100"
         class="ms_combos"
         style="background-image:url(<?=$icone?>)"
     >
-        <p><?=$d->produto?></p>
+        <p><?=$p->produto?></p>
         <span> <sub>R$</sub> 56<sup>,99</sup></span>
+
+        <span
+            acao_medida
+            produto="<?= $p->codigo ?>"
+            titulo='<?= "COMBOS - {$p->produto}" ?>'
+            categoria='<?= $p->categoria ?>'
+            valor_produto='<?= $val['valor']; ?>'
+        > <sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
+
+
     </div>
 <?php
     }
