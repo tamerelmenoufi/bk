@@ -12,6 +12,8 @@
             'venda' => $_SESSION['AppVenda'],
             'cliente' => $_SESSION['AppCliente'],
             //'mesa' => $_SESSION['AppPedido'],
+            'produto' => $_POST['produto'],
+            'produto_nome' => $_POST['produto_nome'],
             'produto_descricao' => $_POST['produto_descricao'],
             'quantidade' => $_POST['quantidade'],
             'valor_unitario' => $_POST['valor_unitario'],
