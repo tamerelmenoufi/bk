@@ -73,11 +73,12 @@
     }
 
     .foto<?=$md5?> {
-        background-size: 70%;
+        background-size: 80%;
         background-position: center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         background-color:#f5ebdc;
+        background-repeat:no-repeat;
         height:250px;
     }
     .foto<?=$md5?> span[sabor]{
