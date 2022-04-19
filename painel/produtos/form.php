@@ -181,13 +181,10 @@ if ($codigo) {
 
 
                 <div class="row cor">
-                        <div class="col-md-2">
-                            Individual
-                        </div>
                         <div class="col-md-3">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">R$</span>
+                                    <span class="input-group-text">Individual R$</span>
                                 </div>
 
                                 <input
@@ -201,15 +198,13 @@ if ($codigo) {
                         </div>
 
 
-                        <div class="col-md-2"></div>
+                        <div class="col-md-6"></div>
 
-                        <div class="col-md-2">
-                            Combo
-                        </div>
+
                         <div class="col-md-3">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">R$</span>
+                                    <span class="input-group-text">Combo R$</span>
                                 </div>
 
                                 <input
