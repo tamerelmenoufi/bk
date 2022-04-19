@@ -40,7 +40,7 @@
         padding-bottom:5px;
         width:100%;
         height:125px;
-        background:#f5ebdc;
+        background:#502314;
     }
 
     .pagina{
