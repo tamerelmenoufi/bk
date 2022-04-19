@@ -41,7 +41,7 @@
         padding:5px;
         background-color:#eee;
         border-radius:6px;
-        position:relative;
+        position:absolute;
         opacity:0.6;
         bottom:10px;
         right:10px;
