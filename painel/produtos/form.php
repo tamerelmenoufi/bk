@@ -373,27 +373,27 @@ if ($codigo) {
                 dados.push({name: 'codigo', value: codigo});
             }
 
-            detalhes = [];
-            dds = [];
+            // detalhes = [];
+            // dds = [];
 
-            $("input[valores]").each(function () {
-                opc = $(this).attr('opc');
-                stu = $('input[situacao][opc="' + opc + '"]').val();
-                //dds[opc] = [$(this).val(), stu];
-                dds[opc] = {
-                    "valor": $(this).val(),
-                    "quantidade": stu,
-                };
+            // $("input[valores]").each(function () {
+            //     opc = $(this).attr('opc');
+            //     stu = $('input[situacao][opc="' + opc + '"]').val();
+            //     //dds[opc] = [$(this).val(), stu];
+            //     dds[opc] = {
+            //         "valor": $(this).val(),
+            //         "quantidade": stu,
+            //     };
 
-                /*dds.push({
-                    "valor": $(this).val(),
-                    "quantidade": stu,
-                });*/
-            });
+            //     /*dds.push({
+            //         "valor": $(this).val(),
+            //         "quantidade": stu,
+            //     });*/
+            // });
 
-            detalhes = JSON.stringify(Object.assign({}, dds));
+            // detalhes = JSON.stringify(Object.assign({}, dds));
 
-            dados.push({name: 'detalhes', value: detalhes});
+            // dados.push({name: 'detalhes', value: detalhes});
 
             if ($("#encode_file").val()) {
                 dados.push({name: 'file-name', value: $("#encode_file").attr("nome")});
