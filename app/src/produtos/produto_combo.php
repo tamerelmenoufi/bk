@@ -73,7 +73,7 @@
     }
 
     .foto<?=$md5?> {
-        background-size: cover;
+        background-size: 70%;
         background-position: center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
@@ -162,7 +162,7 @@
                                     z-index:1;
                                     border-radius:100%;
                                     background-image:url(../painel/combos/icon/<?= $p->icon ?>);
-                                    background-size:70%;
+                                    background-size:cover;
                                     background-position:center center;
                                     opacity:0.3;
                                     filter: blur(5px);
