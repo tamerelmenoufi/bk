@@ -109,7 +109,7 @@ while ($p = mysqli_fetch_object($result) ) {
         class="ms_combos"
         style="background-imageXX:url(<?=$icone?>)"
     >
-        <img src="<?=$icone?>" alt="<?=$p->produto?>" style="width:100%" />
+        <img src="<?=$icone?>" alt="<?=$p->produto?>" style="width:70%" />
         <p><?=$p->produto?></p>
         <span
             acao_medida
