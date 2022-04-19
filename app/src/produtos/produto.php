@@ -310,15 +310,6 @@
 
 
         $("button[adicionar_produto]").click(function(){
-            /////////// PRODUTOS ////////////////////////////
-            venda = [];
-            venda['categoria'] = {codigo:'<?=$p->categoria?>', descricao:'<?=$p->nome_categoria?>'};
-            venda['medida'] = {codigo:'<?=$m->codigo?>', descricao:'<?=$m->medida?>'};
-            venda['produtos'] = [];
-            venda['produtos'].push({codigo:'<?= $p->codigo ?>', descricao:'<?= $p->produto ?>', valor:'<?= $_POST['valor'] ?>'});
-            $('.grupo').each(function(){
-                venda['produtos'].push({codigo:$(this).attr("cod"), descricao:$(this).attr("nome"), valor:$(this).attr("valor")});
-            })
 
             //-------
             valor_unitario = $("span[valor]").attr("atual");
@@ -326,17 +317,13 @@
             quantidade = $("#quantidade").html();
             //-------
             valor_total = (valor_unitario*quantidade);
-
             //-------
             var produto = '<?=$p->codigo?>';
-
             //-------
             var produto_descricao = $(".observacoes").html();
-
             //-------
             var produto_nome = '<?=$p->produto?>';
 
-            var produto_json = JSON.stringify(Object.assign({}, venda));
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
             $.ajax({
                 url:"src/produtos/produto.php",

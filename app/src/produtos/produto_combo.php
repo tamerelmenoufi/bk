@@ -12,6 +12,8 @@
             'venda' => $_SESSION['AppVenda'],
             'cliente' => $_SESSION['AppCliente'],
             //'mesa' => $_SESSION['AppPedido'],
+            'produto' => $_POST['produto'],
+            'produto_nome' => $_POST['produto_nome'],
             'produto_descricao' => $_POST['produto_descricao'],
             'quantidade' => $_POST['quantidade'],
             'valor_unitario' => $_POST['valor_unitario'],
@@ -327,33 +329,26 @@
 
 
         $("button[adicionar_produto]").click(function(){
-            /////////// PRODUTOS ////////////////////////////
-            venda = [];
-            venda['categoria'] = {codigo:'8', descricao:'COMBOS'};
-            venda['medida'] = {codigo:'', descricao:''};
-            venda['produtos'] = [];
-            venda['produtos'].push({codigo:'<?= $p->codigo ?>', descricao:'<?= $p->produto ?>', valor:'<?= $valor_total ?>'});
-            $('.grupo').each(function(){
-                venda['produtos'].push({codigo:$(this).attr("cod"), descricao:$(this).attr("nome"), valor:$(this).attr("valor")});
-            })
-
             //-------
             valor_unitario = $("span[valor]").attr("atual");
             //-------
             quantidade = $("#quantidade").html();
             //-------
             valor_total = (valor_unitario*quantidade);
-
+            //-------
+            var produto = '<?=$p->codigo?>';
             //-------
             var produto_descricao = $(".observacoes").html();
+            //-------
+            var produto_nome = '<?=$p->produto?>';
 
-            var produto_json = JSON.stringify(Object.assign({}, venda));
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
             $.ajax({
                 url:"src/produtos/produto_combo.php",
                 type:"POST",
                 data:{
-                    produto_json,
+                    produto,
+                    produto_nome,
                     produto_descricao,
                     valor_unitario,
                     quantidade,
@@ -361,7 +356,6 @@
                     acao:'adicionar_pedido'
                 },
                 success:function(dados){
-                    // $.alert(dados);
                     PageClose();
                     $(".IconePedidos, .MensagemAddProduto").css("display","block");
                     setTimeout(function(){
