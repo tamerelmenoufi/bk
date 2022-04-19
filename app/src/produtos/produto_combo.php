@@ -26,7 +26,7 @@
             $attr[] = "{$key} = '{$item}'";
         }
 
-        echo $query = "INSERT INTO vendas_produtos SET " . implode(", ", $attr);
+        $query = "INSERT INTO vendas_produtos SET " . implode(", ", $attr);
 
         if (@mysqli_query($con, $query)) {
             echo json_encode([
@@ -361,7 +361,7 @@
                     acao:'adicionar_pedido'
                 },
                 success:function(dados){
-                    $.alert(dados);
+                    // $.alert(dados);
                     PageClose();
                     $(".IconePedidos, .MensagemAddProduto").css("display","block");
                     setTimeout(function(){
