@@ -49,6 +49,7 @@
         bottom:65px;
         width:100%;
         overflow:auto;
+        border:solid 2px #502314;
         background:#fff; /*f5ebdc*/
         border-top-left-radius:20px;
         border-top-right-radius:20px;
