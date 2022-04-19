@@ -9,7 +9,7 @@
     .ms_combos{
         position:relative;
         width:100%;
-        border-radius:20px;
+        border-radius:10px;
         background-color:#f2e5d4;
         height:auto;
         background-position:left;
@@ -18,7 +18,7 @@
         margin-bottom:30px;
         margin-top:20px;
         text-align:center;
-        padding-bottom:30px;
+        padding-bottom:40px;
     }
     .ms_combos p{
         padding-left:5px;
