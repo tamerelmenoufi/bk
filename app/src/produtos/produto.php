@@ -15,7 +15,7 @@
             'produto_descricao' => $_POST['produto_descricao'],
             'quantidade' => $_POST['quantidade'],
             'valor_unitario' => $_POST['valor_unitario'],
-            'produto_json' => $_POST['produto_json'],
+            // 'produto_json' => $_POST['produto_json'],
             'valor_total' => $_POST['valor_total'],
             'data' => date('Y-m-d H:i:s'),
         ];
