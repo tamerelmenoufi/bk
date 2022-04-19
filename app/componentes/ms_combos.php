@@ -108,8 +108,6 @@ while ($p = mysqli_fetch_object($result) ) {
         style="background-image:url(<?=$icone?>)"
     >
         <p><?=$p->produto?></p>
-        <span> <sub>R$</sub> 56<sup>,99</sup></span>
-
         <span
             acao_medida
             produto="<?= $p->codigo ?>"
