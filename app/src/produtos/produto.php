@@ -326,7 +326,13 @@
             valor_total = (valor_unitario*quantidade);
 
             //-------
+            var produto = '<?=$p->codigo?>';
+
+            //-------
             var produto_descricao = $(".observacoes").html();
+
+            //-------
+            var produto_nome = '<?=$p->produto?>';
 
             var produto_json = JSON.stringify(Object.assign({}, venda));
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
@@ -334,7 +340,7 @@
                 url:"src/produtos/produto.php",
                 type:"POST",
                 data:{
-                    produto_json,
+                    produto_nome,
                     produto_descricao,
                     valor_unitario,
                     quantidade,
