@@ -238,12 +238,12 @@
                 <div style="position:fixed; bottom:0; left:0; width:100%; z-index:1; background-color:#f5ebdc;">
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
-                            <button
+                            <div
                                     class="btn btn-dangerX text-danger"
                                     type="button"
                                     id="menos">
                                 <i class="fa-solid fa-circle-minus"></i>
-                            </button>
+                            </div>
                         </div>
 
                         <div
@@ -253,12 +253,12 @@
                         >1</div>
 
                         <div class="input-group-append">
-                            <button
+                            <div
                                     class="btn btn-successX text-success"
                                     type="button"
                                     id="mais">
                                 <i class="fa-solid fa-circle-plus"></i>
-                            </button>
+                            </div>
                         </div>
                         <div class="input-group-append">
                             <span
