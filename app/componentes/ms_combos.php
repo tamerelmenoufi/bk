@@ -39,12 +39,12 @@
 
     .ms_combos span{
         padding:5px;
-        /* background-color:#eee; */
+        background-color:#eee;
         border-radius:6px;
         position:relative;
-        /* opacity:0.6; */
-        /* bottom:10px;
-        right:5px; */
+        opacity:0.6;
+        bottom:10px;
+        right:10px;
         font-weight:bold;
         font-size:20px;
         color:#d62300;
