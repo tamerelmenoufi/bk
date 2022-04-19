@@ -18,6 +18,7 @@
         margin-bottom:30px;
         margin-top:20px;
         text-align:center;
+        padding-bottom:30px;
     }
     .ms_combos p{
         padding-left:5px;
