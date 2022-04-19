@@ -135,7 +135,7 @@ if ($codigo) {
             <div class="form-group">
                 <label for="medidas">Valores <i class="text-danger">*</i></label>
 
-                <!-- <?php
+                <?php
                 $query1 = "SELECT * FROM categoria_medidas "
                     . "WHERE deletado != '1' AND codigo IN({$ConfCategoria->medidas}) "
                     . "ORDER BY ordem, medida";
@@ -156,7 +156,7 @@ if ($codigo) {
                                 </div>
 
                                 <input
-                                        valores
+
                                         opc="<?= $dados->codigo ?>"
                                         value="<?= $detalhes[$dados->codigo]['valor']; ?>"
                                         type="number"
@@ -166,7 +166,7 @@ if ($codigo) {
                         </div>
                         <div class="col-md-2">
                             <input
-                                    situacao
+
                                     opc="<?= $dados->codigo ?>"
                                     value="<?= (($detalhes[$dados->codigo]['quantidade']) ?: '0') ?>"
                                     type="checkbox" <?= (($detalhes[$dados->codigo]['quantidade']) ? 'checked' : false) ?>
@@ -175,7 +175,7 @@ if ($codigo) {
                         </div>
 
                     </div>
-                <?php endwhile; ?> -->
+                <?php endwhile; ?>
 
 
 
@@ -328,14 +328,14 @@ if ($codigo) {
         }
 
 
-        $('input[situacao]').change(function () {
-            opc = $(this).attr("opc");
-            if ($(this).prop('checked') === true) {
-                $(this).val(opc);
-            } else {
-                $(this).val('0');
-            }
-        })
+        // $('input[situacao]').change(function () {
+        //     opc = $(this).attr("opc");
+        //     if ($(this).prop('checked') === true) {
+        //         $(this).val(opc);
+        //     } else {
+        //         $(this).val('0');
+        //     }
+        // })
 
         $('#form-<?=$md5?>').validate({
             rules: {
