@@ -23,7 +23,6 @@
     }
     span[ClienteNomeApp]{
         margin-top:5px;
-        opc:111;
     }
 </style>
 <div class="row">
