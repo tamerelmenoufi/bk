@@ -11,12 +11,13 @@
         width:100%;
         border-radius:20px;
         background-color:#f2e5d4;
-        height:150px;
+        height:auto;
         background-position:left;
         background-repeat:no-repeat;
         background-size:auto 100%;
         margin-bottom:30px;
         margin-top:20px;
+        text-align:center;
     }
     .ms_combos p{
         padding-left:5px;
