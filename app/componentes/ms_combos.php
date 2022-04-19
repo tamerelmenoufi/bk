@@ -98,7 +98,7 @@ while ($p = mysqli_fetch_object($result) ) {
     // foreach ($detalhes_2 as $key2 => $val) {
     //     if ($val["quantidade"] > 0) {
 
-            list($valor,$decimal) = explode(".", $valor_total);
+            list($valor,$decimal) = explode(".", $p->valor_total);
 
 ?>
     <div
@@ -113,7 +113,7 @@ while ($p = mysqli_fetch_object($result) ) {
             produto="<?= $p->codigo ?>"
             titulo='<?= "COMBOS - {$p->produto}" ?>'
             categoria='<?= $p->categoria ?>'
-            valor_produto='<?= $valor_total; ?>'
+            valor_produto='<?= $p->valor_total; ?>'
         > <sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
 
 
