@@ -188,7 +188,8 @@ if ($codigo) {
                                 </div>
 
                                 <input
-                                        valores
+                                        name="valor"
+                                        id="valor"
                                         opc="<?= $dados->codigo ?>"
                                         value="<?= $detalhes[$dados->codigo]['valor']; ?>"
                                         type="number"
@@ -208,7 +209,8 @@ if ($codigo) {
                                 </div>
 
                                 <input
-                                        valores
+                                        name="valor_combo"
+                                        id="valor_combo"
                                         opc="<?= $dados->codigo ?>"
                                         value="<?= $detalhes[$dados->codigo]['valor']; ?>"
                                         type="number"
