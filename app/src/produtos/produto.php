@@ -342,6 +342,7 @@
                 url:"src/produtos/produto.php",
                 type:"POST",
                 data:{
+                    produto,
                     produto_nome,
                     produto_descricao,
                     valor_unitario,
