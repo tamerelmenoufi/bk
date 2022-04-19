@@ -56,13 +56,13 @@
         position:fixed;
         top:195px;
         bottom:65px;
-        width:100%;
+        left:5px;
+        right:5px;
         overflow:auto;
         background:#fff; /*f5ebdc*/
         border-top-left-radius:30px;
         border-top-right-radius:30px;
         padding:10px;
-        z-index:2;
     }
 
 
