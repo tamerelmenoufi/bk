@@ -135,7 +135,7 @@ if ($codigo) {
             <div class="form-group">
                 <label for="medidas">Valores <i class="text-danger">*</i></label>
 
-                <?php
+                <!-- <?php
                 $query1 = "SELECT * FROM categoria_medidas "
                     . "WHERE deletado != '1' AND codigo IN({$ConfCategoria->medidas}) "
                     . "ORDER BY ordem, medida";
@@ -175,7 +175,73 @@ if ($codigo) {
                         </div>
 
                     </div>
-                <?php endwhile; ?>
+                <?php endwhile; ?> -->
+
+
+
+
+                <div class="row cor">
+                        <div class="col-md-8">
+                            Individual
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R$</span>
+                                </div>
+
+                                <input
+                                        valores
+                                        opc="<?= $dados->codigo ?>"
+                                        value="<?= $detalhes[$dados->codigo]['valor']; ?>"
+                                        type="number"
+                                        class="form-control"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <input
+                                    situacao
+                                    opc="<?= $dados->codigo ?>"
+                                    value="<?= (($detalhes[$dados->codigo]['quantidade']) ?: '0') ?>"
+                                    type="checkbox" <?= (($detalhes[$dados->codigo]['quantidade']) ? 'checked' : false) ?>
+                                    data-toggle="toggle"
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="row cor">
+                        <div class="col-md-8">
+                            Combo
+                        </div>
+                        <div class="col-md-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R$</span>
+                                </div>
+
+                                <input
+                                        valores
+                                        opc="<?= $dados->codigo ?>"
+                                        value="<?= $detalhes[$dados->codigo]['valor']; ?>"
+                                        type="number"
+                                        class="form-control"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <input
+                                    situacao
+                                    opc="<?= $dados->codigo ?>"
+                                    value="<?= (($detalhes[$dados->codigo]['quantidade']) ?: '0') ?>"
+                                    type="checkbox" <?= (($detalhes[$dados->codigo]['quantidade']) ? 'checked' : false) ?>
+                                    data-toggle="toggle"
+                            >
+                        </div>
+                    </div>
+
+
 
             </div>
 
