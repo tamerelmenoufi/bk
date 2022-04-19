@@ -181,7 +181,7 @@ if ($codigo) {
 
 
                 <div class="row cor">
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             Individual
                         </div>
                         <div class="col-md-3">
@@ -200,7 +200,10 @@ if ($codigo) {
                             </div>
                         </div>
 
-                        <div class="col-md-3">
+
+                        <div class="col-md-2"></div>
+
+                        <div class="col-md-2">
                             Combo
                         </div>
                         <div class="col-md-3">
