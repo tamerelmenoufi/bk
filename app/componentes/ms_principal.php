@@ -49,7 +49,9 @@
         bottom:65px;
         width:100%;
         overflow:auto;
-        background:#f5ebdc;
+        background:#fff; /*f5ebdc*/
+        border-radius-top-left:20px;
+        border-radius-top-right:20px;
         padding:10px;
         z-index:1;
     }
