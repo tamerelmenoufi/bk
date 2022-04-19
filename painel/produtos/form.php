@@ -181,10 +181,10 @@ if ($codigo) {
 
 
                 <div class="row cor">
-                        <div class="col-md-8">
+                        <div class="col-md-3">
                             Individual
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">R$</span>
@@ -199,23 +199,11 @@ if ($codigo) {
                                 >
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <input
-                                    situacao
-                                    opc="<?= $dados->codigo ?>"
-                                    value="<?= (($detalhes[$dados->codigo]['quantidade']) ?: '0') ?>"
-                                    type="checkbox" <?= (($detalhes[$dados->codigo]['quantidade']) ? 'checked' : false) ?>
-                                    data-toggle="toggle"
-                            >
-                        </div>
-                    </div>
 
-
-                    <div class="row cor">
-                        <div class="col-md-8">
+                        <div class="col-md-3">
                             Combo
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">R$</span>
@@ -230,15 +218,7 @@ if ($codigo) {
                                 >
                             </div>
                         </div>
-                        <div class="col-md-2">
-                            <input
-                                    situacao
-                                    opc="<?= $dados->codigo ?>"
-                                    value="<?= (($detalhes[$dados->codigo]['quantidade']) ?: '0') ?>"
-                                    type="checkbox" <?= (($detalhes[$dados->codigo]['quantidade']) ? 'checked' : false) ?>
-                                    data-toggle="toggle"
-                            >
-                        </div>
+
                     </div>
 
 
@@ -246,9 +226,6 @@ if ($codigo) {
             </div>
 
             <div class="form-group">
-                <label for="situacao">
-                    Situação <i class="text-danger">*</i>
-                </label>
                 <?php
                 if (is_file("icon/{$d->icon}")) {
                     ?>
