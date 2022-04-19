@@ -67,13 +67,14 @@
 </style>
 
 <?php
-$valor_total = 0;
+
 while ($p = mysqli_fetch_object($result) ) {
 
     $icone = "../painel/combos/icon/{$p->icon}?{$md5}";
 
     $q = "select * from produtos where codigo in ({$p->descricao})";
     $r = mysqli_query($con, $q);
+    $valor_total = 0;
     while($v = mysqli_fetch_object($r)){
 
         $valor_total =  $valor_total + $v->valor_combo;
