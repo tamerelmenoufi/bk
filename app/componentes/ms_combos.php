@@ -115,7 +115,7 @@ while ($p = mysqli_fetch_object($result) ) {
             produto="<?= $p->codigo ?>"
             titulo='<?= "COMBOS - {$p->produto}" ?>'
             categoria='<?= $p->categoria ?>'
-            valor_produto='<?= $val['valor']; ?>'
+            valor_produto='<?= $valor_total; ?>'
         > <sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
 
 
