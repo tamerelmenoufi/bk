@@ -119,11 +119,11 @@
         ?>
         <div class="card bg-light mb-3" style="padding-bottom:40px;">
             <div class="card-body">
-                <p Excluirproduto codigo="<?=$d->codigo?>" produto="<?=$pedido->categoria->descricao?> - <?=$pedido->medida->descricao?> <?=$sabores?>" style="position:absolute; right:-10px; top:-10px; width:auto;">
+                <p Excluirproduto codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>" style="position:absolute; right:-10px; top:-10px; width:auto;">
                     <i class="fa-solid fa-circle-xmark" style="color:red; font-size:30px;"></i>
                 <p>
                 <h5 class="card-title" style="paddig:0; margin:0; font-size:14px; font-weight:bold;">
-                    <?=$d->produto?>
+                    <?=$d->produto_nome?>
                 </h5>
                 <!-- <p class="card-text" style="padding:0; margin:0;">
                     <small class="text-muted"><?=$sabores?></small>
