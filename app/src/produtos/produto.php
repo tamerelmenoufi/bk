@@ -76,7 +76,7 @@
 
     .foto<?=$md5?> {
         background-size: cover;
-        background-position: center;
+        background-position: center bottom;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         background-color:#f5ebdc;
@@ -115,6 +115,7 @@
         font-size:16px;
         font-weight:bold;
         color:#d62300;
+        display:none;
 
     }
 
@@ -178,7 +179,7 @@
                         >
                             <span sabor><?= $p->produto ?></span>
                             <span categoria><?= $p->nome_categoria ?></span>
-                            <span vl><sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,99</sup></span>
+                            <!-- <span vl><sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,99</sup></span> -->
 
                         </div>
                     </div>
@@ -221,12 +222,12 @@
                 <div style="position:fixed; bottom:0; left:0; width:100%; z-index:1; background-color:#f5ebdc;">
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
-                            <button
+                            <div
                                     class="btn btn-dangerX text-danger"
                                     type="button"
                                     id="menos">
                                 <i class="fa-solid fa-circle-minus"></i>
-                            </button>
+                            </div>
                         </div>
 
                         <div
@@ -236,12 +237,12 @@
                         >1</div>
 
                         <div class="input-group-append">
-                            <button
+                            <div
                                     class="btn btn-successX text-success"
                                     type="button"
                                     id="mais">
                                 <i class="fa-solid fa-circle-plus"></i>
-                            </button>
+                            </div>
                         </div>
                         <div class="input-group-append">
                             <span
