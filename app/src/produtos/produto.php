@@ -77,6 +77,7 @@
     .foto<?=$md5?> {
         background-size: 80%;
         background-position: center bottom;
+        background-repeat:no-repeat;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         background-color:#f5ebdc;
