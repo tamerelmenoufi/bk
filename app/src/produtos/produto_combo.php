@@ -162,7 +162,7 @@
                                     z-index:1;
                                     border-radius:100%;
                                     background-image:url(../painel/combos/icon/<?= $p->icon ?>);
-                                    background-size:100%;
+                                    background-size:70%;
                                     background-position:center center;
                                     opacity:0.3;
                                     filter: blur(5px);
