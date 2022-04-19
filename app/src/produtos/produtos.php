@@ -222,8 +222,9 @@ while ($m = mysqli_fetch_array($m_r)) {
     $query = "select * from produtos where categoria = '{$d->codigo}' AND situacao = '1' AND deletado != '1'";
     $result = mysqli_query($con, $query);
     while ($p = mysqli_fetch_object($result)) {
-        $detalhes = json_decode($p->detalhes, true);
-        $detalhes_2 = [];
+
+        // $detalhes = json_decode($p->detalhes, true);
+        // $detalhes_2 = [];
 
         if(is_file("../../../painel/produtos/icon/{$p->icon}")){
             $url = "../painel/produtos/icon/{$p->icon}";
@@ -237,29 +238,27 @@ while ($m = mysqli_fetch_array($m_r)) {
 
 <!-- PRODUTOS TESTE -->
     <?php
-        foreach ($detalhes as $key => $val) :
-            $val['ordem'] = $M[$key]['ordem'];
-            $detalhes_2[$key] = $val;
-        endforeach;
+        // foreach ($detalhes as $key => $val) :
+        //     $val['ordem'] = $M[$key]['ordem'];
+        //     $detalhes_2[$key] = $val;
+        // endforeach;
 
-        aasort($detalhes_2, "ordem");
+        // aasort($detalhes_2, "ordem");
 
-        foreach ($detalhes_2 as $key2 => $val) {
-            if ($val["quantidade"] > 0) {
+        // foreach ($detalhes_2 as $key2 => $val) {
+        //     if ($val["quantidade"] > 0) {
 
-                list($valor,$decimal) = explode(".", $val['valor']);
+                 list($valor,$decimal) = explode(".", $p->valor);
 
     ?>
     <div
         acao_medida
         class="ms_produtos"
         style="background-image:url(<?=$url?>)"
-        opc="<?= $val["quantidade"]; ?>"
         produto="<?= $p->codigo ?>"
-        titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
+        titulo='<?= "{$d->categoria} - {$p->produto}" ?>'
         categoria='<?= $p->categoria ?>'
-        medida='<?= $val["quantidade"]; ?>'
-        valor_produto='<?= $val['valor']; ?>'
+        valor_produto='<?= $p->valor ?>'
 
     >
         <p><?=$p->produto?></p>
@@ -268,9 +267,9 @@ while ($m = mysqli_fetch_array($m_r)) {
                     <span
                         acao_medida
                         produto="<?= $p->codigo ?>"
-                        titulo='<?= "{$d->categoria} - {$p->produto} ({$M[$key2]["descricao"]})" ?>'
+                        titulo='<?= "{$d->categoria} - {$p->produto}" ?>'
                         categoria='<?= $p->categoria ?>'
-                        valor_produto='<?= $val['valor']; ?>'
+                        valor_produto='<?= $p->valor ?>'
                     > <sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
 
         <text><?= $p->descricao ?></text>
@@ -278,8 +277,8 @@ while ($m = mysqli_fetch_array($m_r)) {
 
     <?php
 
-                }
-            }
+            //     }
+            // }
 
     }
     ?>
