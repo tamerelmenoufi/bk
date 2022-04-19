@@ -21,8 +21,8 @@
         margin-right:10px;
         color:#fff;
     }
-    span[ClienteNomeApp]{
-        padding-top:10px;
+    div[espaco]{
+        margin-top:10px;
     }
 </style>
 <div class="row">
@@ -33,7 +33,7 @@
         <?php
             if($c->telefone){
         ?>
-            <div class="DadosTopo"><?=$c->telefone?><br><span ClienteNomeApp><?=$c->nome?></span></div>
+            <div class="DadosTopo"><?=$c->telefone?> <div espaco></div> <span ClienteNomeApp><?=$c->nome?></span></div>
         <?php
             }
         ?>
