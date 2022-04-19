@@ -22,7 +22,7 @@
         color:#fff;
     }
     span[ClienteNomeApp]{
-        margin-top:5px;
+        padding-top:10px;
     }
 </style>
 <div class="row">
