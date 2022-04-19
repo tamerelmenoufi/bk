@@ -18,7 +18,7 @@
         text-align:right;
         font-size:12px;
         padding:5px;
-        margin-right:10px;
+        margin-right:5px;
         color:#fff;
     }
     div[espaco]{
