@@ -105,20 +105,15 @@ while ($p = mysqli_fetch_object($result) ) {
 
 ?>
     <div
-        local="src/produtos/produto.php?categoria=<?=$p->categoria?>"
+        abrir_combo
+        local="src/produtos/produto_combo.php?produto=<?=$p->codigo?>"
         janela="ms_popup_100"
         class="ms_combos"
         style="background-imageXX:url(<?=$icone?>)"
     >
         <img src="<?=$icone?>" alt="<?=$p->produto?>" style="width:70%" />
         <p><?=$p->produto?></p>
-        <span
-            acao_medida
-            produto="<?= $p->codigo ?>"
-            titulo='<?= "COMBOS - {$p->produto}" ?>'
-            categoria='<?= $p->categoria ?>'
-            valor_produto='<?= $p->valor_total; ?>'
-        > <sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
+        <span> <sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
 
 
     </div>
@@ -131,6 +126,22 @@ while ($p = mysqli_fetch_object($result) ) {
 <script>
     $(function(){
 
+        $("div[abrir_combo]").click(function(){
+            local = $(this).attr("local");
+            janela = $(this).attr("janela");
+            Carregando();
+            $.ajax({
+                url:`componentes/${janela}.php`,
+                type:"POST",
+                data:{
+                    local:local,
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
+        });
 
     })
 </script>
