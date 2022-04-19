@@ -23,9 +23,9 @@
         padding-right:5px;
         background-color:#f2e5d4;
         border-radius:10px;
-        position:absolute;
-        top:-20px;
-        right:10px;
+        position:relative;
+        /* top:-20px;
+        right:10px; */
         font-weight:bold;
         font-size:20px;
         color:#502314;
@@ -40,10 +40,10 @@
         padding:5px;
         /* background-color:#eee; */
         border-radius:6px;
-        position:absolute;
+        position:relative;
         /* opacity:0.6; */
-        bottom:10px;
-        right:5px;
+        /* bottom:10px;
+        right:5px; */
         font-weight:bold;
         font-size:20px;
         color:#d62300;
@@ -106,8 +106,9 @@ while ($p = mysqli_fetch_object($result) ) {
         local="src/produtos/produto.php?categoria=<?=$p->categoria?>"
         janela="ms_popup_100"
         class="ms_combos"
-        style="background-image:url(<?=$icone?>)"
+        style="background-imageXX:url(<?=$icone?>)"
     >
+        <img src="<?=$icone?>" alt="<?=$p->produto?>" style="width:100%" />
         <p><?=$p->produto?></p>
         <span
             acao_medida
