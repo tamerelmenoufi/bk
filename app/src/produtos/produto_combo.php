@@ -167,7 +167,7 @@
     <div class="row" style="margin-top:-65px;">
         <div class="col">
 
-                <div class="card mb-3">
+                <div class="mb-3">
                     <div class="row">
 
 
