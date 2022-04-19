@@ -135,7 +135,7 @@ if ($codigo) {
             <div class="form-group">
                 <label for="medidas">Valores <i class="text-danger">*</i></label>
 
-                <?php
+                <!-- <?php
                 $query1 = "SELECT * FROM categoria_medidas "
                     . "WHERE deletado != '1' AND codigo IN({$ConfCategoria->medidas}) "
                     . "ORDER BY ordem, medida";
@@ -175,7 +175,7 @@ if ($codigo) {
                         </div>
 
                     </div>
-                <?php endwhile; ?>
+                <?php endwhile; ?> -->
 
 
 
