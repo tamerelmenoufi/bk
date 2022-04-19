@@ -48,13 +48,21 @@
         top:185px;
         bottom:65px;
         width:100%;
-        overflow:auto;
-        border:solid 2px #502314;
-        background:#fff; /*f5ebdc*/
-        border-top-left-radius:20px;
-        border-top-right-radius:20px;
-        padding:10px;
+        background:#502314; /*f5ebdc*/
         z-index:1;
+    }
+
+    .pagina div[dados]{
+        position:fixed;
+        top:195px;
+        bottom:65px;
+        width:100%;
+        overflow:auto;
+        background:#fff; /*f5ebdc*/
+        border-top-left-radius:30px;
+        border-top-right-radius:30px;
+        padding:10px;
+        z-index:2;
     }
 
 
@@ -75,6 +83,8 @@
 
     <div class="categoria_combo"></div>
 
+    <div dados>
+
 <!-- <?php
     $query = "select * from categorias where deletado != '1' and situacao = '1' and categoria != 'COMBOS'";
     $result = mysqli_query($con,$query);
@@ -91,6 +101,7 @@
 <?php
     }
 ?> -->
+    </div>
 </div>
 <div class="rodape"></div>
 
