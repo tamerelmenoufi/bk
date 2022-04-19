@@ -184,7 +184,7 @@ if ($codigo) {
                         <div class="col-md-3">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Individual R$</span>
+                                    <span class="input-group-text"><b>Individual</b> R$</span>
                                 </div>
 
                                 <input
@@ -204,7 +204,7 @@ if ($codigo) {
                         <div class="col-md-3">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">Combo R$</span>
+                                    <span class="input-group-text"><b>Combo</b> R$</span>
                                 </div>
 
                                 <input
