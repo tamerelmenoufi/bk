@@ -68,7 +68,7 @@
     }
 
     list($valor,$decimal) = explode(".", $valor_total);
-    $descricao = implode(", ",$descricao);
+    $descricao = implode(" ",$descricao);
 
 ?>
 <style>
