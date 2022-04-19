@@ -53,9 +53,11 @@
     $q = "select * from produtos where codigo in ({$p->descricao})";
     $r = mysqli_query($con, $q);
     $valor_total = 0;
+    $descricao = [];
     while($v = mysqli_fetch_object($r)){
 
         $valor_total =  $valor_total + $v->valor_combo;
+        $descricao[] = $v->descricao;
 
         // if($m->medida == 'COMBO'){
         //     $M[$m['codigo']] = [
@@ -66,6 +68,7 @@
     }
 
     list($valor,$decimal) = explode(".", $valor_total);
+    $descricao = implode(", ",$descricao);
 
 ?>
 <style>
@@ -121,6 +124,7 @@
                -1px 1px 0px #FFF,
                 1px -1px 0px #FFF,
                 1px 0px 0px #FFF;
+        display:none;
     }
     .foto<?=$md5?> span[vl]{
         position:absolute;
@@ -203,7 +207,7 @@
                                 <!-- <h5 class="card-title">
                                     <?= $p->nome_categoria ?> - <?= $p->produto ?> (<?= $m->medida ?>)
                                 </h5> -->
-                                <p class="card-text"><?= $p->descricao ?></p>
+                                <p class="card-text"><?= $descricao ?></p>
                                 <p class="observacoes"></p>
                                 <div class="row">
                                 <div class="col-8">
