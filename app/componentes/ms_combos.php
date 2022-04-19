@@ -67,35 +67,38 @@
 </style>
 
 <?php
-
+$valor_total = 0;
 while ($p = mysqli_fetch_object($result) ) {
 
     $icone = "../painel/combos/icon/{$p->icon}?{$md5}";
 
-    echo $q = "select * from produtos where codigo in ({$p->descricao})";
+    $q = "select * from produtos where codigo in ({$p->descricao})";
     $r = mysqli_query($con, $q);
     while($v = mysqli_fetch_object($r)){
-        if($m->medida == 'COMBO'){
-            $M[$m['codigo']] = [
-                "ordem" => $m['ordem'],
-                "descricao" => $m['medida']
-            ];
-        }
+
+        $valor_total =  $valor_total + $valor_combo;
+
+        // if($m->medida == 'COMBO'){
+        //     $M[$m['codigo']] = [
+        //         "ordem" => $m['ordem'],
+        //         "descricao" => $m['medida']
+        //     ];
+        // }
     }
 
 
 
-    foreach ($detalhes as $key => $val) :
-        $val['ordem'] = $M[$key]['ordem'];
-        $detalhes_2[$key] = $val;
-    endforeach;
+    // foreach ($detalhes as $key => $val) :
+    //     $val['ordem'] = $M[$key]['ordem'];
+    //     $detalhes_2[$key] = $val;
+    // endforeach;
 
-    aasort($detalhes_2, "ordem");
+    // aasort($detalhes_2, "ordem");
 
-    foreach ($detalhes_2 as $key2 => $val) {
-        if ($val["quantidade"] > 0) {
+    // foreach ($detalhes_2 as $key2 => $val) {
+    //     if ($val["quantidade"] > 0) {
 
-            list($valor,$decimal) = explode(".", $detalhes_2['valor']);
+            list($valor,$decimal) = explode(".", $valor_total);
 
 ?>
     <div
@@ -118,8 +121,8 @@ while ($p = mysqli_fetch_object($result) ) {
 
     </div>
 <?php
-        }
-    }
+        // }
+    // }
 }
 ?>
 
