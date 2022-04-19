@@ -1,7 +1,7 @@
 /*  COMPONENTES CSS */
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #502314;
+    background-color: #502314 !important;
 }
 /*  Corpo do app */
 .ms_corpo{
