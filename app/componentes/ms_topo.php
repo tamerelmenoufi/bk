@@ -21,6 +21,9 @@
         margin-right:10px;
         color:#fff;
     }
+    span[ClienteNomeApp]{
+        margin-top:5px;
+    }
 </style>
 <div class="row">
     <div class="col-4">
