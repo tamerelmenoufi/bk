@@ -49,8 +49,23 @@
     $result = mysqli_query($con, $query);
     $p = mysqli_fetch_object($result);
 
-    $m = mysqli_fetch_object(mysqli_query($con, "SELECT * FROM categoria_medidas WHERE codigo = '{$medida}' AND deletado != '1'"));
 
+    $q = "select * from produtos where codigo in ({$p->descricao})";
+    $r = mysqli_query($con, $q);
+    $valor_total = 0;
+    while($v = mysqli_fetch_object($r)){
+
+        $valor_total =  $valor_total + $v->valor_combo;
+
+        // if($m->medida == 'COMBO'){
+        //     $M[$m['codigo']] = [
+        //         "ordem" => $m['ordem'],
+        //         "descricao" => $m['medida']
+        //     ];
+        // }
+    }
+
+    list($valor,$decimal) = explode(".", $valor_total);
 
 ?>
 <style>
@@ -177,8 +192,7 @@
                         >
                             <span sabor><?= $p->produto ?></span>
                             <span categoria>COMBO</span>
-                            <span vl><sub>R$</sub> <?= number_format($valor, 0, ',', '.') ?><sup>,99</sup></span>
-
+                            <span vl><sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
                         </div>
                     </div>
                 </div>
