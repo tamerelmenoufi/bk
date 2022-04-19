@@ -214,7 +214,7 @@
                                     <button observacoes class="btn btn-warning btn-block"><i class="fa-solid fa-pencil"></i> Recomendações</button>
                                 </div>
                                 <div class="col-4">
-                                    <div style="text-align:right;"><small>R$</small> <small valor_atual><?= number_format($_POST['valor'], 2, ',', '.') ?></small></div>
+                                    <div style="text-align:right;"><small>R$</small> <small valor_atual><?= number_format($valor_total, 2, ',', '.') ?></small></div>
                                     <div style="font-size:10px; text-align:right;">Valor Cobrado</div>
                                 </div>
                                 </div>
@@ -264,8 +264,8 @@
                             <span
                                     class="btn btn-primaryX text-primary"
                                     id="rotulo_valor">
-                                R$ <span valor atual="<?=$valor?>">
-                                    <?= number_format($valor, 2, ',', '.') ?>
+                                R$ <span valor atual="<?=$valor_total?>">
+                                    <?= number_format($valor_total, 2, ',', '.') ?>
                                 </span>
                             </span>
                         </div>
