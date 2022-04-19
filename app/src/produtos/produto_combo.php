@@ -183,7 +183,7 @@
                                     border-radius:100%;
                                     background-image:url(../painel/combos/icon/<?= $p->icon ?>);
                                     background-size:cover;
-                                    background-position:center center;
+                                    background-position:center bottom;
                                     opacity:0.3;
                                     filter: blur(5px);
                                     text-align:center;
@@ -195,8 +195,8 @@
                             style="background-image:url(../painel/combos/icon/<?= $p->icon ?>)"
                         >
                             <span sabor><?= $p->produto ?></span>
-                            <span categoria>COMBO</span>
-                            <span vl><sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span>
+                            <!-- <span categoria>COMBO</span> -->
+                            <!-- <span vl><sub>R$</sub> <?= $valor ?><sup>,<?= str_pad($decimal , 2 , '0' , STR_PAD_RIGHT) ?></sup></span> -->
                         </div>
                     </div>
                 </div>
