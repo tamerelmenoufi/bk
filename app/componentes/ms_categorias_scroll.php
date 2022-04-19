@@ -44,7 +44,7 @@
     position:relative;
     width:80px;
     height:auto;
-    color:#9C9C9C;
+    color:#fff;
     font-style: normal;
     font-size: 12px;
     line-height: 14px;
