@@ -60,8 +60,8 @@
         right:5px;
         overflow:auto;
         background:#fff; /*f5ebdc*/
-        border-top-left-radius:30px;
-        border-top-right-radius:30px;
+        border-top-left-radius:25px;
+        border-top-right-radius:25px;
         padding:10px;
     }
 
