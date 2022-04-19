@@ -76,7 +76,7 @@ while ($p = mysqli_fetch_object($result) ) {
     $r = mysqli_query($con, $q);
     while($v = mysqli_fetch_object($r)){
 
-        $valor_total =  $valor_total + $valor_combo;
+        $valor_total =  $valor_total + $v->valor_combo;
 
         // if($m->medida == 'COMBO'){
         //     $M[$m['codigo']] = [
@@ -98,7 +98,7 @@ while ($p = mysqli_fetch_object($result) ) {
     // foreach ($detalhes_2 as $key2 => $val) {
     //     if ($val["quantidade"] > 0) {
 
-            list($valor,$decimal) = explode(".", $p->valor_total);
+            list($valor,$decimal) = explode(".", $valor_total);
 
 ?>
     <div
