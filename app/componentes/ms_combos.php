@@ -106,7 +106,8 @@ while ($p = mysqli_fetch_object($result) ) {
 ?>
     <div
         abrir_combo
-        local="src/produtos/produto_combo.php?produto=<?=$p->codigo?>"
+        local="src/produtos/produto_combo.php"
+        produto="<?=$p->codigo?>"
         janela="ms_popup_100"
         class="ms_combos"
         style="background-imageXX:url(<?=$icone?>)"
@@ -129,12 +130,15 @@ while ($p = mysqli_fetch_object($result) ) {
         $("div[abrir_combo]").click(function(){
             local = $(this).attr("local");
             janela = $(this).attr("janela");
+            produto = $(this).attr("produto");
+
             Carregando();
             $.ajax({
                 url:`componentes/${janela}.php`,
                 type:"POST",
                 data:{
-                    local:local,
+                    local,
+                    produto,
                 },
                 success:function(dados){
                     $(".ms_corpo").append(dados);
