@@ -190,8 +190,7 @@ if ($codigo) {
                                 <input
                                         name="valor"
                                         id="valor"
-                                        opc="<?= $dados->codigo ?>"
-                                        value="<?= $detalhes[$dados->codigo]['valor']; ?>"
+                                        value="<?= $dados->valor; ?>"
                                         type="number"
                                         class="form-control"
                                 >
@@ -211,8 +210,7 @@ if ($codigo) {
                                 <input
                                         name="valor_combo"
                                         id="valor_combo"
-                                        opc="<?= $dados->codigo ?>"
-                                        value="<?= $detalhes[$dados->codigo]['valor']; ?>"
+                                        value="<?= $dados->valor_combo; ?>"
                                         type="number"
                                         class="form-control"
                                 >
