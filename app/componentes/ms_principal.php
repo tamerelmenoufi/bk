@@ -50,8 +50,8 @@
         width:100%;
         overflow:auto;
         background:#fff; /*f5ebdc*/
-        border-radius-top-left:20px;
-        border-radius-top-right:20px;
+        border-top-left-radius:20px;
+        border-top-right-radius:20px;
         padding:10px;
         z-index:1;
     }
