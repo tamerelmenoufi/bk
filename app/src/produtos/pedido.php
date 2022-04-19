@@ -123,12 +123,11 @@
                     <i class="fa-solid fa-circle-xmark" style="color:red; font-size:30px;"></i>
                 <p>
                 <h5 class="card-title" style="paddig:0; margin:0; font-size:14px; font-weight:bold;">
-                    <?=$pedido->categoria->descricao?>
-                    - <?=$pedido->medida->descricao?>
+                    <?=$d->produto?>
                 </h5>
-                <p class="card-text" style="padding:0; margin:0;">
+                <!-- <p class="card-text" style="padding:0; margin:0;">
                     <small class="text-muted"><?=$sabores?></small>
-                </p>
+                </p> -->
                 <p class="card-text" style="padding:0; margin:0; text-align:right">
                     R$ <?= number_format($d->valor_unitario, 2, ',', '.') ?>
                 </p>
