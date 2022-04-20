@@ -101,7 +101,6 @@
         background-repeat:no-repeat;
         height:250px;
         position:fixed;
-        top:70px;
     }
     .foto<?=$md5?> span[sabor]{
         position:absolute;
