@@ -80,7 +80,7 @@
         background-repeat:no-repeat;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        background-color:#f5ebdc;
+        background-color:transparent;
         height:250px;
         position:fixed;
         z-index:3;
