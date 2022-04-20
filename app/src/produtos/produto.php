@@ -189,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="position:fixed; top:250px; bottom:60px; overflow:scroll; border:solid 1px red;">
+
                 <div class="row">
                         <div class="col">
                             <div class="card-body">
@@ -206,8 +206,10 @@
                                     <div style="font-size:10px; text-align:right;">Valor Cobrado</div>
                                 </div>
                                 </div>
-                                <p class="observacoes"></p>
-                                <p class="card-text"><?= $p->descricao ?></p>
+                                <div style="position:fixed; top:280px; bottom:100px; overflow:scroll; border:solid 1px red;">
+                                    <p class="observacoes"></p>
+                                    <p class="card-text"><?= $p->descricao ?></p>
+                                </div>
                                 <!-- <div class="col-md-12" style="margin-bottom:20px;">
                                     <p class="card-text texto_detalhes"></p>
                                 </div>
@@ -223,7 +225,7 @@
                         </div>
 
                 </div>
-                </div>
+
                 <div style="position:fixed; bottom:0; left:0; width:100%; z-index:1; background-color:#f5ebdc;">
                     <div class="input-group input-group-lg">
                         <div class="input-group-prepend">
