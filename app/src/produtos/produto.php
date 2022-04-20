@@ -82,6 +82,7 @@
         border-bottom-left-radius: 5px;
         background-color:#f5ebdc;
         height:250px;
+        position:fixed;
     }
     .foto<?=$md5?> span[sabor]{
         position:absolute;
@@ -186,7 +187,7 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row" style="margin-top:250px;">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">

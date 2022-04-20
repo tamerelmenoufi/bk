@@ -204,7 +204,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:250px; border:solid 2px red">
+                <div class="row" style="margin-top:250px;">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
