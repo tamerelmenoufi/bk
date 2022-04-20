@@ -189,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="position:fixed; top:250px; bottom:60px; border:solid 1px red;">
+                <div style="position:fixed; top:250px; bottom:60px; overflow:scroll; border:solid 1px red;">
                 <div class="row">
                         <div class="col">
                             <div class="card-body">
