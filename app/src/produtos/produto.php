@@ -190,7 +190,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:250px; z-index:1">
+                <div class="row" style="margin-top:250px; z-index:0">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
