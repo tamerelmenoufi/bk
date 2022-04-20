@@ -206,7 +206,7 @@
                                     <div style="font-size:10px; text-align:right;">Valor Cobrado</div>
                                 </div>
                                 </div>
-                                <div style="position:fixed; top:315px; bottom:100px; overflow:scroll;">
+                                <div style="position:fixed; top:315px; bottom:100px; overflow:scroll; left:10px; right:10px;">
                                     <p class="observacoes"></p>
                                     <p class="card-text"><?= $p->descricao ?></p>
                                 </div>
