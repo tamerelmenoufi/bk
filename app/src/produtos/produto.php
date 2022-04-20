@@ -146,6 +146,8 @@
         font-size:10px;
         /* text-align:justify; */
         z-index: 2;
+        margin-top:10px;
+        margin-bottom:10px;
     }
 </style>
 <div class="col">
@@ -203,9 +205,8 @@
                                     <div style="font-size:10px; text-align:right;">Valor Cobrado</div>
                                 </div>
                                 </div>
-                                <p class="card-text"><?= $p->descricao ?></p>
                                 <p class="observacoes"></p>
-
+                                <p class="card-text"><?= $p->descricao ?></p>
                                 <!-- <div class="col-md-12" style="margin-bottom:20px;">
                                     <p class="card-text texto_detalhes"></p>
                                 </div>
