@@ -148,7 +148,7 @@
     }
 </style>
 <div class="col">
-    <div class="row" style="margin-top:-65px; padding-bottom:150px;">
+    <div class="row" style="margin-top:-65px; padding-bottom:60px;">
         <div class="col">
 
                 <div class="card mb-3">
