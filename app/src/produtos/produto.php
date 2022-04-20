@@ -190,7 +190,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="position:fixed; top:250px; z-index:1; overflow:auto;">
+                <div class="row" style="position:fixed; top:250px; z-index:1; overflow:scroll;">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
