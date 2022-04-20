@@ -83,6 +83,7 @@
         background-color:#f5ebdc;
         height:250px;
         position:fixed;
+        z-index:3;
     }
     .foto<?=$md5?> span[sabor]{
         position:absolute;
@@ -166,7 +167,7 @@
                                     width:300%;
                                     height:50%;
                                     background-color:#EBF4F1;
-                                    z-index:1;
+                                    z-index:2;
                                     border-radius:100%;
                                     background-image:url(../painel/produtos/icon/<?= $p->icon ?>);
                                     background-size:cover;
@@ -189,7 +190,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:250px;">
+                <div class="row" style="margin-top:250px; z-index:1">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
