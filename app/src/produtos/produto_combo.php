@@ -100,6 +100,8 @@
         background-color:#f5ebdc;
         background-repeat:no-repeat;
         height:250px;
+        position:fixed;
+        top:60px;
     }
     .foto<?=$md5?> span[sabor]{
         position:absolute;
