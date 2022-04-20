@@ -193,8 +193,7 @@
                                 <!-- <h5 class="card-title">
                                     <?= $p->nome_categoria ?> - <?= $p->produto ?> (<?= $m->medida ?>)
                                 </h5> -->
-                                <p class="card-text"><?= $p->descricao ?></p>
-                                <p class="observacoes"></p>
+
                                 <div class="row">
                                 <div class="col-8">
                                     <button observacoes class="btn btn-warning btn-block"><i class="fa-solid fa-pencil"></i> Recomendações</button>
@@ -204,9 +203,10 @@
                                     <div style="font-size:10px; text-align:right;">Valor Cobrado</div>
                                 </div>
                                 </div>
+                                <p class="card-text"><?= $p->descricao ?></p>
+                                <p class="observacoes"></p>
 
-
-                                <div class="col-md-12" style="margin-bottom:20px;">
+                                <!-- <div class="col-md-12" style="margin-bottom:20px;">
                                     <p class="card-text texto_detalhes"></p>
                                 </div>
                                 <?php if ($m->qt_produtos > 1) { ?>
@@ -215,7 +215,8 @@
                                     <?= ($m->qt_produtos - 1) . ' ' . (($m->qt_produtos == 2) ? 'sabor' : 'sabores') ?>
                                 </button>
                                 <div class="ListaSabores"></div>
-                                <?php } ?>
+                                <?php } ?> -->
+
                             </div>
                         </div>
 
