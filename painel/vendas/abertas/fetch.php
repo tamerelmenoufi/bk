@@ -1,14 +1,14 @@
 <?php
-$situacao = "producao";
-
 include("../../../lib/includes.php");
 
-$column = array(
+$situacao = "n";
+
+$column = [
     "nome",
     "data_pedido",
     "forma_pagamento",
     "total"
-);
+];
 
 $query = "SELECT v.*, c.nome, c.telefone FROM vendas v "
     . "INNER JOIN clientes c ON c.codigo = v.cliente "
@@ -16,13 +16,14 @@ $query = "SELECT v.*, c.nome, c.telefone FROM vendas v "
 
 if (isset($_POST["search"]["value"])) {
 
-    $query .= '
-	AND (c.nome LIKE "%' . $_POST["search"]["value"] . '%"
-	OR c.telefone LIKE "%' . $_POST["search"]["value"] . '%"
-	OR v.data_pedido LIKE "%' . $_POST["search"]["value"] . '%" 
-	OR v.forma_pagamento LIKE "%' . $_POST["search"]["value"] . '%" 
-	OR v.valor LIKE "%' . $_POST["search"]["value"] . '%") 
-	';
+    $valor = trim($_POST["search"]["value"]);
+
+    $query .= "AND (c.nome LIKE '%{$valor}%' "
+        . "OR c.telefone LIKE '%{$valor}%' "
+        . "OR v.data_pedido LIKE '%{$valor}%' "
+        . "OR v.forma_pagamento LIKE '%{$valor}%' "
+        . "OR v.valor LIKE '%{$valor}%')";
+
 }
 
 if (isset($_POST['order'])) {
@@ -30,6 +31,8 @@ if (isset($_POST['order'])) {
 } else {
     $query .= 'ORDER BY c.codigo DESC ';
 }
+
+#file_put_contents("debug.txt", $query);
 
 $query1 = '';
 

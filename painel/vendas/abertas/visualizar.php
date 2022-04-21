@@ -44,57 +44,23 @@ $result = mysqli_query($con, $query);
 ?>
 
 <div class="col-md-12">
-    <?php while ($d = mysqli_fetch_object($result)) { ?>
-        <div id="vp-<?= $d->codigo; ?>" class="card mb-2">
-            <div class="card-body position-relative bg-gray-100 py-2">
-                <h5 class="h5 font-weight-bold"><?= $d->p_produto; ?></h5>
+    <div class="list-group">
+        <?php while ($d = mysqli_fetch_object($result)) { ?>
 
-                <div>
-                    <?= $d->p_descricao; ?>
-                </div>
+            <div id="vp-<?= $d->codigo; ?>" class="mb-2 bg-gray-100 p-3">
+                <div class="position-relative py-2">
 
-                <div class="d-flex flex-row justify-content-end">
-                    <span>
-                        R$ <?= number_format(
-                            $d->valor_unitario,
-                            2,
-                            ',',
-                            '.'
-                        ); ?>
-                    </span>
-                </div>
+                    <div class="d-flex flex-row justify-content-between mb-2">
+                        <div>
+                            <h5 class="h5 font-weight-bold mb-1"><?= $d->p_produto; ?></h5>
 
-                <div class="d-flex justify-content-between align-items-center"> <!-- Botões de ações -->
-                    <div
-                            class="d-flex flex-row align-items-center"
-                            cod="<?= $d->codigo; ?>"
-                            valor_unitario="<?= $d->valor_unitario; ?>"
-                            produto="<?= $d->produto; ?>"
-                    >
-                        <div style="position:absolute;top: 5px; right: 5px">
-                            <button type="button" class="btn btn-sm btn-outline-danger excluir">
-                                <i class="fa-solid fa-trash-alt"></i>
-                            </button>
+                            <div>
+                                <?= $d->p_descricao; ?>
+                            </div>
                         </div>
-
-                        <button class="btn btn-sm btn-outline-danger menos" type="button">
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-
-                        <div class="quantidade px-3"
-                        ><?= $d->quantidade ?>
-                        </div>
-
-                        <button class="btn btn-sm btn-outline-success mais mr-1" type="button">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-
-
-                    </div> <!-- Botões de ações -->
-
-                    <div> <!-- Texto valor total -->
-                        <h5 class="font-weight-bold text-info">
-                            R$ <span valor_total_<?= $d->codigo; ?>="<?= $d->valor_total; ?>">
+                        <div class="d-flex flex-column align-items-end">
+                            <h5 class="font-weight-bold text-info">
+                                R$ <span valor_total_<?= $d->codigo; ?>="<?= $d->valor_total; ?>">
                                 <?= number_format(
                                     $d->valor_total,
                                     2,
@@ -102,14 +68,53 @@ $result = mysqli_query($con, $query);
                                     '.'
                                 ); ?>
                               </span>
-                        </h5>
-                    </div> <!-- Texto valor total -->
-                </div>
+                            </h5>
+                            <span>
+                                R$ <?= number_format(
+                                    $d->valor_unitario,
+                                    2,
+                                    ',',
+                                    '.'
+                                ); ?>
+                            </span>
+                        </div>
+                    </div>
 
+                    <div class="d-flex justify-content-between align-items-center"> <!-- Botões de ações -->
+                        <div
+                                class="d-flex flex-row align-items-center"
+                                cod="<?= $d->codigo; ?>"
+                                valor_unitario="<?= $d->valor_unitario; ?>"
+                                produto="<?= $d->produto; ?>"
+                        >
+                            <button class="btn btn-sm btn-outline-danger menos" type="button">
+                                <i class="fa-solid fa-minus"></i>
+                            </button>
+
+                            <div class="quantidade px-3"
+                            ><?= $d->quantidade ?>
+                            </div>
+
+                            <button class="btn btn-sm btn-outline-success mais mr-1" type="button">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+
+                        </div> <!-- Botões de ações -->
+
+                        <div>
+                            <button type="button" class="btn btn-sm btn-outline-danger excluir">
+                                <i class="fa-solid fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-    <?php } ?>
+
+        <?php } ?>
+    </div>
 </div>
+
 
 <script>
     $(function () {
