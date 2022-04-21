@@ -61,9 +61,9 @@ include "conf.php";
         $("#datatable").on("click", "tbody tr td button[visualizar]", function () {
             var codigo = $(this).data("codigo");
 
-            $.alert({
+            $.dialog({
                 closeIcon: true,
-                title: `Venda #${codigo}`,
+                title: false, //`Venda #${codigo}`,
                 columnClass: "xlarge",
                 content: function () {
                     var self = this;

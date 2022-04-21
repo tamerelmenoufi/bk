@@ -41,11 +41,44 @@ $query = "SELECT vp.*, {$colunas_produtos} FROM vendas_produtos vp "
     . "vp.venda = '{$codigo}'";
 
 $result = mysqli_query($con, $query);
+
+$dados = [];
+$valor_total = 0;
+while ($d = mysqli_fetch_object($result)) {
+    $dados[] = $d;
+    $valor_total += $d->valor_total;
+}
 ?>
 
+<div class="col-md-12 my-2 mt-3">
+
+    <div class="d-flex flex-row justify-content-between">
+        <div>
+            <button
+                    type="button"
+                    class="btn btn-danger"
+            >
+                Cancelar pedido
+            </button>
+        </div>
+
+        <div>
+            <h5>
+                <b class="text-success">TOTAL: R$ <span valor_total="<?= $valor_total; ?>"><?= number_format(
+                            $valor_total,
+                            2,
+                            ',',
+                            '.'
+                        ); ?>
+                    </span>
+                </b>
+            </h5>
+        </div>
+    </div>
+</div>
 <div class="col-md-12">
     <div class="list-group">
-        <?php while ($d = mysqli_fetch_object($result)) { ?>
+        <?php foreach ($dados as $d) { ?>
 
             <div id="vp-<?= $d->codigo; ?>" class="mb-2 bg-gray-100 p-3">
                 <div class="position-relative py-2">
@@ -80,12 +113,14 @@ $result = mysqli_query($con, $query);
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between align-items-center"> <!-- Botões de ações -->
+                    <div
+                            class="d-flex justify-content-between align-items-center"
+                            cod="<?= $d->codigo; ?>"
+                            valor_unitario="<?= $d->valor_unitario; ?>"
+                            produto="<?= $d->produto; ?>"
+                    > <!-- Botões de ações -->
                         <div
                                 class="d-flex flex-row align-items-center"
-                                cod="<?= $d->codigo; ?>"
-                                valor_unitario="<?= $d->valor_unitario; ?>"
-                                produto="<?= $d->produto; ?>"
                         >
                             <button class="btn btn-sm btn-outline-danger menos" type="button">
                                 <i class="fa-solid fa-minus"></i>
@@ -121,16 +156,22 @@ $result = mysqli_query($con, $query);
 
         $(".menos").click(function () {
             // @formatter:off
-            obj            = $(this).parent("div");
-            codigo         = obj.attr('cod');
-            valor_unitario = obj.attr("valor_unitario");
-            quantidade     = obj.find(".quantidade").html();
-            valor_total    = $(`span[valor_total_${codigo}]`).attr("valor_total");
+            obj                    = $(this).parent("div").parent("div");
+            codigo                 = obj.attr('cod');
+            valor_unitario         = obj.attr("valor_unitario");
+            quantidade             = obj.find(".quantidade").html();
+            valor_total            = $("span[valor_total]").attr("valor_total");
 
             if (quantidade > 1) {
                 valor_total = (valor_total * 1 - valor_unitario * 1);
-                $(`span[valor_total_${codigo}]`).attr("valor_total", valor_total);
-                $(`span[valor_total_${codigo}]`).text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                valor_total_produto = (valor_total * 1 - valor_unitario * 1);
+
+                $(`span[valor_total_${codigo}]`)
+                    .text(valor_total_produto.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+
+                $("span[valor_total]")
+                    .attr("valor_total", valor_total)
+                    .text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
             }
 
             quantidade = ((quantidade * 1 > 1) ? (quantidade * 1 - 1) : 1);
@@ -139,7 +180,6 @@ $result = mysqli_query($con, $query);
 
             valor = valor_unitario * quantidade;
 
-            $(`span[valor_total_${codigo}]`).html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
             // @formatter:on
 
             //if(quantidade > 1){
@@ -159,7 +199,7 @@ $result = mysqli_query($con, $query);
 
         $(".mais").click(function () {
             // @formatter:off
-            obj            = $(this).parent("div");
+            obj            = $(this).parent("div").parent("div");
             codigo         = obj.attr('cod');
             valor_unitario = obj.attr('valor_unitario');
             quantidade     = obj.find(".quantidade").html();
@@ -168,12 +208,14 @@ $result = mysqli_query($con, $query);
             obj.find(".quantidade").html(quantidade);
 
             valor = valor_unitario * quantidade;
+            valor_total = $("span[valor_total]").attr("valor_total");
+            valor_total = (valor_total * 1 + valor_unitario * 1);
+            valor_total_produto = (valor_unitario * quantidade);
 
-            valor_total = (valor_unitario *1 + quantidade* 1);
+            $(`span[valor_total_${codigo}]`).text(valor_total_produto.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
-            $(`span[valor_total_${codigo}]`).attr("valor_total", valor);
-            $(`span[valor_total_${codigo}]`).text(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-            //obj.find("span[valor_total]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[valor_total]").attr("valor_total", valor_total)
+            $("span[valor_total]").text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
             // @formatter:off
 
             $.ajax({
@@ -195,10 +237,12 @@ $result = mysqli_query($con, $query);
             codigo         = obj.attr('cod');
             quantidade     = obj.find(".quantidade").html();
             valor_unitario = obj.attr("valor_unitario");
-            desconto       = (quantidade * valor_unitario);
-            valor_total    = $(`span[valor_total_${codigo}]`).attr("valor_total");
-            valor_total    = (valor_total * 1 - valor_unitario * 1);
+            valor_produto  = (quantidade * valor_unitario);
+            valor_total    = $(`span[valor_total]`).attr("valor_total");
+            valor_total    = (valor_total * 1 - valor_produto * 1);
             // @formatter:on
+
+            console.log(codigo);
 
             n = $("p[Excluirproduto]").length;
 
@@ -208,8 +252,8 @@ $result = mysqli_query($con, $query);
                 buttons: {
                     'SIM': function () {
 
-                        $(`span[valor_total_${codigo}]`).attr("valor_total", valor_total);
-                        $(`span[valor_total_${codigo}]`)
+                        $(`span[valor_total]`)
+                            .attr("valor_total", valor_total)
                             .text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
                         $.ajax({
