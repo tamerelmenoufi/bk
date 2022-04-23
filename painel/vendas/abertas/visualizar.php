@@ -44,10 +44,13 @@ $result = mysqli_query($con, $query);
 
 $dados = [];
 $valor_total = 0;
+
 while ($d = mysqli_fetch_object($result)) {
     $dados[] = $d;
     $valor_total += $d->valor_total;
 }
+
+$isProdutos = empty($dados);
 ?>
 
 <div class="col-md-12 my-2 mt-3">
@@ -57,6 +60,7 @@ while ($d = mysqli_fetch_object($result)) {
             <button
                     type="button"
                     class="btn btn-danger"
+                <?= $isProdutos ? "disabled" : ""; ?>
             >
                 Cancelar pedido
             </button>
@@ -78,22 +82,23 @@ while ($d = mysqli_fetch_object($result)) {
 </div>
 <div class="col-md-12">
     <div class="list-group">
-        <?php foreach ($dados as $d) { ?>
+        <?php if (!empty($dados)) { ?>
+            <?php foreach ($dados as $d) { ?>
 
-            <div id="vp-<?= $d->codigo; ?>" class="mb-2 bg-gray-100 p-3">
-                <div class="position-relative py-2">
+                <div id="vp-<?= $d->codigo; ?>" class="mb-2 bg-gray-100 p-3">
+                    <div class="position-relative py-2">
 
-                    <div class="d-flex flex-row justify-content-between mb-2">
-                        <div>
-                            <h5 class="h5 font-weight-bold mb-1"><?= $d->p_produto; ?></h5>
-
+                        <div class="d-flex flex-row justify-content-between mb-2">
                             <div>
-                                <?= $d->p_descricao; ?>
+                                <h5 class="h5 font-weight-bold mb-1"><?= $d->p_produto; ?></h5>
+
+                                <div>
+                                    <?= $d->p_descricao; ?>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex flex-column align-items-end">
-                            <h5 class="font-weight-bold text-info">
-                                R$ <span valor_total_<?= $d->codigo; ?>="<?= $d->valor_total; ?>">
+                            <div class="d-flex flex-column align-items-end">
+                                <h5 class="font-weight-bold text-info">
+                                    R$ <span valor_total_<?= $d->codigo; ?>="<?= $d->valor_total; ?>">
                                 <?= number_format(
                                     $d->valor_total,
                                     2,
@@ -101,50 +106,55 @@ while ($d = mysqli_fetch_object($result)) {
                                     '.'
                                 ); ?>
                               </span>
-                            </h5>
-                            <span>
+                                </h5>
+                                <span>
                                 R$ <?= number_format(
-                                    $d->valor_unitario,
-                                    2,
-                                    ',',
-                                    '.'
-                                ); ?>
+                                        $d->valor_unitario,
+                                        2,
+                                        ',',
+                                        '.'
+                                    ); ?>
                             </span>
-                        </div>
-                    </div>
-
-                    <div
-                            class="d-flex justify-content-between align-items-center"
-                            cod="<?= $d->codigo; ?>"
-                            valor_unitario="<?= $d->valor_unitario; ?>"
-                            produto="<?= $d->produto; ?>"
-                    > <!-- Botões de ações -->
-                        <div
-                                class="d-flex flex-row align-items-center"
-                        >
-                            <button class="btn btn-sm btn-outline-danger menos" type="button">
-                                <i class="fa-solid fa-minus"></i>
-                            </button>
-
-                            <div class="quantidade px-3"
-                            ><?= $d->quantidade ?>
                             </div>
-
-                            <button class="btn btn-sm btn-outline-success mais mr-1" type="button">
-                                <i class="fa-solid fa-plus"></i>
-                            </button>
-
-                        </div> <!-- Botões de ações -->
-
-                        <div>
-                            <button type="button" class="btn btn-sm btn-outline-danger excluir">
-                                <i class="fa-solid fa-trash-alt"></i>
-                            </button>
                         </div>
-                    </div>
 
+                        <div
+                                class="d-flex justify-content-between align-items-center"
+                                cod="<?= $d->codigo; ?>"
+                                valor_unitario="<?= $d->valor_unitario; ?>"
+                                produto="<?= $d->produto; ?>"
+                        > <!-- Botões de ações -->
+                            <div
+                                    class="d-flex flex-row align-items-center"
+                            >
+                                <button class="btn btn-sm btn-outline-danger menos" type="button">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+
+                                <div class="quantidade px-3"
+                                ><?= $d->quantidade ?>
+                                </div>
+
+                                <button class="btn btn-sm btn-outline-success mais mr-1" type="button">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+
+                            </div> <!-- Botões de ações -->
+
+                            <div>
+                                <button type="button" class="btn btn-sm btn-outline-danger excluir">
+                                    <i class="fa-solid fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
+
+            <?php } ?>
+        <?php } else { ?>
+
+                <h4 class="h4 font-weight-bold my-5 text-center">Não ha produtos no pedido.</h4>
 
         <?php } ?>
     </div>
