@@ -29,7 +29,7 @@ if (isset($_POST["search"]["value"])) {
 if (isset($_POST['order'])) {
     $query .= 'ORDER BY ' . $column[$_POST['order']['0']['column']] . ' ' . $_POST['order']['0']['dir'] . ' ';
 } else {
-    $query .= 'ORDER BY c.codigo DESC ';
+    $query .= 'ORDER BY v.codigo DESC ';
 }
 
 #file_put_contents("debug.txt", $query);
@@ -46,9 +46,12 @@ $result1 = mysqli_query($con, $query . $query1);
 
 $data = [];
 
+$i = $_POST["start"] + 1;
+
 foreach ($result1 as $row) {
     $sub_array = array();
 
+    $sub_array[] = $i++;
     $sub_array[] = $row['nome'] ?: $row['telefone'];
     $sub_array[] = formata_datahora($row['data_pedido'], DATA_HM);
     $sub_array[] = getFormaPagamentoOptions($row['forma_pagamento']) ?: "(Não definido)";

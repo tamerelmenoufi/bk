@@ -20,11 +20,23 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $codigo = $_POST["codigo"];
 
             $query = "UPDATE vendas_produtos SET deletado = '1' WHERE codigo = '{$codigo}'";
-            #file_put_contents("debug.txt", $query);
+
             if (mysqli_query($con, $query))
                 echo "ok";
             else
                 echo "error";
+
+            break;
+
+        case "cancelar_venda":
+            $codigo = $_POST["codigo"];
+
+            $query = "UPDATE vendas SET situacao = 'x' WHERE codigo = '{$codigo}'";
+            if (mysqli_query($con, $query)) {
+                echo "ok";
+            } else {
+                echo "error";
+            }
 
             break;
     }
@@ -60,9 +72,10 @@ $isProdutos = empty($dados);
             <button
                     type="button"
                     class="btn btn-danger cancelar-venda"
+                    cod="<?= $codigo; ?>"
                 <?= $isProdutos ? "disabled" : ""; ?>
             >
-                Cancelar pedido
+                Cancelar venda
             </button>
         </div>
 
@@ -168,7 +181,6 @@ $isProdutos = empty($dados);
 
 <script>
     $(function () {
-
         $(".menos").click(function () {
             // @formatter:off
             obj                    = $(this).parent("div").parent("div");
@@ -301,6 +313,46 @@ $isProdutos = empty($dados);
                     }
                 }
             });
+        });
+
+        $(".cancelar-venda").click(function () {
+            var codigo = $(this).attr("cod");
+
+            $.confirm({
+                title: "Aviso",
+                icon: "fa-solid fa-question",
+                content: "Deseja realmente cancelar esta venda?",
+                theme: "light",
+                type: "red",
+                buttons: {
+                    sim: {
+                        text: "Sim",
+                        btnClass: "btn-red",
+
+                        action: function () {
+
+                            $.ajax({
+                                url: "<?= $UrlScript?>visualizar.php",
+                                type: "POST",
+                                data: {
+                                    acao: "cancelar_venda",
+                                    codigo,
+                                },
+                                success: function (dados) {
+                                    if (dados === "ok") {
+                                        dataTable.ajax.reload(null, false); //Atualiza a listagem
+                                        dialogVisualizar.close();
+                                    }
+                                }
+                            });
+                        }
+                    },
+                    'NÃO': function () {
+
+                    }
+                }
+            });
+
         });
     });
 </script>
