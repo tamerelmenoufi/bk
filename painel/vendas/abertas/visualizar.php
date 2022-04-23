@@ -75,7 +75,7 @@ $isProdutos = empty($dados);
                     cod="<?= $codigo; ?>"
                 <?= $isProdutos ? "disabled" : ""; ?>
             >
-                Cancelar venda
+                <i class="fa-solid fa-xmark"></i> Cancelar venda
             </button>
         </div>
 

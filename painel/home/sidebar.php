@@ -37,15 +37,11 @@
                 <?php
                 $query = "SELECT * FROM categorias WHERE deletado != '1' and categoria != 'combos'  ORDER BY categoria";
                 $result = mysqli_query($con, $query);
-                while ($c = mysqli_fetch_object($result)) {
-                    ?>
+                while ($c = mysqli_fetch_object($result)) { ?>
                     <a class="collapse-item" href="#"
                        url="produtos/index.php?categoria=<?= $c->codigo ?>"><?= ucwords(mb_strtolower($c->categoria, 'UTF-8')); ?></a>
-                    <?php
-                }
-                ?>
+                <?php } ?>
                 <a class="collapse-item" href="#" url="combos/index.php">Combos</a>
-                <a class="collapse-item" href="#" url="vendas/index.php">Vendas</a>
             </div>
         </div>
     </li>
