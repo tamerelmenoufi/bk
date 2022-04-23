@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $codigo = $_POST["codigo"];
 
             $query = "UPDATE vendas_produtos SET deletado = '1' WHERE codigo = '{$codigo}'";
-            file_put_contents("debug.txt", $query);
+            #file_put_contents("debug.txt", $query);
             if (mysqli_query($con, $query))
                 echo "ok";
             else
@@ -59,7 +59,7 @@ $isProdutos = empty($dados);
         <div>
             <button
                     type="button"
-                    class="btn btn-danger"
+                    class="btn btn-danger cancelar-venda"
                 <?= $isProdutos ? "disabled" : ""; ?>
             >
                 Cancelar pedido
@@ -79,13 +79,21 @@ $isProdutos = empty($dados);
             </h5>
         </div>
     </div>
+
 </div>
+
 <div class="col-md-12">
+    <h4
+            class="h4 font-weight-bold my-5 text-center msg-sem-produto"
+            style="display: <?= $isProdutos ? "block" : "none"; ?>">
+        Não ha produtos no pedido.
+    </h4>
+
     <div class="list-group">
-        <?php if (!empty($dados)) { ?>
+        <?php if (!$isProdutos) { ?>
             <?php foreach ($dados as $d) { ?>
 
-                <div id="vp-<?= $d->codigo; ?>" class="mb-2 bg-gray-100 p-3">
+                <div id="venda_produto_item_<?= $d->codigo; ?>" class="mb-2 bg-gray-100 p-3 produtos">
                     <div class="position-relative py-2">
 
                         <div class="d-flex flex-row justify-content-between mb-2">
@@ -152,11 +160,8 @@ $isProdutos = empty($dados);
                 </div>
 
             <?php } ?>
-        <?php } else { ?>
-
-                <h4 class="h4 font-weight-bold my-5 text-center">Não ha produtos no pedido.</h4>
-
         <?php } ?>
+
     </div>
 </div>
 
@@ -252,35 +257,44 @@ $isProdutos = empty($dados);
             valor_total    = (valor_total * 1 - valor_produto * 1);
             // @formatter:on
 
-            console.log(codigo);
-
-            n = $("p[Excluirproduto]").length;
+            const n = $(".produtos").length;
 
             $.confirm({
+                title: "Aviso",
+                icon: "fa-solid fa-question",
                 content: "Deseja realmente remover este produto?",
-                title: false,
+                theme: "light",
+                type: "red",
                 buttons: {
-                    'SIM': function () {
+                    sim: {
+                        text: "Sim",
+                        btnClass: "btn-red",
 
-                        $(`span[valor_total]`)
-                            .attr("valor_total", valor_total)
-                            .text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                        action: function () {
+                            $(`span[valor_total]`)
+                                .attr("valor_total", valor_total)
+                                .text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
-                        $.ajax({
-                            url: "<?= $UrlScript?>visualizar.php",
-                            type: "POST",
-                            data: {
-                                acao: 'excluir_produto',
-                                codigo,
-                                produto
-                            },
-                            success: function (dados) {
-                                if (dados === "ok") {
-                                    $(`#vp-${codigo}`).remove();
+                            $.ajax({
+                                url: "<?= $UrlScript?>visualizar.php",
+                                type: "POST",
+                                data: {
+                                    acao: 'excluir_produto',
+                                    codigo,
+                                    produto
+                                },
+                                success: function (dados) {
+                                    if (dados === "ok") {
+                                        $(`#venda_produto_item_${codigo}`).remove();
+
+                                        if (n == 1) {
+                                            $(".msg-sem-produto").show();
+                                            $(".cancelar-venda").attr("disabled", "disabled");
+                                        }
+                                    }
                                 }
-                            }
-                        });
-
+                            });
+                        }
                     },
                     'NÃO': function () {
 

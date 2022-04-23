@@ -2,7 +2,12 @@
 include("../../../lib/includes.php");
 include "conf.php";
 ?>
+<style>
+    .container-produtos .jconfirm-content-pane {
+        margin-top: 15px;
 
+    }
+</style>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb shadow bg-gray-custom">
         <li class="breadcrumb-item"><a href="./">Inicio</a></li>
@@ -63,8 +68,13 @@ include "conf.php";
 
             $.dialog({
                 closeIcon: true,
-                title: false, //`Venda #${codigo}`,
+                title: false,
                 columnClass: "xlarge",
+                bootstrapClasses: {
+                    container: 'container container-produtos',
+                    containerFluid: 'container-fluid',
+                    row: 'row',
+                },
                 content: function () {
                     var self = this;
 
