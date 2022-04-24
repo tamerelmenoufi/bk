@@ -4,6 +4,7 @@ include("../../../lib/includes.php");
 $situacao = "n";
 
 $column = [
+    "codigo",
     "nome",
     "data_pedido",
     "forma_pagamento",
@@ -47,7 +48,8 @@ $i = $_POST["start"] + 1;
 foreach ($result1 as $row) {
     $sub_array = array();
 
-    $sub_array[] = $i++;
+    #$sub_array[] = $i++;
+    $sub_array[] = $row['codigo'];
     $sub_array[] = $row['nome'] ?: $row['telefone'];
     $sub_array[] = formata_datahora($row['data_pedido'], DATA_HM);
     $sub_array[] = getFormaPagamentoOptions($row['forma_pagamento']) ?: "(Não definido)";

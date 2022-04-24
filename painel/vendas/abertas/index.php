@@ -56,7 +56,7 @@ include "conf.php";
             },
             "columnDefs": [
                 {
-                    "targets": 3,
+                    "targets": 4,
                     "orderable": false,
                 },
             ],
