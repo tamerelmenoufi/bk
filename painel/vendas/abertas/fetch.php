@@ -15,7 +15,6 @@ $query = "SELECT v.*, c.nome, c.telefone FROM vendas v "
     . "WHERE v.deletado != '1' AND v.situacao = '{$situacao}' ";
 
 if (isset($_POST["search"]["value"])) {
-
     $valor = trim($_POST["search"]["value"]);
 
     $query .= "AND (c.nome LIKE '%{$valor}%' "
@@ -23,7 +22,6 @@ if (isset($_POST["search"]["value"])) {
         . "OR v.data_pedido LIKE '%{$valor}%' "
         . "OR v.forma_pagamento LIKE '%{$valor}%' "
         . "OR v.valor LIKE '%{$valor}%')";
-
 }
 
 if (isset($_POST['order'])) {
@@ -31,8 +29,6 @@ if (isset($_POST['order'])) {
 } else {
     $query .= 'ORDER BY v.codigo DESC ';
 }
-
-#file_put_contents("debug.txt", $query);
 
 $query1 = '';
 
@@ -65,7 +61,7 @@ function count_all_data()
     global $con;
     global $situacao;
 
-    $query = "SELECT COUNT(*) FROM vendas WHERE deletado != '1' AND situacao = '{$situacao}'";
+    $query = "SELECT COUNT(codigo) FROM vendas WHERE deletado != '1' AND situacao = '{$situacao}'";
     $result = mysqli_query($con, $query);
     list($qtd) = mysqli_fetch_row($result);
 
@@ -82,3 +78,4 @@ $output = [
 // @formatter:on
 
 echo json_encode($output);
+exit();
