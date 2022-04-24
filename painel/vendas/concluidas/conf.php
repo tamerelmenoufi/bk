@@ -1,3 +1,3 @@
 <?php
-$ConfTitulo = "Vendas - Concluídas";
+$ConfTitulo = "Vendas concluídas";
 $UrlScript = 'vendas/concluidas/';

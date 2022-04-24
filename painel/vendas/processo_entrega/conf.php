@@ -1,3 +1,3 @@
 <?php
-$ConfTitulo = "Vendas - Processo de entrega";
+$ConfTitulo = "Vendas em processo de entrega";
 $UrlScript = 'vendas/processo_entrega/';
