@@ -18,9 +18,9 @@
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
-                return 'https://api.mercadopago.com/v1/payments';
+                return 'https://api.mercadopago.com/v1/payments/';
             }else{
-                return 'https://api.mercadopago.com/v1/payments';
+                return 'https://api.mercadopago.com/v1/payments/';
             }
         }
 
