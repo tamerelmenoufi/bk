@@ -10,7 +10,7 @@
         // public $TOKEN = '2b4e31d3a75b429c9ef5fdd02f2b5c59';
 
         //produção
-        public $AccessTOKEN = 'fdcc875290d64809acfbd09a8a111fd5';
+        public $AccessTOKEN = 'TEST-7005694497942738-042513-1436ca13f7406f79cb64f3ec45899547-182791413';
 
 
         public function Autenticacao($opc){
