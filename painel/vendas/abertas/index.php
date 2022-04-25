@@ -2,6 +2,11 @@
 include("../../../lib/includes.php");
 include "conf.php";
 ?>
+<style>
+    .container-produtos .jconfirm-content-pane {
+        margin-top: 15px;
+    }
+</style>
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb shadow bg-gray-custom">
@@ -22,6 +27,7 @@ include "conf.php";
             <table id="datatable" class="table" width="100%" cellspacing="0">
                 <thead>
                 <tr>
+                    <th>#</th>
                     <th>Cliente</th>
                     <th>Data do pedido</th>
                     <th>Forma de pagamento</th>
@@ -36,35 +42,39 @@ include "conf.php";
 
 <script>
     $(function () {
-        function load_data(start, length) {
-            var dataTable = $('#datatable').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "order": [],
-                "retrieve": true,
-                "ajax": {
-                    url: "<?= $UrlScript; ?>fetch.php",
-                    method: "POST",
-                    data: {start: start, length: length}
-                },
-                "columnDefs": [
-                    {
-                        "targets": 3,
-                        "orderable": false,
-                    },
-                ],
-            });
-        }
 
-        load_data();
+        dataTable = $('#datatable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "order": [],
+            "retrieve": true,
+            "paging": true,
+            "stateSave": true,
+            "ajax": {
+                url: "<?= $UrlScript; ?>fetch.php",
+                method: "POST",
+            },
+            "columnDefs": [
+                {
+                    "targets": 4,
+                    "orderable": false,
+                },
+            ],
+        });
+
 
         $("#datatable").on("click", "tbody tr td button[visualizar]", function () {
             var codigo = $(this).data("codigo");
 
-            $.alert({
+            dialogVisualizar = $.dialog({
                 closeIcon: true,
-                title: `Venda #${codigo}`,
+                title: false,
                 columnClass: "xlarge",
+                bootstrapClasses: {
+                    container: 'container container-produtos',
+                    containerFluid: 'container-fluid',
+                    row: 'row',
+                },
                 content: function () {
                     var self = this;
 

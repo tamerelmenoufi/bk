@@ -1,3 +1,4 @@
 <?php
-$ConfTitulo = "Vendas - Confirmadas";
+$ConfTitulo = "Vendas confirmadas";
 $UrlScript = 'vendas/confirmadas/';
+$situacao = "n";
