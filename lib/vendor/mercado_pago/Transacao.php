@@ -27,4 +27,4 @@
       }');
 
 
-      echo "Atualização: ".$retorno;
+      echo "Novo: ".$retorno;
