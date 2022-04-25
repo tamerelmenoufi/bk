@@ -14,7 +14,7 @@
 
 
         public function Autenticacao($opc){
-            return base64_encode($opc);
+            return $opc;
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
