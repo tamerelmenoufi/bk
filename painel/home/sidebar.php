@@ -55,10 +55,10 @@
         <div id="VendasConfiguracoes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <!-- <h6 class="collapse-header">Configurações:</h6> -->
-                <a class="collapse-item" href="#" url="vendas/abertas/">Abertas</a>
-                <a class="collapse-item" href="#" url="vendas/confirmadas">Confirmadas</a>
-                <a class="collapse-item" href="#" url="vendas/processo_entrega">Em processo de entrega</a>
-                <a class="collapse-item" href="#" url="vendas/concluidas">Entregues / Concluidas</a>
+                <a class="collapse-item" href="#" url="vendas/abertas/index.php">Abertas</a>
+                <a class="collapse-item" href="#" url="vendas/confirmadas/index.php">Confirmadas</a>
+                <a class="collapse-item" href="#" url="vendas/processo_entrega/index.php">Em processo de entrega</a>
+                <a  class="collapse-item" href="#" url="vendas/concluidas/index.php">Entregues / Concluidas</a>
             </div>
         </div>
     </li>
