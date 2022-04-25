@@ -27,4 +27,6 @@
       }');
 
 
-      echo "Com TOKEN: ".$retorno;
+      $dados = json_decode($retorno);
+
+      print_r($dados);
