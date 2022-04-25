@@ -58,7 +58,7 @@
                 <a class="collapse-item" href="#" url="vendas/abertas/">Abertas</a>
                 <a class="collapse-item" href="#" url="vendas/confirmadas">Confirmadas</a>
                 <a class="collapse-item" href="#" url="vendas/processo_entrega">Em processo de entrega</a>
-                <a class="collapse-item" href="#" url="vendas/concluidas">Entregues / Concluidas</a>
+                <a  class="collapse-item" href="#" url="vendas/concluidas">Entregues / Concluidas</a>
             </div>
         </div>
     </li>
