@@ -18,7 +18,7 @@ function getUrl()
     }else if( $_SERVER['HTTP_HOST'] === '192.168.0.18'){
         return $protocol . "://192.168.0.18/bk/";
     }else{
-        return $protocol . "://bk.mohatron.com/";
+        return $protocol . "://sis.bkmanaus.com.br/";
     }
     // return 'http://lib.yobom.com.br/';
 }
