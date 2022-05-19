@@ -169,7 +169,7 @@
                                     background-color:#EBF4F1;
                                     z-index:2;
                                     border-radius:100%;
-                                    background-image:url(../painel/produtos/icon/<?= $p->icon ?>);
+                                    background-image:url(<?=$caminho_sis?>/painel/produtos/icon/<?= $p->icon ?>);
                                     background-size:cover;
                                     background-position:center center;
                                     opacity:0.3;
@@ -180,7 +180,7 @@
 
                         <div
                             class="col foto<?= $md5 ?>"
-                            style="background-image:url(../painel/produtos/icon/<?= $p->icon ?>)"
+                            style="background-image:url(<?=$caminho_sis?>/painel/produtos/icon/<?= $p->icon ?>)"
                         >
                             <span sabor><?= $p->produto ?></span>
                             <span categoria><?= $p->nome_categoria ?></span>

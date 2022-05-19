@@ -72,7 +72,7 @@
 
 while ($p = mysqli_fetch_object($result) ) {
 
-    $icone = "../painel/combos/icon/{$p->icon}?{$md5}";
+    $icone = "{$caminho_sis}/painel/combos/icon/{$p->icon}?{$md5}";
 
     $q = "select * from produtos where codigo in ({$p->descricao})";
     $r = mysqli_query($con, $q);
