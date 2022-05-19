@@ -25,5 +25,7 @@ function getUrl()
 
 $caminho_vendor = getUrl() . "lib/vendor";
 
+$caminho_sis = getUrl();
+
 date_default_timezone_set('America/Manaus');
 
