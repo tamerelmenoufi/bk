@@ -145,6 +145,9 @@
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
+    <?php
+    /*
+    ?>
     <section id="featured-services" class="featured-services">
       <div class="container">
 
@@ -156,7 +159,7 @@
               <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="200">
             <div class="service-item position-relative">
@@ -164,7 +167,7 @@
               <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="400">
             <div class="service-item position-relative">
@@ -172,7 +175,7 @@
               <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out" data-aos-delay="600">
             <div class="service-item position-relative">
@@ -180,7 +183,7 @@
               <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
         </div>
 
@@ -576,7 +579,9 @@
 
       </div>
     </section><!-- End Features Section -->
-
+    <?php
+    //*/
+    ?>
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
