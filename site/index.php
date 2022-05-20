@@ -756,14 +756,15 @@
 
         <div class="testimonials-slider swiper">
           <div class="swiper-wrapper">
+            <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
 
-            <div class="swiper-slide">
+            <!-- <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
-                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
+
+                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
 
 
-                <!-- <h3>Saul Goodman</h3>
+                <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -772,12 +773,13 @@
                   <i class="bi bi-quote quote-icon-left"></i>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                   <i class="bi bi-quote quote-icon-right"></i>
-                </p> -->
+                </p>
 
 
 
               </div>
-            </div><!-- End testimonial item -->
+            </div> -->
+
             <?php
             /*
             ?>
