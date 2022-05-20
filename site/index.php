@@ -1294,14 +1294,17 @@
 
               </div>
               <div class="member-info">
-                <div class="social">
+                <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-                <h4>William Anderson</h4>
-                <span>CTO</span>
+                </div> -->
+                <h4><?=$Unidades[$i]['nome']?></h4>
+                <span><?=$Unidades[$i]['endereco']?></span>
+                <span><?=$Unidades[$i]['telefone']?></span>
+                <span><?=$Unidades[$i]['email']?></span>
+                <span><?=$Unidades[$i]['atendimento']?></span>
               </div>
             </div>
           </div><!-- End Team Member -->
