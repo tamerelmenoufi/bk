@@ -759,7 +759,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" alt="" style="width:100% !important;" >
+                <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
                 <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
 
 
