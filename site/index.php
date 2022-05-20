@@ -589,6 +589,7 @@
         <div class="row gy-5">
 
         <?php
+
           $Categrias = [
             [
               'imagem' => 'asset/img/categorias/acompanhamentos.png',
