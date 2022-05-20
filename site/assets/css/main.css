@@ -1473,10 +1473,10 @@ section {
   position: relative; */
 }
 .testimonials::before {
-  content: "";
+  /* content: "";
   position: absolute;
   inset: 0;
-  background: rgba(var(--color-secondary-dark-rgb), 0.8);
+  background: rgba(var(--color-secondary-dark-rgb), 0.8); */
 }
 .testimonials .section-header {
   margin-bottom: 40px;
