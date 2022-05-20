@@ -627,7 +627,7 @@
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'assets/img/categorias/acom1.jpg',
+              'imagem' => 'assets/img/categorias/acom6.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
