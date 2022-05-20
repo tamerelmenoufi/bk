@@ -1231,7 +1231,7 @@
           //*/
             $Unidades = [
               [
-                'nome' => 'Drive Humberto Calderaro',
+                'nome' => 'Humberto Calderaro',
                 'endereco' => 'AV JORNALISTA UMBERTO CALDERARO FILHO Nº 1712 LOJA 2 CEP: 69.057-015, ADRIANOPOLIS, MANAUS-AM',
                 'telefone' => '(92) 98412-2099',
                 'email' => 'ger.bkparaiba@spgrupo.com',
