@@ -1235,49 +1235,49 @@
                 'endereco' => 'AV JORNALISTA UMBERTO CALDERARO FILHO Nº 1712 LOJA 2 CEP: 69.057-015, ADRIANOPOLIS, MANAUS-AM',
                 'telefone' => '(92) 98412-2099',
                 'email' => 'ger.bkparaiba@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 23:45',
+                'atendimento' => 'Seg a Dom das 12:00 à 23:45',
               ],
               [
                 'nome' => 'Turismo',
                 'endereco' => 'AV DO TURISMO Nº 2726 LOJA 2 CEP: 69.041-010, TARUMÃ, MANAUS-AM',
                 'telefone' => '(92) 98412-5532',
                 'email' => 'ger.bktaruma@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 23:45',
+                'atendimento' => 'Seg a Dom das 12:00 à 23:45',
               ],
               [
                 'nome' => 'Shopping Sumaúma',
                 'endereco' => 'AV NOEL NUTELS Nº 1762 LOJA 4003 A PAVMTO2 - SUMAÚMA PARK SHOPPING CEP: 69.095-000, CIDADE NOVA, MANAUS-AM',
                 'telefone' => '(92) 98432-6398',
                 'email' => 'ger.bksumauma@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 22:00',
+                'atendimento' => 'Seg a Dom das 12:00 à 22:00',
               ],
               [
                 'nome' => 'Studio-5',
                 'endereco' => 'AV RODRIGO OTÁVIO Nº 3555 LOJA FF BURGUER KING CEP: 69.073-177, CRESPO, MANAUS-AM',
                 'telefone' => '(92) 98403-4458',
                 'email' => 'ger.bkstudio5@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 23:45',
+                'atendimento' => 'Seg a Dom das 12:00 à 23:45',
               ],
               [
                 'nome' => 'Via Norte',
                 'endereco' => 'AV ARQUITETO JOSE HENRIQUES B RORIGUES Nº 3736 SALA 208 A ANDAR 2 CEP: 69.093-149, MONTE DAS OLIVEIRA, MANAUS-AM',
                 'telefone' => '(92) 98411-3947',
                 'email' => 'ger.bkvianorte@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 21:30',
+                'atendimento' => 'Seg a Dom das 12:00 à 21:30',
               ],
               [
                 'nome' => 'Amazonas Shopping',
                 'endereco' => 'AV DJALMA BATISTA Nº 482 CD AMAZONAS SHOPPING LOJA 372 CEP: 69.050-902, PARQUE 10, MANAUS-AM',
                 'telefone' => '(92) 98438-8556',
                 'email' => 'ger.bkamazonas2@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 21:30',
+                'atendimento' => 'Seg a Dom das 12:00 à 21:30',
               ],
               [
                 'nome' => 'PONTA NEGRA',
                 'endereco' => 'AV CEL TEIXEIRA, 5705, CEP: 69.037-000, PONTA NEGRA, MANAUS-AM',
                 'telefone' => '(92) 98432-6030',
                 'email' => 'ger.bkpontanegra@spgrupo.com',
-                'atendimento' => 'Segunda à Domingo das 12:00 à 21:30',
+                'atendimento' => 'Seg a Dom das 12:00 à 21:30',
               ],
             ];
 
@@ -1294,8 +1294,8 @@
 
               </div>
               <div class="member-info">
-                  <a href=""><i class="bi bi-phone"></i></a>
-                  <a href=""><i class="bi bi-email"></i></a>
+                  <a href=""><i class="bi bi-phone-vibrate"></i></a>
+                  <a href=""><i class="bi bi-envelope-fill"></i></a>
                 <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
