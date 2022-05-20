@@ -597,37 +597,37 @@
 
           $Categrias = [
             [
-              'imagem' => 'assets/img/categorias/acompanhamentos.jpg',
+              'imagem' => 'assets/img/categorias/acom1.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'assets/img/categorias/acompanhamentos.jpg',
+              'imagem' => 'assets/img/categorias/acom2.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'assets/img/categorias/acompanhamentos.jpg',
+              'imagem' => 'assets/img/categorias/acom3.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'assets/img/categorias/acompanhamentos.jpg',
+              'imagem' => 'assets/img/categorias/acom4.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'assets/img/categorias/acompanhamentos.jpg',
+              'imagem' => 'assets/img/categorias/acom5.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'assets/img/categorias/acompanhamentos.jpg',
+              'imagem' => 'assets/img/categorias/acom1.jpg',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
