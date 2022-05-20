@@ -592,13 +592,13 @@
 
           $Categrias = [
             [
-              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'imagem' => 'assets/img/categorias/acompanhamentos.png',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
             ],
             [
-              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'imagem' => 'assets/img/categorias/acompanhamentos.png',
               'icone' => 'bi bi-activity',
               'titulo' => 'Acompanhamentos',
               'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
