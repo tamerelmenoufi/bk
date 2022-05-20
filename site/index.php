@@ -635,16 +635,16 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
-                <img src="<?=$Categrias['imagem']?>" class="img-fluid" alt="">
+                <img src="<?=$Categrias[$i]['imagem']?>" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
-                  <i class="<?=$Categrias['icone']?>"></i>
+                  <i class="<?=$Categrias[$i]['icone']?>"></i>
                 </div>
                 <a href="#" class="stretched-link">
-                  <h3><?=$Categrias['titulo']?></h3>
+                  <h3><?=$Categrias[$i]['titulo']?></h3>
                 </a>
-                <p><?=$Categrias['descricao']?></p>
+                <p><?=$Categrias[$i]['descricao']?></p>
               </div>
             </div>
           </div><!-- End Service Item -->
