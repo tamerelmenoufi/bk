@@ -752,13 +752,15 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
+      <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
+      <!--
       <div class="container" data-aos="fade-up">
 
         <div class="testimonials-slider swiper">
           <div class="swiper-wrapper">
-            <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
 
-            <!-- <div class="swiper-slide">
+
+            <div class="swiper-slide">
               <div class="testimonial-item">
 
                 <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
@@ -778,11 +780,9 @@
 
 
               </div>
-            </div> -->
+            </div>
 
-            <?php
-            /*
-            ?>
+
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -797,7 +797,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -813,7 +813,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -829,7 +829,7 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -845,15 +845,13 @@
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
-            <?php
-            //*/
-            ?>
+            </div>
+
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
-      </div>
+      </div> -->
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Pricing Section ======= -->
