@@ -1294,8 +1294,10 @@
 
               </div>
               <div class="member-info">
+                <div class="social">
                   <a href=""><i class="bi bi-phone-vibrate"></i></a>
                   <a href=""><i class="bi bi-envelope-fill"></i></a>
+                </div>
                 <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
