@@ -772,7 +772,9 @@
                 </p>
               </div>
             </div><!-- End testimonial item -->
-
+            <?php
+            /*
+            ?>
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
@@ -836,7 +838,9 @@
                 </p>
               </div>
             </div><!-- End testimonial item -->
-
+            <?php
+            //*/
+            ?>
           </div>
           <div class="swiper-pagination"></div>
         </div>
