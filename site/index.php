@@ -583,7 +583,7 @@
 
         <div class="section-header">
           <h2>Cardápio</h2>
-          <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e delecie sem sair de casa!</p>
+          <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
         </div>
 
         <div class="row gy-5">
