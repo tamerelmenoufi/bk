@@ -639,9 +639,9 @@
                 <img src="<?=$Categrias[$i]['imagem']?>" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
-                <div class="icon">
+                <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
-                </div>
+                </div> -->
                 <a href="#" class="stretched-link">
                   <h3><?=$Categrias[$i]['titulo']?></h3>
                 </a>
