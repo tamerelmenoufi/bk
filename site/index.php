@@ -635,16 +635,16 @@
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
               <div class="img">
-                <img src="assets/img/services-1.jpg" class="img-fluid" alt="">
+                <img src="<?=$Categrias['imagem']?>" class="img-fluid" alt="">
               </div>
               <div class="details position-relative">
                 <div class="icon">
-                  <i class="bi bi-activity"></i>
+                  <i class="<?=$Categrias['icone']?>"></i>
                 </div>
                 <a href="#" class="stretched-link">
-                  <h3>Nesciunt Mete</h3>
+                  <h3><?=$Categrias['titulo']?></h3>
                 </a>
-                <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis.</p>
+                <p><?=$Categrias['descricao']?></p>
               </div>
             </div>
           </div><!-- End Service Item -->
