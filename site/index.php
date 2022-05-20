@@ -582,11 +582,55 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Our Services</h2>
-          <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
+          <h2>Cardápio</h2>
+          <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e delecie sem sair de casa!</p>
         </div>
 
         <div class="row gy-5">
+
+        <?php
+          $Categrias = [
+            [
+              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'icone' => 'bi bi-activity',
+              'titulo' => 'Acompanhamentos',
+              'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
+            ],
+            [
+              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'icone' => 'bi bi-activity',
+              'titulo' => 'Acompanhamentos',
+              'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
+            ],
+            [
+              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'icone' => 'bi bi-activity',
+              'titulo' => 'Acompanhamentos',
+              'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
+            ],
+            [
+              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'icone' => 'bi bi-activity',
+              'titulo' => 'Acompanhamentos',
+              'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
+            ],
+            [
+              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'icone' => 'bi bi-activity',
+              'titulo' => 'Acompanhamentos',
+              'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
+            ],
+            [
+              'imagem' => 'asset/img/categorias/acompanhamentos.png',
+              'icone' => 'bi bi-activity',
+              'titulo' => 'Acompanhamentos',
+              'descricao' => 'Batatas Fritas, Batata Suprema, Balde de Batatas, Trio Supremo, BK Chicken, Onion Rings',
+            ],
+
+      ];
+
+        for($i=0;$i<count($Categrias);$i++){
+        ?>
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item">
@@ -604,8 +648,10 @@
               </div>
             </div>
           </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+        <?php
+        }
+        ?>
+          <!-- <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
             <div class="service-item">
               <div class="img">
                 <img src="assets/img/services-2.jpg" class="img-fluid" alt="">
@@ -620,7 +666,7 @@
                 <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="service-item">
@@ -637,7 +683,7 @@
                 <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="500">
             <div class="service-item">
@@ -655,7 +701,7 @@
                 <a href="#" class="stretched-link"></a>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="600">
             <div class="service-item">
@@ -673,7 +719,7 @@
                 <a href="#" class="stretched-link"></a>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div>
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="700">
             <div class="service-item">
@@ -691,7 +737,7 @@
                 <a href="#" class="stretched-link"></a>
               </div>
             </div>
-          </div><!-- End Service Item -->
+          </div> -->
 
         </div>
 
