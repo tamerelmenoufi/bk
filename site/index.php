@@ -849,6 +849,9 @@
     </section><!-- End Testimonials Section -->
 
     <!-- ======= Pricing Section ======= -->
+    <?php
+    /*
+    ?>
     <section id="pricing" class="pricing">
       <div class="container" data-aos="fade-up">
 
@@ -1173,7 +1176,9 @@
 
       </div>
     </section><!-- End Portfolio Section -->
-
+    <?php
+    //*/
+    ?>
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
       <div class="container" data-aos="fade-up">
@@ -1245,6 +1250,9 @@
     </section><!-- End Team Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
+    <?php
+    /*
+    ?>
     <section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
@@ -1383,7 +1391,9 @@
 
       </div>
     </section><!-- End Contact Section -->
-
+    <?php
+    //*/
+    ?>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
