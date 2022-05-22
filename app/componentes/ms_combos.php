@@ -132,18 +132,41 @@ while ($p = mysqli_fetch_object($result) ) {
             janela = $(this).attr("janela");
             produto = $(this).attr("produto");
 
-            Carregando();
-            $.ajax({
-                url:`componentes/${janela}.php`,
-                type:"POST",
-                data:{
-                    local,
-                    produto,
-                },
-                success:function(dados){
-                    $(".ms_corpo").append(dados);
-                }
-            });
+
+            AppPedido = window.localStorage.getItem('AppPedido');
+            AppCliente = window.localStorage.getItem('AppCliente');
+
+            if(!AppCliente || AppCliente === null || AppCliente === undefined){
+
+                Carregando();
+
+                $.ajax({
+                    url:"componentes/ms_popup_100.php",
+                    type:"POST",
+                    data:{
+                        local:"src/cliente/cadastro.php",
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
+
+            }else{
+
+                Carregando();
+                $.ajax({
+                    url:`componentes/${janela}.php`,
+                    type:"POST",
+                    data:{
+                        local,
+                        produto,
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
+
+            }
 
         });
 
