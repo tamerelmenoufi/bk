@@ -40,6 +40,19 @@
         width:100%;
         text-align:left;
     }
+    .card-title p{
+        width:100%;
+        text-align:center;
+    }
+    .card-title p span{
+        width:80%;
+        text-align:center;
+        background-color:red;
+        color:#fff;
+        border:solid 1px red;
+        border-radius:5px;
+        font-size:9px;
+    }
 
     .SemProduto{
         position:fixed;
@@ -82,7 +95,17 @@
                         <div class="col-12">
                             <h5 class="card-title">
                                 <small>Cliente</small>
-                                <div><?="{$d->nome} {$d->telefone}"?></div>
+                                <div><?="{$d->nome}<br>{$d->telefone}"?></div>
+                                <?php
+                                if(!$d->nome or !$d->confirma_telefone){
+                                ?>
+                                <p>
+                                    <span class="animate__animated animate__tada animate__repeat-3">Dados Incompletos, atualize para fechar o seu pedido.</span>
+                                    <button class="btn btn-danger btn-xs">Abrir</button>
+                                </p>
+                                <?php
+                                }
+                                ?>
                             </h5>
                         </div>
                     </div>
