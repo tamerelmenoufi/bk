@@ -77,8 +77,11 @@
                                 acao:'SairPedido',
                             },
                             success:function(dados){
+
                                 window.localStorage.removeItem('AppPedido');
                                 window.localStorage.removeItem('AppCliente');
+                                window.localStorage.removeItem('AppVenda');
+
 
                                 $.ajax({
                                     url:"src/home/index.php",
