@@ -41,7 +41,7 @@
                         <?php
                         if(!$c->telefone_confirmado){
                         ?>
-                        <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                        <i class="fa-solid fa-triangle-exclamation text-danger"></i> Não Confirmado
                         <?php
                         }
                         ?>
