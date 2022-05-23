@@ -126,6 +126,7 @@
         $(".ConfirmaTelefone").click(function(){
             $.ajax({
                 url:"componentes/ms_popup.php",
+                type:"POST",
                 data:{
                     local:"src/cliente/confirmar_telefone.php",
                 },
