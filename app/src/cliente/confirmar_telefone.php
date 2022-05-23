@@ -23,7 +23,7 @@
 <div class="col">
     <div class="col-12">
         <p style="text-align:center">
-        O seu telefone <?=$c->telefone?> informado no cadastro, precisa ser confirmado para liberar o seu cadastro.
+        O seu telefone XX <?=$c->telefone?> informado no cadastro, precisa ser confirmado para liberar o seu cadastro.
         Como deseja receber o código de confirmação?
         </p>
         <button class="sms btn btn-primary btn-block btn-lg">POR SMS</button>
