@@ -1191,7 +1191,7 @@
 
         <div class="section-header">
           <h2>Nossas Lojas</h2>
-          <p>Em vários pontos na cidade de Manaus uma loja Burguer King para sua comodidade. Veja os endereços abaixo e localize a loja mais próxima de você.</p>
+          <p>Em vários pontos da cidade de Manaus tem uma loja Burguer King para sua comodidade. Veja os endereços abaixo e localize a loja mais perto de você.</p>
         </div>
 
         <div class="row gy-5">
