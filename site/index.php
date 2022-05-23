@@ -1523,7 +1523,7 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Siga-nos pelas mídias sociais e fique atento às nossa promoções</h4>
+            <h4>Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
             <p>Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
             <p>https://app.bkmanaus.com.br/</p>
             <!-- <form action="" method="post">
