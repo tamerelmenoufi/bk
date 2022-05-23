@@ -51,8 +51,10 @@
         color:red;
         border:solid 1px red;
         border-radius:7px;
-        font-size:10px;
+        font-size:8px;
         padding:5px;
+        margin-top:10px;
+        margin-bottom:10px;
     }
 
     .SemProduto{
