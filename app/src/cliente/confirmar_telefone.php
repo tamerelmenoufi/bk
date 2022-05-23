@@ -1,8 +1,8 @@
 <?php
 
     include("../../../lib/includes.php");
-
-    $c = mysqli_fetch_object(mysqli_query($con, "select * from clientes where codigo = '{$_SESSION['appCliente']}'"));
+    echo $q = "select * from clientes where codigo = '{$_SESSION['appCliente']}'";
+    $c = mysqli_fetch_object(mysqli_query($con, $q));
 
 ?>
 
