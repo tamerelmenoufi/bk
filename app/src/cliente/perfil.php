@@ -26,6 +26,14 @@
         padding-top:15px;
         z-index:1;
     }
+    .ConfirmaTelefone{
+        width:90%;
+        padding:10px;
+        text-align:center;
+        border:solid 1px red;
+        color:red;
+        border-radius:10px;
+    }
 
 </style>
 <div class="PedidoTopoTitulo">
@@ -59,6 +67,14 @@
                 </div>
                 <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
+
+
+            <div class="col-12">
+                <div class="ConfirmaTelefone">
+                        Seu Cadastro não está completo, é necessário confirmar o seu telefone. Clique aqui e confirme agora!
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
