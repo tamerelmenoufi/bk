@@ -53,6 +53,7 @@
 
         border-radius:7px;
         font-size:10px !important;
+        font-weight:normal !important;
         padding:5px;
         margin-top:10px;
         margin-bottom:10px;
