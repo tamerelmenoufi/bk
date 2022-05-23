@@ -27,7 +27,8 @@
         z-index:1;
     }
     .ConfirmaTelefone{
-        width:90%;
+        width:100%;
+        margin-top:20px;
         padding:10px;
         text-align:center;
         border:solid 1px red;
