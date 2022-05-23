@@ -103,7 +103,7 @@
                             <li acao="mapa_editar" cod="<?=$d->codigo?>" class="list-group-item text-primary">
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-map-location-dot"></i></div>
-                                    <div class="col-11">Editar o Mapa</div>
+                                    <div class="col-11">Editar o Mapa <i class="fa-solid fa-triangle-exclamation text-danger"></i></div>
                                 </div>
                             </li>
                             <li padrao cod="<?=$d->codigo?>" class="list-group-item text-primary">
