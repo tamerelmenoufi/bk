@@ -94,5 +94,9 @@
             }
         });
 
+        $(".ConfirmaCoordenadas").click(function(){
+            $.alert($(this).attr("coordenadas"));
+        });
+
 
 </script>
