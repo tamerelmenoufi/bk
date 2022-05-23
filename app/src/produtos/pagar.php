@@ -51,7 +51,7 @@
         color:red;
         border:solid 1px red;
         border-radius:7px;
-        font-size:8px;
+        font-size:10px !important;
         padding:5px;
         margin-top:10px;
         margin-bottom:10px;
