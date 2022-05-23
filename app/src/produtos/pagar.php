@@ -44,7 +44,7 @@
         width:100%;
         text-align:center;
     }
-    .card-title p div{
+    .alertas{
         width:80%;
         text-align:center;
         background-color:red;
@@ -100,10 +100,8 @@
                                 <?php
                                 if(!$d->nome or !$d->confirma_telefone){
                                 ?>
-                                <p>
-                                    <div class="animate__animated animate__tada animate__repeat-3">Dados Incompletos, atualize para fechar o seu pedido.</div>
-                                    <button class="btn btn-danger btn-xs">Abrir</button>
-                                </p>
+                                <div class="alertas animate__animated animate__tada animate__repeat-3">Dados Incompletos, atualize para fechar o seu pedido.</div>
+                                <button class="btn btn-danger btn-xs">Abrir</button>
                                 <?php
                                 }
                                 ?>
