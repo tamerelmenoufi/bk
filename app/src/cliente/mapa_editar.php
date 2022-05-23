@@ -114,13 +114,27 @@
                     map<?=$md5?>.setCenter(location<?=$md5?>);
                     map<?=$md5?>.setZoom(16);
 
-                    $(".ConfirmaCoordenadas").attr("coordenadas",latitude<?=$md5?>+','+longitude<?=$md5?>);
+                    $(".ConfirmaCoordenadas").attr("coordenadas",`${latitude<?=$md5?>},${longitude<?=$md5?>}`);
                 }
             }
         });
 
         $(".ConfirmaCoordenadas").click(function(){
-            $.alert($(this).attr("coordenadas"));
+            coordenadas = $(this).attr("coordenadas");
+
+            $.ajax({
+                url:"src/cliente/mapa_editar.php",
+                type:"POST",
+                data:{
+                    coordenadas,
+                    codigo:'<?=$d->codigo?>',
+                    acao:'coordenadas'
+                },
+                success:function(dados){
+                    $.alert('Coordenadas Atualizadas');
+                }
+            });
+
         });
 
 </script>
