@@ -45,13 +45,13 @@
         text-align:center;
     }
     .alertas{
-        width:80%;
+        width:100%;
         text-align:center;
-        background-color:red;
-        color:#fff;
+        background-color:#fff;
+        color:red;
         border:solid 1px red;
-        border-radius:3px;
-        font-size:12px;
+        border-radius:7px;
+        font-size:10px;
         padding:5px;
     }
 
