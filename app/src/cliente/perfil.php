@@ -119,18 +119,20 @@
                 }
             });
 
-            $(".ConfirmaTelefone").click(function(){
-                $.ajax({
-                    url:"componentes/ms_popup.php",
-                    data:{
-                        local:"src/clientes/confirmar_telefone.php",
-                    },
-                    success:function(dados){
-                        $(".ms_corpo").append(dados);
-                    }
-                });
-            });
+        });
 
+
+
+        $(".ConfirmaTelefone").click(function(){
+            $.ajax({
+                url:"componentes/ms_popup.php",
+                data:{
+                    local:"src/clientes/confirmar_telefone.php",
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
         });
 
     })
