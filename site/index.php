@@ -63,20 +63,23 @@
       <nav id="navbar" class="navbar">
         <ul>
 
-          <li class="dropdown"><a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <!-- <li class="dropdown"><a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="./" class="active">Home 1</a></li>
               <li><a href="index-2.html">Home 2 - index-2.html</a></li>
               <li><a href="index-3.html">Home 3 - index-3.html</a></li>
               <li><a href="index-4.html">Home 4 - index-4.html</a></li>
             </ul>
-          </li>
+          </li> -->
 
-          <li><a class="nav-link scrollto" href="./#about">About</a></li>
-          <li><a class="nav-link scrollto" href="./#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="./#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="./#team">Team</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a class="nav-link scrollto" href="./#">Principal</a></li>
+
+          <li><a class="nav-link scrollto" href="./#services">Cardápio</a></li>
+          <li><a class="nav-link scrollto" href="./#portfolio">Fazer Pedido</a></li>
+          <li><a class="nav-link scrollto" href="./#team">Nossas Lojas</a></li>
+          <li><a class="nav-link scrollto" href="./#team">Fale Conosco</a></li>
+
+          <!-- <li><a href="blog.html">Blog</a></li>
           <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li>
@@ -118,12 +121,12 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="./#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="./#contact">Contact</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
 
-      <a class="btn-getstarted scrollto" href="./#about">Get Started</a>
+      <!-- <a class="btn-getstarted scrollto" href="./#about">Get Started</a> -->
 
     </div>
   </header><!-- End Header -->
