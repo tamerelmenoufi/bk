@@ -36,7 +36,16 @@
             <div class="col-12">
 
                 <div class="form-group">
-                    <label for="nome">Telefone</label>
+                    <label for="nome">
+                        Telefone
+                        <?php
+                        if(!$c->telefone_confirmado){
+                        ?>
+                        <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                        <?php
+                        }
+                        ?>
+                    </label>
                     <div class="form-control form-control-lg" style="cursor:pointer; background-color:#ccc;"><?=$c->telefone?></div>
                 </div>
 

@@ -9,7 +9,7 @@
             $d = mysqli_fetch_object($result);
             $_SESSION['AppCliente'] = $d->codigo;
         }else{
-            mysqli_query($con, "insert into clientes set telefone = '{$_POST['telefone']}'");
+            mysqli_query($con, "insert into clientes set telefone = '{$_POST['telefone']}', data_cadastro = NOW()");
             $_SESSION['AppCliente'] = mysqli_insert_id($con);
         }
 
