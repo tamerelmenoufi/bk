@@ -1490,30 +1490,28 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>HeroBiz</h3>
+              <h3>BKMANAUS</h3>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                <strong>Fone:</strong> +55 92 99999-9999<br>
+                <strong>E-mail:</strong> atendimento@bkmanaus.com.br<br>
               </p>
             </div>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Nevegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">Principal</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#servicos">Serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#pedido">Fazer Pedido</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#lojas">Lojas</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#contato">Fale Conosco</a></li>
             </ul>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <!-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -1522,14 +1520,15 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
+            <h4>Siga-nos pelas mídias sociais e fique atento às nossa promoções</h4>
+            <p>Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <p>https://app.bkmanaus.com.br/</p>
+            <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            </form> -->
 
           </div>
 
@@ -1542,23 +1541,23 @@
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
           <div class="copyright">
-            &copy; Copyright <strong><span>HeroBiz</span></strong>. All Rights Reserved
+            &copy; Copyright <strong><span>BKManaus</span></strong>. Todos os direitos reservados.
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            Desenvolvimento por <a href="#">SP Sistemas</a>
           </div>
         </div>
 
         <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
-          <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+          <a href="https://twitter.com/bkmanaus" target="_blank" class="twitter"><i class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/bkmanaus" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/bkmanaus/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="#" class="google-plus" target="_blank"><i class="bi bi-skype"></i></a> -->
+          <!-- <a href="#" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a> -->
         </div>
 
       </div>
