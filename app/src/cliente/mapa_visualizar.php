@@ -22,16 +22,10 @@
         opacity:0.6;
         z-index:0;
     }
-    .ConfirmaCoordenadas{
-        position:fixed;
-        bottom:10px;
-        z-index: 999;
-    }
+
 </style>
 
     <div id="map<?=$md5?>"></div>
-
-    <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenadas?>">Confirmar a Localização</button>
 
     <script>
         coordenadas<?=$md5?> = '<?=$d->coordenadas?>';
@@ -89,14 +83,11 @@
                     map<?=$md5?>.setCenter(location<?=$md5?>);
                     map<?=$md5?>.setZoom(18);
 
-                    $(".ConfirmaCoordenadas").attr("coordenadas",`{latitude<?=$md5?>},{longitude<?=$md5?>}`);
                 }
             }
         });
 
-        $(".ConfirmaCoordenadas").click(function(){
-            $.alert($(this).attr("coordenadas"));
-        });
+
 
 
 </script>
