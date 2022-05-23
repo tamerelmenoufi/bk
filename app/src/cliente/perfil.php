@@ -72,7 +72,8 @@
 
             <div class="col-12">
                 <div class="ConfirmaTelefone">
-                        Seu Cadastro não está completo, é necessário confirmar o seu telefone. Clique aqui e confirme agora!
+                        Seu Cadastro não está completo, é necessário confirmar o seu telefone.<br>
+                        <span class="text-primary">Clique aqui e confirme agora!</span>
                 </div>
             </div>
 
@@ -116,6 +117,18 @@
                         PageClose();
                     }
                 }
+            });
+
+            $(".ConfirmaTelefone").click(function(){
+                $.ajax({
+                    url:"componentes/ms_popup.php",
+                    data:{
+                        local:"src/clientes/confirmar_telefone.php",
+                    },
+                    success:function(dados){
+                        $(".ms_corpo").append(dados);
+                    }
+                });
             });
 
         });
