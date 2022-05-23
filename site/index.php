@@ -1190,8 +1190,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Our Team</h2>
-          <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p>
+          <h2>Nossas Lojas</h2>
+          <p>Em vários pontos na cidade de Manaus uma loja Burguer King para sua comodidade. Veja os endereços abaixo e localize a loja mais próxima de você.</p>
         </div>
 
         <div class="row gy-5">
@@ -1242,6 +1242,7 @@
                 'telefone' => '(92) 98412-2099',
                 'email' => 'ger.bkparaiba@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 23:45',
+                'icone' => 'adrianopolis.jpg',
               ],
               [
                 'nome' => 'Turismo',
@@ -1249,6 +1250,7 @@
                 'telefone' => '(92) 98412-5532',
                 'email' => 'ger.bktaruma@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 23:45',
+                'icone' => 'turismo.jpg',
               ],
               [
                 'nome' => 'Shopping Sumaúma',
@@ -1256,6 +1258,7 @@
                 'telefone' => '(92) 98432-6398',
                 'email' => 'ger.bksumauma@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 22:00',
+                'icone' => 'sumauma.jpg',
               ],
               [
                 'nome' => 'Studio-5',
@@ -1263,6 +1266,7 @@
                 'telefone' => '(92) 98403-4458',
                 'email' => 'ger.bkstudio5@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 23:45',
+                'icone' => 'studio5.jpg',
               ],
               [
                 'nome' => 'Via Norte',
@@ -1270,6 +1274,7 @@
                 'telefone' => '(92) 98411-3947',
                 'email' => 'ger.bkvianorte@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 21:30',
+                'icone' => 'vianorte.jpg',
               ],
               [
                 'nome' => 'Amazonas Shopping',
@@ -1277,6 +1282,7 @@
                 'telefone' => '(92) 98438-8556',
                 'email' => 'ger.bkamazonas2@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 21:30',
+                'icone' => 'amazonas.jpg',
               ],
               [
                 'nome' => 'PONTA NEGRA',
@@ -1284,6 +1290,7 @@
                 'telefone' => '(92) 98432-6030',
                 'email' => 'ger.bkpontanegra@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 21:30',
+                'icone' => 'pontanegra.jpg',
               ],
             ];
 
