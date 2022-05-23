@@ -1242,7 +1242,7 @@
                 'telefone' => '(92) 98412-2099',
                 'email' => 'ger.bkparaiba@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 23:45',
-                'icone' => 'adrianopolis.jpg',
+                'fachada' => 'adrianopolis.jpg',
               ],
               [
                 'nome' => 'Turismo',
@@ -1250,7 +1250,7 @@
                 'telefone' => '(92) 98412-5532',
                 'email' => 'ger.bktaruma@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 23:45',
-                'icone' => 'turismo.jpg',
+                'fachada' => 'turismo.jpg',
               ],
               [
                 'nome' => 'Shopping Sumaúma',
@@ -1258,7 +1258,7 @@
                 'telefone' => '(92) 98432-6398',
                 'email' => 'ger.bksumauma@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 22:00',
-                'icone' => 'sumauma.jpg',
+                'fachada' => 'sumauma.jpg',
               ],
               [
                 'nome' => 'Studio-5',
@@ -1266,7 +1266,7 @@
                 'telefone' => '(92) 98403-4458',
                 'email' => 'ger.bkstudio5@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 23:45',
-                'icone' => 'studio5.jpg',
+                'fachada' => 'studio5.jpg',
               ],
               [
                 'nome' => 'Via Norte',
@@ -1274,7 +1274,7 @@
                 'telefone' => '(92) 98411-3947',
                 'email' => 'ger.bkvianorte@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 21:30',
-                'icone' => 'vianorte.jpg',
+                'fachada' => 'vianorte.jpg',
               ],
               [
                 'nome' => 'Amazonas Shopping',
@@ -1282,7 +1282,7 @@
                 'telefone' => '(92) 98438-8556',
                 'email' => 'ger.bkamazonas2@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 21:30',
-                'icone' => 'amazonas.jpg',
+                'fachada' => 'amazonas.jpg',
               ],
               [
                 'nome' => 'PONTA NEGRA',
@@ -1290,7 +1290,7 @@
                 'telefone' => '(92) 98432-6030',
                 'email' => 'ger.bkpontanegra@spgrupo.com',
                 'atendimento' => 'Seg a Dom das 12:00 à 21:30',
-                'icone' => 'pontanegra.jpg',
+                'fachada' => 'pontanegra.jpg',
               ],
             ];
 
@@ -1299,11 +1299,11 @@
           <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
             <div class="team-member">
               <div class="member-img">
-                <!-- <img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""> -->
+                <img src="assets/img/localizacao/<?=$Unidades[$i]['fachada']?>" class="img-fluid" alt="">
 
-                <div class="map">
+                <!-- <div class="map">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen  style="min-height:250px !important;"></iframe>
-                </div>
+                </div> -->
 
               </div>
               <div class="member-info">
