@@ -47,9 +47,10 @@
     .alertas{
         width:100%;
         text-align:center;
-        background-color:#fff;
-        color:red;
-        border:solid 1px red;
+        background-color:#ff7d52;
+        border:solid 1px #fd3e00;
+        color:#ffffff;
+
         border-radius:7px;
         font-size:10px !important;
         padding:5px;
