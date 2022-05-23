@@ -1,7 +1,7 @@
 <?php
 
     include("../../../lib/includes.php");
-    echo $q = "select * from clientes where codigo = '{$_SESSION['AppCliente']}'";
+    $q = "select * from clientes where codigo = '{$_SESSION['AppCliente']}'";
     $c = mysqli_fetch_object(mysqli_query($con, $q));
 
 ?>
@@ -23,11 +23,11 @@
 <div class="col">
     <div class="col-12">
         <p style="text-align:center">
-        O seu telefone <?=$c->telefone?> informado no cadastro, precisa ser confirmado para liberar o seu cadastro.
+        O seu telefone <b><?=$c->telefone?></b> informado no cadastro, precisa ser confirmado para liberar o seu cadastro.
         Como deseja receber o código de confirmação?
         </p>
-        <button class="sms btn btn-primary btn-block btn-lg">POR SMS</button>
-        <button class="whatsapp btn btn-primary btn-block btn-lg">POR WHATSAPP</button>
+        <button class="sms btn btn-primary btn-block btn-lg"><i class="fa-solid fa-comment-sms"></i> SMS</button>
+        <button class="whatsapp btn btn-primary btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
 
     </div>
 </div>
