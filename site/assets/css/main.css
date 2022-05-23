@@ -2009,7 +2009,7 @@ section {
 }
 .contact .php-email-form {
   width: 100%;
-  background: var(--color-white);
+  /* background: var(--color-white); */
 }
 .contact .php-email-form .form-group {
   padding-bottom: 8px;
