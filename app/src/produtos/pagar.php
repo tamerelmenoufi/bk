@@ -50,9 +50,9 @@
         background-color:#ff7d52;
         border:solid 1px #fd3e00;
         color:#ffffff;
-
+        text-align:center;
         border-radius:7px;
-        font-size:10px !important;
+        font-size:11px !important;
         font-weight:normal !important;
         padding:5px;
         margin-top:10px;
