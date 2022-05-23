@@ -114,7 +114,7 @@
                     map<?=$md5?>.setCenter(location<?=$md5?>);
                     map<?=$md5?>.setZoom(16);
 
-                    $(".ConfirmaCoordenadas").attr("coordenadas",`{latitude<?=$md5?>},{longitude<?=$md5?>}`);
+                    $(".ConfirmaCoordenadas").attr("coordenadas",latitude<?=$md5?>+','+longitude<?=$md5?>);
                 }
             }
         });
