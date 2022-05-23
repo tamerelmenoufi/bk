@@ -105,7 +105,7 @@
                                 if(!$d->nome or !$d->confirma_telefone){
                                 ?>
                                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Dados Incompletos, atualize para fechar o seu pedido.</div>
-                                <button class="btn btn-danger btn-xs">Abrir</button>
+                                <button class="btn btn-danger btn-block">Atualizar Cadastro</button>
                                 <?php
                                 }
                                 ?>
