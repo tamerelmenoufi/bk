@@ -35,7 +35,7 @@
         width:100%;
         text-align:left;
         font-size:14px;
-        font-weight:bold;
+        font-weight:normal;
     }
     .card-title a{
         width:100%;
@@ -168,21 +168,25 @@
             <div class="card bg-light mb-3">
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
                 <div class="card-body">
-
+                    <?php
+                    $pagar = true;
+                    if(!$coordenadas or !$d->nome or !$d->telefone_confirmado){
+                    ?>
                     <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
                         Você possui pendências em seu cadastro. Verifique as notificações acima e atualize seu cadastro para concluir seu pedido.
                     </div>
-
-
-
+                    <?php
+                    $pagar = false;
+                    }
+                    ?>
                     <!-- <h5 class="card-title">
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     <h5 class="card-title">
-                        <a pagar opc="credito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</a>
+                        <a <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</a>
                     </h5>
                     <h5 class="card-title">
-                        <a pagar opc="pix" class="btn btn-danger btn-lg"><i class="fa-brands fa-pix"></i> PIX</a>
+                        <a <?=(($pagar)?'pagar':'disabled')?> pagar opc="pix" class="btn btn-danger btn-lg"><i class="fa-brands fa-pix"></i> PIX</a>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
