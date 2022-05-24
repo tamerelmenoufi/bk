@@ -207,7 +207,7 @@
         $("li[padrao]").click(function(){
             cod = $(this).attr("cod");
             $.confirm({
-                content:"Deseja realmente ativar como endereço principal?",
+                content:"Confirma esse endereço para as próximas entregas?",
                 title:false,
                 buttons:{
                     'SIM':function(){
