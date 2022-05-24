@@ -232,10 +232,10 @@
         $(".ConfirmaEndereco").click(function(){
             cod = $(this).attr('endereco');
             $.ajax({
-                url:"componentes/ms_popup.php",
+                url:"componentes/ms_popup_100.php",
                 type:"POST",
                 data:{
-                    local:"src/cliente/mapa_visualizar.php",
+                    local:"src/cliente/mapa_editar.php",
                 },
                 success:function(dados){
                     $("body").attr("retorno","src/produtos/pagar.php");
