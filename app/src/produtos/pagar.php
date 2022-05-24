@@ -132,23 +132,23 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
+                            <?php
+                                $coordenadas = false;
+                                $query1 = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
+                                $result1 = mysqli_query($con, $query1);
+                                if(mysqli_num_rows($result1)){
+                                $d1 = mysqli_fetch_object($result1);
+                                $coordenadas = $d1->coordenadas;
+                            ?>
+
                             <b><?=$d1->nome?></b>
                             <h5 class="card-title">
                                 <small><i class="fa-solid fa-map-pin"></i> Endereço</small>
-                                <?php
-                                    $coordenadas = false;
-                                    $query1 = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
-                                    $result1 = mysqli_query($con, $query1);
-                                    if(mysqli_num_rows($result1)){
-                                    $d1 = mysqli_fetch_object($result1);
-                                    $coordenadas = $d1->coordenadas;
-                                ?>
                                 <div><?=trim($d1->rua).", ".trim($d1->numero).", ".trim($d1->bairro).
                                 (($d1->complemento)?', '.$d1->complemento:false).
                                 (($d1->referencia)?', '.$d1->referencia:false)?></div>
 
                                 <?php
-                                    }
                                 if(!$coordenadas){
                                 ?>
                                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Endereço Pendente de validação.</div>
@@ -165,6 +165,9 @@
                                 </div>
 
                             </h5>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
