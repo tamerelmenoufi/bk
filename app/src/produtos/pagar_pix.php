@@ -2,9 +2,11 @@
     include("../../../lib/includes.php");
     error_reporting(9);
     $query = "select
+                    a.venda,
                     sum(a.valor_total) as total,
                     b.nome,
-                    b.telefone
+                    b.telefone,
+                    b.email
                 from vendas_produtos a
                     left join clientes b on a.cliente = b.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
@@ -49,76 +51,33 @@
                 <div class="card mb-3" style="background-color:#fafcff; padding:20px;">
                     <p style="text-align:center">
                         <?php
+                            $pedido = str_pad($d->venda, 6, "0", STR_PAD_LEFT);
 
-                            $rede = new Rede;
-                            // $x = $rede->Transacao('{
-                            //     "capture": false,
-                            //     "kind": "credit",
-                            //     "reference": "pedido3",
-                            //     "amount": 2099,
-                            //     "installments": 2,
-                            //     "cardholderName": "John Snow",
-                            //     "cardNumber": "5448280000000007",
-                            //     "expirationMonth": 12,
-                            //     "expirationYear": 2028,
-                            //     "securityCode": "235",
-                            //     "softDescriptor": "string",
-                            //     "subscription": false,
-                            //     "origin": 1,
-                            //     "distributorAffiliation": 0,
-                            //     "brandTid": "string"
-                            // }');
+                            // $PIX = new MercadoPago;
+                            // $retorno = $PIX->Transacao('{
+                            //     "transaction_amount": '.$d->total.',
+                            //     "description": "Pedido '.$pedido.' - Venda BKManaus (Delivery)",
+                            //     "payment_method_id": "pix",
+                            //     "payer": {
+                            //       "email": "tamer@mohatron.com.br",
+                            //       "first_name": "Tamer Mohamed",
+                            //       "last_name": "Elmenoufi",
+                            //       "identification": {
+                            //           "type": "CPF",
+                            //           "number": "60110970225"
+                            //       },
+                            //       "address": {
+                            //           "zip_code": "69010110",
+                            //           "street_name": "Rua Monsehor Coutinho",
+                            //           "street_number": "600",
+                            //           "neighborhood": "Centro",
+                            //           "city": "Manaus",
+                            //           "federal_unit": "AM"
+                            //       }
+                            //     }
+                            //   }');
 
-                            //////////////////////////////////////////////////////////////////
-                            // echo $rede->capture('
-                            //                     {
-                            //                         "tid":"10012203142252512371",
-                            //                         "amount":2099
-                            //                     }
-                            //                     ');
-                            //////////////////////////////////////////////////////////////////
-                            $x = [3,6,7];
-                            $q = "select * from vendas where cliente = '{$_SESSION['AppCliente']}' and operadora_situacao != ''";
-                            $x = mysqli_query($con, $q);
-                            while($x1 = mysqli_fetch_object($x)){
-                                $r =    $rede->Consulta('
-                                                        {
-                                                            "reference":"'.$x1->codigo.'"
-                                                        }
-                                                        ');
-                                $r = json_decode($r);
-
-                                echo "<p>STATUS - {$x1->codigo}: ".$r->authorization->status."</p>";
-                            }
-                            //////////////////////////////////////////////////////////////////
-                            // echo    $rede->ConsultaTID('
-                            //                         {
-                            //                             "tid":"10012203142252512371"
-                            //                         }
-                            //                         ');
-                            //////////////////////////////////////////////////////////////////
-                            // echo    $rede->Cancelar('
-                            //                         {
-                            //                             "tid":"10012203142252512371",
-                            //                             "amount":2299,
-                            //                             "url":"https://moh1.com.br/rede/cancelar/callback.php"
-                            //                         }
-                            //                         ');
-                            //////////////////////////////////////////////////////////////////
-                            // echo "CancelaRefundId: <br>";
-                            // echo    $rede->ConsultaRefundId('
-                            //                                 {
-                            //                                     "tid":"10012203142252512371",
-                            //                                     "refundId":"52d7b5f1-c667-4311-80d5-cbfdd81733f5"
-                            //                                 }
-                            //                                 ');
-                            //////////////////////////////////////////////////////////////////
-                            // echo "ConsultaCancelaTID: <br>";
-                            // echo    $rede->ConsultaCancelaTID('
-                            //                                 {
-                            //                                     "tid":"10012203142252512371"
-                            //                                 }
-                            //                                 ');
+                            //   $dados = json_decode($retorno);
                         ?>
                         <br><br><br>
                         Utilize o QrCode para pagar a sua conta ou copie o códio PIX abaixo.
