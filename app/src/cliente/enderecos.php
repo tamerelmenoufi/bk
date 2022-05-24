@@ -13,6 +13,9 @@
 
         $query = "update clientes_enderecos set deletado = '1' where codigo = '{$_POST['cod']}'";
         mysqli_query($con, $query);
+
+        $query = "update clientes_enderecos set padrao = '1' where  codigo in (select codigo from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' limit 1)";
+        mysqli_query($con, $query);
         //exit();
     }
 
