@@ -79,7 +79,6 @@
 
                             //   $dados = json_decode($retorno);
                         ?>
-                        <br><br><br>
                         Utilize o QrCode para pagar a sua conta ou copie o códio PIX abaixo.
                     </p>
                     <div style="padding:20px;">
