@@ -101,7 +101,7 @@
                         <div class="col-12">
                             <h5 class="card-title">
                                 <small>Cliente</small>
-                                <div><?="{$d->nome}<br>{$d->telefone} - {$d->telefone_confirmado}"?></div>
+                                <div><?="{$d->nome}<br>{$d->telefone}"?></div>
                                 <?php
                                 if(!$d->nome or !$d->telefone_confirmado){
                                 ?>
