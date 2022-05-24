@@ -1,0 +1,79 @@
+<?php
+
+    include("../../../lib/includes.php");
+
+    $q = "select * from clientes where codigo = '{$_SESSION['AppCliente']}'";
+    $c = mysqli_fetch_object(mysqli_query($con, $q));
+
+
+
+?>
+
+<style>
+    .ClienteTopoTitulo{
+        position:relative;
+        width:100%;
+        text-align:center;
+    }
+    #codigo_ativacao{
+        text-align:center;
+        text-transform: uppercase;
+
+    }
+</style>
+
+<div class="ClienteTopoTitulo">
+    <h4>
+        <i class="fa-solid fa-user"></i> Código de Ativação
+    </h4>
+</div>
+
+<div class="col">
+    <div class="col-12">
+        <p style="text-align:center">
+        Enviamos um código com 6(seis) dígitos para o número cadastrado <b><?=$c->telefone?></b>. Digite o código enviado no campo abaixo para validar o seu cadastro.
+        </p>
+        <input type="text" class="form-control form-control-lg" id="codigo_ativacao" maxlength="6" />
+        <button class="enviar_codigo btn btn-success btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
+
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+
+        $("button.enviar_codigo").click(function(){
+            codigo = $("#codigo_ativacao").val();
+            Carregando();
+            $.ajax({
+                url:"src/cliente/validar.php",
+                data:{
+                    codigo,
+                    acao:'validacao',
+                },
+                type:"POST",
+                success:function(dados){
+                    let retorno = JSON.parse(dados);
+                    if(retorno.status){
+                        $.ajax({
+                            url:"componentes/ms_popup_100.php",
+                            type:"POST",
+                            data:{
+                                local:"src/cliente/perfil.php",
+                            },
+                            success:function(dados){
+                                Carregando('none');
+                                PageClose(2);
+                                $(".ms_corpo").append(dados);
+                            }
+                        });
+                    }else{
+                        $.alert('Ocorreu um erro. Tente novamente!');
+                    }
+                }
+            });
+        });
+
+    })
+</script>

@@ -74,18 +74,17 @@
                 },
                 type:"POST",
                 success:function(dados){
-                    console.log(dados);
                     let retorno = JSON.parse(dados);
                     if(retorno.status){
                         $.ajax({
-                            url:"componentes/ms_popup_100.php",
+                            url:"componentes/ms_popup.php",
                             type:"POST",
                             data:{
-                                local:"src/cliente/perfil.php",
+                                local:"src/cliente/validar.php",
                             },
                             success:function(dados){
                                 Carregando('none');
-                                PageClose(2);
+                                PageClose();
                                 $(".ms_corpo").append(dados);
                             }
                         });
