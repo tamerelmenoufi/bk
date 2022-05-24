@@ -69,13 +69,18 @@
                 <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
 
-
+            <?php
+            if(!$c->telefone_confirmado){
+            ?>
             <div class="col-12">
                 <div class="ConfirmaTelefone">
                         Seu Cadastro não está completo, é necessário confirmar o seu telefone.<br>
                         <span class="text-primary">Clique aqui e confirme agora!</span>
                 </div>
             </div>
+            <?php
+            }
+            ?>
 
         </div>
     </div>
