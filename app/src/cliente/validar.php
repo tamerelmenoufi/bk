@@ -48,7 +48,7 @@
         <p style="text-align:center">
         Enviamos um código com 6(seis) dígitos para o número cadastrado <b><?=$c->telefone?></b>. Digite o código enviado no campo abaixo para validar o seu cadastro.
         </p>
-        <input type="text" class="form-control form-control-lg" id="codigo_ativacao" maxlength="6" />
+        <input type="text" autocomplete="off" class="form-control form-control-lg" id="codigo_ativacao" maxlength="6" />
         <button class="enviar_codigo btn btn-success btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
 
     </div>

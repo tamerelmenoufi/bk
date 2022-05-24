@@ -5,6 +5,7 @@
 
         if ($_POST['codigo']) {
             mysqli_query($con, "UPDATE clientes_enderecos SET
+                        nome = '{$_POST['nome']}',
                         rua = '{$_POST['rua']}',
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
@@ -17,6 +18,7 @@
 
             mysqli_query($con, "INSERT INTO clientes_enderecos SET
                         cliente = '{$_SESSION['AppCliente']}',
+                        nome = '{$_POST['nome']}',
                         rua = '{$_POST['rua']}',
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
@@ -42,6 +44,10 @@
 <div class="col">
     <div class="col-12">Cadastro/Editar Endereço</div>
 
+    <div class="col-12 mb-3">
+        <label for="rua">Nome <small>Aplelido para o endereço</small>*</label>
+        <input type="text" autocomplete="off" class="form-control form-control-lg" id="nome" value="<?=$d->nome?>">
+    </div>
     <div class="col-12 mb-3">
         <label for="rua">Rua*</label>
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="rua" value="<?=$d->rua?>">
@@ -74,6 +80,7 @@
         $("#ClienteTeleofne").mask("(99) 99999-9999");
 
         $("button[CadastrarCliente]").click(function(){
+            nome = $("#nome").val();
             rua = $("#rua").val();
             numero = $("#numero").val();
             bairro = $("#bairro").val();
@@ -82,6 +89,7 @@
             codigo = $(this).attr("cod");
 
             if(
+                nome &&
                 rua &&
                 numero &&
                 bairro
@@ -90,6 +98,7 @@
                     url:"src/cliente/endereco_form.php",
                     type:"POST",
                     data:{
+                        nome,
                         rua,
                         numero,
                         bairro,
