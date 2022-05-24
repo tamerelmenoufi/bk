@@ -69,6 +69,7 @@
                 },
                 type:"POST",
                 success:function(dados){
+                    console.log(dados);
                     let retorno = JSON.parse(dados);
                     if(retorno.status){
                         $.ajax({
