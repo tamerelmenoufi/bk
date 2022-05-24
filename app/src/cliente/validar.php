@@ -84,6 +84,7 @@
                             }
                         });
                     }else{
+                        Carregando('none');
                         $.alert('Ocorreu um erro. Tente novamente!');
                     }
                 }
