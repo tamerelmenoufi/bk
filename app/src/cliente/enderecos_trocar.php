@@ -116,7 +116,7 @@
                                         local:"src/produtos/pagar.php",
                                     },
                                     success:function(dados){
-                                        PageClose();
+                                        PageClose(2);
                                         $(".ms_corpo").append(dados);
                                     }
                                 });
