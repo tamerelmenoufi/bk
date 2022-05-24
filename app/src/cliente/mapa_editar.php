@@ -132,7 +132,7 @@
                 },
                 success:function(dados){
 
-                    $.alert('Coordenadas Atualizadas');
+                    $.alert('Endereço Confirmado.');
 
                     local = $("body").attr("retorno");
 
