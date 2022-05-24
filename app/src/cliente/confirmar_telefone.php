@@ -75,8 +75,10 @@
                 type:"POST",
                 success:function(dados){
                     console.log(dados);
-                    let retorno = JSON.parse(dados);
-                    if(retorno.status){
+                    // let retorno = JSON.parse(dados);
+                    retorno = dados;
+                    return;
+                    if(retorno){
                         $.ajax({
                             url:"componentes/ms_popup_100.php",
                             type:"POST",
