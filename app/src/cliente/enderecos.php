@@ -80,7 +80,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <div class="row text-white">
+                        <div class="row <?=(($d->padrao)?'text-white':false)?>">
                             <div class="col-1">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
