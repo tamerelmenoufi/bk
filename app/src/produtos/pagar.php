@@ -142,6 +142,7 @@
                                     $d1 = mysqli_fetch_object($result1);
                                     $coordenadas = $d1->coordenadas;
                                 ?>
+                                <b><?=$d1->nome?></b>
                                 <div><?=trim($d1->rua).", ".trim($d1->numero).", ".trim($d1->bairro).
                                 (($d1->complemento)?', '.$d1->complemento:false).
                                 (($d1->referencia)?', '.$d1->referencia:false)?></div>
