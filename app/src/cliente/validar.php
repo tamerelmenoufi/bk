@@ -11,9 +11,9 @@
 
         if($codigo == strtoupper($_POST['codigo'])){
             mysqli_query($con, "update clientes set telefone_confirmado = '1' where codigo = '{$_SESSION['AppCliente']}'");
-            $retorno = ['sucesso' => true, 'ativacao' => $codigo, 'codigo' => $_POST['codigo']];
+            $retorno = ['status' => true, 'ativacao' => $codigo, 'codigo' => $_POST['codigo']];
         }else{
-            $retorno = ['sucesso' => false, 'ativacao' => $codigo, 'codigo' => $_POST['codigo']];
+            $retorno = ['status' => false, 'ativacao' => $codigo, 'codigo' => $_POST['codigo']];
         }
 
         echo json_encode($retorno);
@@ -69,7 +69,6 @@
                 },
                 type:"POST",
                 success:function(dados){
-                    console.log(dados);
                     let retorno = JSON.parse(dados);
                     if(retorno.status){
                         $.ajax({
