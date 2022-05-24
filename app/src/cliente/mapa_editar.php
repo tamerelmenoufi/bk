@@ -131,6 +131,7 @@
                     acao:'coordenadas'
                 },
                 success:function(dados){
+
                     $.alert('Coordenadas Atualizadas');
 
                     local = $("body").attr("retorno");
