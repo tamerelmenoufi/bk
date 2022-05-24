@@ -128,7 +128,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h5 class="card-title">
-                                <small>Endereço</small>
+                                <small><i class="fa-solid fa-map-pin"></i> Endereço</small>
                                 <?php
                                     $coordenadas = false;
                                     $query1 = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
