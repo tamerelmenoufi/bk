@@ -84,7 +84,7 @@
                             <div class="col-1">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <div class="col-11">
+                            <div class="col-11 text-white">
                             <?php
                                 echo "{$d->rua}, {$d->numero}, {$d->bairro} ".
                                 (($d->complemento)?', '.$d->complemento:false).
