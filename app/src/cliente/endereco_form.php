@@ -15,7 +15,7 @@
                         WHERE codigo = '{$_POST['codigo']}'
                         ");
         } else {
-
+            mysqli_query($con, "update clientes_enderecos set padrao = '0' where cliente = '{$_SESSION['AppCliente']}'");
             mysqli_query($con, "INSERT INTO clientes_enderecos SET
                         cliente = '{$_SESSION['AppCliente']}',
                         nome = '{$_POST['nome']}',
@@ -23,7 +23,8 @@
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
                         complemento = '{$_POST['complemento']}',
-                        referencia = '{$_POST['referencia']}'
+                        referencia = '{$_POST['referencia']}',
+                        padrao = '1'
                         ");
 
         }
