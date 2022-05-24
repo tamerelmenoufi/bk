@@ -81,7 +81,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header">Dados da Compra</div>
+                <div class="card-header"><i class="fa-solid fa-clipboard-list"></i> Dados da Compra</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-6">
@@ -100,7 +100,7 @@
                     <div class="row">
                         <div class="col-12">
                             <h5 class="card-title">
-                                <small>Cliente</small>
+                                <small><i class="fa-solid fa-user-check"></i> Cliente</small>
                                 <div><?="{$d->nome}<br>{$d->telefone}"?></div>
                                 <?php
                                 if(!$d->nome or !$d->telefone_confirmado){
@@ -123,7 +123,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header">Endereço para Entrega</div>
+                <div class="card-header"><i class="fa-solid fa-location-dot"></i> Endereço para Entrega</div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
@@ -166,7 +166,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header">Formas de Pagamento</div>
+                <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
                 <div class="card-body">
                     <!-- <h5 class="card-title">
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
