@@ -81,6 +81,9 @@
                 <div class="card-body">
                     <p class="card-text">
                         <div class="row <?=(($d->padrao)?'text-white':false)?>">
+                            <div class="col-12">
+                                <h4><?=$d->nome?></h4>
+                            </div>
                             <div class="col-1">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
