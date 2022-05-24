@@ -236,6 +236,7 @@
                 type:"POST",
                 data:{
                     local:"src/cliente/mapa_editar.php",
+                    cod,
                 },
                 success:function(dados){
                     $("body").attr("retorno","src/produtos/pagar.php");
