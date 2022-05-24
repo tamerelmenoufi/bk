@@ -4,6 +4,16 @@
     $q = "select * from clientes where codigo = '{$_SESSION['AppCliente']}'";
     $c = mysqli_fetch_object(mysqli_query($con, $q));
 
+    if($_POST['envio'] == 'SMS'){
+
+        $retorno = ['status' => true];
+
+        echo json_encode($retorno);
+        exit();
+
+    }
+
+
 ?>
 
 <style>
@@ -31,3 +41,38 @@
 
     </div>
 </div>
+
+
+<script>
+    $(function(){
+
+        $("button.sms").click(function(){
+            Carregando();
+            $.ajax({
+                url:"src/cliente/confirmar_cadastro.php",
+                data:{
+                    envio:'SMS',
+                },
+                type:"JSON",
+                success:function(dados){
+                    if(dados.status){
+                        $.ajax({
+                            url:"componentes/ms_popup_100.php",
+                            type:"POST",
+                            data:{
+                                local:"src/cliente/endereco_form.php",
+                            },
+                            success:function(dados){
+                                PageClose(2);
+                                $(".ms_corpo").append(dados);
+                            }
+                        });
+                    }else{
+                        $.alert('Ocorreu um erro. Tente novamente!');
+                    }
+                }
+            });
+        });
+
+    })
+</script>
