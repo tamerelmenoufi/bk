@@ -53,7 +53,7 @@
                 data:{
                     envio:'SMS',
                 },
-                type:"JSON",
+                type:"POST",
                 success:function(dados){
                     alert(dados);
                     let retorno = JSON.parse(dados);
