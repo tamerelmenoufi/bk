@@ -57,6 +57,7 @@
         </p>
         <button class="sms btn btn-primary btn-block btn-lg"><i class="fa-solid fa-comment-sms"></i> SMS</button>
         <button class="whatsapp btn btn-primary btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
+        <button class="ativar btn btn-success btn-block btn-lg"><i class="fa-solid fa-keyboard"></i> Digitar Código</button>
 
     </div>
 </div>
@@ -94,6 +95,25 @@
                 }
             });
         });
+
+
+        $("button.ativar").click(function(){
+            Carregando();
+
+            $.ajax({
+                url:"componentes/ms_popup.php",
+                type:"POST",
+                data:{
+                    local:"src/cliente/validar.php",
+                },
+                success:function(dados){
+                    Carregando('none');
+                    PageClose();
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
+        })
 
     })
 </script>
