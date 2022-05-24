@@ -11,9 +11,9 @@
 
         if($codigo == $_POST['codigo']){
             mysqli_query($con, "update clientes set telefone_confirmado = '1' where codigo = '{$_SESSION['AppCliente']}'");
-            $retorno = ['sucesso' => true];
+            $retorno = ['sucesso' => true, 'ativacao' => $codigo, 'codigo' => $_POST['codigo']];
         }else{
-            $retorno = ['sucesso' => false];
+            $retorno = ['sucesso' => false, 'ativacao' => $codigo, 'codigo' => $_POST['codigo']];
         }
 
         echo json_encode($retorno);
