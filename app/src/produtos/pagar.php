@@ -145,8 +145,8 @@
                                     }
                                 if(!$coordenadas){
                                 ?>
-                                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Endereço Imcompleto ou não cadastrado.</div>
-                                <button class="btn btn-danger btn-block">Atualizar Endereço</button>
+                                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Endereço Pendente de validação.</div>
+                                <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
                                 <?php
                                 }
                                 ?>
@@ -221,6 +221,21 @@
                 type:"POST",
                 data:{
                     local:"src/cliente/confirmar_telefone.php",
+                },
+                success:function(dados){
+                    $("body").attr("retorno","src/produtos/pagar.php");
+                    $(".ms_corpo").append(dados);
+                }
+            });
+        });
+
+        $(".ConfirmaEndereco").click(function(){
+            cod = $(this).attr('endereco');
+            $.ajax({
+                url:"componentes/ms_popup.php",
+                type:"POST",
+                data:{
+                    local:"src/cliente/mapa_visualizar.php",
                 },
                 success:function(dados){
                     $("body").attr("retorno","src/produtos/pagar.php");
