@@ -168,6 +168,13 @@
             <div class="card bg-light mb-3">
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
                 <div class="card-body">
+
+                    <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
+                        Você possui pendências em seu cadastro. Verifique as notificações acima e atualize seu cadastro para concluir seu pedido.
+                    </div>
+
+
+
                     <!-- <h5 class="card-title">
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
