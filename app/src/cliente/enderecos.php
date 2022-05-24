@@ -117,7 +117,7 @@
                             <li padrao cod="<?=$d->codigo?>" class="list-group-item text-primary">
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-location-crosshairs"></i></div>
-                                    <div class="col-11">Definir como endereço principal</div>
+                                    <div class="col-11">Definir endereço para entrega</div>
                                 </div>
                             </li>
                             <li excluir cod="<?=$d->codigo?>" class="list-group-item text-danger">
