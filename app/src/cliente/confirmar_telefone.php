@@ -55,14 +55,13 @@
                 },
                 type:"POST",
                 success:function(dados){
-                    alert(dados);
                     let retorno = JSON.parse(dados);
                     if(retorno.status){
                         $.ajax({
                             url:"componentes/ms_popup_100.php",
                             type:"POST",
                             data:{
-                                local:"src/cliente/endereco_form.php",
+                                local:"src/cliente/perfil.php",
                             },
                             success:function(dados){
                                 Carregando('none');
