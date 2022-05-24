@@ -186,7 +186,7 @@
                         <a <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</a>
                     </h5>
                     <h5 class="card-title">
-                        <a <?=(($pagar)?'pagar':'disabled')?> pagar opc="pix" class="btn btn-danger btn-lg"><i class="fa-brands fa-pix"></i> PIX</a>
+                        <a <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-danger btn-lg"><i class="fa-brands fa-pix"></i> PIX</a>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
