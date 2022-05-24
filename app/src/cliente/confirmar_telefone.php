@@ -6,9 +6,28 @@
 
     if($_POST['envio'] == 'SMS'){
 
-        $retorno = ['status' => true];
+        $cod = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
+
+        $content = http_build_query(array(
+
+            'to' => '55'.str_replace(array(' ','(',')','-'), false, trim($c->telefone)),
+            'text' => "BKManaus Informa: Seu códido de confirmação é {$cod}.",
+
+        ));
+
+        $context = stream_context_create(array(
+            'http' => array(
+                'method'  => 'POST',
+                'content' => $content,
+            )
+        ));
+
+        $result = file_get_contents('https://moh1.com.br/fnbk2.php', null, $context);
+
+        $retorno = ['status' => true, 'retorno' => json_decode($result)];
 
         echo json_encode($retorno);
+
         exit();
 
     }
@@ -55,6 +74,7 @@
                 },
                 type:"POST",
                 success:function(dados){
+                    console.log(dados);
                     let retorno = JSON.parse(dados);
                     if(retorno.status){
                         $.ajax({
