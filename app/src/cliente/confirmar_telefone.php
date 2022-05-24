@@ -49,7 +49,7 @@
         $("button.sms").click(function(){
             Carregando();
             $.ajax({
-                url:"src/cliente/confirmar_cadastro.php",
+                url:"src/cliente/confirmar_telefone.php",
                 data:{
                     envio:'SMS',
                 },
