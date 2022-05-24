@@ -55,6 +55,7 @@
                 },
                 type:"JSON",
                 success:function(dados){
+                    alert(dados);
                     let retorno = JSON.parse(dados);
                     if(retorno.status){
                         $.ajax({
