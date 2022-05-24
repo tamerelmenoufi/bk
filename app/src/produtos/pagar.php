@@ -37,7 +37,7 @@
         font-size:14px;
         font-weight:normal;
     }
-    .card-title a{
+    .card-title button{
         width:100%;
         text-align:left;
     }
@@ -183,10 +183,10 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-warning btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-warning btn-lg"><i class="fa-brands fa-pix"></i> PIX</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-info btn-lg"><i class="fa-brands fa-pix"></i> PIX</button>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
