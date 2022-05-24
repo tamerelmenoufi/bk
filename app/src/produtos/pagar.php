@@ -161,7 +161,6 @@
                                         <i class="fa-solid fa-repeat"></i>
                                         Trocar o Endereço
                                     </span>
-
                                 </div>
 
                             </h5>
@@ -263,6 +262,21 @@
                 },
                 success:function(dados){
                     $("body").attr("retorno","src/produtos/pagar.php");
+                    $(".ms_corpo").append(dados);
+                }
+            });
+        });
+
+
+        $(".alterar_endereco").click(function(){
+            $.ajax({
+                url:"componentes/ms_popup.php",
+                type:"POST",
+                data:{
+                    local:"src/cliente/enderecos_trocar.php",
+                },
+                success:function(dados){
+                    PageClose();
                     $(".ms_corpo").append(dados);
                 }
             });
