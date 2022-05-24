@@ -11,7 +11,7 @@
         $content = http_build_query(array(
 
             'to' => '55'.str_replace(array(' ','(',')','-'), false, trim($c->telefone)),
-            'text' => "BKManaus Informa: Seu códido de confirmação é {$cod}.",
+            'text' => "BKManaus Informa: Seu codido de confirmacao e {$cod}.",
 
         ));
 
