@@ -223,6 +223,7 @@
                     local:"src/cliente/confirmar_telefone.php",
                 },
                 success:function(dados){
+                    $("body").attr("retorno","src/produtos/pagar.php");
                     $(".ms_corpo").append(dados);
                 }
             });
