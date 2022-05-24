@@ -276,7 +276,7 @@
                     local:"src/cliente/enderecos_trocar.php",
                 },
                 success:function(dados){
-                    PageClose();
+                    //PageClose();
                     $(".ms_corpo").append(dados);
                 }
             });
