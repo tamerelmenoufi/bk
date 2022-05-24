@@ -23,7 +23,13 @@
         width:100%;
         text-align:center;
     }
-
+    .NovoEndereco{
+        position:fixed;
+        bottom:0px;
+        right:10px;
+        font-size:50px;
+        color:#502314;
+    }
 </style>
 <div class="EnderecoTitulo">
     <h4>Lista de Endereços</h4>
@@ -87,7 +93,7 @@
                     local:'src/cliente/endereco_form.php',
                 },
                 success:function(dados){
-                    PageClose(2);
+                    //PageClose(2);
                     $(".ms_corpo").append(dados);
                 }
             });
