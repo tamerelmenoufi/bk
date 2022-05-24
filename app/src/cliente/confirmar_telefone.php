@@ -24,7 +24,7 @@
 
         $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
 
-        $retorno = ['status' => true, 'retorno' => $result];
+        $retorno = ['status' => true, 'retorno_y' => $result];
 
         $retorno = json_encode($retorno);
         echo $retorno;
