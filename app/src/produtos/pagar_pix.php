@@ -43,7 +43,7 @@
     }
 </style>
 <div class="PedidoTopoTitulo">
-    <h4>Pagar <?=$_SESSION['AppPedido']?> com PIX</h4>
+    <h4>Pagar com PIX</h4>
 </div>
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
