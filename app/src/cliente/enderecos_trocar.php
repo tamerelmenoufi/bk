@@ -93,7 +93,7 @@
                     local:'src/cliente/endereco_form.php',
                 },
                 success:function(dados){
-                    //PageClose(2);
+                    PageClose();
                     $(".ms_corpo").append(dados);
                 }
             });
