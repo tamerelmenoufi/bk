@@ -121,7 +121,7 @@
 
         $(".ConfirmaCoordenadas").click(function(){
             coordenadas = $(this).attr("coordenadas");
-
+            Carregando();
             $.ajax({
                 url:"src/cliente/mapa_editar.php",
                 type:"POST",
@@ -132,6 +132,21 @@
                 },
                 success:function(dados){
                     $.alert('Coordenadas Atualizadas');
+                    local = $("body").attr("retorno");
+
+                    $.ajax({
+                        url:"componentes/ms_popup_100.php",
+                        type:"POST",
+                        data:{
+                            local,
+                        },
+                        success:function(dados){
+                            Carregando('none');
+                            PageClose(2);
+                            $(".ms_corpo").append(dados);
+                        }
+                    });
+
                 }
             });
 

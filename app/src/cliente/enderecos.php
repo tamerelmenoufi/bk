@@ -197,6 +197,7 @@
                     cod
                 },
                 success:function(dados){
+                    $("body").attr("retorno","src/cliente/enderecos.php");
                     //PageClose();
                     $(".ms_corpo").append(dados);
                 }
