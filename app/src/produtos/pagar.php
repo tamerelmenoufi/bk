@@ -37,7 +37,7 @@
         font-size:14px;
         font-weight:normal;
     }
-    .card-title button{
+    .card-title button[opc]{
         width:100%;
         text-align:left;
     }
