@@ -24,9 +24,9 @@
 
         $result = file_get_contents('https://moh1.com.br/fnbk2.php', null, $context);
 
-        //$retorno = ['status' => true, 'retorno_x' => json_decode($result)];
+        $retorno = ['status' => true, 'retorno_x' => json_decode($result)];
 
-        echo ($result);
+        echo json_encode($retorno);
 
         exit();
 
@@ -75,10 +75,8 @@
                 type:"POST",
                 success:function(dados){
                     console.log(dados);
-                    // let retorno = JSON.parse(dados);
-                    retorno = dados;
-                    return;
-                    if(retorno){
+                    let retorno = JSON.parse(dados);
+                    if(retorno.status){
                         $.ajax({
                             url:"componentes/ms_popup_100.php",
                             type:"POST",
