@@ -109,6 +109,10 @@
                                         ?>
                                         <i class="fa-solid fa-triangle-exclamation text-danger"></i>
                                         <?php
+                                        }else{
+                                        ?>
+                                        <i class="fa-solid fa-circle-check text-success"></i>
+                                        <?php
                                         }
                                         ?>
                                     </div>
