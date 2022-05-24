@@ -166,7 +166,7 @@
                             <div style="width:100%; text-align:right; margin-top:20px;">
                                 <span class='alterar_endereco'>
                                     <i class="fa-solid fa-repeat"></i>
-                                    Trocar o Endereço
+                                    Trocar/Cadastrar Endereço
                                 </span>
                             </div>
 
