@@ -26,8 +26,8 @@
 
         $retorno = ['status' => true, 'retorno_x' => json_decode($result)];
 
-        echo json_encode($retorno);
-
+        $retorno = json_encode($retorno);
+        echo $retorno;
         exit();
 
     }
