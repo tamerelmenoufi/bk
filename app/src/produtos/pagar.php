@@ -157,17 +157,19 @@
                                 }
                                 ?>
 
-                                <div style="width:100%; text-align:right; margin-top:20px;">
-                                    <span class='alterar_endereco'>
-                                        <i class="fa-solid fa-repeat"></i>
-                                        Trocar o Endereço
-                                    </span>
-                                </div>
+
 
                             </h5>
                             <?php
                             }
                             ?>
+                            <div style="width:100%; text-align:right; margin-top:20px;">
+                                <span class='alterar_endereco'>
+                                    <i class="fa-solid fa-repeat"></i>
+                                    Trocar o Endereço
+                                </span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
