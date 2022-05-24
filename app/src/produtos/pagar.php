@@ -106,7 +106,7 @@
                                 if(!$d->nome or !$d->telefone_confirmado){
                                 ?>
                                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Dados Incompletos, atualize para fechar o seu pedido.</div>
-                                <button class="btn btn-danger btn-block">Atualizar Cadastro</button>
+                                <button class="ConfirmaTelefone btn btn-danger btn-block">Atualizar Cadastro</button>
                                 <?php
                                 }
                                 ?>
@@ -216,6 +216,19 @@
             });
         });
 
+
+        $(".ConfirmaTelefone").click(function(){
+            $.ajax({
+                url:"componentes/ms_popup.php",
+                type:"POST",
+                data:{
+                    local:"src/cliente/confirmar_telefone.php",
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
+        });
 
     })
 </script>
