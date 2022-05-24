@@ -45,7 +45,7 @@
 <div class="PedidoTopoTitulo">
     <h4>Pagar com PIX</h4>
 </div>
-<div class="col" style="margin-bottom:60px;">
+<div class="col">
     <div class="row">
             <div class="col-12">
                 <div class="card mb-3" style="background-color:#fafcff; padding:20px;">
