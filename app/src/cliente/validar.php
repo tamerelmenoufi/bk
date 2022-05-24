@@ -70,13 +70,13 @@
                 type:"POST",
                 success:function(dados){
                     let retorno = JSON.parse(dados);
-                    retorno = $("body").attr("retorno");
+                    local = $("body").attr("retorno");
                     if(retorno.status){
                         $.ajax({
                             url:"componentes/ms_popup_100.php",
                             type:"POST",
                             data:{
-                                local:retorno,
+                                local,
                             },
                             success:function(dados){
                                 Carregando('none');
