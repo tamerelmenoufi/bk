@@ -5,6 +5,21 @@
     $q = "select * from clientes where codigo = '{$_SESSION['AppCliente']}'";
     $c = mysqli_fetch_object(mysqli_query($con, $q));
 
+    if($_POST['acao'] == 'validacao'){
+
+        $codigo = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
+
+        if($codigo == $_POST['codigo']){
+            mysqli_query($con, "update clientes set telefone_confirmado = '1' where codigo = '{$_SESSION['AppCliente']}'");
+            $retorno = ['sucesso' => true];
+        }else{
+            $retorno = ['sucesso' => false];
+        }
+
+        echo json_encode($retorno);
+
+        exit();
+    }
 
 
 ?>
