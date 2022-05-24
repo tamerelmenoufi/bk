@@ -102,7 +102,7 @@
                                 <small>Cliente</small>
                                 <div><?="{$d->nome}<br>{$d->telefone}"?></div>
                                 <?php
-                                if(!$d->nome or !$d->confirma_telefone){
+                                if(!$d->nome or !$d->telefone_confirmado){
                                 ?>
                                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Dados Incompletos, atualize para fechar o seu pedido.</div>
                                 <button class="btn btn-danger btn-block">Atualizar Cadastro</button>
