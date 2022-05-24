@@ -55,7 +55,8 @@
                 },
                 type:"JSON",
                 success:function(dados){
-                    if(dados.status){
+                    let retorno = JSON.parse(dados);
+                    if(retorno.status){
                         $.ajax({
                             url:"componentes/ms_popup_100.php",
                             type:"POST",
