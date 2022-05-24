@@ -71,6 +71,10 @@
     .icone{
         font-size:70px;
     }
+    .alterar_endereco{
+        cursor:pointer;
+
+    }
 
 </style>
 <div class="PedidoTopoTitulo">
@@ -151,6 +155,13 @@
                                 }
                                 ?>
 
+                                <div style="width:100%; text-align:right;">
+                                    <span class='alterar_endereco'>
+                                        <i class="fa-solid fa-repeat"></i>
+                                        Trocar o Endereço
+                                    </span>
+
+                                </div>
 
                             </h5>
                         </div>
