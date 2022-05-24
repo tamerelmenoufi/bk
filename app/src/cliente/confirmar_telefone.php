@@ -64,6 +64,7 @@
                                 local:"src/cliente/endereco_form.php",
                             },
                             success:function(dados){
+                                Carregando('none');
                                 PageClose(2);
                                 $(".ms_corpo").append(dados);
                             }
