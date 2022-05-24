@@ -93,7 +93,7 @@
             });
         });
 
-        $("li[padrao]").click(function(){
+        $("div[padrao]").click(function(){
             cod = $(this).attr("cod");
             $.confirm({
                 content:"Confirma esse endereço para a próxima entrega?",
