@@ -22,7 +22,7 @@
             )
         ));
 
-        $result = file_get_contents('https://moh1.com.br/fnbk2.php', null, $context);
+        $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
 
         $retorno = ['status' => true, 'retorno' => $result];
 
