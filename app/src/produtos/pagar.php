@@ -73,6 +73,8 @@
     }
     .alterar_endereco{
         cursor:pointer;
+        margin-top:20px;
+        color:blue;
 
     }
 
