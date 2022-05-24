@@ -22,8 +22,8 @@
             )
         ));
 
-        $result = file_get_contents('https://moh1.com.br/fnbk2.php', null, $context);
-
+        echo $result = file_get_contents('https://moh1.com.br/fnbk2.php', null, $context);
+        exit();
         $retorno = ['status' => true, 'retorno_x' => json_decode($result)];
 
         echo json_encode($retorno);
