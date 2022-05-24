@@ -74,17 +74,17 @@
                 while($d = mysqli_fetch_object($result)){
 
             ?>
-            <div class="card <?=(($d->padrao)?'bg-info':false)?>" style="margin-bottom:10px;">
+            <div class="card <?=(($d->padrao)?'bg-info':false)?>" style="margin-bottom:10px; border:solid 2px #36b9cc;">
                 <div class="card-img-top mapa" cod = '<?=$d->codigo?>'>
 
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        <div class="row">
+                        <div class="row text-white">
                             <div class="col-1">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <div class="col-11 text-white">
+                            <div class="col-11">
                             <?php
                                 echo "{$d->rua}, {$d->numero}, {$d->bairro} ".
                                 (($d->complemento)?', '.$d->complemento:false).
