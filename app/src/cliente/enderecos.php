@@ -74,7 +74,7 @@
                 while($d = mysqli_fetch_object($result)){
 
             ?>
-            <div class="card <?=(($d->padrao)?'bg-info':false)?>" style="margin-bottom:10px; border:solid 2px #36b9cc;">
+            <div class="card <?=(($d->padrao)?'bg-info':false)?>" style="margin-bottom:10px; border:solid 2px #<?=(($d->padrao)?'36b9cc':'cccccc')?>;">
                 <div class="card-img-top mapa" cod = '<?=$d->codigo?>'>
 
                 </div>
