@@ -154,6 +154,20 @@
                                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Endereço Pendente de validação.</div>
                                 <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
                                 <?php
+                                }else{
+
+                                    $bee = new Bee;
+                                    list($lat, $lng) = explode(",", $coordenadas);
+                                    $q = "select * from lojas";
+                                    $r = mysqli_query($con, $q);
+                                    while($v = mysqli_fetch_object($r)){
+                                        echo "<br>";
+                                        var_dump($bee->ValorViagem($v->id, $lat, $lng));
+                                    }
+
+                                ?>
+
+                                <?php
                                 }
                                 ?>
 
