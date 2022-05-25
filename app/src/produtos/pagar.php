@@ -155,18 +155,30 @@
                                 <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
                                 <?php
                                 }else{
-
+                                ?>
+                                <ul class="list-group">
+                                <?php
                                     $bee = new Bee;
                                     list($lat, $lng) = explode(",", $coordenadas);
                                     $q = "select * from lojas";
                                     $r = mysqli_query($con, $q);
                                     while($v = mysqli_fetch_object($r)){
-                                        echo "<br>";
-                                        var_dump($bee->ValorViagem($v->id, $lat, $lng));
+
+
+
+                                ?>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <?=$v->nome?>
+                                        <span class="badge badge-primary badge-pill">1</span>
+                                    </li>
+
+                                        <!-- echo "<br>";
+                                        var_dump($bee->ValorViagem($v->id, $lat, $lng)); -->
+                                <?php
                                     }
 
                                 ?>
-
+                                </ul>
                                 <?php
                                 }
                                 ?>
