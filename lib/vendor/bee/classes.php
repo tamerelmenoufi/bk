@@ -13,9 +13,9 @@
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
-                return 'https://api.beedelivery.com.br/api/v1/public/';
+                return 'api';
             }else{
-                return 'https://api.beedelivery.com.br/api/v1/public/';
+                return 'api';
             }
         }
 
