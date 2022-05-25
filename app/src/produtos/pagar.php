@@ -164,12 +164,12 @@
                                     $r = mysqli_query($con, $q);
                                     while($v = mysqli_fetch_object($r)){
 
-
+                                        $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
                                 ?>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                         <?=$v->nome?>
-                                        <span class="badge badge-primary badge-pill">1</span>
+                                        <span class="badge badge-primary badge-pill"><?=$valores['deliveryFee']?></span>
                                     </li>
 
                                         <!-- echo "<br>";
