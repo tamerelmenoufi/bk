@@ -202,7 +202,7 @@
                                             while($v = mysqli_fetch_object($r)){
 
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
-                                                if($vlopc > $valores && $vlopc > 0) { $vlopc = $valores; $opc = $v->codigo; }
+                                                if($vlopc > $valores && $vlopc != 0) { $vlopc = $valores; $opc = $v->codigo; }
                                         ?>
                                             <li opc="<?=$v->codigo?>" class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
