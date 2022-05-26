@@ -289,6 +289,7 @@
             dados = obj.html();
             $(".loja").html(dados);
             obj.addClass('list-group-item-success');
+            $("#collapseOne").removeClass('show');
         });
 
         $("button[pagar]").click(function(){
