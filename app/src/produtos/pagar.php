@@ -182,7 +182,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="loja list-group-item d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small>Empresa Modelo</small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format(19.86,2,',','.')?></small>
@@ -191,7 +191,7 @@
                                         </ul>
                                     </div>
 
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <ul class="list-group">
                                         <?php
                                             $bee = new Bee;
@@ -203,7 +203,7 @@
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
                                         ?>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <li class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
@@ -282,6 +282,14 @@
 
 <script>
     $(function(){
+
+        $(".opcLoja").click(function(){
+            obj = $(this);
+            $(".opcLoja").removeClass('list-group-item-success');
+            dados = obj.html();
+            $(".loja").html(dados);
+            obj.addClass('list-group-item-success');
+        });
 
         $("button[pagar]").click(function(){
             opc = $(this).attr("opc");
