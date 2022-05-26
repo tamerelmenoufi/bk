@@ -198,12 +198,13 @@
                                             list($lat, $lng) = explode(",", $coordenadas);
                                             $q = "select * from lojas";
                                             $r = mysqli_query($con, $q);
+                                            $vlopc = 0;
                                             while($v = mysqli_fetch_object($r)){
 
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
-
+                                                if($vlopc > $valores) { $vlopc = $valores; $opc = $v->codigo; }
                                         ?>
-                                            <li class="opcLoja list-group-item d-flex justify-content-between align-items-center">
+                                            <li opc="<?=$v->codigo?>" class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
@@ -282,6 +283,8 @@
 
 <script>
     $(function(){
+        dados = $('li[opc="<?=$opc?>"]').html();
+        $(".loja").html(dados);
 
         $(".opcLoja").click(function(){
             obj = $(this);
