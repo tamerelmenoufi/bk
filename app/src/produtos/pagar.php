@@ -154,34 +154,6 @@
                                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Endereço Pendente de validação.</div>
                                 <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
                                 <?php
-                                }else{
-                                ?>
-                                <ul class="list-group">
-                                <?php
-                                    $bee = new Bee;
-                                    list($lat, $lng) = explode(",", $coordenadas);
-                                    $q = "select * from lojas";
-                                    $r = mysqli_query($con, $q);
-                                    while($v = mysqli_fetch_object($r)){
-
-                                        $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
-
-                                ?>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <small><?=$v->nome?></small>
-                                        <span class="badge badge-pill">
-                                            <small><?=$valores->deliveryFee?></small>
-                                        </span>
-                                    </li>
-
-                                        <!-- echo "<br>";
-                                        var_dump($bee->ValorViagem($v->id, $lat, $lng)); -->
-                                <?php
-                                    }
-
-                                ?>
-                                </ul>
-                                <?php
                                 }
                                 ?>
 
@@ -198,6 +170,35 @@
                                 </span>
                             </div>
 
+
+                            <?php
+                            if($coordenadas){
+                            ?>
+                            <ul class="list-group">
+                            <?php
+                                $bee = new Bee;
+                                list($lat, $lng) = explode(",", $coordenadas);
+                                $q = "select * from lojas";
+                                $r = mysqli_query($con, $q);
+                                while($v = mysqli_fetch_object($r)){
+
+                                    $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
+
+                            ?>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    <small><?=$v->nome?></small>
+                                    <span class="badge badge-pill">
+                                        <small><?=$valores->deliveryFee?></small>
+                                    </span>
+                                </li>
+                            <?php
+                                }
+
+                            ?>
+                            </ul>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
