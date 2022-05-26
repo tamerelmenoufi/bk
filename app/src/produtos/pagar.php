@@ -163,7 +163,8 @@
                             <?php
                             }
                             ?>
-                            <div style="width:100%; text-align:right; margin-top:20px;">
+
+                            <div style="width:100%; text-align:right; margin-top:20px; margin-bottom:20px;">
                                 <span class='alterar_endereco'>
                                     <i class="fa-solid fa-repeat"></i>
                                     Trocar/Cadastrar Endereço
@@ -174,6 +175,7 @@
                             <?php
                             if($coordenadas){
                             ?>
+                            Taxa de Entrega
                             <ul class="list-group">
                             <?php
                                 $bee = new Bee;
