@@ -182,7 +182,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="loja list-group-item d-flex justify-content-between align-items-center list-group-item-success" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small>Empresa Modelo</small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format(19.86,2,',','.')?></small>
@@ -289,14 +289,14 @@
 
         dados = $('li[opc="<?=$opc?>"]').html();
         $(".loja").html(dados);
-        $('li[opc="<?=$opc?>"]').addClass('list-group-item-success');
+        $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
         $(".opcLoja").click(function(){
-            $(".opcLoja").removeClass('list-group-item-success');
+            $(".opcLoja").removeClass('list-group-item-info');
             obj = $(this);
             dados = obj.html();
             $(".loja").html(dados);
-            obj.addClass('list-group-item-success');
+            obj.addClass('list-group-item-info');
             $("#collapseOne").removeClass('show');
         });
 
