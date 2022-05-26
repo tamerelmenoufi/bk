@@ -180,7 +180,7 @@
 
                             <div id="accordion">
                                 <div class="card">
-                                    <div class="card-header" id="headingOne">
+                                    <div id="headingOne">
                                         <ul class="list-group">
                                             <li class="list-group-item d-flex justify-content-between align-items-center" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small>Empresa Modelo</small>
