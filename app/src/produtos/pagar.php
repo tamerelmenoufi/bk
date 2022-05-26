@@ -188,7 +188,7 @@
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <small><?=$v->nome?></small>
                                     <span class="badge badge-pill">
-                                        <small><?=$valores->deliveryFee?></small>
+                                        <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
                                     </span>
                                 </li>
                             <?php
