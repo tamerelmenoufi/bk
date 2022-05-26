@@ -168,7 +168,7 @@
 
                                 ?>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <?=$v->nome?>
+                                        <small><?=$v->nome?></small>
                                         <span class="badge badge-primary badge-pill"><?=$valores->deliveryFee?></span>
                                     </li>
 
