@@ -182,41 +182,35 @@
                                 <div class="card">
                                     <div class="card-header" id="headingOne">
                                         <h5 class="mb-0">
-                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                            Collapsible Group Item #1
-                                            </button>
+                                            <div data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Collapsible Group Item #1
+                                            </div>
                                         </h5>
                                     </div>
 
                                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <div class="card-body">
+                                        <ul class="list-group">
+                                        <?php
+                                            $bee = new Bee;
+                                            list($lat, $lng) = explode(",", $coordenadas);
+                                            $q = "select * from lojas";
+                                            $r = mysqli_query($con, $q);
+                                            while($v = mysqli_fetch_object($r)){
 
+                                                $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
-                                            <ul class="list-group">
-                                            <?php
-                                                $bee = new Bee;
-                                                list($lat, $lng) = explode(",", $coordenadas);
-                                                $q = "select * from lojas";
-                                                $r = mysqli_query($con, $q);
-                                                while($v = mysqli_fetch_object($r)){
+                                        ?>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <small><?=$v->nome?></small>
+                                                <span class="badge badge-pill">
+                                                    <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
+                                                </span>
+                                            </li>
+                                        <?php
+                                            }
 
-                                                    $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
-
-                                            ?>
-                                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                    <small><?=$v->nome?></small>
-                                                    <span class="badge badge-pill">
-                                                        <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
-                                                    </span>
-                                                </li>
-                                            <?php
-                                                }
-
-                                            ?>
-                                            </ul>
-
-
-                                        </div>
+                                        ?>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
