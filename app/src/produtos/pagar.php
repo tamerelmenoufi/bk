@@ -204,7 +204,7 @@
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
                                                 if($valores->deliveryFee > 1){
 
-                                                if($vlopc >= $valores->deliveryFee) { $vlopc = $valores->deliveryFee; $opc = $v->codigo; }
+                                                if($valores->deliveryFee <= $vlopc || $vlopc == 0) { $vlopc = $valores->deliveryFee; $opc = $v->codigo; }
                                         ?>
                                             <li opc="<?=$v->codigo?>" class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
