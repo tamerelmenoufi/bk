@@ -288,6 +288,7 @@
     $(function(){
         dados = $('li[opc="<?=$opc?>"]').html();
         $(".loja").html(dados);
+        $('li[opc="<?=$opc?>"]').addClass('list-group-item-success');
 
         $(".opcLoja").click(function(){
             obj = $(this);
