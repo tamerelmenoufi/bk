@@ -287,8 +287,8 @@
             obj = $(this);
             $(".opcLoja").removeClass('list-group-item-success');
             dados = obj.html();
-            $(".loja").html(dados);
             obj.addClass('list-group-item-success');
+            $(".loja").html(dados);
             $("#collapseOne").removeClass('show');
         });
 
