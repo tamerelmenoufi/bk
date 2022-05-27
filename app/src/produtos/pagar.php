@@ -3,7 +3,17 @@
 
     if($_POST['acao'] == 'loja'){
 
-        $query = "update vendas set loja = '{$_POST['LjCd']}', taxa_entrega = '{$_POST['LjVl']}' where codigo = '{$_SESSION['AppVenda']}'";
+        $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
+
+        $query = "update vendas set
+                                    loja = '{$_POST['LjCd']}',
+                                    taxa_entrega = '{$_POST['LjVl']}',
+                                    taxa = '{$_POST['taxa']}',
+                                    desconto = '{$_POST['desconto']}',
+                                    acrescimo = '{$_POST['acrescimo']}',
+                                    valor = '{$_POST['valor']}',
+                                    total = '{$total}'
+                where codigo = '{$_SESSION['AppVenda']}'";
         mysqli_query($con, $query);
         exit();
 
@@ -185,7 +195,6 @@
                             ?>
                             Taxa de Entrega
 
-
                             <div id="accordion">
                                 <div class="card">
                                     <div id="headingOne">
@@ -255,7 +264,12 @@
         <div class="col-12">
             <div class="card bg-light mb-3">
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
-                <div class="card-body">
+                <div class="card-body" dadosValores
+                            valor = '<?=$d->total?>'
+                            taxa = '0'
+                            desconto = '0'
+                            acrescimo = '0'
+                >
                     <?php
                     $pagar = true;
                     if(!$coordenadas or !$d->nome or !$d->telefone_confirmado){
@@ -279,6 +293,8 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
                     </h5> -->
+
+
                 </div>
             </div>
         </div>
@@ -305,6 +321,10 @@
 
         LjVl = lj.attr("valor");
         LjCd = lj.attr("opc");
+        valor = $("div[dadosValores]").attr('valor');
+        taxa = $("div[dadosValores]").attr('taxa');
+        desconto = $("div[dadosValores]").attr('desconto');
+        acrescimo = $("div[dadosValores]").attr('acrescimo');
 
         $.ajax({
                 url:"src/produtos/pagar.php",
@@ -312,6 +332,10 @@
                 data:{
                     LjVl,
                     LjCd,
+                    valor,
+                    taxa,
+                    desconto,
+                    acrescimo,
                     acao:'loja'
                 },
                 success:function(dados){
@@ -331,6 +355,10 @@
 
             LjVl = obj.attr("valor");
             LjCd = obj.attr("opc");
+            valor = $("div[dadosValores]").attr('valor');
+            taxa = $("div[dadosValores]").attr('taxa');
+            desconto = $("div[dadosValores]").attr('desconto');
+            acrescimo = $("div[dadosValores]").attr('acrescimo');
 
             $.ajax({
                 url:"src/produtos/pagar.php",
@@ -338,6 +366,10 @@
                 data:{
                     LjVl,
                     LjCd,
+                    valor,
+                    taxa,
+                    desconto,
+                    acrescimo,
                     acao:'loja'
                 },
                 success:function(dados){

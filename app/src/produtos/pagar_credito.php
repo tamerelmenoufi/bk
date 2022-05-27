@@ -16,12 +16,12 @@
                                     operadora = 'rede',
                                     operadora_situacao = '{$r->authorization->status}',
                                     operadora_retorno = '{$retorno}',
-                                    valor = '{$_POST['amount']}',
+                                    /*valor = '{$_POST['amount']}',
                                     taxa = '{$_POST['taxa']}',
                                     desconto = '{$_POST['desconto']}',
                                     acrescimo = '{$_POST['acrescimo']}',
-                                    total = '".($_POST['amount'] + $_POST['taxa'] - $_POST['desconto'] + $_POST['acrescimo'])."',
-                                    observacoes = '{$_POST['observacoes']}',
+                                    total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
+                                    observacoes = '{$_POST['observacoes']}',*/
                                     data_finalizacao = NOW(),
                                     situacao = '{$r->authorization->status}',
                                     forma_pagamento = 'credito'
@@ -63,6 +63,8 @@
                 from vendas_produtos a
                     left join clientes b on a.cliente = b.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
+
+    $query = "select * from vendas where codigo = '{_SESSION['AppVenda']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
