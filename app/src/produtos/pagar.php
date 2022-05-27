@@ -1,6 +1,14 @@
 <?php
     include("../../../lib/includes.php");
 
+    if($_POST['acao'] == 'loja'){
+
+        $query = "update vendas set loja = '{$_POST['LjCd']}', taxa_entrega = '{$_POST['LjVl']}' where codigo = '{$_SESSION['AppVenda']}'";
+        mysqli_query($con, $query);
+        exit();
+
+    }
+
     $query = "select
                     sum(a.valor_total) as total,
                     b.nome,
@@ -183,9 +191,9 @@
                                     <div id="headingOne">
                                         <ul class="list-group">
                                             <li class="loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                <small>Empresa Modelo</small>
+                                                <small></small>
                                                 <span class="badge badge-pill">
-                                                    <small>R$ <?=number_format(19.86,2,',','.')?></small>
+                                                    <small></small>
                                                 </span>
                                             </li>
                                         </ul>
@@ -206,7 +214,10 @@
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) { $vlopc = $valores->deliveryFee; $opc = $v->codigo; }
                                         ?>
-                                            <li opc="<?=$v->codigo?>" class="opcLoja list-group-item d-flex justify-content-between align-items-center">
+                                            <li
+                                                opc="<?=$v->codigo?>"
+                                                valor="<?=$valores->deliveryFee?>"
+                                                class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
@@ -287,9 +298,27 @@
 <script>
     $(function(){
 
-        dados = $('li[opc="<?=$opc?>"]').html();
+        lj = $('li[opc="<?=$opc?>"]');
+        dados = lj.html();
         $(".loja").html(dados);
         $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
+
+        LjVl = lj.attr("valor");
+        LjCd = lj.attr("opc");
+
+        $.ajax({
+                url:"src/produtos/pagar.php",
+                type:"POST",
+                data:{
+                    LjVl,
+                    LjCd,
+                    acao:'loja'
+                },
+                success:function(dados){
+
+                }
+            });
+
 
         $(".opcLoja").click(function(){
             $(".opcLoja").removeClass('list-group-item-info');
@@ -298,6 +327,24 @@
             $(".loja").html(dados);
             obj.addClass('list-group-item-info');
             $("#collapseOne").removeClass('show');
+
+
+            LjVl = obj.attr("valor");
+            LjCd = obj.attr("opc");
+
+            $.ajax({
+                url:"src/produtos/pagar.php",
+                type:"POST",
+                data:{
+                    LjVl,
+                    LjCd,
+                    acao:'loja'
+                },
+                success:function(dados){
+
+                }
+            });
+
         });
 
         $("button[pagar]").click(function(){
