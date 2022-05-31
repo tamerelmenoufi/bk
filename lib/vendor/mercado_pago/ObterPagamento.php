@@ -12,3 +12,9 @@
       print_r($dados);
       echo "</pre>";
 
+
+      echo "<hr>";
+
+      echo "STATUS:".$dados->status;
+      echo "<br>";
+
