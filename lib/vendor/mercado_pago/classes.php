@@ -52,5 +52,25 @@
 
         }
 
+        public function ObterPagamento($Id){
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->Ambiente).$Id);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+              //"Content-Type: application/json",
+              "Authorization: Bearer ".$this->Autenticacao($this->AccessTOKEN)
+            ));
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+            //curl_setopt($ch, CURLOPT_POSTFIELDS, $d);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            curl_close($ch);
+
+            return $response;
+
+        }
+
 
     }
