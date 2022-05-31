@@ -9,6 +9,7 @@
                         rua = '{$_POST['rua']}',
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
+                        cep = '{$_POST['cep']}',
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}',
                         coordenadas = ''
@@ -22,6 +23,7 @@
                         rua = '{$_POST['rua']}',
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
+                        cep = '{$_POST['cep']}',
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}',
                         padrao = '1'
@@ -62,6 +64,10 @@
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="bairro" value="<?=$d->bairro?>">
     </div>
     <div class="col-12 mb-3">
+        <label for="bairro">CEP*</label>
+        <input type="text" autocomplete="off" inputmode="numeric" class="form-control form-control-lg" id="cep" value="<?=$d->cep?>">
+    </div>
+    <div class="col-12 mb-3">
         <label for="complemento">Condomínio/Edifício/Complemento</label>
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="complemento" value="<?=$d->complemento?>">
     </div>
@@ -79,12 +85,14 @@
     $(function(){
 
         $("#ClienteTeleofne").mask("(99) 99999-9999");
+        $("#cep").mask("99999-999");
 
         $("button[CadastrarCliente]").click(function(){
             nome = $("#nome").val();
             rua = $("#rua").val();
             numero = $("#numero").val();
             bairro = $("#bairro").val();
+            cep = $("#cep").val();
             complemento = $("#complemento").val();
             referencia = $("#referencia").val();
             codigo = $(this).attr("cod");
@@ -93,7 +101,8 @@
                 nome &&
                 rua &&
                 numero &&
-                bairro
+                bairro &&
+                cep
             ){
                 $.ajax({
                     url:"src/cliente/endereco_form.php",
@@ -103,6 +112,7 @@
                         rua,
                         numero,
                         bairro,
+                        cep,
                         complemento,
                         referencia,
                         codigo,
