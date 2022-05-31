@@ -2,7 +2,11 @@
     include("../../../lib/includes.php");
 
     if($_POST['acao'] == 'salvar'){
-        $query = "update clientes set nome = '{$_POST['nome']}', email = '{$_POST['email']}' where codigo = '{$_SESSION['AppCliente']}'";
+        $query = "update clientes set
+                                    nome = '{$_POST['nome']}',
+                                    email = '{$_POST['email']}',
+                                    cpf = '{$_POST['cpf']}'
+            where codigo = '{$_SESSION['AppCliente']}'";
         mysqli_query($con, $query);
 
         echo json_encode([
@@ -63,6 +67,10 @@
                     <input type="text" class="form-control form-control-lg" id="nome" placeholder="Seu Nome Completo" value="<?=$c->nome?>">
                 </div>
                 <div class="form-group">
+                    <label for="nome">CPF</label>
+                    <input type="text" class="form-control form-control-lg" id="cpf" inputmode="numeric" placeholder="CPF" value="<?=$c->cpf?>">
+                </div>
+                <div class="form-group">
                     <label for="email">E-mail</label>
                     <input type="email" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="<?=$c->email?>">
                 </div>
@@ -88,11 +96,14 @@
 <script>
     $(function(){
 
+        $("#cpf").mask("999.999.999-99");
+
         $("button[SalvarDados]").click(function(){
             nome = $("#nome").val();
             email = $("#email").val();
+            cpf = $("#cpf").val();
 
-            if(!nome || !email){
+            if(!nome || !email || !cpf){
                 $.alert({
                     content:'Preencha os campos do formulário!',
                     title:false,
@@ -107,6 +118,7 @@
                 data:{
                     nome,
                     email,
+                    cpf,
                     acao:'salvar'
                 },
                 success:function(dados){
