@@ -85,6 +85,13 @@
                               $qrcode = $dados->point_of_interaction->transaction_data->qr_code;
                               $qrcode_img = $dados->point_of_interaction->transaction_data->qr_code_base64;
 
+                              echo $q = "update vendas set
+                                                                    operadora_id = '{$operadora_id}',
+                                                                    forma_pagamento = '{$forma_pagamento}',
+                                                                    operadora_situacao = '{$operadora_situacao}'
+                                                                    operadora_retorno = '{$retorno}'
+                                                    where codigo = '{$d->venda}'
+                                        ";
 
                               mysqli_query($con, "update vendas set
                                                                     operadora_id = '{$operadora_id}',
