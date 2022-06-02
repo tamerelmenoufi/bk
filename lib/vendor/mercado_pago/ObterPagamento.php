@@ -1,6 +1,8 @@
 <?php
 
-    include('classes.php');
+  include("../../includes.php");
+
+  echo "<h1>{$md5}</h1>";
 
     $PIX = new MercadoPago;
 
