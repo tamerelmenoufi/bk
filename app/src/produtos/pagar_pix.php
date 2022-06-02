@@ -10,6 +10,7 @@
                 from vendas_produtos a
                     left join clientes b on a.cliente = b.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
+    $query = "select * from vendas where codigo = '{$_SESSION['AppVenda']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
@@ -85,13 +86,22 @@
                               $qrcode = $dados->point_of_interaction->transaction_data->qr_code;
                               $qrcode_img = $dados->point_of_interaction->transaction_data->qr_code_base64;
 
-                              mysqli_query($con, "update vendas set
+
+                            if($operadora_id){
+
+                                mysqli_query($con, "update vendas set
                                                                     operadora_id = '{$operadora_id}',
                                                                     forma_pagamento = '{$forma_pagamento}',
                                                                     operadora_situacao = '{$operadora_situacao}',
                                                                     operadora_retorno = '{$retorno}'
                                                     where codigo = '{$d->venda}'
                                         ");
+
+                                $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
+                                $_SESSION['AppPedido'] = false;
+                                $_SESSION['AppCarrinho'] = false;
+
+                            }
 
                         ?>
                         Utilize o QrCode para pagar a sua conta ou copie o códio PIX abaixo.

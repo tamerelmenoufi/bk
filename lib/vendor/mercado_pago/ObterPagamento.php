@@ -8,12 +8,11 @@
 
 
       $dados = json_decode($retorno);
-        echo "<pre>";
-      print_r($dados);
-      echo "</pre>";
-
 
       echo "<hr>";
+
+      echo "ID: ".$dados->id;
+      echo "<br>";
 
       echo "STATUS: ".$dados->status;
       echo "<br>";
@@ -21,6 +20,6 @@
       echo "Metodo de pagamento: ".$dados->payment_method_id;
       echo "<br>";
 
-      echo "Operadora: mercadopago";
+      echo "Retorno: ";
+      echo "<pre>{$retorno}</pre>";
       echo "<br>";
-
