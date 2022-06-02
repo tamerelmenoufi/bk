@@ -5,14 +5,34 @@
                     a.venda,
                     sum(a.valor_total) as total,
                     b.nome,
+                    b.cpf,
                     b.telefone,
-                    b.email
+                    b.email,
+                    c.cep,
+                    c.numero,
+                    c.rua, bairro
                 from vendas_produtos a
                     left join clientes b on a.cliente = b.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
-    $query = "select * from vendas where codigo = '{$_SESSION['AppVenda']}'";
+
+    $query = "select
+                    a.*,
+                    b.nome,
+                    b.cpf,
+                    b.telefone,
+                    b.email,
+                    c.cep,
+                    c.numero,
+                    c.rua, bairro
+                from vendas a
+                     left join clientes b on a.cliente = b.codigo
+                     left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                where a.codigo = '{$_SESSION['AppVenda']}'";
+
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
+
+    $pos =  strripos($d->nome, " ");
 
 ?>
 <style>
@@ -52,7 +72,7 @@
                 <div class="card mb-3" style="background-color:#fafcff; padding:20px;">
                     <p style="text-align:center">
                         <?php
-                            $pedido = str_pad($d->venda, 6, "0", STR_PAD_LEFT);
+                            $pedido = str_pad($d->codigo, 6, "0", STR_PAD_LEFT);
 
                             $PIX = new MercadoPago;
                             $retorno = $PIX->Transacao('{
@@ -60,18 +80,18 @@
                                 "description": "Pedido '.$pedido.' - Venda BKManaus (Delivery)",
                                 "payment_method_id": "pix",
                                 "payer": {
-                                  "email": "tamer@mohatron.com.br",
-                                  "first_name": "Tamer Mohamed",
-                                  "last_name": "Elmenoufi",
+                                  "email": "'.$d->email.'",
+                                  "first_name": "'.substr($d->nome, 0, ($pos-1)).'",
+                                  "last_name": "'.substr($d->nome, $pos, strlen($d->nome)).'",
                                   "identification": {
                                       "type": "CPF",
-                                      "number": "60110970225"
+                                      "number": "'.str_replace(array('.','-'),false,$d->cpf).'"
                                   },
                                   "address": {
-                                      "zip_code": "69010110",
-                                      "street_name": "Rua Monsehor Coutinho",
-                                      "street_number": "600",
-                                      "neighborhood": "Centro",
+                                      "zip_code": "'.str_replace(array('.','-'),false,$d->cep).'",
+                                      "street_name": "'.$d->rua.'",
+                                      "street_number": "'.$d->numero.'",
+                                      "neighborhood": "'.$d->bairro.'",
                                       "city": "Manaus",
                                       "federal_unit": "AM"
                                   }
@@ -94,7 +114,7 @@
                                                                     forma_pagamento = '{$forma_pagamento}',
                                                                     operadora_situacao = '{$operadora_situacao}',
                                                                     operadora_retorno = '{$retorno}'
-                                                    where codigo = '{$d->venda}'
+                                                    where codigo = '{$d->codigo}'
                                         ");
 
                                 $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
