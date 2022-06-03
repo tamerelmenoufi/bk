@@ -64,10 +64,51 @@
 
             $con = $this->ConnectDB();
 
-            $query = "select * from vendas where codigo = '{$venda}'";
+            $query = "select v.*,
+                             l.id as loja,
+                             c.nome as nome_cliente,
+                             c.cpf as cpf_cliente,
+                             concat(trim(e.rua), ', ',  trim(e.numero), ', ', trim(e.bairro), ', ', trim(e.complemento)) as endereco,
+                             e.coordenadas,
+                             e.referencia
+
+                    from vendas v
+                            left join lojas l on v.loja = l.codigo
+                            left join clientes c on v.cliente = c.codigo
+                            left join clientes_enderecos e on v.cliente = e.cliente and e.padrao = '1'
+                    where v.codigo = '{$venda}'";
             $result = mysqli_query($con, $query);
-            $v = mysqli_fetch_object($result);
-            var_dump($v);
+            $d = mysqli_fetch_object($result);
+
+            $pedido = str_pad($d->codigo, 6, "0", STR_PAD_LEFT);
+            list($lat, $lng) = explode(",",$d->coordenadas);
+
+            var_dump($d);
+            echo "<hr>";
+            echo "{
+                \"orderExternalId\": {$d->codigo},
+                \"description\": \"Entrega Pedido #{$pedido}\",
+                \"needReturn\": \"N\",
+                \"vehicle\": \"M\",
+                \"compartmentType\": \"BAG\",
+                \"completedPermission\": \"S\",
+                \"needCode\": \"N\",
+                \"origin\": {
+                    \"externalId\": {$d->loja}
+                },
+                \"destination\": {
+                    \"contactName\": \"{$d->nome_cliente}\",
+                    \"contactPhone\": ".str_replace(array('.','-'), false, $d->cpf_cliente).",
+                    \"type\": \"COORDS\",
+                    \"address\": {
+                        \"latitude\": {$lat},
+                        \"longitude\": {$lng},
+                        \"complement\": \"{$d->referencia}\",
+                        \"streetAddress\": \"{$d->endereco}\"
+                        }
+                    }
+                }
+            }";
 
             exit();
 
@@ -80,30 +121,27 @@
             curl_setopt($ch, CURLOPT_POST, TRUE);
 
             curl_setopt($ch, CURLOPT_POSTFIELDS, "{
-                \"orderExternalId\": 4000,
-                \"description\": \"Entrega Teste\",
-                \"needReturn\": \"S\",
+                \"orderExternalId\": {$d->codigo},
+                \"description\": \"Entrega Pedido #{$pedido}\",
+                \"needReturn\": \"N\",
                 \"vehicle\": \"M\",
                 \"compartmentType\": \"BAG\",
                 \"completedPermission\": \"S\",
                 \"needCode\": \"N\",
                 \"origin\": {
-                    \"externalId\": 1
+                    \"externalId\": {$d->loja}
                 },
                 \"destination\": {
-                    \"contactName\": \"Daraedna\",
-                    \"contactPhone\": 84989898988,
+                    \"contactName\": \"{$d->nome_cliente}\",
+                    \"contactPhone\": ".str_replace(array('.','-'), false, $d->cpf_cliente).",
                     \"type\": \"COORDS\",
                     \"address\": {
-                        \"latitude\": -5.0447118,
-                        \"longitude\": -42.7625088,
-                        \"complement\": \"Depois do hospital\",
-                        \"streetAddress\": \"R. São João, N. 1753, São Paulo – São Paulo\"
+                        \"latitude\": {$lat},
+                        \"longitude\": {$lng},
+                        \"complement\": \"{$d->referencia}\",
+                        \"streetAddress\": \"{$d->endereco}\"
                         }
                     }
-                },
-                \"schedule\": {
-                    \"callTime\": \"2022-09-07 12:00:00\"
                 }
             }");
 
