@@ -288,7 +288,7 @@
                     <h5 class="card-title">
                         <div class="row">
                             <div id="captcha" class="col">
-                                874356834635
+                                <img src="captcha.php?l=150&a=50&tf=20&ql=5">
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" style="text-align:center" />
@@ -323,8 +323,6 @@
 
 <script>
 
-    Capcha($("#captcha"));
-
     $(function(){
 
         lj = $('li[opc="<?=$opc?>"]');
@@ -357,13 +355,6 @@
         });
 
 
-
-
-
-        // html2canvas(document.getElmentById("origem")).then(canvas => {
-        //     // document.body.appendChild(canvas)
-        //     $("#resultado6").html(canvas);
-        // });
 
         $(".opcLoja").click(function(){
             $(".opcLoja").removeClass('list-group-item-info');

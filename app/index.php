@@ -53,18 +53,6 @@
         animationBounce: 1.5
     }
 
-    function Capcha(local){
-        alert(local.html());
-        local.html2canvas({
-            onrendered: function (canvas) {
-                var canvasImg = canvas.toDataURL("image/jpg");
-                local.html('<img src="'+canvasImg+'" alt="">');
-                alert('dentro');
-            }
-        });
-        alert('final');
-    }
-
 </script>
 <form></form>
 </body>
