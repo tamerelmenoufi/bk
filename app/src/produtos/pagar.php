@@ -370,7 +370,7 @@
         // });
 
 
-        html2canvas(document.body.getElmentById("origem")).then(canvas => {
+        html2canvas(document.getElmentById("origem")).then(canvas => {
             // document.body.appendChild(canvas)
             $("#resultado6").html(canvas);
         });
