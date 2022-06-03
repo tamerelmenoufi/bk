@@ -354,21 +354,13 @@
         });
 
 
-        // $.ajax({
-        //     url:"src/produtos/captcha.php",
-        //     success:function(dados){
-
-        //         $("#captcha").html(dados);
-
-                html2canvas($("#captcha"), {
-                    onrendered: function (canvas) {
-                        var canvasImg = canvas.toDataURL("image/jpg");
-                        $("#captcha").html('<img src="'+canvasImg+'" alt="">');
-                    }
-                });
-
-        //     }
-        // });
+        $.ajax({
+            url:"src/produtos/captcha.php",
+            success:function(dados){
+                $("#captcha").html(dados);
+                Capcha($("#captcha"));
+            }
+        });
 
 
         // html2canvas(document.getElmentById("origem")).then(canvas => {
