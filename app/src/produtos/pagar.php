@@ -354,11 +354,11 @@
         });
 
 
-        $.ajax({
-            url:"src/produtos/captcha.php",
-            success:function(dados){
+        // $.ajax({
+        //     url:"src/produtos/captcha.php",
+        //     success:function(dados){
 
-                $("#captcha").html(dados);
+        //         $("#captcha").html(dados);
 
                 html2canvas($("#captcha"), {
                     onrendered: function (canvas) {
@@ -367,8 +367,8 @@
                     }
                 });
 
-            }
-        });
+        //     }
+        // });
 
 
         // html2canvas(document.getElmentById("origem")).then(canvas => {
