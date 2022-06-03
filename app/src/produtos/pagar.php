@@ -284,6 +284,19 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
+
+                    <h5 class="card-title">
+                        <div class="row">
+                            <div captcha class="col">
+
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" style="text-align:center" />
+                            </div>
+                        </div>
+                        <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
+                    </h5>
+
                     <h5 class="card-title">
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
@@ -341,8 +354,15 @@
                 success:function(dados){
 
                 }
-            });
+        });
 
+
+        $.ajax({
+            url:"../lib/vendor/captcha/captcha_6.php",
+            success:function(dados){
+                $("div[captcha]").html(dados);
+            }
+        });
 
         $(".opcLoja").click(function(){
             $(".opcLoja").removeClass('list-group-item-info');
