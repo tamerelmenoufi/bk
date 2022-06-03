@@ -55,7 +55,7 @@
 
     function Capcha(local){
         alert(local.html());
-        html2canvas(local, {
+        local.html2canvas({
             onrendered: function (canvas) {
                 var canvasImg = canvas.toDataURL("image/jpg");
                 local.html('<img src="'+canvasImg+'" alt="">');
