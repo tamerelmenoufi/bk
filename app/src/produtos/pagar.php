@@ -183,7 +183,7 @@
                             ?>
 
                             <div style="width:100%; text-align:right; margin-top:20px; margin-bottom:20px;">
-                                <span class='alterar_endereco'>
+                                <span id="alterar_endereco" class='alterar_endereco'>
                                     <i class="fa-solid fa-repeat"></i>
                                     Trocar/Cadastrar Endereço
                                 </span>
@@ -370,7 +370,7 @@
         // });
 
 
-        html2canvas(document.querySelector(".alterar_endereco")).then(canvas => {
+        html2canvas(document.querySelector("#alterar_endereco")).then(canvas => {
             document.body.appendChild(canvas)
         });
 
