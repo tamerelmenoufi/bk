@@ -294,7 +294,6 @@
                                 <input type="text" class="form-control" style="text-align:center" />
                             </div>
                         </div>
-                        <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5>
 
                     <h5 class="card-title">
@@ -358,7 +357,7 @@
 
 
         $.ajax({
-            url:"../lib/vendor/captcha/captcha_6.php",
+            url:"src/produtos/captcha.php",
             success:function(dados){
                 $("div[captcha]").html(dados);
             }
