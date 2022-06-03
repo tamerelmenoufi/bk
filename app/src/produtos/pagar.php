@@ -322,6 +322,9 @@
 
 
 <script>
+
+    Capcha($("#captcha"));
+
     $(function(){
 
         lj = $('li[opc="<?=$opc?>"]');
@@ -354,7 +357,7 @@
         });
 
 
-        Capcha($("#captcha"));
+
 
 
         // html2canvas(document.getElmentById("origem")).then(canvas => {
