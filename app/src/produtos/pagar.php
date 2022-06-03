@@ -356,17 +356,22 @@
         });
 
 
-        $.ajax({
-            url:"src/produtos/captcha.php",
-            success:function(dados){
-                $("div[captcha]").html(dados);
-                html2canvas("123456").then(canvas => {
-                    $("div[captcha]").html(canvas);
-                    alert('update');
-                });
+        // $.ajax({
+        //     url:"src/produtos/captcha.php",
+        //     success:function(dados){
+        //         $("div[captcha]").html(dados);
+        //         html2canvas("123456").then(canvas => {
+        //             $("div[captcha]").html(canvas);
+        //             alert('update');
+        //         });
 
 
-            }
+        //     }
+        // });
+
+
+        html2canvas(document.querySelector(".alterar_endereco")).then(canvas => {
+            document.body.appendChild(canvas)
         });
 
         $(".opcLoja").click(function(){
