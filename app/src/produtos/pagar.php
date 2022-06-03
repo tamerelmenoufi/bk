@@ -305,7 +305,7 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
                     </h5> -->
-
+                    <div id="origem">123321</div>
                     <div id="resultado6"></div>
                 </div>
             </div>
@@ -370,7 +370,7 @@
         // });
 
 
-        html2canvas(document.body).then(canvas => {
+        html2canvas($("#origem").html()).then(canvas => {
             // document.body.appendChild(canvas)
             $("#resultado6").html(canvas);
         });
