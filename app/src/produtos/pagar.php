@@ -288,7 +288,7 @@
                     <h5 class="card-title">
                         <div class="row">
                             <div id="captcha" class="col">
-
+                                874356834635
                             </div>
                             <div class="col">
                                 <input type="text" class="form-control" style="text-align:center" />
@@ -354,13 +354,7 @@
         });
 
 
-        $.ajax({
-            url:"src/produtos/captcha.php",
-            success:function(dados){
-                $("#captcha").html(dados);
-                Capcha($("#captcha"));
-            }
-        });
+        Capcha($("#captcha"));
 
 
         // html2canvas(document.getElmentById("origem")).then(canvas => {
