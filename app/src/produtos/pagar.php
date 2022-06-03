@@ -287,7 +287,7 @@
 
                     <h5 class="card-title">
                         <div class="row">
-                            <div captcha class="col">
+                            <div id="captcha" class="col">
 
                             </div>
                             <div class="col">
@@ -305,8 +305,6 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
                     </h5> -->
-                    <div id="origem">123321</div>
-                    <div id="resultado6"></div>
                 </div>
             </div>
         </div>
@@ -360,14 +358,12 @@
             url:"src/produtos/captcha.php",
             success:function(dados){
 
-                $("div[captcha]").html(dados);
+                $("#captcha").html(dados);
 
-                element = $("div[captcha]");
-
-                html2canvas(element, {
+                html2canvas($("#captcha"), {
                     onrendered: function (canvas) {
                         var canvasImg = canvas.toDataURL("image/jpg");
-                        $("div[captcha]").html('<img src="'+canvasImg+'" alt="">');
+                        $("#captcha").html('<img src="'+canvasImg+'" alt="">');
                     }
                 });
 
