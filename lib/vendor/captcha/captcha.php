@@ -1,6 +1,6 @@
 <?php
    session_start(); // inicial a sessao
-   //header("Content-type: image/jpeg"); // define o tipo do arquivo
+   header("Content-type: image/jpeg"); // define o tipo do arquivo
 
     function captcha($largura,$altura,$tamanho_fonte,$quantidade_letras){
         $imagem = imagecreate($largura,$altura); // define a largura e a altura da imagem
