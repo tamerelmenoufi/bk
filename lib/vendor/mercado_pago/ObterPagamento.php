@@ -1,10 +1,12 @@
 <?php
 
+  if(!$_POST['id']) exit();
+
   include("../../includes.php");
 
     $PIX = new MercadoPago;
 
-    $retorno = $PIX->ObterPagamento(22777629972);
+    $retorno = $PIX->ObterPagamento($_POST['id']);
 
 
       $dados = json_decode($retorno);
