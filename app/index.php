@@ -54,12 +54,15 @@
     }
 
     function Capcha(local){
+        alert(local.html());
         html2canvas(local, {
             onrendered: function (canvas) {
                 var canvasImg = canvas.toDataURL("image/jpg");
                 local.html('<img src="'+canvasImg+'" alt="">');
+                alert('dentro');
             }
         });
+        alert('final');
     }
 
 </script>
