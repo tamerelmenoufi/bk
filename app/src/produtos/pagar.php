@@ -182,8 +182,8 @@
                             }
                             ?>
 
-                            <div style="width:100%; text-align:right; margin-top:20px; margin-bottom:20px;">
-                                <span id="alterar_endereco" class='alterar_endereco'>
+                            <div id="alterar_endereco" style="width:100%; text-align:right; margin-top:20px; margin-bottom:20px;">
+                                <span class='alterar_endereco'>
                                     <i class="fa-solid fa-repeat"></i>
                                     Trocar/Cadastrar Endereço
                                 </span>
