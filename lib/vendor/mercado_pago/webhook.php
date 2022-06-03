@@ -15,7 +15,7 @@
 
         $dados = json_decode($_POST);
 
-        $operadora_id = $dados['data']['id'];
+        $operadora_id = $_POST['data']['id'];
 
         $content = http_build_query(array(
 
