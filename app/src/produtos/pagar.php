@@ -365,20 +365,11 @@
                 element = $("div[captcha]");
 
                 html2canvas(element, {
-                    onrendered: function(canvas) {
-                        // $("#previewImage").append(canvas);
-                        $("div[captcha]").html(canvas);
-                        // getCanvas = canvas;
+                    onrendered: function (canvas) {
+                        var canvasImg = canvas.toDataURL("image/jpg");
+                        $("div[captcha]").html('<img src="'+canvasImg+'" alt="">');
                     }
                 });
-
-
-                // $("div[captcha]").html(dados);
-                // html2canvas("123456").then(canvas => {
-                //     $("div[captcha]").html(canvas);
-                //     alert('update');
-                // });
-
 
             }
         });
