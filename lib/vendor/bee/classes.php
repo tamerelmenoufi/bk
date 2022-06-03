@@ -67,7 +67,7 @@
             $query = "select v.*,
                              l.id as loja,
                              c.nome as nome_cliente,
-                             c.cpf as cpf_cliente,
+                             c.telefone as telefone_cliente,
                              concat(trim(e.rua), ', ',  trim(e.numero), ', ', trim(e.bairro), ', ', trim(e.complemento)) as endereco,
                              e.coordenadas,
                              e.referencia
@@ -98,7 +98,7 @@
                 },
                 \"destination\": {
                     \"contactName\": \"{$d->nome_cliente}\",
-                    \"contactPhone\": ".str_replace(array('.','-'), false, $d->cpf_cliente).",
+                    \"contactPhone\": ".str_replace(array('(',')','-',' '), false, trim($d->telefone_cliente)).",
                     \"type\": \"COORDS\",
                     \"address\": {
                         \"latitude\": {$lat},
