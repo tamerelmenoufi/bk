@@ -356,24 +356,35 @@
         });
 
 
-        // $.ajax({
-        //     url:"src/produtos/captcha.php",
-        //     success:function(dados){
-        //         $("div[captcha]").html(dados);
-        //         html2canvas("123456").then(canvas => {
-        //             $("div[captcha]").html(canvas);
-        //             alert('update');
-        //         });
+        $.ajax({
+            url:"src/produtos/captcha.php",
+            success:function(dados){
 
 
-        //     }
-        // });
+                html2canvas(dados, {
+                    onrendered: function(canvas) {
+                        // $("#previewImage").append(canvas);
+                        $("div[captcha]").html(canvas);
+                        // getCanvas = canvas;
+                    }
+                });
 
 
-        html2canvas(document.getElmentById("origem")).then(canvas => {
-            // document.body.appendChild(canvas)
-            $("#resultado6").html(canvas);
+                // $("div[captcha]").html(dados);
+                // html2canvas("123456").then(canvas => {
+                //     $("div[captcha]").html(canvas);
+                //     alert('update');
+                // });
+
+
+            }
         });
+
+
+        // html2canvas(document.getElmentById("origem")).then(canvas => {
+        //     // document.body.appendChild(canvas)
+        //     $("#resultado6").html(canvas);
+        // });
 
         $(".opcLoja").click(function(){
             $(".opcLoja").removeClass('list-group-item-info');
