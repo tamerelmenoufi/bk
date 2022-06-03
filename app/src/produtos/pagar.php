@@ -360,8 +360,11 @@
             url:"src/produtos/captcha.php",
             success:function(dados){
 
+                $("div[captcha]").html(dados);
 
-                html2canvas(dados, {
+                element = $("div[captcha]");
+
+                html2canvas(element, {
                     onrendered: function(canvas) {
                         // $("#previewImage").append(canvas);
                         $("div[captcha]").html(canvas);
