@@ -359,8 +359,8 @@
         $.ajax({
             url:"src/produtos/captcha.php",
             success:function(dados){
-                //$("div[captcha]").html(dados);
-                html2canvas(dados).then(canvas => {
+                $("div[captcha]").html(dados);
+                html2canvas($("div[captcha]").html()).then(canvas => {
                     $("div[captcha]").html(canvas);
                     alert('update');
                 });
