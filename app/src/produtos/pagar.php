@@ -395,7 +395,7 @@
                         if(dados == 'success'){
                             $("#captcha").css("border-color","green");
 
-                            $("h5[robo]").html("<center><h4>Captcha Confirmado</h4></center>")
+                            $("h5[robo]").html('<center><h5 style="color:green"><i class="fa-solid fa-user-check"></i> Captcha Confirmado</h5></center>')
 
                         }else{
                             $("#captcha").css("border-color","red");
