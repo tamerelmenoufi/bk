@@ -268,7 +268,7 @@
             <div class="card bg-light mb-3">
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Não Sou Robô</div>
                 <div class="card-body">
-                    <h5 robo class="card-title">
+                    <h5 robo class="card-title" captcha="error">
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
@@ -394,7 +394,7 @@
                     success:function(dados){
                         if(dados == 'success'){
                             $("#captcha").css("border-color","green");
-
+                            $("h5[robo]").attr("captcha","success");
                             $("h5[robo]").html('<center><h5 style="color:green"><i class="fa-solid fa-user-check"></i> Captcha Confirmado</h5></center>')
 
                         }else{
@@ -446,6 +446,11 @@
         });
 
         $("button[pagar]").click(function(){
+
+            captcha = $("h5[robo]").attr("captcha");
+
+            if(captcha == 'error') return false;
+
             opc = $(this).attr("opc");
             $.ajax({
                 url:"componentes/ms_popup_100.php",
