@@ -386,9 +386,15 @@
                         validar:'1'
                     },
                     success:function(dados){
-                        $.alert(dados);
+                        if(dados == 'success'){
+                            $(this).css("border-color","green");
+                        }else{
+                            $(this).css("border-color","red");
+                        }
                     }
                 });
+            }else{
+                $(this).css("border-color","");
             }
         });
         $(".atualizarCaptcha").click(function(){
