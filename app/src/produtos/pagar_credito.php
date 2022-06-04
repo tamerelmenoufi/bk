@@ -196,12 +196,13 @@
                 },
                 success:function(dados){
                     let retorno = JSON.parse(dados);
-                    if (retorno.status) {
+                    if (retorno.status == 'Approved') {
                         window.localStorage.removeItem('AppVenda');
                         window.localStorage.removeItem('AppPedido');
+                        PageClose(2);
                     }
                     $.alert(retorno.msg);
-                    PageClose(2);
+
                 }
             });
 
