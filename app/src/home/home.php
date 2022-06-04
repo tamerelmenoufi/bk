@@ -3,6 +3,7 @@
 
     if($_GET['cliente']) $_SESSION['AppCliente'] = $_GET['cliente'];
     if($_GET['pedido']) $_SESSION['AppPedido'] = $_GET['pedido'];
+    if($_GET['venda']) $_SESSION['AppVenda'] = $_GET['venda'];
 
 ?>
 <style>

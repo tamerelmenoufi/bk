@@ -7,6 +7,9 @@
     if($_GET['cliente']){
         $_SESSION['AppCliente'] = $_GET['cliente'];
     }
+    if($_GET['venda']){
+        $_SESSION['AppVenda'] = $_GET['venda'];
+    }
 
 ?>
 <style>
@@ -32,6 +35,7 @@
                 data:{
                     cliente: '<?=$_SESSION['AppCliente']?>',
                     pedido: '<?=$_SESSION['AppPedido']?>',
+                    venda: '<?=$_SESSION['AppVenda']?>',
                 },
                 success:function(dados){
                     $(".ms_corpo").html(dados);
