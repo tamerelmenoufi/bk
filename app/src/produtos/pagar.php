@@ -397,6 +397,7 @@
                 },
                 success:function(dados){
                     var base64 = "data:image/jpeg;base64," + btoa(dados);
+                    console.log(base64);
                     $(".imagemCaptcha").attr("src",base64);
                 }
             });
