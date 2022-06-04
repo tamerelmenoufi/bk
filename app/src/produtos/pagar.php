@@ -259,12 +259,16 @@
         </div>
     </div>
 
+
+    <?php
+    if($coordenadas and $d->nome and $d->telefone_confirmado){
+    ?>
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
+                <div class="card-header"><i class="fa-solid fa-receipt"></i> Não Sou Robô</div>
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h5 robo class="card-title">
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
@@ -290,7 +294,9 @@
             </div>
         </div>
     </div>
-
+    <?php
+    }
+    ?>
 
 
     <div class="row">
@@ -388,6 +394,9 @@
                     success:function(dados){
                         if(dados == 'success'){
                             $("#captcha").css("border-color","green");
+
+                            $("h5[robo]").html("<center><h2>Captcha Confirmado</h2></center>")
+
                         }else{
                             $("#captcha").css("border-color","red");
                         }
