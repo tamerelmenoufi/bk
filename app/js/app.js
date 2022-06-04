@@ -79,6 +79,8 @@ RenovaSessao = () =>{
     var AppVenda = window.localStorage.getItem('AppVenda');
     var AppCliente = window.localStorage.getItem('AppCliente');
 
+    alert(AppVenda);
+
     if(AppPedido == 'undefined' || AppPedido == null) AppPedido = '';
     if(AppVenda == 'undefined' || AppVenda == null) AppVenda = '';
     if(AppCliente == 'undefined' || AppCliente == null) AppCliente = '';
