@@ -71,3 +71,32 @@ function UpdateQuery($query){
     return $r;
 
 }
+
+
+function VerificarVendaApp(){
+    global $SESSION;
+    global $con;
+
+    $r = mysqli_query($con, "SELECT * FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
+    $n = mysqli_num_rows($r);
+
+    if(!$n){
+
+        mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', data_pedido = NOW()");
+        $_SESSION['AppVenda'] = mysqli_insert_id($con);
+
+        //$_SESSION = [];
+        // header("location:./?s=1");
+        echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
+        //echo "<h1>TESTE 1</h1>";
+        //exit();
+    }else if(!$_SESSION['AppVenda']){
+        $_SESSION['AppVenda'] = mysqli_fetch_object($r)->codigo;
+        echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
+        //echo "<h1>TESTE 2</h1>";
+    }else{
+        //echo "<h1>TESTE 3</h1>";
+    }
+
+
+}

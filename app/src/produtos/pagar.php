@@ -1,6 +1,8 @@
 <?php
     include("../../../lib/includes.php");
 
+    VerificarVendaApp();
+
     if($_POST['acao'] == 'loja'){
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
