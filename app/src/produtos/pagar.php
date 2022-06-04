@@ -266,8 +266,8 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <div class="row">
-                            <div class="col">
-                                <img class="imagemCaptcha" style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
+                            <div class="imagemCaptcha" class="col">
+                                <img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
                             </div>
                             <div class="col">
                                 <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center; font-weight:bold" />
@@ -387,21 +387,7 @@
             }
         });
         $(".atualizarCaptcha").click(function(){
-            $.ajax({
-                url:"src/produtos/captcha.php",
-                data:{
-                    l:150,
-                    a:45,
-                    tf:20,
-                    ql:5
-                },
-                success:function(dados){
-                    var img = btoa(dados);
-                    var base64 = "data:image/jpeg;base64," + img;
-                    console.log(base64);
-                    $(".imagemCaptcha").attr("src",base64);
-                }
-            });
+            $(".imagemCaptcha").html('<img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">');
         });
 
         $(".opcLoja").click(function(){
