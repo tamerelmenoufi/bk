@@ -259,6 +259,32 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-12">
+            <div class="card bg-light mb-3">
+                <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <div class="row">
+                            <div class="col">
+                                <img class="imagemCaptcha" style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
+                            </div>
+                            <div class="col">
+                                <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center; font-weight:bold" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col atualizarCaptcha">
+                                <small>
+                                    <i class="fa-solid fa-rotate"></i> Atualizar Imagem
+                                </small>
+                            </div>
+                        </div>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -286,17 +312,6 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
-
-                    <h5 class="card-title">
-                        <div class="row">
-                            <div class="col">
-                                <img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
-                            </div>
-                            <div class="col">
-                                <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center; font-weight:bold" />
-                            </div>
-                        </div>
-                    </h5>
 
                     <h5 class="card-title">
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</button>
@@ -371,7 +386,20 @@
                 });
             }
         });
-
+        $(".atualizarCaptcha").click(function(){
+            $.ajax({
+                url:"src/produtos/captcha.php",
+                data:{
+                    l:150,
+                    a:45,
+                    tf:20,
+                    ql:5
+                },
+                success:function(dados){
+                    $(".imagemCaptcha").attr("src",dados);
+                }
+            });
+        });
 
         $(".opcLoja").click(function(){
             $(".opcLoja").removeClass('list-group-item-info');
