@@ -266,6 +266,13 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <div class="row">
+                            <div class="col atualizarCaptcha">
+                                <small>
+                                    Digite no campo os caracteres da Iamgem
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="imagemCaptcha col">
                                 <img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
                             </div>
@@ -275,9 +282,7 @@
                         </div>
                         <div class="row">
                             <div class="col atualizarCaptcha">
-                                <small>
-                                    <i class="fa-solid fa-rotate"></i> Atualizar Imagem
-                                </small>
+                                <i class="fa-solid fa-rotate"></i> Atualizar Imagem
                             </div>
                         </div>
                     </h5>
