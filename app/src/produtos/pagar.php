@@ -277,7 +277,7 @@
                                 <img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
                             </div>
                             <div class="col">
-                                <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center; font-weight:bold, font-size:10px;" />
+                                <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center; font-weight:bold, font-size:9px;" />
                             </div>
                         </div>
                         <div class="row" style="margin-top:10px;">
