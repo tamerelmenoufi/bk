@@ -265,7 +265,7 @@
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
                 <div class="card-body">
                     <h5 class="card-title">
-                        <div class="row">
+                        <div class="row" style="margin-bottom:10px;">
                             <div class="col atualizarCaptcha">
                                 <small>
                                     Digite no campo os caracteres da Iamgem
@@ -280,7 +280,7 @@
                                 <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center; font-weight:bold" />
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="margin-top:10px;">
                             <div class="col atualizarCaptcha">
                                 <i class="fa-solid fa-rotate"></i> Atualizar Imagem
                             </div>
