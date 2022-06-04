@@ -26,9 +26,11 @@
                     b.nome,
                     b.telefone,
                     b.telefone_confirmado,
-                    a.venda
+                    a.venda,
+                    v.tentativas_pagamento
                 from vendas_produtos a
                     left join clientes b on a.cliente = b.codigo
+                    left join vendas v on a.venda = v.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
@@ -325,7 +327,7 @@
                     </h5> -->
 
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg"><i class="fa-solid fa-credit-card"></i> Cartão</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>"><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-info btn-lg"><i class="fa-brands fa-pix"></i> PIX</button>
@@ -452,6 +454,14 @@
             if(captcha == 'error') return false;
 
             opc = $(this).attr("opc");
+            tentativas = $(this).attr("tentativas");
+
+            if(opc == 'credito' && tentativas == 3){
+                msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
+                $.alert(msg);
+                return false;
+            }
+
             $.ajax({
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
