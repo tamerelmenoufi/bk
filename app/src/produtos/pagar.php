@@ -359,7 +359,16 @@
         $("#captcha").keyup(function(){
             captcha = $(this).val();
             if(captcha.length == 5){
-                $.alert(captcha)
+                $.ajax({
+                    url:"src/produtos/captcha.php",
+                    data:{
+                        captcha,
+                        validar:'1'
+                    },
+                    success:function(dados){
+                        $.alert(dados);
+                    }
+                });
             }
         });
 
