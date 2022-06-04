@@ -163,7 +163,7 @@
                 </button>
 
                 <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
-                    Atenção, você possui <span tentativa><?=$d->tentativas_pagamento?> tentativa(s)!</span>
+                    Atenção, você possui <span tentativa><?=$d->tentativas_pagamento?></span> tentativa(s)!
                 </div>
 
 
