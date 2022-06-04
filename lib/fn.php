@@ -90,13 +90,10 @@ function VerificarVendaApp(){
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
         //echo "<h1>TESTE 1</h1>";
         //exit();
-    }else if(!$_SESSION['AppVenda']){
+    }else{
         $_SESSION['AppVenda'] = mysqli_fetch_object($r)->codigo;
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
         //echo "<h1>TESTE 2</h1>";
-    }else{
-        //echo "<h1>TESTE 3</h1>";
     }
-
 
 }
