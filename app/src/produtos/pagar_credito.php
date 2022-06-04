@@ -97,6 +97,23 @@
         width:100%;
         text-transform:uppercase;
     }
+
+    .alertas{
+        width:100%;
+        text-align:center;
+        background-color:#ffffff;
+        border:solid 1px #fd3e00;
+        color:#ff7d52;
+        text-align:center !important;
+        border-radius:7px;
+        font-size:11px !important;
+        font-weight:normal !important;
+        padding:5px;
+        margin-top:10px;
+        margin-bottom:10px;
+        display:<?=(($d->tentativas_pagamento < 3)?'block':'none')?>;
+    }
+
 </style>
 <div class="PedidoTopoTitulo">
     <h4>Pagar <?=$_SESSION['AppPedido']?> com Crédito</h4>
@@ -140,10 +157,16 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary btn-block btn-lg" id="Pagar">
+                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" tentativas="<?=$d->tentativas_pagamento?>">
                     <i class="fa fa-calculator" aria-hidden="true"></i>
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>
+
+                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
+                    Atenção, você possui <span tentativa><?=$d->tentativas_pagamento?> tentativa(s)!</span>
+                </div>
+
+
             </div>
         </div>
     </div>
@@ -165,6 +188,13 @@
             expirationMonth = $("#cartao_validade_mes").val();
             expirationYear = $("#cartao_validade_ano").val();
             securityCode = $("#cartao_ccv").val();
+            tentativas = $(this).attr("tentativas");
+
+            if(tentativas == 0){
+                msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
+                $.alert(msg);
+                return false;
+            }
 
             if(
                     !kind
@@ -197,13 +227,16 @@
                 },
                 success:function(dados){
                     let retorno = JSON.parse(dados);
+                    $.alert(retorno.msg);
+                    tentativa = (tentativas*1-1);
+                    $("#Pagar").attr("tentativas", tentativa);
+                    $(".alertas").css("display","block");
+                    $("span[tentativa]").html(tentativa);
                     if (retorno.status == 'Approved') {
                         window.localStorage.removeItem('AppVenda');
                         window.localStorage.removeItem('AppPedido');
                         PageClose(2);
                     }
-                    $.alert(retorno.msg);
-
                 }
             });
 

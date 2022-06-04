@@ -456,7 +456,7 @@
             opc = $(this).attr("opc");
             tentativas = $(this).attr("tentativas");
 
-            if(opc == 'credito' && tentativas == 3){
+            if(opc == 'credito' && tentativas == 0){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
                 $.alert(msg);
                 return false;
