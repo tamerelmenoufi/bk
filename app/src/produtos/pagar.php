@@ -266,7 +266,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <div class="row" style="margin-bottom:10px;">
-                            <div class="col atualizarCaptcha">
+                            <div class="col">
                                 <small>
                                     Digite no campo os caracteres da Iamgem
                                 </small>
