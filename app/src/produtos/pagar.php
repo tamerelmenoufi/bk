@@ -387,14 +387,14 @@
                     },
                     success:function(dados){
                         if(dados == 'success'){
-                            $(this).css("border-color","green");
+                            $("#captcha").css("border-color","green");
                         }else{
-                            $(this).css("border-color","red");
+                            $("#captcha").css("border-color","red");
                         }
                     }
                 });
             }else{
-                $(this).css("border-color","");
+                $("#captcha").css("border-color","");
             }
         });
         $(".atualizarCaptcha").click(function(){
