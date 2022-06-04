@@ -289,11 +289,11 @@
 
                     <h5 class="card-title">
                         <div class="row">
-                            <div id="captcha" class="col">
+                            <div class="col">
                                 <img src="src/produtos/captcha.php?l=150&a=50&tf=20&ql=5">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" style="text-align:center" />
+                                <input id="captcha" type="text" class="form-control form-control-lg" style="text-align:center" />
                             </div>
                         </div>
                     </h5>
@@ -356,6 +356,12 @@
                 }
         });
 
+        $("#captcha").keyup(function(){
+            captcha = $(this).val();
+            if(captcha.length == 5){
+                $.alert(captcha)
+            }
+        });
 
 
         $(".opcLoja").click(function(){
