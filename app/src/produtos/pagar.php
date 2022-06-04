@@ -396,7 +396,8 @@
                     ql:5
                 },
                 success:function(dados){
-                    var base64 = "data:image/jpeg;base64," + btoa(dados);
+                    var img = btoa(dados);
+                    var base64 = "data:image/jpeg;base64," + img;
                     console.log(base64);
                     $(".imagemCaptcha").attr("src",base64);
                 }
