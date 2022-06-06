@@ -4,7 +4,7 @@
     $q = "select * from clientes where codigo = '{$_SESSION['AppCliente']}'";
     $c = mysqli_fetch_object(mysqli_query($con, $q));
 
-    if($_POST['envio'] == 'SMS'){
+    if($_POST['envio'] == 'sms'){
 
         $cod = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
 
@@ -32,6 +32,16 @@
 
     }
 
+    if($_POST['envio'] == 'whatsapp'){
+
+        $cod = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
+        $num = trim($c->telefone);
+        $msg = "BKManaus Informa:\n\nSeu codido de confirmacao é: *{$cod}*.";
+        EnviarWapp($num,$msg);
+        exit();
+
+    }
+
 
 ?>
 
@@ -55,8 +65,8 @@
         O seu telefone <b><?=$c->telefone?></b> informado no cadastro, precisa ser confirmado para liberar o seu cadastro.
         Como deseja receber o código de confirmação?
         </p>
-        <button class="sms btn btn-primary btn-block btn-lg"><i class="fa-solid fa-comment-sms"></i> SMS</button>
-        <button class="whatsapp btn btn-primary btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
+        <button tipo="sms" class="btn btn-primary btn-block btn-lg"><i class="fa-solid fa-comment-sms"></i> SMS</button>
+        <button tipo="whatsapp" class="btn btn-primary btn-block btn-lg"><i class="fa-brands fa-whatsapp"></i> WHATSAPP</button>
         <button class="ativar btn btn-success btn-block btn-lg"><i class="fa-solid fa-keyboard"></i> Digitar Código</button>
 
     </div>
@@ -66,12 +76,13 @@
 <script>
     $(function(){
 
-        $("button.sms").click(function(){
+        $("button[tipo]").click(function(){
+            envio = $(this).attr("tipo");
             Carregando();
             $.ajax({
                 url:"src/cliente/confirmar_telefone.php",
                 data:{
-                    envio:'SMS',
+                    envio,
                 },
                 type:"POST",
                 success:function(dados){
