@@ -37,7 +37,14 @@
         $cod = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
         $num = trim($c->telefone);
         $msg = "BKManaus Informa:\n\nSeu codido de confirmacao é: *{$cod}*.";
-        EnviarWapp($num,$msg);
+
+        $result = EnviarWapp($num,$msg);
+
+        $retorno = ['status' => true, 'retorno' => json_decode($result)];
+
+        $retorno = json_encode($retorno);
+        echo $retorno;
+
         exit();
 
     }
