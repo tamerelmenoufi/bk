@@ -3,6 +3,8 @@
 
     echo "Na aplicação webhook bee da BK";
 
+    file_put_contents("logs/log.txt", print_r($_POST, true));
+
     if($_POST['webhook']){
 
 
