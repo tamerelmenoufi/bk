@@ -3,8 +3,8 @@
 ?>
 <style>
     button[CadastrarCliente]{
-        text-align:center;
-        font-weight:bold;
+        text-align:center !important;
+        font-weight:bold !important;
     }
     small[texto]{
         font-size:10px;
