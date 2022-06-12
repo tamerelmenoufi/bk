@@ -165,7 +165,7 @@
                             //////////////////////////////////////////////////////
 
 
-                            Jconfirm = $.confirm({
+                            JanelaConfirmacao = $.confirm({
                                 title: false,
                                 content: '' +
                                 '<form action="" class="formName">' +
@@ -220,7 +220,7 @@
                                             title:false,
                                             buttons:{
                                                 'SIM':function(){
-                                                    Jconfirm.close();
+                                                    JanelaConfirmacao.close();
                                                 },
                                                 'NÃO':function(){
 
