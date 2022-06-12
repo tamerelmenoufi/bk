@@ -183,31 +183,32 @@
                                             if(!name || name.length != 6){
                                                 $.alert('Digite o codigo corretamente');
                                                 return false;
+                                            }else if(nome === cod_confirm){
+                                                $.ajax({
+                                                    url:"src/cliente/cadastro.php",
+                                                    type:"POST",
+                                                    data:{
+                                                        telefone_valido:telefone,
+                                                    },
+                                                    success:function(dados){
+
+                                                        let retorno = JSON.parse(dados);
+
+                                                        window.localStorage.setItem('AppCliente', retorno.AppCliente);
+                                                        window.localStorage.setItem('AppVenda', retorno.AppVenda);
+
+                                                        $.ajax({
+                                                            url:"src/home/index.php",
+                                                            success:function(dados){
+                                                                $(".ms_corpo").html(dados);
+                                                            }
+                                                        });
+
+                                                    }
+                                                });
+                                            }else{
+                                                $.alert('Seu código não confere, tente novamente!');
                                             }
-
-
-                                            $.ajax({
-                                                url:"src/cliente/cadastro.php",
-                                                type:"POST",
-                                                data:{
-                                                    telefone_valido:telefone,
-                                                },
-                                                success:function(dados){
-
-                                                    let retorno = JSON.parse(dados);
-
-                                                    window.localStorage.setItem('AppCliente', retorno.AppCliente);
-                                                    window.localStorage.setItem('AppVenda', retorno.AppVenda);
-
-                                                    $.ajax({
-                                                        url:"src/home/index.php",
-                                                        success:function(dados){
-                                                            $(".ms_corpo").html(dados);
-                                                        }
-                                                    });
-
-                                                }
-                                            });
 
 
                                         }
