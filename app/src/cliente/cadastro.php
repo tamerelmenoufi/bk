@@ -2,7 +2,7 @@
     include("../../../lib/includes.php");
 ?>
 <style>
-    button[CadastrarCliente]{
+    #ClienteTeleofne{
         text-align:center !important;
         font-weight:bold !important;
     }
@@ -54,7 +54,7 @@
 
 <div class="col">
     <div class="col-12">Cadastro/Acesso do Cliente</div>
-    <div class="col-12"><div texto>Digite no campo abaixo o seu número de telefone celular/WhatsApp para o seu login de acesso ou realizar o seu pré-cadastro.</div></div>
+    <div class="col-12"><div texto>Digite no campo abaixo o seu número de telefone celular/WhatsApp para o seu login de acesso ou para realizar o seu pré-cadastro.</div></div>
     <div class="col-12 mb-3">
         <input
             type="text"
