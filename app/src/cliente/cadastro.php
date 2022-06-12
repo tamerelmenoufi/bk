@@ -1,6 +1,13 @@
 <?php
     include("../../../lib/includes.php");
-
+?>
+<style>
+    button[CadastrarCliente]{
+        text-align:center;
+        font-weight:bold;
+    }
+</style>
+<?php
     if($_POST['telefone']){
 
         $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
@@ -40,8 +47,16 @@
 
 <div class="col">
     <div class="col-12">Cadastro/Acesso do Cliente</div>
+    <div class="col-12"><small>Digite no campo abaixo o seu número de telefone celular/WhatsApp para o seu login de acesso ou realizar o seu pré-cadastro.</small></div>
     <div class="col-12 mb-3">
-        <input type="text" inputmode="numeric" autocomplete="off" class="form-control form-control-lg" id="ClienteTeleofne">
+        <input
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
+            class="form-control form-control-lg"
+            id="ClienteTeleofne"
+            placeholder="(00) 9 0000-0000"
+        >
     </div>
     <div class="col-12">
         <button CadastrarCliente class="btn btn-secondary btn-block btn-lg">Cadastrar/Acessar</button>
