@@ -171,7 +171,7 @@
                                 '<form action="" class="formName">' +
                                 '<div class="form-group">' +
                                 '<label>Digite no campo abaixo o código enviado para o seu número.</label>' +
-                                '<input type="text" placeholder="codigo" class="name form-control" required />' +
+                                '<input type="text" placeholder="codigo" class="name form-control" required style="text-align:center; font-weight:bold;" />' +
                                 '</div>' +
                                 '</form>',
                                 buttons: {
