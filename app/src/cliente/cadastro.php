@@ -228,7 +228,7 @@
                                             }
                                         });
                                         return false;
-                                    },
+                                    }
                                 },
                                 onContentReady: function () {
                                     // bind to events
