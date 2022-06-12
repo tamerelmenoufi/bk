@@ -1,8 +1,8 @@
 <?php
     include("../../../lib/includes.php");
 
-    if($_POST['telefone']){
-
+    if($_POST['telefone_valido']){
+        $_POST['telefone'] = $_POST['telefone_valido'];
         $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
         $result = mysqli_query($con, $query);
         if(mysqli_num_rows($result)){
@@ -36,6 +36,53 @@
 
         exit();
     }
+
+    if($_POST['envio'] == 'sms'){
+
+        $cod = $_POST['cod_confirm'];
+
+        $content = http_build_query(array(
+
+            'num' => '55'.str_replace(array(' ','(',')','-'), false, trim($_POST['telefone'])),
+            'msg' => "BKManaus Informa: Seu codido de confirmacao e {$cod}.",
+
+        ));
+
+        $context = stream_context_create(array(
+            'http' => array(
+                'method'  => 'POST',
+                'content' => $content,
+            )
+        ));
+
+        $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
+
+        $retorno = ['status' => true, 'retorno' => json_decode($result)];
+
+        $retorno = json_encode($retorno);
+        echo $retorno;
+        exit();
+
+    }
+
+    if($_POST['envio'] == 'whatsapp'){
+
+        $cod = $_POST['cod_confirm'];
+        $num = trim($_POST['telefone']);
+        $msg = "BKManaus Informa:\n\nSeu codido de confirmacao é: *{$cod}*.";
+
+        $result = EnviarWapp($num,$msg);
+
+        $retorno = ['status' => true, 'retorno' => json_decode($result)];
+
+        $retorno = json_encode($retorno);
+        echo $retorno;
+
+        exit();
+
+    }
+
+
 
 ?>
 <style>
@@ -78,9 +125,16 @@
             placeholder="(__) _____-____"
         >
     </div>
-    <div class="col-12">
-        <button CadastrarCliente class="btn btn-secondary btn-block btn-lg">Cadastrar/Acessar</button>
+    <div class="row">
+        <div class="col">
+            <button CadastrarCliente="whatsapp" chave="<?=substr(md5(date("YmdHis")),0,6)?>" class="btn btn-secondary btn-block btn-lg">WhatsApp</button>
+        </div>
+        <div class="col">
+            <button CadastrarCliente="sms" chave="<?=substr(md5(date("YmdHis")),0,6)?>" class="btn btn-secondary btn-block btn-lg">SMS</button>
+        </div>
     </div>
+    <center>Selecione a opção para acesso / ativação do seu cadastro.</center>
+
 </div>
 
 <script>
@@ -90,29 +144,103 @@
 
         $("button[CadastrarCliente]").click(function(){
             telefone = $("#ClienteTeleofne").val();
+            envio = $(this).attr("CadastrarCliente");
+            cod_confirm = $(this).attr("chave");
+
             if(telefone.length === 15){
+
                 $.ajax({
                     url:"src/cliente/cadastro.php",
                     type:"POST",
+                    dataType:"JSON",
                     data:{
                         telefone,
+                        envio,
+                        cod_confirm
                     },
                     success:function(dados){
+                        if(dados.status){
 
-                        let retorno = JSON.parse(dados);
 
-                        window.localStorage.setItem('AppCliente', retorno.AppCliente);
-                        window.localStorage.setItem('AppVenda', retorno.AppVenda);
+                            //////////////////////////////////////////////////////
 
-                        $.ajax({
-                            url:"src/home/index.php",
-                            success:function(dados){
-                                $(".ms_corpo").html(dados);
-                            }
-                        });
 
+                            $.confirm({
+                                title: false,
+                                content: '' +
+                                '<form action="" class="formName">' +
+                                '<div class="form-group">' +
+                                '<label>Digite no campo abaixo o código enviado para o seu número.</label>' +
+                                '<input type="text" placeholder="codigo" class="name form-control" required />' +
+                                '</div>' +
+                                '</form>',
+                                buttons: {
+                                    formSubmit: {
+                                        text: 'Submit',
+                                        btnClass: 'btn-blue',
+                                        action: function () {
+                                            var name = this.$content.find('.name').val();
+                                            if(!name || name.length != 6){
+                                                $.alert('Digite o codigo corretamente');
+                                                return false;
+                                            }
+
+
+                                            $.ajax({
+                                                url:"src/cliente/cadastro.php",
+                                                type:"POST",
+                                                data:{
+                                                    telefone_valido:telefone,
+                                                },
+                                                success:function(dados){
+
+                                                    let retorno = JSON.parse(dados);
+
+                                                    window.localStorage.setItem('AppCliente', retorno.AppCliente);
+                                                    window.localStorage.setItem('AppVenda', retorno.AppVenda);
+
+                                                    $.ajax({
+                                                        url:"src/home/index.php",
+                                                        success:function(dados){
+                                                            $(".ms_corpo").html(dados);
+                                                        }
+                                                    });
+
+                                                }
+                                            });
+
+
+                                        }
+                                    },
+                                    cancel: function () {
+                                        //close
+                                    },
+                                },
+                                onContentReady: function () {
+                                    // bind to events
+                                    var jc = this;
+                                    this.$content.find('form').on('submit', function (e) {
+                                        // if the user submits the form by pressing enter in the field.
+                                        e.preventDefault();
+                                        jc.$$formSubmit.trigger('click'); // reference the button and click it
+                                    });
+                                }
+                            });
+
+
+                            //////////////////////////////////////////////////////
+
+
+                        }
                     }
                 });
+
+
+
+
+
+
+
             }else{
                 $.alert('Favor informe o número do seu telefone!');
             }
