@@ -165,7 +165,7 @@
                             //////////////////////////////////////////////////////
 
 
-                            $.confirm({
+                            Jconfirm = $.confirm({
                                 title: false,
                                 content: '' +
                                 '<form action="" class="formName">' +
@@ -220,13 +220,14 @@
                                             title:false,
                                             buttons:{
                                                 'SIM':function(){
-
+                                                    Jconfirm.close();
                                                 },
                                                 'NÃO':function(){
-                                                    return false;
+
                                                 }
                                             }
                                         });
+                                        return false;
                                     },
                                 },
                                 onContentReady: function () {
