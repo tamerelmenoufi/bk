@@ -75,7 +75,7 @@
             autocomplete="off"
             class="form-control form-control-lg"
             id="ClienteTeleofne"
-            placeholder="(00) 9 0000-0000"
+            placeholder="(__) _____-____"
         >
     </div>
     <div class="col-12">
