@@ -2,6 +2,16 @@
     include("../../../lib/includes.php");
 ?>
 <style>
+    .CadastroTitulo{
+        width:100%;
+        position:fixed;
+        padding-left:70px;
+        top:0px;
+        height:60px;
+        padding-top:15px;
+        background:#f5ebdc;
+        z-index:1;
+    }
     #ClienteTeleofne{
         text-align:center !important;
         font-weight:bold !important;
@@ -52,8 +62,11 @@
     }
 ?>
 
+<div class="CadastroTitulo">
+    <h4>Cadastro/Acesso</h4>
+</div>
+
 <div class="col">
-    <div class="col-12">Cadastro/Acesso do Cliente</div>
     <div class="col-12"><div texto>Digite no campo abaixo o seu número de telefone celular/WhatsApp para o seu login de acesso ou para realizar o seu pré-cadastro.</div></div>
     <div class="col-12 mb-3">
         <input
