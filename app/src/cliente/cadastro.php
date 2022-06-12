@@ -55,7 +55,7 @@
             )
         ));
 
-        // $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
+        $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
 
         $retorno = ['status' => true, 'retorno' => json_decode($result)];
 
@@ -127,10 +127,10 @@
     </div>
     <div class="row">
         <div class="col">
-            <button CadastrarCliente="whatsapp" chave="<?=substr(md5(date("YmdHis")),0,6)?>" class="btn btn-secondary btn-block btn-lg">WhatsApp</button>
+            <button CadastrarCliente="whatsapp" chave="<?=date("His")?>" class="btn btn-secondary btn-block btn-lg">WhatsApp</button>
         </div>
         <div class="col">
-            <button CadastrarCliente="sms" chave="<?=substr(md5(date("YmdHis")),0,6)?>" class="btn btn-secondary btn-block btn-lg">SMS</button>
+            <button CadastrarCliente="sms" chave="<?=date("His")?>" class="btn btn-secondary btn-block btn-lg">SMS</button>
         </div>
     </div>
     <center>Selecione a opção para acesso / ativação do seu cadastro.</center>
@@ -171,7 +171,7 @@
                                 '<form action="" class="formName">' +
                                 '<div class="form-group">' +
                                 '<label>Digite no campo abaixo o código enviado para o seu número.</label>' +
-                                '<input type="text" placeholder="codigo" class="name form-control" required style="text-align:center; font-weight:bold;" />' +
+                                '<input type="text" placeholder="codigo" inputmode="numeric" class="name form-control" required style="text-align:center; font-weight:bold;" />' +
                                 '</div>' +
                                 '</form>',
                                 buttons: {
