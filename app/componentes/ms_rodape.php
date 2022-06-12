@@ -19,8 +19,8 @@
             local = $(this).attr("local");
 
             if(
-                (!AppCliente || AppCliente === null || AppCliente === undefined) &&
-                local == "src/cliente/home.php"
+                (!AppCliente || AppCliente === null || AppCliente === undefined) /*&&
+                local == "src/cliente/home.php"*/
             ){
 
                 Carregando();
