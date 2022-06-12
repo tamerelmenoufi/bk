@@ -208,6 +208,7 @@
                                                 });
                                             }else{
                                                 $.alert('Seu código não confere, tente novamente!');
+                                                return false;
                                             }
 
 
