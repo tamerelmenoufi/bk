@@ -183,7 +183,7 @@
                                             if(!name || name.length != 6){
                                                 $.alert('Digite o codigo corretamente');
                                                 return false;
-                                            }else if(nome === cod_confirm){
+                                            }else if(name === cod_confirm){
                                                 $.ajax({
                                                     url:"src/cliente/cadastro.php",
                                                     type:"POST",
