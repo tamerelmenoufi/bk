@@ -6,6 +6,13 @@
         text-align:center;
         font-weight:bold;
     }
+    small[texto]{
+        font-size:10px;
+        text-align:justify;
+        margin-top:10px;
+        margin-bottom:10px;
+        color:#333;
+    }
 </style>
 <?php
     if($_POST['telefone']){
@@ -47,7 +54,7 @@
 
 <div class="col">
     <div class="col-12">Cadastro/Acesso do Cliente</div>
-    <div class="col-12"><small>Digite no campo abaixo o seu número de telefone celular/WhatsApp para o seu login de acesso ou realizar o seu pré-cadastro.</small></div>
+    <div class="col-12"><small texto>Digite no campo abaixo o seu número de telefone celular/WhatsApp para o seu login de acesso ou realizar o seu pré-cadastro.</small></div>
     <div class="col-12 mb-3">
         <input
             type="text"
