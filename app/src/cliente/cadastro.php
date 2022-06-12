@@ -1,30 +1,6 @@
 <?php
     include("../../../lib/includes.php");
-?>
-<style>
-    .CadastroTitulo{
-        width:100%;
-        position:fixed;
-        padding-left:70px;
-        top:0px;
-        height:60px;
-        padding-top:15px;
-        background:#f5ebdc;
-        z-index:1;
-    }
-    #ClienteTeleofne{
-        text-align:center !important;
-        font-weight:bold !important;
-    }
-    div[texto]{
-        font-size:10px;
-        text-align:justify;
-        margin-top:10px;
-        margin-bottom:10px;
-        color:#333;
-    }
-</style>
-<?php
+
     if($_POST['telefone']){
 
         $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
@@ -60,7 +36,31 @@
 
         exit();
     }
+
 ?>
+<style>
+    .CadastroTitulo{
+        width:100%;
+        position:fixed;
+        padding-left:70px;
+        top:0px;
+        height:60px;
+        padding-top:15px;
+        background:#f5ebdc;
+        z-index:1;
+    }
+    #ClienteTeleofne{
+        text-align:center !important;
+        font-weight:bold !important;
+    }
+    div[texto]{
+        font-size:10px;
+        text-align:justify;
+        margin-top:10px;
+        margin-bottom:10px;
+        color:#333;
+    }
+</style>
 
 <div class="CadastroTitulo">
     <h4>Cadastro/Acesso</h4>
