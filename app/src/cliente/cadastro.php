@@ -55,7 +55,7 @@
             )
         ));
 
-        $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
+        // $result = file_get_contents('http://moh1.com.br/fnbk2.php', null, $context);
 
         $retorno = ['status' => true, 'retorno' => json_decode($result)];
 
@@ -176,7 +176,7 @@
                                 '</form>',
                                 buttons: {
                                     formSubmit: {
-                                        text: 'Submit',
+                                        text: 'Ativar',
                                         btnClass: 'btn-blue',
                                         action: function () {
                                             var name = this.$content.find('.name').val();
@@ -214,8 +214,19 @@
 
                                         }
                                     },
-                                    cancel: function () {
-                                        //close
+                                    Cancelar: function () {
+                                        $.confirm({
+                                            content:"Deseja relamente cancelar a ativação?",
+                                            title:false,
+                                            buttons:{
+                                                'SIM':function(){
+
+                                                },
+                                                'NÃO':function(){
+                                                    return false;
+                                                }
+                                            }
+                                        });
                                     },
                                 },
                                 onContentReady: function () {
