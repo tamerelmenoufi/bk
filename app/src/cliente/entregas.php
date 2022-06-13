@@ -136,7 +136,7 @@
 /* Fix the circle for containers on the right side */
 .right::after {
   box-sizing: border-box;
-  left: -12px;
+  left: -5px;
 }
 
 /* The actual content */
