@@ -42,7 +42,7 @@
         for($i=0;$i<10;$i++){
     ?>
     <div style="position:relative; width:100%; background:yellow; border-bottom:green solid 1px; padding:10px;">
-        <div style="postion:absolute; left:-12px; top:5px; font-size:25px;">
+        <div style="position:absolute; left:-12px; top:5px; font-size:25px;">
             <i class="fa fa-user"></i>
         </div>
 
