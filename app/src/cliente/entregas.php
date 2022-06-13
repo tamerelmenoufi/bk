@@ -37,7 +37,7 @@
     }
 ?>
 
-<div style="position:absolute; width:100%; height:auto; background-color:#eee; margin-left:150px; border-left:solid 3px green; ">
+<div style="position:relative; width:100%; height:auto; background-color:#eee; margin-left:150px; border-left:solid 3px green; ">
     <?php
         for($i=0;$i<10;$i++){
     ?>
