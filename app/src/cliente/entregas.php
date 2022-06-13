@@ -41,7 +41,7 @@
     <?php
         for($i=0;$i<10;$i++){
     ?>
-    <div style="position:relative; width:100%; min-height:90px; background:yellow; border-bottom:green solid 1px; padding:10px; clear:both;">
+    <div style="position:relative; width:100%; min-height:90px; padding:10px; clear:both;">
 
         <div style="position:absolute; left:-80px; top:10px; font-size:10px; text-align:right;">
             23/06/2022<br>
@@ -52,7 +52,7 @@
             <i class="fa-solid fa-clock"></i>
         </div>
 
-        <div style="position:absolute; left:30px; top:10px; right:5px; border-radius:5px; background-color:#ccc; padding:5px;">
+        <div style="position:absolute; left:30px; top:0px; right:5px; border-radius:5px; background-color:#ccc; padding:5px;">
             <div style="position:absolute; left:-7px; top:0px; font-size:25px; color:#ccc;">
                 <i class="fa-solid fa-caret-left"></i>
             </div>
