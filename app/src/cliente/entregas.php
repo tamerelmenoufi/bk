@@ -45,19 +45,7 @@
 <script>
     $(function(){
 
-        $('p[entrega="<?=$d->codigo?>"]').timeline({
 
-            data: [
-                {
-                    time: new Date(),
-                    color: '#555',
-                    css: 'success',
-                    content: 'Item 1'
-                }
-            ]
-
-        });
-        $('p[entrega="<?=$d->codigo?>"]').append('novo item<br>');
 
     })
 </script>

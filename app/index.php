@@ -20,9 +20,11 @@
     </span>
 </div>
 
+<div class="ms_corpo"></div>
+
 <?php include("../lib/footer.php"); ?>
 
-<div class="ms_corpo"></div>
+
 
 <script src="<?= "js/app.js?" . date("YmdHis"); ?>"></script>
 <script src="<?= "js/wow.js"; ?>"></script>
