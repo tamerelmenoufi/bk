@@ -126,15 +126,15 @@
             placeholder="(__) _____-____"
         >
     </div>
-    <div class="row">
-        <div class="col">
-            <button CadastrarCliente="whatsapp" chave="<?=date("His")?>" class="btn btn-secondary btn-block btn-lg">WhatsApp</button>
-        </div>
-        <div class="col">
-            <button CadastrarCliente="sms" chave="<?=date("His")?>" class="btn btn-secondary btn-block btn-lg">SMS</button>
-        </div>
+    <div class="col-12">
+    <center><small>Selecione a opção para acesso / ativação do seu cadastro.</small></center>
     </div>
-    <center>Selecione a opção para acesso / ativação do seu cadastro.</center>
+    <div class="col-6">
+        <button CadastrarCliente="whatsapp" chave="<?=date("His")?>" class="btn btn-secondary btn-block btn-lg">WhatsApp</button>
+    </div>
+    <div class="col-6">
+        <button CadastrarCliente="sms" chave="<?=date("His")?>" class="btn btn-secondary btn-block btn-lg">SMS</button>
+    </div>
 
 </div>
 
