@@ -37,13 +37,13 @@
     }
 ?>
 
-<div style="position:relative; height:auto; background-color:#eee; margin-left:80px; border-left:solid 3px green; ">
+<div style="position:relative; height:auto; background-color:#eee; margin-left:70px; border-left:solid 3px green; ">
     <?php
         for($i=0;$i<10;$i++){
     ?>
     <div style="position:relative; width:100%; min-height:90px; background:yellow; border-bottom:green solid 1px; padding:10px; clear:both;">
 
-        <div style="position:absolute; left:-80px; top:10px; font-size:10px; text-align:right;">
+        <div style="position:absolute; left:-90px; top:10px; font-size:10px; text-align:right;">
             23/06/2022<br>
             08:16
         </div>
