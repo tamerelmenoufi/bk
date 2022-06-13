@@ -58,6 +58,7 @@
             </div>
             Informações da entrega
         </div>
+
     </div>
     <?php
         }
