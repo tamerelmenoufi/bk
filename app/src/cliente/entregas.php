@@ -83,7 +83,7 @@
   position: absolute;
   width: 25px;
   height: 25px;
-  right: -5px;
+  right: -12px;
   background-color: white;
   border: 4px solid #FF9F55;
   top: 15px;
@@ -94,7 +94,7 @@
 /* Place the container to the left */
 .left {
   box-sizing: border-box;
-  left: 0;
+  left: 3px;
 }
 
 /* Place the container to the right */
@@ -136,7 +136,7 @@
 /* Fix the circle for containers on the right side */
 .right::after {
   box-sizing: border-box;
-  left: -5px;
+  left: -12px;
 }
 
 /* The actual content */
