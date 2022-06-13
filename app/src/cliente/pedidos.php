@@ -37,36 +37,11 @@
                     </p>
 
 
-                    <p class="card-text">
-                        <?php
-                            if($d->CANCELED > 0){
-                                echo "<p>Cancelado</p>";
-                            }else{
+                    <p
+                        <?=(($d->CANCELED > 0 or $d->COMPLETED > 0)?false: 'entrega="'.$d->codigo."'")?>
+                        class="card-text">
 
-                                if($d->SEARCHING > 0){
-                                    echo "<p>Buscando</p>";
-                                }
-                                if($d->GOING_TO_ORIGIN > 0){
-                                    echo "<p>A Caminho do estabelecimento</p>";
-                                }
-                                if($d->ARRIVED_AT_ORIGIN > 0){
-                                    echo "<p>Entregador no estabelecimento</p>";
-                                }
-                                if($d->GOING_TO_DESTINATION > 0){
-                                   echo "<p>A entrga está a caminho</p>";
-                                }
-                                if($d->ARRIVED_AT_DESTINATION > 0){
-                                   echo "<p>Entrega realizada</p>";
-                                }
-                                if($d->RETURNING > 0){
-                                   echo "<p>Entregador retornando</p>";
-                                }
-                                if($d->COMPLETED > 0){
-                                   echo "<p>Entrega Concluída</p>";
-                                }
 
-                            }
-                        ?>
                     </p>
 
                 </div>
@@ -77,3 +52,28 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function AcessoDados(cod){
+        $.ajax({
+            url:"src/cliente/entregas.php",
+            type:"POST",
+            data:{
+                cod
+            },
+            sucess:function(dados){
+                $('p[entrega="'+cod+'"]').html(dados);
+            }
+        });
+    }
+
+    $(function(){
+        AtualizarEntrega = setInterval(function () {
+            $("p[entrega]").each(function(){
+                cod = $(this).attr("entrega");
+                AcessoDados(cod);
+            });
+        }, 5000);
+    })
+</script>
