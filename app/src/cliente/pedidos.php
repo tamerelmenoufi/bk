@@ -33,7 +33,7 @@
                         Valor: R$ <?=$d->total?><br>
                         Data do Pedido: <?=$d->data_finalizacao?><br>
                         Forma de Pagamento: <?=strtoupper($d->forma_pagamento)?><br>
-                        situação: <?=$d->situacao?>
+                        situação: <?=$d->operadora_situacao?>
                     </p>
                 </div>
             </div>
