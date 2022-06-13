@@ -2,6 +2,7 @@
     include("../../../lib/includes.php");
 
     if($_POST['telefone_valido']){
+
         $_POST['telefone'] = $_POST['telefone_valido'];
         $query = "select * from clientes where telefone = '{$_POST['telefone']}'";
         $result = mysqli_query($con, $query);
@@ -9,7 +10,7 @@
             $d = mysqli_fetch_object($result);
             $_SESSION['AppCliente'] = $d->codigo;
         }else{
-            mysqli_query($con, "insert into clientes set telefone = '{$_POST['telefone']}', data_cadastro = NOW()");
+            mysqli_query($con, "insert into clientes set telefone = '{$_POST['telefone']}', data_cadastro = NOW(), telefone_confirmado = '1'");
             $_SESSION['AppCliente'] = mysqli_insert_id($con);
         }
 
