@@ -40,29 +40,29 @@
                     <p class="card-text">
                         <?php
                             if($d->CANCELED > 0){
-                                echo "Cancelado";
+                                echo "<p>Cancelado</p>";
                             }else{
 
-                                if($d->SEARCHING){
-                                    echo "Buscando";
+                                if($d->SEARCHING > 0){
+                                    echo "<p>Buscando</p>";
                                 }
-                                if($d->GOING_TO_ORIGIN){
-                                    echo "A Caminho do estabelecimento";
+                                if($d->GOING_TO_ORIGIN > 0){
+                                    echo "<p>A Caminho do estabelecimento</p>";
                                 }
-                                if($d->ARRIVED_AT_ORIGIN){
-                                    echo "Entregador no estabelecimento";
+                                if($d->ARRIVED_AT_ORIGIN > 0){
+                                    echo "<p>Entregador no estabelecimento</p>";
                                 }
-                                if($d->GOING_TO_DESTINATION){
-                                   echo "A entrga está a caminho";
+                                if($d->GOING_TO_DESTINATION > 0){
+                                   echo "<p>A entrga está a caminho</p>";
                                 }
-                                if($d->ARRIVED_AT_DESTINATION){
-                                   echo "Entrega realizada";
+                                if($d->ARRIVED_AT_DESTINATION > 0){
+                                   echo "<p>Entrega realizada</p>";
                                 }
-                                if($d->RETURNING){
-                                   echo "Entregador retornando";
+                                if($d->RETURNING > 0){
+                                   echo "<p>Entregador retornando</p>";
                                 }
-                                if($d->COMPLETED){
-                                   echo "Entrega Concluída";
+                                if($d->COMPLETED > 0){
+                                   echo "<p>Entrega Concluída</p>";
                                 }
 
                             }
