@@ -35,6 +35,40 @@
                         Forma de Pagamento: <?=strtoupper($d->forma_pagamento)?><br>
                         situação: <?=$d->operadora_situacao?>
                     </p>
+
+
+                    <p class="card-text">
+                        <?php
+                            if($d->CANCELED > 0){
+                                echo "Cancelado";
+                            }else{
+
+                                if($d->SEARCHING){
+                                    echo "Buscando";
+                                }
+                                if($d->GOING_TO_ORIGIN){
+                                    echo "A Caminho do estabelecimento";
+                                }
+                                if($d->ARRIVED_AT_ORIGIN){
+                                    echo "Entregador no estabelecimento";
+                                }
+                                if($d->GOING_TO_DESTINATION){
+                                   echo "A entrga está a caminho";
+                                }
+                                if($d->ARRIVED_AT_DESTINATION){
+                                   echo "Entrega realizada";
+                                }
+                                if($d->RETURNING){
+                                   echo "Entregador retornando";
+                                }
+                                if($d->COMPLETED){
+                                   echo "Entrega Concluída";
+                                }
+
+                            }
+                        ?>
+                    </p>
+
                 </div>
             </div>
 <?php
