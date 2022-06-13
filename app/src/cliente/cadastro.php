@@ -126,7 +126,7 @@
             placeholder="(__) _____-____"
         >
     </div>
-    <div class="col-12">
+    <div class="col-12 mb-3">
     <center><small>Selecione a opção para acesso/ativação<br>do seu cadastro.</small></center>
     </div>
     <div class="col-12">
