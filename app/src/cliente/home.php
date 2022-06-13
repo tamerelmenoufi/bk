@@ -31,9 +31,9 @@
         <button opc="pedidos" acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
         </button>
-        <button acao opc="senha" class="btn btn-dark btn-lg btn-block">
+        <!-- <button acao opc="senha" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-key"></i> Alterar Senha
-        </button>
+        </button> -->
         <button sair class="btn btn-danger btn-lg btn-block">
             <i class="fa fa-sign-out" aria-hidden="true"></i>
             Desconectar
