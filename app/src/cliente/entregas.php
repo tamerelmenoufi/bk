@@ -4,7 +4,6 @@
 
     $query = "select * from vendas where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
-    $n = mysqli_num_rows($result);
     $d = mysqli_fetch_object($result);
 ?>
 

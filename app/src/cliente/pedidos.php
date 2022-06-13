@@ -64,6 +64,9 @@
             },
             sucess:function(dados){
                 $('p[entrega="'+cod+'"]').html(dados);
+            },
+            error:function(){
+                alert('erro');
             }
         });
     }
