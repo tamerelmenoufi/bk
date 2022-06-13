@@ -69,7 +69,7 @@
             ]
 
         });
-
+        $('p[entrega="<?=$d->codigo?>"]').append('novo item<br>');
 
     })
 </script>
