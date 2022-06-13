@@ -49,7 +49,7 @@
         </div>
 
         <div style="position:absolute; left:-12px; top:5px; font-size:25px;">
-            <i class="fa fa-user"></i>
+            <i class="fa-solid fa-genderless"></i>
         </div>
 
         <div style="position:absolute; left:30px; top:10px; right:5px; border-radius:5px; background-color:#ccc; padding:5px;">
