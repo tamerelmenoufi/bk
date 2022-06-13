@@ -42,8 +42,8 @@
         for($i=0;$i<10;$i++){
     ?>
     <div style="postion:relative; width:100%;">
-            <i class="fa fa-user" style="postion:absolute; left:10px; top:5px;"></i>
-            <div style="position:absolute; left:30px; background-color:#ccc;">
+            <i class="fa fa-user" style="postion:absolute; left:0px; top:5px; font-seize:25px;"></i>
+            <div style="position:absolute; left:30px; top:5px; background-color:#ccc;">
                 Informações da entrega
             </div>
     </div>
