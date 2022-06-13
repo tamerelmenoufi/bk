@@ -34,6 +34,6 @@
     ></script>
 
     <script src="<?= "{$caminho_vendor}/html2canvas/html2canvas.min.js"; ?>" ></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
-
+    <!-- <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
     <script src="<?= "{$caminho_vendor}/timeline_vertical/jquery.timeline.min.js"; ?>"></script>
