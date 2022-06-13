@@ -62,7 +62,7 @@
             data:{
                 cod
             },
-            sucess:function(dados){
+            success:function(dados){
                 $('p[entrega="'+cod+'"]').html(dados);
             },
             error:function(){
