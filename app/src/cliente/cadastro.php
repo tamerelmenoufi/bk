@@ -70,11 +70,11 @@
 
         $cod = $_POST['cod_confirm'];
         $num = trim($_POST['telefone']);
-        $msg = "BKManaus Informa:\n\nSeu codido de confirmacao é: *{$cod}*.";
+        $msg = "BKManaus Informa:\n\nSeu codido de confirmacao é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
-        $retorno = ['status' => true, 'retorno' => json_decode($result)];
+        $retorno = ['status' => true, 'retorno' => ($result)];
 
         $retorno = json_encode($retorno);
         echo $retorno;
