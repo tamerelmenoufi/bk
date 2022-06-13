@@ -53,6 +53,9 @@
         </div>
 
         <div style="position:absolute; left:30px; top:10px; right:5px; border-radius:5px; background-color:#ccc; padding:5px;">
+            <div style="position:absolute; left:-10px; top:10px; font-size:20px; color:#ccc;">
+                <i class="fa-solid fa-caret-left"></i>
+            </div>
             Informações da entrega
         </div>
     </div>
