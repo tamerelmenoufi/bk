@@ -42,6 +42,12 @@
         for($i=0;$i<10;$i++){
     ?>
     <div style="position:relative; width:100%; min-height:45px; background:yellow; border-bottom:green solid 1px; padding:10px; clear:both;">
+
+        <div class="btn btn-primary" style="position:absolute; left:-100px; top:5px; font-size:10px;">
+            23/06/2022<br>
+            08:16
+        </div>
+
         <div style="position:absolute; left:-12px; top:5px; font-size:25px;">
             <i class="fa fa-user"></i>
         </div>
