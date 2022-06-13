@@ -41,11 +41,11 @@
     <?php
         for($i=0;$i<10;$i++){
     ?>
-    <div style="postion:relative; width:100%; background:yellow">
-            <i class="fa fa-user" style="postion:absolute; left:0px; top:5px; font-seize:25px;"></i>
-            <div style="position:absolute; left:30px; top:5px; background-color:#ccc;">
-                Informações da entrega
-            </div>
+    <div style="postion:relative; width:100%; background:yellow; border-bottom:green solid 1px;">
+        <i class="fa fa-user" style="postion:absolute; left:0px; top:5px; font-seize:25px;"></i>
+        <div style="position:absolute; left:30px; top:5px; background-color:#ccc;">
+            Informações da entrega
+        </div>
     </div>
     <?php
         }
