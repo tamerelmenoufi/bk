@@ -53,18 +53,6 @@
                     color: '#555',
                     css: 'success',
                     content: 'Item 1'
-                },
-                {
-                    time: new Date(),
-                    color: '#555',
-                    css: 'success',
-                    content: 'Item 2'
-                },
-                {
-                    time: new Date(),
-                    color: '#555',
-                    css: 'success',
-                    content: 'Item 3'
                 }
             ]
 
