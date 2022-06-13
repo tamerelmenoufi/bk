@@ -19,7 +19,7 @@
                         <div style="position:absolute; left:-7px; top:0px; font-size:25px; color:#eee;">
                             <i class="fa-solid fa-caret-left"></i>
                         </div>
-                        Informações da entrega
+                        Pedido Entregue
                     </div>
 
                 </div>';
