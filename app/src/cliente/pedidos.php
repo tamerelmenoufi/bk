@@ -55,6 +55,8 @@
 
 <script>
 
+    var AtualizarEntrega = '';
+
     function AcessoDados(cod){
         $.ajax({
             url:"src/cliente/entregas.php",
