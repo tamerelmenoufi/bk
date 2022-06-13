@@ -37,9 +37,17 @@
     }
 ?>
 
-<div style="position:relative; width:100%; height:auto; background-color:yellow">
-    <div style="postion:absolute; width:5px; top:0px; bottom:0px; left:20px; background-color:green;"></div>
-
-    <br><br><br><br><br><br><br><br><br><br><br>
-
+<div style="position:relative; width:100%; height:auto; background-color:#eee; margin-left:10px; border-left:solid 3px green; ">
+    <?php
+        for($i=0;$i<10;$i++){
+    ?>
+    <div style="postion:relative; width:100%;">
+            <i class="fa fa-user" style="postion:absolute; left:10px; top:5px;"></i>
+            <div style="position:absolute; left:30px; background-color:#ccc;">
+                Informações da entrega
+            </div>
+    </div>
+    <?php
+        }
+    ?>
 </div>
