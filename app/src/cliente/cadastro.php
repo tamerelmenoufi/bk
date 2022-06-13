@@ -164,6 +164,9 @@
                         cod_confirm
                     },
                     success:function(dados){
+
+                        $.alert(dados.retorno);
+
                         if(dados.status){
 
 
