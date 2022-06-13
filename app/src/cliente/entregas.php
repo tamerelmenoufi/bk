@@ -38,7 +38,7 @@
 ?>
 
 <div style="position:relative; width:100%; height:auto; background-color:yellow">
-    <div style="postion:absolute; width:5px; top:0px; bottom:0px; left:20px; background-color:green; height:100%;"></div>
+    <div style="postion:absolute; width:5px; top:0px; bottom:0px; left:20px; background-color:green;"></div>
 
     <br><br><br><br><br><br><br><br><br><br><br>
 
