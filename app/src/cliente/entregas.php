@@ -52,7 +52,7 @@
             <i class="fa fa-user"></i>
         </div>
 
-        <div style="position:absolute; left:30px; top:10px; right:5px; border-radius:5px; background-color:#ccc;">
+        <div style="position:absolute; left:30px; top:10px; right:5px; border-radius:5px; background-color:#ccc; padding:5px;">
             Informações da entrega
         </div>
     </div>
