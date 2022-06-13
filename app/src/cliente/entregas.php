@@ -38,8 +38,8 @@
 ?>
 
 <div style="position:relative; width:100%; height:auto; background-color:yellow">
-    <div style="postion:absolute; width:5px; left:20px; background-color:green; height:100%;"><br><br><br><br><br><br><br><br><br><br><br></div>
+    <div style="postion:absolute; width:5px; left:20px; background-color:green; height:100%;"></div>
 
-
+    <br><br><br><br><br><br><br><br><br><br><br>
 
 </div>
