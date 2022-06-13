@@ -37,7 +37,7 @@
     }
 ?>
 
-<div style="position:relative; height:auto; background-color:#eee; margin-left:70px; border-left:solid 3px green; ">
+<div style="position:relative; height:auto; margin-left:70px; border-left:solid 3px green; ">
     <?php
         for($i=0;$i<10;$i++){
     ?>
@@ -52,8 +52,8 @@
             <i class="fa-solid fa-clock"></i>
         </div>
 
-        <div style="position:absolute; left:30px; top:0px; right:5px; border-radius:5px; background-color:#ccc; padding:5px;">
-            <div style="position:absolute; left:-7px; top:0px; font-size:25px; color:#ccc;">
+        <div style="position:absolute; left:30px; top:0px; right:5px; border-radius:5px; background-color:#eee; padding:5px;">
+            <div style="position:absolute; left:-7px; top:0px; font-size:25px; color:#eee;">
                 <i class="fa-solid fa-caret-left"></i>
             </div>
             Informações da entrega
