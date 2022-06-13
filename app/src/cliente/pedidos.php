@@ -71,12 +71,11 @@
         });
     }
 
-    $(function(){
-        AtualizarEntrega = setInterval(function () {
-            $("p[entrega]").each(function(){
-                cod = $(this).attr("entrega");
-                AcessoDados(cod);
-            });
-        }, 5000);
-    })
+    AtualizarEntrega = setInterval(function () {
+        $("p[entrega]").each(function(){
+            cod = $(this).attr("entrega");
+            AcessoDados(cod);
+        });
+    }, 5000);
+
 </script>
