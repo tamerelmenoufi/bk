@@ -167,7 +167,7 @@
 
                         $.alert(dados.retorno);
 
-                        if(dados.status){
+                        if(dados.status === 'xxxx'){
 
 
                             //////////////////////////////////////////////////////
