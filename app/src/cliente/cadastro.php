@@ -165,9 +165,9 @@
                     },
                     success:function(dados){
 
-                        //$.alert(dados.retorno);
+                        $.alert(dados.retorno);
 
-                        if(dados.status){
+                        if(dados.status === 'xxxx'){
 
 
                             //////////////////////////////////////////////////////
