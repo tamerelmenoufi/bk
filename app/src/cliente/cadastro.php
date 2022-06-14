@@ -127,7 +127,7 @@
         >
     </div>
     <div class="col-12 mb-3">
-    <center><small>Selecione a opção para acesso/ativação<br>do seu cadastro.</small></center>
+    <center><small>XX Selecione a opção para acesso/ativação<br>do seu cadastro. XX</small></center>
     </div>
     <div class="col-12">
         <div class="row">
@@ -165,9 +165,9 @@
                     },
                     success:function(dados){
 
-                        $.alert(dados.retorno);
+                        //$.alert(dados.retorno);
 
-                        if(dados.status === 'xxxx'){
+                        if(dados.status){
 
 
                             //////////////////////////////////////////////////////
