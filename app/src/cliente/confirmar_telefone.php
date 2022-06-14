@@ -36,7 +36,7 @@
 
         $cod = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
         $num = trim($c->telefone);
-        $msg = "BKManaus Informa:\n\nSeu codido de confirmacao é: *{$cod}*.";
+        $msg = "BKManaus Informa: Seu codido de confirmacao é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
