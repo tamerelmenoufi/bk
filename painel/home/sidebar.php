@@ -76,6 +76,8 @@
                 <a class="collapse-item" href="#" url="categorias_medidas/index.php">Medidas</a>
                 <a class="collapse-item" href="#" url="mesas/index.php">Mesas</a>
                 <a class="collapse-item" href="#" url="pagamentos/index.php">Pagamentos</a>
+                <a class="collapse-item" href="#" url="categrias_itens/index.php">Categoria Itens</a>
+
             </div>
         </div>
     </li>
