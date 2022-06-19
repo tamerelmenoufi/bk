@@ -133,6 +133,18 @@ if ($codigo) {
             </div>
 
             <div class="form-group">
+                <label for="item">Código PDV <i class="text-danger">*</i></label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="cod_pdv"
+                        name="cod_pdv"
+                        value="<?= $d->cod_pdv; ?>"
+                        required
+                >
+            </div>
+
+            <div class="form-group">
                 <label for="medidas">Valores <i class="text-danger">*</i></label>
 
                 <!-- <?php
