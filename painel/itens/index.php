@@ -42,6 +42,7 @@
                 <table id="datatable" class="table" width="100%" cellspacing="0">
                     <thead>
                     <tr>
+                        <th>Cod PDV</th>
                         <th>Item</th>
                         <!-- <th>Medida</th> -->
                         <!-- <th>Quantidade</th> -->
@@ -51,6 +52,7 @@
                     <tbody>
                     <?php while ($d = mysqli_fetch_object($result)): ?>
                         <tr id="linha-<?= $d->codigo; ?>">
+                            <td><?= $d->cod_pdv; ?></td>
                             <td><?= $d->item; ?></td>
                             <!-- <td><?= $d->medida; ?></td> -->
                             <!-- <td><?= $d->qt_itens; ?></td> -->
