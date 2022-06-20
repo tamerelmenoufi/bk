@@ -291,7 +291,7 @@ if ($codigo) {
 
                     </div>
 
-                    <div itens codigos="<?= (($d->detalhes) ?: '0') ?>" class="col"
+                    <div itens codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
                         style="height:300px; overflow:auto;">
 
                     </div>
