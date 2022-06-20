@@ -46,6 +46,30 @@
         </div>
     </li>
 
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuItens"
+           aria-expanded="true" aria-controls="MenuItens">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Itens</span>
+        </a>
+        <div id="MenuItens" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <!-- <h6 class="collapse-header">Configurações:</h6> -->
+                <?php
+                $query = "SELECT * FROM categorias_itens WHERE deletado != '1'  ORDER BY categoria";
+                $result = mysqli_query($con, $query);
+                while ($c = mysqli_fetch_object($result)) { ?>
+                    <a class="collapse-item" href="#"
+                       url="itens/index.php?categoria=<?= $c->codigo ?>"><?= ucwords(mb_strtolower($c->categoria, 'UTF-8')); ?></a>
+                <?php } ?>
+            </div>
+        </div>
+    </li>
+
+
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#VendasConfiguracoes"
            aria-expanded="true" aria-controls="VendasConfiguracoes">
