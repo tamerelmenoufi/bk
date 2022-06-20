@@ -287,11 +287,11 @@ if ($codigo) {
                         </ul>
                     </div>
 
-                    <div produtos class="col" style="height:300px; overflow:auto;">
+                    <div listaItens class="col" style="height:300px; overflow:auto;">
 
                     </div>
 
-                    <div combo codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
+                    <div itens codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
                         style="height:300px; overflow:auto;">
 
                     </div>
@@ -371,6 +371,26 @@ if ($codigo) {
         } else {
             alert('Nao suporta HTML5');
         }
+
+
+        ///////////////////////////////////////////////////////
+
+        $("li[listaItens]").click(function () {
+            categoria = $(this).attr("categoria");
+            $.ajax({
+                url: "produtos/lista_itens.php",
+                data: {
+                    categoria
+                },
+                success: function (dados) {
+                    $("div[listaItens]").html(dados);
+                }
+            });
+        });
+
+        ////////////////////////////////////////////////////////
+
+
 
 
         // $('input[situacao]').change(function () {
