@@ -379,7 +379,7 @@ if ($codigo) {
         $.ajax({
             url: "produtos/itens.php",
             data: {
-                produtos: existe,
+                produtos: existe
             },
             success: function (dados) {
                 $("div[itens]").html(dados);
