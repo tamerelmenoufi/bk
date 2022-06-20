@@ -391,6 +391,7 @@ if ($codigo) {
 
         $("li[categoria]").click(function () {
             categoria = $(this).attr("categoria");
+            alert(categoria);
             $.ajax({
                 url: "produtos/lista_itens.php",
                 data: {
@@ -398,6 +399,9 @@ if ($codigo) {
                 },
                 success: function (dados) {
                     $("div[listaItens]").html(dados);
+                },
+                error:function(){
+                    alert('erro');
                 }
             });
         });
