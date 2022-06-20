@@ -498,6 +498,8 @@ if ($codigo) {
             const vetorItens = JSON.stringify(vetor);
             dados.push({name: 'descricao', value: vetorItens});
 
+            alert(codigo);
+
             $.ajax({
                 url: '<?= $UrlScript; ?>/form.php',
                 method: 'POST',
