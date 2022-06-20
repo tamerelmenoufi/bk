@@ -9,14 +9,18 @@ include("../../lib/includes.php");
     while ($p = mysqli_fetch_object($r)) { ?>
         <li Editar="<?= $p->codigo ?>" class="list-group-item d-flex justify-content-between align-items-center">
             <div class='row'>
-                <div class="col">1</div>
-                <div class="col">2</div>
-                <div class="col">3</div>
+                <div class="col"><?= $p->item ?></div>
+                <div class="col">
+                    Aqui é o input
+                </div>
+                <div class="col">
+                    <span excluir="<?= $p->codigo ?>" class="badge badge-pill" style="cursor:pointer">
+                        <i class="fa fa-trash text-danger"></i>
+                    </span>
+                </div>
             </div>
-            <?= $p->item ?>
-            <span excluir="<?= $p->codigo ?>" class="badge badge-pill" style="cursor:pointer">
-                <i class="fa fa-trash text-danger"></i>
-            </span>
+
+
         </li>
     <?php } ?>
 </ul>
