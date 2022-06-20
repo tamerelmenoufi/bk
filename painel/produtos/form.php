@@ -272,7 +272,7 @@ if ($codigo) {
 
 
                 <div class="row">
-                    <div class="col" style="height:300px; overflow:auto;">
+                    <div class="col-4" style="height:300px; overflow:auto;">
                         <ul class="list-group">
                             <?php
                             $q = "select * from categorias_itens where situacao = '1' and deletado != '1'";
@@ -287,11 +287,11 @@ if ($codigo) {
                         </ul>
                     </div>
 
-                    <div listaItens class="col" style="height:300px; overflow:auto;">
+                    <div listaItens class="col-4" style="height:300px; overflow:auto;">
 
                     </div>
 
-                    <div itens codigos="<?= (($d->itens) ?: '0') ?>" class="col"
+                    <div itens codigos="<?= (($d->itens) ?: '0') ?>" class="col-4"
                         style="height:300px; overflow:auto;">
 
                     </div>
