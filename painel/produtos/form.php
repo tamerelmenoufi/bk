@@ -497,7 +497,7 @@ if ($codigo) {
             $("input[qt]").each(function(){
                 cod = $(this).attr("qt");
                 qt = $(this).val();
-                vetor.push({name: cod, value: qt});
+                vetor.push({produto: cod, quantidade: qt});
             });
             const vetorItens = JSON.stringify(vetor);
             dados.push({name: 'descricao', value: vetorItens});
