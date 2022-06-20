@@ -11,7 +11,7 @@ include("../../lib/includes.php");
             <div class='row'>
                 <div class="col-8"><?= $p->item ?></div>
                 <div class="col-2">
-                    <input type="text" class='form-control' />
+                    <input type="text" style='padding:0; margin:0; background:transparent; border:1px solid #eee; border-radius:2px;' />
                 </div>
                 <div class="col-2">
                     <span excluir="<?= $p->codigo ?>" class="badge badge-pill" style="cursor:pointer">
