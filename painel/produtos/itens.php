@@ -10,7 +10,7 @@ include("../../lib/includes.php");
         <li excluir="<?= $p->codigo ?>" class="list-group-item d-flex justify-content-between align-items-center">
             <?= $p->item ?>
             <span class="badge badge-pill">
-                <i class="fa fa-trash text-color-success"></i>
+                <i class="fa fa-trash text-danger"></i>
             </span>
         </li>
     <?php } ?>
