@@ -498,7 +498,7 @@ if ($codigo) {
                 cod = $(this).attr("qt");
                 qt = $(this).val();
 
-                vetor.push('{"'+cod+'":"'+qt+'"}');
+                vetor.push('"'+cod+'":"'+qt+'"');
 
             });
             const vetorItens = JSON.stringify(vetor);
