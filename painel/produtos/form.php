@@ -497,14 +497,10 @@ if ($codigo) {
             $("input[qt]").each(function(){
                 cod = $(this).attr("qt");
                 qt = $(this).val();
-
-                vetor.push('"'+cod+'":"'+qt+'"');
-
+                vetor.push({name: cod, value: qt});
             });
             const vetorItens = JSON.stringify(vetor);
             dados.push({name: 'descricao', value: vetorItens});
-
-            alert(codigo);
 
             $.ajax({
                 url: '<?= $UrlScript; ?>/form.php',
