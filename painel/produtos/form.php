@@ -454,7 +454,7 @@ if ($codigo) {
             }
 
             if (codigos) {
-                dados.push({name: 'descricao', value: codigos});
+                dados.push({name: 'detalhes', value: codigos});
             }
 
             // detalhes = [];
