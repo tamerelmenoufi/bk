@@ -495,7 +495,8 @@ if ($codigo) {
                 vetor[cod] = qt ;
 
             });
-            console.log(vetor);
+            const JsonArray = JSON.stringify(vetor);
+            console.log(JsonArray)
 
 
             $.ajax({
