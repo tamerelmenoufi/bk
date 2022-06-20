@@ -13,7 +13,7 @@ include("../../lib/includes.php");
                 <div class="col-2">
                     <input type="text" style='width:30px; padding:2; text-align:center; margin:0; background:transparent; border:1px solid #eee; border-radius:2px;' />
                 </div>
-                <div class="col-2">
+                <div class="col-2 align-items-right">
                     <span excluir="<?= $p->codigo ?>" class="badge badge-pill" style="cursor:pointer">
                         <i class="fa fa-trash text-danger"></i>
                     </span>
