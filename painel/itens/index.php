@@ -23,7 +23,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb shadow bg-gray-custom">
             <li class="breadcrumb-item"><a href="./">Inicio</a></li>
-            <li class="breadcrumb-item active" aria-current="page"><?=$ConfTitulo?> - <?=$ConfCategoria->categoria?></li>
+            <li class="breadcrumb-item active" aria-current="page"><?=$ConfTitulo?> - <?=$ConfCategoria->categoria.' ('.$_SESSION['categoria'].')'?></li>
         </ol>
     </nav>
 
