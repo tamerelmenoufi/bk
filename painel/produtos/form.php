@@ -291,7 +291,7 @@ if ($codigo) {
 
                     </div>
 
-                    <div itens codigos="<?= (($d->detalhes) ?: '0') ?>" class="col"
+                    <div itens codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
                         style="height:300px; overflow:auto;">
 
                     </div>
@@ -379,7 +379,7 @@ if ($codigo) {
         $.ajax({
             url: "produtos/itens.php",
             data: {
-                produtos: existe
+                produtos: existe,
             },
             success: function (dados) {
                 $("div[itens]").html(dados);
@@ -391,7 +391,6 @@ if ($codigo) {
 
         $("li[categoria]").click(function () {
             categoria = $(this).attr("categoria");
-            alert(categoria);
             $.ajax({
                 url: "produtos/lista_itens.php",
                 data: {
@@ -399,9 +398,6 @@ if ($codigo) {
                 },
                 success: function (dados) {
                     $("div[listaItens]").html(dados);
-                },
-                error:function(){
-                    alert('erro');
                 }
             });
         });
@@ -458,7 +454,7 @@ if ($codigo) {
             }
 
             if (codigos) {
-                dados.push({name: 'detalhes', value: codigos});
+                dados.push({name: 'descricao', value: codigos});
             }
 
             // detalhes = [];
