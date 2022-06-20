@@ -260,26 +260,13 @@ if ($codigo) {
 
                 <div class="row mb-1">
                     <div class="col">
-                        <b>CATEGORIAS</b>
+                        <b>Tipo de Itens</b>
                     </div>
                     <div class="col">
-                        <b>PRODUTOS</b>
+                        <b>Lista de Itens</b>
                     </div>
-
                     <div class="col">
-                        <div class="row">
-                            <div class="col"><b>COMBO</b></div>
-                            <div class="col">
-                                <button
-                                        type="button"
-                                        EditarImagem
-                                        class="btn btn-secondary btn-sm btn-block"
-                                >
-                                    <i class="fa-regular fa-images"></i> Imagem
-                                </button>
-                            </div>
-                        </div>
-
+                        <b>Itens no produto</b>
                     </div>
                 </div>
 
