@@ -77,7 +77,7 @@ if ($codigo) {
     $d = mysqli_fetch_object($result);
 
 
-    $ItensDoProduto = json_decode($d->detalhes);
+    $ItensDoProduto = json_decode($d->descricao);
 
     print_r($ItensDoProduto);
 
