@@ -18,13 +18,13 @@ include("../../lib/includes.php");
             opc = parseInt($(this).attr("excluir"));
 
             produto = parseInt($(this).attr("item"));
-            codigos = $("div[combo]").attr("codigos");
+            codigos = $("div[itens]").attr("codigos");
             atualiza = [];
             atualiza = JSON.parse("[" + codigos + "]");
 
             atualiza.splice(atualiza.indexOf(opc), 1);
 
-            $("div[combo]").attr("codigos", atualiza);
+            $("div[itens]").attr("codigos", atualiza);
 
 
             $.ajax({
@@ -33,7 +33,7 @@ include("../../lib/includes.php");
                     produtos: atualiza,
                 },
                 success: function (dados) {
-                    $("div[combo]").html(dados);
+                    $("div[itens]").html(dados);
                 }
             });
 
