@@ -7,7 +7,7 @@ include("../../lib/includes.php");
     $q = "select * from itens where codigo in (" . implode(", ", $_GET['produtos']) . ")";
     $r = mysqli_query($con, $q);
     while ($p = mysqli_fetch_object($r)) { ?>
-        <li Editar="<?= $p->codigo ?>" class="list-group-item d-flex justify-content-between align-items-center">
+        <li Editar="<?= $p->codigo ?>" class="list-group-item">
             <div class='row'>
                 <div class="col"><?= $p->item ?></div>
                 <div class="col">
