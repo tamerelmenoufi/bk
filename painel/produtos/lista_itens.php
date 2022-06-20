@@ -10,7 +10,7 @@
     $r = mysqli_query($con, $q);
     while($p = mysqli_fetch_object($r)){
 ?>
-    <li produto="<?=$p->codigo?>" class="list-group-item list-group-item-action"><?=$p->item?></li>
+    <li item="<?=$p->codigo?>" class="list-group-item list-group-item-action"><?=$p->item?></li>
 <?php
     }
 ?>
@@ -19,27 +19,26 @@
 <script>
     $(function () {
 
-        $("li[produto]").off('click').on('click', function(){
-            produto = parseInt($(this).attr("produto"));
-            codigos = $("div[combo]").attr("codigos");
+        $("li[item]").off('click').on('click', function(){
+            produto = parseInt($(this).attr("item"));
+            codigos = $("div[itens]").attr("codigos");
             existe = [];
             existe = JSON.parse("[" + codigos + "]");
 
             if(existe.includes(produto) === false){
                 console.log(existe.includes(produto));
                 existe.push(produto);
-                $("div[combo]").attr("codigos", existe);
+                $("div[itens]").attr("codigos", existe);
             }
             console.log(existe);
 
-
             $.ajax({
-                url:"combos/combo.php",
+                url:"produtos/itens.php",
                 data:{
                     produtos:existe,
                 },
                 success:function(dados){
-                    $("div[combo]").html(dados);
+                    $("div[itens]").html(dados);
                 }
             });
 
