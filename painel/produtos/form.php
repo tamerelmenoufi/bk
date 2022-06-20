@@ -487,6 +487,16 @@ if ($codigo) {
 
             }
 
+            vetor = [];
+            $("input[qt]").each(function(){
+                cod = $(this).attr("qt");
+                qt = $(this).val();
+
+                vetor.push([ cod => qt ]);
+
+            });
+            console.log(vetor);
+
 
             $.ajax({
                 url: '<?= $UrlScript; ?>/form.php',

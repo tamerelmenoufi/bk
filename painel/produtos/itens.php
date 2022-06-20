@@ -7,11 +7,11 @@ include("../../lib/includes.php");
     $q = "select * from itens where codigo in (" . implode(", ", $_GET['produtos']) . ")";
     $r = mysqli_query($con, $q);
     while ($p = mysqli_fetch_object($r)) { ?>
-        <li Editar="<?= $p->codigo ?>" class="list-group-item">
+        <li class="list-group-item">
             <div class='row'>
                 <div class="col-8"><?= $p->item ?></div>
                 <div class="col-2">
-                    <input type="text" style='width:30px; padding:2; text-align:center; margin:0; background:transparent; border:1px solid #eee; border-radius:2px;' />
+                    <input qt="<?= $p->codigo ?>" type="text" style='width:30px; padding:2; text-align:center; margin:0; background:transparent; border:1px solid #eee; border-radius:2px;' />
                 </div>
                 <div class="col-2 align-items-right">
                     <span excluir="<?= $p->codigo ?>" class="badge badge-pill" style="cursor:pointer">
@@ -39,7 +39,6 @@ include("../../lib/includes.php");
             atualiza.splice(atualiza.indexOf(opc), 1);
 
             $("div[itens]").attr("codigos", atualiza);
-
 
             $.ajax({
                 url: "produtos/itens.php",
