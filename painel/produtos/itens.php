@@ -7,9 +7,9 @@ include("../../lib/includes.php");
     $q = "select * from itens where codigo in (" . implode(", ", $_GET['produtos']) . ")";
     $r = mysqli_query($con, $q);
     while ($p = mysqli_fetch_object($r)) { ?>
-        <li excluir="<?= $p->codigo ?>" class="list-group-item list-group-item-action">
+        <li excluir="<?= $p->codigo ?>" class="list-group-item d-flex justify-content-between align-items-center">
             <?= $p->item ?>
-            <span class="badge badge-primary badge-pill">
+            <span class="badge badge-pill">
                 <i class="fa fa-trash text-color-success"></i>
             </span>
         </li>
