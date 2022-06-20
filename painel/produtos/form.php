@@ -492,7 +492,7 @@ if ($codigo) {
                 cod = $(this).attr("qt");
                 qt = $(this).val();
 
-                vetor.push([ cod => qt ]);
+                vetor[cod] = qt ;
 
             });
             console.log(vetor);
