@@ -30,7 +30,7 @@ include("../../lib/includes.php");
             $.ajax({
                 url: "produtos/itens.php",
                 data: {
-                    produtos: atualiza,
+                    produtos: atualiza
                 },
                 success: function (dados) {
                     $("div[itens]").html(dados);
