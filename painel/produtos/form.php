@@ -291,7 +291,7 @@ if ($codigo) {
 
                     </div>
 
-                    <div itens codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
+                    <div itens codigos="<?= (($d->detalhes) ?: '0') ?>" class="col"
                         style="height:300px; overflow:auto;">
 
                     </div>
@@ -454,7 +454,7 @@ if ($codigo) {
             }
 
             if (codigos) {
-                dados.push({name: 'descricao', value: codigos});
+                dados.push({name: 'detalhes', value: codigos});
             }
 
             // detalhes = [];
