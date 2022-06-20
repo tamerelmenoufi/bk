@@ -375,7 +375,7 @@ if ($codigo) {
 
         ///////////////////////////////////////////////////////
 
-        $("li[listaItens]").click(function () {
+        $("li[categoria]").click(function () {
             categoria = $(this).attr("categoria");
             $.ajax({
                 url: "produtos/lista_itens.php",
