@@ -9,11 +9,11 @@ include("../../lib/includes.php");
     while ($p = mysqli_fetch_object($r)) { ?>
         <li Editar="<?= $p->codigo ?>" class="list-group-item">
             <div class='row'>
-                <div class="col"><?= $p->item ?></div>
-                <div class="col">
-                    Aqui é o input
+                <div class="col-8"><?= $p->item ?></div>
+                <div class="col-2">
+                    <input type="text" class='form-control' />
                 </div>
-                <div class="col">
+                <div class="col-2">
                     <span excluir="<?= $p->codigo ?>" class="badge badge-pill" style="cursor:pointer">
                         <i class="fa fa-trash text-danger"></i>
                     </span>
