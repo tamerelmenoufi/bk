@@ -373,6 +373,20 @@ if ($codigo) {
         }
 
 
+
+        existe = JSON.parse("[" + $("div[itens]").attr("codigos") + "]");
+
+        $.ajax({
+            url: "produtos/itens.php",
+            data: {
+                produtos: existe,
+            },
+            success: function (dados) {
+                $("div[itens]").html(dados);
+            }
+        });
+
+
         ///////////////////////////////////////////////////////
 
         $("li[categoria]").click(function () {
@@ -433,9 +447,14 @@ if ($codigo) {
 
             var codigo = $('#codigo').val();
             var dados = $(this).serializeArray();
+            var codigos = $("div[itens]").attr("codigos");
 
             if (codigo) {
                 dados.push({name: 'codigo', value: codigo});
+            }
+
+            if (codigos) {
+                dados.push({name: 'descricao', value: codigos});
             }
 
             // detalhes = [];
