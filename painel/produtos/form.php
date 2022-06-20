@@ -275,7 +275,7 @@ if ($codigo) {
                     <div class="col" style="height:300px; overflow:auto;">
                         <ul class="list-group">
                             <?php
-                            $q = "select * from categorias where situacao = '1' and deletado != '1' and categoria != 'COMBOS'";
+                            $q = "select * from categorias_itens where situacao = '1' and deletado != '1'";
                             $r = mysqli_query($con, $q);
                             while ($c = mysqli_fetch_object($r)) {
                                 ?>
