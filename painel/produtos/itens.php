@@ -1,10 +1,31 @@
 <?php
 include("../../lib/includes.php");
+
+if ($_GET['codigo']) {
+    $query = "SELECT * FROM produtos WHERE codigo = '{$_GET['codigo']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+
+    $ItensDoProduto = json_decode($d->itens);
+
+    print_r($ItensDoProduto);
+
+    $Codigos = [];
+    $produtos = false;
+    foreach($ItensDoProduto as $ind => $val){
+        $Codigos[] = $val->produto;
+    }
+    if($Codigos) $produtos = implode(", ",$Codigos);
+}
+
+
+
 ?>
 
 <ul class="list-group">
     <?php
-    $q = "select * from itens where codigo in (" . implode(", ", $_GET['produtos']) . ")";
+    $q = "select * from itens where codigo in (" . implode(", ", $Codigos) . ")";
     $r = mysqli_query($con, $q);
     while ($p = mysqli_fetch_object($r)) { ?>
         <li class="list-group-item">
