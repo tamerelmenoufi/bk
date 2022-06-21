@@ -286,6 +286,7 @@ if ($codigo) {
                             while ($c = mysqli_fetch_object($r)) {
                                 ?>
                                 <li categoria="<?= $c->codigo ?>"
+                                    produto="<?= $codigo ?>"
                                     class="list-group-item list-group-item-action"><?= $c->categoria ?></li>
                                 <?php
                             }
@@ -397,10 +398,12 @@ if ($codigo) {
 
         $("li[categoria]").click(function () {
             categoria = $(this).attr("categoria");
+            produto = $(this).attr("produto");
             $.ajax({
                 url: "produtos/lista_itens.php",
                 data: {
-                    categoria
+                    categoria,
+                    produto
                 },
                 success: function (dados) {
                     $("div[listaItens]").html(dados);

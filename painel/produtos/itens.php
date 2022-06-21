@@ -1,6 +1,23 @@
 <?php
 include("../../lib/includes.php");
 
+if($_GET['acao'] == 'addProduto'){
+
+    $query = "SELECT * FROM produtos WHERE codigo = '{$_GET['produto']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $ItensDoProduto = json_decode($d->itens);
+
+    $ItensDoProduto[] = ['produto' => $_GET['item'], 'quantidade' => 1];
+
+    $ItensDoProduto =  json_encode($ItensDoProduto);
+
+    mysqli_query($con, "update produtos set itens = '{$ItensDoProduto}' where  codigo = '{$_GET['produto']}'");
+
+    $_GET['codigo'] = $_GET['produto'];
+}
+
 if ($_GET['codigo']) {
     $query = "SELECT * FROM produtos WHERE codigo = '{$_GET['codigo']}'";
     $result = mysqli_query($con, $query);

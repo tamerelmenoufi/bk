@@ -20,24 +20,26 @@
     $(function () {
 
         $("li[item]").off('click').on('click', function(){
-            produto = parseInt($(this).attr("item"));
-            codigos = $("div[itens]").attr("codigos");
-            existe = [];
-            existe = JSON.parse("[" + codigos + "]");
 
-            if(existe.includes(produto) === false){
-                console.log(existe.includes(produto));
-                existe.push(produto);
-                $("div[itens]").attr("codigos", existe);
-            }
-            console.log(existe);
+            item = parseInt($(this).attr("item"));
 
+            // codigos = $("div[itens]").attr("codigos");
+            // existe = [];
+            // existe = JSON.parse("[" + codigos + "]");
 
+            // if(existe.includes(produto) === false){
+            //     console.log(existe.includes(produto));
+            //     existe.push(produto);
+            //     $("div[itens]").attr("codigos", existe);
+            // }
+            // console.log(existe);
 
             $.ajax({
                 url:"produtos/itens.php",
                 data:{
-                    produtos:existe,
+                    produto:'<?=$_GET['produto']?>',
+                    item,
+                    acao:'addProduto'
                 },
                 success:function(dados){
                     $("div[itens]").html(dados);
