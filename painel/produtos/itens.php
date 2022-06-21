@@ -1,6 +1,27 @@
 <?php
 include("../../lib/includes.php");
 
+if($_GET['acao'] == 'delProduto'){
+
+    $query = "SELECT * FROM produtos WHERE codigo = '{$_GET['produto']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $ItensDoProduto = json_decode($d->itens);
+    $ItensNovos = [];
+    foreach($ItensDoProduto as $ind => $val){
+        if($val->produto != $_GET['item']){
+            $ItensNovos[] = ['produto' => $val->produto, 'quantidade' => $val->quantidade];
+        }
+    }
+
+    $ItensDoProduto =  json_encode($ItensNovos);
+
+    mysqli_query($con, "update produtos set itens = '{$ItensDoProduto}' where  codigo = '{$_GET['produto']}'");
+
+    $_GET['codigo'] = $_GET['produto'];
+}
+
 if($_GET['acao'] == 'addProduto'){
 
     $query = "SELECT * FROM produtos WHERE codigo = '{$_GET['produto']}'";
@@ -65,27 +86,19 @@ if ($_GET['codigo']) {
     $(function() {
         $("span[excluir]").click(function () {
 
-            opc = parseInt($(this).attr("excluir"));
-
-            produto = parseInt($(this).attr("item"));
-            codigos = $("div[itens]").attr("codigos");
-            atualiza = [];
-            atualiza = JSON.parse("[" + codigos + "]");
-
-            atualiza.splice(atualiza.indexOf(opc), 1);
-
-            $("div[itens]").attr("codigos", atualiza);
+            item = parseInt($(this).attr("excluir"));
 
             $.ajax({
-                url: "produtos/itens.php",
-                data: {
-                    produtos: atualiza
+                url:"produtos/itens.php",
+                data:{
+                    produto:'<?=$_GET['produto']?>',
+                    item,
+                    acao:'delProduto'
                 },
-                success: function (dados) {
+                success:function(dados){
                     $("div[itens]").html(dados);
                 }
             });
-
 
         })
     });
