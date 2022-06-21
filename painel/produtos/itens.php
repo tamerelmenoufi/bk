@@ -66,7 +66,7 @@ if ($_GET['codigo']) {
     while ($p = mysqli_fetch_object($r)) { ?>
         <li class="list-group-item">
             <div class='row'>
-                <div class="col-8"><?= $p->item ?> XX</div>
+                <div class="col-8"><?= $p->item ?></div>
                 <div class="col-2">
                     <input qt="<?= $p->codigo ?>" value="<?=$Quantidade[$p->codigo]?>" type="text" style='width:30px; padding:2; text-align:center; margin:0; background:transparent; border:1px solid #eee; border-radius:2px;' />
                 </div>
