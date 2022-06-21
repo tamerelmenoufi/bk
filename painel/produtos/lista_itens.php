@@ -32,6 +32,8 @@
             }
             console.log(existe);
 
+
+
             $.ajax({
                 url:"produtos/itens.php",
                 data:{

@@ -77,7 +77,7 @@ if ($codigo) {
     $d = mysqli_fetch_object($result);
 
 
-    $ItensDoProduto = json_decode($d->descricao);
+    $ItensDoProduto = json_decode($d->itens);
 
     print_r($ItensDoProduto);
 
@@ -500,7 +500,7 @@ if ($codigo) {
                 vetor.push({produto: cod, quantidade: qt});
             });
             const vetorItens = JSON.stringify(vetor);
-            dados.push({name: 'descricao', value: vetorItens});
+            dados.push({name: 'itens', value: vetorItens});
 
             $.ajax({
                 url: '<?= $UrlScript; ?>/form.php',
