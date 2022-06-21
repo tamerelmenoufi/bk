@@ -6,10 +6,7 @@ if ($_GET['codigo']) {
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-
     $ItensDoProduto = json_decode($d->itens);
-
-    print_r($ItensDoProduto);
 
     $Codigos = [];
     $produtos = false;
