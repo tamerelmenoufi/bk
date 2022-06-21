@@ -2,11 +2,30 @@
 
     include("../../lib/includes.php");
 
+
+    if ($codigo) {
+        $query = "SELECT * FROM produtos WHERE codigo = '{$codigo}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
+
+
+        $ItensDoProduto = json_decode($d->itens);
+
+        print_r($ItensDoProduto);
+
+        $Codigos = [];
+        $produtos = false;
+        foreach($ItensDoProduto as $ind => $val){
+            $Codigos[] = $val->produto;
+        }
+        if($Codigos) $produtos = implode(", ",$Codigos);
+    }
+
 ?>
 
 <ul class="list-group">
 <?php
-    $q = "select * from itens where categoria = '{$_GET['categoria']}'";
+    $q = "select * from itens where categoria = '{$produtos}'";
     $r = mysqli_query($con, $q);
     while($p = mysqli_fetch_object($r)){
 ?>
