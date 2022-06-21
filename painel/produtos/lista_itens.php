@@ -3,8 +3,8 @@
     include("../../lib/includes.php");
 
 
-    if ($codigo) {
-        $query = "SELECT * FROM produtos WHERE codigo = '{$codigo}'";
+    if ($_GET['codigo']) {
+        $query = "SELECT * FROM produtos WHERE codigo = '{$_GET['codigo']}'";
         $result = mysqli_query($con, $query);
         $d = mysqli_fetch_object($result);
 

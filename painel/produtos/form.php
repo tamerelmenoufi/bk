@@ -380,12 +380,12 @@ if ($codigo) {
 
 
 
-        existe = JSON.parse("[" + $("div[itens]").attr("codigos") + "]");
+        // existe = JSON.parse("[" + $("div[itens]").attr("codigos") + "]");
 
         $.ajax({
             url: "produtos/itens.php",
             data: {
-                produtos: existe,
+                codigo:'<?=$codigo?>',
             },
             success: function (dados) {
                 $("div[itens]").html(dados);
