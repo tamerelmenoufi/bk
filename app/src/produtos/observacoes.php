@@ -58,7 +58,14 @@
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input del type="checkbox" class="form-check-input" id="del<?=$d->codigo?>">
+                            <input
+                                del
+                                type="checkbox"
+                                class="form-check-input"
+                                id="del<?=$d->codigo?>"
+                                codigo="<?=$d->codigo?>"
+                                valor="<?=$d->valor?>"
+                            >
                             <label class="form-check-label" for="del<?=$d->codigo?>"> <small><?=$d->item?></small></label>
                         </div>
                         <!-- <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span> -->
@@ -83,7 +90,14 @@
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input add type="checkbox" class="form-check-input" id="add<?=$d->codigo?>">
+                            <input
+                                add
+                                type="checkbox"
+                                class="form-check-input"
+                                id="add<?=$d->codigo?>"
+                                codigo="<?=$d->codigo?>"
+                                valor="<?=$d->valor?>"
+                            >
                             <label class="form-check-label" for="add<?=$d->codigo?>"><small><?=$d->item?></small></label>
                         </div>
                         <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
