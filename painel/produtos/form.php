@@ -237,7 +237,7 @@ if ($codigo) {
                                 required
                         >
                                 <?php
-                                $query1 = "SELECT * FROM categoria_medidas where deletado != '1' ORDER BY medida";
+                                $query1 = "SELECT * FROM categoria_medidas where deletado != '1' ORDER BY ordem";
                                 $result1 = mysqli_query($con, $query1);
 
                                 $check = explode(',', $d->medidas);
