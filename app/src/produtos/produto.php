@@ -371,7 +371,7 @@
                 produto_descricao += obsDel;
             }
 
-            consolue.log(produto_descricao);
+            console.log(produto_descricao);
 
             return false;
 
