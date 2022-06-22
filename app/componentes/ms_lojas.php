@@ -6,6 +6,9 @@
     .PainelLojas{
         padding:10px;
     }
+    .btn-lojas{
+        background-color:#502314;
+    }
 </style>
 
 <div class="PainelLojas">
@@ -17,7 +20,7 @@
                 $result = mysqli_query($con, $query);
                 while($d = mysqli_fetch_object($result)){
             ?>
-            <button class="btn btn-primary btn-block mb-2" loja="<?=$d->codigo?>"><?=strtoupper($d->nome)?></button>
+            <button class="btn btn-lojas btn-block mb-2" loja="<?=$d->codigo?>"><?=strtoupper($d->nome)?></button>
             <?php
                 }
             ?>
