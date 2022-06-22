@@ -222,43 +222,42 @@ if ($codigo) {
                             </div>
                         </div>
 
-                    </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="medidas">Medidas <i class="text-danger">*</i></label>
+
+                                <select
+                                class="form-control"
+                                id="medida"
+                                name="medida"
+                                required
+                        >
+                                <?php
+                                $query1 = "SELECT * FROM categoria_medidas where deletado != '1' ORDER BY medida";
+                                $result1 = mysqli_query($con, $query1);
+
+                                $check = explode(',', $d->medidas);
+
+                                while ($dados = mysqli_fetch_object($result1)):
+                                    ?>
+
+                                    <option
+                                        <?= ($dados->codigo == $d->medida) ? 'selected' : ''; ?>
+                                            value="<?= $dados->codigo; ?>">
+                                        <?= $dados->medida; ?>
+                                    </option>
 
 
-                    <div class="col-md-6">
+                                <?php endwhile; ?>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="medidas">Medidas <i class="text-danger">*</i></label>
-
-                            <select
-                            class="form-control"
-                            id="medida"
-                            name="medida"
-                            required
-                    >
-                            <?php
-                            $query1 = "SELECT * FROM categoria_medidas where deletado != '1' ORDER BY medida";
-                            $result1 = mysqli_query($con, $query1);
-
-                            $check = explode(',', $d->medidas);
-
-                            while ($dados = mysqli_fetch_object($result1)):
-                                ?>
-
-                                <option
-                                    <?= ($dados->codigo == $d->medida) ? 'selected' : ''; ?>
-                                        value="<?= $dados->codigo; ?>">
-                                    <?= $dados->medida; ?>
-                                </option>
-
-
-                            <?php endwhile; ?>
-                            </select>
                         </div>
-
-
                     </div>
-            </div>
+
+                </div>
 
 
 
