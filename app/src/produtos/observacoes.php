@@ -5,6 +5,18 @@
     $result = mysqli_query($con, $query);
     $p = mysqli_fetch_object($result);
 
+
+    $ItensDoProduto = json_decode($p->itens);
+
+    $Codigos = [];
+    $produtos = false;
+    foreach($ItensDoProduto as $ind => $val){
+        $Codigos[] = $val->produto;
+        $Quantidade[$val->produto] = $val->quantidade;
+    }
+    if($Codigos) $produtos = implode(", ",$Codigos);
+
+
 ?>
 
 <style>
@@ -38,35 +50,23 @@
                 <h5 class="card-header"><i class="fa-solid fa-eraser"></i> <small> Remover Itens do produto</small></h5>
                 <ul class="list-group">
 
+
+                <?php
+                        $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $Codigos) . ")";
+                        $result = mysqli_query($con, $query);
+                        while($d = mysqli_fetch_object($result)){
+                    ?>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="del<?=$d->codigo?>">
+                            <label class="form-check-label" for="del<?=$d->codigo?>"><?=$d->item?></label>
+                        </div>
+                        <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span>
+                    </li>
                     <?php
-                    echo $query;
-                        print_r(json_decode($p->itens));
+                        }
                     ?>
 
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                        </div>
-                    </li>
 
                 </ul>
             </div>
