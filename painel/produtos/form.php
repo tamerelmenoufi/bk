@@ -79,7 +79,6 @@ if ($codigo) {
 
     $ItensDoProduto = json_decode($d->itens);
 
-    print_r($ItensDoProduto);
 
 }
 
