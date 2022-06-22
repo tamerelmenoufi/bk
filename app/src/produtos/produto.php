@@ -152,6 +152,16 @@
         margin-top:10px;
         margin-bottom:10px;
     }
+
+    .observacoes{
+        color:#333;
+        font-size:10px;
+        /* text-align:justify; */
+        z-index: 2;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+
 </style>
 <div class="col">
     <div class="row" style="margin-top:-65px; padding-bottom:60px;">
@@ -210,6 +220,7 @@
                                 </div>
                                 <div style="position:fixed; top:335px; bottom:100px; overflow:scroll; left:10px; right:10px;">
                                     <p class="observacoes"></p>
+                                    <p class="observacoes2"></p>
                                     <p class="card-text"><?= $p->descricao ?></p>
                                 </div>
                                 <!-- <div class="col-md-12" style="margin-bottom:20px;">
