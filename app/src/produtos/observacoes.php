@@ -39,6 +39,7 @@
                 <ul class="list-group">
 
                     <?php
+                    echo $query;
                         print_r(json_decode($p->itens));
                     ?>
 
