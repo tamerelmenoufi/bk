@@ -1,6 +1,25 @@
 <?php
     include("../../../lib/includes.php");
 ?>
+
+<style>
+    .ObsTopoTitulo{
+        position:fixed;
+        left:0px;
+        top:0px;
+        width:100%;
+        height:60px;
+        background:#f5ebdc;
+        padding-left:70px;
+        padding-top:15px;
+        z-index:1;
+    }
+</style>
+
+<div class="ObsTopoTitulo">
+    <h4>Personalizar Pedido</h4>
+</div>
+
 <div class="col">
     <div class="col" style="padding-bottom:50px;">
 
