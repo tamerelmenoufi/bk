@@ -232,8 +232,8 @@ if ($codigo) {
 
                                 <select
                                 class="form-control"
-                                id="medida"
-                                name="medida"
+                                id="unidade"
+                                name="unidade"
                                 required
                         >
                                 <?php
