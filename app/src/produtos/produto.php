@@ -364,12 +364,12 @@
 
             //-------
             var produto_descricao;
-            if(produto_descricao){
+            if($(".observacoes").html()){
                 produto_descricao += "<b>Observações:</b><br>";
                 produto_descricao += $(".observacoes").html()+'<br>';
-                produto_descricao += obsAdd;
-                produto_descricao += obsDel;
             }
+            produto_descricao += obsAdd;
+            produto_descricao += obsDel;
 
             console.log(produto_descricao);
 
