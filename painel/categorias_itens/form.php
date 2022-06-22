@@ -143,6 +143,9 @@ if ($codigo) {
                 </select>
             </div> -->
 
+            <?php
+            /*
+            ?>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -206,7 +209,9 @@ if ($codigo) {
                     </div>
                 </div>
             </div>
-
+            <?php
+            //*/
+            ?>
             <div class="form-group">
                 <label for="situacao">
                     Situação <i class="text-danger">*</i>
