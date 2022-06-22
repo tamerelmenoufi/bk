@@ -327,7 +327,7 @@
         $("button[adicionar_produto]").click(function(){
 
             for(i=0; i < Add.length; i++){
-                console.log(Add[i]->codigo)
+                console.log(Add[i].codigo)
             }
 
             return false;
