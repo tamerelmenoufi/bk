@@ -326,10 +326,9 @@
 
         $("button[adicionar_produto]").click(function(){
 
-            Add.each((e,d)=>{
-                console.log(e);
-                console.log(d);
-            })
+            for(i=0; i < Add.length; i++){
+                console.log(Add[i]->codigo)
+            }
 
             return false;
 
