@@ -18,8 +18,8 @@
         margin:20px;
     }
     .topoImgLoja{
-        position:absolute;
-        height:60px;
+        position:relative;
+        height:120px;
         left:50%;
         margin-left:-30px;
         transform: rotate(-10deg);
