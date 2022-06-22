@@ -145,7 +145,6 @@ if ($codigo) {
             </div>
 
             <div class="form-group">
-                <label for="medidas">Valores <i class="text-danger">*</i></label>
 
                 <!-- <?php
                 $query1 = "SELECT * FROM categoria_medidas "
@@ -188,8 +187,6 @@ if ($codigo) {
 
                     </div>
                 <?php endwhile; ?> -->
-
-
 
 
 
@@ -269,56 +266,8 @@ if ($codigo) {
 
                 </div>
 
-
-
-
-
-
-
-
-
-                <div class="row cor">
-                        <div class="col-md-3">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><b>Individual</b> R$</span>
-                                </div>
-
-                                <input
-                                        name="valor"
-                                        id="valor"
-                                        value="<?= $d->valor; ?>"
-                                        type="number"
-                                        class="form-control"
-                                >
-                            </div>
-                        </div>
-
-
-                        <div class="col-md-6"></div>
-
-
-                        <div class="col-md-3">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><b>Combo</b> R$</span>
-                                </div>
-
-                                <input
-                                        name="valor_combo"
-                                        id="valor_combo"
-                                        value="<?= $d->valor_combo; ?>"
-                                        type="number"
-                                        class="form-control"
-                                >
-                            </div>
-                        </div>
-
-                    </div>
-
-
-
             </div>
+
 
             <div class="form-group">
                 <?php
