@@ -281,6 +281,10 @@
         var qt = 0;
         var v_produto_com_sabores = 0;
 
+        //Dados Globais para adicionar e ou remover itens
+        Add = [];
+        Del = [];
+
         $("#mais").click(function () {
             quantidade = $("#quantidade").html();
             atual = $("span[valor]").attr("atual");
@@ -321,6 +325,13 @@
 
 
         $("button[adicionar_produto]").click(function(){
+
+            Add.each((e,d)=>{
+                console.log(e);
+                console.log(d);
+            })
+
+            return false;
 
             //-------
             valor_unitario = $("span[valor]").attr("atual");
