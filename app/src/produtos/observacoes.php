@@ -58,7 +58,7 @@
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="del<?=$d->codigo?>">
+                            <input del type="checkbox" class="form-check-input" id="del<?=$d->codigo?>">
                             <label class="form-check-label" for="del<?=$d->codigo?>"> <small><?=$d->item?></small></label>
                         </div>
                         <!-- <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span> -->
@@ -83,7 +83,7 @@
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="add<?=$d->codigo?>">
+                            <input add type="checkbox" class="form-check-input" id="add<?=$d->codigo?>">
                             <label class="form-check-label" for="add<?=$d->codigo?>"><small><?=$d->item?></small></label>
                         </div>
                         <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
@@ -110,6 +110,27 @@
 
         $("#incluir_observacoes").click(function(){
             $(".observacoes").html($("#observacoes").val());
+
+            let Add = [];
+            $("input[add]").each(function(){
+                if($(this).prop("checked") == true){
+                    Add.push({codigo:$(this).attr('codigo'),valor:$(this).attr('valor')});
+                }
+            });
+
+            let Del = [];
+            $("input[del]").each(function(){
+                if($(this).prop("checked") == true){
+                    Del.push({codigo:$(this).attr('codigo'),valor:$(this).attr('valor')});
+                }
+            });
+
+            console.log('Adicionados:');
+            console.log(Add);
+            console.log('Deletados:');
+            console.log(Del);
+            return false;
+
             PageClose();
         });
 
