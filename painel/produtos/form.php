@@ -249,8 +249,8 @@ if ($codigo) {
 
                     <option
                         <?= ($dados->codigo == $d->medida) ? 'selected' : ''; ?>
-                            value="<?= $key; ?>">
-                        <?= $value; ?>
+                            value="<?= $dados->codigo; ?>">
+                        <?= $dados->medida; ?>
                     </option>
 
 
