@@ -30,7 +30,7 @@
 
         <div class="mb-3">
             <div class="card">
-                <h5 class="card-header"><i class="fa-solid fa-eraser"></i> Remover Itens do produto</h5>
+                <h5 class="card-header"><i class="fa-solid fa-eraser"></i> <small> Remover Itens do produto</small></h5>
                 <ul class="list-group">
                     <li class="list-group-item">Cras justo odio</li>
                     <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -41,7 +41,7 @@
 
         <div class="mb-3">
             <div class="card">
-                <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> Adicionar Itens ao produto</h5>
+                <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
                 <ul class="list-group">
                     <li class="list-group-item">Cras justo odio</li>
                     <li class="list-group-item">Dapibus ac facilisis in</li>
