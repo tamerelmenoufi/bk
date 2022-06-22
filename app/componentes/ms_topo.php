@@ -39,3 +39,22 @@
         ?>
     </div>
 </div>
+
+<script>
+    $(function(){
+
+        <?php
+            if(!$c->loja){
+        ?>
+        $.ajax({
+            url:"componentes/ms_lojas.php",
+            success:function(dados){
+                $(".ListaLojas").html(dados);
+            }
+        });
+        <?php
+            }
+        ?>
+
+    })
+</script>
