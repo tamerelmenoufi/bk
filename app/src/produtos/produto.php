@@ -149,7 +149,7 @@
         font-size:10px;
         /* text-align:justify; */
         z-index: 2;
-        margin-top:30px;
+        margin-top:10px;
         margin-bottom:10px;
     }
 </style>
@@ -192,7 +192,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:250px;">
+                <div class="row" style="margin-top:270px;">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
