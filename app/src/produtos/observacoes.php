@@ -67,7 +67,7 @@
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
                 <ul class="list-group">
                     <?php
-                        $query = "select * from itens where situacao = '1' and deletado != '1' order by item"
+                        $query = "select * from itens where situacao = '1' and deletado != '1' order by item";
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
