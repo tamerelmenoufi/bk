@@ -326,24 +326,56 @@
 
         $("button[adicionar_produto]").click(function(){
 
-            for(i=0; i < Add.length; i++){
-                console.log(Add[i].codigo)
-            }
-
-            return false;
-
             //-------
             valor_unitario = $("span[valor]").attr("atual");
             //-------
             quantidade = $("#quantidade").html();
-            //-------
-            valor_total = (valor_unitario*quantidade);
+
             //-------
             var produto = '<?=$p->codigo?>';
-            //-------
-            var produto_descricao = $(".observacoes").html();
+
             //-------
             var produto_nome = '<?=$p->produto?>';
+
+            //--------
+            var obsAdd;
+            if(Add.length > 0){
+                obsAdd += "<b>Adicionar os Itens no produto:</b><br>";
+            }
+            for(i=0; i < Add.length; i++){
+                console.log(Add[i].codigo)
+                valor_unitario = (valor_unitario*1 + Add[i].valor);
+                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
+            }
+
+            //---------
+            var obsDel;
+            if(Del.length > 0){
+                obsDel += "<b>Remover os Itens do produto:</b><br>";
+            }
+            for(i=0; i < Del.length; i++){
+                console.log(Del[i].codigo)
+                valor_unitario = (valor_unitario*1 + Del[i].valor);
+                obsDel += `- ${Del[i].quantidade} x ${Del[i].descricao}<br>`;
+            }
+
+            //-------
+            valor_total = (valor_unitario*quantidade);
+
+            //-------
+            var produto_descricao;
+            if(produto_descricao){
+                produto_descricao += "<b>Observações:</b><br>";
+                produto_descricao += $(".observacoes").html()+'<br>';
+                produto_descricao += obsAdd;
+                produto_descricao += obsDel;
+            }
+
+            consolue.log(produto_descricao);
+
+            return false;
+
+
 
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
             $.ajax({

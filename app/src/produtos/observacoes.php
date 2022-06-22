@@ -64,6 +64,7 @@
                                 class="form-check-input"
                                 id="del<?=$d->codigo?>"
                                 codigo="<?=$d->codigo?>"
+                                descricao="<?=$d->item?>"
                                 valor="<?=$d->valor?>"
                             >
                             <label class="form-check-label" for="del<?=$d->codigo?>"> <small><?=$d->item?></small></label>
@@ -96,6 +97,7 @@
                                 class="form-check-input"
                                 id="add<?=$d->codigo?>"
                                 codigo="<?=$d->codigo?>"
+                                descricao="<?=$d->item?>"
                                 valor="<?=$d->valor?>"
                             >
                             <label class="form-check-label" for="add<?=$d->codigo?>"><small><?=$d->item?></small></label>
@@ -135,7 +137,7 @@
             Del = [];
             $("input[del]").each(function(){
                 if($(this).prop("checked") == true){
-                    Del.push({codigo:$(this).attr('codigo'),valor:$(this).attr('valor')});
+                    Del.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:$(this).attr('quantidade'), valor:$(this).attr('valor')});
                 }
             });
 
