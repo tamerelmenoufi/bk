@@ -73,8 +73,8 @@
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1"><?=$d->item?></label>
+                            <input type="checkbox" class="form-check-input" id="item<?=$d->codigo?>">
+                            <label class="form-check-label" for="item<?=$d->codigo?>"><?=$d->item?></label>
                         </div>
                         <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span>
                     </li>
