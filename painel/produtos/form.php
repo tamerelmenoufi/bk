@@ -228,7 +228,7 @@ if ($codigo) {
                         <div class="col-md-6">
 
                             <div class="form-group">
-                                <label for="medidas">Medidas <i class="text-danger">*</i></label>
+                                <label for="medidas">Medida <i class="text-danger">*</i></label>
 
                                 <select
                                 class="form-control"
