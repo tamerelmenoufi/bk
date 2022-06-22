@@ -65,7 +65,7 @@
 
         $('button[opc="lojas"]').click(function(){
 
-            $(".ListaLojas").css("dispaly","block");
+            $(".ListaLojas").css("display","block");
             $.ajax({
                 url:"componentes/ms_lojas.php",
                 success:function(dados){
