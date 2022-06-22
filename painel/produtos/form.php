@@ -246,7 +246,7 @@ if ($codigo) {
                                     ?>
 
                                     <option
-                                        <?= ($dados->codigo == $d->medida) ? 'selected' : ''; ?>
+                                        <?= ($dados->codigo == $d->unidade) ? 'selected' : ''; ?>
                                             value="<?= $dados->codigo; ?>">
                                         <?= $dados->medida; ?>
                                     </option>
