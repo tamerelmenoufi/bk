@@ -11,13 +11,13 @@
 <div class="PainelLojas">
     <div class="row">
         <div class='col'>
-            <h4>Selecione a Loja se sua preferência</h4>
+            <div style="text-align:center; color:#333; font-size:12px;">Selecione a Loja se sua preferência</div>
             <?php
                 $query = "select * from lojas where situacao = '1' order by nome";
                 $result = mysqli_query($con, $query);
                 while($d = mysqli_fetch_object($result)){
             ?>
-            <button class="btn btn-primary btn-block mb-2" loja="<?=$d->codigo?>"><?=$d->nome?></button>
+            <button class="btn btn-primary btn-block mb-2" loja="<?=$d->codigo?>"><?=strtoupper($d->nome)?></button>
             <?php
                 }
             ?>
