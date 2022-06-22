@@ -28,6 +28,9 @@
         <button opc="enderecos" acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-envelope"></i> Endereços
         </button>
+        <button opc="lojas" class="btn btn-dark btn-lg btn-block">
+            <i class="fa-solid fa-envelope"></i> Lojas
+        </button>
         <button opc="pedidos" acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
         </button>
@@ -60,7 +63,18 @@
             });
         });
 
+        $('button[opc="lojas"]').click(function(){
 
+            $(".ListaLojas").css("dispaly","block");
+            $.ajax({
+                url:"componentes/ms_lojas.php",
+                success:function(dados){
+                    PageClose();
+                    $(".ListaLojas").html(dados);
+                }
+            });
+
+        });
 
         $("button[sair]").click(function(){
 
