@@ -208,8 +208,8 @@ if ($codigo) {
 
 
                         <div class="col-md-3">
-                            <div class="input-group mb-3">
                             <label for="medidas">Valores Combo<i class="text-danger">*</i></label>
+                            <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">R$</span>
                                 </div>
