@@ -1,6 +1,6 @@
 <?php
     //Config
-    $ConfTitulo = 'Categorias de Produtos';
+    $ConfTitulo = 'Categorias de Itens';
     $UrlScript = 'categorias_itens/';
     //Config ----------
 
