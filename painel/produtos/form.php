@@ -187,10 +187,10 @@ if ($codigo) {
 
                 <div class="row cor">
                         <div class="col-md-3">
-                            <label for="medidas">Valores <i class="text-danger">*</i></label>
+                            <label for="medidas">Valores Individual<i class="text-danger">*</i></label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><b>Individual</b> R$</span>
+                                    <span class="input-group-text">R$</span>
                                 </div>
 
                                 <input
@@ -209,8 +209,9 @@ if ($codigo) {
 
                         <div class="col-md-3">
                             <div class="input-group mb-3">
+                            <label for="medidas">Valores Combo<i class="text-danger">*</i></label>
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"><b>Combo</b> R$</span>
+                                    <span class="input-group-text">R$</span>
                                 </div>
 
                                 <input
