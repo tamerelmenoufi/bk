@@ -338,7 +338,7 @@
             var produto_nome = '<?=$p->produto?>';
 
             //--------
-            var obsAdd;
+            var obsAdd = '';
             if(Add.length > 0){
                 obsAdd += "<b>Adicionar os Itens no produto:</b><br>";
             }
@@ -349,7 +349,7 @@
             }
 
             //---------
-            var obsDel;
+            var obsDel = '';
             if(Del.length > 0){
                 obsDel += "<b>Remover os Itens do produto:</b><br>";
             }
