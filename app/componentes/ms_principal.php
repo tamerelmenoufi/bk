@@ -74,6 +74,16 @@
 
     }
 
+    .ListaLojas{
+        position:fixed;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        background-color:#fff;
+        z-index:999;
+    }
+
 </style>
 <div class="topo"></div>
 
@@ -103,6 +113,7 @@
 </div>
 <div class="rodape"></div>
 
+<div class="ListaLojas"></div>
 
 <script>
     $(function(){
