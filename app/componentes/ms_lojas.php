@@ -1,7 +1,12 @@
 <?php
     include("../../lib/includes.php");
-?>
 
+    if($_GET['loja']){
+        mysqli_query($con, "update clientes set loja = '{$_GET['loja']}' where codigo = '{$_SESSION['AppCliente']}'");
+        exit();
+    }
+
+?>
 <style>
     .PainelLojas{
         padding:10px;
@@ -50,7 +55,18 @@
     $(function(){
 
         $("button[loja]").click(function(){
-            $(".ListaLojas").css("display","none");
+            loja = $(this).attr('Loja');
+            descricao = $(this).text();
+            $.ajax({
+                url:"componentes/ms_lojas.php",
+                data:{
+                    loja
+                },
+                success:function(dados){
+                    $("span[TopoTituloLoja]").html(descricao);
+                    $(".ListaLojas").css("display","none");
+                }
+            });
         });
 
     })
