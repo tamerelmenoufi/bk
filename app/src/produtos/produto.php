@@ -344,7 +344,7 @@
             }
             for(i=0; i < Add.length; i++){
                 console.log(Add[i].codigo)
-                valor_unitario = (valor_unitario*1 + Add[i].valor);
+                valor_unitario = ( (valor_unitario*1) + (Add[i].valor * Add[i].quantidade));
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
             }
 
@@ -355,8 +355,7 @@
             }
             for(i=0; i < Del.length; i++){
                 console.log(Del[i].codigo)
-                valor_unitario = (valor_unitario*1 + Del[i].valor);
-                obsDel += `- ${Del[i].quantidade} x ${Del[i].descricao}<br>`;
+                obsDel += `- ${Del[i].descricao}<br>`;
             }
 
             //-------
@@ -372,6 +371,8 @@
             produto_descricao += obsDel;
 
             console.log(produto_descricao);
+            console.log(valor_total);
+
 
             return false;
 

@@ -130,14 +130,14 @@
             Add = [];
             $("input[add]").each(function(){
                 if($(this).prop("checked") == true){
-                    Add.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:$(this).attr('quantidade'), valor:$(this).attr('valor')});
+                    Add.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:/*$(this).attr('quantidade')*/1, valor:$(this).attr('valor')});
                 }
             });
 
             Del = [];
             $("input[del]").each(function(){
                 if($(this).prop("checked") == true){
-                    Del.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:$(this).attr('quantidade'), valor:$(this).attr('valor')});
+                    Del.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao')});
                 }
             });
 
