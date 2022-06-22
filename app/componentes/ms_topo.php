@@ -52,6 +52,7 @@
         <?php
             if(!$c->loja){
         ?>
+        $(".ListaLojas").css("dispaly","block");
         $.ajax({
             url:"componentes/ms_lojas.php",
             success:function(dados){

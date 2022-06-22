@@ -82,6 +82,7 @@
         bottom:0;
         background-color:#fff;
         z-index:999;
+        display:none;
     }
 
 </style>
