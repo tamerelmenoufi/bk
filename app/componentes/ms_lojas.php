@@ -9,12 +9,19 @@
     .btn-lojas{
         background-color:#502314;
     }
+    .LojaTitulo:{
+        text-align:center;
+        color:#333;
+        font-size:12px;
+        font-weight:bold;
+        margin:20px;
+    }
 </style>
 
 <div class="PainelLojas">
     <div class="row">
         <div class='col'>
-            <div style="text-align:center; color:#333; font-size:12px; font-weight:bold; margin:20px;">Selecione a Loja se sua preferência</div>
+            <div class="LojaTitulo">Selecione a Loja se sua preferência</div>
             <?php
                 $query = "select * from lojas where situacao = '1' order by nome";
                 $result = mysqli_query($con, $query);
