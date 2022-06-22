@@ -125,12 +125,14 @@
         $("#incluir_observacoes").click(function(){
             $(".observacoes").html($("#observacoes").val());
 
+            Add = [];
             $("input[add]").each(function(){
                 if($(this).prop("checked") == true){
                     Add.push({codigo:$(this).attr('codigo'),valor:$(this).attr('valor')});
                 }
             });
 
+            Del = [];
             $("input[del]").each(function(){
                 if($(this).prop("checked") == true){
                     Del.push({codigo:$(this).attr('codigo'),valor:$(this).attr('valor')});
