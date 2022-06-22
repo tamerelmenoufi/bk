@@ -68,14 +68,19 @@
                 <ul class="list-group">
                     <?php
                         $query = "select * from itens where situacao = '1' and deletado != '1' order by item";
+                        $result = mysqli_query($con, $query);
+                        while($d = mysql_fetch_object($result)){
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                            <label class="form-check-label" for="exampleCheck1"><?=$d->item?></label>
                         </div>
-                        <span class="badge badge-primary badge-pill">14</span>
+                        <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span>
                     </li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
