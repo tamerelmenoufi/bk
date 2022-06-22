@@ -362,7 +362,7 @@
             valor_total = (valor_unitario*quantidade);
 
             //-------
-            var produto_descricao;
+            var produto_descricao = '';
             if($(".observacoes").html()){
                 produto_descricao += "<b>Observações:</b><br>";
                 produto_descricao += $(".observacoes").html()+'<br>';
