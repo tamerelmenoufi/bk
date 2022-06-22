@@ -311,6 +311,7 @@
                 type:"POST",
                 data:{
                     local:"src/produtos/observacoes.php",
+                    produto:'<?=$d->codigo?>'
                 },
                 success:function(dados){
                     $(".ms_corpo").append(dados);
