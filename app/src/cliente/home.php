@@ -8,7 +8,7 @@
         width:100%;
         text-align:center;
     }
-    button[acao], button[sair]{
+    button[acao], button[sair], button[opc="lojas"]{
         text-align:left !important;
     }
 </style>
