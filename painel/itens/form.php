@@ -190,7 +190,7 @@ if ($codigo) {
 
 
 
-                <div class="row cor">
+                    <div class="row cor">
                         <div class="col-md-3">
                             <label for="medidas">Valores Individual<i class="text-danger">*</i></label>
                             <div class="input-group mb-3">
@@ -264,10 +264,7 @@ if ($codigo) {
                         </div>
                     </div>
 
-                </div>
-
             </div>
-
 
             <div class="form-group">
                 <?php
