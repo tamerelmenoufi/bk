@@ -66,11 +66,15 @@
             <div class="card">
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    <?php
+                        $query = "select * from itens where situacao = '1' and deletado != '1' order by item"
+                    ?>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
                         </div>
+                        <span class="badge badge-primary badge-pill">14</span>
                     </li>
                 </ul>
             </div>
