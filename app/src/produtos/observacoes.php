@@ -69,7 +69,7 @@
                     <?php
                         $query = "select * from itens where situacao = '1' and deletado != '1' order by item";
                         $result = mysqli_query($con, $query);
-                        while($d = mysql_fetch_object($result)){
+                        while($d = mysqli_fetch_object($result)){
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div class="form-check">
