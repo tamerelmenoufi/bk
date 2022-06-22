@@ -1,7 +1,7 @@
 <?php
 include("../../lib/includes.php");
 
-$query = "SELECT codigo, medida FROM categoria_medidas ORDER BY ordem, medida";
+$query = "SELECT codigo, medida FROM categoria_medidas where deletado != '1' ORDER BY ordem, medida";
 $result = mysqli_query($con, $query);
 
 ?>
