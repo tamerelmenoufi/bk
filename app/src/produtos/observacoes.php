@@ -33,7 +33,7 @@
                 <h5 class="card-header">Remover Itens do produto</h5>
                 <div class="card-body">
 
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group">
                         <li class="list-group-item">Cras justo odio</li>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
@@ -49,7 +49,7 @@
                 <h5 class="card-header">Adicionar Itens ao produto</h5>
                 <div class="card-body">
 
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group">
                         <li class="list-group-item">Cras justo odio</li>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
