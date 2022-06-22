@@ -21,7 +21,8 @@
         position:relative;
         height:120px;
         left:50%;
-        margin-left:-30px;
+        margin-left:-25%;
+        margin-bottom:20px;
         transform: rotate(-10deg);
         z-index:2;
 
