@@ -61,7 +61,7 @@
                             <input type="checkbox" class="form-check-input" id="del<?=$d->codigo?>">
                             <label class="form-check-label" for="del<?=$d->codigo?>"><?=$d->item?></label>
                         </div>
-                        <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span>
+                        <!-- <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor,2,',',false)?></span> -->
                     </li>
                     <?php
                         }
