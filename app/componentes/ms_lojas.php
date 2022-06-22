@@ -17,12 +17,22 @@
         font-weight:bold;
         margin:20px;
     }
+    .topoImgLoja{
+        position:absolute;
+        height:60px;
+        left:50%;
+        margin-left:-30px;
+        transform: rotate(-10deg);
+        z-index:2;
+
+    }
 </style>
 
 <div class="PainelLojas">
     <div class="row">
         <div class='col'>
             <div class="LojaTitulo">Selecione a Loja se sua preferência</div>
+            <img class="topoImgLoja" src="img/logo.svg?<?=$md5?>" />
             <?php
                 $query = "select * from lojas where situacao = '1' order by nome";
                 $result = mysqli_query($con, $query);
