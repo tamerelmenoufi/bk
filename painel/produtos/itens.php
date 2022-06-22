@@ -91,7 +91,7 @@ if ($_GET['codigo']) {
             $.ajax({
                 url:"produtos/itens.php",
                 data:{
-                    produto:'<?=$d->produto?>',
+                    produto:'<?=$d->codigo?>',
                     item,
                     acao:'delProduto'
                 },
