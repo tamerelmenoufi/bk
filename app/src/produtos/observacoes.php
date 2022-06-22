@@ -2,7 +2,7 @@
     include("../../../lib/includes.php");
 ?>
 <div class="col">
-    <div class="col">
+    <div class="col" style="padding-bottom:50px;">
 
         <div class="mb-3">
             <h4>Incluir Observações</h4>
