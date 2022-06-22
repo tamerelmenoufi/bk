@@ -116,7 +116,7 @@
         <div id="MenuUsuarios" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <!-- <h6 class="collapse-header">Configurações:</h6> -->
-                <a class="collapse-item" href="#" url="atendentes/index.php">Atendentes</a>
+                <!-- <a class="collapse-item" href="#" url="atendentes/index.php">Atendentes</a> -->
                 <a class="collapse-item" href="#" url="usuarios/index.php">Usuários</a>
                 <a class="collapse-item" href="#" url="clientes/index.php">Clientes</a>
             </div>
