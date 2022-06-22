@@ -192,6 +192,91 @@ if ($codigo) {
 
 
 
+
+                <div class="row cor">
+                        <div class="col-md-3">
+                            <label for="medidas">Valores Individual<i class="text-danger">*</i></label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R$</span>
+                                </div>
+
+                                <input
+                                        name="valor"
+                                        id="valor"
+                                        value="<?= $d->valor; ?>"
+                                        type="number"
+                                        class="form-control"
+                                >
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="col-md-3">
+                            <label for="medidas">Valores Combo<i class="text-danger">*</i></label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">R$</span>
+                                </div>
+
+                                <input
+                                        name="valor_combo"
+                                        id="valor_combo"
+                                        value="<?= $d->valor_combo; ?>"
+                                        type="number"
+                                        class="form-control"
+                                >
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label for="medidas">Medida <i class="text-danger">*</i></label>
+
+                                <select
+                                class="form-control"
+                                id="unidade"
+                                name="unidade"
+                                required
+                        >
+                                <?php
+                                $query1 = "SELECT * FROM categoria_medidas where deletado != '1' ORDER BY ordem";
+                                $result1 = mysqli_query($con, $query1);
+
+                                $check = explode(',', $d->medidas);
+
+                                while ($dados = mysqli_fetch_object($result1)):
+                                    ?>
+
+                                    <option
+                                        <?= ($dados->codigo == $d->medida) ? 'selected' : ''; ?>
+                                            value="<?= $dados->codigo; ?>">
+                                        <?= $dados->medida; ?>
+                                    </option>
+
+
+                                <?php endwhile; ?>
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+
+
                 <div class="row cor">
                         <div class="col-md-3">
                             <div class="input-group mb-3">
