@@ -8,8 +8,9 @@
     }
     .btn-lojas{
         background-color:#502314;
+        color:#fff;
     }
-    .LojaTitulo:{
+    .LojaTitulo{
         text-align:center;
         color:#333;
         font-size:12px;
