@@ -138,7 +138,7 @@ if ($codigo) {
             </div>
 
             <div class="form-group">
-                <label for="medidas">Valores <i class="text-danger">*</i></label>
+
 
                 <!-- <?php
                 $query1 = "SELECT * FROM categoria_medidas "
@@ -188,6 +188,7 @@ if ($codigo) {
                 <div class="row cor">
                         <div class="col-md-3">
                             <div class="input-group mb-3">
+                                <label for="medidas">Valores <i class="text-danger">*</i></label>
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><b>Individual</b> R$</span>
                                 </div>
