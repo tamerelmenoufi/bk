@@ -128,6 +128,19 @@
 
         $("#observacoes").val($(".observacoes").html());
 
+
+        for(i=0; i < Del.length; i++){
+            console.log(Del[i].codigo)
+            $(`#del${Del[i].codigo}`).prop("checked", true);
+        }
+
+        for(i=0; i < Add.length; i++){
+            console.log(Add[i].codigo)
+            $(`#del${Add[i].codigo}`).prop("checked", true);
+        }
+
+
+
         $("#incluir_observacoes").click(function(){
 
             $(".observacoes").html($("#observacoes").val());

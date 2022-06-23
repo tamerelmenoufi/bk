@@ -323,6 +323,7 @@
 
         $("button[observacoes]").click(function(){
             Carregando();
+
             $.ajax({
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
