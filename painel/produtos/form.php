@@ -327,7 +327,7 @@ if ($codigo) {
                                 <li categoria="<?= $c->codigo ?>"
                                     produto="<?= $codigo ?>"
                                     class="list-group-item list-group-item-action">
-                                    <input type="checkbox" name="categorias_itens" value='<?=$c->codigo?>' >
+                                    <input type="checkbox" name="categorias_itens[]" value='<?=$c->codigo?>' >
                                     <?= $c->categoria ?>
                                 </li>
                                 <?php
