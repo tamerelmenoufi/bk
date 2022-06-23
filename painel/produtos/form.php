@@ -303,7 +303,7 @@ if ($codigo) {
 
                 <div class="row mb-1">
                     <div class="col">
-                        <b>Tipo de Itens</b>
+                        <b>Tipo de Itens</b> <small>Marcar a(s) categoria(s) que para adcionar ao produto</small>
                     </div>
                     <div class="col">
                         <b>Lista de Itens</b>
