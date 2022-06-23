@@ -207,7 +207,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:270px; z-index:99;">
+                <div class="row" style="position:fixed; margin-top:270px; z-index:99;">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
