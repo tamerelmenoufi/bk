@@ -148,14 +148,17 @@
 
             //--------
             var obsAdd = '';
+            var valor_unitario_aditivo = 0;
             if(Add.length > 0){
                 obsAdd += "<b>Adicionar os Itens no produto:</b><br>";
             }
             for(i=0; i < Add.length; i++){
                 console.log(Add[i].codigo)
-                valor_unitario = ( (valor_unitario*1) + (Add[i].valor * Add[i].quantidade));
+                valor_unitario_aditivo = ( (valor_unitario_aditivo*1) + (Add[i].valor * Add[i].quantidade));
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
             }
+
+            $("span[valor]").attr("aditivo", valor_unitario_aditivo*1);
 
             $("span[valor]").html(valor_unitario.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 

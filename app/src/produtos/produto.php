@@ -268,7 +268,7 @@
                             <span
                                     class="btn btn-primaryX text-primary"
                                     id="rotulo_valor">
-                                R$ <span valor atual="<?=$valor?>">
+                                R$ <span valor atual="<?=$valor?>" aditivo="0">
                                     <?= number_format($valor, 2, ',', '.') ?>
                                 </span>
                             </span>
@@ -299,9 +299,10 @@
         $("#mais").click(function () {
             quantidade = $("#quantidade").html();
             atual = $("span[valor]").attr("atual");
+            aditivo = $("span[valor]").attr("aditivo");
             quantidade = (quantidade * 1 + 1);
             $("#quantidade").html(quantidade);
-            valor = atual * quantidade;
+            valor = (atual*1 + aditivo*1) * quantidade;
             $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
         });
@@ -309,11 +310,12 @@
         $("#menos").click(function () {
             quantidade = $("#quantidade").html();
             atual = $("span[valor]").attr("atual");
+            aditivo = $("span[valor]").attr("aditivo");
             quantidade = ((quantidade * 1 > 1) ? (quantidade * 1 - 1) : 1);
 
             $("#quantidade").html(quantidade);
 
-            valor = atual * quantidade;
+            valor = (atual*1 + aditivo*1) * quantidade;
             $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
         });
