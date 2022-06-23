@@ -148,7 +148,7 @@
         color:red;
         font-size:10px;
         /* text-align:justify; */
-        z-index: 2;
+        z-index: 999;
         margin-top:10px;
         margin-bottom:10px;
     }

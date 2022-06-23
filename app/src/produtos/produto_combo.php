@@ -163,7 +163,7 @@
         color:red;
         font-size:10px;
         /* text-align:justify; */
-        z-index: 2;
+        z-index: 999;
     }
 </style>
 <div class="col">
