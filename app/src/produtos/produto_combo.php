@@ -180,7 +180,7 @@
                         <div
                             style="
                                     position:fixed;
-                                    left:-100%;
+                                    left:-66.66%;
                                     top:-10%;
                                     width:200%;
                                     height:270px;
