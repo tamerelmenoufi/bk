@@ -177,16 +177,16 @@
                         <div
                             style="
                                     position:fixed;
-                                    left:-66.66%;
+                                    left:-100%;
                                     top:-10%;
-                                    width:200%;
-                                    height:270px;
+                                    width:300%;
+                                    height:50%;
                                     background-color:#EBF4F1;
                                     z-index:2;
                                     border-radius:100%;
                                     background-image:url(<?=$caminho_sis?>/painel/produtos/icon/<?= $p->icon ?>);
                                     background-size:cover;
-                                    background-position:center bottom;
+                                    background-position:center center;
                                     opacity:0.3;
                                     filter: blur(5px);
                                     text-align:center;

@@ -180,10 +180,10 @@
                         <div
                             style="
                                     position:fixed;
-                                    left:-66.66%;
+                                    left:-100%;
                                     top:-10%;
-                                    width:200%;
-                                    height:270px;
+                                    width:300%;
+                                    height:50%;
                                     background-color:#EBF4F1;
                                     z-index:1;
                                     border-radius:100%;
