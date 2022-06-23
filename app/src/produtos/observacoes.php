@@ -112,7 +112,14 @@
                         <div class="row">
                             <div class="col-6"></div>
                             <div class="col-3">
-                                <input type="text" class="form-control form-control-sm" />
+                                <input type="text" class="" />
+                                <select id="qt<?=$d->codigo?>" class="form-control form-control-sm">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
                             </div>
                             <div class="col-3">
                                 <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
@@ -164,7 +171,9 @@
             Add = [];
             $("input[add]").each(function(){
                 if($(this).prop("checked") == true){
-                    Add.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:/*$(this).attr('quantidade')*/1, valor:$(this).attr('valor')});
+                    cd = $(this).attr('codigo');
+                    qt = $(`#qt${cd}`).val();
+                    Add.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:qt, valor:$(this).attr('valor')});
                 }
             });
 
