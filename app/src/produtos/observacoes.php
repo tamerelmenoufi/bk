@@ -46,16 +46,17 @@
         </div>
         <?php
         if(!$_POST['combo']){
+
+            $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $Codigos) . ")";
+            $result = mysqli_query($con, $query);
+            if(mysqli_num_rows($result)){
         ?>
         <div class="mb-3">
             <div class="card">
                 <h5 class="card-header"><i class="fa-solid fa-eraser"></i> <small> Remover Itens do produto</small></h5>
                 <ul class="list-group">
 
-
                 <?php
-                        $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $Codigos) . ")";
-                        $result = mysqli_query($con, $query);
                         while($d = mysqli_fetch_object($result)){
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -75,13 +76,14 @@
                     </li>
                     <?php
                         }
+
                     ?>
-
-
                 </ul>
             </div>
         </div>
-
+            <?php
+                }
+            ?>
         <div class="mb-3">
             <div class="card">
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
