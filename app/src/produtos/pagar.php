@@ -26,6 +26,7 @@
                     b.nome,
                     b.telefone,
                     b.telefone_confirmado,
+                    b.loja,
                     a.venda,
                     v.tentativas_pagamento
                 from vendas_produtos a
@@ -225,7 +226,12 @@
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
                                                 if($valores->deliveryFee > 1){
 
-                                                if($valores->deliveryFee <= $vlopc || $vlopc == 0) { $vlopc = $valores->deliveryFee; $opc = $v->codigo; }
+                                                if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
+                                                    $vlopc = $valores->deliveryFee;
+                                                    // $opc = $v->codigo; //Opção mais barata
+                                                    $opc = $d->loja; //Opção de preferência do cliente
+
+                                                }
                                         ?>
                                             <li
                                                 opc="<?=$v->codigo?>"
