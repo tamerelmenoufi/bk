@@ -189,7 +189,7 @@
                                     border-radius:100%;
                                     background-image:url(<?=$caminho_sis?>/painel/combos/icon/<?= $p->icon ?>);
                                     background-size:cover;
-                                    background-position:center center;
+                                    background-position:center bottom;
                                     opacity:0.3;
                                     filter: blur(5px);
                                     text-align:center;
