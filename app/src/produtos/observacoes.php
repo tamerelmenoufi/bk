@@ -173,7 +173,7 @@
                 // console.log(Add[i].codigo)
                 valor_unitario_aditivo = ( (valor_unitario_aditivo*1) + (Add[i].valor * Add[i].quantidade));
                 VlItem = (Add[i].valor * Add[i].quantidade).toLocaleString('pt-br', {minimumFractionDigits: 2});
-                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (${VlItem})<br>`;
+                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (R$ ${VlItem})<br>`;
             }
 
             $("span[valor]").attr("aditivo", valor_unitario_aditivo*1);

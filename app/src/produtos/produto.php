@@ -360,7 +360,7 @@
                 // console.log(Add[i].codigo)
                 valor_unitario = ( (valor_unitario*1) + (Add[i].valor * Add[i].quantidade));
                 VlItem = (Add[i].valor * Add[i].quantidade).toLocaleString('pt-br', {minimumFractionDigits: 2});
-                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (${VlItem})<br>`;
+                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (R$ ${VlItem})<br>`;
             }
 
             //---------
