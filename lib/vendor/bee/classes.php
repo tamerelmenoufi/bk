@@ -83,32 +83,32 @@
             $pedido = str_pad($d->codigo, 6, "0", STR_PAD_LEFT);
             list($lat, $lng) = explode(",",$d->coordenadas);
 
-            var_dump($d);
-            echo "<hr>";
-            echo "{
-                \"orderExternalId\": {$d->codigo},
-                \"description\": \"Entrega Pedido #{$pedido}\",
-                \"needReturn\": \"N\",
-                \"vehicle\": \"M\",
-                \"compartmentType\": \"BAG\",
-                \"completedPermission\": \"S\",
-                \"needCode\": \"N\",
-                \"origin\": {
-                    \"externalId\": {$d->loja}
-                },
-                \"destination\": {
-                    \"contactName\": \"{$d->nome_cliente}\",
-                    \"contactPhone\": ".str_replace(array('(',')','-',' '), false, trim($d->telefone_cliente)).",
-                    \"type\": \"COORDS\",
-                    \"address\": {
-                        \"latitude\": {$lat},
-                        \"longitude\": {$lng},
-                        \"complement\": \"{$d->referencia}\",
-                        \"streetAddress\": \"{$d->endereco}\"
-                        }
-                    }
-                }
-            }";
+            // var_dump($d);
+            // echo "<hr>";
+            // echo "{
+            //     \"orderExternalId\": {$d->codigo},
+            //     \"description\": \"Entrega Pedido #{$pedido}\",
+            //     \"needReturn\": \"N\",
+            //     \"vehicle\": \"M\",
+            //     \"compartmentType\": \"BAG\",
+            //     \"completedPermission\": \"S\",
+            //     \"needCode\": \"N\",
+            //     \"origin\": {
+            //         \"externalId\": {$d->loja}
+            //     },
+            //     \"destination\": {
+            //         \"contactName\": \"{$d->nome_cliente}\",
+            //         \"contactPhone\": ".str_replace(array('(',')','-',' '), false, trim($d->telefone_cliente)).",
+            //         \"type\": \"COORDS\",
+            //         \"address\": {
+            //             \"latitude\": {$lat},
+            //             \"longitude\": {$lng},
+            //             \"complement\": \"{$d->referencia}\",
+            //             \"streetAddress\": \"{$d->endereco}\"
+            //             }
+            //         }
+            //     }
+            // }";
 
             exit();
 
