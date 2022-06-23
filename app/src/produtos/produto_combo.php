@@ -183,7 +183,7 @@
                                     left:-100%;
                                     top:-10%;
                                     width:300%;
-                                    height:50%;
+                                    height:270px;
                                     background-color:#EBF4F1;
                                     z-index:1;
                                     border-radius:100%;
