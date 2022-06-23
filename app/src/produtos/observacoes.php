@@ -107,6 +107,8 @@
                                     <label class="form-check-label" for="add<?=$d->codigo?>"><small><?=$d->item?></small></label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" />
                             </div>
