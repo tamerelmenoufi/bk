@@ -74,10 +74,12 @@
                         <?php
                             $pedido = str_pad($d->codigo, 6, "0", STR_PAD_LEFT);
 
-                            $BEE = new Bee;
+                            //ESSAS DUAS LINHAS SÃO PARA A SOLICITAÇÃO DA ENTREGA BEE
+                            // $BEE = new Bee;
+                            // echo $retorno = $BEE->NovaEntrega($d->codigo);
+                            //////////////////////////////////////////////////////////
 
-                            echo $retorno = $BEE->NovaEntrega($d->codigo);
-
+                            //AQUI É A GERAÇÃO DA COBRANÇA PIX
 
                             // $PIX = new MercadoPago;
 

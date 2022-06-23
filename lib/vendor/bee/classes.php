@@ -133,7 +133,7 @@
                 },
                 \"destination\": {
                     \"contactName\": \"{$d->nome_cliente}\",
-                    \"contactPhone\": ".str_replace(array('.','-'), false, $d->cpf_cliente).",
+                    \"contactPhone\": ".str_replace(array('(',')','-',' '), false, trim($d->telefone_cliente)).",
                     \"type\": \"COORDS\",
                     \"address\": {
                         \"latitude\": {$lat},
@@ -150,10 +150,10 @@
               "Authorization: ".$this->Autenticacao($this->AccessTOKEN)
             ));
 
-            $response = curl_exec($ch);
+            return $response = curl_exec($ch);
             curl_close($ch);
 
-            var_dump($response);
+            // var_dump($response);
 
 
         }
