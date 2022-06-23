@@ -96,7 +96,7 @@
 
                             if($Categoria != $d->categroia ){
                                 $Categoria = $d->categroia;
-                                echo "<li class=\"list-group-item\">{$Categoria}</li>";
+                                echo "<li class=\"list-group-item\"><b>{$Categoria}</b></li>";
                             }
 
                     ?>
