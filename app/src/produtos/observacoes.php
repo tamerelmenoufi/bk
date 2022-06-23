@@ -92,19 +92,28 @@
                         while($d = mysqli_fetch_object($result)){
                     ?>
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <div class="form-check">
-                            <input
-                                add
-                                type="checkbox"
-                                class="form-check-input"
-                                id="add<?=$d->codigo?>"
-                                codigo="<?=$d->codigo?>"
-                                descricao="<?=$d->item?>"
-                                valor="<?=$d->valor?>"
-                            >
-                            <label class="form-check-label" for="add<?=$d->codigo?>"><small><?=$d->item?></small></label>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-check">
+                                    <input
+                                        add
+                                        type="checkbox"
+                                        class="form-check-input"
+                                        id="add<?=$d->codigo?>"
+                                        codigo="<?=$d->codigo?>"
+                                        descricao="<?=$d->item?>"
+                                        valor="<?=$d->valor?>"
+                                    >
+                                    <label class="form-check-label" for="add<?=$d->codigo?>"><small><?=$d->item?></small></label>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col">
+                                <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
+                            </div>
                         </div>
-                        <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
                     </li>
                     <?php
                         }
