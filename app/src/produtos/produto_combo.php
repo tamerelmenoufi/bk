@@ -207,7 +207,7 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:270px;">
+                <div class="row" style="margin-top:270px; z-index:99;">
                         <div class="col">
                             <div class="card-body">
                                 <!-- <h5 class="card-title">
@@ -243,7 +243,7 @@
                             </div>
                         </div>
 
-                    </div>
+                </div>
 
                 <div style="position:fixed; bottom:0; left:0; width:100%; z-index:1; background-color:#f5ebdc;">
                     <div class="input-group input-group-lg">
