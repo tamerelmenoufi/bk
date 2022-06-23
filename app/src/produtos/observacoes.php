@@ -44,7 +44,9 @@
             <h5>Incluir Observações</h5>
             <textarea class="form-control" id="observacoes"></textarea>
         </div>
-
+        <?php
+        if(!$_POST['combo']){
+        ?>
         <div class="mb-3">
             <div class="card">
                 <h5 class="card-header"><i class="fa-solid fa-eraser"></i> <small> Remover Itens do produto</small></h5>
@@ -110,7 +112,9 @@
                 </ul>
             </div>
         </div>
-
+        <?php
+        }
+        ?>
     </div>
 </div>
 
