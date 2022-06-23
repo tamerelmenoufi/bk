@@ -144,11 +144,7 @@
 
                     </div>
                     <p style="text-align:center; font-size:12px;">Seu Código PIX</p>
-                    <p style="text-align:center; font-size:16px;">
-                        <pre>
-                            <?=$qrcode?>
-                        </pre>
-                    </p>
+                    <p style="text-align:center; font-size:16px;"><?=$qrcode?></p>
                     <button class="btn btn-secondary btn-lg btn-block"><i class="fa-solid fa-copy"></i> Copiar Código PIX</button>
                 </div>
             </div>
