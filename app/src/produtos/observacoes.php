@@ -89,7 +89,7 @@
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
                 <ul class="list-group">
                     <?php
-                        $query = "select a.*, b.categoria from itens a lefy join categorias_itens b on a.categoria = b.codigo where b.situacao = '1' and b.deletado != '1' and a.situacao = '1' and a.deletado != '1' order by b.categoria, a.item";
+                        echo $query = "select a.*, b.categoria from itens a lefy join categorias_itens b on a.categoria = b.codigo where b.situacao = '1' and b.deletado != '1' and a.situacao = '1' and a.deletado != '1' order by b.categoria, a.item";
                         $result = mysqli_query($con, $query);
                         $Categoria = false;
                         while($d = mysqli_fetch_object($result)){
