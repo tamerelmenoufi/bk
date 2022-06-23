@@ -144,11 +144,14 @@
     .ListaSabores{
         margin-bottom:100px;
     }
+    button[observacoes]{
+        z-index:99;
+    }
     .observacoes{
         color:red;
         font-size:10px;
         /* text-align:justify; */
-        z-index: 999;
+        z-index: 2;
         margin-top:10px;
         margin-bottom:10px;
     }
