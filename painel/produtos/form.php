@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     }
 
+    $data['categorias_itens'] = json_encode($data['categorias_itens']);
+
     unset($data['codigo']);
 
     foreach ($data as $name => $value) {
