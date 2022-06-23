@@ -160,7 +160,7 @@
 
             $("span[valor]").attr("aditivo", valor_unitario_aditivo*1);
 
-            $("span[valor]").html((valor_unitario_aditivo + valor_unitario).toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[valor]").html((valor_unitario_aditivo*1 + valor_unitario*1).toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
             //---------
             var obsDel = '';
