@@ -357,7 +357,7 @@
                 obsAdd += "<b>Adicionar os Itens no produto:</b><br>";
             }
             for(i=0; i < Add.length; i++){
-                console.log(Add[i].codigo)
+                // console.log(Add[i].codigo)
                 valor_unitario = ( (valor_unitario*1) + (Add[i].valor * Add[i].quantidade));
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
             }
@@ -368,7 +368,7 @@
                 obsDel += "<b>Remover os Itens do produto:</b><br>";
             }
             for(i=0; i < Del.length; i++){
-                console.log(Del[i].codigo)
+                // console.log(Del[i].codigo)
                 obsDel += `- ${Del[i].descricao}<br>`;
             }
 
@@ -384,11 +384,9 @@
             produto_descricao += obsAdd;
             produto_descricao += obsDel;
 
-            console.log(produto_descricao);
-            console.log(valor_total);
-
-
-            return false;
+            // console.log(produto_descricao);
+            // console.log(valor_total);
+            // return false;
 
 
 

@@ -130,12 +130,12 @@
 
 
         for(i=0; i < Del.length; i++){
-            console.log(Del[i].codigo)
+            // console.log(Del[i].codigo)
             $(`#del${Del[i].codigo}`).prop("checked", true);
         }
 
         for(i=0; i < Add.length; i++){
-            console.log(Add[i].codigo)
+            // console.log(Add[i].codigo)
             $(`#add${Add[i].codigo}`).prop("checked", true);
         }
 
@@ -170,7 +170,7 @@
                 obsAdd += "<b>Adicionar os Itens no produto:</b><br>";
             }
             for(i=0; i < Add.length; i++){
-                console.log(Add[i].codigo)
+                // console.log(Add[i].codigo)
                 valor_unitario_aditivo = ( (valor_unitario_aditivo*1) + (Add[i].valor * Add[i].quantidade));
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
             }
@@ -185,7 +185,7 @@
                 obsDel += "<b>Remover os Itens do produto:</b><br>";
             }
             for(i=0; i < Del.length; i++){
-                console.log(Del[i].codigo)
+                // console.log(Del[i].codigo)
                 obsDel += `- ${Del[i].descricao}<br>`;
             }
 
@@ -195,11 +195,11 @@
             produto_descricao2 += obsDel;
             $(".observacoes2").html(produto_descricao2);
 
-            console.log('Adicionados:');
-            console.log(Add);
-            console.log('Deletados:');
-            console.log(Del);
-            return false;
+            // console.log('Adicionados:');
+            // console.log(Add);
+            // console.log('Deletados:');
+            // console.log(Del);
+            // return false;
 
             PageClose();
         });
