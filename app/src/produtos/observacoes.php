@@ -136,7 +136,7 @@
 
         for(i=0; i < Add.length; i++){
             console.log(Add[i].codigo)
-            $(`#del${Add[i].codigo}`).prop("checked", true);
+            $(`#add${Add[i].codigo}`).prop("checked", true);
         }
 
 
