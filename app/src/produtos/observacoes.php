@@ -172,7 +172,8 @@
             for(i=0; i < Add.length; i++){
                 // console.log(Add[i].codigo)
                 valor_unitario_aditivo = ( (valor_unitario_aditivo*1) + (Add[i].valor * Add[i].quantidade));
-                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
+                VlItem = (Add[i].valor * Add[i].quantidade).toLocaleString('pt-br', {minimumFractionDigits: 2});
+                obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (${VlItem})<br>`;
             }
 
             $("span[valor]").attr("aditivo", valor_unitario_aditivo*1);
