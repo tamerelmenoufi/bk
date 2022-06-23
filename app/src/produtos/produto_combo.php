@@ -207,7 +207,7 @@
                     </div>
                 </div>
 
-                <div style="position:fixed; margin-top:270px; z-index:99; width:100%;">
+                <div style="position:fixed; top:270px; z-index:99; width:100%;">
                     <div class="row">
                         <div class="col">
                             <div class="card-body">
@@ -225,7 +225,7 @@
                                 </div>
 
 
-                                <div style="position:fixed; top:335px; bottom:100px; overflow:scroll; left:10px; right:10px;">
+                                <div style="position:fixed; top:345px; bottom:100px; overflow:scroll; left:10px; right:10px;">
                                     <p class="observacoes"></p>
                                     <p class="card-text"><?= $descricao ?></p>
                                 </div>
