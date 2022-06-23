@@ -125,14 +125,11 @@
         $("#observacoes").val($(".observacoes").html());
 
         $("#incluir_observacoes").click(function(){
-            $(".observacoes").html($("#observacoes").val());
 
+            $(".observacoes").html($("#observacoes").val());
 
             //-------
             valor_unitario = $("span[valor]").attr("atual");
-            //-------
-            quantidade = $("#quantidade").html();
-
 
             Add = [];
             $("input[add]").each(function(){
@@ -156,7 +153,7 @@
             }
             for(i=0; i < Add.length; i++){
                 console.log(Add[i].codigo)
-                valor_unitario = ( (valor_unitario) + (Add[i].valor * Add[i].quantidade));
+                valor_unitario = ( (valor_unitario*1) + (Add[i].valor * Add[i].quantidade));
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao}<br>`;
             }
 
