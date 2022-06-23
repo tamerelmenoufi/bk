@@ -187,7 +187,7 @@
                                     background-image:url(<?=$caminho_sis?>/painel/produtos/icon/<?= $p->icon ?>);
                                     background-size:cover;
                                     /*background-position:center center;*/
-                                    border-solid 1px red;
+                                    border:solid 1px red;
                                     opacity:0.3;
                                     filter: blur(5px);
                                     text-align:center;
