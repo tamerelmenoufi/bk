@@ -112,7 +112,7 @@
                         <div class="row">
                             <div class="col-6"></div>
                             <div class="col-3">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control form-control-sm" />
                             </div>
                             <div class="col-3">
                                 <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
