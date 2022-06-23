@@ -110,11 +110,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-8"></div>
-                            <div class="col-2">
+                            <div class="col-6"></div>
+                            <div class="col-3">
                                 <input type="text" class="form-control" />
                             </div>
-                            <div class="col-2">
+                            <div class="col-3">
                                 <span class="badge badge-pill"> <small>R$ <?=number_format($d->valor,2,',',false)?></small></span>
                             </div>
                         </div>
