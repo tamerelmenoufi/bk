@@ -94,8 +94,8 @@
                         $Categoria = false;
                         while($d = mysqli_fetch_object($result)){
 
-                            if($Categoria != $d->categroia ){
-                                $Categoria = $d->categroia;
+                            if($Categoria != $d->categoria ){
+                                $Categoria = $d->categoria;
                                 echo "<li class=\"list-group-item\"><b>{$Categoria}</b></li>";
                             }
 
