@@ -179,7 +179,7 @@
                                     position:fixed;
                                     left:-100%;
                                     top:-10%;
-                                    width:300%;
+                                    width:200%;
                                     height:270px;
                                     background-color:#EBF4F1;
                                     z-index:2;
