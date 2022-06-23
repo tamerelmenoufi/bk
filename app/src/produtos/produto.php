@@ -153,7 +153,7 @@
         margin-bottom:10px;
     }
 
-    .observacoes{
+    .observacoes2{
         color:#333;
         font-size:10px;
         /* text-align:justify; */
