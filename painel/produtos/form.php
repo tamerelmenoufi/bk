@@ -80,7 +80,7 @@ if ($codigo) {
 
 
     $ItensDoProduto = json_decode($d->itens);
-
+    $categorias_itens = json_decode($d->categorias_itens);
 
 }
 
@@ -327,7 +327,12 @@ if ($codigo) {
                                 <li categoria="<?= $c->codigo ?>"
                                     produto="<?= $codigo ?>"
                                     class="list-group-item list-group-item-action">
-                                    <input type="checkbox" name="categorias_itens[]" value='<?=$c->codigo?>' >
+                                    <input
+                                        type="checkbox"
+                                        name="categorias_itens[]"
+                                        value='<?=$c->codigo?>'
+                                        <?=((in_array($c->codigo, $categorias_itens)?'checked':false))?>
+                                    >
                                     <?= $c->categoria ?>
                                 </li>
                                 <?php
