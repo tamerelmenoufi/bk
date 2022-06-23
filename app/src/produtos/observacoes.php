@@ -127,6 +127,11 @@
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
+                                    <option value="6">5</option>
+                                    <option value="7">5</option>
+                                    <option value="8">5</option>
+                                    <option value="9">5</option>
+                                    <option value="10">5</option>
                                 </select>
                             </div>
                             <div class="col-3">
