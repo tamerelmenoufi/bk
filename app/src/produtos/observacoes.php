@@ -112,7 +112,6 @@
                         <div class="row">
                             <div class="col-6"></div>
                             <div class="col-3">
-                                <input type="text" class="" />
                                 <select id="qt<?=$d->codigo?>" class="form-control form-control-sm">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
