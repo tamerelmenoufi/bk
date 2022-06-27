@@ -285,7 +285,7 @@ if ($codigo) {
                             $r = mysqli_query($con, $q);
                             while ($c = mysqli_fetch_object($r)) {
                                 ?>
-                                <li categoria="<?= $c->codigo ?>"
+                                <li categoria_itens="<?= $c->codigo ?>"
                                     produto="<?= $codigo ?>"
                                     class="list-group-item list-group-item-action">
                                     <input
@@ -385,6 +385,26 @@ if ($codigo) {
                 }
             });
         });
+
+        ///////////////////////////////////////////////////////
+
+        $("li[categoria_itens]").click(function () {
+            categoria = $(this).attr("categoria");
+            produto = $(this).attr("produto");
+            $.ajax({
+                url: "produtos/lista_itens.php",
+                data: {
+                    categoria,
+                    produto
+                },
+                success: function (dados) {
+                    $("div[listaItens]").html(dados);
+                }
+            });
+        });
+
+        ////////////////////////////////////////////////////////
+
 
         $("button[EditarImagem]").click(function () {
             produtos = $("div[combo]").attr("codigos");
