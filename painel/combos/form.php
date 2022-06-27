@@ -260,6 +260,65 @@ if ($codigo) {
             </div>
 
 
+
+
+            <div class="form-group">
+
+
+                <div class="row mb-1">
+                    <div class="col">
+                        <b>Tipo de Itens</b> <small>Marcar a(s) categoria(s) que podem adcionar ao produto</small>
+                    </div>
+                    <div class="col">
+                        <b>Lista de Itens</b>
+                    </div>
+                    <div class="col">
+                        <b>Itens no produto</b>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4" style="height:300px; overflow:auto;">
+                        <ul class="list-group">
+                            <?php
+                            $q = "select * from categorias_itens where situacao = '1' and deletado != '1'";
+                            $r = mysqli_query($con, $q);
+                            while ($c = mysqli_fetch_object($r)) {
+                                ?>
+                                <li categoria="<?= $c->codigo ?>"
+                                    produto="<?= $codigo ?>"
+                                    class="list-group-item list-group-item-action">
+                                    <input
+                                        type="checkbox"
+                                        name="categorias_itens[]"
+                                        value='<?=$c->codigo?>'
+                                        <?=((in_array($c->codigo, $categorias_itens)?'checked':false))?>
+                                    >
+                                    <?= $c->categoria ?>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+
+                    <div listaItens class="col-md-4" style="height:300px; overflow:auto;">
+
+                    </div>
+
+                    <div itens codigos="<?= (($d->itens) ?: '0') ?>" class="col-md-4"
+                        style="height:300px; overflow:auto;">
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
             <div class="form-group">
                 <label for="situacao">
                     Situação <i class="text-danger">*</i>

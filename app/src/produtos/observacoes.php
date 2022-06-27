@@ -45,7 +45,7 @@
             <textarea class="form-control" id="observacoes"></textarea>
         </div>
         <?php
-        if(!$_POST['combo']){
+        // if(!$_POST['combo']){
 
             $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $Codigos) . ")";
             $result = mysqli_query($con, $query);
@@ -146,7 +146,7 @@
             </div>
         </div>
         <?php
-        }
+        // }
         ?>
     </div>
 </div>
