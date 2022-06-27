@@ -456,6 +456,20 @@ if ($codigo) {
                 dados.push({name: 'file_base', value: file_base});
             }
 
+            //////////////////////////////////////////////////
+            var codigos = $("div[itens]").attr("codigos");
+            if (codigos) {
+                dados.push({name: 'itens', value: codigos});
+            }
+            vetor = [];
+            $("input[qt]").each(function(){
+                cod = $(this).attr("qt");
+                qt = $(this).val();
+                vetor.push({produto: cod, quantidade: qt});
+            });
+            const vetorItens = JSON.stringify(vetor);
+            dados.push({name: 'itens', value: vetorItens});
+            /////////////////////////////////////////////////
 
             $.ajax({
                 url: '<?= $UrlScript; ?>/form.php',
