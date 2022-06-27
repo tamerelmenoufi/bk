@@ -388,6 +388,17 @@ if ($codigo) {
 
         ///////////////////////////////////////////////////////
 
+        $.ajax({
+            url: "produtos/itens.php",
+            data: {
+                codigo:'<?=$codigo?>',
+            },
+            success: function (dados) {
+                $("div[itens]").html(dados);
+            }
+        });
+
+
         $("li[categoria_itens]").click(function () {
             categoria = $(this).attr("categoria_itens");
             produto = $(this).attr("produto");
