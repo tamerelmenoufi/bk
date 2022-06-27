@@ -259,8 +259,7 @@ if ($codigo) {
 
             </div>
 
-
-
+            <hr>
 
             <div class="form-group">
 
