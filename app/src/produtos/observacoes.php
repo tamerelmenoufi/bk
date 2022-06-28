@@ -20,7 +20,7 @@
     $CodigosAdicionar = [];
     $produtos = false;
     foreach($ItensAdicionar as $ind => $val){
-        $CodigosAdicionar[] = $val->produto;
+        $CodigosAdicionar[] = $val;
     }
     if($CodigosAdicionar) $produtos_adicionar = implode(", ",$CodigosAdicionar);
 
