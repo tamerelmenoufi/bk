@@ -102,7 +102,7 @@
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
                 <ul class="list-group">
                     <?php
-                        $query = "select
+                        echo $query = "select
                                         a.*,
                                         b.categoria
                                 from itens a
