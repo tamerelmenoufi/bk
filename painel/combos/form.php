@@ -18,6 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['file_base']);
 
     $data['categorias_itens'] = json_encode($data['categorias_itens']);
+    $data['categoria_troca'] = json_encode($data['categoria_troca']);
 
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
@@ -73,6 +74,7 @@ if ($codigo) {
 
     $ItensDoProduto = json_decode($d->itens);
     $categorias_itens = json_decode($d->categorias_itens);
+    $categoria_troca = json_decode($d->categoria_troca);
 }
 
 ?>
@@ -286,7 +288,7 @@ if ($codigo) {
 
 
                 <div class="row">
-                    <div class="col-md-4" style="height:300px; overflow:auto;">
+                    <div class="col-md-6" style="height:300px; overflow:auto;">
                         <ul class="list-group">
                             <?php
                             $q = "select * from categorias_itens where situacao = '1' and deletado != '1'";
@@ -310,14 +312,37 @@ if ($codigo) {
                         </ul>
                     </div>
 
-                    <div listaItens class="col-md-4" style="height:300px; overflow:auto;">
+                    <div class="col-md-6" style="height:300px; overflow:auto;">
+                        <ul class="list-group">
+                            <?php
+                            $q = "select * from categorias_itens where situacao = '1' and deletado != '1'";
+                            $r = mysqli_query($con, $q);
+                            while ($c = mysqli_fetch_object($r)) {
+                                ?>
+                                <li categoria_troca="<?= $c->codigo ?>"
+                                    produto="<?= $codigo ?>"
+                                    class="list-group-item list-group-item-action">
+                                    <input
+                                        type="checkbox"
+                                        name="categoria_troca[]"
+                                        value='<?=$c->codigo?>'
+                                        <?=((in_array($c->codigo, $categoria_troca)?'checked':false))?>
+                                    >
+                                    <?= $c->categoria ?>
+                                </li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
+                    </div>
+                    <!-- <div listaItens class="col-md-4" style="height:300px; overflow:auto;">
 
                     </div>
 
                     <div itens codigos="<?= (($d->itens) ?: '0') ?>" class="col-md-4"
                         style="height:300px; overflow:auto;">
 
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -360,17 +385,17 @@ if ($codigo) {
 <script>
     $(function () {
 
-        existe = JSON.parse("[" + $("div[combo]").attr("codigos") + "]");
+        // existe = JSON.parse("[" + $("div[combo]").attr("codigos") + "]");
 
-        $.ajax({
-            url: "combos/combo.php",
-            data: {
-                produtos: existe,
-            },
-            success: function (dados) {
-                $("div[combo]").html(dados);
-            }
-        });
+        // $.ajax({
+        //     url: "combos/combo.php",
+        //     data: {
+        //         produtos: existe,
+        //     },
+        //     success: function (dados) {
+        //         $("div[combo]").html(dados);
+        //     }
+        // });
 
         $('input[situacao]').change(function () {
             opc = $(this).attr("opc");
@@ -407,20 +432,20 @@ if ($codigo) {
         });
 
 
-        $("li[categoria_itens]").click(function () {
-            categoria = $(this).attr("categoria_itens");
-            produto = $(this).attr("produto");
-            $.ajax({
-                url: "produtos/lista_itens.php",
-                data: {
-                    categoria,
-                    produto
-                },
-                success: function (dados) {
-                    $("div[listaItens]").html(dados);
-                }
-            });
-        });
+        // $("li[categoria_itens]").click(function () {
+        //     categoria = $(this).attr("categoria_itens");
+        //     produto = $(this).attr("produto");
+        //     $.ajax({
+        //         url: "produtos/lista_itens.php",
+        //         data: {
+        //             categoria,
+        //             produto
+        //         },
+        //         success: function (dados) {
+        //             $("div[listaItens]").html(dados);
+        //         }
+        //     });
+        // });
 
         ////////////////////////////////////////////////////////
 
