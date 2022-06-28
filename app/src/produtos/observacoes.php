@@ -32,9 +32,9 @@
     foreach($ItensTrocar as $ind => $val){
         $CodigosTrocar[] = $val;
     }
-    if($CodigosTrocar) $produtos_trocar = implode(", ",$CodigosTrocar);
+    if($CodigosTrocar) $produtos_trocar = implode(", ", $CodigosTrocar);
 
-
+    print_r($ItensTrocar);
 ?>
 
 <style>
