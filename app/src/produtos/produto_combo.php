@@ -361,7 +361,7 @@
             valor_aditivo = $("span[valor]").attr("aditivo");
 
             //-------
-            valor_unitario = (valor_unitario*1 + valor_aditivo*1);
+            // valor_unitario = (valor_unitario*1 + valor_aditivo*1);
 
             //-------
             quantidade = $("#quantidade").html();
