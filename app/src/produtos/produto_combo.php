@@ -227,6 +227,7 @@
 
                                 <div style="position:fixed; top:345px; bottom:100px; overflow:scroll; left:10px; right:10px;">
                                     <p class="observacoes"></p>
+                                    <p class="observacoes2"></p>
                                     <p class="card-text"><?= $descricao ?></p>
                                 </div>
 
