@@ -299,6 +299,10 @@
         var qt = 0;
         var v_produto_com_sabores = 0;
 
+        Add = [];
+        Del = [];
+        Troca = [];
+
         $("#mais").click(function () {
             quantidade = $("#quantidade").html();
             atual = $("span[valor]").attr("atual");

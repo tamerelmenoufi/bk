@@ -299,6 +299,7 @@
         //Dados Globais para adicionar e ou remover itens
         Add = [];
         Del = [];
+        Troca = [];
 
         $("#mais").click(function () {
             quantidade = $("#quantidade").html();
