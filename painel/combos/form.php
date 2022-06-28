@@ -293,7 +293,7 @@ if ($codigo) {
                             while ($c = mysqli_fetch_object($r)) {
                                 ?>
                                 <li categoria_itens="<?= $c->codigo ?>"
-                                    produto="<?= $codigo ?>"
+                                    XXprodutoXX="<?= $codigo ?>"
                                     class="list-group-item list-group-item-action">
                                     <input
                                         type="checkbox"
@@ -317,7 +317,7 @@ if ($codigo) {
                             while ($c = mysqli_fetch_object($r)) {
                                 ?>
                                 <li categoria_troca="<?= $c->codigo ?>"
-                                    produto="<?= $codigo ?>"
+                                    XXprodutoXX="<?= $codigo ?>"
                                     class="list-group-item list-group-item-action">
                                     <input
                                         type="checkbox"
