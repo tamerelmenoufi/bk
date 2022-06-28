@@ -303,6 +303,19 @@
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (R$ ${VlItem})<br>`;
             }
 
+
+            //---------
+            var obsTroca = '';
+            if(Troca.length > 0){
+                obsTroca += "<b>Substituição de Itens do produto:</b><br>";
+            }
+            for(i=0; i < Troca.length; i++){
+                // console.log(Del[i].codigo)
+                valor_unitario_aditivo = ( (valor_unitario_aditivo * 1) + (Troca[i].valor * 1));
+                VlItem = (Troca[i].valor).toLocaleString('pt-br', {minimumFractionDigits: 2});
+                obsTroca += `- ${Troca[i].descricao} + (R$ ${VlItem})<br>`;
+            }
+
             $("span[valor]").attr("aditivo", valor_unitario_aditivo*1);
 
             $("span[valor]").html((valor_unitario_aditivo*1 + valor_unitario*1).toLocaleString('pt-br', {minimumFractionDigits: 2}));
@@ -317,17 +330,7 @@
                 obsDel += `- ${Del[i].descricao}<br>`;
             }
 
-            //---------
-            var obsTroca = '';
-            if(Troca.length > 0){
-                obsTroca += "<b>Substituição de Itens do produto:</b><br>";
-            }
-            for(i=0; i < Troca.length; i++){
-                // console.log(Del[i].codigo)
-                valor_unitario_aditivo = ( (valor_unitario_aditivo * 1) + (Troca[i].valor * 1));
-                VlItem = (Troca[i].valor).toLocaleString('pt-br', {minimumFractionDigits: 2});
-                obsTroca += `- ${Troca[i].descricao} + (R$ ${VlItem})<br>`;
-            }
+
 
             //-------
             var produto_descricao2 = '';

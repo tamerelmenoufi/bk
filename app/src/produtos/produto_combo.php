@@ -168,6 +168,14 @@
         /* text-align:justify; */
         z-index: 2;
     }
+    .observacoes2{
+        color:#333;
+        font-size:10px;
+        /* text-align:justify; */
+        z-index: 2;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
 </style>
 <div class="col">
     <div class="row" style="margin-top:-65px; padding-bottom:60px;">
