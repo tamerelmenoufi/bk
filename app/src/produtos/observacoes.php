@@ -128,7 +128,7 @@
                                 type="radio"
                                 name="trocarItens"
                                 class="form-check-input"
-                                id="toca<?=$d->codigo?>"
+                                id="troca<?=$d->codigo?>"
                                 codigo="<?=$d->codigo?>"
                                 descricao="<?=$d->item?>"
                                 valor="<?=$d->valor_combo?>"
@@ -247,7 +247,7 @@
         }
 
         for(i=0; i < Troca.length; i++){
-             console.log('TROCA: ' + Troca[i].codigo)
+             //console.log('TROCA: ' + Troca[i].codigo)
             $(`#troca${Troca[i].codigo}`).prop("checked", true);
         }
 
