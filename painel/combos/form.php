@@ -36,9 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_query($con, $query)) {
         $codigo = $codigo ?: mysqli_insert_id($con);
 
-
-        if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
-            mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
+        if($icon){
+            if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
+                mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
+            }
         }
 
         sis_logs('produtos', $codigo, $query);
@@ -48,13 +49,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'msg' => $query, //'Dados salvo com sucesso',
             'codigo' => $codigo,
         ]);
+
     } else {
+
         echo json_encode([
             'status' => false,
             'msg' => $query, //'Erro ao salvar',
             'codigo' => $codigo,
             'mysql_error' => mysqli_error($con),
         ]);
+
     }
 
     exit;
@@ -191,7 +195,7 @@ if ($codigo) {
                     <img
                             id="ImagemCombo"
                             src="<?= $src ?>"
-                            style="<?= $src ?>"
+                            style="<?= $style ?>"
                     >
                 </center>
 
