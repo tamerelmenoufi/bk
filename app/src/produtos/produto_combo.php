@@ -359,6 +359,10 @@
             valor_unitario = $("span[valor]").attr("atual");
             //-------
             valor_aditivo = $("span[valor]").attr("aditivo");
+
+            //-------
+            valor_unitario = (valor_unitario*1 + valor_aditivo*1);
+
             //-------
             quantidade = $("#quantidade").html();
             //-------
@@ -370,7 +374,6 @@
 
             //-------
             var produto_descricao = $(".observacoes2").html();
-
 
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
             $.ajax({
