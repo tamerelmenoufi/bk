@@ -109,7 +109,7 @@
         <?php
         // Substituição dos itens no combo
          if($_POST['combo']){
-            echo $query = "select * from itens where situacao = '1' and deletado != '1' and categoria in (" . (($produtos_trocar)?:'0') . ")";
+            $query = "select * from itens where situacao = '1' and deletado != '1' and categoria in (" . (($produtos_trocar)?:'0') . ")";
             $result = mysqli_query($con, $query);
             if(mysqli_num_rows($result)){
         ?>
