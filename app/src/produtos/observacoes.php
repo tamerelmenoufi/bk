@@ -6,13 +6,33 @@
     $p = mysqli_fetch_object($result);
 
     // itens => Categoria para remover itens dos produtos
-    $ItensDoProduto = json_decode($p->itens);
-    $CodigosRemove = [];
-    $produtos = false;
-    foreach($ItensDoProduto as $ind => $val){
-        $CodigosRemove[] = $val->produto;
+
+
+    if($_POST['combo'] and $p->descricao){
+        $query = "select * from produtos where codigo in ({$p->descricao})";
+        $result = mysqli_query($con, $query);
+        $CodigosRemove = [];
+        $produtos = false;
+        while($p1 = mysqli_fetch_object($result)){
+
+            $ItensDoProduto = json_decode($p1->itens);
+            foreach($ItensDoProduto as $ind => $val){
+                $CodigosRemove[] = $val->produto;
+            }
+
+        }
+
+        if($CodigosRemove) $produtos = implode(", ",$CodigosRemove);
+
+    }else{
+        $ItensDoProduto = json_decode($p->itens);
+        $CodigosRemove = [];
+        $produtos = false;
+        foreach($ItensDoProduto as $ind => $val){
+            $CodigosRemove[] = $val->produto;
+        }
+        if($CodigosRemove) $produtos = implode(", ",$CodigosRemove);
     }
-    if($CodigosRemove) $produtos = implode(", ",$CodigosRemove);
 
 
     // categorias_itens => Categorias para adicionar aos produtos
