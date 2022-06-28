@@ -261,7 +261,7 @@ if ($codigo) {
 
                     </div>
 
-                    <div combo codigos="<?= (($d->descricao) ?: '0') ?>" class="col"
+                    <div combo codigos="<?= ((trim($d->descricao)) ?: '0') ?>" class="col"
                          style="height:300px; overflow:auto;">
 
                     </div>
