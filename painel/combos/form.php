@@ -74,7 +74,7 @@ if ($codigo) {
 
     $ItensDoProduto = json_decode($d->itens);
     $categorias_itens = json_decode($d->categorias_itens);
-    $categoria_troca = json_decode($d->categoria_troca);
+    $categorias_troca = json_decode($d->categorias_troca);
 }
 
 ?>
@@ -324,9 +324,9 @@ if ($codigo) {
                                     class="list-group-item list-group-item-action">
                                     <input
                                         type="checkbox"
-                                        name="categoria_troca[]"
+                                        name="categorias_troca[]"
                                         value='<?=$c->codigo?>'
-                                        <?=((in_array($c->codigo, $categoria_troca)?'checked':false))?>
+                                        <?=((in_array($c->codigo, $categorias_troca)?'checked':false))?>
                                     >
                                     <?= $c->categoria ?>
                                 </li>
