@@ -5,16 +5,29 @@
     $result = mysqli_query($con, $query);
     $p = mysqli_fetch_object($result);
 
-
+    // itens => Categoria para remover itens dos produtos
     $ItensDoProduto = json_decode($p->itens);
-
-    $Codigos = [];
+    $CodigosRemove = [];
     $produtos = false;
     foreach($ItensDoProduto as $ind => $val){
-        $Codigos[] = $val->produto;
-        $Quantidade[$val->produto] = $val->quantidade;
+        $CodigosRemove[] = $val->produto;
     }
-    if($Codigos) $produtos = implode(", ",$Codigos);
+    if($CodigosRemove) $produtos = implode(", ",$CodigosRemove);
+
+
+    // categorias_itens => Categorias para adicionar aos produtos
+    $ItensAdicionar = json_decode($p->categorias_itens);
+    $CodigosAdicionar = [];
+    $produtos = false;
+    foreach($ItensAdicionar as $ind => $val){
+        $CodigosAdicionar[] = $val->produto;
+    }
+    if($CodigosAdicionar) $produtos = implode(", ",$CodigosAdicionar);
+
+
+    // categorias_troca => Categorias para troca dos produtos apenas nos combos
+    $ItensTrocar = json_decode($p->categorias_troca);
+
 
 
 ?>
@@ -47,7 +60,7 @@
         <?php
         // if(!$_POST['combo']){
 
-            $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $Codigos) . ")";
+            $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $CodigosRemove) . ")";
             $result = mysqli_query($con, $query);
             if(mysqli_num_rows($result)){
         ?>
@@ -89,7 +102,19 @@
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
                 <ul class="list-group">
                     <?php
-                        $query = "select a.*, b.categoria from itens a left join categorias_itens b on a.categoria = b.codigo where b.situacao = '1' and b.deletado != '1' and a.situacao = '1' and a.deletado != '1' order by b.categoria, a.item";
+                        $query = "select
+                                        a.*,
+                                        b.categoria
+                                from itens a
+                                left join categorias_itens b on a.categoria = b.codigo
+
+                                where
+                                    b.situacao = '1' and
+                                    b.deletado != '1' and
+                                    a.situacao = '1' and
+                                    a.deletado != '1' and
+                                    a.categoria in (".(($CodigosAdicionar)?:'0').")
+                                order by b.categoria, a.item";
                         $result = mysqli_query($con, $query);
                         $Categoria = false;
                         while($d = mysqli_fetch_object($result)){
