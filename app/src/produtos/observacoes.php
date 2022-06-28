@@ -248,7 +248,7 @@
 
         for(i=0; i < Troca.length; i++){
             // console.log(Troca[i].codigo)
-            $(`#troca${Troca[i].codigo}`).prop("checked", true);
+            $(`#troca${Troca[i]}`).prop("checked", true);
         }
 
         for(i=0; i < Add.length; i++){
