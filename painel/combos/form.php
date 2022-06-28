@@ -66,6 +66,9 @@ if ($codigo) {
     $query = "SELECT * FROM produtos WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
+
+    $ItensDoProduto = json_decode($d->itens);
+    $categorias_itens = json_decode($d->categorias_itens);
 }
 
 ?>
