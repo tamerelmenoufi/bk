@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     unset($data['file_base']);
 
+    $data['categorias_itens'] = json_encode($data['categorias_itens']);
 
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
@@ -490,6 +491,7 @@ if ($codigo) {
                                 $('#palco').html(response);
                             }
                         })
+
                     } else {
                         tata.error('Error', retorno.msg);
                     }
