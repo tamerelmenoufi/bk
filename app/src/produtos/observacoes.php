@@ -22,7 +22,7 @@
     foreach($ItensAdicionar as $ind => $val){
         $CodigosAdicionar[] = $val->produto;
     }
-    if($CodigosAdicionar) $produtos = implode(", ",$CodigosAdicionar);
+    if($CodigosAdicionar) $produtos_adicionar = implode(", ",$CodigosAdicionar);
 
 
     // categorias_troca => Categorias para troca dos produtos apenas nos combos
@@ -113,7 +113,7 @@
                                     b.deletado != '1' and
                                     a.situacao = '1' and
                                     a.deletado != '1' and
-                                    a.categoria in (".(($CodigosAdicionar)?:'0').")
+                                    a.categoria in (".(($produtos_adicionar)?:'0').")
                                 order by b.categoria, a.item";
                         $result = mysqli_query($con, $query);
                         $Categoria = false;
