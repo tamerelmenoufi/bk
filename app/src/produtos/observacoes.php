@@ -125,7 +125,8 @@
                         <div class="form-check">
                             <input
                                 troca
-                                type="checkbox"
+                                type="radio"
+                                name="trocarItens"
                                 class="form-check-input"
                                 id="toca<?=$d->codigo?>"
                                 codigo="<?=$d->codigo?>"
