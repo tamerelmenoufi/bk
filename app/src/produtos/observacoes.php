@@ -135,7 +135,7 @@
                             >
                             <label class="form-check-label" for="troca<?=$d->codigo?>"> <small><?=$d->item?></small></label>
                         </div>
-                        <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor_combo,2,',',false)?></span>
+                        <span class="badge badge-primary badge-pill">+ R$ <?=number_format($d->valor_combo,2,',',false)?></span>
                     </li>
                     <?php
                         }
