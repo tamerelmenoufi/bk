@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     unset($data['file_base']);
 
     $data['categorias_itens'] = json_encode($data['categorias_itens']);
-    $data['categoria_troca'] = json_encode($data['categoria_troca']);
+    $data['categorias_troca'] = json_encode($data['categorias_troca']);
 
     foreach ($data as $name => $value) {
         $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
