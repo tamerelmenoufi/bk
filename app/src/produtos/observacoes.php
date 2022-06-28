@@ -34,7 +34,7 @@
     }
     if($CodigosTrocar) $produtos_trocar = implode(", ", $CodigosTrocar);
 
-    print_r($ItensTrocar);
+    echo ($produtos_trocar);
 ?>
 
 <style>
