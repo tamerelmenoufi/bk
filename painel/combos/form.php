@@ -382,17 +382,17 @@ if ($codigo) {
 <script>
     $(function () {
 
-        // existe = JSON.parse("[" + $("div[combo]").attr("codigos") + "]");
+        existe = JSON.parse("[" + $("div[combo]").attr("codigos") + "]");
 
-        // $.ajax({
-        //     url: "combos/combo.php",
-        //     data: {
-        //         produtos: existe,
-        //     },
-        //     success: function (dados) {
-        //         $("div[combo]").html(dados);
-        //     }
-        // });
+        $.ajax({
+            url: "combos/combo.php",
+            data: {
+                produtos: existe,
+            },
+            success: function (dados) {
+                $("div[combo]").html(dados);
+            }
+        });
 
         $('input[situacao]').change(function () {
             opc = $(this).attr("opc");
