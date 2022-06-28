@@ -18,7 +18,7 @@
     // categorias_itens => Categorias para adicionar aos produtos
     $ItensAdicionar = json_decode($p->categorias_itens);
     $CodigosAdicionar = [];
-    $produtos = false;
+    $produtos_adicionar = false;
     foreach($ItensAdicionar as $ind => $val){
         $CodigosAdicionar[] = $val;
     }
@@ -27,7 +27,12 @@
 
     // categorias_troca => Categorias para troca dos produtos apenas nos combos
     $ItensTrocar = json_decode($p->categorias_troca);
-
+    $CodigosTrocar = [];
+    $produtos_trocar = false;
+    foreach($ItensTrocar as $ind => $val){
+        $CodigosTrocar[] = $val;
+    }
+    if($CodigosTrocar) $produtos_trocar = implode(", ",$CodigosTrocar);
 
 
 ?>
@@ -57,6 +62,9 @@
             <h5>Incluir Observações</h5>
             <textarea class="form-control" id="observacoes"></textarea>
         </div>
+
+
+
         <?php
         // if(!$_POST['combo']){
 
@@ -97,6 +105,57 @@
             <?php
                 }
             ?>
+
+
+
+
+        <?php
+        // Substituição dos itens no combo
+         if(!$_POST['combo']){
+
+            $query = "select * from itens where situacao = '1' and deletado != '1' and codigo in (" . implode(", ", $produtos_trocar) . ")";
+            $result = mysqli_query($con, $query);
+            if(mysqli_num_rows($result)){
+        ?>
+        <div class="mb-3">
+            <div class="card">
+                <h5 class="card-header"><i class="fa-solid fa-eraser"></i> <small> Substituir Itens do combo</small></h5>
+                <ul class="list-group">
+
+                <?php
+                        while($d = mysqli_fetch_object($result)){
+                    ?>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="form-check">
+                            <input
+                                troca
+                                type="checkbox"
+                                class="form-check-input"
+                                id="toca<?=$d->codigo?>"
+                                codigo="<?=$d->codigo?>"
+                                descricao="<?=$d->item?>"
+                                valor="<?=$d->valor_combo?>"
+                            >
+                            <label class="form-check-label" for="troca<?=$d->codigo?>"> <small><?=$d->item?></small></label>
+                        </div>
+                        <span class="badge badge-primary badge-pill">R$ <?=number_format($d->valor_combo,2,',',false)?></span>
+                    </li>
+                    <?php
+                        }
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <?php
+            }
+        }
+        ?>
+
+
+
+
+
+
         <div class="mb-3">
             <div class="card">
                 <h5 class="card-header"><i class="fa-solid fa-cart-plus"></i> <small> Adicionar Itens ao produto</small></h5>
@@ -170,9 +229,7 @@
                 </ul>
             </div>
         </div>
-        <?php
-        // }
-        ?>
+
     </div>
 </div>
 
@@ -190,6 +247,11 @@
         for(i=0; i < Del.length; i++){
             // console.log(Del[i].codigo)
             $(`#del${Del[i].codigo}`).prop("checked", true);
+        }
+
+        for(i=0; i < Troca.length; i++){
+            // console.log(Troca[i].codigo)
+            $(`#troca${Troca[i].codigo}`).prop("checked", true);
         }
 
         for(i=0; i < Add.length; i++){
@@ -212,6 +274,14 @@
                     cd = $(this).attr('codigo');
                     qt = $(`#qt${cd}`).val();
                     Add.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), quantidade:qt, valor:$(this).attr('valor')});
+                }
+            });
+
+            Troca = [];
+            $("input[troca]").each(function(){
+                if($(this).prop("checked") == true){
+                    cd = $(this).attr('codigo');
+                    Troca.push({codigo:$(this).attr('codigo'), descricao:$(this).attr('descricao'), valor:$(this).attr('valor')});
                 }
             });
 
@@ -250,9 +320,22 @@
                 obsDel += `- ${Del[i].descricao}<br>`;
             }
 
+            //---------
+            var obsTroca = '';
+            if(Troca.length > 0){
+                obsTroca += "<b>Substituição de Itens do produto:</b><br>";
+            }
+            for(i=0; i < Troca.length; i++){
+                // console.log(Del[i].codigo)
+                valor_unitario_aditivo = ( (valor_unitario_aditivo * 1) + (Troca[i].valor * 1));
+                VlItem = (Troca[i].valor).toLocaleString('pt-br', {minimumFractionDigits: 2});
+                obsTroca += `- ${Troca[i].descricao} + (R$ ${VlItem})<br>`;
+            }
+
             //-------
             var produto_descricao2 = '';
             produto_descricao2 += obsAdd;
+            produto_descricao2 += obsTroca;
             produto_descricao2 += obsDel;
             $(".observacoes2").html(produto_descricao2);
 
