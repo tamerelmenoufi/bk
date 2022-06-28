@@ -358,9 +358,11 @@
             //-------
             valor_unitario = $("span[valor]").attr("atual");
             //-------
+            valor_aditivo = $("span[valor]").attr("aditivo");
+            //-------
             quantidade = $("#quantidade").html();
             //-------
-            valor_total = (valor_unitario*quantidade);
+            valor_total = ((valor_unitario*1 + valor_aditivo*1) * quantidade);
             //-------
             var produto = '<?=$p->codigo?>';
             //-------
