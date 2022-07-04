@@ -6,7 +6,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST' and $_POST['acao'] === 'excluir') {
         $codigo = $_POST['codigo'];
 
-        if (exclusao('item', $codigo)) {
+        if (exclusao('itens', $codigo)) {
             echo json_encode(["status" => true, "msg" => "Registro excluído com sucesso"]);
         } else {
             echo json_encode(["status" => false, "msg" => "Error ao tentar excluír"]);
