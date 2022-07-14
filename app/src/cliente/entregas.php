@@ -46,8 +46,8 @@
 ?>
 
 <div style="position:relative; height:auto; margin-left:70px; border-left:solid 3px green; ">
-    <span style="position:absolute; width:15px; height:2px; background-color:green; top:0px; left:-8px;"></span>
-    <span style="position:absolute; width:15px; height:2px; background-color:green; bottom:0px; left:-8px;"></span>
+    <span style="position:absolute; width:15px; height:2px; background-color:green; top:0px; left:-9px;"></span>
+    <span style="position:absolute; width:15px; height:2px; background-color:green; bottom:0px; left:-9px;"></span>
     <?php
 
         if($d->CANCELED > 0){
