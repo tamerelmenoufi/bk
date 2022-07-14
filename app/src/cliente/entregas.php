@@ -41,6 +41,8 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
+    echo "<p>".date("d/m/Y H:i:s")."</p>";
+
 ?>
 
 <div style="position:relative; height:auto; margin-left:70px; border-left:solid 3px green; ">
@@ -79,6 +81,9 @@
 <script>
 
     $(function(){
+        <?php
+        if($d->COMPLETED == 0 and $d->CANCELED == 0){
+        ?>
         setTimeout(() => {
             $.ajax({
                 url:"src/cliente/entregas.php",
@@ -94,6 +99,9 @@
                 }
             });
         }, 10000);
+        <?php
+        }
+        ?>
     })
 
 </script>
