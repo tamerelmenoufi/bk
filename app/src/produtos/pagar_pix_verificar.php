@@ -11,8 +11,7 @@
     $operadora_retorno = $retorno;
     $retorno = json_decode($retorno);
 
-    echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Pagamento: ".$Status[$retorno->status];
+    echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$Status[$retorno->status]."</p>";
 
     if($retorno->status == 'approved'){
         //Aqui entra a solicitação da Bee
