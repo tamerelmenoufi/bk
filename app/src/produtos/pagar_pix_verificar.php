@@ -31,7 +31,12 @@
     }
 
 ?>
-
+<style>
+        .status_pagamento{
+        width:100%;
+        text-align:center;
+    }
+    </style>
 <script>
     $(function(){
         <?php
