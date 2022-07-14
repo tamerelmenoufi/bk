@@ -46,10 +46,8 @@
 <div style="position:relative; height:auto; margin-left:70px; border-left:solid 3px green; ">
     <?php
 
-        echo date("d/m/Y H:i:s");
-
         if($d->CANCELED > 0){
-            echo EventoEntrega();
+            echo EventoEntrega(false, 'Pedido Cancelado');
         }else{
 
             if($d->SEARCHING > 0){
