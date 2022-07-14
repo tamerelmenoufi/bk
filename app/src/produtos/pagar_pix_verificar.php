@@ -3,11 +3,13 @@
     $PIX = new MercadoPago;
     $retorno = $PIX->ObterPagamento($_POST['id']);
 
+    $retorno = json_decode($retorno);
+
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Status ID {$_POST['id']} -> ".$dados['additional_info'];
+    echo "Status ID {$_POST['id']} -> ".$dados->additional_info;
 
     echo "<pre>";
-    var_dump($retorno);
+    // var_dump($retorno);
     echo "</pre>";
 
 ?>
