@@ -37,11 +37,8 @@
                     </p>
 
                     <p
-                        <?=(($d->CANCELED > 0 or $d->COMPLETED > 0)?false: ' entrega="'.$d->codigo.'" ')?>
-
+                        entrega="<?=$d->codigo?>"
                         class="card-text">
-
-
                     </p>
 
                 </div>
