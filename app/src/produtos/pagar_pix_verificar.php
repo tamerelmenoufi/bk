@@ -18,8 +18,9 @@
         // e tbm a mudança de status para pedido em produção
 
         mysqli_query($con, "update vendas set
-                            operadora_situacao = '{$operadora_situacao}',
-                            operadora_retorno = '{$operadora_retorno}'
+                            operadora_situacao = '{$retorno->status}',
+                            operadora_retorno = '{$operadora_retorno}',
+                            situacao = 'p'
                         where operadora_id = '{$_POST['id']}'
                     ");
 
