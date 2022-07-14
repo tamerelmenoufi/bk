@@ -12,7 +12,7 @@
     $retorno = json_decode($retorno);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Pagamento: ".$Status[$retorno->status];
+    echo "Pagamento: ".$Status[$retorno->status].$retorno->status;
 
     if($retorno->status == 'approved'){
         //Aqui entra a solicitação da Bee
