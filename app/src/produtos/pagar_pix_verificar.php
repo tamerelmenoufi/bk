@@ -6,7 +6,7 @@
     $retorno = json_decode($retorno);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Status ID {$_POST['id']} -> ".$retorno->status;
+    echo "Pagamento: ".$retorno->status;
 
     if($retorno->status == 'approved'){
         //Aqui entra a solicitação da Bee
@@ -18,9 +18,9 @@
                         where operadora_id = '{$_POST['id']}'
                     ");
 
-        // $_SESSION['AppVenda'] = false;
-        // $_SESSION['AppPedido'] = false;
-        // $_SESSION['AppCarrinho'] = false;
+        $_SESSION['AppVenda'] = false;
+        $_SESSION['AppPedido'] = false;
+        $_SESSION['AppCarrinho'] = false;
 
     }
 
