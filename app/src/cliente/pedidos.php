@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col">
 <?php
-    $query = "select * from vendas where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' and data_finalizacao > 0 order by data_finalizacao desc";
+    $query = "select * from vendas where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' and operadora_situacao = 'approved' /*and data_finalizacao > 0*/ order by data_finalizacao desc";
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
     while($d = mysqli_fetch_object($result)){
