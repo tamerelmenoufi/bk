@@ -66,6 +66,7 @@
     .status_pagamento{
         width:100%;
         text-align:center;
+        border:solid 1px red;
     }
 </style>
 <div class="PedidoTopoTitulo">
