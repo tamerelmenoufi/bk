@@ -63,6 +63,10 @@
         width:100%;
         text-transform:uppercase;
     }
+    .status_pagamento{
+        width:100%;
+        text-align:center;
+    }
 </style>
 <div class="PedidoTopoTitulo">
     <h4>Pagar com PIX</h4>
