@@ -48,6 +48,8 @@
 
         if($d->CANCELED > 0){
             echo EventoEntrega(false, 'Pedido Cancelado');
+        }else if($d->COMPLETED > 0){
+            echo EventoEntrega($d->COMPLETED,'Entrega Concluída');
         }else{
 
             if($d->SEARCHING > 0){
@@ -67,9 +69,6 @@
             }
             if($d->RETURNING > 0){
                 echo EventoEntrega($d->RETURNING, 'Entregador retornando');
-            }
-            if($d->COMPLETED > 0){
-                echo EventoEntrega($d->COMPLETED,'Entrega Concluída');
             }
 
         }
