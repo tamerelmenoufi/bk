@@ -24,15 +24,13 @@
 
     }
 
-    echo "TESTE";
-
 ?>
 
 <script>
     $(function(){
 
-        alert('Pagamento Confirmado.Seu pedido está em preparo!')
-        //PageClose(2);
+        $.alert('Pagamento Confirmado.Seu pedido está em preparo!')
+        PageClose(3);
 
     })
 </script>
