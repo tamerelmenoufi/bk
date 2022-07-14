@@ -38,6 +38,8 @@
 <div style="position:relative; height:auto; margin-left:70px; border-left:solid 3px green; ">
     <?php
 
+        echo date("d/m/Y H:i:s");
+
         if($d->CANCELED > 0){
             echo EventoEntrega();
         }else{
@@ -75,3 +77,25 @@
     ?>
 
 </div>
+
+<script>
+
+    $(function(){
+        setTimeout(() => {
+            $.ajax({
+                url:"src/cliente/entregas.php",
+                type:"POST",
+                data:{
+                    cod:'<?=$_POST['cod']?>'
+                },
+                success:function(dados){
+                    $('p[entrega="<?=$_POST['cod']?>"]').html(dados);
+                },
+                error:function(){
+                    alert('erro');
+                }
+            });
+        }, 10000);
+    })
+
+</script>

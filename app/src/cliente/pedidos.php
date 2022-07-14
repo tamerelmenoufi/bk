@@ -33,12 +33,12 @@
                         Valor: R$ <?=$d->total?><br>
                         Data do Pedido: <?=$d->data_finalizacao?><br>
                         Forma de Pagamento: <?=strtoupper($d->forma_pagamento)?><br>
-                        situação: <?=$d->operadora_situacao?>
+                        situação do Pagamento: <?=$d->operadora_situacao?>
                     </p>
-
 
                     <p
                         <?=(($d->CANCELED > 0 or $d->COMPLETED > 0)?false: ' entrega="'.$d->codigo.'" ')?>
+
                         class="card-text">
 
 
