@@ -6,7 +6,7 @@
     $retorno = json_decode($retorno);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Status ID {$_POST['id']} -> ".$dados->additional_info;
+    echo "Status ID {$_POST['id']} -> ".$dados->status;
 
     echo "<pre>";
     var_dump($retorno);
