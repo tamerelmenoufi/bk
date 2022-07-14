@@ -4,7 +4,7 @@
     $retorno = $PIX->ObterPagamento($_POST['id']);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    print_r($retorno);
+    echo $dados->status;
 ?>
 
 <script>
