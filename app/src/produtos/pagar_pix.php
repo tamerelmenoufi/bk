@@ -133,7 +133,7 @@
                             // }
 
 
-                            //   $qrcode = '12e44a26-e3b4-445f-a799-1199df32fa1e';
+                            $qrcode = '12e44a26-e3b4-445f-a799-1199df32fa1e';
 
                             $operadora_id = 23997683882;
 
