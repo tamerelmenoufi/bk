@@ -28,32 +28,9 @@
 
 <script>
     $(function(){
-        /*
-        <?php
-        //if($retorno->status != 'approved'){
-        ?>
-        setTimeout(() => {
-            $.ajax({
-                url:"src/produtos/pagar_pix_verificar.php",
-                type:"POST",
-                data:{
-                    id:'<?=$_POST['id']?>'
-                },
-                success:function(dados){
-                    $(".status_pagamento").html(dados)
-                }
-            });
-        }, 5000);
-        <?php
-        //}else{
-        ?>
-        */
-            $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
-            PageClose(2);
-        /*
-        <?php
-        //}
-        ?>
-        */
+
+        $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
+        PageClose(2);
+
     })
 </script>
