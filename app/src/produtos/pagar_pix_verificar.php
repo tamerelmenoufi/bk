@@ -28,9 +28,8 @@
 
 <script>
     $(function(){
-        /*
         <?php
-        //if($retorno->status != 'approved'){
+        if($retorno->status != 'approved'){
         ?>
         setTimeout(() => {
             $.ajax({
@@ -45,15 +44,12 @@
             });
         }, 5000);
         <?php
-        //}else{
+        }else{
         ?>
-        //*/
             $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
             PageClose(2);
-        /*
         <?php
-        //}
+        }
         ?>
-        //*/
     })
 </script>
