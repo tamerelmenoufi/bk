@@ -2,7 +2,7 @@
     include("../../../lib/includes.php");
     $PIX = new MercadoPago;
     $retorno = $PIX->ObterPagamento($_POST['id']);
-
+    $operadora_retorno = $retorno;
     $retorno = json_decode($retorno);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
@@ -12,11 +12,11 @@
         //Aqui entra a solicitação da Bee
         // e tbm a mudança de status para pedido em produção
 
-        // mysqli_query($con, "update vendas set
-        //                     operadora_situacao = '{$operadora_situacao}',
-        //                     operadora_retorno = '{$retorno}'
-        //                 where operadora_id = '{$_POST['id']}'
-        //             ");
+        mysqli_query($con, "update vendas set
+                            operadora_situacao = '{$operadora_situacao}',
+                            operadora_retorno = '{$operadora_retorno}'
+                        where operadora_id = '{$_POST['id']}'
+                    ");
 
         // $_SESSION['AppVenda'] = false;
         // $_SESSION['AppPedido'] = false;
