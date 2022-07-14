@@ -24,6 +24,8 @@
 
     }
 
+    echo "TESTE";
+
 ?>
 
 <script>
