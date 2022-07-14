@@ -81,67 +81,67 @@
 
                             //AQUI É A GERAÇÃO DA COBRANÇA PIX
 
-                            // $PIX = new MercadoPago;
+                            $PIX = new MercadoPago;
 
-                            // $retorno = $PIX->Transacao('{
-                            //     "transaction_amount": '.$d->total.',
-                            //     "description": "Pedido '.$pedido.' - Venda BKManaus (Delivery)",
-                            //     "payment_method_id": "pix",
-                            //     "payer": {
-                            //       "email": "'.$d->email.'",
-                            //       "first_name": "'.substr($d->nome, 0, ($pos-1)).'",
-                            //       "last_name": "'.substr($d->nome, $pos, strlen($d->nome)).'",
-                            //       "identification": {
-                            //           "type": "CPF",
-                            //           "number": "'.str_replace(array('.','-'),false,$d->cpf).'"
-                            //       },
-                            //       "address": {
-                            //           "zip_code": "'.str_replace(array('.','-'),false,$d->cep).'",
-                            //           "street_name": "'.$d->rua.'",
-                            //           "street_number": "'.$d->numero.'",
-                            //           "neighborhood": "'.$d->bairro.'",
-                            //           "city": "Manaus",
-                            //           "federal_unit": "AM"
-                            //       }
-                            //     }
-                            //   }');
+                            $retorno = $PIX->Transacao('{
+                                "transaction_amount": 5.56'.$d->totalX.',
+                                "description": "Pedido '.$pedido.' - Venda BKManaus (Delivery)",
+                                "payment_method_id": "pix",
+                                "payer": {
+                                  "email": "'.$d->email.'",
+                                  "first_name": "'.substr($d->nome, 0, ($pos-1)).'",
+                                  "last_name": "'.substr($d->nome, $pos, strlen($d->nome)).'",
+                                  "identification": {
+                                      "type": "CPF",
+                                      "number": "'.str_replace(array('.','-'),false,$d->cpf).'"
+                                  },
+                                  "address": {
+                                      "zip_code": "'.str_replace(array('.','-'),false,$d->cep).'",
+                                      "street_name": "'.$d->rua.'",
+                                      "street_number": "'.$d->numero.'",
+                                      "neighborhood": "'.$d->bairro.'",
+                                      "city": "Manaus",
+                                      "federal_unit": "AM"
+                                  }
+                                }
+                              }');
 
-                            //   $dados = json_decode($retorno);
+                              $dados = json_decode($retorno);
 
-                            //   $operadora_id = $dados->id;
-                            //   $forma_pagamento = $dados->payment_method_id;
-                            //   $operadora_situacao = $dados->status;
-                            //   $qrcode = $dados->point_of_interaction->transaction_data->qr_code;
-                            //   $qrcode_img = $dados->point_of_interaction->transaction_data->qr_code_base64;
-
-
-                            // if($operadora_id){
-
-                            //     mysqli_query($con, "update vendas set
-                            //                                         operadora_id = '{$operadora_id}',
-                            //                                         forma_pagamento = '{$forma_pagamento}',
-                            //                                         operadora = 'mercadopago',
-                            //                                         operadora_situacao = '{$operadora_situacao}',
-                            //                                         operadora_retorno = '{$retorno}'
-                            //                         where codigo = '{$d->codigo}'
-                            //             ");
-
-                            //     $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
-                            //     $_SESSION['AppPedido'] = false;
-                            //     $_SESSION['AppCarrinho'] = false;
-
-                            // }
+                              $operadora_id = $dados->id;
+                              $forma_pagamento = $dados->payment_method_id;
+                              $operadora_situacao = $dados->status;
+                              $qrcode = $dados->point_of_interaction->transaction_data->qr_code;
+                              $qrcode_img = $dados->point_of_interaction->transaction_data->qr_code_base64;
 
 
-                              $qrcode = '12e44a26-e3b4-445f-a799-1199df32fa1e';
+                            if($operadora_id){
+
+                                mysqli_query($con, "update vendas set
+                                                                    operadora_id = '{$operadora_id}',
+                                                                    forma_pagamento = '{$forma_pagamento}',
+                                                                    operadora = 'mercadopago',
+                                                                    operadora_situacao = '{$operadora_situacao}',
+                                                                    operadora_retorno = '{$retorno}'
+                                                    where codigo = '{$d->codigo}'
+                                        ");
+
+                                // $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
+                                // $_SESSION['AppPedido'] = false;
+                                // $_SESSION['AppCarrinho'] = false;
+
+                            }
+
+
+                            //   $qrcode = '12e44a26-e3b4-445f-a799-1199df32fa1e';
 
                         ?>
                         Utilize o QrCode para pagar a sua conta ou copie o códio PIX abaixo.
                     </p>
                     <div style="padding:20px;">
-                        <!-- <img src="data:image/png;base64,<?=$qrcode_img?>" style="width:100%"> -->
-                        <img src="img/qrteste.png" style="width:100%">
-
+                        <img src="data:image/png;base64,<?=$qrcode_img?>" style="width:100%">
+                        <!-- <img src="img/qrteste.png" style="width:100%"> -->
+                        <div class="status_pagamento"></div>
                     </div>
                     <p style="text-align:center; font-size:12px;">Seu Código PIX</p>
                     <p style="text-align:center; font-size:16px;"><?=$qrcode?></p>
@@ -153,9 +153,21 @@
 </div>
 <script>
     $(function(){
-        $("#cartao_numero").mask("9999 9999 9999 9999");
-        $("#cartao_validade_mes").mask("99");
-        $("#cartao_validade_ano").mask("9999");
-        $("#cartao_ccv").mask("9999");
+        <?php
+        if($operadora_id){
+        ?>
+        $.ajax({
+            url:"src/produtos/pagar_pix_verificar.php",
+            type:"POST",
+            data:{
+                id:'<?=$operadora_id?>'
+            },
+            success:function(dados){
+                $(".status_pagamento").html(dados)
+            }
+        });
+        <?php
+        }
+        ?>
     })
 </script>
