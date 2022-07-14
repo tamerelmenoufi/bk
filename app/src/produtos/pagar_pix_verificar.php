@@ -9,7 +9,7 @@
     echo "Status ID {$_POST['id']} -> ".$dados->additional_info;
 
     echo "<pre>";
-    // var_dump($retorno);
+    var_dump($retorno);
     echo "</pre>";
 
 ?>
