@@ -1,6 +1,7 @@
 <?php
     include("../../../lib/includes.php");
     error_reporting(9);
+
     $query = "select
                     a.venda,
                     sum(a.valor_total) as total,

@@ -1,12 +1,18 @@
 <?php
     include("../../../lib/includes.php");
+
+    $Status = [
+        'panding' => '<span style="color:red">Pendente</span>',
+        'approved' => '<span style="color:green">Aprovado</span>',
+    ];
+
     $PIX = new MercadoPago;
     $retorno = $PIX->ObterPagamento($_POST['id']);
     $operadora_retorno = $retorno;
     $retorno = json_decode($retorno);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Pagamento: ".$retorno->status;
+    echo "Pagamento: ".$Status[$retorno->status];
 
     if($retorno->status == 'approved'){
         //Aqui entra a solicitação da Bee
