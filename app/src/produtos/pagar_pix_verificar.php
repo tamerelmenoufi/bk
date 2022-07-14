@@ -29,7 +29,7 @@
 <script>
     $(function(){
 
-        $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
+        alert('Pagamento Confirmado.Seu pedido está em preparo!')
         //PageClose(2);
 
     })
