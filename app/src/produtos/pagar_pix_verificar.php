@@ -4,9 +4,9 @@
     $retorno = $PIX->ObterPagamento($_POST['id']);
 
     echo "<p>".date("d/m/Y H:i:s")."</p>";
-    echo "Status ID {$_POST['id']} -> ".$dados->status;
+    echo "Status ID {$_POST['id']} -> ".$dados->additional_info;
 
-    echo "<pre>".print_r($retorno)."</pre>";
+    //echo "<pre>".print_r($retorno)."</pre>";
 
 ?>
 
