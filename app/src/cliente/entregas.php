@@ -53,31 +53,25 @@
         }else{
 
             if($d->SEARCHING > 0){
-                echo EventoEntrega($d->SEARCHING, 'A Caminho do estabelecimento');
+                echo EventoEntrega($d->SEARCHING, 'Buscando Motoqueiro');
             }
             if($d->GOING_TO_ORIGIN > 0){
-                echo EventoEntrega();
-                $retorno_situacao['GOING_TO_ORIGIN'] = "<p>A Caminho do estabelecimento</p>";
+                echo EventoEntrega($d->GOING_TO_ORIGIN,'A Caminho do estabelecimento');
             }
             if($d->ARRIVED_AT_ORIGIN > 0){
-                echo EventoEntrega();
-                $retorno_situacao['ARRIVED_AT_ORIGIN'] = "<p>Entregador no estabelecimento</p>";
+                echo EventoEntrega($d->ARRIVED_AT_ORIGIN,'Entregador no estabelecimento');
             }
             if($d->GOING_TO_DESTINATION > 0){
-                echo EventoEntrega();
-                $retorno_situacao['GOING_TO_DESTINATION'] = "<p>A entrga está a caminho</p>";
+                echo EventoEntrega($d->GOING_TO_DESTINATION,'A entrga está a caminho');
             }
             if($d->ARRIVED_AT_DESTINATION > 0){
-                echo EventoEntrega();
-                $retorno_situacao['ARRIVED_AT_DESTINATION'] = "<p>Entrega realizada</p>";
+                echo EventoEntrega($d->ARRIVED_AT_DESTINATION,'Entrega realizada');
             }
             if($d->RETURNING > 0){
-                echo EventoEntrega();
-                $retorno_situacao['RETURNING'] = "<p>Entregador retornando</p>";
+                echo EventoEntrega($d->RETURNING, 'Entregador retornando');
             }
             if($d->COMPLETED > 0){
-                echo EventoEntrega();
-                $retorno_situacao['COMPLETED'] = "<p>Entrega Concluída</p>";
+                echo EventoEntrega($d->COMPLETED,'Entrega Concluída');
             }
 
         }
