@@ -49,7 +49,7 @@
         ?>
         //*/
             $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
-            PageClose(3);
+            PageClose(2);
         /*
         <?php
         //}
