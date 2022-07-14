@@ -141,8 +141,8 @@
                         Utilize o QrCode para pagar a sua conta ou copie o códio PIX abaixo.
                     </p>
                     <div style="padding:20px;">
-                        <img src="data:image/png;base64,<?=$qrcode_img?>" style="width:100%">
-                        <!-- <img src="img/qrteste.png" style="width:100%"> -->
+                        <!-- <img src="data:image/png;base64,<?=$qrcode_img?>" style="width:100%"> -->
+                        <img src="img/qrteste.png" style="width:100%">
                         <div class="status_pagamento"></div>
                     </div>
                     <p style="text-align:center; font-size:12px;">Seu Código PIX</p>
