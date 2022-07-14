@@ -18,9 +18,9 @@
                         where operadora_id = '{$_POST['id']}'
                     ");
 
-        $_SESSION['AppVenda'] = false;
-        $_SESSION['AppPedido'] = false;
-        $_SESSION['AppCarrinho'] = false;
+        // $_SESSION['AppVenda'] = false;
+        // $_SESSION['AppPedido'] = false;
+        // $_SESSION['AppCarrinho'] = false;
 
     }
 
