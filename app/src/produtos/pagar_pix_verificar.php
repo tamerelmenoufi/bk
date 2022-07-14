@@ -8,14 +8,29 @@
     echo "<p>".date("d/m/Y H:i:s")."</p>";
     echo "Status ID {$_POST['id']} -> ".$retorno->status;
 
-    echo "<pre>";
-    var_dump($retorno);
-    echo "</pre>";
+    if($retorno->status == 'approved'){
+        //Aqui entra a solicitação da Bee
+        // e tbm a mudança de status para pedido em produção
+
+        mysqli_query($con, "update vendas set
+                            operadora_situacao = '{$operadora_situacao}',
+                            operadora_retorno = '{$retorno}'
+                        where operadora_id = '{$_POST['id']}'
+                    ");
+
+        $_SESSION['AppVenda'] = false;
+        $_SESSION['AppPedido'] = false;
+        $_SESSION['AppCarrinho'] = false;
+
+    }
 
 ?>
 
 <script>
     $(function(){
+        <?php
+        if($retorno->status != 'approved'){
+        ?>
         setTimeout(() => {
             $.ajax({
                 url:"src/produtos/pagar_pix_verificar.php",
@@ -28,5 +43,13 @@
                 }
             });
         }, 5000);
+        <?php
+        }else{
+        ?>
+            $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
+            PageClose(3);
+        <?php
+        }
+        ?>
     })
 </script>

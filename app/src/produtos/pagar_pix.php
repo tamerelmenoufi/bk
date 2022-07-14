@@ -82,9 +82,9 @@
                             //AQUI É A GERAÇÃO DA COBRANÇA PIX
 
                             $PIX = new MercadoPago;
-
+                            // "transaction_amount": 5.56'.$d->totalX.',
                             $retorno = $PIX->Transacao('{
-                                "transaction_amount": 5.56'.$d->totalX.',
+                                "transaction_amount": 5.56,
                                 "description": "Pedido '.$pedido.' - Venda BKManaus (Delivery)",
                                 "payment_method_id": "pix",
                                 "payer": {
