@@ -2,13 +2,24 @@
 
     include("../../../lib/includes.php");
 
+    function DadosStatus($data, $msg){
+        list($d, $h) = explode(" ", $data);
+        $h = substr($h, 0, -3);
 
-    function EventoEntrega(){
+        return [
+            data => $d,
+            hora => $h,
+            status => $msg
+        ];
+    }
+
+    function EventoEntrega($data = false, $msg = false){
+        $obj = DadosStatus($data, $msg);
         return '<div style="position:relative; width:100%; min-height:90px; padding:10px; clear:both;">
 
                     <div style="position:absolute; left:-80px; top:10px; font-size:10px; text-align:right;">
-                        23/06/2022<br>
-                        08:16
+                        '.$obj['data'].'<br>
+                        '.$obj['hora'].'
                     </div>
 
                     <div style="position:absolute; left:-12px; top:5px; font-size:25px;">
@@ -19,7 +30,7 @@
                         <div style="position:absolute; left:-7px; top:0px; font-size:25px; color:#eee;">
                             <i class="fa-solid fa-caret-left"></i>
                         </div>
-                        Pedido Entregue
+                        '.$obj['status'].'
                     </div>
 
                 </div>';
@@ -29,9 +40,6 @@
     $query = "select * from vendas where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
-
-    $retorno_situacao = [];
-
 
 ?>
 
@@ -45,8 +53,7 @@
         }else{
 
             if($d->SEARCHING > 0){
-                echo EventoEntrega();
-                $retorno_situacao['SEARCHING'] = "<p>Buscando</p>";
+                echo EventoEntrega($d->SEARCHING, 'A Caminho do estabelecimento');
             }
             if($d->GOING_TO_ORIGIN > 0){
                 echo EventoEntrega();
