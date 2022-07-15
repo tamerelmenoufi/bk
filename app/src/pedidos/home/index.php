@@ -53,6 +53,14 @@
         width:100%;
         border:solid 1px red;
     }
+    .ListaPedidos{
+        position:fixed;
+        top:120px;
+        width:100%;
+        bottom:0;
+        border:solid 1px green;
+        overflow:auto;
+    }
 </style>
 
 <div class="PaginaPedidos">
@@ -77,7 +85,9 @@
         </select>
     </div>
 </div>
+<div class="ListaPedidos">
 
+</div>
 <script>
     $(function(){
         Carregando('none');
