@@ -56,6 +56,7 @@
 
                     }
                     $.alert(dados.mensagem)
+                    Carregando('none')
                     //$(".ms_corpo").html(dados);
                 }
              });
