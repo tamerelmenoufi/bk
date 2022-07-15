@@ -105,6 +105,9 @@
     $(function(){
         Carregando('none');
 
+
+
+
         opcLoja = window.localStorage.getItem('bk_pedidos_loja');
         $("#ListaLoja").val(opcLoja);
 
@@ -130,6 +133,20 @@
 
         });
 
+
+        $.ajax({
+            url: "src/pedidos/ListaPedidos/index.php",
+            success: function (dados) {
+                $(".ListaPedidos").html(dados);
+            }
+        });
+
+        $.ajax({
+            url: "src/pedidos/ListaStatus/index.php",
+            success: function (dados) {
+                $(".ListaStatus").html(dados);
+            }
+        });
 
     })
 </script>
