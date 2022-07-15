@@ -52,6 +52,7 @@
         position:fixed;
         top:60px;
         width:100%;
+        padding:10px;
         border:solid 1px red;
     }
     .ListaPedidos{
