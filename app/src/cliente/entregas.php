@@ -23,10 +23,10 @@
                     </div>
 
                     <div style="position:absolute; height:23px; width:23px; margin:0; padding:0; left:-13px; top:5px; font-size:23px; background-color:red; border-radius:100%;">
-                        <i class="fa-solid fa-clock"></i>
+                        <i class="fa-solid fa-clock" style="margin:0; padding:0"></i>
                     </div>
 
-                    <div style="position:absolute; left:30px; right:5px; border-radius:5px; background-color:#eee; padding:5px;">
+                    <div style="position:absolute; left:30px; top:5px; right:5px; border-radius:5px; background-color:#eee; padding:5px;">
                         <div style="position:absolute; left:-7px; top:0px; font-size:25px; color:#eee;">
                             <i class="fa-solid fa-caret-left"></i>
                         </div>
