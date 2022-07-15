@@ -1,4 +1,13 @@
-<?php include("../lib/includes.php"); ?>
+<?php
+    include("./pedidos/conf.php");
+
+    if($Uconf->codigo){
+        $url = 'home/index.php';
+    }else{
+        $url = 'login/login.php';
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +41,7 @@
 <script>
     $(function () {
         $.ajax({
-            url: "src/pedidos/login/login.php",
+            url: "src/pedidos/<?=$url?>",
             success: function (dados) {
                 $(".ms_corpo").html(dados);
             }

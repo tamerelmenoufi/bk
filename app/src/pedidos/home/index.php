@@ -1,12 +1,6 @@
 <?php
     include("../conf.php");
 
-    if($Uconf->codigo){
-        $url = 'home/index.php';
-    }else{
-        $url = 'login/login.php';
-    }
-
     if($_POST['acao'] == 'logar'){
         $senha = md5($_POST['senha']);
         $query = "select * from usuarios where usuario='{$_POST['login']}' and senha = '{$senha}'";
@@ -42,13 +36,14 @@
 
             Carregando();
             $.ajax({
-                url: "src/pedidos/<?=$url?>",
+                url: "src/pedidos/login/login.php",
                 success: function (dados) {
                     $(".ms_corpo").html(dados);
                 }
             });
 
         });
+
 
     })
 </script>
