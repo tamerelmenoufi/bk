@@ -22,7 +22,7 @@
                         '.$obj['hora'].'
                     </div>
 
-                    <div style="position:absolute; left:-13px; top:5px; font-size:23px;">
+                    <div style="position:absolute; left:-13px; top:5px; font-size:23px; background-color:#fff">
                         <i class="fa-solid fa-clock"></i>
                     </div>
 
