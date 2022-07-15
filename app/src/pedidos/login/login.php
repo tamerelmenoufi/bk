@@ -1,5 +1,7 @@
 <?php
     include("../conf.php");
+
+    if($_GET['s']) $_SESSION = [];
 ?>
 <style>
     .ContainerLogin{

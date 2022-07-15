@@ -96,7 +96,11 @@
             Carregando();
             $.ajax({
                 url: "src/pedidos/login/login.php",
+                data:{
+                    s:'1'
+                },
                 success: function (dados) {
+                    window.localStorage.removeItem('bk_pedidos_loja');
                     $(".ms_corpo").html(dados);
                 }
             });
