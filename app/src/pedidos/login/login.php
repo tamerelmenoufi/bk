@@ -10,12 +10,27 @@
         justify-content: center;
 
     }
+
 </style>
 
 <div class="ContainerLogin">
     <h3>Tela de login</h3>
     <p>Dados de acesso do meu login da loja</p>
-    <button logar class="btn btn-success">Logar</button>
+    <div class="card m-3 p-3">
+
+        <div class="form-group mb-2">
+            <label for="login">Login</label>
+            <input type="text" class="form-control" id="login" placeholder="Digite seu login">
+        </div>
+
+        <div class="form-group mb-2">
+            <label for="senha">Senha</label>
+            <input type="text" class="form-control" id="senha" placeholder="Digite sua senha">
+        </div>
+
+        <button logar type="button" class="btn btn-primary">Logar</button>
+
+    </div>
 </div>
 
 <script>
