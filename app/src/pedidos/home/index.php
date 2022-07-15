@@ -105,15 +105,22 @@
     $(function(){
         Carregando('none');
 
-
-
-
         opcLoja = window.localStorage.getItem('bk_pedidos_loja');
         $("#ListaLoja").val(opcLoja);
 
         $("#ListaLoja").change(function(){
-            Loja = $(this).val();
-            window.localStorage.setItem('bk_pedidos_loja',Loja);
+            loja = $(this).val();
+            window.localStorage.setItem('bk_pedidos_loja',loja);
+
+            $.ajax({
+                url: "src/pedidos/ListaPedidos/index.php",
+                data:{
+                    loja:loja
+                },
+                success: function (dados) {
+                    $(".ListaPedidos").html(dados);
+                }
+            });
 
         });
 
