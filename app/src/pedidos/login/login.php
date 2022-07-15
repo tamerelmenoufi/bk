@@ -54,10 +54,17 @@
                 success: function (dados) {
                     console.log(dados);
                     if(dados.status){
-
+                        $.ajax({
+                            url: "src/pedidos/home/index.php",
+                            success: function (dados) {
+                                $(".ms_corpo").html(dados);
+                                Carregando('none')
+                            }
+                        });
+                    }else{
+                        Carregando('none')
                     }
                     $.alert(dados.mensagem)
-                    Carregando('none')
                     //$(".ms_corpo").html(dados);
                 }
              });
