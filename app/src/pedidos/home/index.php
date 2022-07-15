@@ -98,6 +98,9 @@
 <div class="ListaPedidos">
 
 </div>
+<div class="ListaStatus">
+
+</div>
 <script>
     $(function(){
         Carregando('none');
