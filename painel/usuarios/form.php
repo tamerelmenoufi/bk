@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode([
             'status' => true,
-            'msg' => 'Dados salvo com sucesso '. $query,
+            'msg' => 'Dados salvo com sucesso ',
             'codigo' => $codigo,
         ]);
     } else {
@@ -73,6 +73,12 @@ if ($codigo) {
     $query = "SELECT * FROM usuarios WHERE codigo = '{$codigo}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
+
+    $Lojas = [];
+    if($d->lojas){
+        $Lojas = explode(',',$d->lojas);
+    }
+
 }
 
 ?>
@@ -162,7 +168,7 @@ if ($codigo) {
                             value="<?=$l->codigo?>"
                             name="lojas[]"
                             id="lojas<?=$l->codigo?>"
-                            <?=(($d->lojas == $l->codigo)?'checked':false)?>
+                            <?=((in_array($Lojas, $l->codigo))?'checked':false)?>
                     >
                     <label class="form-check-label" for="lojas<?=$l->codigo?>">
                     <?=$l->nome?>
