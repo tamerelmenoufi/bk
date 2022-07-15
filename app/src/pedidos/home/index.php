@@ -2,7 +2,7 @@
     include("../conf.php");
     if($_POST['acao'] == 'logar'){
         $senha = md5($_POST['senha']);
-        $query = "select * from usuarios where login='{$_POST['login']}' and senha = '{$senha}'";
+        $query = "select * from usuarios where usuario='{$_POST['login']}' and senha = '{$senha}'";
         $result = mysqli_query($con, $query);
         if(mysqli_num_rows($result)){
             $d = mysqli_fetch_object($result);
