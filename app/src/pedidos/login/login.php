@@ -5,7 +5,6 @@
         flex-direction: column;
         height: 100%;
         align-items: center;
-        border: solid 1px red;
         justify-items: center;
         justify-content: center;
 
