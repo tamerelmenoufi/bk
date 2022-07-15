@@ -52,6 +52,7 @@
                     acao:'logar'
                 },
                 success: function (dados) {
+                    console.log(dados);
                     if(dados.status){
 
                     }
