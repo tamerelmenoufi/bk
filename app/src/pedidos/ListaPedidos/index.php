@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col">
         <?php
-            $query = "select * from vendas where loja = '{$_GET['loja']}'";
+            echo $query = "select * from vendas where loja = '{$_GET['loja']}'";
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
