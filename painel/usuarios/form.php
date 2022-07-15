@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo json_encode([
             'status' => true,
-            'msg' => 'Dados salvo com sucesso',
+            'msg' => 'Dados salvo com sucesso '. $query,
             'codigo' => $codigo,
         ]);
     } else {
