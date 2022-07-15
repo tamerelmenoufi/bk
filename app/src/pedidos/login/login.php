@@ -32,16 +32,15 @@
 <script>
     $(function(){
         $("button[logar]").click(function(){
+
+            Carregando();
             $.ajax({
-                url:"componentes/ms_popup_100.php",
-                type:"POST",
-                data:{
-                    local:"src/pedidos/home/index.php",
-                },
-                success:function(dados){
-                    $(".ms_corpo").append(dados);
+                url: "src/pedidos/home/index.php",
+                success: function (dados) {
+                    $(".ms_corpo").html(dados);
                 }
-            });
+             });
+
         });
 
     })
