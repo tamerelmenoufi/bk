@@ -122,7 +122,7 @@ if ($codigo) {
 
 
             <div class="form-group">
-                <label for="situacao">
+                <label for="perfil">
                     Perfil <i class="text-danger">*</i>
                 </label>
                 <select
