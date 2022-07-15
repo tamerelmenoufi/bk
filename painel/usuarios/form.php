@@ -142,6 +142,36 @@ if ($codigo) {
                 </select>
             </div>
 
+
+
+            <div class="form-group">
+                <label for="lojas">
+                    Lojas <i class="text-danger">*</i>
+                </label>
+                <?php
+                $q = "select * from lojas where situacao = '1' order by nome";
+                $r = mysqli_query($con, $q);
+                while($l = mysqli_fetch_object($r)){
+                ?>
+                <div class="form-check">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value="<?=$l->codigo?>"
+                            name="lojas[]"
+                            id="lojas<?=$l->codigo?>"
+                            <?=(($d->lojas == $l->codigo)?'checked':false)?>
+                    >
+                    <label class="form-check-label" for="lojas<?=$l->codigo?>">
+                    <?=$l->nome?>
+                    </label>
+                </div>
+                <?php
+                }
+                ?>
+            </div>
+
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
