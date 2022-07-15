@@ -1,10 +1,14 @@
 <style>
     .ContainerLogin{
-        flex:1;
-        width:'100%';
-        height:'100%';
-        justify-content: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
         align-items: center;
+        border: solid 1px red;
+        justify-items: center;
+        justify-content: center;
+
     }
 </style>
 
