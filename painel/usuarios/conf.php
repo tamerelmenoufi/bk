@@ -12,6 +12,14 @@ function getSituacao()
     ];
 }
 
+function getPerfil()
+{
+    return [
+        'adm' => 'Administrador',
+        'loja' => 'Loja',
+    ];
+}
+
 function getSituacaoOptions($situacao)
 {
     $list = getSituacao();

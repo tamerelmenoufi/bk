@@ -120,6 +120,28 @@ if ($codigo) {
             </div>
 
 
+
+            <div class="form-group">
+                <label for="situacao">
+                    Perfil <i class="text-danger">*</i>
+                </label>
+                <select
+                        class="form-control"
+                        id="perfil"
+                        name="perfil"
+                        required
+                >
+                    <?php
+                    foreach (getPerfil() as $key => $value): ?>
+                        <option
+                            <?= ($codigo and $d->perfil == $key) ? 'selected' : ''; ?>
+                                value="<?= $key; ?>">
+                            <?= $value; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
