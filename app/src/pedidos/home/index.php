@@ -59,9 +59,17 @@
         position:fixed;
         top:170px;
         width:100%;
-        bottom:0;
+        bottom:60px;
         border:solid 1px green;
         overflow:auto;
+    }
+    .ListaStatus{
+        position:fixed;
+        bottom:0;
+        height:60px;
+        width:100%;
+        bottom:0;
+        border:solid 1px blue;
     }
 </style>
 
