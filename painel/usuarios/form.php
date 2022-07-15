@@ -168,7 +168,7 @@ if ($codigo) {
                             value="<?=$l->codigo?>"
                             name="lojas[]"
                             id="lojas<?=$l->codigo?>"
-                            <?=((in_array($Lojas, $l->codigo))?'checked':false)?>
+                            <?=((in_array($l->codigo, $Lojas))?'checked':false)?>
                     >
                     <label class="form-check-label" for="lojas<?=$l->codigo?>">
                     <?=$l->nome?>
