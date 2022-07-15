@@ -46,36 +46,51 @@
 ?>
 
 <div style="position:relative; height:auto; margin-left:70px; border-left:solid 3px green; ">
-    <span style="position:absolute; width:15px; height:4px; background-color:green; top:0px; left:-9px;"></span>
-    <span style="position:absolute; width:15px; height:4px; background-color:green; bottom:0px; left:-9px;"></span>
     <?php
+
+        $bordas = false;
 
         if($d->CANCELED > 0){
             echo EventoEntrega(false, 'Pedido Cancelado');
+            $bordas = true;
         }else if($d->COMPLETED > 0){
             echo EventoEntrega($d->COMPLETED,'Entrega Concluída');
+            $bordas = true;
         }else{
 
             if($d->SEARCHING > 0){
                 echo EventoEntrega($d->SEARCHING, 'Buscando Motoqueiro');
+                $bordas = true;
             }
             if($d->GOING_TO_ORIGIN > 0){
                 echo EventoEntrega($d->GOING_TO_ORIGIN,'A Caminho do estabelecimento');
             }
             if($d->ARRIVED_AT_ORIGIN > 0){
                 echo EventoEntrega($d->ARRIVED_AT_ORIGIN,'Entregador no estabelecimento');
+                $bordas = true;
             }
             if($d->GOING_TO_DESTINATION > 0){
                 echo EventoEntrega($d->GOING_TO_DESTINATION,'A entrga está a caminho');
+                $bordas = true;
             }
             if($d->ARRIVED_AT_DESTINATION > 0){
                 echo EventoEntrega($d->ARRIVED_AT_DESTINATION,'Entrega realizada');
+                $bordas = true;
             }
             if($d->RETURNING > 0){
                 echo EventoEntrega($d->RETURNING, 'Entregador retornando');
+                $bordas = true;
             }
 
         }
+
+        if($bordas){
+    ?>
+    <span style="position:absolute; width:15px; height:4px; background-color:green; top:0px; left:-9px;"></span>
+    <span style="position:absolute; width:15px; height:4px; background-color:green; bottom:0px; left:-9px;"></span>
+    <?php
+        }
+
     ?>
 
 </div>
