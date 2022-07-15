@@ -63,6 +63,7 @@
     <div class="form-group">
     <label for="ListaLoja">Selecione a Loja</label>
         <select class="form-control" id="ListaLoja">
+        <option value="">::Selecione a Loja::</option>
             <?php
                 $Lojas = ($Uconf->lojas)?:'0';
                 $query = "select * from lojas where codigo in({$Lojas}) and situacao = '1' order by nome";
@@ -80,6 +81,15 @@
 <script>
     $(function(){
         Carregando('none');
+
+        opcLoja = window.localStorage.getItem('bk_pedidos_loja');
+        $("#ListaLoja").val(opcLoja);
+
+        $("#ListaLoja").change(function(){
+            Loja = $(this).val();
+            window.localStorage.setItem('bk_pedidos_loja',Loja);
+
+        });
 
         $("button[Sair]").click(function(){
 
