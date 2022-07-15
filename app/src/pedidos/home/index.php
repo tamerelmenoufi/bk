@@ -35,7 +35,7 @@
         right:0;
         border:1px solid red;
     }
-    .BotaoSair:{
+    .BotaoSair{
         position:fixed;
         right:10px;
         top:10px;
