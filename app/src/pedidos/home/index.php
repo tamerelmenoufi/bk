@@ -46,10 +46,11 @@
         top:10px;
         color:#333;
         font-size:12px;
+        height:60px;
     }
     .ListaLojas{
         position:fixed;
-        top:50px;
+        top:60px;
         width:100%;
         border:solid 1px red;
     }
