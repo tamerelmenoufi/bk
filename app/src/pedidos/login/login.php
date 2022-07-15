@@ -1,3 +1,6 @@
+<?php
+    include("../conf.php");
+?>
 <style>
     .ContainerLogin{
         flex: 1;
@@ -36,10 +39,24 @@
         $("button[logar]").click(function(){
 
             Carregando();
+            login = $("#login").val();
+            senha = $("#senha").val();
+
             $.ajax({
                 url: "src/pedidos/home/index.php",
+                type:"POST",
+                typeData:"JSON",
+                data:{
+                    login,
+                    senha,
+                    acao:'logar'
+                }
                 success: function (dados) {
-                    $(".ms_corpo").html(dados);
+                    if(dados.status){
+
+                    }
+                    $.alert(dados.mensagem)
+                    //$(".ms_corpo").html(dados);
                 }
              });
 
