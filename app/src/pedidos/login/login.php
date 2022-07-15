@@ -31,6 +31,9 @@
 
 <script>
     $(function(){
+
+        Carregando('none');
+
         $("button[logar]").click(function(){
 
             Carregando();
