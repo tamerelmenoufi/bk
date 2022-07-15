@@ -47,13 +47,35 @@
         color:#333;
         font-size:12px;
     }
+    .ListaLojas{
+        position:fixed;
+        top:50px;
+        width:100%;
+        border:solid 1px red;
+    }
 </style>
 
 <div class="PaginaPedidos">
     <span class="IdentificaUser"><?=$Uconf->nome?></span>
     <button Sair type="button" class="btn btn-danger BotaoSair">Sair</button>
 </div>
-
+<div class="ListaLojas">
+    <div class="form-group">
+    <label for="ListaLoja">Selecione a Loja</label>
+        <select class="form-control" id="ListaLoja">
+            <?php
+                $Lojas = ($Uconf->lojas)?:'0';
+                $query = "select * from lojas where codigo in({$Lojas}) and situacao = '1' order by nome";
+                $result = mysqli_query($con, $query);
+                while($d = mysqli_fetch_object($result)){
+            ?>
+            <option value="<?=$d->codigo?>"><?=$d->nome?></option>
+            <?php
+                }
+            ?>
+        </select>
+    </div>
+</div>
 
 <script>
     $(function(){
