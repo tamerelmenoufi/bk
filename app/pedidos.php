@@ -1,5 +1,5 @@
 <?php
-    include("./pedidos/conf.php");
+    include("./src/pedidos/conf.php");
 
     if($Uconf->codigo){
         $url = 'home/index.php';

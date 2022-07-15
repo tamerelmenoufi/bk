@@ -1,5 +1,5 @@
 <?php
-    include("./src/pedidos/conf.php");
+    include("../conf.php");
 
     if($_POST['acao'] == 'logar'){
         $senha = md5($_POST['senha']);
