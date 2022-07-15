@@ -8,7 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $codigo = $data['codigo'] ?: null;
 
-    unset($data['codigo'], $data['senha_2']);
+    $lojas = implode(",",$data['lojas']);
+
+    unset($data['codigo'], $data['senha_2'], $data['lojas']);
 
     $query_existe = "SELECT codigo FROM usuarios WHERE usuario = '{$data['usuario']}'";
 
@@ -32,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
         }
     }
-
+    $attr[] = "lojas = '" . $lojas . "'";
     $attr = implode(', ', $attr);
 
     if ($codigo) {
