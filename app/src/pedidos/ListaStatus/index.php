@@ -6,6 +6,7 @@
 
 <script>
     $(function(){
+        Carregando('none');
         setTimeout(() => {
             $.ajax({
                 url: "src/pedidos/ListaStatus/index.php",

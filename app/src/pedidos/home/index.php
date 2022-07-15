@@ -111,7 +111,7 @@
         $("#ListaLoja").change(function(){
             loja = $(this).val();
             window.localStorage.setItem('bk_pedidos_loja',loja);
-
+            Carregando();
             $.ajax({
                 url: "src/pedidos/ListaPedidos/index.php",
                 data:{

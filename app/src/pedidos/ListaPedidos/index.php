@@ -23,6 +23,7 @@
 </div>
 <script>
     $(function(){
+        Carregando('none');
         setTimeout(() => {
             $.ajax({
                 url: "src/pedidos/ListaPedidos/index.php",
