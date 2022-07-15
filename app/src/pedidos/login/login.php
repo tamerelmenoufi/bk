@@ -1,6 +1,7 @@
 <style>
     .ContainerLogin{
         flex:1,
+        width:100%;
         justify-content: center;
         align-items: center;
     }
