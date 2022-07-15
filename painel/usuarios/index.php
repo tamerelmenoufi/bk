@@ -50,7 +50,7 @@ $result = mysqli_query($con, $query);
                 <tbody>
                 <?php
                 while ($d = mysqli_fetch_object($result)):
-                    $status = $d->status == '1' ? 'success' : 'danger';
+                    $situacao = $d->situacao == '1' ? 'success' : 'danger';
                     ?>
                     <tr id="linha-<?= $d->codigo; ?>">
                         <td><?= $d->nome; ?></td>
