@@ -14,22 +14,18 @@
 </style>
 
 <div class="ContainerLogin">
-    <h3>Tela de login</h3>
-    <p>Dados de acesso do meu login da loja</p>
     <div class="card m-3 p-3">
-
+        <h5>Tela de login</h5>
         <div class="form-group mb-2">
             <label for="login">Login</label>
-            <input type="text" class="form-control" id="login" placeholder="Digite seu login">
+            <input type="text" class="form-control form-control-lg" id="login" placeholder="Digite seu login">
         </div>
 
         <div class="form-group mb-2">
             <label for="senha">Senha</label>
-            <input type="text" class="form-control" id="senha" placeholder="Digite sua senha">
+            <input type="text" class="form-control form-control-lg" id="senha" placeholder="Digite sua senha">
         </div>
-
-        <button logar type="button" class="btn btn-primary">Logar</button>
-
+        <button logar type="button" class="btn btn-primary btn-lg">Logar</button>
     </div>
 </div>
 
