@@ -50,7 +50,7 @@
                     login,
                     senha,
                     acao:'logar'
-                }
+                },
                 success: function (dados) {
                     if(dados.status){
 
