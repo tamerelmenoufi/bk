@@ -45,7 +45,7 @@
             $.ajax({
                 url: "src/pedidos/home/index.php",
                 type:"POST",
-                typeData:"JSON",
+                dataType:"JSON",
                 data:{
                     login,
                     senha,
