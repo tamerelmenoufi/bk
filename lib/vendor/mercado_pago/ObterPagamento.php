@@ -16,7 +16,6 @@
     $qrcode = $dados->point_of_interaction->transaction_data->qr_code;
     $qrcode_img = $dados->point_of_interaction->transaction_data->qr_code_base64;
 
-
     if($operadora_id){
 
       if($operadora_situacao == 'approved'){
