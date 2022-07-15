@@ -26,7 +26,34 @@
 
 ?>
 
-<button Sair type="button" class="btn btn-danger btn-lg">Sair</button>
+<style>
+    .PaginaPedidos{
+        position:fixed;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        border:1px solid red;
+    }
+    .BotaoSair:{
+        position:fixed;
+        right:10px;
+        top:10px;
+    }
+    .IdentificaUser{
+        position:fixed;
+        left:10px;
+        top:10px;
+        color:#333;
+        font-size:12px;
+    }
+</style>
+
+<div class="PaginaPedidos">
+    <span class="IdentificaUser"><?=$Uconf->nome?></span>
+    <button Sair type="button" class="btn btn-danger">Sair</button>
+</div>
+
 
 <script>
     $(function(){
