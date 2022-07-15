@@ -1,7 +1,16 @@
-<h3>Tela de login</h3>
-<p>Dados de acesso do meu login da loja</p>
-<button logar class="btn btn-success">Logar</button>
+<style>
+    .ContainerLogin{
+        flex:1,
+        justify-items: center;
+        align-items: center;
+    }
+</style>
 
+<div class="ContainerLogin">
+    <h3>Tela de login</h3>
+    <p>Dados de acesso do meu login da loja</p>
+    <button logar class="btn btn-success">Logar</button>
+</div>
 
 <script>
     $(function(){
