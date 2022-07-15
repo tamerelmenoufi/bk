@@ -32,7 +32,7 @@
 <script>
     $(function () {
         $.ajax({
-            url: "src/pedidos/home/index.php",
+            url: "src/pedidos/login/login.php",
             success: function (dados) {
                 $(".ms_corpo").html(dados);
             }
