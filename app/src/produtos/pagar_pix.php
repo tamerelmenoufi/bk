@@ -124,13 +124,13 @@
                             if($operadora_id){
 
                                 mysqli_query($con, "update vendas set
-                                                                    operadora_id = '{$operadora_id}',
-                                                                    forma_pagamento = '{$forma_pagamento}',
-                                                                    operadora = 'mercadopago',
-                                                                    operadora_situacao = '{$operadora_situacao}',
-                                                                    operadora_retorno = '{$retorno}'
+                                                            operadora_id = '{$operadora_id}',
+                                                            forma_pagamento = '{$forma_pagamento}',
+                                                            operadora = 'mercadopago',
+                                                            operadora_situacao = '{$operadora_situacao}',
+                                                            operadora_retorno = '{$retorno}'
                                                     where codigo = '{$d->codigo}'
-                                        ");
+                                            ");
 
                             }
 
