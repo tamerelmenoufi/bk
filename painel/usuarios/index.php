@@ -56,8 +56,8 @@ $result = mysqli_query($con, $query);
                         <td><?= $d->nome; ?></td>
                         <td><?= $d->usuario; ?></td>
                         <td>
-                            <span class="badge badge-<?= $status; ?>">
-                                <?= getSituacaoOptions($d->status); ?>
+                            <span class="badge badge-<?= $situacao; ?>">
+                                <?= getSituacaoOptions($d->situacao); ?>
                             </span>
                         </td>
                         <td>
