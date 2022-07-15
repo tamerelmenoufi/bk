@@ -10,7 +10,7 @@
             $.ajax({
                 url: "src/pedidos/ListaStatus/index.php",
                 success: function (dados) {
-                    $(".ListaPedidos").html(dados);
+                    $(".ListaStatus").html(dados);
                 }
             });
         }, 5000);
