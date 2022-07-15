@@ -51,7 +51,7 @@
 
 <div class="PaginaPedidos">
     <span class="IdentificaUser"><?=$Uconf->nome?></span>
-    <button Sair type="button" class="btn btn-danger">Sair</button>
+    <button Sair type="button" class="btn btn-danger BotaoSair">Sair</button>
 </div>
 
 
