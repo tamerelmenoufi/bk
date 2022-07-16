@@ -1,6 +1,12 @@
 <?php
     include("../conf.php");
 
+
+    if($_GET['Ini']){
+        mysqli_query("update vendas set situacao = 'i' where codigo = '{$_GET['Ini']}'");
+        exit();
+    }
+
     $StDescricao = [
         'n' => 'Novo',
         'p' => 'Produção',
@@ -104,6 +110,16 @@
             obj.removeClass("fa-toggle-off stOff");
             obj.addClass("fa-toggle-on stOn");
             $(this).children("div").children("span").text("Iniciado");
+
+            $.ajax({
+                url:"src/pedidos/ListaPedidos/index.php",
+                data:{
+                    Ini:cod,
+                },
+                success:function(){
+
+                }
+            });
 
         });
 
