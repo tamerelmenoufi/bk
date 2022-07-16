@@ -15,7 +15,7 @@
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
-    <div class="card m-3">
+    <div pedido="<?=$d->codigo?>" class="card m-3">
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><?=$d->codigo?></li>
         </ul>
@@ -39,5 +39,22 @@
                 }
             });
         }, 5000);
+
+        $("div[pedido]").click(function(){
+            pedido = $(this).attr("pedido");
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:`src/pedidos/ListaPedidos/pedido.php`,
+                    pedido,
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
+        });
+
     })
 </script>
