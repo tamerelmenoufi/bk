@@ -98,7 +98,7 @@
 
         });
 
-        $("div[StOn]").click(function(){
+        $("div[StOff]").click(function(){
             cod = $(this).attr("StOn");
             obj = $(this).children("div").children("svg.fa-toggle-off");
             obj.removeClass("fa-toggle-off stOff");
