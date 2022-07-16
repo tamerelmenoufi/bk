@@ -49,6 +49,9 @@
         setTimeout(() => {
             $.ajax({
                 url: "src/pedidos/ListaStatus/index.php",
+                data:{
+                    loja:window.localStorage.getItem('bk_pedidos_loja')
+                },
                 success: function (dados) {
                     $(".ListaStatus").html(dados);
                 }
