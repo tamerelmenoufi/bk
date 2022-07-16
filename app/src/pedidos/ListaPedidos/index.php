@@ -50,9 +50,9 @@
             <li class="list-group-item"><?=$d->total?></li>
             <li class="list-group-item"><?=$d->data_pedido?></li>
             <li class="list-group-item">
-                <div class="row">
+                <div <?=(($d->situacao != 'i')?'StOn':'StOn')?> class="row">
                     <div class="col-8">
-                        <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on stOn"></i>':'<i class="fa-solid fa-toggle-off stOff"></i>')."<span class='StDesc'>".$StDescricao[$d->situacao]."</span>"?>
+                        <?=(($d->situacao != 'i')?'<i class="fa-solid fa-toggle-on stOn"></i>':'<i class="fa-solid fa-toggle-off stOff"></i>')."<span class='StDesc'>XXXX".$StDescricao[$d->situacao]."</span>"?>
                     </div>
                     <div pedido="<?=$d->codigo?>" class="col-4 btn btn-primary">
                         <i class="fa-solid fa-basket-shopping"></i>
@@ -95,6 +95,14 @@
                     $(".ms_corpo").append(dados);
                 }
             });
+
+        });
+
+        $("div[StOn]").click(function(){
+            cod = $(this).attr("StOn");
+            $(this).children("div").children("i").removeClass("fa-toggle-off");
+            $(this).children("div").children("i").assClass("fa-toggle-on");
+            $(this).children("div").children("span").text("Iniciado");
 
         });
 
