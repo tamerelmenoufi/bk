@@ -33,7 +33,6 @@
         top:0;
         bottom:0;
         right:0;
-        border:1px solid red;
     }
     .BotaoSair{
         position:fixed;
@@ -53,14 +52,12 @@
         top:60px;
         width:100%;
         padding:10px;
-        border:solid 1px red;
     }
     .ListaPedidos{
         position:fixed;
         top:170px;
         width:100%;
         bottom:10px;
-        border:solid 1px green;
         overflow:auto;
     }
     .ListaStatus{
@@ -69,7 +66,6 @@
         height:10px;
         width:100%;
         bottom:0;
-        border:solid 1px blue;
     }
 </style>
 
