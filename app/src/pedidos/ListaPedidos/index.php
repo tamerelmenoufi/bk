@@ -38,8 +38,9 @@
                     <div class="col">
                         <?=$StDescricao[$d->situacao]?>
                     </div>
-                    <div pedido="<?=$d->codigo?>" class="col">
-                        Detalhes do Pedido
+                    <div pedido="<?=$d->codigo?>" class="col btn btn-primary">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        Pedido
                     </div>
                 </div>
             </li>
