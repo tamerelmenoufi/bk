@@ -36,7 +36,7 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col">
-                        <?=$StDescricao[$d->situacao]?>
+                        <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on"></i>':'<i class="fa-solid fa-toggle-off"></i>')." ".$StDescricao[$d->situacao]?>
                     </div>
                     <div pedido="<?=$d->codigo?>" class="col btn btn-primary">
                         <i class="fa-solid fa-basket-shopping"></i>
