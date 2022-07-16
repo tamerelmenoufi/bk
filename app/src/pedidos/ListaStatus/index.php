@@ -17,6 +17,7 @@
     .alerta{
         position:fixed;
         bottom:30px;
+        width:95%;
         z-index:10;
     }
 </style>
@@ -27,13 +28,11 @@
     <source src="src/pedidos/ListaStatus/som/pedido.mp3" type="audio/mp3" />
 </audio>
 
-<div class="alert alert-success alerta m-3" role="alert">
+<div class="alert alert-success alerta" role="alert">
     <div class="row">
         <div class="col-2"><i class="fa-solid fa-phone-volume"></i></div>
         <div class="col-10">Você tem novos pedidos!</div>
     </div>
-
-
 </div>
 
 <?php
