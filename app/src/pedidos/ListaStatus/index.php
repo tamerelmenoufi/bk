@@ -27,7 +27,7 @@
     <source src="src/pedidos/ListaStatus/som/pedido.mp3" type="audio/mp3" />
 </audio>
 
-<div class="alert alert-success" role="alert">
+<div class="alert alert-success alerta" role="alert">
     <i class="fa-solid fa-phone-volume"></i>
     Você tem novos pedidos na caixa de entrada!
 </div>
