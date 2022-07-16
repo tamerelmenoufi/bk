@@ -27,9 +27,13 @@
     <source src="src/pedidos/ListaStatus/som/pedido.mp3" type="audio/mp3" />
 </audio>
 
-<div class="alert alert-success alerta" role="alert">
-    <i class="fa-solid fa-phone-volume"></i>
-    Você tem novos pedidos na caixa de entrada!
+<div class="alert alert-success alerta m-3" role="alert">
+    <div class="row">
+        <div class="col-2"><i class="fa-solid fa-phone-volume"></i></div>
+        <div class="col-10">Você tem novos pedidos!</div>
+    </div>
+
+
 </div>
 
 <?php
