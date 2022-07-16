@@ -1,6 +1,14 @@
 <?php
     include("../conf.php");
 
+    $StDescricao = [
+        'n' => 'Novo',
+        'p' => 'Produção',
+        'i' => 'Iniciado',
+        'c' => 'Concluído',
+        'e' => 'Entregue'
+    ];
+
 ?>
 <div class="col">
     <?php
@@ -20,7 +28,12 @@
     ?>
     <div pedido="<?=$d->codigo?>" class="card m-3">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><?=$d->codigo?></li>
+            <li class="list-group-item"><?=$d->cliente?></li>
+            <li class="list-group-item"><?=$d->valor?></li>
+            <li class="list-group-item"><?=$d->taxa_entrega?></li>
+            <li class="list-group-item"><?=$d->total?></li>
+            <li class="list-group-item"><?=$d->data_pedido?></li>
+            <li class="list-group-item"><?=$StDescricao[$d->situacao]?></li>
         </ul>
     </div>
     <?php
