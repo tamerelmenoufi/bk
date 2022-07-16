@@ -2,6 +2,11 @@
     include("../conf.php");
 
     echo date("d/m/Y H:i:s");
+
+
+    echo $query = "select * from vendas where loja = '{$_GET['loja']}'";
+    $result = mysqli_query($con, $query);
+    $n = mysqli_num_rows($result);
 ?>
 <style>
     .som{
@@ -10,9 +15,24 @@
         top:-1000px;
     }
 </style>
+<?php
+    if($n){
+?>
 <audio autoplay="autoplay" controls="controls" class="som">
     <source src="src/pedidos/ListaStatus/som/pedido.mp3" type="audio/mp3" />
 </audio>
+
+<div class="alert alert-success" role="alert">
+    <i class="fa-solid fa-phone-volume"></i>
+    Você tem novos pedidos na caixa de entrada!
+</div>
+
+<?php
+    }
+?>
+
+
+
 
 <script>
     $(function(){
