@@ -107,10 +107,10 @@
 
         $("div[StOff]").click(function(){
             cod = $(this).attr("StOff");
-            obj = $(this).children("div").children("svg.fa-toggle-off");
+            obj = $(this).children("svg.fa-toggle-off");
             obj.removeClass("fa-toggle-off stOff");
             obj.addClass("fa-toggle-on stOn");
-            $(this).children("div").children("span").text("Iniciado");
+            $(this).children("span").text("Iniciado");
 
             $.ajax({
                 url:"src/pedidos/ListaPedidos/index.php",
