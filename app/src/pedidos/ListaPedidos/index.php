@@ -3,7 +3,7 @@
 
 
     if($_GET['Ini']){
-        mysqli_query("update vendas set situacao = 'i' where codigo = '{$_GET['Ini']}'");
+        mysqli_query($con, "update vendas set situacao = 'i' where codigo = '{$_GET['Ini']}'");
         exit();
     }
 
