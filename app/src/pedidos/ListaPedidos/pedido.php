@@ -94,9 +94,7 @@
         ?>
         <div class="card bg-light mb-3" style="padding-bottom:40px;">
             <div class="card-body">
-                <p Excluirproduto codigo="<?=$d->codigo?>" produto="<?=$d->produto_nome?>" style="position:absolute; right:-10px; top:-10px; width:auto;">
-                    <i class="fa-solid fa-circle-xmark" style="color:red; font-size:30px;"></i>
-                <p>
+
                 <h5 class="card-title" style="paddig:0; margin:0; font-size:14px; font-weight:bold;">
                     <?=$d->produto_nome?>
                 </h5>
