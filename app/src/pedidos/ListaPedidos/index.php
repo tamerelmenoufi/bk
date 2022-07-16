@@ -42,10 +42,10 @@
             <li class="list-group-item"><?=$d->data_pedido?></li>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-8">
                         <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on st"></i>':'<i class="fa-solid fa-toggle-off st"></i>')." ".$StDescricao[$d->situacao]?>
                     </div>
-                    <div pedido="<?=$d->codigo?>" class="col btn btn-primary">
+                    <div pedido="<?=$d->codigo?>" class="col-4 btn btn-primary">
                         <i class="fa-solid fa-basket-shopping"></i>
                         Pedido
                     </div>
