@@ -57,8 +57,8 @@
             <li class="list-group-item"><?=$d->total?></li>
             <li class="list-group-item"><?=$d->data_pedido?></li>
             <li class="list-group-item">
-                <div <?=(($d->situacao != 'i')?"StOff='{$d->codigo}'":"StOn='{$d->codigo}'")?> class="row">
-                    <div class="col-8">
+                <div class="row">
+                    <div <?=(($d->situacao != 'i')?"StOff='{$d->codigo}'":"StOn='{$d->codigo}'")?> class="col-8">
                         <?=(($d->situacao != 'i')?'<i class="fa-solid fa-toggle-off stOff"></i>':'<i class="fa-solid fa-toggle-on stOn"></i>')."<span class='StDesc'>".$StDescricao[$d->situacao]."</span>"?>
                     </div>
                     <div pedido="<?=$d->codigo?>" class="col-4 btn btn-primary">
