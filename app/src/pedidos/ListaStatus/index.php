@@ -15,13 +15,11 @@
         top:-1000px;
     }
     .alerta{
-        flex:1;
         position:fixed;
         bottom:30px;
-        width:95%;
+        left:5%;
+        right:5%;
         z-index:10;
-        justify-content:center;
-        align-items:center;
     }
 </style>
 <?php
