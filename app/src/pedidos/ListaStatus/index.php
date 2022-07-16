@@ -4,7 +4,7 @@
     echo date("d/m/Y H:i:s");
 
 
-    echo $query = "select * from vendas where loja = '{$_GET['loja']}'";
+    echo $query = "select * from vendas where loja = '{$_GET['loja']}' and operadora_situacao = 'approved' and situacao = 'p'";
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
 ?>
