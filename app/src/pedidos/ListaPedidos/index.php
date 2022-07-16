@@ -10,6 +10,13 @@
     ];
 
 ?>
+
+<style>
+    .st{
+        font-size:30px;
+    }
+</style>
+
 <div class="col">
     <?php
         $query = "select
@@ -36,7 +43,7 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col">
-                        <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on"></i>':'<i class="fa-solid fa-toggle-off"></i>')." ".$StDescricao[$d->situacao]?>
+                        <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on st"></i>':'<i class="fa-solid fa-toggle-off st"></i>')." ".$StDescricao[$d->situacao]?>
                     </div>
                     <div pedido="<?=$d->codigo?>" class="col btn btn-primary">
                         <i class="fa-solid fa-basket-shopping"></i>
