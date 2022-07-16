@@ -122,6 +122,16 @@
                 }
             });
 
+            $.ajax({
+                url: "src/pedidos/ListaStatus/index.php",
+                data:{
+                    loja:loja
+                },
+                success: function (dados) {
+                    $(".ListaStatus").html(dados);
+                }
+            });
+
         });
 
         $("button[Sair]").click(function(){
