@@ -50,13 +50,15 @@
     .ListaLojas{
         position:fixed;
         top:60px;
-        width:100%;
+        left:0;
+        right:0;
         padding:10px;
     }
     .ListaPedidos{
         position:fixed;
         top:170px;
-        width:100%;
+        left:0;
+        right:0;
         bottom:10px;
         overflow:auto;
     }
@@ -75,7 +77,7 @@
 </div>
 <div class="ListaLojas">
     <div class="form-group">
-    <label for="ListaLoja">Selecione a Loja</label>
+        <label for="ListaLoja">Selecione a Loja</label>
         <select class="form-control" id="ListaLoja">
         <option value="">::Selecione a Loja::</option>
             <?php
