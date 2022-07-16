@@ -4,7 +4,14 @@
 ?>
 <div class="col">
     <?php
-        $query = "select * from vendas where loja = '{$_GET['loja']}'";
+        $query = "select
+                        *
+                    from vendas
+                    where
+                            loja = '{$_GET['loja']}'
+                        and operadora_situacao = 'approved'
+                        and situacao = 'p' and COMPLETED = 0 and CANCELED = 0";
+
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
