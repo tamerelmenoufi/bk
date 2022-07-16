@@ -52,7 +52,7 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-8">
-                        <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on st"></i>':'<i class="fa-solid fa-toggle-off st"></i>')."<span class='StDesc'>".$StDescricao[$d->situacao]."</span>"?>
+                        <?=(($d->situacao == 'i')?'<i class="fa-solid fa-toggle-on stOn"></i>':'<i class="fa-solid fa-toggle-off stOff"></i>')."<span class='StDesc'>".$StDescricao[$d->situacao]."</span>"?>
                     </div>
                     <div pedido="<?=$d->codigo?>" class="col-4 btn btn-primary">
                         <i class="fa-solid fa-basket-shopping"></i>
