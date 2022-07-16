@@ -4,6 +4,10 @@
     echo date("d/m/Y H:i:s");
 ?>
 
+<audio autoplay="autoplay" controls="controls">
+    <source src="src/pedidos/ListaStatus/som/pedido.mp3" type="audio/mp3" />
+</audio>
+
 <script>
     $(function(){
         Carregando('none');
