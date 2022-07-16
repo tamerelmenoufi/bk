@@ -5,12 +5,15 @@
 <div class="col">
     <?php
         $query = "select
-                        *
-                    from vendas
+                        a.*,
+                        b.nome as cliente
+                    from vendas a
+                    left join clientes b on a.cliente = b.codigo
+
                     where
-                            loja = '{$_GET['loja']}'
-                        and operadora_situacao = 'approved'
-                        and COMPLETED = 0 and CANCELED = 0 order by data_pedido desc";
+                            a.loja = '{$_GET['loja']}'
+                        and a.operadora_situacao = 'approved'
+                        and a.COMPLETED = 0 and a.CANCELED = 0 order by a.data_pedido desc";
 
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
