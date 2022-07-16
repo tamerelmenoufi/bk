@@ -4,7 +4,7 @@
 ?>
 <div class="col">
     <?php
-        $query = "select
+        echo $query = "select
                         *
                     from vendas
                     where
