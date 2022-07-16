@@ -15,6 +15,7 @@
         top:-1000px;
     }
     .alerta{
+        flex:1;
         position:fixed;
         bottom:30px;
         width:95%;
