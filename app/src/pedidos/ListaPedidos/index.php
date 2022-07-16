@@ -34,13 +34,14 @@
             <li class="list-group-item"><?=$d->total?></li>
             <li class="list-group-item"><?=$d->data_pedido?></li>
             <li class="list-group-item">
-                <div class="col">
-                    <?=$StDescricao[$d->situacao]?>
+                <div class="row">
+                    <div class="col">
+                        <?=$StDescricao[$d->situacao]?>
+                    </div>
+                    <div class="col">
+                        Detalhes do Pedido
+                    </div>
                 </div>
-                <div class="col">
-                    Detalhes do Pedido
-                </div>
-
             </li>
         </ul>
     </div>
