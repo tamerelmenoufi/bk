@@ -42,7 +42,7 @@
                     <p class="card-text">
                         Pedido: <?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?><br>
                         Valor: R$ <?=$d->total?><br>
-                        Data do Pedido: <?=$d->data_finalizacao?><br>
+                        Data do Pedido: <?=$d->data_pedido?><br>
                         Forma de Pagamento: <?=strtoupper($d->forma_pagamento)?><br>
                         situação do Pagamento: <?=$d->operadora_situacao?>
                     </p>
