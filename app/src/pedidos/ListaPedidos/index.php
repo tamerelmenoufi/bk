@@ -14,11 +14,11 @@
 <style>
     .stOn{
         font-size:40px;
-        color:'green';
+        color:green;
     }
     .stOff{
         font-size:40px;
-        color:'#eee';
+        color:#eee;
     }
     .StDesc{
         font-size:25px;
