@@ -1,7 +1,13 @@
 <?php
     include("../conf.php");
 
-    $query = "select * from vendas where loja = '{$_GET['loja']}' and operadora_situacao = 'approved' and situacao = 'p'";
+    $query = "select
+                            *
+                    from vendas
+                where
+                        loja = '{$_GET['loja']}'
+                    and operadora_situacao = 'approved'
+                    and situacao = 'p' and COMPLETED = 0 and CANCELED = 0";
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
 ?>
