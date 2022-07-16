@@ -19,6 +19,8 @@
         bottom:30px;
         width:95%;
         z-index:10;
+        justify-items:center;
+        align-items:center;
     }
 </style>
 <?php
