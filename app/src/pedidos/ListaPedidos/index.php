@@ -38,7 +38,7 @@
     ?>
     <div class="card m-3">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><?=$d->cliente?></li>
+            <li class="list-group-item"><?=$d->cliente?> <?=$d->situacao?></li>
             <li class="list-group-item"><?=$d->valor?></li>
             <li class="list-group-item"><?=$d->taxa_entrega?></li>
             <li class="list-group-item"><?=$d->total?></li>
