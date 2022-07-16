@@ -14,6 +14,11 @@
         left:-1000px;
         top:-1000px;
     }
+    .alerta{
+        position:fixed;
+        bottom:30px;
+        z-index:10;
+    }
 </style>
 <?php
     if($n){
