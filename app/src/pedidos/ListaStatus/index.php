@@ -19,7 +19,7 @@
         bottom:30px;
         width:95%;
         z-index:10;
-        justify-items:center;
+        justify-content:center;
         align-items:center;
     }
 </style>
