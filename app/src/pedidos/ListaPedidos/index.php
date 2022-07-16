@@ -41,7 +41,8 @@
                     left join clientes b on a.cliente = b.codigo
 
                     where
-                            a.loja = '{$_GET['loja']}'
+                        a.loja = '{$_GET['loja']}'
+                        and a.loja > '0'
                         and a.operadora_situacao = 'approved'
                         and a.COMPLETED = 0 and a.CANCELED = 0 order by a.data_pedido desc";
 
