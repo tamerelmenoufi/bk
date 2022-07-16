@@ -26,7 +26,7 @@
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
-    <div pedido="<?=$d->codigo?>" class="card m-3">
+    <div class="card m-3">
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><?=$d->cliente?></li>
             <li class="list-group-item"><?=$d->valor?></li>
@@ -38,7 +38,7 @@
                     <div class="col">
                         <?=$StDescricao[$d->situacao]?>
                     </div>
-                    <div class="col">
+                    <div pedido="<?=$d->codigo?>" class="col">
                         Detalhes do Pedido
                     </div>
                 </div>
