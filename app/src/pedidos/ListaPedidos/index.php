@@ -100,8 +100,9 @@
 
         $("div[StOn]").click(function(){
             cod = $(this).attr("StOn");
-            $(this).children("div").children("svg.fa-toggle-off").removeClass("fa-toggle-off stOff");
-            $(this).children("div").children("svg.fa-toggle-off").addClass("fa-toggle-on stOn");
+            obj = $(this).children("div").children("svg.fa-toggle-off");
+            obj.removeClass("fa-toggle-off stOff");
+            obj.addClass("fa-toggle-on stOn");
             $(this).children("div").children("span").text("Iniciado");
 
         });
