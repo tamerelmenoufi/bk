@@ -4,13 +4,13 @@
 ?>
 <div class="col">
     <?php
-        echo $query = "select
+        $query = "select
                         *
                     from vendas
                     where
                             loja = '{$_GET['loja']}'
                         and operadora_situacao = 'approved'
-                        and COMPLETED = 0 and CANCELED = 0";
+                        and COMPLETED = 0 and CANCELED = 0 order by data_pedido desc";
 
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
