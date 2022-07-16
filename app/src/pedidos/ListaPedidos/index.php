@@ -80,7 +80,7 @@
                     $(".ListaPedidos").html(dados);
                 }
             });
-        }, 5000);
+        }, 50000);
 
         $("div[pedido]").click(function(){
             pedido = $(this).attr("pedido");
