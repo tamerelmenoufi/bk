@@ -107,35 +107,7 @@
                 <p class="card-text" style="padding:0; margin:0; color:red; font-size:10px;">
                     <?= $d->produto_descricao?>
                 </p>
-                <div cod="<?=$d->codigo?>" style="position:absolute; bottom:0px; left:0px; width:100%;">
 
-                        <button
-                                class="btn text-danger menos"
-                                type="button"
-                        >
-                            <i class="fa-solid fa-minus"></i>
-                        </button>
-
-                        <div
-                                class="form-control quantidade"
-                        ><?=$d->quantidade?></div>
-
-                        <button
-                                class="btn text-success mais"
-                                type="button"
-                        >
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-
-                        <span
-                                class="btn text-warning rotulo_valor"
-                        >
-                            R$ <span valor atual="<?=$d->valor_unitario?>">
-                                <?= number_format($d->valor_total, 2, ',', '.') ?>
-                            </span>
-                        </span>
-
-                </div>
 
             </div>
         </div>
