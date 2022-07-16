@@ -1,12 +1,10 @@
 <?php
     include("../conf.php");
 
-    echo date("d/m/Y H:i:s");
-
 ?>
 <div class="col">
     <?php
-        echo $query = "select * from vendas where loja = '{$_GET['loja']}'";
+        $query = "select * from vendas where loja = '{$_GET['loja']}'";
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
