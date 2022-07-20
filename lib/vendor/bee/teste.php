@@ -16,4 +16,8 @@
 
     print_r($dados);
 
+    echo "<hr>";
+
+    echo "externalId: ".$dados->externalId;
+
 
