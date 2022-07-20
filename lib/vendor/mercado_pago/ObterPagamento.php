@@ -22,7 +22,6 @@
         $campos = " situacao = 'p', ";
       }
 
-
       $q = "insert into status_venda set
       venda = (select codigo from vendas where operadora_id = '{$operadora_id}'),
       operadora = 'mercado_pago',
