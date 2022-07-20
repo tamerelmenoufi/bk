@@ -4,6 +4,16 @@
 
     if($_GET['Ini']){
         mysqli_query($con, "update vendas set situacao = 'i' where codigo = '{$_GET['Ini']}'");
+
+        //ESSAS DUAS LINHAS SÃO PARA A SOLICITAÇÃO DA ENTREGA BEE
+        // $BEE = new Bee;
+        // echo $retorno = $BEE->NovaEntrega($d->codigo);
+        if($retorno->deliveryId){
+            mysqli_query($con, "update vendas set deliveryId = '{$retorno->deliveryId}' where codigo = '{$_GET['Ini']}'");
+        }
+        //////////////////////////////////////////////////////////
+
+
         exit();
     }
 
