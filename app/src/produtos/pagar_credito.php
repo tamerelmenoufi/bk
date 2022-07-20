@@ -23,7 +23,7 @@
                                     total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
                                     observacoes = '{$_POST['observacoes']}',*/
                                     data_finalizacao = NOW(),
-                                    situacao = '{$r->authorization->status}',
+                                    ".(($r->authorization->status == 'Approved')?"situacao = 'p',":false)."
                                     forma_pagamento = 'credito'
 
                 where codigo = '{$_POST['reference']}'";
