@@ -1,10 +1,10 @@
 <?php
 
     $Json = '{
-            "deliveryId": "88566", // Bee delivery entrega ID
-            "externalId": "18238", // empresa integrada pedido ID
+            "deliveryId": "88566",
+            "externalId": "18238",
             "status": "GOING_TO_ORIGIN",
-            "statusDate": "2019-02-01T03:45:27+00:00", // formato Iso 8601
+            "statusDate": "2019-02-01T03:45:27+00:00",
             "desName": "beedelivery",
             "worker": {
                 "name": "RAMON SARMENTO",
