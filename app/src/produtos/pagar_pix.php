@@ -123,6 +123,15 @@
 
                             if($operadora_id){
 
+
+                                $q = "insert into status_venda set
+                                venda = '{$d->codigo}',
+                                operadora = 'mercado_pago',
+                                tipo = 'pix',
+                                data = NOW(),
+                                retorno = '{$retorno}'";
+                                mysqli_query($con, $q);
+
                                 mysqli_query($con, "update vendas set
                                                             operadora_id = '{$operadora_id}',
                                                             forma_pagamento = '{$forma_pagamento}',

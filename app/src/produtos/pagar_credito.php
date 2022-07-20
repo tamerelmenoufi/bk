@@ -5,7 +5,12 @@
 
         require "../../../lib/vendor/rede/Transacao.php";
 
-        $query = "insert into status_rede set venda = '{$_POST['reference']}', data = NOW(), retorno = '{$retorno}'";
+        $query = "insert into status_venda set
+                                            venda = '{$_POST['reference']}',
+                                            operadora = 'rede',
+                                            tipo = 'credito',
+                                            data = NOW(),
+                                            retorno = '{$retorno}'";
         mysqli_query($con, $query);
 
         require "../../../lib/vendor/rede/Consulta.php";
