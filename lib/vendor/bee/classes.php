@@ -145,6 +145,34 @@
                 }
             }");
 
+            $Log = "{
+                \"orderExternalId\": {$d->codigo},
+                \"description\": \"Entrega Pedido #{$pedido}\",
+                \"needReturn\": \"N\",
+                \"vehicle\": \"M\",
+                \"compartmentType\": \"BAG\",
+                \"completedPermission\": \"S\",
+                \"needCode\": \"N\",
+                \"origin\": {
+                    \"externalId\": 50
+                },
+                \"destination\": {
+                    \"contactName\": \"{$d->nome_cliente}\",
+                    \"contactPhone\": ".str_replace(array('(',')','-',' '), false, trim($d->telefone_cliente)).",
+                    \"type\": \"COORDS\",
+                    \"address\": {
+                        \"latitude\": {$lat},
+                        \"longitude\": {$lng},
+                        \"complement\": \"{$d->referencia}\",
+                        \"streetAddress\": \"{$d->endereco}\"
+                        }
+                    }
+                }
+            }";
+
+            file_put_contents("log2.txt", $Log);
+
+
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
               "Authorization: ".$this->Autenticacao($this->AccessTOKEN)
