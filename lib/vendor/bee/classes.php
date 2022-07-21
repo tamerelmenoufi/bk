@@ -110,7 +110,7 @@
             //     }
             // }";
 
-            exit();
+            // exit();
 
             $ch = curl_init();
 
