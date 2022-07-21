@@ -138,7 +138,7 @@
         $("div[pedido]").click(function(){
             obj = $(this);
             pedido = $(this).attr("pedido");
-            obj.css("disabled","disabled");
+            obj.attr("disabled","disabled");
             $.ajax({
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
