@@ -129,7 +129,7 @@
                 \"completedPermission\": \"S\",
                 \"needCode\": \"N\",
                 \"origin\": {
-                    \"externalId\": 50
+                    \"externalId\": \"46\"
                 },
                 \"destination\": {
                     \"contactName\": \"{$d->nome_cliente}\",
@@ -153,7 +153,7 @@
                 \"completedPermission\": \"S\",
                 \"needCode\": \"N\",
                 \"origin\": {
-                    \"externalId\": 46
+                    \"externalId\": \"46\"
                 },
                 \"destination\": {
                     \"contactName\": \"{$d->nome_cliente}\",
