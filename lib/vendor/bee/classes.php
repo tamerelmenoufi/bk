@@ -142,8 +142,7 @@
                         \"streetAddress\": \"{$d->endereco}\"
                         }
                     }
-                }
-            }");
+                }");
 
             $Log = "{
                 \"orderExternalId\": {$d->codigo},
@@ -166,7 +165,6 @@
                         \"complement\": \"{$d->referencia}\",
                         \"streetAddress\": \"{$d->endereco}\"
                         }
-                    }
                 }
             }";
 
