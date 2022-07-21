@@ -8,6 +8,7 @@
         //ESSAS DUAS LINHAS SÃO PARA A SOLICITAÇÃO DA ENTREGA BEE
         $BEE = new Bee;
         $retorno = $BEE->NovaEntrega($_GET['Ini']);
+        $retorno = json_decode($retorno);
         file_put_contents("log.txt", $retorno);
         if($retorno->deliveryId){
             mysqli_query($con, "update vendas set deliveryId = '{$retorno->deliveryId}' where codigo = '{$_GET['Ini']}'");
