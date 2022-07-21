@@ -129,7 +129,7 @@
                 \"completedPermission\": \"S\",
                 \"needCode\": \"N\",
                 \"origin\": {
-                    \"externalId\": {$d->loja}
+                    \"externalId\": 50
                 },
                 \"destination\": {
                     \"contactName\": \"{$d->nome_cliente}\",

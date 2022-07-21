@@ -7,7 +7,13 @@
 
     if($_POST['webhook']){
 
+        mysqli_query($con, "update vendas set
 
+                {$_POST['status']} = '{$_POST['statusDate']}',
+                name = '{$_POST['name']}',
+                phone = '{$_POST['phone']}'
+
+            where deliveryId = '{$_POST['deliveryId']}'");
 
         // {
         //     "deliveryId": "88566", // Bee delivery entrega ID
@@ -20,5 +26,7 @@
         //         "phone": "(84) 123456789"
         //     }
         // }
+
+
 
     }

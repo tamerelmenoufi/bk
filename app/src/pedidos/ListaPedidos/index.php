@@ -6,8 +6,8 @@
         mysqli_query($con, "update vendas set situacao = 'i' where codigo = '{$_GET['Ini']}'");
 
         //ESSAS DUAS LINHAS SÃO PARA A SOLICITAÇÃO DA ENTREGA BEE
-        // $BEE = new Bee;
-        // echo $retorno = $BEE->NovaEntrega($d->codigo);
+        $BEE = new Bee;
+        $retorno = $BEE->NovaEntrega($d->codigo);
         if($retorno->deliveryId){
             mysqli_query($con, "update vendas set deliveryId = '{$retorno->deliveryId}' where codigo = '{$_GET['Ini']}'");
         }
@@ -66,6 +66,42 @@
             <li class="list-group-item"><?=$d->taxa_entrega?></li>
             <li class="list-group-item"><?=$d->total?></li>
             <li class="list-group-item"><?=$d->data_pedido?></li>
+
+
+            <li class="list-group-item">
+
+            <?php
+
+                if($d->CANCELED > 0){
+                    echo 'Pedido Cancelado<br>';
+                }else if($d->COMPLETED > 0){
+                    echo 'Entrega Concluída<br>';
+                }else{
+
+                    if($d->SEARCHING > 0){
+                        echo 'Buscando Motoqueiro<br>';
+                    }if($d->GOING_TO_ORIGIN > 0){
+                        echo 'A Caminho do estabelecimento<br>';
+                    }if($d->ARRIVED_AT_ORIGIN > 0){
+                        echo 'Entregador no estabelecimento<br>';
+                    }if($d->GOING_TO_DESTINATION > 0){
+                        echo 'A entrga está a caminho<br>';
+                    }if($d->ARRIVED_AT_DESTINATION > 0){
+                        echo 'Entrega realizada<br>';
+                    }if($d->RETURNING > 0){
+                        echo 'Entregador retornando<br>';
+                    }
+                }
+                echo (($d->name)?"<hr>".$d->name."<br>":false);
+                echo (($d->phone)?:false);
+
+
+            ?>
+
+
+            </li>
+
+
             <li class="list-group-item">
                 <div class="row">
                     <div <?=(($d->situacao != 'i')?"StOff='{$d->codigo}'":"StOn='{$d->codigo}'")?> class="col-8">
@@ -100,7 +136,9 @@
         }, 50000);
 
         $("div[pedido]").click(function(){
+            obj = $(this);
             pedido = $(this).attr("pedido");
+            obj.css("disabled","disabled");
             $.ajax({
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
@@ -110,6 +148,7 @@
                 },
                 success:function(dados){
                     $(".ms_corpo").append(dados);
+                    obj.removeAttr("disabled");
                 }
             });
 
