@@ -69,23 +69,23 @@
     <div class="card m-3">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <title class="titulo">Cliente</title>
+                <span class="titulo">Cliente</span>
                 <p><?="{$d->cliente} ({$d->telefone})"?></p>
             </li>
             <li class="list-group-item">
-                <title class="titulo">Valor do Pedido</title>
+                <span class="titulo">Valor do Pedido</span>
                 <p><?=$d->valor?></p>
             </li>
             <li class="list-group-item">
-                <title class="titulo">Taxa de Entrega</title>
+                <span class="titulo">Taxa de Entrega</span>
                 <p><?=$d->taxa_entrega?></p>
             </li>
             <li class="list-group-item">
-                <title class="titulo">Valor a Pagar</title>
+                <span class="titulo">Valor a Pagar</span>
                 <p><?=$d->total?></p>
             </li>
             <li class="list-group-item">
-                <title class="titulo">Data do Pedido</title>
+                <span class="titulo">Data do Pedido</span>
                 <p><?=$d->data_pedido?></p>
             </li>
 
