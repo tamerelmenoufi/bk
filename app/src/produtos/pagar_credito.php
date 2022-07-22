@@ -57,6 +57,7 @@
                 'msg' => 'Ocorreu um erro, tente novamente!',
                 //'AppVenda' => $_SESSION['AppVenda'],
             ]);
+            //Dados de teste
         }
         mysqli_query($con, "update vendas set tentativas_pagamento = (tentativas_pagamento -1) where codigo = '{$_POST['reference']}'");
         exit();
