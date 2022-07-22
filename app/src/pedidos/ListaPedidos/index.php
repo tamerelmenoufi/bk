@@ -81,7 +81,7 @@
             </li>
             <li class="list-group-item">
                 <span class="titulo">Valor do Pedido</span>
-                <p><?=$d->valor?></p>
+                <p class="dados"><?=$d->valor?></p>
             </li>
             <li class="list-group-item">
                 <span class="titulo">Taxa de Entrega</span>
