@@ -73,7 +73,7 @@
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
-    <div class="card m-3" style="padding-bottom:50px;">
+    <div class="card m-3" style="margin-bottom:80px;">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <h6>Pedido #<?=$d->codigo?></h6>
