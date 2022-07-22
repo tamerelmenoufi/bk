@@ -76,27 +76,24 @@
     <div class="card m-3">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
+                <h6>Pedido #<?=$d->codigo?></h6>
+
                 <span class="titulo">Cliente</span>
                 <p class="dados"><?="{$d->cliente} {$d->telefone}"?></p>
-            </li>
-            <li class="list-group-item">
+
                 <span class="titulo">Valor do Pedido</span>
                 <p class="dados"><?=$d->valor?></p>
-            </li>
-            <li class="list-group-item">
+
                 <span class="titulo">Taxa de Entrega</span>
                 <p class="dados"><?=$d->taxa_entrega?></p>
-            </li>
-            <li class="list-group-item">
+
                 <span class="titulo">Valor a Pagar</span>
                 <p class="dados"><?=$d->total?></p>
-            </li>
-            <li class="list-group-item">
+
                 <span class="titulo">Data do Pedido</span>
                 <p class="dados"><?=$d->data_pedido?></p>
-            </li>
 
-            <li class="list-group-item">
+                <h6>Situação da Entrega:</h6>
 
             <?php
 
