@@ -73,7 +73,7 @@
         $result = mysqli_query($con, $query);
         while($d = mysqli_fetch_object($result)){
     ?>
-    <div class="card m-3" style="margin-bottom:80px;">
+    <div class="card m-3">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <h6>Pedido #<?=$d->codigo?></h6>
@@ -139,7 +139,7 @@
         }
     ?>
 </div>
-
+<div style="height:80px;"></div>
 <script>
     $(function(){
         Carregando('none');
