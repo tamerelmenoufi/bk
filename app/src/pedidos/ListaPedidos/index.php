@@ -133,6 +133,9 @@
                 },
                 success: function (dados) {
                     $(".ListaPedidos").html(dados);
+                },
+                error:function(){
+                    $.alert('Erro no acesso!')
                 }
             });
         }, 50000);
