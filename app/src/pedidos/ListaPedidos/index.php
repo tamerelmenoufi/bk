@@ -123,10 +123,6 @@
             ?>
 
 
-            </li>
-
-
-            <li class="list-group-item">
                 <div class="row">
                     <div <?=(($d->situacao != 'i')?"StOff='{$d->codigo}'":"StOn='{$d->codigo}'")?> class="col-8">
                         <?=(($d->situacao != 'i')?'<i class="fa-solid fa-toggle-off stOff"></i>':'<i class="fa-solid fa-toggle-on stOn"></i>')."<span class='StDesc'>".$StDescricao[$d->situacao]."</span>"?>
