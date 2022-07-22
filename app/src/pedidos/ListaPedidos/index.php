@@ -50,6 +50,8 @@
         font-size:11px;
         color:#333;
         font-weight:bold;
+        padding:0;
+        margin:0;
     }
 </style>
 
