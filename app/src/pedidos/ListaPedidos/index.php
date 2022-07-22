@@ -42,13 +42,18 @@
         font-size:25px;
         margin-left:10px;
     }
+    .titulo{
+        font-size:10px;
+        color:#a1a1a1;
+    }
 </style>
 
 <div class="col">
     <?php
         $query = "select
                         a.*,
-                        b.nome as cliente
+                        b.nome as cliente,
+                        b.telefone as telefone
                     from vendas a
                     left join clientes b on a.cliente = b.codigo
 
@@ -63,12 +68,26 @@
     ?>
     <div class="card m-3">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><?=$d->cliente?></li>
-            <li class="list-group-item"><?=$d->valor?></li>
-            <li class="list-group-item"><?=$d->taxa_entrega?></li>
-            <li class="list-group-item"><?=$d->total?></li>
-            <li class="list-group-item"><?=$d->data_pedido?></li>
-
+            <li class="list-group-item">
+                <title class="titulo">Cliente</title>
+                <p><?="{$d->cliente} ({$d->telefone})"?></p>
+            </li>
+            <li class="list-group-item">
+                <title class="titulo">Valor do Pedido</title>
+                <p><?=$d->valor?></p>
+            </li>
+            <li class="list-group-item">
+                <title class="titulo">Taxa de Entrega</title>
+                <p><?=$d->taxa_entrega?></p>
+            </li>
+            <li class="list-group-item">
+                <title class="titulo">Valor a Pagar</title>
+                <p><?=$d->total?></p>
+            </li>
+            <li class="list-group-item">
+                <title class="titulo">Data do Pedido</title>
+                <p><?=$d->data_pedido?></p>
+            </li>
 
             <li class="list-group-item">
 
@@ -111,7 +130,7 @@
                     </div>
                     <div pedido="<?=$d->codigo?>" class="col-4 btn btn-primary">
                         <i class="fa-solid fa-basket-shopping"></i>
-                        Pedido
+                            Pedido
                     </div>
                 </div>
             </li>
