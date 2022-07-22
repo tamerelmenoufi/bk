@@ -93,7 +93,7 @@
                 <span class="titulo">Data do Pedido</span>
                 <p class="dados"><?=$d->data_pedido?></p>
 
-                <h6>Situação da Entrega:</h6>
+                <h6 style="margin-top:20px;">Situação da Entrega:</h6>
 
             <?php
 
