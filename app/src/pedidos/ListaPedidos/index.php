@@ -46,6 +46,11 @@
         font-size:10px;
         color:#a1a1a1;
     }
+    .dados{
+        font-size:11px;
+        color:#333;
+        font-weight:bold;
+    }
 </style>
 
 <div class="col">
@@ -70,7 +75,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <span class="titulo">Cliente</span>
-                <p><?="{$d->cliente} ({$d->telefone})"?></p>
+                <p class="dados"><?="{$d->cliente} {$d->telefone}"?></p>
             </li>
             <li class="list-group-item">
                 <span class="titulo">Valor do Pedido</span>
@@ -78,15 +83,15 @@
             </li>
             <li class="list-group-item">
                 <span class="titulo">Taxa de Entrega</span>
-                <p><?=$d->taxa_entrega?></p>
+                <p class="dados"><?=$d->taxa_entrega?></p>
             </li>
             <li class="list-group-item">
                 <span class="titulo">Valor a Pagar</span>
-                <p><?=$d->total?></p>
+                <p class="dados"><?=$d->total?></p>
             </li>
             <li class="list-group-item">
                 <span class="titulo">Data do Pedido</span>
-                <p><?=$d->data_pedido?></p>
+                <p class="dados"><?=$d->data_pedido?></p>
             </li>
 
             <li class="list-group-item">
