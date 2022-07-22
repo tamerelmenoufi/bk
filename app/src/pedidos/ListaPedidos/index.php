@@ -116,7 +116,6 @@
                 echo (($d->name)?"<hr>".$d->name."<br>":false);
                 echo (($d->phone)?:false);
 
-
             ?>
 
 
@@ -144,6 +143,27 @@
 <script>
     $(function(){
         Carregando('none');
+
+        renovar = () => {
+
+            $(".ListaPedidos").append("<p style='color:red; text-align:center'>Renovando...</p>");
+
+            setTimeout(() => {
+                $.ajax({
+                    url: "src/pedidos/ListaPedidos/index.php",
+                    data:{
+                        loja:window.localStorage.getItem('bk_pedidos_loja')
+                    },
+                    success: function (dados) {
+                        $(".ListaPedidos").html(dados);
+                    },
+                    error:function(){
+                        renovar();
+                    }
+                });
+            }, 50000);
+        }
+
         setTimeout(() => {
             $.ajax({
                 url: "src/pedidos/ListaPedidos/index.php",
@@ -154,7 +174,7 @@
                     $(".ListaPedidos").html(dados);
                 },
                 error:function(){
-                    $.alert('Erro no acesso!')
+                    renovar();
                 }
             });
         }, 50000);
