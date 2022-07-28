@@ -49,7 +49,7 @@ function imagem($source)
         position: relative;
         width: 100%;
         height: 250px;
-        background-color: #f2e5d4;
+        background-color: #aa3a15;
         text-align: center;
     }
 
