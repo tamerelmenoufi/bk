@@ -69,6 +69,7 @@
         background-position: left;
         background-repeat: no-repeat;
         background-size: auto 100%;
+        text-align:center;
     }
 
     .ms_combos p {
