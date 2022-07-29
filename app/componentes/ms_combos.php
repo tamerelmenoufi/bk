@@ -75,8 +75,8 @@
     .ms_combos p {
         padding-left: 5px;
         padding-right: 5px;
-        /* background-color: #aa3a15; */
-        border-radius: 10px;
+        /* background-color: #aa3a15;
+        border-radius: 10px; */
         position: relative;
         /* top: -20px;
         right: 10px; */
