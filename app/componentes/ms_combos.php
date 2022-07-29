@@ -6,6 +6,10 @@
 ?>
 <style>
 
+<?php
+    /*
+?>
+
     .ms_combos{
         position:relative;
         width:100%;
@@ -26,16 +30,10 @@
         background-color:#f2e5d4;
         border-radius:10px;
         position:relative;
-        /* top:-20px;
-        right:10px; */
         font-weight:bold;
         font-size:20px;
         color:#502314;
-        /* text-transform: uppercase;
-               -1px -1px 0px #FFF,
-               -1px 1px 0px #FFF,
-                1px -1px 0px #FFF,
-                1px 0px 0px #FFF; */
+
     }
 
     .ms_combos span{
@@ -55,6 +53,52 @@
                 1px -1px 0px #FFF,
                 1px 0px 0px #FFF;
     }
+
+
+<?php
+    //*/
+?>
+
+
+    .ms_combos {
+        position: relative;
+        width: 100%;
+        border-radius: 10px;
+        background-color: #aa3a15;
+        height: auto;
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+    }
+
+    .ms_combos p {
+        padding-left: 5px;
+        padding-right: 5px;
+        background-color: #aa3a15;
+        border-radius: 10px;
+        position: relative;
+        top: -20px;
+        right: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .ms_combos span {
+        padding: 5px;
+        background-color: #aa3a15;
+        border-radius: 6px;
+        position: absolute;
+        opacity: 1.2;
+        bottom: 10px;
+        right: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        color: #fff;
+        text-shadow: -1px -1px 0px #FFF, -1px 1px 0px #FFF, 1px -1px 0px #FFF, 1px 0px 0px #FFF;
+    }
+
+
 
     .ms_combos span sup{
         font-weight:normal;
