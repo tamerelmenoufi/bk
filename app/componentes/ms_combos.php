@@ -75,11 +75,11 @@
     .ms_combos p {
         padding-left: 5px;
         padding-right: 5px;
-        background-color: #aa3a15;
+        /* background-color: #aa3a15; */
         border-radius: 10px;
         position: relative;
-        top: -20px;
-        right: 10px;
+        /* top: -20px;
+        right: 10px; */
         font-weight: bold;
         font-size: 20px;
         color: #fff;
