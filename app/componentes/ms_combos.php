@@ -80,7 +80,7 @@
         position: relative;
         /* top: -20px;
         right: 10px; */
-        padding-bottom:60px;
+        padding-bottom:50px;
         font-weight: bold;
         font-size: 20px;
         color: #fff;
