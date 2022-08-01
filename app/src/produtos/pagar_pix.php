@@ -123,6 +123,24 @@
 
                             if($operadora_id){
 
+                                //////////////////////API DELIVERY////////////////////////////
+
+                                $content = http_build_query(array(
+                                    'pedido' => $d->codigo,
+                                    'empresa' => $d->loja,
+                                ));
+
+                                $context = stream_context_create(array(
+                                    'http' => array(
+                                        'method'  => 'POST',
+                                        'content' => $content,
+                                    )
+                                ));
+
+                                $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
+
+                                //////////////////////API DELIVERY////////////////////////////
+
 
                                 $q = "insert into status_venda set
                                 venda = '{$d->codigo}',
@@ -137,7 +155,8 @@
                                                             forma_pagamento = '{$forma_pagamento}',
                                                             operadora = 'mercadopago',
                                                             operadora_situacao = '{$operadora_situacao}',
-                                                            operadora_retorno = '{$retorno}'
+                                                            operadora_retorno = '{$retorno}',
+                                                            api_delivery = '{$api_delivery}'
                                                     where codigo = '{$d->codigo}'
                                             ");
 
