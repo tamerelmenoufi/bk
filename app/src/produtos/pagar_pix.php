@@ -134,7 +134,7 @@
                                     'http' => array(
                                         'method'  => 'POST',
                                         'content' => $content,
-                                        'header' => "Content-Type: application/json",
+                                        'header' => "Content-Type: application/x-www-form-urlencoded",
                                     )
                                 ));
 
