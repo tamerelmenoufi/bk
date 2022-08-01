@@ -3,6 +3,28 @@
 
     if($_POST['acao'] == 'pagar'){
 
+        //////////////////////API DELIVERY////////////////////////////
+
+        $content = http_build_query(array(
+            'pedido' => $_POST['reference'],
+            'empresa' => $_POST['loja'],
+        ));
+
+        $context = stream_context_create(array(
+            'http' => array(
+                'method'  => 'POST',
+                'content' => $content,
+                'header' => "Content-Type: application/x-www-form-urlencoded",
+            )
+        ));
+
+        $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
+        $result = json_decode($result);
+        $api_delivery = $result->codigo;
+
+
+        //////////////////////API DELIVERY////////////////////////////
+
         require "../../../lib/vendor/rede/Transacao.php";
 
         $query = "insert into status_venda set
@@ -28,6 +50,7 @@
                                     total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
                                     observacoes = '{$_POST['observacoes']}',*/
                                     data_finalizacao = NOW(),
+                                    api_delivery = '{$api_delivery}',
                                     ".(($r->authorization->status == 'Approved')?"situacao = 'p',":false)."
                                     forma_pagamento = 'credito'
 
@@ -163,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" tentativas="<?=$d->tentativas_pagamento?>">
+                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" tentativas="<?=$d->tentativas_pagamento?>" loja="<?=$d->loja?>">
                     <i class="fa fa-calculator" aria-hidden="true"></i>
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>
@@ -195,6 +218,7 @@
             expirationYear = $("#cartao_validade_ano").val();
             securityCode = $("#cartao_ccv").val();
             tentativas = $(this).attr("tentativas");
+            loja = $(this).attr("loja");
 
             if(tentativas == 0){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
@@ -229,6 +253,7 @@
                     expirationMonth,
                     expirationYear,
                     securityCode,
+                    loja,
                     acao:'pagar'
                 },
                 success:function(dados){
