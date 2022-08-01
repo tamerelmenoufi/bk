@@ -139,7 +139,7 @@
 
                                 $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
                                 $result = json_decode($result);
-                                $api_delivery = $result['codigo'];
+                                $api_delivery = $result->codigo;
 
 
                                 //////////////////////API DELIVERY////////////////////////////
