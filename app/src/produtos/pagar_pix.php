@@ -134,6 +134,7 @@
                                     'http' => array(
                                         'method'  => 'POST',
                                         'content' => $content,
+                                        "Content-Type: application/json",
                                     )
                                 ));
 
