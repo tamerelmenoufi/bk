@@ -94,7 +94,7 @@
                     left join clientes b on a.cliente = b.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
 
-    $query = "select * from vendas where codigo = '{$_SESSION['AppVenda']}'";
+    $query = "select a.*, b.id as id_loja from vendas a left join lojas on a.loja = b.codigo where a.codigo = '{$_SESSION['AppVenda']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" tentativas="<?=$d->tentativas_pagamento?>" loja="<?=$d->loja?>">
+                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" tentativas="<?=$d->tentativas_pagamento?>" loja="<?=$d->id_loja?>">
                     <i class="fa fa-calculator" aria-hidden="true"></i>
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>

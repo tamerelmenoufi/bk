@@ -18,6 +18,7 @@
 
     $query = "select
                     a.*,
+                    d.id as id_loja,
                     b.nome,
                     b.cpf,
                     b.telefone,
@@ -28,6 +29,7 @@
                 from vendas a
                      left join clientes b on a.cliente = b.codigo
                      left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                     left join lojas d on a.loja = d.codigo
                 where a.codigo = '{$_SESSION['AppVenda']}'";
 
     $result = mysqli_query($con, $query);
@@ -127,7 +129,7 @@
 
                                 $content = http_build_query(array(
                                     'pedido' => $d->codigo,
-                                    'empresa' => $d->loja,
+                                    'empresa' => $d->id_loja,
                                 ));
 
                                 $context = stream_context_create(array(
