@@ -2,7 +2,7 @@
     include("../../lib/includes.php");
 ?>
 <style>
-    .alert{
+    .alerta{
         position:fixed;
         width:0;
         height:0;

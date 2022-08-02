@@ -28,7 +28,6 @@
 <div class="row">
     <div class="col-4">
         <img class="topoImg" src="img/logo.svg?<?=$md5?>" />
-        <span H></span>
     </div>
     <div class="col-8">
         <?php
