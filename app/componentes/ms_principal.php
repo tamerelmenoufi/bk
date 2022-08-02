@@ -2,6 +2,15 @@
     include("../../lib/includes.php");
 ?>
 <style>
+    .alert{
+        position:fixed;
+        width:0;
+        height:0;
+        left:0;
+        top:0;
+        z-index:10;
+    }
+
     .topo{
         position:fixed;
         width:100%;
@@ -85,7 +94,11 @@
         display:none;
     }
 
+
 </style>
+
+<div class="alerta"></div>
+
 <div class="topo"></div>
 
 <div class="categorias_home"></div>

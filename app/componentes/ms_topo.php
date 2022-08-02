@@ -28,6 +28,7 @@
 <div class="row">
     <div class="col-4">
         <img class="topoImg" src="img/logo.svg?<?=$md5?>" />
+        <span H></span>
     </div>
     <div class="col-8">
         <?php
@@ -47,6 +48,19 @@
 </div>
 
 <script>
+
+    setInterval(() => {
+        $.ajax({
+            url:"src/cliente/alert_pedido.php",
+            success:function(dados){
+
+                $(".alerta").html(dados);
+            }
+        });
+
+    }, 5000);
+
+
     $(function(){
 
         <?php
