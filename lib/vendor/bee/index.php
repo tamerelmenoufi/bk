@@ -7,9 +7,25 @@
 
     if($_POST['webhook']){
 
+        if($_POST['status'] == 'SEARCHING'){
+            $limpar = "
+                GOING_TO_ORIGIN = '0',
+                ARRIVED_AT_ORIGIN = '0',
+                GOING_TO_DESTINATION = '0',
+                ARRIVED_AT_DESTINATION = '0',
+                RETURNING = '0',
+                COMPLETED = '0',
+                CANCELED = '0',
+            ";
+        }else{
+            $limpar = false;
+        }
+
+
         $q = "update vendas set
 
                 {$_POST['status']} = '{$_POST['statusDate']}',
+                {$limpar}
                 name = '{$_POST['name']}',
                 phone = '{$_POST['phone']}'
 

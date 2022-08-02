@@ -59,28 +59,28 @@
         }else{
 
             if($d->SEARCHING > 0){
-                echo EventoEntrega($d->SEARCHING, 'Buscando Motoqueiro');
+                echo EventoEntrega($d->SEARCHING, 'Confirmado Pelo estabelecimento');
                 $bordas = true;
             }
             if($d->GOING_TO_ORIGIN > 0){
-                echo EventoEntrega($d->GOING_TO_ORIGIN,'A Caminho do estabelecimento');
+                echo EventoEntrega($d->GOING_TO_ORIGIN,'Seu pedido está em preparo');
             }
             if($d->ARRIVED_AT_ORIGIN > 0){
-                echo EventoEntrega($d->ARRIVED_AT_ORIGIN,'Entregador no estabelecimento');
+                echo EventoEntrega($d->ARRIVED_AT_ORIGIN,'Pedido sendo embalado para entrega');
                 $bordas = true;
             }
             if($d->GOING_TO_DESTINATION > 0){
-                echo EventoEntrega($d->GOING_TO_DESTINATION,'A entrga está a caminho');
+                echo EventoEntrega($d->GOING_TO_DESTINATION,'A entrega está a caminho');
                 $bordas = true;
             }
             if($d->ARRIVED_AT_DESTINATION > 0){
                 echo EventoEntrega($d->ARRIVED_AT_DESTINATION,'Entrega realizada');
                 $bordas = true;
             }
-            if($d->RETURNING > 0){
-                echo EventoEntrega($d->RETURNING, 'Entregador retornando');
-                $bordas = true;
-            }
+            // if($d->RETURNING > 0){
+            //     echo EventoEntrega($d->RETURNING, 'Entregador retornando');
+            //     $bordas = true;
+            // }
 
         }
 
