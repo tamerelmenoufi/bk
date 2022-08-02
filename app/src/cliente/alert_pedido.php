@@ -12,9 +12,6 @@
     }
 </style>
 <?php
-    $s = date("s");
-    if($s >= 10 and $s <= 15){
-        echo "<div class='Alerta'>{$s}</div>";
-    }
+    // $query = "select * from vendas where "
 
 ?>
