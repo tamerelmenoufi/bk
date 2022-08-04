@@ -94,8 +94,56 @@
         display:none;
     }
 
+    .IconePedidos {
+        position: fixed;
+        top: 10px;
+        right: 25px;
+        font-size: 30px;
+        color: #333;
+        font-weight: bold;
+        z-index: 10;
+        display: <?=(($_SESSION['AppCarrinho'])?'block':'none')?>;
+    }
+
+    .MensagemAddProduto {
+        position: fixed;
+        right: 80px;
+        top: 15px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px;
+        width: auto;
+        z-index: 3;
+        display: none;
+    }
+
+    .MensagemAddProduto span {
+        position: absolute;
+        right: -8px;
+        font-size: 30px;
+        top: -3px;
+        color: #333;
+    }
+
+
 
 </style>
+
+<!-- Informativo de pedidos ativos -->
+
+<span class="IconePedidos"><i
+            class="fa-solid fa-bell-concierge animate__animated animate__tada animate__repeat-3"
+    ></i></span>
+
+<div class="MensagemAddProduto animate__animated animate__shakeX">
+    Produto Adicionado!
+    <span><i class="fa-solid fa-caret-right"></i></span>
+</div>
+
+<!-- Informativo de pedidos ativos -->
 
 <div class="alerta"></div>
 

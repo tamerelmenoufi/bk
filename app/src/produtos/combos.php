@@ -58,7 +58,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         font-size: 30px;
         color: #333;
         font-weight: bold;
-        z-index: 9999999999;
+        z-index: 10;
         display: <?=(($_SESSION['AppCarrinho'])?'block':'none')?>;
     }
 
@@ -73,7 +73,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         border-radius: 5px;
         padding: 5px;
         width: auto;
-        z-index: 9999999999;
+        z-index: 3;
         display: none;
     }
 
