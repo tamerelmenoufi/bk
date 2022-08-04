@@ -86,7 +86,7 @@
         <?php
         if($d->codigo == 8){
         ?>
-        local="componentes/ms_combos.php"
+        local="src/produtos/combos.php?categoria=<?=$d->codigo?>"
         <?php
         }else{
         ?>
