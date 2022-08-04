@@ -98,8 +98,8 @@
         position: fixed;
         right: 80px;
         top: 15px;
-        background-color: rgb(255, 159, 64, 0.2);
-        color: #333;
+        background-color: rgb(255, 159, 64, 1);
+        color: #fff;
         text-align: center;
         font-weight: bold;
         border-color:rgb(255, 159, 64, 1);
