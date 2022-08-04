@@ -40,10 +40,12 @@
                 b.nome,
                 b.cpf,
                 b.telefone,
+                b.telefone_confirmado,
                 b.email,
                 c.cep,
                 c.numero,
-                c.rua, bairro
+                c.rua,
+                c.bairro
             from vendas a
                  left join clientes b on a.cliente = b.codigo
                  left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
@@ -132,13 +134,13 @@
                         <div class="col-6">
                             <h5 class="card-title">
                                 <small>Pedido</small>
-                                <div style="font-size:18px; color:blue;"><?=str_pad($d->venda, 6, "0", STR_PAD_LEFT)?></div>
+                                <div style="font-size:18px; color:blue;"><?=str_pad($d->codigo, 6, "0", STR_PAD_LEFT)?></div>
                             </h5>
                         </div>
                         <div class="col-6">
                             <h5 class="card-title">
                                 <small>Valor</small>
-                                <div style="font-size:20px; color:#502314;">R$ <?=number_format($d->total,2,',','.')?></div>
+                                <div style="font-size:20px; color:#502314;">R$ <?=number_format($d->valor,2,',','.')?></div>
                             </h5>
                         </div>
                     </div>
@@ -330,7 +332,7 @@
             <div class="card bg-light mb-3">
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
                 <div class="card-body" dadosValores
-                            valor = '<?=$d->total?>'
+                            valor = '<?=$d->valor?>'
                             taxa = '0'
                             desconto = '0'
                             acrescimo = '0'
