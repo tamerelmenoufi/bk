@@ -332,6 +332,8 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
+                    Total a Pagar:
+                    <h1>R$ <?=number_format($d->total,2,',','.')?></h1>
 
                     <h5 class="card-title">
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>"><i class="fa-solid fa-credit-card"></i> Cartão</button>
