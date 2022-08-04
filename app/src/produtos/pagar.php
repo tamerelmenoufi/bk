@@ -33,6 +33,23 @@
                     left join clientes b on a.cliente = b.codigo
                     left join vendas v on a.venda = v.codigo
                 where a.venda = '{$_SESSION['AppVenda']}' and a.deletado != '1'";
+
+    $query = "select
+                a.*,
+                d.id as id_loja,
+                b.nome,
+                b.cpf,
+                b.telefone,
+                b.email,
+                c.cep,
+                c.numero,
+                c.rua, bairro
+            from vendas a
+                 left join clientes b on a.cliente = b.codigo
+                 left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                 left join lojas d on a.loja = d.codigo
+            where a.codigo = '{$_SESSION['AppVenda']}'";
+
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
