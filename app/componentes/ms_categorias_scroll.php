@@ -83,7 +83,17 @@
 
     ?>
     <div
+        <?php
+        if($d->codigo == 8){
+        ?>
+        local="componentes/ms_combos.php"
+        <?php
+        }else{
+        ?>
         local="src/produtos/produtos.php?categoria=<?=$d->codigo?>"
+        <?php
+        }
+        ?>
         janela="ms_popup_100"
         class="ms_categoria_scroll_card"
     >
