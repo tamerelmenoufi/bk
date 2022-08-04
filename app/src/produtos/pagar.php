@@ -36,7 +36,7 @@
 
     $query = "select
                 a.*,
-                (select sum(valor_total) from vendas_produtos where venda = a.codigo) as valor,
+                (select sum(valor_total) from vendas_produtos where venda = a.codigo and deletado != '1') as valor,
                 d.id as id_loja,
                 b.nome,
                 b.cpf,
