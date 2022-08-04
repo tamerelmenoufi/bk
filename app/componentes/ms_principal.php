@@ -125,7 +125,7 @@
 
 <!-- Informativo de pedidos ativos -->
 
-<div class="MensagemAddProduto animate__animated animate__shakeX">
+<div class="MensagemAddProduto animate__animated animate__shakeY">
     Produto Adicionado!
     <span><i class="fa-solid fa-caret-right"></i></span>
 </div>
