@@ -4,7 +4,7 @@
     $query = "select
                         a.*,
                         (select icon from produtos where categoria = a.codigo and situacao = '1' and deletado != '1' and icon != '' order by rand() limit 1) as icon_produto
-                        from categorias a where a.deletado != '1' and a.situacao = '1' and a.categoria != 'COMBOS'";
+                        from categorias a where a.deletado != '1' and a.situacao = '1' /*and a.categoria != 'COMBOS'*/ order by a.ordem";
     $result = mysqli_query($con, $query);
 ?>
 <style>

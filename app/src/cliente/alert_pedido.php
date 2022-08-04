@@ -13,5 +13,4 @@
 </style>
 <?php
     // $query = "select * from vendas where "
-
 ?>
