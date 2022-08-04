@@ -260,7 +260,6 @@
                     local: "src/produtos/pedido.php",
                 },
                 success: function (dados) {
-                    PageClose();
                     $(".ms_corpo").append(dados);
                 }
             });
