@@ -94,7 +94,7 @@
         display:none;
     }
 
-    .MensagemAddProduto {
+    .MensagemAddProduto2 {
         position: fixed;
         left: 50%;
         margin-left:-25%;
@@ -111,7 +111,7 @@
         display: block;
     }
 
-    .MensagemAddProduto span {
+    .MensagemAddProduto2 span {
         position: absolute;
         left:50%;
         font-size: 30px;
@@ -125,7 +125,7 @@
 
 <!-- Informativo de pedidos ativos -->
 
-<div class="MensagemAddProduto animate__animated animate__shakeY">
+<div class="MensagemAddProduto2 animate__animated animate__shakeY">
     Produto Adicionado!
     <span><i class="fa-solid fa-caret-down"></i></span>
 </div>

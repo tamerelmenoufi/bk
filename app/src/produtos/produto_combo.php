@@ -390,9 +390,9 @@
                 },
                 success:function(dados){
                     PageClose();
-                    $(".IconePedidos, .MensagemAddProduto").css("display","block");
+                    $(".IconePedidos, .MensagemAddProduto, .IconePedidos2, .MensagemAddProduto2").css("display","block");
                     setTimeout(function(){
-                        $(".MensagemAddProduto").css('display','none');
+                        $(".MensagemAddProduto, .MensagemAddProduto2").css('display','none');
                     }, 3000);
                 }
             });
