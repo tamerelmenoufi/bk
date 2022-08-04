@@ -108,13 +108,13 @@
         padding: 5px;
         width: auto;
         z-index: 3;
-        display: none;
+        display: block;
     }
 
     .MensagemAddProduto2 span {
         position: absolute;
         left:50%;
-        margin-left:-15px;
+        margin-left:15px;
         font-size: 30px;
         top: 10px;
         color: rgb(75, 192, 192, 1);
