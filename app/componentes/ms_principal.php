@@ -108,7 +108,7 @@
         padding: 5px;
         width: auto;
         z-index: 3;
-        display: block;
+        display: none;
     }
 
     .MensagemAddProduto2 span {
