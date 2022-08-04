@@ -98,11 +98,11 @@
         position: fixed;
         right: 80px;
         top: 15px;
-        background-color: rgb(255, 159, 64, 1);
+        background-color: rgb(75, 192, 192, 1);
         color: #fff;
         text-align: center;
         font-weight: bold;
-        border-color:rgb(255, 159, 64, 1);
+        border-color:rgb(75, 192, 192, 1);
         border-radius: 5px;
         padding: 5px;
         width: auto;
@@ -115,7 +115,7 @@
         right: -8px;
         font-size: 30px;
         top: -3px;
-        color: #333;
+        color: rgb(75, 192, 192, 1);
     }
 
 
