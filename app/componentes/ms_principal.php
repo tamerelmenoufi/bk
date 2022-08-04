@@ -98,10 +98,11 @@
         position: fixed;
         right: 80px;
         top: 15px;
-        background-color: #333;
-        color: #fff;
+        background-color: rgb(255, 159, 64, 0.2);
+        color: #333;
         text-align: center;
         font-weight: bold;
+        border-color:rgb(255, 159, 64, 1);
         border-radius: 5px;
         padding: 5px;
         width: auto;
