@@ -36,7 +36,7 @@
     float:none;
     text-align:center;
     background-color:#f2e5d4;
-    background-size:cover;
+    background-size:100%;
     background-position:center;
     background-repeat:no-repeat;
 }
