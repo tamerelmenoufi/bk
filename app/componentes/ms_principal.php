@@ -127,7 +127,7 @@
 
 <div class="MensagemAddProduto animate__animated animate__shakeY">
     Produto Adicionado!
-    <span><i class="fa-solid fa-caret-right"></i></span>
+    <span><i class="fa-solid fa-caret-down"></i></span>
 </div>
 
 <!-- Informativo de pedidos ativos -->
