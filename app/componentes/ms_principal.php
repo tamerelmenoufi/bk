@@ -96,8 +96,9 @@
 
     .MensagemAddProduto {
         position: fixed;
-        right: 80px;
-        top: 15px;
+        left: 50%;
+        margin-left:-25%;
+        bottom: 80px;
         background-color: rgb(75, 192, 192, 1);
         color: #fff;
         text-align: center;
@@ -112,9 +113,9 @@
 
     .MensagemAddProduto span {
         position: absolute;
-        right: -8px;
+        left:50%;
         font-size: 30px;
-        top: -3px;
+        top: 10px;
         color: rgb(75, 192, 192, 1);
     }
 
