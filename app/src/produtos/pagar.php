@@ -301,7 +301,7 @@
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
-                                    Digite no campo os caracteres da Iamgem
+                                    Digite no campo os números da Iamgem
                                 </small>
                             </div>
                         </div>
