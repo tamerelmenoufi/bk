@@ -94,17 +94,6 @@
         display:none;
     }
 
-    .IconePedidos {
-        position: fixed;
-        top: 10px;
-        right: 25px;
-        font-size: 30px;
-        color: #333;
-        font-weight: bold;
-        z-index: 10;
-        display: <?=(($_SESSION['AppCarrinho'])?'block':'none')?>;
-    }
-
     .MensagemAddProduto {
         position: fixed;
         right: 80px;
@@ -133,10 +122,6 @@
 </style>
 
 <!-- Informativo de pedidos ativos -->
-
-<span class="IconePedidos"><i
-            class="fa-solid fa-bell-concierge animate__animated animate__tada animate__repeat-3"
-    ></i></span>
 
 <div class="MensagemAddProduto animate__animated animate__shakeX">
     Produto Adicionado!
@@ -251,19 +236,6 @@
         })
 
 
-
-        $(".IconePedidos").click(function () {
-            $.ajax({
-                url: "componentes/ms_popup_100.php",
-                type: "POST",
-                data: {
-                    local: "src/produtos/pedido.php",
-                },
-                success: function (dados) {
-                    $(".ms_corpo").append(dados);
-                }
-            });
-        });
 
     })
 
