@@ -38,7 +38,7 @@
                 <div espaco></div>
                 <span ClienteNomeApp><?=$c->nome?></span>
                 <div espaco></div>
-                <span TopoTituloLoja><?=$c->loja?></span>
+                <!-- <span TopoTituloLoja><?=$c->loja?></span> -->
             </div>
         <?php
             }
@@ -52,7 +52,6 @@
         $.ajax({
             url:"src/cliente/alert_pedido.php",
             success:function(dados){
-
                 $(".alerta").html(dados);
             }
         });
@@ -63,7 +62,7 @@
     $(function(){
 
         <?php
-            if(!$c->loja){
+           /* if(!$c->loja){
         ?>
         $(".ListaLojas").css("display","block");
         $.ajax({
@@ -73,7 +72,7 @@
             }
         });
         <?php
-            }
+            }*/
         ?>
 
     })
