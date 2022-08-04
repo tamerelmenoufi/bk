@@ -213,7 +213,7 @@
                                         </ul>
                                     </div>
 
-                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div id="collapseOneXXXDesativado" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <ul class="list-group">
                                         <?php
                                             $bee = new Bee;
