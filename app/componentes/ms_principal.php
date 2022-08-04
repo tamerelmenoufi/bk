@@ -250,6 +250,22 @@
             }
         })
 
+
+
+        $(".IconePedidos").click(function () {
+            $.ajax({
+                url: "componentes/ms_popup_100.php",
+                type: "POST",
+                data: {
+                    local: "src/produtos/pedido.php",
+                },
+                success: function (dados) {
+                    PageClose();
+                    $(".ms_corpo").append(dados);
+                }
+            });
+        });
+
     })
 
 </script>
