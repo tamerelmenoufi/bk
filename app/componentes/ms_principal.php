@@ -114,6 +114,7 @@
     .MensagemAddProduto2 span {
         position: absolute;
         left:50%;
+        margin-left:-25%;
         font-size: 30px;
         top: 10px;
         color: rgb(75, 192, 192, 1);
