@@ -2,7 +2,7 @@
     include("../lib/includes.php");
 
     $dados = [
-        'resultado' => 'Xtem'
+        'resultado' => 'tem'
     ];
 
     echo json_encode($dados);
