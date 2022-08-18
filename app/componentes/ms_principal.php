@@ -97,7 +97,7 @@
     .MensagemAddProduto2 {
         position: fixed;
         left: 50%;
-        /* margin-left:-25%; */
+        margin-left:calc(width/2);
         bottom: 80px;
         background-color: rgb(75, 192, 192, 1);
         color: #fff;
