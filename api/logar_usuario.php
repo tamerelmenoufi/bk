@@ -20,6 +20,7 @@ if(mysqli_num_rows($result)){
         status => false,
         cod_usuario => false,
         nome_usuario => false,
+        query=> $query
     ];
 }
 
