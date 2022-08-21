@@ -2,7 +2,7 @@
 
 include("../lib/includes.php");
 
-$query = "SELECT a.codigo, c.nome FROM vendas a left join clientes c on a.cliente = c.codigo";
+$query = "SELECT a.codigo, c.nome FROM vendas a left join clientes c on a.cliente = c.codigo where a.deletado != '1'";
 $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
