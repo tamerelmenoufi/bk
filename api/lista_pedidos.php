@@ -2,7 +2,10 @@
 
 include("../lib/includes.php");
 
-$query = "SELECT a.codigo, c.nome FROM vendas a left join clientes c on a.cliente = c.codigo where situacao = 'p' and a.deletado != '1'";
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
+$_POST = json_decode(file_get_contents('php://input'), true);
+
+$query = "SELECT a.codigo, c.nome FROM vendas a left join clientes c on a.cliente = c.codigo where situacao = 'p' and a.deletado != '1' and loja = '{$_POST['loja']}'";
 $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
