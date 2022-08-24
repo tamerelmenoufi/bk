@@ -17,7 +17,7 @@ $query = "SELECT
                 a.codigo,
                 a.situacao,
                 c.nome,
-                (select count(*) from vendas_produtos where venda = a.codigo) as qt
+                (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt
                 FROM vendas a
                 left join clientes c on a.cliente = c.codigo
         where a.data_pedido LIKE '%".date("Y-m-d")."%' and a.deletado != '1' and a.situacao = 'n'";
