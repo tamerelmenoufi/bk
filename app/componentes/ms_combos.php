@@ -1,6 +1,8 @@
 <?php
     include("../../lib/includes.php");
 
+    VerificarVendaApp();
+
     $query = "select * from produtos where deletado != '1' and situacao = '1' and categoria = '8'";
     $result = mysqli_query($con, $query);
 ?>
