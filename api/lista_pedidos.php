@@ -7,6 +7,7 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 
 $query = "SELECT
                 a.codigo,
+                a.situacao,
                 c.nome
         FROM vendas a
         left join clientes c on a.cliente = c.codigo
