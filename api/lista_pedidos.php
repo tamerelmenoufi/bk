@@ -13,7 +13,13 @@ $query = "SELECT
         left join clientes c on a.cliente = c.codigo
         where a.situacao in ('p','i') and a.operadora_situacao = 'Approved' and a.deletado != '1' and a.loja = '{$_POST['loja']}'";
 
-$query = "select * from vendas where data_pedido LIKE '%".date("Y-m-d")."%' and deletado != '1' and situacao = 'n'";
+$query = "SELECT
+                a.codigo,
+                a.situacao,
+                c.nome
+                FROM vendas a
+                left join clientes c on a.cliente = c.codigo
+        where a.data_pedido LIKE '%".date("Y-m-d")."%' and a.deletado != '1' and a.situacao = 'n'";
 
 $result = mysqli_query($con, $query);
 $dados = [];
