@@ -17,7 +17,7 @@ $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
     $pedido = '#'.str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT);
-    $dados[] = ['codigo'=> $d->codigo, 'pedido' => $pedido, 'cliente' => $d->nome];
+    $dados[] = ['codigo'=> $d->codigo, 'pedido' => $pedido, 'cliente' => $d->nome, 'situacao' => $d->situacao];
 }
 
 echo json_encode($dados);
