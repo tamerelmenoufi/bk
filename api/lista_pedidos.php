@@ -20,7 +20,7 @@ $query = "SELECT
                 (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt
                 FROM vendas a
                 left join clientes c on a.cliente = c.codigo
-        where a.data_pedido LIKE '%".$data."%' and a.deletado != '1' and a.situacao in ('n','p')";
+        where a.data_pedido LIKE '%".$data."%' and a.deletado != '1' and a.situacao in ('i','p')";
 
 $result = mysqli_query($con, $query);
 $dados = [];
