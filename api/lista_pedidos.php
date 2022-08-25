@@ -12,7 +12,7 @@ $query = "SELECT
         FROM vendas a
         left join clientes c on a.cliente = c.codigo
         where a.situacao in ('p','i') and a.operadora_situacao = 'Approved' and a.deletado != '1' and a.loja = '{$_POST['loja']}'";
-$data = date("Y-m-d");
+$data = '2022-08-24';
 $query = "SELECT
                 a.codigo,
                 a.situacao,
