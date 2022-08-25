@@ -56,7 +56,7 @@
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
-    if(!$d->total) $_SESSION['AppCarrinho'] = false;
+    if(!$d->valor) $_SESSION['AppCarrinho'] = false;
 
 ?>
 <style>
@@ -374,7 +374,7 @@
 </div>
 
 
-<div class="SemProduto" style="display:<?=(($d->total)?'none':'block')?>">
+<div class="SemProduto" style="display:<?=(($d->valor)?'none':'block')?>">
     <i class="fa-solid fa-face-frown icone"></i>
     <p>Poxa, ainda não tem produtos em seu pedido!</p>
 </div>
