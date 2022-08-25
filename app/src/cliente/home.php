@@ -28,9 +28,9 @@
         <button opc="enderecos" acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-envelope"></i> Endereços
         </button>
-        <button opc="lojas" class="btn btn-dark btn-lg btn-block">
+        <!-- <button opc="lojas" class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-envelope"></i> Lojas
-        </button>
+        </button> -->
         <button opc="pedidos" acao class="btn btn-dark btn-lg btn-block">
             <i class="fa-solid fa-bell-concierge"></i> Meus Pedidos
         </button>
