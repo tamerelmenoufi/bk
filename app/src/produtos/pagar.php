@@ -204,6 +204,12 @@
 
                             </h5>
                             <?php
+                            }else{
+                            ?>
+                            <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
+                                Você não possui endereço cadastrado, utilize o linque abaixo para cadastrar seu(s) endereço(s).
+                            </div>
+                            <?php
                             }
                             ?>
 
