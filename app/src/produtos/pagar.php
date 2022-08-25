@@ -513,7 +513,7 @@
                 type:"POST",
                 data:{
                     // local:"src/cliente/confirmar_telefone.php",
-                    local:"src/cliente/endereco_form.php",
+                    local:"src/cliente/perfil.php",
                 },
                 success:function(dados){
                     $("body").attr("retorno","src/produtos/pagar.php");
