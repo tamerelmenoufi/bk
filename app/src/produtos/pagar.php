@@ -509,7 +509,7 @@
 
         $(".ConfirmaTelefone").click(function(){
             $.ajax({
-                url:"componentes/ms_popup.php",
+                url:"componentes/ms_popup_100.php",
                 type:"POST",
                 data:{
                     // local:"src/cliente/confirmar_telefone.php",

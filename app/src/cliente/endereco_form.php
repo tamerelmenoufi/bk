@@ -123,11 +123,14 @@
                         let retorno = JSON.parse(dados);
                         if(retorno.status){
 
+                            retorno = $("body").attr("retorno");
+                            local = ((retorno)?retorno:"src/cliente/enderecos.php");
+                            $("body").attr("retorno",'');
                             $.ajax({
                                 url:"componentes/ms_popup_100.php",
                                 type:"POST",
                                 data:{
-                                    local:'src/cliente/enderecos.php',
+                                    local,
                                 },
                                 success:function(dados){
                                     PageClose(2);
