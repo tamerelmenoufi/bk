@@ -130,8 +130,28 @@
                             title:false,
                             type: "green",
                         });
-                        $("span[ClienteNomeApp]").html(retorno.msg);
-                        PageClose();
+
+                        retorno2 = $("body").attr("retorno");
+                        local = ((retorno2)?retorno2:"src/cliente/enderecos.php");
+                        $("body").attr("retorno",'');
+                        if(retorno2){
+                            $.ajax({
+                                url:"componentes/ms_popup_100.php",
+                                type:"POST",
+                                data:{
+                                    local,
+                                },
+                                success:function(dados){
+                                    PageClose(2);
+                                    $(".ms_corpo").append(dados);
+                                }
+                            });
+                        }else{
+                            $("span[ClienteNomeApp]").html(retorno.msg);
+                            PageClose();
+                        }
+
+
                     }
                 }
             });
