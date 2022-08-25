@@ -8,11 +8,11 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 $query = "SELECT
                 a.codigo,
                 a.situacao,
-                c.nome
+                c.nome,
+                (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt
         FROM vendas a
         left join clientes c on a.cliente = c.codigo
-        where a.situacao in ('p','i') and a.operadora_situacao = 'Approved' and a.deletado != '1' /*and a.loja = '{$_POST['loja']}'*/";
-
+        where a.situacao in ('p','i') and a.operadora_situacao = 'Approved' and a.deletado != '1' and a.loja = '{$_POST['loja']}'";
 
 
 // $data = '2022-08-24';
