@@ -8,6 +8,6 @@ $dados = [];
 if($_POST['pedido']){
     $query = "UPDATE vendas set status = 'i' where codigo = '{$_POST['pedido']}'";
     $result = mysqli_query($con, $query);
-    $dados = ['status' => true];
+    $dados = ['status' => $query];
 }
 echo json_encode($dados);
