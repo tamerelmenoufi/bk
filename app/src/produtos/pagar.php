@@ -512,7 +512,8 @@
                 url:"componentes/ms_popup.php",
                 type:"POST",
                 data:{
-                    local:"src/cliente/confirmar_telefone.php",
+                    // local:"src/cliente/confirmar_telefone.php",
+                    local:"src/cliente/cadastro.php",
                 },
                 success:function(dados){
                     $("body").attr("retorno","src/produtos/pagar.php");
