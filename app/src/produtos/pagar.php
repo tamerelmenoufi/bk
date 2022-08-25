@@ -125,7 +125,7 @@
     <h4>Pagar <?=$_SESSION['AppPedido']?></h4>
 </div>
 
-<div class="col" style="margin-bottom:60px; display:<?=(($d->total)?'block':'none')?>">
+<div class="col" style="margin-bottom:60px; display:<?=(($d->valor)?'block':'none')?>">
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
