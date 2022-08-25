@@ -12,7 +12,7 @@ $query = "SELECT
         FROM vendas a
         left join clientes c on a.cliente = c.codigo
         where a.situacao in ('p','i') and a.operadora_situacao = 'Approved' and a.deletado != '1' and a.loja = '{$_POST['loja']}'";
-
+$data = date("Y-m-d");
 $query = "SELECT
                 a.codigo,
                 a.situacao,
@@ -20,7 +20,7 @@ $query = "SELECT
                 (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt
                 FROM vendas a
                 left join clientes c on a.cliente = c.codigo
-        where a.data_pedido LIKE '%".date("Y-m-d")."%' and a.deletado != '1' and a.situacao in ('n','p')";
+        where a.data_pedido LIKE '%".$data."%' and a.deletado != '1' and a.situacao in ('n','p')";
 
 $result = mysqli_query($con, $query);
 $dados = [];
