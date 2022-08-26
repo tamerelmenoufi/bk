@@ -10,7 +10,7 @@ $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
 
-    $status =false;
+    $status = false;
 
     if($d->SEARCHING > 0){
         $status .= "<p>Confirmado Pelo estabelecimento <small>".dataBr($d->$d->SEARCHING)."</small></p>";
