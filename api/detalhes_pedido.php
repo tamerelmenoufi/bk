@@ -27,6 +27,7 @@ while($d = mysqli_fetch_object($result)){
     if($d->ARRIVED_AT_DESTINATION > 0){
         $status .= "<p>Entrega realizada <small>".dataBr($d->$d->ARRIVED_AT_DESTINATION)."</small></p>";
     }
+    $status .= "<p>Entrega realizada <small>".dataBr($d->$d->ARRIVED_AT_DESTINATION)."</small></p>";
 
     $d->produto_descricao .= $status;
 
