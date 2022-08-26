@@ -13,7 +13,9 @@ $query = "SELECT
                 v.GOING_TO_ORIGIN,
                 v.ARRIVED_AT_ORIGIN,
                 v.GOING_TO_DESTINATION,
-                v.ARRIVED_AT_DESTINATION
+                v.ARRIVED_AT_DESTINATION,
+                v.name,
+                v.phone
         FROM vendas_produtos a
             left join produtos b on a.produto = b.codigo
             left join vendas v on a.venda = v.codigo
@@ -41,6 +43,11 @@ while($d = mysqli_fetch_object($result)){
     if($d->ARRIVED_AT_DESTINATION > 0){
         $status .= "<tr><td>Entrega realizada</td><td style='text-align:right'>".($d->ARRIVED_AT_DESTINATION)."</td></tr>";
     }
+
+    if($d->name and $d->phone){
+        $status .= "<tr><td>".$d->name."</td><td style='text-align:right'>".($d->phone)."</td></tr>";
+    }
+
 
     $staus .= '</table>';
 
