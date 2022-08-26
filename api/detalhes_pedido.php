@@ -27,19 +27,19 @@ while($d = mysqli_fetch_object($result)){
     $status = "<table border='0' style='width:100%'>";
 
     if($d->SEARCHING > 0){
-        $status .= "<tr><td>Confirmado Pelo estabelecimento</td><td>".($d->SEARCHING)."</td></tr>";
+        $status .= "<tr><td>Confirmado Pelo estabelecimento</td><td align='right'>".($d->SEARCHING)."</td></tr>";
     }
     if($d->GOING_TO_ORIGIN > 0){
-        $status .= "<tr><td>Seu pedido está em preparo</td><td>".($d->GOING_TO_ORIGIN)."</td></tr>";
+        $status .= "<tr><td>Seu pedido está em preparo</td><td align='right'>".($d->GOING_TO_ORIGIN)."</td></tr>";
     }
     if($d->ARRIVED_AT_ORIGIN > 0){
-        $status .= "<tr><td>Pedido sendo embalado para entrega</td><td>".($d->ARRIVED_AT_ORIGIN)."</td></tr>";
+        $status .= "<tr><td>Pedido sendo embalado para entrega</td><td align='right'>".($d->ARRIVED_AT_ORIGIN)."</td></tr>";
     }
     if($d->GOING_TO_DESTINATION > 0){
-        $status .= "<tr><td>A entrega está a caminho</td><td>".($d->GOING_TO_DESTINATION)."</td></tr>";
+        $status .= "<tr><td>A entrega está a caminho</td><td align='right'>".($d->GOING_TO_DESTINATION)."</td></tr>";
     }
     if($d->ARRIVED_AT_DESTINATION > 0){
-        $status .= "<tr><td>Entrega realizada</td><td>".($d->ARRIVED_AT_DESTINATION)."</td></tr>";
+        $status .= "<tr><td>Entrega realizada</td><td align='right'>".($d->ARRIVED_AT_DESTINATION)."</td></tr>";
     }
 
     $staus .= '</table>';
