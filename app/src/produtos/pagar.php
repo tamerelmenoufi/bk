@@ -244,7 +244,7 @@
                                         <?php
                                             $bee = new Bee;
                                             list($lat, $lng) = explode(",", $coordenadas);
-                                            $q = "select * from lojas";
+                                            $q = "select * from lojas where situacao = '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
                                             while($v = mysqli_fetch_object($r)){
