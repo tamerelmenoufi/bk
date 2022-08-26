@@ -28,6 +28,7 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<p>Entrega realizada <small>".($d->$d->ARRIVED_AT_DESTINATION)."</small></p>";
     }
 
+    $d->produto_nome .= $d->produto_descricao;
     $d->produto_descricao .= $status;
 
     $dados[] = $d;
