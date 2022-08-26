@@ -42,7 +42,7 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<p>Entrega realizada <small>".($d->ARRIVED_AT_DESTINATION)."</small></p>";
     }
 
-    $staus = '<div style="position:absolute; bottom:0; width:100%">'.$status.'</div>';
+    $staus = '<div style="position:fixed; bottom:0; width:100%">'.$status.'</div>';
 
     $d->produto_descricao .= $status;
 
