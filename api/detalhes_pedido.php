@@ -9,6 +9,27 @@ $query = "SELECT a.*, c.categoria as nome_categoria, v.situacao FROM vendas_prod
 $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
+
+    $status =false;
+
+    if($d->SEARCHING > 0){
+        $status .= "<p>Confirmado Pelo estabelecimento <small>".dataBr($d->$d->SEARCHING)."</small></p>";
+    }
+    if($d->GOING_TO_ORIGIN > 0){
+        $status .= "<p>Seu pedido está em preparo <small>".dataBr($d->$d->GOING_TO_ORIGIN)."</small></p>";
+    }
+    if($d->ARRIVED_AT_ORIGIN > 0){
+        $status .= "<p>Pedido sendo embalado para entrega <small>".dataBr($d->$d->ARRIVED_AT_ORIGIN)."</small></p>";
+    }
+    if($d->GOING_TO_DESTINATION > 0){
+        $status .= "<p>A entrega está a caminho <small>".dataBr($d->$d->GOING_TO_DESTINATION)."</small></p>";
+    }
+    if($d->ARRIVED_AT_DESTINATION > 0){
+        $status .= "<p>Entrega realizada <small>".dataBr($d->$d->ARRIVED_AT_DESTINATION)."</small></p>";
+    }
+
+    $d->produto_descricao .= $status;
+
     $dados[] = $d;
 }
 
