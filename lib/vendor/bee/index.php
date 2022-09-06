@@ -17,6 +17,10 @@
                 COMPLETED = '0',
                 CANCELED = '0',
             ";
+        }else if($_POST['status'] == 'COMPLETED'){
+            $limpar = "
+                situacao = 'c'
+            ";
         }else{
             $limpar = false;
         }
