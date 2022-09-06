@@ -25,7 +25,6 @@
             $limpar = false;
         }
 
-
         $q = "update vendas set
 
                 {$_POST['status']} = '{$_POST['statusDate']}',
