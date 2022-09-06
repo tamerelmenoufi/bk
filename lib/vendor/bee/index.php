@@ -19,7 +19,7 @@
             ";
         }else if($_POST['status'] == 'COMPLETED'){
             $limpar = "
-                situacao = 'c'
+                situacao = 'c',
             ";
         }else{
             $limpar = false;
