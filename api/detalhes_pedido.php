@@ -45,7 +45,7 @@ while($d = mysqli_fetch_object($result)){
     }
 
     if($d->name and $d->phone){
-        $status .= "<tr><td><b>Entregador<b></td><td style='text-align:right; padding-right:50px;'><b>Telefone</b></td></tr>";
+        $status .= "<tr><td><b>Entregador<b></td><td style='text-align:right; padding-right:40px;'><b>Telefone</b></td></tr>";
         $status .= "<tr><td>".$d->name."</td><td style='text-align:right'>".($d->phone)."</td></tr>";
     }
 
