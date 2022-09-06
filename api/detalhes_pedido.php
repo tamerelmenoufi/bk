@@ -29,19 +29,19 @@ while($d = mysqli_fetch_object($result)){
     $status = "<table border='1' style='width:100%'>";
 
     if($d->SEARCHING > 0){
-        $status .= "<tr><td>Pedido Confirmado</td><td style='text-align:right'>".($d->SEARCHING)."</td></tr>";
+        $status .= "<tr><td>Pedido Confirmado</td><td style='text-align:right'>".formata_datahora($d->SEARCHING)."</td></tr>";
     }
     if($d->GOING_TO_ORIGIN > 0){
-        $status .= "<tr><td>Pedido em preparo</td><td style='text-align:right'>".($d->GOING_TO_ORIGIN)."</td></tr>";
+        $status .= "<tr><td>Pedido em preparo</td><td style='text-align:right'>".formata_datahora($d->GOING_TO_ORIGIN)."</td></tr>";
     }
     if($d->ARRIVED_AT_ORIGIN > 0){
-        $status .= "<tr><td>Entregador no estabelecimento</td><td style='text-align:right'>".($d->ARRIVED_AT_ORIGIN)."</td></tr>";
+        $status .= "<tr><td>Entregador no estabelecimento</td><td style='text-align:right'>".formata_datahora($d->ARRIVED_AT_ORIGIN)."</td></tr>";
     }
     if($d->GOING_TO_DESTINATION > 0){
-        $status .= "<tr><td>A entrega está a caminho</td><td style='text-align:right'>".($d->GOING_TO_DESTINATION)."</td></tr>";
+        $status .= "<tr><td>A entrega está a caminho</td><td style='text-align:right'>".formata_datahora($d->GOING_TO_DESTINATION)."</td></tr>";
     }
     if($d->ARRIVED_AT_DESTINATION > 0){
-        $status .= "<tr><td>Entrega realizada</td><td style='text-align:right'>".($d->ARRIVED_AT_DESTINATION)."</td></tr>";
+        $status .= "<tr><td>Entrega realizada</td><td style='text-align:right'>".formata_datahora($d->ARRIVED_AT_DESTINATION)."</td></tr>";
     }
 
     if($d->name and $d->phone){
