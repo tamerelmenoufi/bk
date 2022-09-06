@@ -16,7 +16,7 @@ $query = "SELECT
                 v.ARRIVED_AT_DESTINATION,
                 v.name,
                 v.phone,
-                '' as 'status_pedido'
+                '>' as 'status_pedido'
         FROM vendas_produtos a
             left join produtos b on a.produto = b.codigo
             left join vendas v on a.venda = v.codigo
@@ -51,7 +51,7 @@ while($d = mysqli_fetch_object($result)){
     }
 
 
-    $staus .= '</table>';
+    $status .= '</table>';
 
     $d->status_pedido .= $status;
 
