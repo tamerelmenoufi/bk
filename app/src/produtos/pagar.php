@@ -34,7 +34,6 @@
         ));
 
         $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
-
         #############################################################################
 
 
