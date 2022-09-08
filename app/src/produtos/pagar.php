@@ -17,6 +17,28 @@
                                     total = '{$total}'
                 where codigo = '{$_SESSION['AppVenda']}'";
         mysqli_query($con, $query);
+
+
+
+        #############################################################################
+        $content = http_build_query(array(
+            'pedido' => $_SESSION['AppVenda'],
+            'empresa' => $_POST['LjId'],
+        ));
+
+        $context = stream_context_create(array(
+            'http' => array(
+                'method'  => 'POST',
+                'content' => $content,
+            )
+        ));
+
+        $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
+
+        #############################################################################
+
+
+
         exit();
 
     }
@@ -262,6 +284,7 @@
                                         ?>
                                             <li
                                                 opc="<?=$v->codigo?>"
+                                                LjId="<?=$v->id?>"
                                                 valor="<?=$valores->deliveryFee?>"
                                                 class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
@@ -399,6 +422,7 @@
 
         LjVl = lj.attr("valor");
         LjCd = lj.attr("opc");
+        LjId = lj.attr("LjId");
         valor = $("div[dadosValores]").attr('valor');
         taxa = $("div[dadosValores]").attr('taxa');
         desconto = $("div[dadosValores]").attr('desconto');
@@ -410,6 +434,7 @@
                 data:{
                     LjVl,
                     LjCd,
+                    LjId,
                     valor,
                     taxa,
                     desconto,
@@ -460,6 +485,7 @@
 
             LjVl = obj.attr("valor");
             LjCd = obj.attr("opc");
+            LjId = obj.attr("LjId");
             valor = $("div[dadosValores]").attr('valor');
             taxa = $("div[dadosValores]").attr('taxa');
             desconto = $("div[dadosValores]").attr('desconto');
@@ -471,6 +497,7 @@
                 data:{
                     LjVl,
                     LjCd,
+                    LjId,
                     valor,
                     taxa,
                     desconto,
