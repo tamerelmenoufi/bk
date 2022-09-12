@@ -25,13 +25,16 @@
             $limpar = false;
         }
 
+        if($_POST['name'] and $_POST['phone']){
+            $entregador = " name = '{$_POST['name']}',
+                            phone = '{$_POST['phone']}',";
+        }
+
+
         $q = "update vendas set
-
-                {$_POST['status']} = '{$_POST['statusDate']}',
                 {$limpar}
-                name = '{$_POST['name']}',
-                phone = '{$_POST['phone']}'
-
+                {$entregador}
+                {$_POST['status']} = '{$_POST['statusDate']}'
             where deliveryId = '{$_POST['deliveryId']}'";
         mysqli_query($con, $q);
 
