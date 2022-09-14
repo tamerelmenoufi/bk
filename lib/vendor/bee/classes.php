@@ -3,8 +3,8 @@
 
     class Bee {
 
-        public $Ambiente = 'producao'; //homologacao ou producao
-        public $AccessTOKEN = '7ee80ecf9002e205789139ef9179b3b4c3dbe776';
+        public $Ambiente = '********'; //homologacao ou producao
+        public $AccessTOKEN = '******************************';
 
         public function ConnectDB(){
             global $con;
