@@ -3,8 +3,6 @@
 
     $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
 
-
-
     $query = "select * from vendas where
                                     data_pedido >= '{$tempo}' and
                                     cliente = '{$_SESSION['AppCliente']}' and

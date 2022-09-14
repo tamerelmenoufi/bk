@@ -77,7 +77,10 @@ function VerificarVendaApp(){
     global $SESSION;
     global $con;
 
-    $r = mysqli_query($con, "SELECT * FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
+    $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
+
+
+    $r = mysqli_query($con, "SELECT *, IF(data_pedido < '{$tempo}','u','n') as atualiza FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
     $n = mysqli_num_rows($r);
 
     if(!$n){
@@ -93,6 +96,9 @@ function VerificarVendaApp(){
     }else{
         $_SESSION['AppVenda'] = mysqli_fetch_object($r)->codigo;
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
+        if($d->atualiza == 'u'){
+            mysqli_query($con, "UPDATE vendas SET data_pedido = NOW() where codigo = '{$d->codigo}'");
+        }
         //echo "<h1>TESTE 2</h1>";
     }
 
