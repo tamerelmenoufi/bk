@@ -22,7 +22,7 @@
         width:auto;
         height:50px;
         left:10px;
-        top:10;
+        top:10px;
         padding:10px;
         border-radius:7px;
         border:solid 1px #333;
@@ -32,6 +32,5 @@
 </style>
 <i class="fa-brands fa-pix"></i> Você possui <?=$n?> pagamento(s) pendente(s);
 <?php
-    echo $n;
     }
 ?>
