@@ -20,7 +20,7 @@
     .alerta{
         position:fixed;
         width:auto;
-        height:30px;
+        height:50px;
         left:10px;
         top:10;
         padding:10px;
