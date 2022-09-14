@@ -85,7 +85,7 @@
                             if($d->operadora_id and $d->operadora == 'mercadopago'){
 
                                 $PIX = new MercadoPago;
-                                $retorno = $PIX->ObterPagamento($_POST['id']);
+                                $retorno = $PIX->ObterPagamento($d->operadora_id);
                                 $operadora_retorno = $retorno;
                                 $dados = json_decode($retorno);
                                 $operadora_id = $dados->id;
