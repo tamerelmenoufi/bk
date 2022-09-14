@@ -80,7 +80,7 @@ function VerificarVendaApp(){
     $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
 
 
-    $r = mysqli_query($con, "SELECT *, IF(data_pedido < '{$tempo}','u','n') as atualiza FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
+    $r = mysqli_query($con, "SELECT * FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
     $n = mysqli_num_rows($r);
 
     if(!$n){
