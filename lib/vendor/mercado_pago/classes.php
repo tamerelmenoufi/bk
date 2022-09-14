@@ -4,17 +4,9 @@
 
         public $Ambiente = 'producao'; //homologacao ou producao
 
-        # SIstema BK
-        //public $AccessTOKEN = '*****************************************************************';
-        public $AccessTOKEN;
-
-        public function TOKEN(){
+        public function Autenticacao(){
             global $cBk;
             return $cBk['mercado_pago'][$this->Ambiente]['TOKEN'];
-        }
-
-        public function Autenticacao($opc){
-            return $opc;
         }
 
         public function Ambiente($opc){
@@ -25,17 +17,14 @@
             }
         }
 
-
         public function Transacao($d){
-
-            $this->AccessTOKEN = $this->TOKEN;
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->Ambiente));
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: Bearer ".$this->Autenticacao($this->AccessTOKEN)
+              "Authorization: Bearer ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -50,14 +39,13 @@
 
         public function ObterPagamento($Id){
 
-            $this->AccessTOKEN = $this->TOKEN;
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->Ambiente).$Id);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               //"Content-Type: application/json",
-              "Authorization: Bearer ".$this->Autenticacao($this->AccessTOKEN)
+              "Authorization: Bearer ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
