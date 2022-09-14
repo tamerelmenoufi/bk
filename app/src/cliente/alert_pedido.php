@@ -5,7 +5,7 @@
 
 
 
-    echo $query = "select * vendas where
+    echo $query = "select * from vendas where
                                     /*data_finalizacao >= '{$tempo}' and*/
                                     cliente = '{$_SESSION['AppCliente']}' and
                                     forma_pagamento = 'pix' and
