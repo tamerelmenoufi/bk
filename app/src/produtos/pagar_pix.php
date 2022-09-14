@@ -207,7 +207,7 @@
                     <h1>R$ <?=number_format($d->total,2,',','.')?></h1>
                     <p style="text-align:center; font-size:12px;">Seu Código PIX</p>
                     <p style="text-align:center; font-size:16px;"><?=$qrcode?></p>
-                    <button copiar="<?=$qrcode?>" class="btn btn-secondary btn-lg btn-block"><i class="fa-solid fa-copy"></i> Copiar Código PIX</button>
+                    <button copiar="<?=$qrcode?>" class="btn btn-secondary btn-lg btn-block"><i class="fa-solid fa-copy"></i> <span>Copiar Código PIX</span></button>
                 </div>
             </div>
         </div>
@@ -217,8 +217,12 @@
     $(function(){
 
         $("button[copiar]").click(function(){
+            obj = $(this);
             texto = $(this).attr("copiar");
             CopyMemory(texto);
+            obj.removeClass('btn-secondary');
+            obj.removeClass('btn-primary');
+            obj.children("span").text("Código PIX Copiado!");
         });
 
         <?php
