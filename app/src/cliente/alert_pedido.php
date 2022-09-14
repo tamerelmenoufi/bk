@@ -13,8 +13,9 @@
                                     deletado != '1'
                                     ";
     $result = mysqli_query($con, $query);
-    $d = mysqli_fetch_object($result);
-    if($d->codigo){
+    // $d = mysqli_fetch_object($result);
+    $n = mysqli_num_rows($result);
+    if($n){
 
 ?>
 <style>
@@ -31,5 +32,6 @@
     }
 </style>
 <?php
+    echo $n;
     }
 ?>
