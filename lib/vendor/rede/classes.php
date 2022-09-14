@@ -5,17 +5,9 @@
 
         public $Ambiente = 'producao'; //homologacao ou producao
 
-        //Homologação
-        // public $PV = '*******';
-        // public $TOKEN = '*****************************';
-
-        //produção
-        public $PV = '********';
-        public $TOKEN = '******************************';
-
-
         public function Autenticacao($opc){
-            return base64_encode($opc);
+            global $cBk;
+            return base64_encode($cBk['rede'][$this->Ambiente]['PV'].":".$cBk['rede'][$this->Ambiente]['TOKEN']);
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
@@ -33,7 +25,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+              "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -59,7 +51,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
             "Content-Type: application/json",
-            "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+            "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -81,7 +73,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+              "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -101,7 +93,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+              "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -133,7 +125,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 "Content-Type: application/json",
-                "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+                "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -155,7 +147,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+              "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -175,7 +167,7 @@
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: Basic ".$this->Autenticacao($this->PV.":".$this->TOKEN)
+              "Authorization: Basic ".$this->Autenticacao()
             ));
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
