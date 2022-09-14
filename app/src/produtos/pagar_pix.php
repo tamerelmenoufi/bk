@@ -221,7 +221,7 @@
             texto = $(this).attr("copiar");
             CopyMemory(texto);
             obj.removeClass('btn-secondary');
-            obj.removeClass('btn-primary');
+            obj.addClass('btn-success');
             obj.children("span").text("Código PIX Copiado!");
         });
 
