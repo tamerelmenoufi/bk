@@ -6,11 +6,18 @@
 
         # SIstema BK
         //public $AccessTOKEN = '*****************************************************************';
-        public $AccessTOKEN = '****************************************************************';
+        public $AccessTOKEN;
+
+        public function TOKEN(){
+            global $cBk;
+            return $cBk['mercado_pago'][$this->Ambiente]['TOKEN'];
+        }
+
 
         public function Autenticacao($opc){
             return $opc;
         }
+
         public function Ambiente($opc){
             if($opc == 'homologacao'){
                 return 'https://api.mercadopago.com/v1/payments/';
@@ -21,6 +28,8 @@
 
 
         public function Transacao($d){
+
+            $this->AccessTOKEN = $this->TOKEN;
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->Ambiente));
@@ -41,6 +50,8 @@
         }
 
         public function ObterPagamento($Id){
+
+            $this->AccessTOKEN = $this->TOKEN;
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $this->Ambiente($this->Ambiente).$Id);
