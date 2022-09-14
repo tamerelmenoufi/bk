@@ -79,6 +79,7 @@
                 <div class="card mb-3" style="background-color:#fafcff; padding:20px;">
                     <p style="text-align:center">
                         <?php
+
                             $pedido = str_pad($d->codigo, 6, "0", STR_PAD_LEFT);
 
 
@@ -88,6 +89,9 @@
                                 $retorno = $PIX->ObterPagamento($d->operadora_id);
                                 $operadora_retorno = $retorno;
                                 $dados = json_decode($retorno);
+
+                                print_r($dados);
+
                                 $operadora_id = $dados->id;
                                 $forma_pagamento = $dados->payment_method_id;
                                 $operadora_situacao = $dados->status;
