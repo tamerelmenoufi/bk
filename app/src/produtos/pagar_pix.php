@@ -83,17 +83,16 @@
                             $pedido = str_pad($d->codigo, 6, "0", STR_PAD_LEFT);
 
 
-
+                            $PIX = new MercadoPago;
+                            $retorno = $PIX->ObterPagamento($d->operadora_id);
+                            $operadora_retorno = $retorno;
+                            $dados = json_decode($retorno);
 
                             if( $d->operadora_id and
                                 $d->operadora == 'mercadopago' and
                                 $d->total == $dados->transaction_amount
                                 ){
 
-                                $PIX = new MercadoPago;
-                                $retorno = $PIX->ObterPagamento($d->operadora_id);
-                                $operadora_retorno = $retorno;
-                                $dados = json_decode($retorno);
                                 // echo "<pre>";
                                 // print_r($dados);
                                 // echo "</pre>";
