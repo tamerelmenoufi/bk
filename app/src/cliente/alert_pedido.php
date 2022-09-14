@@ -6,7 +6,8 @@
 
 
     echo $query = "select * vendas where
-                                    data_finalizacao >= '{$tempo}' and
+                                    /*data_finalizacao >= '{$tempo}' and*/
+                                    cliente = '{$_SESSION['AppCliente']}' and
                                     forma_pagamento = 'pix' and
                                     operadora_situacao = 'pending' and
                                     deletado != '1'
