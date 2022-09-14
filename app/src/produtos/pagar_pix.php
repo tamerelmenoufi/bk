@@ -85,15 +85,19 @@
 
 
 
-                            if($d->operadora_id and $d->operadora == 'mercadopago'){
+                            if( $d->operadora_id and
+                                $d->operadora == 'mercadopago' and
+                                $d->total == $dados->transaction_amount
+                                ){
 
                                 $PIX = new MercadoPago;
                                 $retorno = $PIX->ObterPagamento($d->operadora_id);
                                 $operadora_retorno = $retorno;
                                 $dados = json_decode($retorno);
-                                echo "<pre>";
-                                print_r($dados);
-                                echo "</pre>";
+                                // echo "<pre>";
+                                // print_r($dados);
+                                // echo "</pre>";
+
                                 $operadora_id = $dados->id;
                                 $forma_pagamento = $dados->payment_method_id;
                                 $operadora_situacao = $dados->status;
