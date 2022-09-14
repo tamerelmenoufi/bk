@@ -6,12 +6,12 @@
         public $Ambiente = 'producao'; //homologacao ou producao
 
         //Homologação
-        // public $PV = '19348375';
-        // public $TOKEN = '2b4e31d3a75b429c9ef5fdd02f2b5c59';
+        // public $PV = '*******';
+        // public $TOKEN = '*****************************';
 
         //produção
-        public $PV = '88729397';
-        public $TOKEN = 'fdcc875290d64809acfbd09a8a111fd5';
+        public $PV = '********';
+        public $TOKEN = '******************************';
 
 
         public function Autenticacao($opc){
