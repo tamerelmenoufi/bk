@@ -4,13 +4,6 @@
     class Bee {
 
         public $Ambiente = 'producao'; //homologacao ou producao
-        public $AccessTOKEN;
-        // 7ee80ecf9002e205789139ef9179b3b4c3dbe776
-
-        public function TOKEN(){
-            global $cBk;
-            return $cBk['bee'][$this->Ambiente]['TOKEN'];
-        }
 
         public function ConnectDB(){
             global $con;
@@ -19,7 +12,7 @@
 
         public function Autenticacao(){
             global $cBk;
-            return $cBk['bee'][$opc]['TOKEN'];
+            return $cBk['bee'][$this->Ambiente]['TOKEN'];
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
