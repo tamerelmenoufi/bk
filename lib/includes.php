@@ -1,5 +1,6 @@
 <?php
 error_reporting(0);
+include "confBk.php";
 include "connection.php";
 include "config.php";
 include "utils.php";
