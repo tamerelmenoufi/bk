@@ -5,7 +5,7 @@
 
 
 
-    $query = "select * vendas where
+    echo $query = "select * vendas where
                                     data_finalizacao >= '{$tempo}' and
                                     forma_pagamento = 'pix' and
                                     operadora_situacao = 'pending' and
