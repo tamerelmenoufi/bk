@@ -13,7 +13,6 @@
             return $cBk['mercado_pago'][$this->Ambiente]['TOKEN'];
         }
 
-
         public function Autenticacao($opc){
             return $opc;
         }
