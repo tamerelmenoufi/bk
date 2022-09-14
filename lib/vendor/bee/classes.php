@@ -3,16 +3,23 @@
 
     class Bee {
 
-        public $Ambiente = '********'; //homologacao ou producao
-        public $AccessTOKEN = '******************************';
+        public $Ambiente = 'producao'; //homologacao ou producao
+        public $AccessTOKEN;
+        // 7ee80ecf9002e205789139ef9179b3b4c3dbe776
+
+        public function TOKEN(){
+            global $cBk;
+            return $cBk['bee'][$this->Ambiente]['TOKEN'];
+        }
 
         public function ConnectDB(){
             global $con;
             return $con;
         }
 
-        public function Autenticacao($opc){
-            return $opc;
+        public function Autenticacao(){
+            global $cBk;
+            return $cBk['bee'][$opc]['TOKEN'];
         }
         public function Ambiente($opc){
             if($opc == 'homologacao'){
@@ -50,7 +57,7 @@
 
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 "Content-Type: application/json",
-                "Authorization: ".$this->Autenticacao($this->AccessTOKEN)
+                "Authorization: ".$this->Autenticacao()
             ));
 
             $response = curl_exec($ch);
@@ -173,7 +180,7 @@
 
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
               "Content-Type: application/json",
-              "Authorization: ".$this->Autenticacao($this->AccessTOKEN)
+              "Authorization: ".$this->Autenticacao()
             ));
 
             return $response = curl_exec($ch);
