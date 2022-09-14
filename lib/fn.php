@@ -96,7 +96,7 @@ function VerificarVendaApp(){
     }else{
         $_SESSION['AppVenda'] = mysqli_fetch_object($r)->codigo;
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
-        if($d->atualiza == 'n'){
+        if(mysqli_fetch_object($r)->atualiza == 'n'){
             mysqli_query($con, "UPDATE vendas SET data_pedido = NOW() where codigo = '{$_SESSION['AppVenda']}'");
         }
         //echo "<h1>TESTE 2</h1>";
