@@ -31,7 +31,7 @@
                 or (
                         forma_pagamento = 'pix' and
                         operadora_situacao = 'pending' and
-                        (data_pedido + INTERVAL 1 DAY) >= NOW()
+                        (data_pedido + INTERVAL 12 HOURS) >= NOW()
                     )
                 ) /*and data_finalizacao > 0*/ order by data_pedido desc";
     $result = mysqli_query($con, $query);
