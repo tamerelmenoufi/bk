@@ -51,7 +51,7 @@
                                     observacoes = '{$_POST['observacoes']}',*/
                                     data_finalizacao = NOW(),
                                     api_delivery = '{$api_delivery}',
-                                    ".(($r->authorization->status == 'Approved')?"situacao = 'p',":false)."
+                                    ".(($r->authorization->status == 'Approved')?"situacao = 'c',":false)."
                                     forma_pagamento = 'credito'
 
                 where codigo = '{$_POST['reference']}'";
