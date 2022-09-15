@@ -227,6 +227,7 @@
             securityCode = $("#cartao_ccv").val();
             tentativas = $(this).attr("tentativas");
             loja = $(this).attr("loja");
+            captcha = '<?=$_POST['captcha']?>';
 
             if(tentativas == 0){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
@@ -262,6 +263,7 @@
                     expirationYear,
                     securityCode,
                     loja,
+                    captcha,
                     acao:'pagar'
                 },
                 success:function(dados){
