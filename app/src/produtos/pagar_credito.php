@@ -22,67 +22,75 @@
         $result = json_decode($result);
         $api_delivery = $result->codigo;
 
-
         //////////////////////API DELIVERY////////////////////////////
+        if($_SESSION["palavra"] == $_POST['captcha']){
 
-        require "../../../lib/vendor/rede/Transacao.php";
+            require "../../../lib/vendor/rede/Transacao.php";
 
-        $query = "insert into status_venda set
-                                            venda = '{$_POST['reference']}',
-                                            operadora = 'rede',
-                                            tipo = 'credito',
-                                            data = NOW(),
-                                            retorno = '{$retorno}'";
-        mysqli_query($con, $query);
+            $query = "insert into status_venda set
+                                                venda = '{$_POST['reference']}',
+                                                operadora = 'rede',
+                                                tipo = 'credito',
+                                                data = NOW(),
+                                                retorno = '{$retorno}'";
+            mysqli_query($con, $query);
 
-        require "../../../lib/vendor/rede/Consulta.php";
-        $r = json_decode($retorno);
+            require "../../../lib/vendor/rede/Consulta.php";
+            $r = json_decode($retorno);
 
-        $query = "update vendas set
+            $query = "update vendas set
 
-                                    operadora = 'rede',
-                                    operadora_situacao = '{$r->authorization->status}',
-                                    operadora_retorno = '{$retorno}',
-                                    /*valor = '{$_POST['amount']}',
-                                    taxa = '{$_POST['taxa']}',
-                                    desconto = '{$_POST['desconto']}',
-                                    acrescimo = '{$_POST['acrescimo']}',
-                                    total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
-                                    observacoes = '{$_POST['observacoes']}',*/
-                                    data_finalizacao = NOW(),
-                                    api_delivery = '{$api_delivery}',
-                                    ".(($r->authorization->status == 'Approved')?"situacao = 'c',":false)."
-                                    forma_pagamento = 'credito'
+                                        operadora = 'rede',
+                                        operadora_situacao = '{$r->authorization->status}',
+                                        operadora_retorno = '{$retorno}',
+                                        /*valor = '{$_POST['amount']}',
+                                        taxa = '{$_POST['taxa']}',
+                                        desconto = '{$_POST['desconto']}',
+                                        acrescimo = '{$_POST['acrescimo']}',
+                                        total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
+                                        observacoes = '{$_POST['observacoes']}',*/
+                                        data_finalizacao = NOW(),
+                                        api_delivery = '{$api_delivery}',
+                                        ".(($r->authorization->status == 'Approved')?"situacao = 'c',":false)."
+                                        forma_pagamento = 'credito'
 
-                where codigo = '{$_POST['reference']}'";
-        mysqli_query($con, $query);
+                    where codigo = '{$_POST['reference']}'";
+            mysqli_query($con, $query);
 
-        if($r->authorization->status == 'Approved'){
-            //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
-            $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
-            $_SESSION['AppPedido'] = false;
-            $_SESSION['AppCarrinho'] = false;
-            echo json_encode([
-                'status' => $r->authorization->status,
-                'msg' => 'Operação realizada com sucesso!',
-                //'AppVenda' => $_SESSION['AppVenda'],
-            ]);
-        }else if($r->authorization->status == 'Denied')
-        {
-            echo json_encode([
-                'status' => $r->authorization->status,
-                'msg' => 'Operação Negada, consulte os dados do Cartão ou entre em contato com sua operadora!',
-                //'AppVenda' => $_SESSION['AppVenda'],
-            ]);
+            if($r->authorization->status == 'Approved'){
+                //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
+                $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
+                $_SESSION['AppPedido'] = false;
+                $_SESSION['AppCarrinho'] = false;
+                echo json_encode([
+                    'status' => $r->authorization->status,
+                    'msg' => 'Operação realizada com sucesso!',
+                    //'AppVenda' => $_SESSION['AppVenda'],
+                ]);
+            }else if($r->authorization->status == 'Denied')
+            {
+                echo json_encode([
+                    'status' => $r->authorization->status,
+                    'msg' => 'Operação Negada, consulte os dados do Cartão ou entre em contato com sua operadora!',
+                    //'AppVenda' => $_SESSION['AppVenda'],
+                ]);
+            }else{
+                echo json_encode([
+                    'status' => false,
+                    'msg' => 'Ocorreu um erro, tente novamente!',
+                    //'AppVenda' => $_SESSION['AppVenda'],
+                ]);
+                //Dados de teste
+            }
+            mysqli_query($con, "update vendas set tentativas_pagamento = (tentativas_pagamento -1) where codigo = '{$_POST['reference']}'");
         }else{
-            echo json_encode([
-                'status' => false,
-                'msg' => 'Ocorreu um erro, tente novamente!',
-                //'AppVenda' => $_SESSION['AppVenda'],
-            ]);
-            //Dados de teste
+                echo json_encode([
+                    'status' => false,
+                    'msg' => 'Capcha não identificado, favor tente novamente!',
+                    //'AppVenda' => $_SESSION['AppVenda'],
+                ]);
         }
-        mysqli_query($con, "update vendas set tentativas_pagamento = (tentativas_pagamento -1) where codigo = '{$_POST['reference']}'");
+
         exit();
     }
 

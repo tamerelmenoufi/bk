@@ -285,6 +285,7 @@
                                                 opc="<?=$v->codigo?>"
                                                 LjId="<?=$v->id?>"
                                                 valor="<?=$valores->deliveryFee?>"
+                                                captcha=""
                                                 class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
@@ -459,7 +460,7 @@
                             $("#captcha").css("border-color","green");
                             $("h5[robo]").attr("captcha","success");
                             $("h5[robo]").html('<center><h5 style="color:green"><i class="fa-solid fa-user-check"></i> Captcha Confirmado</h5></center>')
-
+                            $(".opcLoja").attr("captcha",captcha);
                         }else{
                             $("#captcha").css("border-color","red");
                         }
@@ -489,6 +490,7 @@
             taxa = $("div[dadosValores]").attr('taxa');
             desconto = $("div[dadosValores]").attr('desconto');
             acrescimo = $("div[dadosValores]").attr('acrescimo');
+            captcha = obj.attr("captcha");
 
             $.ajax({
                 url:"src/produtos/pagar.php",
@@ -499,6 +501,7 @@
                     LjId,
                     valor,
                     taxa,
+                    captcha,
                     desconto,
                     acrescimo,
                     acao:'loja'
