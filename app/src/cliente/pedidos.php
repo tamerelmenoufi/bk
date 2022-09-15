@@ -23,7 +23,7 @@
 <?php
     $query = "select
                     *,
-                    (data_pedido + INTERVAL 1 DAY) as dtNova
+                    (data_pedido + INTERVAL 12 HOUR) as dtNova
                 from vendas
 
                 where cliente = '{$_SESSION['AppCliente']}'
@@ -31,7 +31,7 @@
                 or (
                         forma_pagamento = 'pix' and
                         operadora_situacao = 'pending' and
-                        (data_pedido + INTERVAL 12 HOURS) >= NOW()
+                        (data_pedido + INTERVAL 12 HOUR) >= NOW()
                     )
                 ) /*and data_finalizacao > 0*/ order by data_pedido desc";
     $result = mysqli_query($con, $query);
