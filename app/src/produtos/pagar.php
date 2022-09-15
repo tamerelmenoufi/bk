@@ -285,7 +285,6 @@
                                                 opc="<?=$v->codigo?>"
                                                 LjId="<?=$v->id?>"
                                                 valor="<?=$valores->deliveryFee?>"
-                                                captcha=""
                                                 class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
@@ -385,10 +384,10 @@
                     <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
 
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>"><i class="fa-solid fa-credit-card"></i> Cartão</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-info btn-lg"><i class="fa-brands fa-pix"></i> PIX</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
@@ -460,7 +459,7 @@
                             $("#captcha").css("border-color","green");
                             $("h5[robo]").attr("captcha","success");
                             $("h5[robo]").html('<center><h5 style="color:green"><i class="fa-solid fa-user-check"></i> Captcha Confirmado</h5></center>')
-                            $(".opcLoja").attr("captcha",captcha);
+                            $("button[pagar]").attr("captcha",captcha);
                         }else{
                             $("#captcha").css("border-color","red");
                         }
@@ -490,7 +489,6 @@
             taxa = $("div[dadosValores]").attr('taxa');
             desconto = $("div[dadosValores]").attr('desconto');
             acrescimo = $("div[dadosValores]").attr('acrescimo');
-            captcha = obj.attr("captcha");
 
             $.ajax({
                 url:"src/produtos/pagar.php",
@@ -501,7 +499,6 @@
                     LjId,
                     valor,
                     taxa,
-                    captcha,
                     desconto,
                     acrescimo,
                     acao:'loja'
@@ -521,6 +518,7 @@
 
             opc = $(this).attr("opc");
             tentativas = $(this).attr("tentativas");
+            captcha_valor = $(this).attr("captcha");
 
             if(opc == 'credito' && tentativas == 0){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
@@ -533,6 +531,7 @@
                 type:"POST",
                 data:{
                     local:'src/produtos/pagar_'+opc+'.php',
+                    captcha:captcha_valor
                 },
                 success:function(dados){
                     //PageClose();
