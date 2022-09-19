@@ -6,7 +6,7 @@ $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
     $dados[$d->codigo] = [
-        "loja" => $d->loja,
+        "loja" => $d->nome,
         "situacao" => $d->situacao
     ];
 }
