@@ -1,6 +1,6 @@
 <?php
     include("../../lib/includes.php");
-    echo "<h2>Estabelecimento - {$_GET['loja']}</h2>";
+    echo "<h2><small>Estabelecimento</small> - {$_GET['loja']}</h2>";
     // echo "{$_GET['cod']}<br><br>";
 
     $query = "select a.*, b.categoria from produtos a left join categorias b on a.categoria = b.codigo where a.deletado != '1' and b.deletado != '1' and a.situacao = '1' and b.situacao = '1' order by b.ordem asc, a.produto asc";
