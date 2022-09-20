@@ -10,10 +10,10 @@
     echo "<h2><small>Estabelecimento</small> - {$_GET['loja']}</h2>";
     // echo "{$_GET['cod']}<br><br>";
 
-    echo $query = "select
+    $query = "select
                     a.*,
                     b.categoria,
-                    JOSN_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao_loja
+                    JSON_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao_loja
             from produtos a
                 left join categorias b on a.categoria = b.codigo
             where
