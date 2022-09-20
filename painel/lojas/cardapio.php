@@ -2,7 +2,7 @@
     include("../../lib/includes.php");
 ?>
 <style>
-    svg[acaoSituacao]{
+    span[acaoSituacao]{
         cursor:pointer;
     }
 </style>
@@ -22,7 +22,9 @@
         <div class="row">
             <div class="col-md-10"><?=$d->produto?></div>
             <div class="col-md-2">
-                <i acaoSituacao="off" cod="<?=$d->codigo?>" class="fa fa-toggle-off fa-2x" aria-hidden="true"></i>
+                <span acaoSituacao="off" cod="<?=$d->codigo?>">
+                    <i class="fa fa-toggle-off fa-2x" aria-hidden="true"></i>
+                </span>
             </div>
         </div>
     <?php
@@ -31,17 +33,17 @@
     ?>
     <script>
         $(function(){
-            $("svg[acaoSituacao]").click(function(){
+            $("span[acaoSituacao]").click(function(){
                 acao = $(this).attr("acaoSituacao");
                 cod = $(this).attr("cod");
                 if(acao == 'off'){
-                    $(this).removeClass("fa-toggle-off");
-                    $(this).addClass("fa-toggle-on");
+                    $(this).children("svg").removeClass("fa-toggle-off");
+                    $(this).children("svg").addClass("fa-toggle-on");
                     $(this).css("color","green");
                     $(this).attr("acaoSituacao","on");
                 }else{
-                    $(this).removeClass("fa-toggle-on");
-                    $(this).addClass("fa-toggle-off");
+                    $(this).children("svg").removeClass("fa-toggle-on");
+                    $(this).children("svg").addClass("fa-toggle-off");
                     $(this).css("color","#858796");
                     $(this).attr("acaoSituacao","off");
                 }
