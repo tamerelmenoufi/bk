@@ -2,7 +2,7 @@
     include("../../lib/includes.php");
 
     if($_POST['acao'] == 'situacao'){
-        echo $query = "update produtos set lojas = JSON_SET(lojas,'$.\"{$_POST['loja']}\".situacao',{$_POST['situacao']}) where codigo = '{$_POST['cod']}'";
+        $query = "update produtos set lojas = JSON_SET(lojas,'$.\"{$_POST['loja']}\".situacao',{$_POST['situacao']}) where codigo = '{$_POST['cod']}'";
         mysqli_query($con,$query);
         exit();
     }
@@ -81,7 +81,7 @@
                         situacao
                     },
                     success:function(dados){
-                        $.alert(dados)
+                        // $.alert(dados)
                     }
                 });
             });
