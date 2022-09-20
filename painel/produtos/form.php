@@ -39,7 +39,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $attr[] = "{$name} = '" . mysqli_real_escape_string($con, $value) . "'";
     }
 
-    if (!$codigo) $attr[] = "categoria = '" . $ConfCategoria->codigo . "'";
+    if (!$codigo) {
+
+        $ql = "select * from lojas";
+        $rl = mysqli_query($con, $ql);
+        $dl = [];
+        while($dl = mysqli_fetch_object($rl)){
+            $dados[$dl->codigo] = [
+                "situacao" => 1
+            ];
+        }
+
+        $attr[] = "categoria = '" . $ConfCategoria->codigo . "'";
+        $attr[] = "lojas = '" . json_encode($dl) . "'";
+    }
 
     $attr = implode(', ', $attr);
 
