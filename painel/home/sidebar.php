@@ -38,7 +38,7 @@
                 <?php
                 $where = false;
                 if($Usu['perfil'] == 'loja') $where = " and codigo IN(".(($Usu['lojas'])?:'0').") ";
-                echo $query = "SELECT * FROM lojas where situacao = '1' and deletado != '1' {$where} order by nome asc";
+                $query = "SELECT * FROM lojas where situacao = '1' {$where} order by nome asc";
                 $result = mysqli_query($con, $query);
                 while ($l = mysqli_fetch_object($result)) { ?>
                     <a class="collapse-item" href="#"
