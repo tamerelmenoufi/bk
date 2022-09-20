@@ -102,7 +102,7 @@ if ($codigo) {
                 <div class="form-control"><?= $d->nome; ?></div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="senha">Senha <i class="text-danger">*</i></label>
@@ -128,7 +128,7 @@ if ($codigo) {
                         >
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 
@@ -167,35 +167,34 @@ if ($codigo) {
 <script>
     $(function () {
 
-        $("#cpf").mask("999.999.999-99");
 
-        $('#form-<?=$md5?>').validate({
-            rules: {
-                senha: {
-                    minlength: 4
-                },
-                senha_2: {
-                    minlength: 4,
-                    equalTo: '[name="senha"]'
-                }
-            },
-            messages: {
-                senha: {
-                    minlength: 'Digite minímo 4 caracteres'
-                },
-                senha_2: {
-                    minlength: 'Digite minímo 4 caracteres',
-                    equalTo: 'As senhas não conferem'
-                }
-            }
-        });
+        // $('#form-<?=$md5?>').validate({
+        //     rules: {
+        //         senha: {
+        //             minlength: 4
+        //         },
+        //         senha_2: {
+        //             minlength: 4,
+        //             equalTo: '[name="senha"]'
+        //         }
+        //     },
+        //     messages: {
+        //         senha: {
+        //             minlength: 'Digite minímo 4 caracteres'
+        //         },
+        //         senha_2: {
+        //             minlength: 'Digite minímo 4 caracteres',
+        //             equalTo: 'As senhas não conferem'
+        //         }
+        //     }
+        // });
 
-        $('#form-<?=$md5?>').validate();
+        // $('#form-<?=$md5?>').validate();
 
         $('#form-<?=$md5?>').submit(function (e) {
             e.preventDefault();
 
-            if (!$(this).valid()) return false;
+            // if (!$(this).valid()) return false;
 
             var codigo = $('#codigo').val();
             var dados = $(this).serializeArray();
