@@ -9,14 +9,14 @@
     while($d = mysqli_fetch_object($result)){
         if($categoria != $d->categoria){
             $categoria = $d->categoria;
-?>
-    <div class="row">
-        <div class="col-md-10"><?=$d->produto?></div>
-        <div class="col-md-2">
-            Ação
-        </div>
-    </div>
-<?php
         }
-        echo "{$d->produto}<br>";
+        ?>
+        <div class="row">
+            <div class="col-md-10"><?=$d->produto?></div>
+            <div class="col-md-2">
+                Ação
+            </div>
+        </div>
+    <?php
+        // echo "{$d->produto}<br>";
     }
