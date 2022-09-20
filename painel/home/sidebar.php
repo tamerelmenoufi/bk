@@ -40,7 +40,7 @@
                 $result = mysqli_query($con, $query);
                 while ($l = mysqli_fetch_object($result)) { ?>
                     <a class="collapse-item" href="#"
-                       url="lojas/cardapio.php?cod=<?= $l->codigo ?>"><?= ucwords(mb_strtolower($l->nome, 'UTF-8')); ?></a>
+                       url="lojas/cardapio.php?cod=<?= $l->codigo ?>&loja=<?=ucwords(mb_strtolower($l->nome, 'UTF-8'));?>"><?= ucwords(mb_strtolower($l->nome, 'UTF-8')); ?></a>
                 <?php } ?>
             </div>
         </div>
