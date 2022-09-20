@@ -1,5 +1,12 @@
 <?php
     include("../../lib/includes.php");
+?>
+<style>
+    i[acaoSituacao]{
+        cursor:pointer;
+    }
+</style>
+<?php
     echo "<h2><small>Estabelecimento</small> - {$_GET['loja']}</h2>";
     // echo "{$_GET['cod']}<br><br>";
 
