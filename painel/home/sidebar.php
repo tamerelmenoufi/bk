@@ -28,12 +28,12 @@
 
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuCardapio"
-           aria-expanded="true" aria-controls="MenuCardapio">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#LojasCardapio"
+           aria-expanded="true" aria-controls="LojasCardapio">
             <i class="fa-solid fa-clipboard-list"></i>
             <span>Cardápio (Lojas)</span>
         </a>
-        <div id="MenuCardapio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="LojasCardapio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <?php
                 $query = "SELECT * FROM lojas WHERE deletado != '1' order by mome asc";
