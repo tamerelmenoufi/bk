@@ -10,7 +10,7 @@
     echo "<h2><small>Estabelecimento</small> - {$_GET['loja']}</h2>";
     // echo "{$_GET['cod']}<br><br>";
 
-    $query = "select
+    echo $query = "select
                     a.*,
                     b.categoria,
                     JOSN_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao_loja
