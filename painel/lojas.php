@@ -11,3 +11,6 @@ while($d = mysqli_fetch_object($result)){
 }
 
 echo json_encode($dados);
+
+// -- update `produtos` set lojas = JSON_SET(lojas,'$."3".situacao',0) where codigo = 1;
+// select json_extract(lojas, '$."3".situacao') from produtos;

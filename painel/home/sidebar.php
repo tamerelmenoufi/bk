@@ -25,6 +25,28 @@
     <!-- Heading -->
     <!-- <div class="sidebar-heading">Produtos</div> -->
     <!-- Nav Item - Configuração -->
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuCardapio"
+           aria-expanded="true" aria-controls="MenuCardapio">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span>Cardápio (Lojas)</span>
+        </a>
+        <div id="MenuCardapio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <?php
+                $query = "SELECT * FROM lojas WHERE deletado != '1' order by mome asc";
+                $result = mysqli_query($con, $query);
+                while ($c = mysqli_fetch_object($result)) { ?>
+                    <a class="collapse-item" href="#"
+                       url="lojas/cardapio.php?cod=<?= $l->codigo ?>"><?= ucwords(mb_strtolower($l->nome, 'UTF-8')); ?></a>
+                <?php } ?>
+            </div>
+        </div>
+    </li>
+
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuCardapio"
            aria-expanded="true" aria-controls="MenuCardapio">
