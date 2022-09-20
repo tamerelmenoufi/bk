@@ -42,12 +42,12 @@
         }
         ?>
         <div class="row">
-            <div class="col-md-10"><?=$d->produto?></div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <span acaoSituacao="<?=(($d->situacao_loja == '1')?'on':'off')?>" cod="<?=$d->codigo?>" style="color:<?=(($d->situacao_loja == '1')?'green':'#858796')?>">
                     <i class="fa fa-toggle-<?=(($d->situacao_loja == '1')?'on':'off')?> fa-2x" aria-hidden="true"></i>
                 </span>
             </div>
+            <div class="col-md-11"><?=$d->produto?></div>
         </div>
     <?php
         // echo "{$d->produto}<br>";
