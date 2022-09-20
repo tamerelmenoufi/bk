@@ -9,7 +9,7 @@
     while($d = mysqli_fetch_object($result)){
         if($categoria != $d->categoria){
             $categoria = $d->categoria;
-            echo "<hr><h5 style='margin-top:20px;'>{$categoria}</h5>";
+            echo "<hr><h3 style='margin-top:20px;'>{$categoria}</h3>";
         }
         ?>
         <div class="row">
