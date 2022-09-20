@@ -2,7 +2,7 @@
     include("../../lib/includes.php");
 ?>
 <style>
-    i[acaoSituacao]{
+    svg[acaoSituacao]{
         cursor:pointer;
     }
 </style>
@@ -31,7 +31,7 @@
     ?>
     <script>
         $(function(){
-            $("i[acaoSituacao]").click(function(){
+            $("svg[acaoSituacao]").click(function(){
                 acao = $(this).attr("acaoSituacao");
                 cod = $(this).attr("cod");
                 if(acao == 'off'){
