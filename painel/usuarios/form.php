@@ -103,6 +103,21 @@ if ($codigo) {
     </div>
     <div class="card-body">
         <form id="form-<?= $md5 ?>">
+
+
+            <div class="form-group">
+                <label for="nome">CPF <i class="text-danger">*</i></label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="cpf"
+                        name="cpf"
+                        value="<?= $d->cpf; ?>"
+                        required
+                >
+            </div>
+
+
             <div class="form-group">
                 <label for="nome">Nome <i class="text-danger">*</i></label>
                 <input
@@ -244,6 +259,8 @@ if ($codigo) {
 
 <script>
     $(function () {
+
+        $("#cpf").mask("999.999.999-99");
 
         $('#form-<?=$md5?>').validate({
             rules: {
