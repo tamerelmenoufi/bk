@@ -10,7 +10,21 @@
     echo "<h2><small>Estabelecimento</small> - {$_GET['loja']}</h2>";
     // echo "{$_GET['cod']}<br><br>";
 
-    $query = "select a.*, b.categoria from produtos a left join categorias b on a.categoria = b.codigo where a.deletado != '1' and b.deletado != '1' and a.situacao = '1' and b.situacao = '1' order by b.ordem asc, a.produto asc";
+    $query = "select
+                    a.*,
+                    b.categoria,
+                    JOSN_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao_loja
+            from produtos a
+                left join categorias b on a.categoria = b.codigo
+            where
+                    a.deletado != '1' and
+                    b.deletado != '1' and
+                    a.situacao = '1' and
+                    b.situacao = '1'
+            order by
+                    b.ordem asc,
+                    a.produto asc
+    ";
     $result = mysqli_query($con, $query);
     $categoria = false;
     while($d = mysqli_fetch_object($result)){
@@ -22,8 +36,8 @@
         <div class="row">
             <div class="col-md-10"><?=$d->produto?></div>
             <div class="col-md-2">
-                <span acaoSituacao="off" cod="<?=$d->codigo?>">
-                    <i class="fa fa-toggle-off fa-2x" aria-hidden="true"></i>
+                <span acaoSituacao="<?=(($d->situacao_loja == '1')?'on':'off')?>" cod="<?=$d->codigo?>" style="color:<?=(($d->situacao_loja == '1')?'green':'#858796')?>">
+                    <i class="fa fa-toggle-<?=(($d->situacao_loja == '1')?'on':'off')?> fa-2x" aria-hidden="true"></i>
                 </span>
             </div>
         </div>
