@@ -47,7 +47,7 @@
     </li>
 
     <?php
-    if($Usu->perfil == 'adm'){
+    if($Usu['perfil'] == 'adm'){
     ?>
 
     <li class="nav-item">
