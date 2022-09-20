@@ -36,7 +36,7 @@
         <div id="LojasCardapio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <?php
-                $query = "SELECT * FROM lojas order by mome asc";
+                $query = "SELECT * FROM lojas order by nome asc";
                 $result = mysqli_query($con, $query);
                 while ($c = mysqli_fetch_object($result)) { ?>
                     <a class="collapse-item" href="#"
