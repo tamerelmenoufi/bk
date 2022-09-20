@@ -10,3 +10,6 @@ include "vendor/mercado_pago/classes.php";
 include "vendor/bee/classes.php";
 include "AppWapp.php";
 $md5 = md5(date("YmdHis"));
+if($_SESSION['usuario']){
+    $Usu = $_SESSION['usuario'];
+}

@@ -46,6 +46,9 @@
         </div>
     </li>
 
+    <?php
+    if($Usu->perfil == 'adm'){
+    ?>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#MenuCardapio"
@@ -144,7 +147,9 @@
             </div>
         </div>
     </li>
-
+    <?php
+    }
+    ?>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
