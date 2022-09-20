@@ -28,15 +28,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $ql = "select * from lojas";
         $rl = mysqli_query($con, $ql);
-        $dl = [];
+        $dadosl = [];
         while($dl = mysqli_fetch_object($rl)){
-            $dados[$dl->codigo] = [
+            $dadosl[$dl->codigo] = [
                 "situacao" => 1
             ];
         }
 
         $attr[] = "categoria = '" . $ConfCategoria->codigo . "'";
-        $attr[] = "lojas = '" . json_encode($dl) . "'";
+        $attr[] = "lojas = '" . json_encode($dadosl) . "'";
     }
 
     $attr = implode(', ', $attr);
