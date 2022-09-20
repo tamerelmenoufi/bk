@@ -38,7 +38,7 @@
                 <?php
                 $query = "SELECT * FROM lojas order by nome asc";
                 $result = mysqli_query($con, $query);
-                while ($c = mysqli_fetch_object($result)) { ?>
+                while ($l = mysqli_fetch_object($result)) { ?>
                     <a class="collapse-item" href="#"
                        url="lojas/cardapio.php?cod=<?= $l->codigo ?>"><?= ucwords(mb_strtolower($l->nome, 'UTF-8')); ?></a>
                 <?php } ?>
