@@ -42,7 +42,7 @@
                 }else{
                     $(this).removeClass("fa-toggle-on");
                     $(this).addClass("fa-toggle-off");
-                    // $(this).removeCss("color");
+                    $(this).css("color","#858796");
                     $(this).attr("acaoSituacao","off");
                 }
             });
