@@ -1,5 +1,13 @@
 <?php
     include("../../lib/includes.php");
+
+    if($_POST['acao'] == 'situacao'){
+        echo $query = "update produtos set lojas = JSON_SET(lojas,'$.\"{$_POST['cod']}\".situacao','{$_POST['situacao']}') where codigo = '{$_POST['cod']}'";
+        mysqli_query($con,$query);
+        exit();
+    }
+
+
 ?>
 <style>
     span[acaoSituacao]{
@@ -55,12 +63,26 @@
                     $(this).children("svg").addClass("fa-toggle-on");
                     $(this).css("color","green");
                     $(this).attr("acaoSituacao","on");
+                    situacao = '1';
                 }else{
                     $(this).children("svg").removeClass("fa-toggle-on");
                     $(this).children("svg").addClass("fa-toggle-off");
                     $(this).css("color","#858796");
                     $(this).attr("acaoSituacao","off");
+                    situacao = '0';
                 }
+                $.ajax({
+                    url:"lojas/cardapio.php",
+                    type:"POST",
+                    data:{
+                        acao:"situacao",
+                        cod:"<?=$_GET['cod']?>",
+                        situacao
+                    },
+                    success:function(dados){
+                        $.alert(dados)
+                    }
+                });
             });
         })
     </script>
