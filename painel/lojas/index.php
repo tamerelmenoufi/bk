@@ -65,9 +65,9 @@ $result = mysqli_query($con, $query);
                             >
                                 <i class="fa-solid fa-pencil text-warning"></i>
                             </button>
-                            <button class="btn btn-sm btn-link btn-excluir" data-codigo="<?= $d->codigo ?>">
+                            <!-- <button class="btn btn-sm btn-link btn-excluir" data-codigo="<?= $d->codigo ?>">
                                 <i class="fa-regular fa-trash-can text-danger"></i>
-                            </button>
+                            </button> -->
                         </td>
                     </tr>
                 <?php endwhile; ?>
