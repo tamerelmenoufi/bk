@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-10"><?=$d->produto?></div>
             <div class="col-md-2">
-                Ação
+                <i class="fa fa-toggle-on" aria-hidden="true"></i>
             </div>
         </div>
     <?php
