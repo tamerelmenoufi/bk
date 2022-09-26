@@ -1584,6 +1584,7 @@
 
   <script>
     $(function(){
+      alert('ok')
       $.ajax({
         url:"src/produtos/lista.php",
         success:function(dados){
