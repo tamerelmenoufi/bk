@@ -1593,6 +1593,7 @@
           },
           success:function(dados){
             $(".popup").html(dados);
+            $(".popup").css("display","block");
             $("body").css("overflow","hidden");
           }
         });
