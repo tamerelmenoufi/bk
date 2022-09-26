@@ -641,7 +641,7 @@
         for($i=0;$i<count($Categrias);$i++){
         ?>
 
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$Categrias[$i]['codigo']?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
               <div class="img text-center">
                 <img src="<?=$Categrias[$i]['imagem']?>" class="img-fluid" alt="">
