@@ -1310,7 +1310,7 @@
 
               </div>
               <div class="member-info text-center">
-                <div class="social">
+                <div class="social text-center">
                   <a href=""><i class="bi bi-phone-vibrate"></i></a>
                   <a href=""><i class="bi bi-envelope-fill"></i></a>
                 </div>
