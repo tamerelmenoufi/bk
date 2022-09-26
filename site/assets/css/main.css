@@ -2784,3 +2784,6 @@ section {
   display: none;
   z-index: 9999999999;
 }
+.produtos_detalhes{
+  cursor: pointer;
+}
