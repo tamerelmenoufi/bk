@@ -1300,8 +1300,8 @@
           for($i=0;$i<count($Unidades);$i++){
           ?>
           <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
-            <div class="team-member">
-              <div class="member-img">
+            <div class="team-member text-center">
+              <div class="member-img text-center">
                 <img src="assets/img/localizacao/<?=$Unidades[$i]['fachada']?>" class="img-fluid" alt="">
 
                 <!-- <div class="map">
@@ -1309,7 +1309,7 @@
                 </div> -->
 
               </div>
-              <div class="member-info">
+              <div class="member-info text-center">
                 <div class="social">
                   <a href=""><i class="bi bi-phone-vibrate"></i></a>
                   <a href=""><i class="bi bi-envelope-fill"></i></a>
