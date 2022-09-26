@@ -1299,7 +1299,7 @@
 
           for($i=0;$i<count($Unidades);$i++){
           ?>
-          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+          <div class="col-xl-4 col-md-6 d-flex text-center" data-aos="zoom-in" data-aos-delay="600">
             <div class="team-member text-center">
               <div class="member-img text-center">
                 <img src="assets/img/localizacao/<?=$Unidades[$i]['fachada']?>" class="img-fluid" alt="">
