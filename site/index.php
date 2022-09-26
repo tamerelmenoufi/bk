@@ -1563,6 +1563,8 @@
       </div>
     </div>
 
+    <div class="popup"></div>
+
   </footer><!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -1579,6 +1581,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    $(function(){
+      $.ajax({
+        url:"src/produtos/lista.php",
+        success:function(dados){
+          $(".popup").html(dados);
+        }
+      });
+    })
+  </script>
 
 </body>
 
