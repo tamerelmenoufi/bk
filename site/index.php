@@ -642,7 +642,7 @@
 
         $query = "select a.*, (select icon from produtos where situacao = '1' and deletado != '1' and icon != '' and categoria = a.codigo order by rand() limit 1) as icon from categorias a where a.situacao = '1' and a.deletado != '1' order by a.ordem";
         $result = mysqli_query($con,$query);
-        while($d = mysqli_fetch_array($result)){
+        while($d = mysqli_fetch_object($result)){
         // for($i=0;$i<count($Categrias);$i++){
         ?>
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
