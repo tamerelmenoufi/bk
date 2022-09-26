@@ -1592,7 +1592,7 @@
             codigo,
           },
           success:function(dados){
-            $(".popup").html(dados);
+            $(".popup").html(dados); //lin
             $(".popup").css("display","block");
             $("body").css("overflow","hidden");
           }
