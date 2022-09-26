@@ -4,7 +4,7 @@ Aqui a lista dos produtos
     $(function(){
         $(".popup").click(function(){
             $(this).css("display","none");
-            $("body").css("scroll","block");
+            $("body").css("overflow","scroll");
         });
     })
 </script>

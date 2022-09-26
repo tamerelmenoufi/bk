@@ -1588,7 +1588,7 @@
         url:"src/produtos/lista.php",
         success:function(dados){
           $(".popup").html(dados);
-          $("body").css("scroll","hidden");
+          $("body").css("overflow","hidden");
         }
       });
     })
