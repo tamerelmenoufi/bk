@@ -1583,13 +1583,21 @@
 
   <script>
     $(function(){
-      $.ajax({
-        url:"src/produtos/lista.php",
-        success:function(dados){
-          $(".popup").html(dados);
-          $("body").css("overflow","hidden");
-        }
-      });
+      $(".produtos_detalhes").click(function(){
+        codigo = $(this).attr("codigo");
+        $.ajax({
+          url:"src/produtos/lista.php",
+          type:"POST",
+          data:{
+            codigo,
+          },
+          success:function(dados){
+            $(".popup").html(dados);
+            $("body").css("overflow","hidden");
+          }
+        });
+      })
+
     })
   </script>
 
