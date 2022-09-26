@@ -1,3 +1,4 @@
+<?php include("../lib/includes.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -638,21 +639,25 @@
 
       ];
 
-        for($i=0;$i<count($Categrias);$i++){
+
+        $query = "select a.*, (select icon from produtos where situacao = '1' and deletado != '1' and icon != '' and categoria = a.codigo order by rand() limit 1) as icon from categorias a where a.situacao = '1' and a.deletado != '1' order by a.ordem";
+        $result = mysqli_query($con,$query);
+        while($d = mysqli_fetch_array($result)){
+        // for($i=0;$i<count($Categrias);$i++){
         ?>
-          <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$Categrias[$i]['codigo']?>" data-aos="zoom-in" data-aos-delay="200">
+          <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
               <div class="img text-center">
-                <img src="<?=$Categrias[$i]['imagem']?>" class="img-fluid" alt="">
+                <img src="<?=$d->icon?>" class="img-fluid" alt="">
               </div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
                 </div> -->
                 <a href="#" class="stretched-link">
-                  <h3><?=$Categrias[$i]['titulo']?></h3>
+                  <h3><?=$d->produto?></h3>
                 </a>
-                <p><?=$Categrias[$i]['descricao']?></p>
+                <p><?=$d->descricao?></p>
               </div>
             </div>
           </div><!-- End Service Item -->
