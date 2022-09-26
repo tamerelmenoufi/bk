@@ -642,11 +642,11 @@
         ?>
 
           <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="img">
+            <div class="service-item text-center">
+              <div class="img text-center">
                 <img src="<?=$Categrias[$i]['imagem']?>" class="img-fluid" alt="">
               </div>
-              <div class="details position-relative">
+              <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
                 </div> -->
