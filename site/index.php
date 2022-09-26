@@ -45,7 +45,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-
+  <script src="assets/vendor/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -1584,7 +1584,6 @@
 
   <script>
     $(function(){
-      alert('ok')
       $.ajax({
         url:"src/produtos/lista.php",
         success:function(dados){
