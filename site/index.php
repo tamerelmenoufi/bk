@@ -648,14 +648,14 @@
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
               <div class="img text-center">
-                <img src="<?=$d->icon?>" class="img-fluid" alt="">
+                <img src="<?=$caminho_sis.'/painel/produtos/icon/'.$d->icon?>" class="img-fluid" alt="">
               </div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
                 </div> -->
                 <a href="#" class="stretched-link">
-                  <h3><?=$d->produto?></h3>
+                  <h3><?=$d->categoria?></h3>
                 </a>
                 <p><?=$d->descricao?></p>
               </div>
