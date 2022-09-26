@@ -56,7 +56,7 @@
 
       <a href="./" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logo.png" alt="" style="position:fixed; left:30px; top:5px; width:80px !important; max-height:95px !important; z-index:99 !important;">
+        <img src="assets/img/logogb.png" alt="" style="position:fixed; left:30px; top:5px; width:80px !important; max-height:95px !important; z-index:99 !important;">
         <!-- <h1>HeroBiz<span>.</span></h1> -->
       </a>
 
@@ -133,7 +133,7 @@
 
   <section id="hero-animated" class="hero-animated d-flex align-items-center">
     <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
-      <img src="assets/img/banners/destaque.png" class="img-fluid animated" style="width:100% !important;">
+      <img src="assets/img/b3.png" class="img-fluid animated" style="width:100% !important;">
       <h2>Seu Pedido é uma Ordem</h2>
       <p>
         Peça pelo nosso aplicativo WEB e confira as promoções.
