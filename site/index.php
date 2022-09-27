@@ -650,10 +650,10 @@
             $q = "select * from produtos where codigo in ({$des})";
             $r = mysqli_query($con, $q);
             $im = [];
-            $x=0;
+            $x=-30;
             while($p = mysqli_fetch_object($r)){
               $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:80%; position:absolute; left:'.$x.'%; border:solid 1px red">';
-              $x = ($x+25);
+              $x = ($x+30);
             }
             if($im){ $icon = "<div style='position:relative; height:190px;'>".implode("",$im)."</div>"; }else{$icon = false;}
           }else{
