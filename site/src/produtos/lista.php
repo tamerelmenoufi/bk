@@ -4,7 +4,7 @@
 <style>
     .close_popup{
         position:fixed;
-        right:40px;
+        right:20px;
         top:0;
         color:#fff;
         text-shadow: #000 2px 3px 2px;
