@@ -655,7 +655,7 @@
               $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:50%; position:absolute; left:'.$x.'%; border:solid 1px red">';
               $x = ($x+25);
             }
-            if($im){ $icon = implode("",$im); }else{$icon = false;}
+            if($im){ $icon = "<div style='position:relative; height:190px;'>".implode("",$im)."</div>"; }else{$icon = false;}
           }else{
             $q = "select * from produtos where codigo = {$cod}";
             $r = mysqli_query($con, $q);
