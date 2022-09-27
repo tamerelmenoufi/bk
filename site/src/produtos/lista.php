@@ -18,7 +18,7 @@
         right:0;
         left:0;
         top:0px;
-        height:70px;
+        height:80px;
         /* background-color:yellow; */
         width:100%;
         z-index:9;
@@ -45,7 +45,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3" style="background-color:#fff; padding-top:60px;">
+        <div class="col-md-6 offset-md-3" style="background-color:#fff; padding-top:80px;">
             <?php
                 $query = "select * from produtos where categoria = '{$_POST['codigo']}' and situacao = '1' and deletado != '1'";
                 $result = mysqli_query($con, $query);
