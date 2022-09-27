@@ -2783,6 +2783,7 @@ section {
   background-color: rgb(0, 0, 0, 0.7);
   display: none;
   z-index: 9999999999;
+  overflow: auto;
 }
 .produtos_detalhes{
   cursor: pointer;
