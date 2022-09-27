@@ -646,7 +646,7 @@
 
           list($cod, $des) = explode("|",$d->prod);
 
-          if(strtolower($d->produto) == 'combos'){
+          if(strtolower($d->categoria) == 'combos'){
             $q = "select * from produtos where codigo in ({$des})";
             $r = mysqli_query($con, $q);
             $im = [];
