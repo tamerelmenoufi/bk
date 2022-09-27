@@ -1,6 +1,19 @@
 <?php
     include("../../../lib/includes.php");
 ?>
+<style>
+    .close_popup{
+        position:fixed;
+        right:20px;
+        top:15px;
+        cursor: pointer;
+    }
+</style>
+<span class="close_popup">
+    <i class="fa-solid fa-xmark fa-3x"></i>
+</span>
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-6 offset-md-3" style="background-color:#fff; margin-top:50px;">
@@ -33,7 +46,7 @@
 
 <script>
     $(function(){
-        $(".popup").click(function(){
+        $(".close_popup").click(function(){
             $(this).css("display","none");
             $("body").css("overflow","scroll");
         });
