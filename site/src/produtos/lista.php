@@ -13,6 +13,9 @@
         cursor: pointer;
         z-index:10;
     }
+    .card-body{
+        color:#333 !important;
+    }
 </style>
 
 <span class="close_popup">
