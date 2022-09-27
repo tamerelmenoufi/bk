@@ -640,9 +640,16 @@
       ];
 
 
-        $query = "select a.*, (select icon from produtos where situacao = '1' and deletado != '1' and icon != '' and categoria = a.codigo order by rand() limit 1) as icon from categorias a where a.situacao = '1' and a.deletado != '1' order by a.ordem";
+        $query = "select a.*, (select codigo as cod, descricao as des from produtos where situacao = '1' and deletado != '1' and icon != '' and categoria = a.codigo order by rand() limit 1) from categorias a where a.situacao = '1' and a.deletado != '1' order by a.ordem";
         $result = mysqli_query($con,$query);
         while($d = mysqli_fetch_object($result)){
+
+          if(strtolower($d->produto) == 'combos'){
+            echo $q = "select * from produtos where codigo in ({$d->des}) order by rand() limit 1";
+          }else{
+
+          }
+
         // for($i=0;$i<count($Categrias);$i++){
         ?>
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
