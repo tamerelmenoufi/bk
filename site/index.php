@@ -651,7 +651,7 @@
             $r = mysqli_query($con, $q);
             $im = [];
             while($p = mysqli_fetch_object($r)){
-              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'">';
+              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:30%; float:left;">';
             }
             if($im){ $icon = implode("",$im); }else{$icon = false;}
           }else{
