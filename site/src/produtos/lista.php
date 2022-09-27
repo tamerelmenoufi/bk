@@ -25,7 +25,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: center;
-        color:#333 !important;
+        color:#000 !important;
     }
     .card-body{
         color:#333 !important;
