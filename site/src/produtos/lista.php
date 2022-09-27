@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-md-6 offset-md-3" style="background-color:#fff; margin-top:80px;">
             <?php
-                $query = "select * from produtos where 1";
+                $query = "select * from produtos where categoria = '{$_POST['codigo']}' and situacao = '1' and deletado != '1'";
                 $result = mysqli_query($con, $query);
                 while($d = mysqli_fetch_object($result)){
             ?>
