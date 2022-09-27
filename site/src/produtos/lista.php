@@ -19,7 +19,7 @@
         left:0;
         top:0;
         height:120px;
-        background-color:yellow;
+        /* background-color:yellow; */
         width:100%;
         z-index:9;
         display: flex;
@@ -39,7 +39,7 @@
 <div class="titulo_categoria">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3" style="background-color:#fff;">
+            <div class="col-md-6 offset-md-3" >
                 <h1><?=$_POST['descricao']?></h1>
             </div>
         </div>
