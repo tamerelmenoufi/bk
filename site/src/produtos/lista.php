@@ -40,7 +40,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3" >
-                <h1><?=$_POST['descricao']?></h1>
+                <h1 style="width:100%; background-color:#fff;"><?=$_POST['descricao']?></h1>
             </div>
         </div>
     </div>
