@@ -10,6 +10,7 @@
         font-size:50px;
         font-weight:bold;
         cursor: pointer;
+        z-index:10;
     }
 </style>
 
