@@ -647,8 +647,8 @@
         ?>
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
-              <div class="img text-center">
-                <img src="<?=$caminho_sis.((strtolower($d->categoria) == 'combos')?'/painel/combos/icon/':'/painel/produtos/icon/').$d->icon?>" class="img-fluid" style="z-index:10" >
+              <div class="img text-center" style="z-index:10">
+                <img src="<?=$caminho_sis.((strtolower($d->categoria) == 'combos')?'/painel/combos/icon/':'/painel/produtos/icon/').$d->icon?>" class="img-fluid" >
               </div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
