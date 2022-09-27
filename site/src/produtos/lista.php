@@ -7,11 +7,14 @@
         right:20px;
         top:15px;
         color:#fff;
+        font-size:30px;
+        font-weight:bold;
         cursor: pointer;
     }
 </style>
+
 <span class="close_popup">
-    <i class="fa-solid fa-xmark fa-3x"></i>
+    <i class="bi bi-x"></i>
 </span>
 
 
