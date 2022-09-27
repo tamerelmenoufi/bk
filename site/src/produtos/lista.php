@@ -18,7 +18,7 @@
         right:0;
         left:0;
         top:0;
-        height:60px;
+        height:50px;
         /* background-color:yellow; */
         width:100%;
         z-index:9;
