@@ -35,7 +35,7 @@
 <div class="titulo_categoria">
     <div class="container">
         <div class="row" >
-            <div class="col-md-6 offset-md-3" style="background-color:#fff; height:50px;">
+            <div class="col-md-6 offset-md-3" style="background-color:#eee; height:50px;">
                 <h1><?=$_POST['descricao']?></h1>
             </div>
         </div>
