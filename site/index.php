@@ -651,9 +651,9 @@
             $r = mysqli_query($con, $q);
             $im = [];
             while($p = mysqli_fetch_object($r)){
-              $im[] = '<div class="col" style="height:190px; background-image:url('.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'); background-size:100%; background-position:center; background-repeat:no-repeat;"></div>';
+              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'">';
             }
-            if($im){ $icon = "<div class='row'>".implode("",$im)."</div>"; }else{$icon = false;}
+            if($im){ $icon = implode("",$im); }else{$icon = false;}
           }else{
             $q = "select * from produtos where codigo = {$cod}";
             $r = mysqli_query($con, $q);
