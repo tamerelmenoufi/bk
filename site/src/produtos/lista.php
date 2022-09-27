@@ -4,10 +4,10 @@
 <style>
     .close_popup{
         position:fixed;
-        right:20px;
-        top:15px;
+        right:40px;
+        top:0;
         color:#fff;
-        font-size:30px;
+        font-size:50px;
         font-weight:bold;
         cursor: pointer;
     }
@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3" style="background-color:#fff; margin-top:50px;">
+        <div class="col-md-6 offset-md-3" style="background-color:#fff; margin-top:80px;">
             <?php
                 $query = "select * from produtos where 1";
                 $result = mysqli_query($con, $query);
