@@ -31,7 +31,7 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="<?=$caminho_sis.'/painel/produtos/icon/'.$d->icon?>" class="img-fluid rounded-start" >
+                        <img src="<?=$caminho_sis."/painel/".(($_POST['codigo'] == 8)?'combos':'produtos')."/icon/".$d->icon?>" class="img-fluid rounded-start" >
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
