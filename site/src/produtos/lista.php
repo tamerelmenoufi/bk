@@ -1,8 +1,8 @@
 
-<div class="container" style="background-color:#fff; margin-top:50px;">
+<div class="container">
     <div class="row">
-        <div class="col-md-6 offset-md-3">
-        <div class="card mb-3">
+        <div class="col-md-6 offset-md-3" style="background-color:#fff; margin-top:50px;">
+        <div class="card m-3">
             <div class="row g-0">
                 <div class="col-md-4">
                 <img src="..." class="img-fluid rounded-start" alt="...">
