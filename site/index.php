@@ -671,7 +671,7 @@
         ?>
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
-              <div class="img text-center" style="background-color:#aa3a15;"><?=$icon?></div>
+              <div class="img text-center" style="background-color:#aa3a15; height:250px;"><?=$icon?></div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
