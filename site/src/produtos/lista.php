@@ -6,6 +6,7 @@
         position:fixed;
         right:20px;
         top:15px;
+        color:#fff;
         cursor: pointer;
     }
 </style>
