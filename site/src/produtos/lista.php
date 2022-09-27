@@ -20,7 +20,7 @@
         top:0px;
         height:50px;
         /* background-color:yellow; */
-        width:calc(100% - 10px);
+        width:calc(100% - 17px);
         z-index:9;
         color:#000 !important;
     }
