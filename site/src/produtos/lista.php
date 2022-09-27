@@ -17,8 +17,8 @@
         position:fixed;
         right:0;
         left:0;
-        top:80px;
-        height:40px;
+        top:0;
+        height:120px;
         background-color:yellow;
         width:100%;
         z-index:9;
