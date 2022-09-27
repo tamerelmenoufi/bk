@@ -669,7 +669,7 @@
 
         // for($i=0;$i<count($Categrias);$i++){
         ?>
-          <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
+          <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" descricao="<?=$d->categoria?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
               <div class="img text-center" style="background-color:rgb(170,58,21,1); height:200px;"><?=$icon?></div>
               <div class="details position-relative text-center">
@@ -1612,11 +1612,13 @@
     $(function(){
       $(".produtos_detalhes").click(function(){
         codigo = $(this).attr("codigo");
+        descricao = $(this).attr("descricao");
         $.ajax({
           url:"src/produtos/lista.php",
           type:"POST",
           data:{
             codigo,
+            descricao,
           },
           success:function(dados){
             $(".popup").html(dados); //lin
