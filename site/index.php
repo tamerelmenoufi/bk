@@ -652,7 +652,7 @@
             $im = [];
             $x=0;
             while($p = mysqli_fetch_object($r)){
-              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:70%; position:absolute; left:'.$x.'%; border:solid 1px red">';
+              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:80%; position:absolute; left:'.$x.'%; border:solid 1px red">';
               $x = ($x+25);
             }
             if($im){ $icon = "<div style='position:relative; height:190px;'>".implode("",$im)."</div>"; }else{$icon = false;}
