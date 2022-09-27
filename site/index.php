@@ -640,23 +640,32 @@
       ];
 
 
-        $query = "select a.*, (select codigo as cod, descricao as des from produtos where situacao = '1' and deletado != '1' and icon != '' and categoria = a.codigo order by rand() limit 1) from categorias a where a.situacao = '1' and a.deletado != '1' order by a.ordem";
+        $query = "select a.*, (select concat(codigo, '|', descricao) from produtos where situacao = '1' and deletado != '1' and icon != '' and categoria = a.codigo order by rand() limit 1) as prod from categorias a where a.situacao = '1' and a.deletado != '1' order by a.ordem";
         $result = mysqli_query($con,$query);
         while($d = mysqli_fetch_object($result)){
 
-          if(strtolower($d->produto) == 'combos'){
-            echo $q = "select * from produtos where codigo in ({$d->des}) order by rand() limit 1";
-          }else{
+          list($cod, $des) = explode("|",$d->prod);
 
+          if(strtolower($d->produto) == 'combos'){
+            $q = "select * from produtos where codigo in ({$des})";
+            $r = mysqli_query($con, $q);
+            $im = [];
+            while($p = mysqli_fetch_object($r)){
+              $im[] = '<div class="col"><img src="'.$caminho_sis.'/painel/combos/icon/'.$p->icon.'" class="img-fluid" ></div>';
+            }
+            if($im){ $icon = "<div class='row'>".implode("",$im)."</div>"; }else{$icon = false;}
+          }else{
+            $q = "select * from produtos where codigo = {$cod}";
+            $r = mysqli_query($con, $q);
+            $p = mysqli_fetch_object($r);
+            $icon = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" class="img-fluid" >';
           }
 
         // for($i=0;$i<count($Categrias);$i++){
         ?>
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
-              <div class="img text-center" style="z-index:10">
-                <img src="<?=$caminho_sis.((strtolower($d->categoria) == 'combos')?'/painel/combos/icon/':'/painel/produtos/icon/').$d->icon?>" class="img-fluid" >
-              </div>
+              <div class="img text-center"><?=$icon?></div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
