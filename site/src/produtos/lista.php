@@ -7,6 +7,7 @@
         right:40px;
         top:0;
         color:#fff;
+        text-shadow: #000 2px 3px 2px;
         font-size:50px;
         font-weight:bold;
         cursor: pointer;
