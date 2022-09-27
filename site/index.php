@@ -653,7 +653,7 @@
             $x=-30;
             $i = 1;
             while($p = mysqli_fetch_object($r)){
-              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:80%; z-index:'.$i.'; position:absolute; left:'.$x.'%; border:solid 1px red">';
+              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:75%; z-index:'.$i.'; position:absolute; left:'.$x.'%; border:solid 0px red">';
               $x = ($x+30);
               $i++;
             }
