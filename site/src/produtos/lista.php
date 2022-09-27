@@ -28,7 +28,7 @@
                 $result = mysqli_query($con, $query);
                 while($d = mysqli_fetch_object($result)){
             ?>
-            <div class="card mb-3">
+            <div class="card mb-2 mt-2">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="<?=$caminho_sis.'/painel/produtos/icon/'.$d->icon?>" class="img-fluid rounded-start" >
