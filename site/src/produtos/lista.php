@@ -22,6 +22,9 @@
         background-color:yellow;
         width:100%;
         z-index:9;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
     }
     .card-body{
         color:#333 !important;
