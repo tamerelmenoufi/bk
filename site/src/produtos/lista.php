@@ -51,7 +51,7 @@
 <script>
     $(function(){
         $(".close_popup").click(function(){
-            $(this).css("display","none");
+            $(".popup").css("display","none");
             $("body").css("overflow","scroll");
         });
     })
