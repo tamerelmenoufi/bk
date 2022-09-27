@@ -647,17 +647,19 @@
           list($cod, $des) = explode("|",$d->prod);
 
           if(strtolower($d->categoria) == 'combos'){
-            $q = "select * from produtos where codigo in ({$des})";
+            $q = "select * from produtos where codigo in ({$cod})";
             $r = mysqli_query($con, $q);
-            $im = [];
-            $x=-30;
-            $i = 1;
-            while($p = mysqli_fetch_object($r)){
-              $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:75%; z-index:'.$i.'; position:absolute; left:'.$x.'%; border:solid 0px red">';
-              $x = ($x+30);
-              $i++;
-            }
-            if($im){ $icon = "<div style='position:relative; height:190px;'>".implode("",$im)."</div>"; }else{$icon = false;}
+            $p = mysqli_fetch_object($r);
+            // $im = [];
+            // $x=-30;
+            // $i = 1;
+            // while($p = mysqli_fetch_object($r)){
+            //   $im[] = '<img src="'.$caminho_sis.'/painel/produtos/icon/'.$p->icon.'" style="width:75%; z-index:'.$i.'; position:absolute; left:'.$x.'%; border:solid 0px red">';
+            //   $x = ($x+30);
+            //   $i++;
+            // }
+            // if($im){ $icon = "<div style='position:relative; height:190px;'>".implode("",$im)."</div>"; }else{$icon = false;}
+            $icon = '<img src="'.$caminho_sis.'/painel/combos/icon/'.$p->icon.'" class="img-fluid" >';
           }else{
             $q = "select * from produtos where codigo = {$cod}";
             $r = mysqli_query($con, $q);
