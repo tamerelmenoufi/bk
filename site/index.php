@@ -1551,17 +1551,7 @@
           </div>
 
 
-          <div class="hidden-md hidden-lg " style="background:#ffaa00;padding:3px">
-  <center>
-    <p style="color:#5b2b12;font-size:13px;margin-bottom:5px">
-    ATENÇÃO!<br><b>Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
-    <b>canais oficiais</b> (redes sociais, app e site).<br>
-    Reforçamos que informações que não sejam provenientes dessas fontes não são válidas.
-    </p>
-
-  </center>
-</div>
-
+ 
           <!-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
