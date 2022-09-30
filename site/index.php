@@ -13,7 +13,8 @@
   <!-- Favicons -->
   <link href="assets/img/logogb.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  <link href = " http://fonts.cdnfonts.com/css/flame-3 " rel = "folha de estilo" >
+                
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +75,7 @@
       </a>
 
       <nav id="navbar" class="navbar">
-        <ul>
+        <ul style="font-family:flame-regular">
 
           <!-- <li class="dropdown"><a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
