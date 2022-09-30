@@ -13,7 +13,7 @@
   <!-- Favicons -->
   <link href="assets/img/logogb.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href = " http://fonts.cdnfonts.com/css/flame-3 " rel = "folha de estilo" >
+  
                 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,10 +53,10 @@
 <body style="background:var(--color-white)">
 
 
-<div class="col-md-12 col-lg-12" style="background:#ffaa00;padding:3px">
+<div class="hidden-xs hidden-sm " style="background:#ffaa00;padding:3px">
   <center>
     <p style="color:#5b2b12;font-size:13px;margin-bottom:5px">
-    ATENÇÃO!<b>Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
+    ATENÇÃO!<b> Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
     <b>canais oficiais</b> (redes sociais, app e site).<br>
     Reforçamos que informações que não sejam provenientes dessas fontes não são válidas.
     </p>
@@ -75,7 +75,7 @@
       </a>
 
       <nav id="navbar" class="navbar">
-        <ul style="font-family:flame-regular">
+        <ul>
 
           <!-- <li class="dropdown"><a href="#"><span>Home</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
@@ -1549,6 +1549,18 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#contato">Fale Conosco</a></li>
             </ul>
           </div>
+
+
+          <div class="hidden-md hidden-lg " style="background:#ffaa00;padding:3px">
+  <center>
+    <p style="color:#5b2b12;font-size:13px;margin-bottom:5px">
+    ATENÇÃO!<br><b>Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
+    <b>canais oficiais</b> (redes sociais, app e site).<br>
+    Reforçamos que informações que não sejam provenientes dessas fontes não são válidas.
+    </p>
+
+  </center>
+</div>
 
           <!-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
