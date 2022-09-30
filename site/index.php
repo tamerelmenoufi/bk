@@ -51,6 +51,17 @@
 
 <body>
 
+
+<div style="background:#ffaa00;padding:20px">
+  <center>
+    <p style="color:#5b2b12">
+    ATENÇÃO!<b>Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
+    <b>canais oficiais</b> (redes sociais, app e site).<br>
+    Reforçamos que informações que não sejam provenientes dessas fontes não são válidas.
+    </p>
+
+  </center>
+</div>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
