@@ -49,10 +49,10 @@
   <script src="assets/vendor/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 </head>
 
-<body>
+<body style="background:var(--color-white)">
 
 
-<div class="fixed-top" style="background:#ffaa00;padding:20px">
+<div class="" style="background:#ffaa00;padding:3px">
   <center>
     <p style="color:#5b2b12;font-size:13px">
     ATENÇÃO!<b>Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
@@ -63,9 +63,8 @@
   </center>
 </div>
 
-<div style="padding:50px"></div>
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top" data-scrollto-offset="0">
+  <header style="margin-top:32px" id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="./" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
