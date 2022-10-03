@@ -148,7 +148,7 @@
   <section id="" class="">
     <div class="" >
       <img src="assets/img/banners/bks.jpg" class="d-none d-md-block" style="width:100% !important;">
-      <img src="assets/img/banners/bks-celular.jpg" class="d-none d-sm-block" style="width:100% !important;">
+      
       <h2>Seu Pedido é uma Ordem</h2>
       <p>
         Peça pelo nosso aplicativo WEB e confira as promoções.
