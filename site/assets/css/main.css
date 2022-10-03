@@ -1410,8 +1410,8 @@ section {
   transition: 0.6s;
 }
 .services .details {
-  padding: 50px 30px;
-  margin: -60px 30px 0 30px;
+  padding: 6px 28px;
+  margin: -10px   0px;
   transition: all ease-in-out 0.3s;
   background: var(--color-white);
   position: relative;
