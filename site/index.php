@@ -145,9 +145,9 @@
     </div>
   </header><!-- End Header -->
 
-  <section id="hero-animated" class="hero-animated d-flex align-items-center">
-    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
-      <img src="assets/img/b3.png" class="img-fluid animated" style="width:100% !important;">
+  <section id="" class="">
+    <div class="" >
+      <img src="assets/img/bks.jpg" class="" style="width:100% !important;">
       <h2>Seu Pedido é uma Ordem</h2>
       <p>
         Peça pelo nosso aplicativo WEB e confira as promoções.
