@@ -13,8 +13,8 @@
   <!-- Favicons -->
   <link href="assets/img/logogb.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  
-                
+
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,7 +155,7 @@
       <div class=" d-block d-sm-none " >
       <img src="assets/img/banners/bks-celular.jpg"  style="width:100% !important;">
       </div>
-      
+
       <div class="d-flex">
         <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"><i class="bi bi-pc-display"></i> Acessar App</a>
         <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
@@ -1555,7 +1555,7 @@
           </div>
 
 
- 
+
           <!-- <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
@@ -1615,6 +1615,9 @@
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <div id="preloader"></div>
+
+
+  <h1>Teste da nova fonte</h1>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
