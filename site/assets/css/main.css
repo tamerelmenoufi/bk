@@ -2788,3 +2788,8 @@ section {
 .produtos_detalhes{
   cursor: pointer;
 }
+
+@font-face {
+  font-family: 'Flame-Regular';
+  src: url('assets/fonts/FlameRegular.otf') format('truetype');
+}
