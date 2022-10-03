@@ -145,10 +145,16 @@
     </div>
   </header><!-- End Header -->
 
-  <div id="" class="d-none d-md-block">
+  <div id="" >
     <div class="" >
+
+     <div class="d-none d-md-block" >
       <img src="assets/img/banners/bks.jpg"  style="width:100% !important;">
-      
+      </div>
+
+      <div class="d-none d-sm-block" >
+      <img src="assets/img/banners/bks-celular.jpg"  style="width:100% !important;">
+      </div>
       <h2>Seu Pedido é uma Ordem</h2>
       <p>
         Peça pelo nosso aplicativo WEB e confira as promoções.
