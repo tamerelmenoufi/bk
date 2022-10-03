@@ -1617,7 +1617,7 @@
   <div id="preloader"></div>
 
 
-  <h1>Teste da nova fonte</h1>
+  <h1 style="font-family:Flame-Regular;">Teste da nova fonte</h1>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
