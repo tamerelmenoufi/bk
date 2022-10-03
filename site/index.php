@@ -148,7 +148,7 @@
   <div id="" >
     <div class="" >
 
-     <div class="d-none d-md-block" >
+     <div class="d-block d-sm-none" >
       <img src="assets/img/banners/bks.jpg"  style="width:100% !important;">
       </div>
 
