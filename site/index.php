@@ -65,12 +65,12 @@
 </div>
 
   <!-- ======= Header ======= -->
-  <header style="margin-top:35px" id="header" class="header fixed-top" data-scrollto-offset="0">
+  <header style="padding:3px" id="header" class="header " data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="./" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logogb.png" alt="" style="position:fixed; left:30px; top:5px; width:80px !important; max-height:95px !important; z-index:99 !important;">
+        <img src="assets/img/logogb.png" alt="" style=" left:30px; top:5px; width:80px !important; max-height:95px !important; z-index:99 !important;">
         <!-- <h1>HeroBiz<span>.</span></h1> -->
       </a>
 
