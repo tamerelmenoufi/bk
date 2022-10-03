@@ -148,11 +148,11 @@
   <div id="" >
     <div class="" >
 
-     <div class="d-block d-sm-none" >
+     <div class="d-none d-sm-block" >
       <img src="assets/img/banners/bks.jpg"  style="width:100% !important;">
       </div>
 
-      <div class="d-none d-sm-block  " >
+      <div class=" d-block d-sm-none " >
       <img src="assets/img/banners/bks-celular.jpg"  style="width:100% !important;">
       </div>
       
