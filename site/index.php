@@ -152,7 +152,7 @@
       <img src="assets/img/banners/bks.jpg"  style="width:100% !important;">
       </div>
 
-      <div class="d-none d-sm-block d-xs-block " >
+      <div class="d-none d-sm-block  " >
       <img src="assets/img/banners/bks-celular.jpg"  style="width:100% !important;">
       </div>
       
