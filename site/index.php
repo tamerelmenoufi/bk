@@ -155,10 +155,7 @@
       <div class="d-none d-sm-block" >
       <img src="assets/img/banners/bks-celular.jpg"  style="width:100% !important;">
       </div>
-      <h2>Seu Pedido é uma Ordem</h2>
-      <p>
-        Peça pelo nosso aplicativo WEB e confira as promoções.
-      </p>
+      
       <div class="d-flex">
         <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"><i class="bi bi-pc-display"></i> Acessar App</a>
         <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
@@ -691,7 +688,7 @@
         ?>
           <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" descricao="<?=$d->categoria?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
-              <div class="img text-center" style="background-color:rgb(170,58,21,1); height:200px;"><?=$icon?></div>
+              <div class="img text-center" style="background-color:rgb(170,58,21,1); padding:25px;"><?=$icon?></div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
