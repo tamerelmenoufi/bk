@@ -145,9 +145,9 @@
     </div>
   </header><!-- End Header -->
 
-  <section id="" class="">
+  <div id="" class="d-none d-md-block">
     <div class="" >
-      <img src="assets/img/banners/bks.jpg" class="d-none d-md-block" style="width:100% !important;">
+      <img src="assets/img/banners/bks.jpg"  style="width:100% !important;">
       
       <h2>Seu Pedido é uma Ordem</h2>
       <p>
@@ -158,7 +158,7 @@
         <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
       </div>
     </div>
-  </section>
+</div>
 
   <main id="main">
 
