@@ -149,30 +149,19 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active d-none d-sm-block ">
+    <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
       <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-  <div class="d-block d-md-none">
-    <div class="carousel-item ">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
-    <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
-      </a>
-    </div>
-</div>
+   
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
     <img src="assets/img/banners/banner3.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-    <div class="carousel-item">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
-    <img src="assets/img/banners/banner3-celular.jpg" class="d-block w-100" alt="...">
-      </a>
-    </div>
-
+   
 
 
   </div>
