@@ -149,13 +149,30 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active d-none d-sm-block ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
       <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
+    <div class="carousel-item d-block d-md-none">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
 
-    
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <img src="assets/img/banners/banner3.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <img src="assets/img/banners/banner3-celular.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
