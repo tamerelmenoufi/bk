@@ -2805,7 +2805,7 @@ section {
 }
 
 .menu-bk{
-  font-family:Flame-Regular;
-  font-size:22px;
-  color:#541f11;
+  font-family:Flame-Regular!important;
+  font-size:22px!important;
+  color:#541f11!important;
 }
