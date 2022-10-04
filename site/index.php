@@ -86,7 +86,7 @@
             </ul>
           </li> -->
 
-          <li><a  class="nav-link scrollto" href="./#">Principal</a></li>
+          <li><a style="font-family:Flame-Regular-Bold" class="nav-link scrollto" href="./#">Principal</a></li>
 
           <li><a class="nav-link scrollto" href="./#cardapio">Cardápio</a></li>
           <li><a class="nav-link scrollto" href="./#pedido">Fazer Pedido</a></li>

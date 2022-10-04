@@ -2793,3 +2793,8 @@ section {
   font-family: 'Flame-Regular';
   src: url('../fonts/SecondLessonPersonalUseRegular-eZgX6.otf');
 }
+
+@font-face {
+  font-family: 'Flame-Regular-Bold';
+  src: url('../fonts/FlameBold.otf');
+}
