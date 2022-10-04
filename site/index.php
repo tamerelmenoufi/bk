@@ -86,12 +86,12 @@
             </ul>
           </li> -->
 
-          <li><a style="font-family:Flame-Regular;font-size:22px" class="nav-link scrollto" href="./#">Principal</a></li>
+          <li><a  class="nav-link scrollto menu-bk" href="./#">Principal</a></li>
 
-          <li><a class="nav-link scrollto" href="./#cardapio">Cardápio</a></li>
-          <li><a class="nav-link scrollto" href="./#pedido">Fazer Pedido</a></li>
-          <li><a class="nav-link scrollto" href="./#lojas">Nossas Lojas</a></li>
-          <li><a class="nav-link scrollto" href="./#contato">Fale Conosco</a></li>
+          <li><a class="nav-link scrollto menu-bk" href="./#cardapio">Cardápio</a></li>
+          <li><a class="nav-link scrollto menu-bk" href="./#pedido">Fazer Pedido</a></li>
+          <li><a class="nav-link scrollto menu-bk" href="./#lojas">Nossas Lojas</a></li>
+          <li><a class="nav-link scrollto menu-bk" href="./#contato">Fale Conosco</a></li>
 
           <!-- <li><a href="blog.html">Blog</a></li>
           <li class="dropdown megamenu"><a href="#"><span>Mega Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
