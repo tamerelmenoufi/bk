@@ -145,36 +145,17 @@
     </div>
   </header><!-- End Header -->
 
-  <div id="" >
-    <div class="" >
-
-     <div class="d-none d-sm-block" >
-      <img src="assets/img/banners/bks.jpg"  style="width:100% !important;">
-      </div>
-
-      <div class=" d-block d-sm-none " >
-      <img src="assets/img/banners/bks-celular.jpg"  style="width:100% !important;">
-      </div>
-
-      <div class="d-flex">
-        <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"><i class="bi bi-pc-display"></i> Acessar App</a>
-        <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
-      </div>
-    </div>
-</div>
-
+  
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
       <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
+      </a>
     </div>
-    <div class="carousel-item">
-      <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
-    </div>
+
+    
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
