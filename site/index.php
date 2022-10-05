@@ -666,7 +666,7 @@
 
         <div class="section-header">
           <h2 class="menu-bk">Cardápio</h2>
-          <p style="font-family:Flame-Regular-condensend!important">O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
+          <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
         </div>
 
         <div class="row gy-5">
