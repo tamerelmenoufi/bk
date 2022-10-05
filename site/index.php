@@ -55,7 +55,7 @@
 
 <div class="d-none d-md-block " style="background:#ffaa00;padding:3px">
   <center>
-    <p style="color:#5b2b12;font-size:13px;margin-bottom:5px;font-family:Flame-Regular-condensend!important">
+    <p style="color:#5b2b12;font-size:14px;margin-bottom:5px;font-family:Flame-Regular-condensend!important">
     ATENÇÃO!<b> Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
     <b>canais oficiais</b> (redes sociais, app e site).<br>
     Reforçamos que informações que não sejam provenientes dessas fontes não são válidas.
@@ -666,7 +666,7 @@
 
         <div class="section-header">
           <h2 class="menu-bk">Cardápio</h2>
-          <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
+          <p style="font-family:Flame-Regular-condensend!important">O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
         </div>
 
         <div class="row gy-5">
