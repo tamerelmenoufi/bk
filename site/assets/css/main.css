@@ -2780,7 +2780,7 @@ section {
   right:0;
   top: 0;
   bottom: 0;
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0, 1);
   display: none;
   z-index: 9999999999;
   overflow: auto;
@@ -2808,4 +2808,9 @@ section {
   font-family:Flame-Regular!important;
   font-size:24px!important;
   color:#541f11!important;
+}
+
+@font-face {
+  font-family: 'Flame-Regular-sans';
+  src: url('../fonts/FlameSans.otf');
 }
