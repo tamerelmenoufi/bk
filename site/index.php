@@ -146,7 +146,7 @@
   </header><!-- End Header -->
 
   
-<div class="d-block d-md-none"> 
+<div class="d-none d-md-block"> 
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -178,7 +178,7 @@
 
 </div>
 
-<div class="d-none d-sm-block"> 
+<div class="d-block d-sm-none"> 
 
 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
