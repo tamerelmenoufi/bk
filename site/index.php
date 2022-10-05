@@ -70,7 +70,7 @@
 
       <a href="./" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/logogb.png" alt="" style=" left:30px; top:5px; width:80px !important; max-height:95px !important; z-index:99 !important;">
+        <img src="assets/img/logogb.png" alt="" style=" left:30px; top:5px; width:90px !important; max-height:95px !important; z-index:99 !important;">
         <!-- <h1>HeroBiz<span>.</span></h1> -->
       </a>
 
@@ -665,7 +665,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Cardápio</h2>
+          <h2 class="menu-bk">Cardápio</h2>
           <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
         </div>
 
