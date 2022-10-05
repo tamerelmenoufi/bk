@@ -2814,3 +2814,8 @@ section {
   font-family: 'Flame-Regular-sans';
   src: url('../fonts/FlameSans.otf');
 }
+
+@font-face {
+  font-family: 'Flame-Regular-condensend';
+  src: url('../fonts/FlameCondensed.otf');
+}
