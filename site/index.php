@@ -1600,7 +1600,7 @@
 
               <div>
 
-              <img src="assets/img/logogb-final.png" style="" />
+              <img src="assets/img/logogb-final.png" style="height:120px" />
               </div>
             </div>
           </div>
@@ -1643,7 +1643,7 @@
       </div>
     </div>
 
-    <div class="footer-legal text-center">
+    <div style="padding:5px 0px" class="footer-legal text-center">
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
