@@ -2809,7 +2809,11 @@ section {
   font-size:24px!important;
   color:#541f11!important;
 }
-
+.titulos-bk{
+  font-family:Flame-Regular!important;
+  font-size:31px!important;
+  color:#541f11!important;
+}
 @font-face {
   font-family: 'Flame-Regular-sans';
   src: url('../fonts/FlameSans.otf');

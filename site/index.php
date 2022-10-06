@@ -665,7 +665,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 class="menu-bk">Cardápio</h2>
+          <h2 class="titulos-bk">Cardápio</h2>
           <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
         </div>
 
@@ -1299,7 +1299,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 class="menu-bk">Nossas Lojas</h2>
+          <h2 class="titulos-bk">Nossas Lojas</h2>
           <p>Em vários pontos da cidade de Manaus tem uma loja Burguer King para sua comodidade. Veja os endereços abaixo e localize a loja mais perto de você.</p>
         </div>
 
@@ -1509,8 +1509,8 @@
       <div class="container">
 
         <div class="section-header">
-          <h2 class="menu-bk">Contatos</h2>
-          <p>.</p>
+          <h2 class="titulos-bk">Contatos</h2>
+  
         </div>
 
       </div>
@@ -1598,7 +1598,7 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>BKMANAUS</h3>
+              <h3 class="titulos-bk">BKMANAUS</h3>
               <p>
                 <strong>Fone:</strong> +55 92 99999-9999<br>
                 <strong>E-mail:</strong> atendimento@bkmanaus.com.br<br>
