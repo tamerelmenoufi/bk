@@ -855,7 +855,13 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="pedido" class="testimonials">
+      <div class="-none .d-md-block .d-lg-none">
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
+      </div>
+
+      <div class="d-none .d-sm-block .d-md-none">
+      <img src="assets/img/banners/banner-super-celular.jpg" alt="" style="width:100% !important;" >
+      </div>
       <!--
       <div class="container" data-aos="fade-up">
 
