@@ -1545,13 +1545,7 @@
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Atendimento por Telefone:</h4>
-                  <p>+55 92 99999-9999</p>
-                </div>
-              </div><!-- End Info Item -->
+              
 
             </div>
 
@@ -1571,7 +1565,7 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Mensagem" required></textarea>
+                <textarea style="height:90px" class="form-control" name="message" placeholder="Mensagem" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Carregando</div>
@@ -1598,11 +1592,16 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3 class="titulos-bk">BKMANAUS</h3>
+              <h3 class="titulos-bk" style="color:#fff!important">BKMANAUS</h3>
               <p>
                 <strong>Fone:</strong> +55 92 99999-9999<br>
                 <strong>E-mail:</strong> atendimento@bkmanaus.com.br<br>
               </p>
+
+              <div>
+
+              <img src="assets/img/logogb-final.png" style="" />
+              </div>
             </div>
           </div>
 
