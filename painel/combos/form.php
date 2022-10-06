@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $img = imagecreatefrompng("icon/" . md5($codigo) . ".png");
                 $white = imagecolorallocate($img, 255, 255, 255);
-                // imagecolortransparent($img, $white);
+                imagecolortransparent($img, $white);
                 imagefill($img, 0, 0, $white);
                 imagepng($img,"icon/" . md5($codigo) . ".png");
 
