@@ -2,6 +2,39 @@
 include("../../lib/includes.php");
 include "./conf.php";
 
+function imagem($source)
+{
+    $img = imagecreatefrompng($source);
+
+    if ($img) {
+        $cropped = imagecropauto($img, IMG_CROP_DEFAULT);
+
+        if ($cropped !== false) {
+            imagedestroy($img);
+            $img = $cropped;
+        }
+
+        ob_start();
+
+        imagealphablending($img, false);
+        imagesavealpha($img, true);
+        imagepng($img);
+        imagedestroy($img);
+
+        $image_data = ob_get_contents();
+        ob_clean();
+
+        if (!empty($image_data)) {
+
+            return $image_data;
+        }
+    } else {
+        return "#";
+    }
+}
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = $_POST;
     $attr = [];
@@ -51,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $codigo = $codigo ?: mysqli_insert_id($con);
 
         if($icon){
-            if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
+            if (file_put_contents("icon/" . md5($codigo) . ".png", imagem($icon))) {
                 mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
             }
         }
