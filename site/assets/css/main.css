@@ -2823,3 +2823,8 @@ section {
   font-family: 'Flame-Regular-condensend';
   src: url('../fonts/FlameCondensed.otf');
 }
+
+.font-flam{
+  font-family:Flame-Regular!important;
+ 
+}

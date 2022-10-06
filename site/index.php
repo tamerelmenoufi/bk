@@ -1526,7 +1526,7 @@
           <div class="col-lg-4">
 
             <div class="info">
-              <h3>Fale Consoco</h3>
+              <h3  class="font-flam">Fale Conosco</h3>
               <p>Para dúvidas, sugestões ou reclamações, entre em contato conosco preenchendo seus dados e sua mensagem no formulário seguinte.</p>
 
               <!-- <div class="info-item d-flex">
@@ -1540,7 +1540,7 @@
               <div class="info-item d-flex">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
-                  <h4>Email para contatos:</h4>
+                  <h4 class="font-flam">Email para contatos:</h4>
                   <p>atendimento@bkmanaus.com.br</p>
                 </div>
               </div><!-- End Info Item -->
@@ -1565,7 +1565,7 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
               </div>
               <div class="form-group mt-3">
-                <textarea style="height:90px" class="form-control" name="message" placeholder="Mensagem" required></textarea>
+                <textarea style="height:87px" class="form-control" name="message" placeholder="Mensagem" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Carregando</div>
@@ -1594,8 +1594,8 @@
             <div class="footer-info">
               <h3 class="titulos-bk" style="color:#fff!important">BKMANAUS</h3>
               <p>
-                <strong>Fone:</strong> +55 92 99999-9999<br>
-                <strong>E-mail:</strong> atendimento@bkmanaus.com.br<br>
+                <strong  class="font-flam">Fone:</strong> +55 92 99999-9999<br>
+                <strong  class="font-flam">E-mail:</strong> atendimento@bkmanaus.com.br<br>
               </p>
 
               <div>
@@ -1606,13 +1606,13 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
-            <h4>Nevegue pelo nosso site</h4>
+            <h4  class="font-flam">Nevegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Principal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#servicos">Serviços</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#pedido">Fazer Pedido</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#lojas">Lojas</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#contato">Fale Conosco</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#">Principal</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#servicos">Serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#pedido">Fazer Pedido</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#lojas">Lojas</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#contato">Fale Conosco</a></li>
             </ul>
           </div>
 
@@ -1630,9 +1630,9 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
-            <p>Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
-            <p>https://app.bkmanaus.com.br/</p>
+            <h4  class="font-flam">Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
+            <p >Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <a target:_blank="" style="font-family:Flame-Regular;font-size:23px" href="https://app.bkmanaus.com.br/">https://app.bkmanaus.com.br/</a>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form> -->
