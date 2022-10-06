@@ -39,7 +39,7 @@
 </span>
 
         <div class="" style="background-color:#fff; ">
-                <center><h1 style="color:#541f11 !important"><?=$_POST['descricao']?></h1></center>
+                <center><h1 style="color:#541f11 !important;font-family:Flame-Regular!importante"><?=$_POST['descricao']?></h1></center>
             </div>
 
 
