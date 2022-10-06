@@ -32,13 +32,18 @@
     <i class="bi bi-x"></i>
 </span>
 
+<div class="titulo_categoria">
+    <div class="container">
+        <div class="row" >
+            <div class="" style="background-color:#fff; ">
+                <center><h1><?=$_POST['descricao']?></h1></center>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
-
-    <div class="" style="">
-                <h1><?=$_POST['descricao']?></h1>
-            </div>
         <div class="" style="background-color:#fff; padding-top:60px;">
             <?php
                 $query = "select * from produtos where categoria = '{$_POST['codigo']}' and situacao = '1' and deletado != '1'";
