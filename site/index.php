@@ -854,7 +854,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="pedido" class="testimonials">
+    <div id="pedido" class="testimonials">
       <div class="d-none d-md-block ">
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
       </div>
@@ -961,7 +961,7 @@
         </div>
 
       </div> -->
-    </section><!-- End Testimonials Section -->
+      </div><!-- End Testimonials Section -->
 
     <!-- ======= Pricing Section ======= -->
     <?php
