@@ -53,7 +53,7 @@
             <div class="card mb-3">
                 <div class="row g-0">
                     <div class="col-md-4" style="background-image:none; /*background-color:rgb(170,58,21,1);*/ display: flex; align-items: center; justify-content: center;">
-                        <img src="<?=$caminho_sis."/painel/".(($_POST['codigo'] == 8)?'combos':'produtos')."/icon/".$d->icon?>" class="img-fluid rounded-start" >
+                        <img src="<?=$caminho_sis."/painel/".(($_POST['codigo'] == 8)?'combos':'produtos')."/icon/".$d->icon?>" class="img-fluid rounded-start" style="background-image:none;" >
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
