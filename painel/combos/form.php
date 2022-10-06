@@ -53,10 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if($icon){
             if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
 
-                // $img = imagecreatefrompng("icon/" . md5($codigo) . ".png");
-                // $white = imagecolorallocate($img, 255, 255, 255);
-                // imagecolortransparent($img, $white);
-                // imagepng($img,"icon/" . md5($codigo) . ".png");
+                $img = imagecreatefrompng("icon/" . md5($codigo) . ".png");
+                $white = imagecolorallocate($img, 255, 255, 255);
+                imagecolortransparent($img, $white);
+                imagepng($img,"icon/" . md5($codigo) . ".png");
 
                 mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
             }
