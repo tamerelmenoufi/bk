@@ -1295,7 +1295,7 @@
     //*/
     ?>
     <!-- ======= Team Section ======= -->
-    <section id="lojas" class="team">
+    <div id="lojas" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
@@ -1440,7 +1440,7 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+        </div><!-- End Team Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <?php
