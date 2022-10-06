@@ -28,14 +28,15 @@
     }
 </style>
 
-<span class="close_popup">
-    <i class="bi bi-x"></i>
-</span>
 
 
 <div class="container">
     <div class="row">
-        <div class="" style="background-color:#fff; padding-top:60px;">
+        <div class="" style="background-color:#fff; padding-top:5px;">
+
+        <span class="close_popup">
+    <i class="bi bi-x"></i>
+</span>
 
         <div class="" style="background-color:#fff; ">
                 <center><h1><?=$_POST['descricao']?></h1></center>
