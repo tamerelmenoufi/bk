@@ -855,7 +855,7 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="pedido" class="testimonials">
-      <div class="-none .d-md-block .d-lg-none">
+      <div class="d-none .d-md-block .d-lg-none">
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
       </div>
 
