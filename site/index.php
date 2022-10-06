@@ -855,11 +855,11 @@
 
     <!-- ======= Testimonials Section ======= -->
     <section id="pedido" class="testimonials">
-      <div class="d-none .d-md-block .d-lg-none">
+      <div class="d-none d-md-block ">
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
       </div>
 
-      <div class="d-none .d-sm-block .d-md-none">
+      <div class="d-block d-sm-none">
       <img src="assets/img/banners/banner-super-celular.jpg" alt="" style="width:100% !important;" >
       </div>
       <!--
