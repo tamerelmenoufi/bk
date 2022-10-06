@@ -854,7 +854,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <div id="pedido" class="testimonials">
+    <div id="pedido" class="">
       <div class="d-none d-md-block ">
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
       </div>
