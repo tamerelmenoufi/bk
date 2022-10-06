@@ -25,6 +25,7 @@ function imagem($source)
         ob_start();
 
         imagepng($img);
+        imagesavealpha($img, true);
         imagedestroy($img);
 
         $image_data = ob_get_contents();
