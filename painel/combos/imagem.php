@@ -24,8 +24,6 @@ function imagem($source)
 
         ob_start();
 
-        imagealphablending($img, false);
-        imagesavealpha($img, true);
         imagepng($img);
         imagedestroy($img);
 
@@ -51,6 +49,7 @@ function imagem($source)
         position: relative;
         width: 100%;
         height: 250px;
+        background-color: #aa3a15;
         text-align: center;
     }
 
@@ -67,8 +66,8 @@ function imagem($source)
 </style>
 
 <div class="col">
-    <div class="row" style="height:250px;">
-        <div class="col" style="border:solid 1px #ccc; padding:0; margin:0;">
+    <div class="row" style="height:300px;">
+        <div class="col">
             <div id="IdTeste">
                 <?php foreach ($img as $i => $icon) { ?>
                     <img

@@ -51,7 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $codigo = $codigo ?: mysqli_insert_id($con);
 
         if($icon){
-            if (file_put_contents("icon/" . md5($codigo) . ".png", imagecolorallocatealpha($icon, 255, 255, 255, 127) )) {
+            if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
+
                 mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
             }
         }
