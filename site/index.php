@@ -1526,7 +1526,7 @@
           <div class="col-lg-4">
 
             <div class="info">
-              <h3  class="font-flam">Fale Conosco</h3>
+              <h3  class="font-flam" style="color:var(--color-secondary)">Fale Conosco</h3>
               <p>Para dúvidas, sugestões ou reclamações, entre em contato conosco preenchendo seus dados e sua mensagem no formulário seguinte.</p>
 
               <!-- <div class="info-item d-flex">
