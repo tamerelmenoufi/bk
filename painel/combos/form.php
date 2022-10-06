@@ -54,8 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (file_put_contents("icon/" . md5($codigo) . ".png", $icon)) {
 
                 $img = imagecreatefrompng("icon/" . md5($codigo) . ".png");
-                $white = imagecolorallocatealpha($img, 255, 255, 255, 0);
-                imagecolortransparent($img, $white);
+                $white = imagecolorallocate($img, 255, 255, 255);
+                // imagecolortransparent($img, $white);
+                imagefill($img, 0, 0, $white);
                 imagepng($img,"icon/" . md5($codigo) . ".png");
 
                 mysqli_query($con, "UPDATE produtos SET icon = '" . md5($codigo) . ".png' WHERE codigo = '{$codigo}'");
