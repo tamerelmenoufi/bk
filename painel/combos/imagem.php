@@ -67,7 +67,7 @@ function imagem($source)
 
 <div class="col">
     <div class="row" style="height:250px;">
-        <div class="col" style="border:solid 1px #ccc; padding:0;">
+        <div class="col" style="border:solid 1px #ccc; padding:0; margin:0;">
             <div id="IdTeste">
                 <?php foreach ($img as $i => $icon) { ?>
                     <img
