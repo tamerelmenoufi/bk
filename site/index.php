@@ -1299,7 +1299,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Nossas Lojas</h2>
+          <h2 class="menu-bk">Nossas Lojas</h2>
           <p>Em vários pontos da cidade de Manaus tem uma loja Burguer King para sua comodidade. Veja os endereços abaixo e localize a loja mais perto de você.</p>
         </div>
 
@@ -1509,7 +1509,7 @@
       <div class="container">
 
         <div class="section-header">
-          <h2>Contatos</h2>
+          <h2 class="menu-bk">Contatos</h2>
           <p>.</p>
         </div>
 
