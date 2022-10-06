@@ -39,7 +39,7 @@
 </span>
 
         <div class="" style="background-color:#fff; ">
-                <center><h1 style="color:#541f11 !important;font-family:Flame-Regular!importante"><?=$_POST['descricao']?></h1></center>
+                <center><h1 style="color:#541f11 !important;font-family:Flame-Regular!important"><?=$_POST['descricao']?></h1></center>
             </div>
 
 
@@ -55,7 +55,7 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title"><?=$d->produto?></h5>
+                            <h5 class="card-title" style="font-family:Flame-Regular!important"><?=$d->produto?></h5>
                             <p class="card-text"><?=$d->descricao?></p>
                             <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                         </div>
