@@ -50,7 +50,7 @@ function imagem($source)
         width: 100%;
         height: 250px;
         /* background-color: #aa3a15; */
-        background-color: rgb (65,33,22);
+        background-color: rgb(65,33,22);
         text-align: center;
     }
 
