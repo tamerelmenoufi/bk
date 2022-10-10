@@ -1448,8 +1448,8 @@
 
 
         <div class="container"> 
-<div>
-  <img src="assets/img/coresbl.jpg" />
+<div style="margin-top:10px">
+  <img  src="assets/img/coresbk.jpg" />
 </div>
         </div>
         
