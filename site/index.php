@@ -1449,7 +1449,7 @@
 
         <div class="container"> 
 <div style="margin-top:10px">
-  <img  src="assets/img/coresbk.jpg" />
+  <img class="img-responsive"  src="assets/img/coresbk.jpg" />
 </div>
         </div>
         
