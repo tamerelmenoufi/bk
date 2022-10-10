@@ -1440,11 +1440,12 @@ section {
   border: 6px solid var(--color-white);
 }
 .services .details h3 {
-  color: var(--color-default);
+  color: #541f11;
   font-weight: 700;
   margin: 10px 0 15px 0;
   font-size: 22px;
   transition: ease-in-out 0.3s;
+  font-family: Flame-Regular;
 }
 .services .details p {
   line-height: 24px;
@@ -2774,13 +2775,13 @@ section {
   background: var(--color-primary);
   text-decoration: none;
 }
-.popup{
+.popup {
   position: fixed;
-  left:0;
-  right:0;
+  left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgb(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0);
   display: none;
   z-index: 9999999999;
   overflow: auto;
@@ -2809,7 +2810,11 @@ section {
   font-size:24px!important;
   color:#541f11!important;
 }
-
+.titulos-bk{
+  font-family:Flame-Regular!important;
+  font-size:31px!important;
+  color:#541f11!important;
+}
 @font-face {
   font-family: 'Flame-Regular-sans';
   src: url('../fonts/FlameSans.otf');
@@ -2818,4 +2823,9 @@ section {
 @font-face {
   font-family: 'Flame-Regular-condensend';
   src: url('../fonts/FlameCondensed.otf');
+}
+
+.font-flam{
+  font-family:Flame-Regular!important;
+ 
 }

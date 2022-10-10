@@ -55,7 +55,7 @@
 
 <div class="d-none d-md-block " style="background:#ffaa00;padding:3px">
   <center>
-    <p style="color:#5b2b12;font-size:14px;margin-bottom:5px;font-family:Flame-Regular!important">
+    <p style="color:#5b2b12;font-size:13px;margin-bottom:5px;">
     ATENÇÃO!<b> Descontos e cupons promocionais do BK Manaus</b> so podem ser obtidos em nossos
     <b>canais oficiais</b> (redes sociais, app e site).<br>
     Reforçamos que informações que não sejam provenientes dessas fontes não são válidas.
@@ -665,7 +665,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2 class="menu-bk">Cardápio</h2>
+          <h2 class="titulos-bk">Cardápio</h2>
           <p>O Burger King Manaus tá sempre pronto pra salvar a sua fome de BK. Escolha uma de nossas delícias e nós entregamos para você enquanto desfruta o conforto de sua casa!</p>
         </div>
 
@@ -854,8 +854,14 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="pedido" class="testimonials">
+    <div id="pedido" class="">
+      <div class="d-none d-md-block ">
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
+      </div>
+
+      <div class="d-block d-sm-none">
+      <img src="assets/img/banners/banner-super-celular.jpg" alt="" style="width:100% !important;" >
+      </div>
       <!--
       <div class="container" data-aos="fade-up">
 
@@ -955,7 +961,7 @@
         </div>
 
       </div> -->
-    </section><!-- End Testimonials Section -->
+      </div><!-- End Testimonials Section -->
 
     <!-- ======= Pricing Section ======= -->
     <?php
@@ -1289,11 +1295,11 @@
     //*/
     ?>
     <!-- ======= Team Section ======= -->
-    <section id="lojas" class="team">
+    <div id="lojas" class="team">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Nossas Lojas</h2>
+          <h2 class="titulos-bk">Nossas Lojas</h2>
           <p>Em vários pontos da cidade de Manaus tem uma loja Burguer King para sua comodidade. Veja os endereços abaixo e localize a loja mais perto de você.</p>
         </div>
 
@@ -1434,7 +1440,7 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+        </div><!-- End Team Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
     <?php
@@ -1503,8 +1509,8 @@
       <div class="container">
 
         <div class="section-header">
-          <h2>Contatos</h2>
-          <p>.</p>
+          <h2 class="titulos-bk">Contatos</h2>
+  
         </div>
 
       </div>
@@ -1520,7 +1526,7 @@
           <div class="col-lg-4">
 
             <div class="info">
-              <h3>Fale Consoco</h3>
+              <h3  class="font-flam" style="color:var(--color-secondary)">Fale Conosco</h3>
               <p>Para dúvidas, sugestões ou reclamações, entre em contato conosco preenchendo seus dados e sua mensagem no formulário seguinte.</p>
 
               <!-- <div class="info-item d-flex">
@@ -1534,18 +1540,12 @@
               <div class="info-item d-flex">
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
-                  <h4>Email para contatos:</h4>
+                  <h4 class="font-flam">Email para contatos:</h4>
                   <p>atendimento@bkmanaus.com.br</p>
                 </div>
               </div><!-- End Info Item -->
 
-              <div class="info-item d-flex">
-                <i class="bi bi-phone flex-shrink-0"></i>
-                <div>
-                  <h4>Atendimento por Telefone:</h4>
-                  <p>+55 92 99999-9999</p>
-                </div>
-              </div><!-- End Info Item -->
+              
 
             </div>
 
@@ -1565,7 +1565,7 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" placeholder="Mensagem" required></textarea>
+                <textarea style="height:87px" class="form-control" name="message" placeholder="Mensagem" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Carregando</div>
@@ -1592,22 +1592,27 @@
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>BKMANAUS</h3>
+              <h3 class="titulos-bk" style="color:#fff!important">BKMANAUS</h3>
               <p>
-                <strong>Fone:</strong> +55 92 99999-9999<br>
-                <strong>E-mail:</strong> atendimento@bkmanaus.com.br<br>
+                <strong  class="font-flam">Fone:</strong> +55 92 99999-9999<br>
+                <strong  class="font-flam">E-mail:</strong> atendimento@bkmanaus.com.br<br>
               </p>
+
+              <div>
+
+              <img src="assets/img/logogb-final.png" style="height:120px" />
+              </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
-            <h4>Nevegue pelo nosso site</h4>
+            <h4  class="font-flam">Nevegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Principal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#servicos">Serviços</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#pedido">Fazer Pedido</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#lojas">Lojas</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#contato">Fale Conosco</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#">Principal</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#servicos">Serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#pedido">Fazer Pedido</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#lojas">Lojas</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#contato">Fale Conosco</a></li>
             </ul>
           </div>
 
@@ -1625,9 +1630,9 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
-            <p>Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
-            <p>https://app.bkmanaus.com.br/</p>
+            <h4  class="font-flam">Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
+            <p >Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <a target:_blank="" style="font-family:Flame-Regular;font-size:23px" href="https://app.bkmanaus.com.br/">https://app.bkmanaus.com.br/</a>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form> -->
@@ -1638,7 +1643,7 @@
       </div>
     </div>
 
-    <div class="footer-legal text-center">
+    <div style="padding:5px 0px" class="footer-legal text-center">
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
