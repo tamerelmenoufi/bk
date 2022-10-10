@@ -1448,7 +1448,7 @@
 
 
         <div class="container"> 
-<div style="margin-top:10px">
+<div class="d-none d-md-block" style="margin-top:10px">
   <img class="img-responsive"  src="assets/img/coresbk.jpg" />
 </div>
         </div>
