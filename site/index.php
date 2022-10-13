@@ -757,6 +757,8 @@
               </div>
             </div>
           </div><!-- End Service Item -->
+
+          
         <?php
         }
         ?>
@@ -1440,13 +1442,31 @@
         </div>
 
       </div>
-        </div><!-- End Team Section -->
+        </div>
 
+        
+
+
+        <div class="container"> 
+<div class="d-none d-md-block" style="margin-top:10px">
+  <img class="img-responsive"  src="assets/img/coresbk.jpg" />
+</div>
+        </div>
+        
+        <!-- End Team Section -->
+
+
+
+
+
+        
     <!-- ======= Recent Blog Posts Section ======= -->
     <?php
     /*
     ?>
-    <section id="recent-blog-posts" class="recent-blog-posts">
+
+    
+    <!--<section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
 
