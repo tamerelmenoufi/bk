@@ -743,7 +743,7 @@
 
         // for($i=0;$i<count($Categrias);$i++){
         ?>
-          <div class="produtos_detalhes <?=((strtolower($d->categoria) == 'combos')?'col-md-6':'col-xl-4 col-md-6')?>" codigo="<?=$d->codigo?>" descricao="<?=$d->categoria?>" data-aos="zoom-in" data-aos-delay="200">
+          <div class="produtos_detalhes <?=((strtolower($d->categoria) == 'combos')?'col-md-12':'col-xl-4 col-md-6')?>" codigo="<?=$d->codigo?>" descricao="<?=$d->categoria?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
               <div class="img text-center" style="background-color: rgb(255, 170, 0); padding:25px;"><?=$icon?></div>
               <div class="details position-relative text-center">
@@ -758,7 +758,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          
+
         <?php
         }
         ?>
@@ -1444,28 +1444,28 @@
       </div>
         </div>
 
-        
 
 
-        <div class="container"> 
+
+        <div class="container">
 <div class="d-none d-md-block" style="margin-top:10px">
   <img class="img-responsive"  src="assets/img/coresbk.jpg" />
 </div>
         </div>
-        
+
         <!-- End Team Section -->
 
 
 
 
 
-        
+
     <!-- ======= Recent Blog Posts Section ======= -->
     <?php
     /*
     ?>
 
-    
+
     <!--<section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
