@@ -58,7 +58,7 @@
                         }
 
                     }else{
-                        $descricao .= "{$d1->descricao}";
+                        $descricao .= "{$d->descricao}";
                     }
 
             ?>
