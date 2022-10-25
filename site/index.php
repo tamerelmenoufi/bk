@@ -1628,11 +1628,11 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4  class="">Navegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#">Principal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#servicos">Serviços</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#pedido">Fazer Pedido</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#lojas">Lojas</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#contato">Fale Conosco</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#">Principal</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#servicos">Serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#pedido">Fazer Pedido</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#lojas">Lojas</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#contato">Fale Conosco</a></li>
             </ul>
           </div>
 
