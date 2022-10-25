@@ -47,6 +47,20 @@
                 $query = "select * from produtos where categoria = '{$_POST['codigo']}' and situacao = '1' and deletado != '1'";
                 $result = mysqli_query($con, $query);
                 while($d = mysqli_fetch_object($result)){
+
+                    $descricao = false;
+                    if($d->categoria == 8){
+
+                        $q = "select * from produtos where codigo in ({$d->descricao})";
+                        $r = mysqli_query($con, $q);
+                        while($d1 = mysqli_fetch_object($r)){
+                            $descricao .= "<p>{$d1->descricao}</p>";
+                        }
+
+                    }else{
+                        $descricao .= "{$d->descricao}";
+                    }
+
             ?>
             <div class="card mb-3">
                 <div class="row g-0">
@@ -56,7 +70,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title" style="font-family:Flame-Regular!important"><?=$d->produto?></h5>
-                            <p class="card-text"><?=$d->descricao?></p>
+                            <p class="card-text"><?=$descricao?></p>
                             <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                         </div>
                     </div>

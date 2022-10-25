@@ -145,24 +145,24 @@
     </div>
   </header><!-- End Header -->
 
-  
-<div class="d-none d-md-block"> 
+
+<div class="d-none d-md-block">
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active ">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-   
+
 
     <div class="carousel-item">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/banner3.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-   
+
 
 
   </div>
@@ -178,23 +178,23 @@
 
 </div>
 
-<div class="d-block d-sm-none"> 
+<div class="d-block d-sm-none">
 
 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active ">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-   
+
 
     <div class="carousel-item">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto"> 
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/banner3-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-   
+
 
 
   </div>
@@ -743,9 +743,9 @@
 
         // for($i=0;$i<count($Categrias);$i++){
         ?>
-          <div class="produtos_detalhes col-xl-4 col-md-6" codigo="<?=$d->codigo?>" descricao="<?=$d->categoria?>" data-aos="zoom-in" data-aos-delay="200">
+          <div class="produtos_detalhes <?=((strtolower($d->categoria) == 'combos')?'col-md-12':'col-xl-4 col-md-6')?>" codigo="<?=$d->codigo?>" descricao="<?=$d->categoria?>" data-aos="zoom-in" data-aos-delay="200">
             <div class="service-item text-center">
-              <div class="img text-center" style="background-color: rgb(255, 170, 0); padding:25px;"><?=$icon?></div>
+              <div class="img text-center" style="background-color: <?=((strtolower($d->categoria) == 'combos')?'#aa3a15':'rgb(255, 170, 0)')?>; padding:25px;"><?=$icon?></div>
               <div class="details position-relative text-center">
                 <!-- <div class="icon">
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
@@ -758,7 +758,7 @@
             </div>
           </div><!-- End Service Item -->
 
-          
+
         <?php
         }
         ?>
@@ -1444,28 +1444,28 @@
       </div>
         </div>
 
-        
 
 
-        <div class="container"> 
+
+        <div class="container">
 <div class="d-none d-md-block" style="margin-top:10px">
   <img class="img-responsive"  src="assets/img/coresbk.jpg" />
 </div>
         </div>
-        
+
         <!-- End Team Section -->
 
 
 
 
 
-        
+
     <!-- ======= Recent Blog Posts Section ======= -->
     <?php
     /*
     ?>
 
-    
+
     <!--<section id="recent-blog-posts" class="recent-blog-posts">
 
       <div class="container" data-aos="fade-up">
@@ -1530,7 +1530,7 @@
 
         <div class="section-header">
           <h2 class="titulos-bk">Contatos</h2>
-  
+
         </div>
 
       </div>
@@ -1565,7 +1565,7 @@
                 </div>
               </div><!-- End Info Item -->
 
-              
+
 
             </div>
 
@@ -1675,7 +1675,7 @@
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
-            Desenvolvimento por SP Sistemas
+            Desenvolvimento <b>SP Sistemas</b>
           </div>
         </div>
 
