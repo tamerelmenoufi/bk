@@ -751,9 +751,9 @@
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
                 </div> -->
                 <a href="#" class="stretched-link">
-                  <h3><?=$d->categoria?></h3>
+                  <h3 style="margin-top:22px"><?=$d->categoria?></h3>
                 </a>
-                <p><?=$p->produto?></p>
+                
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -1418,10 +1418,7 @@
 
               </div>
               <div class="member-info text-center">
-                <div class="social text-center">
-                  <a href=""><i class="bi bi-phone-vibrate"></i></a>
-                  <a href=""><i class="bi bi-envelope-fill"></i></a>
-                </div>
+               
                 <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
