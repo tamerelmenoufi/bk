@@ -163,6 +163,23 @@
       </a>
     </div>
 
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner5.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner7.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner9.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+
 
 
   </div>
@@ -195,6 +212,23 @@
       </a>
     </div>
 
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner6.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner8.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner10.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
 
 
   </div>
