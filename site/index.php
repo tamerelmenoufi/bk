@@ -1614,8 +1614,8 @@
             <div class="footer-info">
               <h3 class="titulos-bk" style="color:#fff!important">BKMANAUS</h3>
               <p>
-                <strong  class="font-flam">Fone:</strong> +55 92 99999-9999<br>
-                <strong  class="font-flam">E-mail:</strong> atendimento@bkmanaus.com.br<br>
+                <strong  class="">Fone:</strong> +55 92 99999-9999<br>
+                <strong  class="">E-mail:</strong> atendimento@bkmanaus.com.br<br>
               </p>
 
               <div>
@@ -1626,7 +1626,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
-            <h4  class="font-flam">Nevegue pelo nosso site</h4>
+            <h4  class="">Navegue pelo nosso site</h4>
             <ul>
               <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#">Principal</a></li>
               <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#servicos">Serviços</a></li>
@@ -1650,8 +1650,8 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4  class="font-flam">Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
-            <p >Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <h4  class="">Siga-nos nas redes sociais e fique atento as nossas promoções.</h4>
+            <p >Tenha em mãos nossos serviços, com o link da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
             <a target:_blank="" style="font-family:Flame-Regular;font-size:23px" href="https://app.bkmanaus.com.br/">https://app.bkmanaus.com.br/</a>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
