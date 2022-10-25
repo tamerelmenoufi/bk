@@ -1868,13 +1868,13 @@ section {
   margin: 0 2px;
 }
 .team .team-member .member-info {
-  padding: 30px 15px;
-  text-align: center;
-  box-shadow: 0px 2px 15px rgba(var(--color-black-rgb), 0.1);
-  background: var(--color-white);
-  margin: -50px 20px 0 20px;
-  position: relative;
-  border-radius: 8px;
+    padding: 5px 10px;
+    text-align: center;
+    box-shadow: 0px 2px 15px rgba(var(--color-black-rgb), 0.1);
+    background: var(--color-white);
+    margin: -50px 27px 0px 26px;
+    position: relative;
+    border-radius: 8px;
 }
 .team .team-member .member-info h4 {
   font-weight: 400;
