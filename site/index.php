@@ -1561,7 +1561,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4 class="font-flam">Email para contatos:</h4>
-                  <p>atendimento@bkmanaus.com.br</p>
+                  <p>bkingmanaus@gmail.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1615,7 +1615,7 @@
               <h3 class="titulos-bk" style="color:#fff!important">BKMANAUS</h3>
               <p>
                 <strong  class="">Fone:</strong> +55 92 99999-9999<br>
-                <strong  class="">E-mail:</strong> atendimento@bkmanaus.com.br<br>
+                <strong  class="">E-mail:</strong> bkingmanaus@gmail.com<br>
               </p>
 
               <div>
