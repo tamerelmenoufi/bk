@@ -54,7 +54,7 @@
                         $q = "select * from produtos where codigo in ({$d->descricao})";
                         $r = mysqli_query($con, $q);
                         while($d1 = mysqli_fetch_object($r)){
-                            $descricao .= "<p>{$d1->descricao}</p>";
+                            $descricao .= "<p>{$d1->produto}</p>";
                         }
 
                     }else{
