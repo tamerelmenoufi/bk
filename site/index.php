@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Burguer King - Manaus</title>
+  <title>Burguer King® - Manaus</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -163,6 +163,23 @@
       </a>
     </div>
 
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner5.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner7.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner9.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+
 
 
   </div>
@@ -195,6 +212,23 @@
       </a>
     </div>
 
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner6.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner8.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+    <div class="carousel-item">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkbanner10.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
 
 
   </div>
@@ -751,9 +785,9 @@
                   <i class="<?=$Categrias[$i]['icone']?>"></i>
                 </div> -->
                 <a href="#" class="stretched-link">
-                  <h3><?=$d->categoria?></h3>
+                  <h3 style="margin-top:22px"><?=$d->categoria?></h3>
                 </a>
-                <p><?=$p->produto?></p>
+                
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -858,12 +892,16 @@
     <!-- ======= Testimonials Section ======= -->
     <div id="pedido" class="">
       <div class="d-none d-md-block ">
+      <a target="_blank" href="http://bk.mohatron.com/app/"> 
       <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
+      </a>
       </div>
 
       <div class="d-block d-sm-none">
+        <a target="_blank" href="http://bk.mohatron.com/app/"> 
       <img src="assets/img/banners/banner-super-celular.jpg" alt="" style="width:100% !important;" >
-      </div>
+      </a>
+    </div>
       <!--
       <div class="container" data-aos="fade-up">
 
@@ -1418,10 +1456,7 @@
 
               </div>
               <div class="member-info text-center">
-                <div class="social text-center">
-                  <a href=""><i class="bi bi-phone-vibrate"></i></a>
-                  <a href=""><i class="bi bi-envelope-fill"></i></a>
-                </div>
+               
                 <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -1561,7 +1596,7 @@
                 <i class="bi bi-envelope flex-shrink-0"></i>
                 <div>
                   <h4 class="font-flam">Email para contatos:</h4>
-                  <p>atendimento@bkmanaus.com.br</p>
+                  <p>bkingmanaus@gmail.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -1614,8 +1649,8 @@
             <div class="footer-info">
               <h3 class="titulos-bk" style="color:#fff!important">BKMANAUS</h3>
               <p>
-                <strong  class="font-flam">Fone:</strong> +55 92 99999-9999<br>
-                <strong  class="font-flam">E-mail:</strong> atendimento@bkmanaus.com.br<br>
+                <strong  class="">Fone:</strong> +55 92 99999-9999<br>
+                <strong  class="">E-mail:</strong> bkingmanaus@gmail.com<br>
               </p>
 
               <div>
@@ -1626,13 +1661,13 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
-            <h4  class="font-flam">Nevegue pelo nosso site</h4>
+            <h4  class="">Navegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#">Principal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#servicos">Serviços</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#pedido">Fazer Pedido</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#lojas">Lojas</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="font-flam" href="#contato">Fale Conosco</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#">Principal</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#servicos">Serviços</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#pedido">Fazer Pedido</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#lojas">Lojas</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#contato">Fale Conosco</a></li>
             </ul>
           </div>
 
@@ -1650,8 +1685,8 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4  class="font-flam">Siga-nos nas redes sociais e fique atento as nossa promoções</h4>
-            <p >Tenha em mãos nossos serviços, com o linque da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <h4  class="">Siga-nos nas redes sociais e fique atento as nossas promoções.</h4>
+            <p >Tenha em mãos nossos serviços, com o link da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
             <a target:_blank="" style="font-family:Flame-Regular;font-size:23px" href="https://app.bkmanaus.com.br/">https://app.bkmanaus.com.br/</a>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
