@@ -2781,7 +2781,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0);
+  background-color:#f5ebdc;
   display: none;
   z-index: 9999999999;
   overflow: auto;
@@ -2827,5 +2827,5 @@ section {
 
 .font-flam{
   font-family:Flame-Regular!important;
- 
+
 }
