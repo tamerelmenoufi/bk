@@ -9,7 +9,7 @@
     <title>APP</title>
     <?php include("../lib/header.php"); ?>
     <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app.css?xyz">
 
 
 </head>
