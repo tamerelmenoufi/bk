@@ -100,7 +100,7 @@
         <div style="background-image:url(<?=$icone?>); <?=(($d->codigo == 8)?'background-color:#aa3a15':false)?>">
             <!-- <img  src="<?=$icone?>" style="margin-top:5px; width: 70px; height: auto; " /> -->
         </div>
-        <p><?=$d->categoria?></p>
+        <p class="font-flam"><?=$d->categoria?></p>
     </div>
   <?php
     $i++;
