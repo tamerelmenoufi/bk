@@ -48,3 +48,17 @@ body{
 		transform: rotate(360deg);
 	}
 }
+
+@font-face {
+    font-family: 'Flame-Regular-sans';
+    src: url('http://bk.mohatron.com/lib/vendor/fonts/FlameSans.otf');
+  }
+
+  @font-face {
+    font-family: 'Flame-Regular-condensend';
+    src: url('http://bk.mohatron.com/lib/vendor/fonts/FlameCondensed.otf');
+  }
+
+  .font-flam{
+    font-family:Flame-Regular!important;
+  }
