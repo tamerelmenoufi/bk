@@ -49,7 +49,37 @@ body{
 	}
 }
 
+
+
+
+
+
 @font-face {
+    font-family: 'SecondL';
+    src: url('http://bk.mohatron.com/lib/vendor/fonts/SecondLessonPersonalUseRegular-eZgX6.otf');
+  }
+
+  @font-face {
+    font-family: 'Flame-Regular-Bold';
+    src: url('http://bk.mohatron.com/lib/vendor/fonts/FlameBold.otf');
+  }
+
+  @font-face {
+    font-family: 'Flame-Regular';
+    src: url('http://bk.mohatron.com/lib/vendor/fonts/FlameRegular.otf');
+  }
+
+  .menu-bk{
+    font-family:Flame-Regular!important;
+    font-size:24px!important;
+    color:#541f11!important;
+  }
+  .titulos-bk{
+    font-family:Flame-Regular!important;
+    font-size:31px!important;
+    color:#541f11!important;
+  }
+  @font-face {
     font-family: 'Flame-Regular-sans';
     src: url('http://bk.mohatron.com/lib/vendor/fonts/FlameSans.otf');
   }
@@ -58,6 +88,8 @@ body{
     font-family: 'Flame-Regular-condensend';
     src: url('http://bk.mohatron.com/lib/vendor/fonts/FlameCondensed.otf');
   }
+
+
 
   .font-flam{
     font-family:Flame-Regular!important;
