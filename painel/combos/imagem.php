@@ -49,7 +49,8 @@ function imagem($source)
         position: relative;
         width: 100%;
         height: 250px;
-        background-color: #aa3a15;
+        /* background-color: #aa3a15; Marrom */
+        background-color: #f1a209; /*Amarelo*/
         /* background-color: rgb(65,33,22); */
         text-align: center;
     }
