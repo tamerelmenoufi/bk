@@ -275,8 +275,8 @@
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
                                                     $vlopc = $valores->deliveryFee;
-                                                    // $opc = $v->codigo; //Opção mais barata
-                                                    $opc = $d->loja; //Opção de preferência do cliente
+                                                    $opc = $v->codigo; //Opção mais barata
+                                                    // $opc = $d->loja; //Opção de preferência do cliente
 
                                                 }
 

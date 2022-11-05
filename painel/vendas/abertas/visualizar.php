@@ -192,7 +192,7 @@ $isProdutos = empty($dados);
 
             valor = quantidade * valor_unitario;
 
-            if (quantidade >= 1) {
+            if (quantidade*1 >= 1) {
                 valor_total = (valor_total * 1 - valor_unitario * 1);
                 valor_total_produto = (valor_total * 1 - valor_unitario * 1);
 

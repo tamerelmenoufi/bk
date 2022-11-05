@@ -239,7 +239,7 @@
             valortotal = $("span[pedido_valor_toal]").attr("valor");
             atual = obj.find("span[valor]").attr("atual");
 
-            if(quantidade > 1){
+            if(quantidade*1 > 1){
 
                 valortotal = (valortotal*1 - atual*1);
                 $("span[pedido_valor_toal]").attr("valor", valortotal);
