@@ -308,6 +308,7 @@
             quantidade = (quantidade * 1 + 1);
             $("#quantidade").html(quantidade*1);
             valor = (atual*1 + aditivo*1) * (quantidade*1);
+            console.log(valor)
             $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
         });
