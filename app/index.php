@@ -1,5 +1,7 @@
-<?php include("../lib/includes.php"); exit(); ?>
-<!DOCTYPE html>
+<?php
+    include("../lib/includes.php");
+    // exit();
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
