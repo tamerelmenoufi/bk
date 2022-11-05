@@ -1,4 +1,4 @@
-<?php include("../lib/includes.php"); ?>
+<?php include("../lib/includes.php"); exit(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
