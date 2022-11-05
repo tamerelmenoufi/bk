@@ -306,8 +306,8 @@
             atual = $("span[valor]").attr("atual");
             aditivo = $("span[valor]").attr("aditivo");
             quantidade = (quantidade * 1 + 1);
-            $("#quantidade").html(quantidade);
-            valor = (atual*1 + aditivo*1) * quantidade;
+            $("#quantidade").html(quantidade*1);
+            valor = (atual*1 + aditivo*1) * (quantidade*1);
             $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
         });
@@ -318,9 +318,9 @@
             aditivo = $("span[valor]").attr("aditivo");
             quantidade = ((quantidade * 1 > 1) ? (quantidade * 1 - 1) : 1);
 
-            $("#quantidade").html(quantidade);
+            $("#quantidade").html(quantidade*1);
 
-            valor = (atual*1 + aditivo*1) * quantidade;
+            valor = (atual*1 + aditivo*1) * ((quantidade*1)?(quantidade*1):1);
             $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
         });
@@ -349,6 +349,8 @@
             valor_unitario = $("span[valor]").attr("atual");
             //-------
             quantidade = $("#quantidade").html();
+            quantidade = ((quantidade)?quantidade*1:1);
+
 
             //-------
             var produto = '<?=$p->codigo?>';
@@ -379,7 +381,7 @@
             }
 
             //-------
-            valor_total = (valor_unitario*quantidade);
+            valor_total = ((valor_unitario*1)*(quantidade*1));
 
             //-------
             var produto_descricao = '';
