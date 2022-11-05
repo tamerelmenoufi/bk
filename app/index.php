@@ -1,6 +1,6 @@
 <?php
     include("../lib/includes.php");
-    // exit();
+    exit();
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
