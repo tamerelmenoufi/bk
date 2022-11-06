@@ -30,6 +30,13 @@
             $attr[] = "{$key} = '{$item}'";
         }
 
+        if($_POST['quantidade'] < 1){
+            echo json_encode([
+                "status" => "erro",
+            ]);
+            exit();
+        }
+
         $query = "INSERT INTO vendas_produtos SET " . implode(", ", $attr);
 
         if (@mysqli_query($con, $query)) {
