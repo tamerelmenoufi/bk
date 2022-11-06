@@ -384,6 +384,12 @@
             //-------
             var produto_descricao = $(".observacoes2").html();
 
+            if(quantidade < 1 || valor_total == 0 || valor_unitario == 0){
+                $.alert('Ocorreu um erro, favor tente incluir novamente seu produto na lista de compras.');
+                return false;
+            }
+
+
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
             $.ajax({
                 url:"src/produtos/produto_combo.php",
