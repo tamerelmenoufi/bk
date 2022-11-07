@@ -22,8 +22,8 @@
                     a.*,
                     b.categoria,
                     JSON_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao_loja
-            from itens a
-                left join categorias_itens b on a.categoria = b.codigo
+            from produtos a
+                left join categorias b on a.categoria = b.codigo
             where
                     a.deletado != '1' and
                     b.deletado != '1' and
@@ -31,7 +31,7 @@
                     b.situacao = '1'
             order by
                     b.ordem asc,
-                    a.item asc
+                    a.produto asc
     ";
     $result = mysqli_query($con, $query);
     $categoria = false;
@@ -47,7 +47,7 @@
                     <i class="fa fa-toggle-<?=(($d->situacao_loja == '1')?'on':'off')?> fa-2x" aria-hidden="true"></i>
                 </span>
             </div>
-            <div class="col-11"><?=$d->item?></div>
+            <div class="col-11"><?=$d->produto?></div>
         </div>
     <?php
         // echo "{$d->produto}<br>";
