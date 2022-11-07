@@ -10,6 +10,10 @@
 
         $itens = json_decode($d->itens);
 
+        print_r($itens);
+
+        echo "<hr>";
+
         foreach($itens as $i => $val){
             echo $val->produto."<br>";
         }
