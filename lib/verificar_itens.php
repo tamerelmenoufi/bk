@@ -8,7 +8,9 @@
 
         $d = mysqli_fetch_object($result);
 
-        echo $d->itens;
+        $itens = json_decode($d->itens);
+
+        print_r($itens);
 
     }
 
