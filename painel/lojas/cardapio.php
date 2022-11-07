@@ -30,7 +30,7 @@
                     a.situacao = '1' and
                     b.situacao = '1'
             order by
-                    b.ordem asc,
+                    b.categoria asc,
                     a.item asc
     ";
     $result = mysqli_query($con, $query);
