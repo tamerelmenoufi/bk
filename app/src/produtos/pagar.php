@@ -16,6 +16,7 @@
                                     valor = '{$_POST['valor']}',
                                     total = '{$total}'
                 where codigo = '{$_SESSION['AppVenda']}'";
+
         mysqli_query($con, $query);
 
 

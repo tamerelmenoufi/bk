@@ -109,8 +109,18 @@ function VerificarVendaApp(){
 
 ////////////////////////////////////////////////////////////////////////////
 
-function VerificarItens($cod){
+function VerificarItens(){
     global $con;
+    global $_SESSION;
+
+    $query = "select * from vendas_produtos where venda = '{$_SESSION['AppVenda']}' and deletado != '1'";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+        $cod[] = $d->produto;
+    }
+
+    if(!$cod) return false;
+
     $query = "select * from produtos where codigo in (".implode(",",$cod).")";
     $result = mysqli_query($con, $query);
 
@@ -151,8 +161,18 @@ function VerificarItens($cod){
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-function VerificarProdutos($cod){
+function VerificarProdutos(){
     global $con;
+    global $_SESSION;
+
+    $query = "select * from vendas_produtos where venda = '{$_SESSION['AppVenda']}' and deletado != '1'";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+        $cod[] = $d->produto;
+    }
+
+    if(!$cod) return false;
+
     $query = "select * from produtos where codigo in (".implode(",",$cod).")";
     $result = mysqli_query($con, $query);
 
