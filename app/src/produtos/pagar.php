@@ -443,7 +443,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    // $.alert(dados."10");
+                    $.alert(dados."10");
                 }
         });
 

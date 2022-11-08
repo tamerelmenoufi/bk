@@ -109,7 +109,7 @@ function VerificarVendaApp(){
 
 ////////////////////////////////////////////////////////////////////////////
 
-function VerificarItens(){
+function VerificarItens($l=false){
     global $con;
     global $_SESSION;
 
@@ -153,7 +153,17 @@ function VerificarItens(){
 
     }
 
-    return $status;
+    if($l){
+        $st = true;
+        foreach($status[$l] as $i => $v){
+            foreach($v as $i1 => $v1){
+                if(!$v1) $st = false;
+            }
+        }
+        return ['status' => $st];
+    }else{
+        return $status;
+    }
 
     // if($status) echo "<pre>"; print_r($status); echo "</pre>";
 
@@ -161,7 +171,7 @@ function VerificarItens(){
 
 ////////////////////////////////////////////////////////////////////////////////////
 
-function VerificarProdutos(){
+function VerificarProdutos($l=false){
     global $con;
     global $_SESSION;
 
@@ -190,7 +200,15 @@ function VerificarProdutos(){
 
     }
 
-    return $status;
+    if($l){
+        $st = true;
+        foreach($status[$l] as $i => $v){
+            if(!$v) $st = false;
+        }
+        return ['status' => $st];
+    }else{
+        return $status;
+    }
 
     // if($status) echo "<pre>"; print_r($status); echo "</pre>";
 
