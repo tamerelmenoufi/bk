@@ -205,7 +205,7 @@ function VerificarProdutos($l=false){
         foreach($status[$l] as $i => $v){
             if(!$v) $st = false;
         }
-        return ['status' => $st];
+        return [status => $st];
     }else{
         return $status;
     }
