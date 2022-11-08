@@ -31,7 +31,7 @@
                     // echo "<hr>";
 
                     foreach($lojas as $i => $val){
-                        $status[$d->codigo][$i][$d->codigo] = $val->situacao;
+                        $status[$d->codigo][$i][$d1->codigo] = $val->situacao;
                     }
                 }
 
