@@ -37,7 +37,7 @@
         $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
         #############################################################################
 
-        echo json_encode(VerificarProdutos());
+        echo json_encode(VerificarProdutos($_POST['LjCd']));
 
         exit();
 
