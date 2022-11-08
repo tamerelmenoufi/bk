@@ -32,7 +32,7 @@
 
         }
 
-        if($status) print_r($status);
+        if($status) echo "<pre>"; print_r($status); echo "</pre>";
 
     }
 
