@@ -33,6 +33,6 @@
 
     }
 
-print_r($_GET['cod']);
+// print_r($_GET['cod']);
 
     if($_GET['cod']) VerificarItens($_GET['cod']);
