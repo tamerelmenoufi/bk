@@ -431,7 +431,7 @@
         $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
-                dataType:"JSON",
+                dataType:"json",
                 data:{
                     LjVl,
                     LjCd,
