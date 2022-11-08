@@ -37,7 +37,7 @@
         $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
         #############################################################################
 
-
+        echo json_decode(VerificarVendaApp());
 
         exit();
 
@@ -431,6 +431,7 @@
         $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
+                typeData:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -442,7 +443,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-
+                    $.alert(dados);
                 }
         });
 
@@ -494,6 +495,7 @@
             $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
+                typeData:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -505,7 +507,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-
+                    $.alert(dados);
                 }
             });
 
