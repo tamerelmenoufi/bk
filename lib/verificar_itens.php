@@ -3,7 +3,7 @@
 
     function VerificarItens($cod, $loja = 10){
         global $con;
-        echo $query = "select * from produtos where codigo in (".implode($cod).")";
+        echo $query = "select * from produtos where codigo in (".implode(",",$cod).")";
         $result = mysqli_query($con, $query);
         $Itens = [];
         while($d = mysqli_fetch_object($result)){
@@ -15,7 +15,7 @@
 
         if($Itens){
 
-            $query = "select * from itens where codigo in (".implode($Itens).")";
+            $query = "select * from itens where codigo in (".implode(",",$Itens).")";
             $result = mysqli_query($con, $query);
             $status = [];
             while($d = mysqli_fetch_object($result)){
