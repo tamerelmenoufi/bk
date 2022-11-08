@@ -431,7 +431,7 @@
         $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
-                dataType:"JSON",
+                typeData:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -495,7 +495,7 @@
             $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
-                dataType:"JSON",
+                typeData:"JSON",
                 data:{
                     LjVl,
                     LjCd,
