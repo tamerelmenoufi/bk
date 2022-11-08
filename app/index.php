@@ -9,7 +9,7 @@
     if($inicio <= $agora and $final >= $agora){
 
     }else{
-        // exit();
+        exit();
     }
     //Verificação loja aberta
 
