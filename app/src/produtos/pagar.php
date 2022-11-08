@@ -443,7 +443,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    console.log('OPC 2');
+                    console.log('OPC 3');
                     console.log(dados.status);
                 }
         });
