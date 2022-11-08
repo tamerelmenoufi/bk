@@ -37,7 +37,7 @@
         $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
         #############################################################################
 
-        echo json_encode(VerificarVendaApp());
+        echo json_encode(VerificarProdutos());
 
         exit();
 
