@@ -19,9 +19,9 @@
 
         }
 
-        // return $status;
+        return $status;
 
-        if($status) echo "<pre>"; print_r($status); echo "</pre>";
+        // if($status) echo "<pre>"; print_r($status); echo "</pre>";
 
     }
 

@@ -148,3 +148,30 @@ function VerificarItens($cod){
     // if($status) echo "<pre>"; print_r($status); echo "</pre>";
 
 }
+
+////////////////////////////////////////////////////////////////////////////////////
+
+function VerificarProdutos($cod){
+    global $con;
+    $query = "select * from produtos where codigo in (".implode(",",$cod).")";
+    $result = mysqli_query($con, $query);
+
+    $status = [];
+
+    while($d = mysqli_fetch_object($result)){
+
+        $lojas = [];
+
+        $lojas = json_decode($d->lojas);
+        foreach($lojas as $i => $val){
+            //Dentro do Array status[loja][produto] = situação
+            $status[$i][$d->codigo] = $val->situacao;
+        }
+
+    }
+
+    return $status;
+
+    // if($status) echo "<pre>"; print_r($status); echo "</pre>";
+
+}
