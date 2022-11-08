@@ -3,7 +3,7 @@
 
     function VerificarItens($cod, $loja = 10){
         global $con;
-        echo $query = "select * from produtos where codigo in (".implode(",",$cod).")";
+        $query = "select * from produtos where codigo in (".implode(",",$cod).")";
         $result = mysqli_query($con, $query);
         $Itens = [];
         while($d = mysqli_fetch_object($result)){
@@ -22,7 +22,7 @@
                 $lojas = json_decode($d->lojas);
 
                 print_r($lojas);
-                echo "<br>";
+                echo "<hr>";
 
                 // foreach($itens as $i => $val){
                 //     $Itens[] = $val->produto;
