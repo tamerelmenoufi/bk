@@ -878,13 +878,13 @@
     <div id="pedido" class="">
       <div class="d-none d-md-block ">
       <a target="_blank" href="http://bk.mohatron.com/app/"> 
-      <img src="assets/img/banners/super_banner.png" alt="" style="width:100% !important;" >
+      <img src="assets/img/banners/bn1.png" alt="" style="width:100% !important;" >
       </a>
       </div>
 
       <div class="d-block d-sm-none">
         <a target="_blank" href="http://bk.mohatron.com/app/"> 
-      <img src="assets/img/banners/banner-super-celular.jpg" alt="" style="width:100% !important;" >
+      <img src="assets/img/banners/bn2.jpg" alt="" style="width:100% !important;" >
       </a>
     </div>
       <!--
