@@ -507,7 +507,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    $.alert(dados);
+                    // $.alert(dados);
                 }
             });
 
