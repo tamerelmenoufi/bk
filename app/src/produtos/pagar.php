@@ -446,7 +446,7 @@
                 },
                 success:function(dados){
                     console.log(dados.status);
-                    if(dados.status == false){
+                    if(dados.status == true){
                         $.alert('<center><h1><i class="fa-solid fa-face-sad-tear"></i><h1><p>Infelizmente itens de sua cesta de pedidos está em falta.</p><center>')
                     }
                 }
