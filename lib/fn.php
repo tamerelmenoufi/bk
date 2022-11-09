@@ -175,7 +175,7 @@ function VerificarProdutos($l=false){
     global $con;
     global $_SESSION;
 
-    echo $query = "select * from vendas_produtos where venda = '{$_SESSION['AppVenda']}' and deletado != '1'";
+    $query = "select * from vendas_produtos where venda = '{$_SESSION['AppVenda']}' and deletado != '1'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
         $cod[] = $d->produto;
