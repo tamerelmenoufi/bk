@@ -557,6 +557,25 @@
         $("button[pagar]").click(function(){
 
             captcha = $("h5[robo]").attr("captcha");
+            bloqueio = $(this).attr("blq");
+
+            if(bloqueio == 's'){
+                $.alert({
+                    content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
+                    title:false,
+                    type:'red',
+                    buttons:{
+                        'ok':{
+                            text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
+                            btnClass:'btn btn-primary',
+                            action:function(){
+
+                            }
+                        }
+                    }
+                })
+                return false;
+            }
 
             if(captcha == 'error') return false;
 
