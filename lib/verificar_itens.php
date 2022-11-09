@@ -1,6 +1,4 @@
 <?php
     include("includes.php");
 
-
-
-print_r(VerificarProdutos());
+    print_r(VerificarProdutos());
