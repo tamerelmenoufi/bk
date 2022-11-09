@@ -445,7 +445,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    // console.log(dados.status);
+                    console.log(dados);
                     if(dados.status == false){
                         $("button[blq]").attr("blq",'s');
                         $.alert({
@@ -528,7 +528,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    // console.log(dados.status);
+                    console.log(dados);
                     if(dados.status == false){
                         $("button[blq]").attr("blq",'s');
                         $.alert({
