@@ -445,7 +445,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    console.log(dados);
+                    console.log(dados.status);
                 }
         });
 
