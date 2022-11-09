@@ -443,8 +443,8 @@
                 },
                 dataType:"JSON",
                 success:function(dados){
-                    console.log('OPC 3');
-                    console.log(dados);
+                    // console.log('OPC 3');
+                    $.alert(dados);
                 }
         });
 
