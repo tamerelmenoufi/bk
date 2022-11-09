@@ -431,6 +431,7 @@
         $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
+                // dataType:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -441,7 +442,6 @@
                     acrescimo,
                     acao:'loja'
                 },
-                dataType:"JSON",
                 success:function(dados){
                     // console.log('OPC 3');
                     $.alert(dados);
