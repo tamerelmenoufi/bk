@@ -448,7 +448,7 @@
                     console.log(dados.status);
                     if(dados.status == true){
                         $.alert({
-                            content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente itens de sua cesta de pedidos está em falta.</p><center>',
+                            content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
                             title:false,
                             type:'red',
                             buttons:{
