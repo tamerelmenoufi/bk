@@ -431,7 +431,7 @@
         $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
-                // dataType:"JSON",
+                dataType:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -443,8 +443,8 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    // console.log('OPC 3');
-                    $.alert(dados);
+                    $.alert('OPC 3');
+                    // $.alert(dados);
                 }
         });
 
