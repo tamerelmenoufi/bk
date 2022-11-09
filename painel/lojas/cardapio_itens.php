@@ -2,7 +2,7 @@
     include("../../lib/includes.php");
 
     if($_POST['acao'] == 'situacao'){
-        $query = "update produtos set lojas = JSON_SET(lojas,'$.\"{$_POST['loja']}\".situacao',{$_POST['situacao']}) where codigo = '{$_POST['cod']}'";
+        $query = "update itens set lojas = JSON_SET(lojas,'$.\"{$_POST['loja']}\".situacao',{$_POST['situacao']}) where codigo = '{$_POST['cod']}'";
         mysqli_query($con,$query);
         exit();
     }
@@ -22,16 +22,16 @@
                     a.*,
                     b.categoria,
                     JSON_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao_loja
-            from produtos a
-                left join categorias b on a.categoria = b.codigo
+            from itens a
+                left join categorias_itens b on a.categoria = b.codigo
             where
                     a.deletado != '1' and
                     b.deletado != '1' and
                     a.situacao = '1' and
                     b.situacao = '1'
             order by
-                    b.ordem asc,
-                    a.produto asc
+                    b.categoria asc,
+                    a.item asc
     ";
     $result = mysqli_query($con, $query);
     $categoria = false;
@@ -47,7 +47,7 @@
                     <i class="fa fa-toggle-<?=(($d->situacao_loja == '1')?'on':'off')?> fa-2x" aria-hidden="true"></i>
                 </span>
             </div>
-            <div class="col-11"><?=$d->produto?></div>
+            <div class="col-11"><?=$d->item?></div>
         </div>
     <?php
         // echo "{$d->produto}<br>";
@@ -81,7 +81,7 @@
                         situacao
                     },
                     success:function(dados){
-                        // $.alert(dados)
+                        //  $.alert(dados)
                     }
                 });
             });
