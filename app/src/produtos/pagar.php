@@ -1,8 +1,6 @@
 <?php
     include("../../../lib/includes.php");
 
-    VerificarVendaApp();
-
     if($_POST['acao'] == 'loja'){
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
@@ -42,6 +40,10 @@
         exit();
 
     }
+
+
+    VerificarVendaApp();
+
 
     $query = "select
                     sum(a.valor_total) as total,
@@ -431,7 +433,7 @@
         $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
-                // dataType:"JSON",
+                dataType:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -443,8 +445,7 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    $.alert('OPC 4');
-                    $.alert(dados);
+                    $.alert(dados.status);
                 }
         });
 
