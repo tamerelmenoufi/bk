@@ -387,10 +387,10 @@
                     <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
 
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="n" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" blq="n" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
@@ -447,6 +447,7 @@
                 success:function(dados){
                     // console.log(dados.status);
                     if(dados.status == false){
+                        $("button[blq]").attr("blq",'s');
                         $.alert({
                             content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
                             title:false,
@@ -461,6 +462,8 @@
                                 }
                             }
                         })
+                    }else{
+                        $("button[blq]").attr("blq",'n');
                     }
                 }
         });
@@ -513,7 +516,7 @@
             $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
-                typeData:"JSON",
+                dataType:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -525,7 +528,26 @@
                     acao:'loja'
                 },
                 success:function(dados){
-                    // $.alert(dados);
+                    // console.log(dados.status);
+                    if(dados.status == false){
+                        $("button[blq]").attr("blq",'s');
+                        $.alert({
+                            content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
+                            title:false,
+                            type:'red',
+                            buttons:{
+                                'ok':{
+                                    text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
+                                    btnClass:'btn btn-primary',
+                                    action:function(){
+
+                                    }
+                                }
+                            }
+                        })
+                    }else{
+                        $("button[blq]").attr("blq",'n');
+                    }
                 }
             });
 
