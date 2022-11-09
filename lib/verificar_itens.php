@@ -27,4 +27,4 @@
 
 // print_r($_GET['cod']);
 
-    if($_GET['cod']) VerificarProdutos($_GET['cod']);
+    if($_GET['cod']) print_r(VerificarProdutos($_GET['cod']));
