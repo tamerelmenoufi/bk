@@ -26,6 +26,6 @@ while($d = mysqli_fetch_object($result)){
     $dados[] = $d;
 
 }
-$dados[] = $query;
+$dados[] = ['nome' => $query, 'codigo' => 1];
 
 echo json_encode($dados);
