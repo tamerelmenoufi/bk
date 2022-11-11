@@ -5,8 +5,6 @@ include("../lib/includes.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
 $_POST = json_decode(file_get_contents('php://input'), true);
 
-// $query = "select codigo, nome from lojas where situacao = '1' order by nome";
-
 $query = "select
                     a.codigo,
                     concat(b.categoria,' - ', a.produto) as nome,
