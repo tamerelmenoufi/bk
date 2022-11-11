@@ -8,8 +8,8 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 $query = "SELECT * FROM usuarios where
                                         cpf = '{$_POST['cpf']}' and
                                         senha = '".md5($_POST['senha'])."' and
-                                        perfil = '".$_POST['perfil']."' and
-                                        lojas in (".$_POST['loja'].")
+                                        perfil = 'loja' and
+                                        lojas in (".$_POST['cod_loja'].")
         ";
 
 // $query = "SELECT * FROM usuarios where
