@@ -13,7 +13,7 @@
     }
     //Verificação loja aberta
 
-    exit();
+    // exit();
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
