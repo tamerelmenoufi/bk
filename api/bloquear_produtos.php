@@ -2,12 +2,15 @@
 
 include("../lib/includes.php");
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
+$_POST = json_decode(file_get_contents('php://input'), true);
+
 // $query = "select codigo, nome from lojas where situacao = '1' order by nome";
 
 $query = "select
                     a.codigo,
                     concat(b.categoria,' - ', a.produto) as nome,
-                    JSON_EXTRACT(a.lojas,'$.\"{$_GET['cod']}\".situacao') as situacao
+                    JSON_EXTRACT(a.lojas,'$.\"{$_POST['cod']}\".situacao') as situacao
             from produtos a
                 left join categorias b on a.categoria = b.codigo
             where
