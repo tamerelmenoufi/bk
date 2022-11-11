@@ -26,5 +26,4 @@ while($d = mysqli_fetch_object($result)){
     $dados[] = $d;
 
 }
-file_put_contents('x.txt', $query);
 echo json_encode($dados);
