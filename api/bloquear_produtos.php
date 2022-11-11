@@ -8,7 +8,7 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 
 if($_POST['produto']){
 
-    $query = "update produtos set lojas = JSON_SET(lojas,'$.\"{$_POST['cod']}\".situacao',{$_POST['situacao']}) where codigo = '{$_POST['´produto']}'";
+    $query = "update produtos set lojas = JSON_SET(lojas,'$.\"{$_POST['cod']}\".situacao',{$_POST['situacao']}) where codigo = '{$_POST['produto']}'";
     mysqli_query($con,$query);
 
 }
