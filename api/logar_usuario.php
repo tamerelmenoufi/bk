@@ -11,6 +11,11 @@ $query = "SELECT * FROM usuarios where
                                         perfil = '".$_POST['perfil']."' and
                                         lojas in (".$_POST['loja'].")
         ";
+
+$query = "SELECT * FROM usuarios where
+                                        cpf = '{$_POST['cpf']}' and
+                                        senha = '".md5($_POST['senha'])."'
+        ";
 $result = mysqli_query($con, $query);
 $dados = [];
 if(mysqli_num_rows($result)){
