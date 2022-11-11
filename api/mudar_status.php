@@ -11,15 +11,15 @@ if($_POST['pedido']){
 
     //ESSAS DUAS LINHAS SÃO PARA A SOLICITAÇÃO DA ENTREGA BEE
 
-    // $BEE = new Bee;
-    // $retorno = $BEE->NovaEntrega($_POST['pedido']);
-    // $retorno = json_decode($retorno);
-    // file_put_contents("log.txt", $retorno);
-    // if($retorno->deliveryId){
-    //     $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'i' where codigo = '{$_POST['pedido']}'";
-    //     mysqli_query($con, $query);
-    // }
-    $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'i' where codigo = '{$_POST['pedido']}'";
+    $BEE = new Bee;
+    $retorno = $BEE->NovaEntrega($_POST['pedido']);
+    $retorno = json_decode($retorno);
+    file_put_contents("log.txt", $retorno);
+    if($retorno->deliveryId){
+        $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'i' where codigo = '{$_POST['pedido']}'";
+        mysqli_query($con, $query);
+    }
+
     //////////////////////////////////////////////////////////
 
     $dados = ['status' => $query];
