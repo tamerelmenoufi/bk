@@ -24,6 +24,8 @@ $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
     $dados[] = $d;
+
 }
+$dados[] = $query;
 
 echo json_encode($dados);
