@@ -22,5 +22,13 @@
 
     if($m%5 == 0 and 11 <= $h and $h <= 23 and $msg){
         $msg = "*ATENÇÃO* - Notificação BKManaus ".$msg;
-        EnviarWapp('92991886570', $msg);
+        $numeros = [
+            '92991886570',
+            '92988020814',
+            '92984124929',
+        ];
+        for($i=0;$i<count($numeros);$i++){
+            EnviarWapp($numeros[$i], $msg);
+        }
+
     }
