@@ -432,7 +432,7 @@
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
-        if(dados){
+        // if(dados){
             $(".loja").html(dados);
             $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
@@ -481,7 +481,7 @@
                         }
                     }
             });
-        }
+        // }
 
         $("#captcha").keyup(function(){
             captcha = $(this).val();
