@@ -9,4 +9,10 @@
         $q2 = "INSERT INTO logs_conexoes set loja = '{$d->codigo}', data = NOW(), situacao = '{$d->situacao2}'";
         mysqli_query($con, $q1);
         mysqli_query($con, $q2);
+
+        $m = (date("i")*1);
+        if($m%5 == 0){
+            EnviarWapp('92991886570','Lojas desligadas');
+        }
+
     }
