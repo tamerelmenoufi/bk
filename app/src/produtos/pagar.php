@@ -272,6 +272,7 @@
                                             $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
+                                            if(mysqli_num_rows($con, $r)){
                                             while($v = mysqli_fetch_object($r)){
 
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
@@ -298,6 +299,14 @@
                                         <?php
                                                 }
                                             }
+                                        }else{
+                                            ?>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <small>INDISPONIBILIDADE PARA ENTREGAS</small>
+                                                </li>
+                                            <?php
+                                                }
 
                                         ?>
                                         </ul>
