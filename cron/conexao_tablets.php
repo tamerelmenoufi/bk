@@ -28,7 +28,7 @@
             '92984124929',
         ];
         for($i=0;$i<count($numeros);$i++){
-            EnviarWapp($numeros[$i], $msg);
+            // EnviarWapp($numeros[$i], $msg);
         }
 
     }
