@@ -424,7 +424,7 @@
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
-        console.log(dados);
+        // console.log(dados);
         if(dados && dados != undefined){
             $(".loja").html(dados);
             $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
