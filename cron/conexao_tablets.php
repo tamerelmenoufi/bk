@@ -12,7 +12,7 @@
 
         $m = (date("i")*1);
         if($m%5 == 0){
-            EnviarWapp('92991886570','Lojas desligadas');
+            // EnviarWapp('92991886570','Lojas desligadas');
         }
 
     }
