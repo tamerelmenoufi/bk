@@ -432,7 +432,7 @@
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
-        // if(dados){
+        if(dados){
             $(".loja").html(dados);
             $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
@@ -481,7 +481,7 @@
                         }
                     }
             });
-        // }
+        }
 
         $("#captcha").keyup(function(){
             captcha = $(this).val();
@@ -601,10 +601,6 @@
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
                 $.alert(msg);
                 return false;
-            }
-
-            if(){
-
             }
 
             $.ajax({
