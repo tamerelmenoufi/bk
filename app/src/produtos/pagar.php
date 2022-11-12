@@ -482,6 +482,8 @@
                         }
                     }
             });
+        }else{
+            $(".loja").html('Lojas indisponíveis para entrega');
         }
 
         $("#captcha").keyup(function(){
