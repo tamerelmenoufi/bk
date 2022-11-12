@@ -400,10 +400,10 @@
                     <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
 
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="n" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="s" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" blq="n" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" blq="s" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
@@ -574,7 +574,7 @@
 
             if(bloqueio == 's'){
                 $.alert({
-                    content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
+                    content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender.<br><b>- Itens de sua cesta de pedidos está em falta.</b><br><b>- Ou não temos lojas disponíveis para fazer sua entrega.</b></p><center>',
                     title:false,
                     type:'red',
                     buttons:{
@@ -600,6 +600,10 @@
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
                 $.alert(msg);
                 return false;
+            }
+
+            if(){
+
             }
 
             $.ajax({
