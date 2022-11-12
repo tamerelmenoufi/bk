@@ -12,13 +12,13 @@
         mysqli_query($con, $q2);
 
         if(!$d->situacao2){
-            $msg .= "\nLoja {$d->nome} encontra-se desconectada ao Delivery BKManaus.";
+            $msg .= "Loja {$d->nome} encontra-se desconectada ao Delivery BKManaus.";
         }
 
     }
 
     $m = (date("i")*1);
     if($m%5 == 0 and $msg){
-        $msg = "*ATENÇÃO* - Notificação BKManaus\n\n".$msg;
-        EnviarWapp('92991886570',$msg);
+        $msg = "*ATENÇÃO* - Notificação BKManaus".$msg;
+        EnviarWapp('92991886570', $msg);
     }
