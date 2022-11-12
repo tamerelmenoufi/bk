@@ -18,7 +18,9 @@
     }
 
     $m = (date("i")*1);
-    if($m%5 == 0 and $msg){
+    $h = (date("H")*1);
+
+    if($m%5 == 0 and 11 <= $h and $h <= 23 and $msg){
         $msg = "*ATENÇÃO* - Notificação BKManaus ".$msg;
         EnviarWapp('92991886570', $msg);
     }
