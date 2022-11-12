@@ -14,6 +14,7 @@
     //Verificação loja aberta
 
     // exit();
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
