@@ -476,6 +476,8 @@
             });
         }else{
             $(".loja").html('Lojas indisponíveis para entrega');
+            $('.loja').removeClass('list-group-item-info');
+            $('.loja').addClass('list-group-item-danger');
         }
 
         $("#captcha").keyup(function(){
