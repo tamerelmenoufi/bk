@@ -432,55 +432,56 @@
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
-        if(!dados) return;
-        $(".loja").html(dados);
-        $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
+        if(dados){
+            $(".loja").html(dados);
+            $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
-        LjVl = lj.attr("valor");
-        LjCd = lj.attr("opc");
-        LjId = lj.attr("LjId");
-        valor = $("div[dadosValores]").attr('valor');
-        taxa = $("div[dadosValores]").attr('taxa');
-        desconto = $("div[dadosValores]").attr('desconto');
-        acrescimo = $("div[dadosValores]").attr('acrescimo');
+            LjVl = lj.attr("valor");
+            LjCd = lj.attr("opc");
+            LjId = lj.attr("LjId");
+            valor = $("div[dadosValores]").attr('valor');
+            taxa = $("div[dadosValores]").attr('taxa');
+            desconto = $("div[dadosValores]").attr('desconto');
+            acrescimo = $("div[dadosValores]").attr('acrescimo');
 
-        $.ajax({
-                url:"src/produtos/pagar.php",
-                type:"POST",
-                dataType:"JSON",
-                data:{
-                    LjVl,
-                    LjCd,
-                    LjId,
-                    valor,
-                    taxa,
-                    desconto,
-                    acrescimo,
-                    acao:'loja'
-                },
-                success:function(dados){
-                    console.log(dados);
-                    if(dados.status == false){
-                        $("button[blq]").attr("blq",'s');
-                        $.alert({
-                            content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
-                            title:false,
-                            type:'red',
-                            buttons:{
-                                'ok':{
-                                    text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
-                                    btnClass:'btn btn-primary',
-                                    action:function(){
+            $.ajax({
+                    url:"src/produtos/pagar.php",
+                    type:"POST",
+                    dataType:"JSON",
+                    data:{
+                        LjVl,
+                        LjCd,
+                        LjId,
+                        valor,
+                        taxa,
+                        desconto,
+                        acrescimo,
+                        acao:'loja'
+                    },
+                    success:function(dados){
+                        console.log(dados);
+                        if(dados.status == false){
+                            $("button[blq]").attr("blq",'s');
+                            $.alert({
+                                content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
+                                title:false,
+                                type:'red',
+                                buttons:{
+                                    'ok':{
+                                        text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
+                                        btnClass:'btn btn-primary',
+                                        action:function(){
 
+                                        }
                                     }
                                 }
-                            }
-                        })
-                    }else{
-                        $("button[blq]").attr("blq",'n');
+                            })
+                        }else{
+                            $("button[blq]").attr("blq",'n');
+                        }
                     }
-                }
-        });
+            });
+        }
 
         $("#captcha").keyup(function(){
             captcha = $(this).val();
