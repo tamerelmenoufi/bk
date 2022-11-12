@@ -5,6 +5,7 @@
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
 
+        if($_POST['LjCd'] > 0){
         $query = "update vendas set
                                     loja = '{$_POST['LjCd']}',
                                     taxa_entrega = '{$_POST['LjVl']}',
@@ -37,7 +38,9 @@
 
         echo json_encode(VerificarProdutos($_POST['LjCd']));
         // echo json_encode(VerificarProdutos());
-
+        }else{
+            echo json_encode(['status' => true]);
+        }
         exit();
 
     }

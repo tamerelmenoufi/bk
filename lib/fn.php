@@ -199,17 +199,13 @@ function VerificarProdutos($l=false){
         }
 
     }
-
+    $st = true;
     if($l){
-        $st = true;
         foreach($status[$l] as $i => $v){
             if(!$v) $st = false;
         }
-        return ["status" => $st];
-    }else{
-        return $status;
     }
-
+    return ["status" => $st];
     // if($status) echo "<pre>"; print_r($status); echo "</pre>";
 
 }
