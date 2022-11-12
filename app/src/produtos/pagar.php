@@ -432,6 +432,7 @@
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
+        if(!dados) return;
         $(".loja").html(dados);
         $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
