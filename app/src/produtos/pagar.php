@@ -302,15 +302,7 @@
                                         <?php
                                                 }
                                             }
-                                        }else{
-                                            ?>
-                                                <li
-                                                    class="list-group-item d-flex justify-content-between align-items-center">
-                                                    <small>INDISPONIBILIDADE PARA ENTREGAS</small>
-                                                </li>
-                                            <?php
-                                                }
-
+                                        }
                                         ?>
                                         </ul>
                                     </div>
