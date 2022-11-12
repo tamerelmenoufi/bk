@@ -5,7 +5,7 @@ include("../lib/includes.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
 $_POST = json_decode(file_get_contents('php://input'), true);
 
-$agora = data("Y-m-d H:i:s");
+$agora = date("Y-m-d H:i:s");
 
 mysqli_query($con, "UPDATE `lojas` SET ultima_conexao = '{$agora}' WHERE codigo = '{$_POST['loja']}'");
 
