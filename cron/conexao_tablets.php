@@ -8,8 +8,9 @@
     echo "<br><br><br><br>";
     while($d = mysqli_fetch_object($result)){
 
+        echo "<br><hr>";
         echo $q1 = "UPDATE lojas set online = '{$d->online}' where codigo = '{$d->codigo}'";
-        echo "<hr>";
+        echo "<br><hr>";
         echo $q2 = "INSERT INTO logs_conexoes set loja = '{$d->codigo}', data = NOW(), situacao = '{$d->situacao2}'";
         mysqli_query($con, $q1);
         mysqli_query($con, $q2);
