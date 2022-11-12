@@ -10,7 +10,7 @@
 
         echo "<br><hr>";
         echo $q1 = "UPDATE lojas set online = '{$d->online}' where codigo = '{$d->codigo}'";
-        echo "<br><hr>";
+        echo "<br>";
         echo $q2 = "INSERT INTO logs_conexoes set loja = '{$d->codigo}', data = NOW(), situacao = '{$d->situacao2}'";
         mysqli_query($con, $q1);
         mysqli_query($con, $q2);
