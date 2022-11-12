@@ -24,8 +24,8 @@
         $msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
         $numeros = [
             '92991886570',
-            '92988020814',
-            '92984124929',
+            // '92988020814',
+            // '92984124929',
         ];
         for($i=0;$i<count($numeros);$i++){
             EnviarWapp($numeros[$i], $msg);
