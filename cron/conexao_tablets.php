@@ -19,6 +19,6 @@
 
     $m = (date("i")*1);
     if($m%5 == 0 and $msg){
-        $msg = "*ATENÇÃO* - Notificação BKManaus".$msg;
+        $msg = "*ATENÇÃO* - Notificação BKManaus\n\n".$msg;
         EnviarWapp('92991886570',$msg);
     }
