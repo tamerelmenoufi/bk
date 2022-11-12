@@ -275,7 +275,7 @@
                                             $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
-                                            if(!mysqli_num_rows($con, $r)){
+                                            if(mysqli_num_rows($r)){
                                             while($v = mysqli_fetch_object($r)){
 
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
@@ -433,7 +433,7 @@
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
         console.log(dados);
-        if(dados && dados != 'undefined'){
+        if(dados && dados != undefined){
             $(".loja").html(dados);
             $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
