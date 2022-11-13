@@ -9,6 +9,12 @@ $queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'a
 $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
+//Conectividade das lojas
+$query = "select count(*) as qt, situacao from logs_conexoes where data like '".date("Y-m-d")."' group by situacao";
+$result = mysqli_query($con, $query);
+while($d = mysqli_fetch_object($result)){
+    $connectLoja[$d->situacao] = $d->qt;
+}
 ?>
 
 <style>
@@ -133,12 +139,12 @@ const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
 const data = {
-  labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+  labels: ['On', 'Off'],
   datasets: [
     {
       label: 'Dataset 1',
-      data: [1,3,4,2,8,2,1],
-      backgroundColor: ['red'], //Object.values(Utils.CHART_COLORS),
+      data: [<?=$connectLoja[1]?>,<?=$connectLoja[0]?>],
+      backgroundColor: ['green','red'], //Object.values(Utils.CHART_COLORS),
     }
   ]
 };
@@ -154,7 +160,7 @@ const config = {
       },
       title: {
         display: true,
-        text: 'Chart.js Pie Chart'
+        text: 'Conectividade das Lojas'
       }
     }
   },
