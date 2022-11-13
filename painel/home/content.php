@@ -15,6 +15,12 @@ $result = mysqli_query($con, $query);
 while($d = mysqli_fetch_object($result)){
     $connectLoja[$d->situacao] = $d->qt;
 }
+
+$conectividade = ($connectLoja[0] + $connectLoja[1]);
+
+$off = (($connectLoja[0] * 100)/$conectividade);
+$on = (($connectLoja[1] * 100)/$conectividade);
+
 ?>
 
 <style>
@@ -143,7 +149,7 @@ const data = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: [<?=$connectLoja[1]?>,<?=$connectLoja[0]?>],
+      data: [<?=$on?>,<?=$off?>],
       backgroundColor: ['green','red'], //Object.values(Utils.CHART_COLORS),
     }
   ]
