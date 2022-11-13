@@ -144,10 +144,40 @@ const labels = [
   };
 
   const config = {
-    type: 'line',
-    data: data,
-    options: {}
-  };
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Stacked scales',
+      },
+    },
+    scales: {
+      y: {
+        type: 'linear',
+        position: 'left',
+        stack: 'demo',
+        stackWeight: 2,
+        grid: {
+          borderColor: Utils.CHART_COLORS.red
+        }
+      },
+      y2: {
+        type: 'category',
+        labels: ['ON', 'OFF'],
+        offset: true,
+        position: 'left',
+        stack: 'demo',
+        stackWeight: 1,
+        grid: {
+          borderColor: Utils.CHART_COLORS.blue
+        }
+      }
+    }
+  },
+};
 const myChart = new Chart(
     document.getElementById('myChart'),
     config
