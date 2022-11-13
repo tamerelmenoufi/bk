@@ -38,12 +38,9 @@
             EnviarWapp($numerosp[$i], $m);
         }
 
-
         $msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
         for($i=0;$i<count($numeros);$i++){
             EnviarWapp($numeros[$i], $msg);
         }
-
-
 
     }
