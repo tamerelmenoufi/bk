@@ -18,8 +18,8 @@ while($d = mysqli_fetch_object($result)){
 
 $conectividade = ($connectLoja[0] + $connectLoja[1]);
 
-$off = (($connectLoja[0] * 100)/$conectividade);
-$on = (($connectLoja[1] * 100)/$conectividade);
+$off = number_format(($connectLoja[0] * 100)/$conectividade,0);
+$on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 ?>
 
@@ -158,6 +158,7 @@ const data = {
 const config = {
   type: 'pie',
   data: data,
+  cutout:'number',
   options: {
     responsive: true,
     plugins: {
