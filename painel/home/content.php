@@ -9,6 +9,16 @@ $queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'a
 $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 ?>
+
+<style>
+    .quadro{
+        width:20px;
+        height:20px;
+        color:#fff;
+        background-color:#333;
+    }
+</style>
+
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
@@ -100,3 +110,22 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 <!-- Content Row -->
 
+
+<!-- Content Row -->
+<div class="row">
+    <div class="col-md-12">
+        <table>
+            <tr>
+                <?php
+                    for($i=0;$i<24;$i++){
+                ?>
+                <td class="quadro">
+                    <?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?>
+                </td>
+                <?php
+                    }
+                ?>
+            </tr>
+        </table>
+    </div>
+</div>
