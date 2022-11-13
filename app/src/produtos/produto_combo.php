@@ -204,7 +204,7 @@
                                     background-color:#EBF4F1;
                                     z-index:1;
                                     border-radius:100%;
-                                    background-image:url(<?=$caminho_sis?>/painel/combos/icon/<?= $p->icon ?>);
+                                    /*background-image:url(<?=$caminho_sis?>/painel/combos/icon/<?= $p->icon ?>);*/
                                     background-size:cover;
                                     background-position:center bottom;
                                     opacity:0.3;
