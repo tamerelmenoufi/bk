@@ -106,7 +106,7 @@
         background-position: center center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        background-color:#f5ebdc;
+        /*background-color:#f5ebdc;*/
         background-repeat:no-repeat;
         height:250px;
         position:fixed;
