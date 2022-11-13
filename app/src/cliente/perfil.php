@@ -12,7 +12,7 @@
         echo json_encode([
             'status' => true,
             'msg' => 'Dados salvo com sucesso',
-            'msg' => $_POST['nome'],
+            'nome' => $_POST['nome'],
         ]);
 
         exit();
