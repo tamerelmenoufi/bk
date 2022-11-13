@@ -125,62 +125,38 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 <script>
 
-  const labels = Utils.months({count: 7});
-  const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: [10, 30, 50, 20, 25, 44, -10],
-      borderColor: Utils.CHART_COLORS.red,
-      backgroundColor: Utils.CHART_COLORS.red,
-    },
-    {
-      label: 'Dataset 2',
-      data: ['ON', 'ON', 'OFF', 'ON', 'OFF', 'OFF', 'ON'],
-      borderColor: Utils.CHART_COLORS.blue,
-      backgroundColor: Utils.CHART_COLORS.blue,
-      stepped: true,
-      yAxisID: 'y2',
-    }
-  ]
-};
-
-  const config = {
-  type: 'line',
+const config = {
+  type: 'pie',
   data: data,
   options: {
     responsive: true,
     plugins: {
+      legend: {
+        position: 'top',
+      },
       title: {
         display: true,
-        text: 'Stacked scales',
-      },
-    },
-    scales: {
-      y: {
-        type: 'linear',
-        position: 'left',
-        stack: 'demo',
-        stackWeight: 2,
-        grid: {
-          borderColor: Utils.CHART_COLORS.red
-        }
-      },
-      y2: {
-        type: 'category',
-        labels: ['ON', 'OFF'],
-        offset: true,
-        position: 'left',
-        stack: 'demo',
-        stackWeight: 1,
-        grid: {
-          borderColor: Utils.CHART_COLORS.blue
-        }
+        text: 'Chart.js Pie Chart'
       }
     }
   },
 };
+
+
+const DATA_COUNT = 5;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+
+const data = {
+  labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      backgroundColor: Object.values(Utils.CHART_COLORS),
+    }
+  ]
+};
+
 const myChart = new Chart(
     document.getElementById('myChart'),
     config
