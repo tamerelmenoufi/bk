@@ -8,6 +8,7 @@ $queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'a
 
 $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
+
 ?>
 
 <style>

@@ -50,7 +50,7 @@
 
                 <div class="form-group">
                     <label for="nome">
-                        Telefone
+                        Telefone*
                         <?php
                         if(!$c->telefone_confirmado){
                         ?>
@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nome">Nome Completo</label>
+                    <label for="nome">Nome Completo*</label>
                     <input type="text" class="form-control form-control-lg" id="nome" placeholder="Seu Nome Completo" value="<?=$c->nome?>">
                 </div>
                 <div class="form-group">
@@ -89,7 +89,7 @@
             <?php
             }
             ?>
-
+            <p><b>* Dados Obrigatórios</b></p>
         </div>
     </div>
 </div>
@@ -103,9 +103,9 @@
             email = $("#email").val();
             cpf = $("#cpf").val();
 
-            if(!nome || !email || !cpf){
+            if(!nome/* || !email || !cpf*/){
                 $.alert({
-                    content:'Preencha os campos do formulário!',
+                    content:'Preencha os campos obrigatórios(*) no formulário!',
                     title:false,
                     type: "red",
                 });
