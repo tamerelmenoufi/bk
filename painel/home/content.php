@@ -168,7 +168,7 @@ const config = {
       },
       title: {
         display: true,
-        text: 'Percentual de Conectividade das lojas em <?=formata_datahora($data)?>'
+        text: 'Percentual de Conectividade das lojas em <?=formata_datahora($data,'d/m/Y')?>'
       }
     }
   },
