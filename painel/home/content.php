@@ -125,6 +125,23 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 <script>
 
+
+
+
+const DATA_COUNT = 5;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+
+const data = {
+  labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: Utils.numbers(NUMBER_CFG),
+      backgroundColor: Object.values(Utils.CHART_COLORS),
+    }
+  ]
+};
+
 const config = {
   type: 'pie',
   data: data,
@@ -140,21 +157,6 @@ const config = {
       }
     }
   },
-};
-
-
-const DATA_COUNT = 5;
-const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
-
-const data = {
-  labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: Utils.numbers(NUMBER_CFG),
-      backgroundColor: Object.values(Utils.CHART_COLORS),
-    }
-  ]
 };
 
 const myChart = new Chart(
