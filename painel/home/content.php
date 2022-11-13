@@ -6,7 +6,7 @@ $queryVendas = "(SELECT COUNT(*) FROM vendas where operadora_situacao = 'approve
 $queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != '' group by cliente) AS visitas, ";
 $queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved' group by cliente) AS faturamento";
 
-$queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
+echo $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 ?>
 <!-- Page Heading -->
