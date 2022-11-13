@@ -124,24 +124,27 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 
 <script>
-const labels = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-  ];
 
+  const labels = Utils.months({count: 7});
   const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0, 10, 5, 2, 20, 30, 45],
-    }]
-  };
+  labels: labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: [10, 30, 50, 20, 25, 44, -10],
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.CHART_COLORS.red,
+    },
+    {
+      label: 'Dataset 2',
+      data: ['ON', 'ON', 'OFF', 'ON', 'OFF', 'OFF', 'ON'],
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.CHART_COLORS.blue,
+      stepped: true,
+      yAxisID: 'y2',
+    }
+  ]
+};
 
   const config = {
   type: 'line',
