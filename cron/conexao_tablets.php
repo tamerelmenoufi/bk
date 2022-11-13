@@ -16,7 +16,6 @@
             $msg[] = " *{$d->nome}* ";
             $numeros[] = $d->telefone;
         }
-
     }
 
     $m = (date("i")*1);
