@@ -149,8 +149,8 @@ const data = {
   labels: ['On', 'Off'],
   datasets: [
     {
-      label: 'Dataset 1',
-      data: [<?=$on?>%,<?=$off?>%],
+      label: ['<?=$on?>%','<?=$off?>%'],
+      data: [<?=$on?>,<?=$off?>],
       backgroundColor: ['green','red'], //Object.values(Utils.CHART_COLORS),
     }
   ]
