@@ -26,8 +26,8 @@
     $numeros[] = '92988020814';
     $numeros[] = '92984124929';
 
-    print_r($numeros);
-    echo "<br>".$msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
+    // print_r($numeros);
+    // echo "<br>".$msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
 
     if($m%15 == 0 and 11 <= $h and $h <= 23 and $msg){
         $msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
