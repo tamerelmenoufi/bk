@@ -10,7 +10,7 @@ $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendent
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 //Conectividade das lojas
-$query = "select count(*) as qt, situacao from logs_conexoes where data like '".date("Y-m-d")."' group by situacao";
+$query = "select count(*) as qt, situacao from logs_conexoes where data like '%".date("Y-m-d")."%' group by situacao";
 $result = mysqli_query($con, $query);
 while($d = mysqli_fetch_object($result)){
     $connectLoja[$d->situacao] = $d->qt;
