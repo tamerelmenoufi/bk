@@ -12,7 +12,6 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 <style>
     .quadro{
-        width:1px;
         height:1px;
         color:#fff;
         font-size:10px;
@@ -119,9 +118,10 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
         <table>
             <tr>
                 <?php
+                    $lg = (100/1440);
                     for($i=0;$i<1440;$i++){
                 ?>
-                <td class="quadro">
+                <td class="quadro" style="width:<?=$lg?>%">
                     <!-- <?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?> -->
                 </td>
                 <?php
