@@ -137,7 +137,7 @@ const data = {
     {
       label: 'Dataset 1',
       data: [1,3,4,2,8,2,1],
-      backgroundColor: Object.values(Utils.CHART_COLORS),
+      backgroundColor: ['red'], //Object.values(Utils.CHART_COLORS),
     }
   ]
 };
