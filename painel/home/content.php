@@ -86,7 +86,7 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Faturamento
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format(2,',','.', $dadosCount->faturamento); ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $dadosCount->faturamento ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fa-solid fa-user fa-2x text-gray-300"></i>
