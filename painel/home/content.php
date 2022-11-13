@@ -12,11 +12,11 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 <style>
     .quadro{
-        width:20px;
-        height:20px;
+        width:1px;
+        height:1px;
         color:#fff;
         font-size:10px;
-        background-color:#333;
+        background-color:red;
         text-align:center;
     }
 </style>
@@ -119,15 +119,20 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
         <table>
             <tr>
                 <?php
-                    for($i=0;$i<24;$i++){
+                    for($i=0;$i<1440;$i++){
                 ?>
                 <td class="quadro">
-                    <?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?>
+                    <!-- <?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?> -->
                 </td>
                 <?php
                     }
                 ?>
             </tr>
+            <?php
+            $dt = date("Y-m-d");
+            $query = "select * from logs_conexoes where data like '%{$dt}%'";
+
+            ?>
         </table>
     </div>
 </div>
