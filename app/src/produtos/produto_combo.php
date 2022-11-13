@@ -207,7 +207,7 @@
                                     /*background-image:url(<?=$caminho_sis?>/painel/combos/icon/<?= $p->icon ?>);*/
                                     background-size:cover;
                                     background-position:center bottom;
-                                    opacity:0.3;
+                                    /*opacity:0.3;*/
                                     filter: blur(5px);
                                     text-align:center;
                                     ">
