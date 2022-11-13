@@ -115,24 +115,80 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 <!-- Content Row -->
 <div class="row">
     <div class="col-md-12">
-        <table style="border:solid 1px green">
-            <tr>
-                <?php
-                    $lg = (100/1440);
-                    for($i=0;$i<1440;$i++){
-                ?>
-                <td class="quadro" style="width:<?=$lg?>%">
-                    <!-- <?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?> -->
-                </td>
-                <?php
-                    }
-                ?>
-            </tr>
-            <?php
-            $dt = date("Y-m-d");
-            $query = "select * from logs_conexoes where data like '%{$dt}%'";
 
-            ?>
-        </table>
+
+        <canvas id="myChart"></canvas>
+
     </div>
 </div>
+
+
+<script>
+
+const DATA_COUNT = 7;
+const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+
+const labels = Utils.months({count: 7});
+const data = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'Dataset 1',
+      data: [10, 30, 50, 20, 25, 44, -10],
+      borderColor: Utils.CHART_COLORS.red,
+      backgroundColor: Utils.CHART_COLORS.red,
+    },
+    {
+      label: 'Dataset 2',
+      data: ['ON', 'ON', 'OFF', 'ON', 'OFF', 'OFF', 'ON'],
+      borderColor: Utils.CHART_COLORS.blue,
+      backgroundColor: Utils.CHART_COLORS.blue,
+      stepped: true,
+      yAxisID: 'y2',
+    }
+  ]
+};
+
+const config = {
+  type: 'line',
+  data: data,
+  options: {
+    responsive: true,
+    plugins: {
+      title: {
+        display: true,
+        text: 'Stacked scales',
+      },
+    },
+    scales: {
+      y: {
+        type: 'linear',
+        position: 'left',
+        stack: 'demo',
+        stackWeight: 2,
+        grid: {
+          borderColor: Utils.CHART_COLORS.red
+        }
+      },
+      y2: {
+        type: 'category',
+        labels: ['ON', 'OFF'],
+        offset: true,
+        position: 'left',
+        stack: 'demo',
+        stackWeight: 1,
+        grid: {
+          borderColor: Utils.CHART_COLORS.blue
+        }
+      }
+    }
+  },
+};
+
+
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+</script>
