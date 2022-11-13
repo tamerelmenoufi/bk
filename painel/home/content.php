@@ -114,11 +114,11 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 
 <!-- Content Row -->
 <div class="row">
-    <div class="col-md-12">
-
-
+    <div class="col-md-4">
         <canvas id="myChart"></canvas>
-
+    </div>
+    <div class="col-md-4">
+        Tabela
     </div>
 </div>
 
