@@ -2,9 +2,9 @@
 include_once '../../lib/includes.php';
 
 $queryClientes = "(SELECT COUNT(*) FROM clientes) AS clientes, ";
-$queryVendas = "(SELECT COUNT(*) FROM vendas) AS vendas, ";
-$queryMesas = "(SELECT COUNT(*) FROM mesas) AS mesas, ";
-$queryAtendentes = "(SELECT COUNT(*) FROM atendentes) AS atendentes";
+$queryVendas = "(SELECT COUNT(*) FROM vendas where operadora_situacao = 'approved' group by cliente) AS vendas, ";
+$queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != '' group by cliente) AS visitas, ";
+$queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved' group by cliente) AS faturamento";
 
 $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
@@ -65,9 +65,9 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Mesas
+                            Visitas
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $dadosCount->mesas; ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $dadosCount->visitas; ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fa-solid fa-utensils fa-2x text-gray-300"></i>
@@ -84,9 +84,9 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Atendentes
+                            Faturamento
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $dadosCount->atendentes; ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format(2,',','.', $dadosCount->faturamento); ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fa-solid fa-user fa-2x text-gray-300"></i>
