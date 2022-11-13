@@ -6,7 +6,7 @@
     $result = mysqli_query($con, $query);
     $msg = [];
     while($d = mysqli_fetch_object($result)){
-        $q1 = "UPDATE lojas set online = '{$d->situacao23}' where codigo = '{$d->codigo}'";
+        $q1 = "UPDATE lojas set online = '{$d->situacao2}' where codigo = '{$d->codigo}'";
         $q2 = "INSERT INTO logs_conexoes set loja = '{$d->codigo}', data = NOW(), situacao = '{$d->situacao2}'";
         mysqli_query($con, $q1);
         mysqli_query($con, $q2);
@@ -28,7 +28,7 @@
             '92984124929',
         ];
         for($i=0;$i<count($numeros);$i++){
-            // EnviarWapp($numeros[$i], $msg);
+            EnviarWapp($numeros[$i], $msg);
         }
 
     }
