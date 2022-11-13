@@ -115,7 +115,7 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
 <!-- Content Row -->
 <div class="row">
     <div class="col-md-12">
-        <table>
+        <table style="border:solid 1px green">
             <tr>
                 <?php
                     $lg = (100/1440);
