@@ -136,7 +136,7 @@ const data = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: Utils.numbers(NUMBER_CFG),
+      data: [1,3,4,2,8,2,1],
       backgroundColor: Object.values(Utils.CHART_COLORS),
     }
   ]
