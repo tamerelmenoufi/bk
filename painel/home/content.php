@@ -2,9 +2,9 @@
 include_once '../../lib/includes.php';
 
 $queryClientes = "(SELECT COUNT(*) FROM clientes) AS clientes, ";
-$queryVendas = "(SELECT COUNT(*) FROM vendas where operadora_situacao = 'approved' group by cliente) AS vendas, ";
-$queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != '' group by cliente) AS visitas, ";
-$queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved' group by cliente) AS faturamento";
+$queryVendas = "(SELECT COUNT(*) FROM vendas where operadora_situacao = 'approved') AS vendas, ";
+$queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != '') AS visitas, ";
+$queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved') AS faturamento";
 
 echo $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
