@@ -20,7 +20,7 @@
     $m = (date("i")*1);
     $h = (date("H")*1);
 
-    if($m%5 == 0 and 11 <= $h and $h <= 23 and $msg){
+    if($m%15 == 0 and 11 <= $h and $h <= 23 and $msg){
         $msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
         $numeros = [
             '92991886570',
