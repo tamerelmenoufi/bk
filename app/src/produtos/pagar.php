@@ -181,7 +181,7 @@
                                 <?php
                                 if(!$d->nome or !$d->telefone_confirmado){
                                 ?>
-                                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__faster">Dados Incompletos, atualize para fechar o seu pedido.</div>
+                                <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">Dados Incompletos, atualize para fechar o seu pedido.</div>
                                 <button class="ConfirmaTelefone btn btn-danger btn-block">Atualizar Cadastro</button>
                                 <?php
                                 }
@@ -222,7 +222,7 @@
                                 <?php
                                 if(!$coordenadas){
                                 ?>
-                                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__faster">Endereço Pendente de validação.</div>
+                                <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">Endereço Pendente de validação.</div>
                                 <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
                                 <?php
                                 }
@@ -234,7 +234,7 @@
                             <?php
                             }else{
                             ?>
-                            <div class="alertas animate__animated animate__fadeIn animate__infinite animate__faster">
+                            <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">
                                 Você não possui endereço cadastrado, utilize o linque abaixo para cadastrar seu(s) endereço(s).
                             </div>
                             <?php
@@ -378,7 +378,7 @@
                     $pagar = true;
                     if(!$coordenadas or !$d->nome or !$d->telefone_confirmado){
                     ?>
-                    <div class="alertas animate__animated animate__fadeIn animate__infinite animate__faster">
+                    <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">
                         Você possui pendências em seu cadastro. Verifique as notificações acima e atualize seu cadastro para concluir seu pedido.
                     </div>
                     <?php
