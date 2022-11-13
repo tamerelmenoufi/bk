@@ -150,7 +150,7 @@ const data = {
   datasets: [
     {
       label: 'Dataset 1',
-      data: [<?=$on?>,<?=$off?>],
+      data: [<?=$on?>%,<?=$off?>%],
       backgroundColor: ['green','red'], //Object.values(Utils.CHART_COLORS),
     }
   ]
