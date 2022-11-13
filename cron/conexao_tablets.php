@@ -32,7 +32,7 @@
     if($m%15 == 0 and 11 <= $h and $h <= 23 and $msg){
 
         $msgp = "*ATENÇÃO* - Notificação BKManaus. A loja [loja] encontra-se desconectada do Delivery. Favor ativar o Tablet!";
-        $numerosp[] = '92991886570';
+        // $numerosp[] = '92991886570';
         for($i=0;$i<count($numerosp);$i++){
             $m = str_replace('[loja]', $msg[$i], $msgp );
             EnviarWapp($numerosp[$i], $m);

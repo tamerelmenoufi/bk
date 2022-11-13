@@ -15,6 +15,7 @@ $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
         width:20px;
         height:20px;
         color:#fff;
+        font-size:10px;
         background-color:#333;
     }
 </style>
