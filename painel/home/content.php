@@ -25,12 +25,12 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 ?>
 
 <style>
-    .quadro{
+    .pixe{
         height:1px;
-        color:#fff;
-        font-size:10px;
+        width:1px;
+        float:left;
         background-color:red;
-        text-align:center;
+        border:0;
     }
 </style>
 
@@ -133,6 +133,26 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
     <div class="col-md-4">
         Tabela
+        <table style="width:100%; border:solid 1px #333">
+        <?php
+            for($i=0;$i<12;$i++){
+        ?>
+            <tr>
+                <td><?=$i?> H</td>
+                <td>
+                <?php
+                    for($j=0;$j<60;$j++){
+                ?>
+                    <div class="pixe"></div>
+                <?php
+                    }
+                ?>
+                </td>
+            </tr>
+        <?php
+            }
+        ?>
+        </table>
     </div>
 </div>
 
