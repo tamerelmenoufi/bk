@@ -207,7 +207,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                             class="pixe"
                             data-toggle="tooltip"
                             data-placement="top"
-                            title="<?=$mns?>"
+                            title="<?=$msg?>"
                             style="background-color:<?=(($icone[$i][$j])?:'#eee')?>"></div>
                     </td>
                 <?php
