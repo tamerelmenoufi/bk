@@ -33,6 +33,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
         background-color:red;
         border:0;
         text-align:center;
+        cursor:pointer;
     }
     .relatorio td{
         font-size:7px;
@@ -148,7 +149,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
     <div class="col-md-8">
         Tabela
-        <table class="relatorio" style="width:100%; border:solid 1px #ccc">
+        <table class="relatorio" style="width:100%; border:solid 1px #ccc; border-radius:5px;">
 
         <tr>
             <td rowspan="2">
