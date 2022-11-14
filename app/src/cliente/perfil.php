@@ -67,11 +67,11 @@
                     <input type="text" class="form-control form-control-lg" id="nome" placeholder="Seu Nome Completo" value="<?=$c->nome?>">
                 </div>
                 <div class="form-group">
-                    <label for="nome">CPF</label>
+                    <label for="nome">CPF*</label>
                     <input type="text" class="form-control form-control-lg" id="cpf" inputmode="numeric" placeholder="CPF" value="<?=$c->cpf?>">
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail*</label>
                     <input type="email" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="<?=$c->email?>">
                 </div>
                 <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
@@ -103,7 +103,7 @@
             email = $("#email").val();
             cpf = $("#cpf").val();
 
-            if(!nome/* || !email || !cpf*/){
+            if(!nome || !email || !cpf){
                 $.alert({
                     content:'Preencha os campos obrigatórios(*) no formulário!',
                     title:false,
