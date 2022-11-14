@@ -26,8 +26,8 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 <style>
     .pixe{
-        height:3px;
-        width:3px;
+        height:7px;
+        width:7px;
         border-radius:100%;
         float:left;
         background-color:red;
