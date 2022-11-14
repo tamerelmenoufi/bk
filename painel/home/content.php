@@ -189,9 +189,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                     <td style="text-align:center">
                         <div
                             class="pixe"
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Tooltip on top"
+                            data-toggle="tooltip" data-placement="top" title="Tooltip on top"
                             style="background-color:<?=(($icone[$i][$j])?:'#eee')?>"></div>
                     </td>
                 <?php
