@@ -133,6 +133,15 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 
 <!-- Content Row -->
+<?php
+    $query = "select *, hour(data) as h, minute(data) as m, if(situacao = '0', 'red', 'green') as cor from logs_conexoes where data like '%{$data}%' and loja = '10'";
+    $result = mysqli_query($con, $query);
+    while($d = mysqli_fetch_object($result)){
+
+        $icone[$d->h][$d->m] = $d->cor;
+
+    }
+?>
 <div class="row">
     <div class="col-md-4">
         <canvas id="myChart"></canvas>
@@ -171,7 +180,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                 <?php
                     for($j=0;$j<60;$j++){
                 ?>
-                    <td style="text-align:center"><div class="pixe"></div></td>
+                    <td style="text-align:center"><div class="pixe" style="background-color:<?=(($cor[$i][$j])?:'#eee')?>"></div></td>
                 <?php
                     }
                 ?>
