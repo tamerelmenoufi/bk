@@ -89,7 +89,7 @@
             <?php
             }
             ?>
-            <p style="padding:20px; text-align:center; color:#a1a1a1"><b>* Dados Obrigatórios</b></p>
+            <div style="padding:20px; text-align:center; color:#a1a1a1; font-size:10px;"><b>* Dados Obrigatórios</b></div>
         </div>
     </div>
 </div>
