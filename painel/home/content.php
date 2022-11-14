@@ -160,7 +160,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
         </tr>
 
         <?php
-            for($i=0;$i<12;$i++){
+            for($i=0;$i<24;$i++){
         ?>
             <tr>
                 <td><?=$i?> H</td>
