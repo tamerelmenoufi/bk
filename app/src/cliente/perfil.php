@@ -74,6 +74,7 @@
                     <label for="email">E-mail*</label>
                     <input type="email" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="<?=$c->email?>">
                 </div>
+                <div style="padding:20px; text-align:right; color:#a1a1a1; font-size:10px; width:100%;"><b>* Dados Obrigatórios</b></div>
                 <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
 
@@ -89,7 +90,6 @@
             <?php
             }
             ?>
-            <div style="padding:20px; text-align:center; color:#a1a1a1; font-size:10px;"><b>* Dados Obrigatórios</b></div>
         </div>
     </div>
 </div>
