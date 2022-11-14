@@ -185,11 +185,29 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
                 <?php
                     for($j=0;$j<60;$j++){
+                        switch($icone[$i][$j]){
+                            case 'red':{
+                                $msg = "EM {$i}:{$j} estação desconectada.";
+                                break;
+                            }
+                            case 'green':{
+                                $msg = "EM {$i}:{$j} estação conectada.";
+                                break;
+                            }
+                            default:{
+                                $msg = "EM {$i}:{$j} Horário não atingido.";
+                                break;
+                            }
+                        }
+
+
                 ?>
                     <td style="text-align:center">
                         <div
                             class="pixe"
-                            data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="<?=$mns?>"
                             style="background-color:<?=(($icone[$i][$j])?:'#eee')?>"></div>
                     </td>
                 <?php
