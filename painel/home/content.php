@@ -152,7 +152,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
             for($i=0;$i<60;$i++){
             ?>
             <td style="text-align:center">
-                <?=$i?>
+                <?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?>
             </td>
             <?php
             }
@@ -163,7 +163,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
             for($i=0;$i<24;$i++){
         ?>
             <tr>
-                <td><?=$i?> H</td>
+                <td><?=str_pad($i , 2 , '0' , STR_PAD_LEFT)?> H</td>
 
                 <?php
                     for($j=0;$j<60;$j++){
