@@ -154,7 +154,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
     <div class="col-md-8">
 
-        <form metod="POST" action="./" class="form-inline">
+        <form method="POST" action="./" class="form-inline">
             <div class="form-group">
                 <label class="sr-only" for="conectividade_data">Data</label>
                 <input type="date" value="<?=($_SESSION['conectividade_data']?:date("Y-m-d"))?>" class="form-control" id="conectividade_data" name="conectividade_data" placeholder="Data">
