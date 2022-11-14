@@ -131,7 +131,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     <div class="col-md-4">
         <canvas id="myChart"></canvas>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-8">
         Tabela
         <table style="width:100%; border:solid 1px #333">
         <?php
