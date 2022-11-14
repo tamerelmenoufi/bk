@@ -3,7 +3,7 @@ include_once '../../lib/includes.php';
 
 $queryClientes = "(SELECT COUNT(*) FROM clientes) AS clientes, ";
 $queryVendas = "(SELECT COUNT(*) FROM vendas where operadora_situacao = 'approved') AS vendas, ";
-$queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != '') AS visitas, ";
+$queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != 'approved') AS visitas, ";
 $queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved') AS faturamento";
 
 $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
