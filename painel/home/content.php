@@ -140,8 +140,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 <!-- Content Row -->
 <?php
-print_r($_POST);
-    echo $query = "select *, hour(data) as h, minute(data) as m, if(situacao = '0', 'red', 'green') as cor from logs_conexoes where data like '%".(($_POST['conectividade_data'])?:$data)."%' and loja = '".(($_POST['conectividade_loja'])?:6)."'";
+    echo $query = "select *, hour(data) as h, minute(data) as m, if(situacao = '0', 'red', 'green') as cor from logs_conexoes where data like '%".(($_SESSION['conectividade_data'])?:$data)."%' and loja = '".(($_SESSION['conectividade_loja'])?:6)."'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
@@ -158,7 +157,7 @@ print_r($_POST);
         <form metod="POST" action="./" class="form-inline">
             <div class="form-group">
                 <label class="sr-only" for="conectividade_data">Data</label>
-                <input type="date" value="<?=($_POST['conectividade_data']?:date("Y-m-d"))?>" class="form-control" id="conectividade_data" name="conectividade_data" placeholder="Data">
+                <input type="date" value="<?=($_SESSION['conectividade_data']?:date("Y-m-d"))?>" class="form-control" id="conectividade_data" name="conectividade_data" placeholder="Data">
             </div>
             <div class="form-group">
                 <label class="sr-only" for="conectividade_loja">Loja</label>
@@ -168,7 +167,7 @@ print_r($_POST);
                     $r = mysqli_query($con, $q);
                     while($l = mysqli_fetch_object($r)){
                     ?>
-                    <option value="<?=$l->codigo?>" <?=($_POST['conectividade_loja']==$l->codigo?'selected':false)?>><?=$l->nome?></option>
+                    <option value="<?=$l->codigo?>" <?=($_SESSION['conectividade_loja']==$l->codigo?'selected':false)?>><?=$l->nome?></option>
                     <?php
                     }
                     ?>
