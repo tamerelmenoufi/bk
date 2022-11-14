@@ -140,6 +140,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 <!-- Content Row -->
 <?php
+print_r($_POST);
     echo $query = "select *, hour(data) as h, minute(data) as m, if(situacao = '0', 'red', 'green') as cor from logs_conexoes where data like '%".(($_POST['conectividade_data'])?:$data)."%' and loja = '".(($_POST['conectividade_loja'])?:6)."'";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
