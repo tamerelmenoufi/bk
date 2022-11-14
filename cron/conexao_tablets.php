@@ -2,7 +2,7 @@
 
     include("../lib/includes.php");
 
-    $query = "SELECT *, date_add(ultima_conexao, interval 1 minute), if(NOW() > date_add(ultima_conexao, interval 1 minute) OR ultima_conexao = 0, '0', '1') as situacao2 FROM `lojas` where situacao = '1' and deletado != '1'";
+    $query = "SELECT *, date_add(ultima_conexao, interval 1 minute), if(NOW() > date_add(ultima_conexao, interval 1 minute) OR ultima_conexao = 0, '0', '1') as situacao2, IF(tipo = 'l', 23, 21) as Hlimite FROM `lojas` where situacao = '1' and deletado != '1'";
     $result = mysqli_query($con, $query);
     $msg = [];
     $numeros = [];
@@ -16,6 +16,7 @@
         if(!$d->situacao2){
             $msg[] = " *{$d->nome}* ";
             $numerosp[] = $d->telefone;
+            $Hlimite[] = $d->Hlimite;
         }
     }
 
@@ -35,12 +36,12 @@
         // $numerosp[] = '92991886570';
         for($i=0;$i<count($numerosp);$i++){
             $m = str_replace('[loja]', $msg[$i], $msgp );
-            EnviarWapp($numerosp[$i], $m);
+            if($h <= $Hlimite[$i]) EnviarWapp($numerosp[$i], $m);
         }
 
         $msg = "*ATENÇÃO* - Notificação BKManaus. As lojas a seguir encontram-se desconectadas: ".implode(", ",$msg);
         for($i=0;$i<count($numeros);$i++){
-            EnviarWapp($numeros[$i], $msg);
+            if($h <= $Hlimite[$i]) EnviarWapp($numeros[$i], $msg);
         }
 
     }
