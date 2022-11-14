@@ -272,6 +272,7 @@
                                         <?php
                                             $bee = new Bee;
                                             list($lat, $lng) = explode(",", $coordenadas);
+
                                             $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
