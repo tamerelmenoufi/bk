@@ -186,7 +186,14 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                 <?php
                     for($j=0;$j<60;$j++){
                 ?>
-                    <td style="text-align:center"><div class="pixe" style="background-color:<?=(($icone[$i][$j])?:'#eee')?>"></div></td>
+                    <td style="text-align:center">
+                        <div
+                            class="pixe"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Tooltip on top"
+                            style="background-color:<?=(($icone[$i][$j])?:'#eee')?>"></div>
+                    </td>
                 <?php
                     }
                 ?>
@@ -202,7 +209,9 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 <script>
 
-
+$(function(){
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
 
 const DATA_COUNT = 5;
