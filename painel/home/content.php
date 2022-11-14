@@ -26,11 +26,13 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 <style>
     .pixe{
-        height:1px;
-        width:1px;
+        height:3px;
+        width:3px;
+        border-radius:100%;
         float:left;
         background-color:red;
         border:0;
+        text-align:center;
     }
     .relatorio td{
         font-size:7px;
