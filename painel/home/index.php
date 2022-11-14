@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario'])) {
             <!-- Begin Page Content -->
             <div class="container-fluid">
                 <div id="palco">
-                    <?php include "content.php"; ?>
+                    <?php print_r($_POST); include "content.php"; ?>
                 </div>
             </div>
             <!-- /.container-fluid -->
