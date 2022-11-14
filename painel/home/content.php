@@ -148,7 +148,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
     <div class="col-md-8">
         Tabela
-        <table class="relatorio" style="width:100%; border:solid 1px #333">
+        <table class="relatorio" style="width:100%; border:solid 1px #ccc">
 
         <tr>
             <td rowspan="2">
