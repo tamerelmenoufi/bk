@@ -33,7 +33,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
         border:0;
     }
     .relatorio td{
-        font-size:9px;
+        font-size:7px;
     }
 </style>
 
