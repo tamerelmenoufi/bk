@@ -134,20 +134,42 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     <div class="col-md-8">
         Tabela
         <table style="width:100%; border:solid 1px #333">
+
+        <tr>
+            <td rowspan="2">
+                Horas
+            </td>
+            <td colspan="60" style="text-align:center">
+                Minutos
+            </td>
+        </tr>
+
+        <tr>
+            <?php
+            for($i=0;$i<60;$i++){
+            ?>
+            <td style="text-align:center">
+                <?=$i?>
+            </td>
+            <?php
+            }
+            ?>
+        </tr>
+
         <?php
             for($i=0;$i<12;$i++){
         ?>
             <tr>
                 <td><?=$i?> H</td>
-                <td>
+
                 <?php
                     for($j=0;$j<60;$j++){
                 ?>
-                    <div class="pixe"></div>
+                    <td><div class="pixe"></div></td>
                 <?php
                     }
                 ?>
-                </td>
+
             </tr>
         <?php
             }
