@@ -153,7 +153,29 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
         <canvas id="myChart"></canvas>
     </div>
     <div class="col-md-8">
-        Tabela
+
+        <div class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="conectividade_data">Data</label>
+                <input type="date" value="<?=($_POST['conectividade_data']?:date("Y-m-d"))?>" class="form-control" id="conectividade_data" name="conectividade_data" placeholder="Data">
+            </div>
+            <form method="POST" action="./" class="form-group">
+                <label class="sr-only" for="conectividade_loja">Loja</label>
+                <select class="form-control" id="conectividade_loja" name="conectividade_loja">
+                    <?php
+                    $q = "select * from lojas where deletado != '1' order by nome";
+                    $r = mysqli_query($con, $q);
+                    while($l = mysqli_fetch_object($r)){
+                    ?>
+                    <option value="<?=$l->codigo?>" <?=($_POST['conectividade_loja']==$l->codigo?'selected':false)?>><?=$l->nome?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-default">Sign in</button>
+                </form>
+
         <table class="relatorio">
 
         <tr>
