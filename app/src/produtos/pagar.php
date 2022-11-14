@@ -1,6 +1,19 @@
 <?php
     include("../../../lib/includes.php");
 
+    //Verificação loja aberta
+    date_default_timezone_set("America/Manaus");
+    $inicio = strtotime(date("Y-m-d 11:00:00"));
+    $final  = strtotime(date("Y-m-d 21:45:00"));
+    $agora = strtotime("NOW");
+    if($inicio <= $agora and $final >= $agora){
+
+    }else{
+        // exit();
+    }
+    //Verificação loja aberta
+
+
     if($_POST['acao'] == 'loja'){
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
@@ -272,7 +285,6 @@
                                         <?php
                                             $bee = new Bee;
                                             list($lat, $lng) = explode(",", $coordenadas);
-
                                             $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
