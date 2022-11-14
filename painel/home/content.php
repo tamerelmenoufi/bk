@@ -180,7 +180,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                 <?php
                     for($j=0;$j<60;$j++){
                 ?>
-                    <td style="text-align:center"><div class="pixe" style="background-color:<?=(($cor[$i][$j])?:'#eee')?>"></div></td>
+                    <td style="text-align:center"><div class="pixe" style="background-color:<?=(($icone[$i][$j])?:'#eee')?>"></div></td>
                 <?php
                     }
                 ?>
