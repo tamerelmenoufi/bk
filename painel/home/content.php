@@ -154,12 +154,12 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
     <div class="col-md-8">
 
-        <div class="form-inline">
+        <form method="POST" action="./" class="form-inline">
             <div class="form-group">
                 <label class="sr-only" for="conectividade_data">Data</label>
                 <input type="date" value="<?=($_POST['conectividade_data']?:date("Y-m-d"))?>" class="form-control" id="conectividade_data" name="conectividade_data" placeholder="Data">
             </div>
-            <form method="POST" action="./" class="form-group">
+            <div class="form-group">
                 <label class="sr-only" for="conectividade_loja">Loja</label>
                 <select class="form-control" id="conectividade_loja" name="conectividade_loja">
                     <?php
@@ -174,7 +174,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                 </select>
             </div>
             <button type="submit" class="btn btn-default">Sign in</button>
-                </form>
+        </form>
 
         <table class="relatorio">
 
