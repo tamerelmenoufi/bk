@@ -4,7 +4,7 @@ include_once '../../lib/includes.php';
 $queryClientes = "(SELECT COUNT(*) FROM clientes) AS clientes, ";
 $queryVendas = "(SELECT COUNT(*) FROM vendas where operadora_situacao = 'approved') AS vendas, ";
 $queryMesas = "(SELECT COUNT(*) FROM vendas where operadora_situacao != 'approved') AS visitas, ";
-$queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved') AS faturamento";
+$queryAtendentes = "(SELECT SUM(total) FROM vendas where operadora_situacao = 'approved' and data_pedido >= '2022-11-10 00:00:00') AS faturamento";
 
 $queryCount = "SELECT {$queryMesas}{$queryClientes}{$queryVendas}{$queryAtendentes}";
 $dadosCount = mysqli_fetch_object(mysqli_query($con, $queryCount));
