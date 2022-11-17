@@ -7,6 +7,8 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 
 $query = "SELECT
                 a.*,
+                b.categoria,
+                b.descricao,
                 c.categoria as nome_categoria,
                 v.situacao,
                 v.SEARCHING,
