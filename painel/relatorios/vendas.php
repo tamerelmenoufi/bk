@@ -1,7 +1,17 @@
 <?php
     include("../../lib/includes.php");
 
-    $query = "select a.*, b.nome, c.nome as loja from vendas a left join clientes b on a.cliente = b.codigo left join lojas c on a.loja = c.codigo where a.deletado != '1' and operadora_situacao = 'approved' order by data_finalizacao asc";
+    $query = "select
+                    a.*,
+                    b.nome,
+                    c.nome as loja,
+                    if(data_finalizacao < '2022-11-10 00:00:00', 'green','red')
+                from vendas a
+                    left join clientes b on a.cliente = b.codigo
+                    left join lojas c on a.loja = c.codigo
+                where   a.deletado != '1' and
+                        operadora_situacao = 'approved'
+                order by data_finalizacao desc";
     $result = mysqli_query($con, $query);
 ?>
 <style>
@@ -26,8 +36,15 @@
         <tbody>
 <?php
     while($d = mysqli_fetch_object($result)){
+
+        if($d->cor == 'red'){
+            $style = 'style = "color:red; text-decoration:line-through;"';
+        }else{
+            $style = 'style = "color:green;"';
+        }
+
 ?>
-            <tr>
+            <tr <?=$style?>>
                 <td><?=$d->nome?></td>
                 <td><?=$d->loja?></td>
                 <td><?=$d->valor?></td>
