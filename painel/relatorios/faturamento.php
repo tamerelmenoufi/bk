@@ -10,8 +10,8 @@
                     left join clientes b on a.cliente = b.codigo
                     left join lojas c on a.loja = c.codigo
                 where   a.deletado != '1' and
-                        (operadora_situacao = 'approved' or operadora_situacao = 'Approved') and
-                        data_pedido >= '2022-11-10 00:00:00
+                        (operadora_situacao = 'approved') and
+                        a.data_pedido >= '2022-11-10 00:00:00'
                 order by data_pedido desc";
     $result = mysqli_query($con, $query);
 ?>
