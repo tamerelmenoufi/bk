@@ -5,7 +5,7 @@
                     a.*,
                     b.nome,
                     c.nome as loja,
-                    if(data_finalizacao < '2022-11-10 00:00:00', 'green','red') as cor
+                    if(data_finalizacao >= '2022-11-10 00:00:00', 'green','red') as cor
                 from vendas a
                     left join clientes b on a.cliente = b.codigo
                     left join lojas c on a.loja = c.codigo
