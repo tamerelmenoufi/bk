@@ -4,9 +4,14 @@
     $query = "select * from clientes";
     $result = mysqli_query($con, $query);
 ?>
-
+<style>
+    .relatorio_cliente td{
+        font-size:12px;
+        white-space:nowrap;
+    }
+</style>
 <div class="col">
-    <table class="table table-hover">
+    <table class="relatorio_cliente table table-hover">
         <thead>
             <tr>
                 <th>Nome</th>
