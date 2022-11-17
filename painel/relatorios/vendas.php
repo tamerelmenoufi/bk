@@ -10,7 +10,7 @@
                     left join clientes b on a.cliente = b.codigo
                     left join lojas c on a.loja = c.codigo
                 where   a.deletado != '1' and
-                        operadora_situacao = 'approved'
+                        (operadora_situacao = 'approved' or operadora_situacao = 'Approved')
                 order by data_finalizacao desc";
     $result = mysqli_query($con, $query);
 ?>
