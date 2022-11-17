@@ -5,7 +5,7 @@
                     a.*,
                     b.nome,
                     b.telefone,
-                    if( b.nome and b.cpf and b.email, 'Cadastro Completo', 'Pré-Cadastro') as tipo
+                    if( b.nome != '' and b.cpf != '' and b.email != '', 'Cadastro Completo', 'Pré-Cadastro') as tipo
                 from vendas a
                     left join clientes b on a.cliente = b.codigo
                 where   a.deletado != '1' and
