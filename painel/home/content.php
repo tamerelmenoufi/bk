@@ -55,7 +55,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 <div class="row">
 
     <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div popup="clientes" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-warning shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -74,7 +74,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div popup="vendas" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-info shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -96,7 +96,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div popup="visitas" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -115,7 +115,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
     </div>
 
     <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div popup="faturamento" class="col-xl-3 col-md-6 mb-4">
         <div class="card border-left-success shadow h-100 py-2">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
@@ -249,6 +249,22 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
 
 $(function(){
     $('[data-toggle="tooltip"]').tooltip()
+
+    $("div[popup]").click(function(){
+        opc = $(this).attr("popup");
+        $.ajax({
+            url:`relatorios/${opc}.php`,
+            success:function(dados){
+                $.dialog({
+                    content:dados,
+                    title:false,
+                    columnClass:'col-md-10 col-md-offset-1',
+                    type:'blue'
+                });
+            }
+        });
+    });
+
 })
 
 
