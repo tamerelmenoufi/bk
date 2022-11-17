@@ -35,12 +35,16 @@
         </thead>
         <tbody>
 <?php
+    $valor = $taxa = $total = 0;
     while($d = mysqli_fetch_object($result)){
 
         if($d->cor == 'red'){
             $style = 'style = "color:red; text-decoration:line-through;"';
         }else{
             $style = 'style = "color:green;"';
+            $valor = $valor + $d->valor;
+            $taxa = $taxa + $d->taxa_entrega;
+            $total = $total + $d->total;
         }
 
 ?>
@@ -56,6 +60,16 @@
 <?php
     }
 ?>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td><?=$valor?></td>
+                <td><?=$taxa?></td>
+                <td><?=$total?></td>
+                <td></td>
+                <td></td>
+            </tr>
         </tbody>
     </table>
 </div>
