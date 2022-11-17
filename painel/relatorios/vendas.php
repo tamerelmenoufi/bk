@@ -51,9 +51,9 @@
             <tr <?=$style?>>
                 <td><?=$d->nome?></td>
                 <td><?=$d->loja?></td>
-                <td><?=$d->valor?></td>
-                <td><?=$d->taxa_entrega?></td>
-                <td><?=$d->total?></td>
+                <td>R$ <?=$d->valor?></td>
+                <td>R$ <?=$d->taxa_entrega?></td>
+                <td>R$ <?=$d->total?></td>
                 <td><?=$d->forma_pagamento?></td>
                 <td><?=$d->data_pedido?></td>
             </tr>
@@ -64,9 +64,9 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td><b><?=$valor?></b></td>
-                <td><b><?=$taxa?></b></td>
-                <td><b><?=$total?></b></td>
+                <td><b>R$ <?=$valor?></b></td>
+                <td><b>R$ <?=$taxa?></b></td>
+                <td><b>R$ <?=$total?></b></td>
                 <td></td>
                 <td></td>
             </tr>
