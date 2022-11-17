@@ -5,7 +5,7 @@
     $result = mysqli_query($con, $query);
 ?>
 <style>
-    .relatorio_cliente td{
+    .relatorio_cliente td, .relatorio_cliente th{
         font-size:12px;
         white-space:nowrap;
     }
