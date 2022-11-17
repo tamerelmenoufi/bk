@@ -64,9 +64,9 @@
             <tr>
                 <td></td>
                 <td></td>
-                <td><?=$valor?></td>
-                <td><?=$taxa?></td>
-                <td><?=$total?></td>
+                <td><b><?=$valor?></b></td>
+                <td><b><?=$taxa?></b></td>
+                <td><b><?=$total?></b></td>
                 <td></td>
                 <td></td>
             </tr>
