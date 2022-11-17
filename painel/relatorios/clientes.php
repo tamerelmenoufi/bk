@@ -1,7 +1,7 @@
 <?php
     include("../../lib/includes.php");
 
-    $query = "select * from clientes";
+    $query = "select * from clientes order by nome desc";
     $result = mysqli_query($con, $query);
 ?>
 <style>
@@ -27,7 +27,7 @@
 ?>
             <tr>
                 <td><?=$d->nome?></td>
-                <td><?=$d->telefone?></td>
+                <td style="color:<?=(($d->telefone_confirmado)?'green':'red')?>"><?=$d->telefone?></td>
                 <td><?=$d->cpf?></td>
                 <td><?=$d->email?></td>
                 <td><?=$d->data_cadastro?></td>
