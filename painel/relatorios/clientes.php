@@ -22,7 +22,7 @@
 ?>
             <tr>
                 <td><?=$d->nome?></td>
-                <td><?=$d->Telefone?></td>
+                <td><?=$d->telefone?></td>
                 <td><?=$d->cpf?></td>
                 <td><?=$d->email?></td>
                 <td><?=$d->data_cadastro?></td>
