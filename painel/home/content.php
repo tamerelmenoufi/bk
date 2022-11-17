@@ -260,8 +260,8 @@ $(function(){
             success:function(dados){
                 $.dialog({
                     content:dados,
-                    title:false,
-                    columnClass:'col-md-10 col-md-offset-1',
+                    title:`Relatório ${opc}`,
+                    columnClass:'col-md-12',
                     type:'blue'
                 });
             }
