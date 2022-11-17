@@ -44,6 +44,9 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
         font-size:7px;
         text-align:center;
     }
+    div[popup]{
+        cursor:pointer;
+    }
 </style>
 
 <!-- Page Heading -->
