@@ -65,6 +65,7 @@ while($d = mysqli_fetch_object($result)){
     $d->status_pedido = $status;
     if($descricao) $d->produto_nome = $d->produto_nome." (".$descricao.")";
 
+
     $dados[] = $d;
 }
 
