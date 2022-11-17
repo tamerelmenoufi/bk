@@ -26,6 +26,17 @@ $result = mysqli_query($con, $query);
 $dados = [];
 while($d = mysqli_fetch_object($result)){
 
+    $descricao = [];
+    if($d->categoria == 8){
+        $q = "select * from produtos where codigo in ({$d->descricao})";
+        $r = mysqli_query($con, $q);
+        while($d1 = mysqli_fetch_object($r)){
+            $descricao[] = "<p>{$d1->produto}</p>";
+        }
+        if($descricao) $descricao = implode(", ",$descricao);
+    }
+
+
     $status = "<table border='1' style='width:100%'>";
 
     if($d->SEARCHING > 0){
@@ -52,6 +63,7 @@ while($d = mysqli_fetch_object($result)){
     $status .= '</table>';
 
     $d->status_pedido = $status;
+    if($descricao) $d->produto_nome = $d->produto_nome." (".$descricao.")";
 
     $dados[] = $d;
 }
