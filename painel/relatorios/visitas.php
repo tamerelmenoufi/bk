@@ -4,6 +4,7 @@
     $query = "select
                     a.*,
                     b.nome,
+                    b.telefone,
                     if(a.data_pedido >= '2022-11-10 00:00:00', 'green','red') as cor
                 from vendas a
                     left join clientes b on a.cliente = b.codigo
@@ -44,7 +45,7 @@
 ?>
             <tr <?=$style?>>
                 <td><?=$d->nome?></td>
-                <td>R$ <?=$d->telefone?></td>
+                <td><?=$d->telefone?></td>
                 <td><?=$d->data_pedido?></td>
             </tr>
 <?php
