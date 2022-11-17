@@ -9,7 +9,7 @@
                     left join clientes b on a.cliente = b.codigo
                 where   a.deletado != '1' and
                         (a.operadora_situacao != 'Approved')
-                order by a.data_pedido desc";
+                order by b.nome desc";
     $result = mysqli_query($con, $query);
 ?>
 <style>
