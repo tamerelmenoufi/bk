@@ -277,7 +277,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="valor_freteXX loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="valor_frete loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
@@ -408,7 +408,7 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->valor + $vlopcXX,2,',','.')?></h1>
 
                     <h5 class="card-title">
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="s" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
