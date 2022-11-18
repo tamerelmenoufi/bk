@@ -408,7 +408,7 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->valor + $vlopcXXX,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
 
                     <h5 class="card-title">
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="s" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
