@@ -277,7 +277,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="valor_frete loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
@@ -312,7 +312,7 @@
                                                 opc="<?=$v->codigo?>"
                                                 LjId="<?=$v->id?>"
                                                 valor="<?=$valores->deliveryFee?>"
-                                                class="valor_frete opcLoja list-group-item d-flex justify-content-between align-items-center">
+                                                class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
