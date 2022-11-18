@@ -131,7 +131,7 @@
 
 <!-- Informativo de pedidos ativos -->
 
-<div class="alerta"></div>
+<!-- <div class="alerta"></div> Liberar este comentário para os alertas de pagamentos pendentes (PIX) -->
 
 <div class="topo"></div>
 

@@ -223,6 +223,7 @@ while ($m = mysqli_fetch_array($m_r)) {
     <?php
     $query = "select * from produtos where categoria = '{$d->codigo}' AND situacao = '1' AND deletado != '1'";
     $result = mysqli_query($con, $query);
+    $i=0;
     while ($p = mysqli_fetch_object($result)) {
 
         // $detalhes = json_decode($p->detalhes, true);
@@ -251,7 +252,14 @@ while ($m = mysqli_fetch_array($m_r)) {
         //     if ($val["quantidade"] > 0) {
 
                  list($valor,$decimal) = explode(".", $p->valor);
+        if($i%3 == 0){
+?>
+    <div promocao_frete style="width:100%; text-align:center; margin-bottom:30px;">
+        <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+    </div>
+<?php
 
+        }
     ?>
     <div
         acao_medida
@@ -281,7 +289,7 @@ while ($m = mysqli_fetch_array($m_r)) {
 
             //     }
             // }
-
+    $i++;
     }
     ?>
 </div>

@@ -1,12 +1,24 @@
 <?php
     include("../../../lib/includes.php");
 
-    VerificarVendaApp();
+    //Verificação loja aberta
+    date_default_timezone_set("America/Manaus");
+    $inicio = strtotime(date("Y-m-d 11:00:00"));
+    $final  = strtotime(date("Y-m-d 21:45:00"));
+    $agora = strtotime("NOW");
+    if($inicio <= $agora and $final >= $agora){
+
+    }else{
+        // exit();
+    }
+    //Verificação loja aberta
+
 
     if($_POST['acao'] == 'loja'){
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
 
+        if($_POST['LjCd'] > 0){
         $query = "update vendas set
                                     loja = '{$_POST['LjCd']}',
                                     taxa_entrega = '{$_POST['LjVl']}',
@@ -16,6 +28,7 @@
                                     valor = '{$_POST['valor']}',
                                     total = '{$total}'
                 where codigo = '{$_SESSION['AppVenda']}'";
+
         mysqli_query($con, $query);
 
 
@@ -36,11 +49,18 @@
         $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
         #############################################################################
 
-
-
+        echo json_encode(VerificarProdutos($_POST['LjCd']));
+        // echo json_encode(VerificarProdutos());
+        }else{
+            echo json_encode(['status' => true]);
+        }
         exit();
 
     }
+
+
+    VerificarVendaApp();
+
 
     $query = "select
                     sum(a.valor_total) as total,
@@ -141,6 +161,12 @@
 
     }
 
+    /* Frete Grátis */
+    .valor_frete{
+        text-decoration:line-through;
+    }
+
+
 </style>
 <div class="PedidoTopoTitulo">
     <h4>Pagar <?=$_SESSION['AppPedido']?></h4>
@@ -174,7 +200,7 @@
                                 <?php
                                 if(!$d->nome or !$d->telefone_confirmado){
                                 ?>
-                                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Dados Incompletos, atualize para fechar o seu pedido.</div>
+                                <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">Dados Incompletos, atualize para fechar o seu pedido.</div>
                                 <button class="ConfirmaTelefone btn btn-danger btn-block">Atualizar Cadastro</button>
                                 <?php
                                 }
@@ -215,7 +241,7 @@
                                 <?php
                                 if(!$coordenadas){
                                 ?>
-                                <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">Endereço Pendente de validação.</div>
+                                <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">Endereço Pendente de validação.</div>
                                 <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
                                 <?php
                                 }
@@ -227,7 +253,7 @@
                             <?php
                             }else{
                             ?>
-                            <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
+                            <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">
                                 Você não possui endereço cadastrado, utilize o linque abaixo para cadastrar seu(s) endereço(s).
                             </div>
                             <?php
@@ -251,7 +277,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="valor_freteXXX loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
@@ -265,9 +291,10 @@
                                         <?php
                                             $bee = new Bee;
                                             list($lat, $lng) = explode(",", $coordenadas);
-                                            $q = "select * from lojas where situacao = '1'";
+                                            $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
+                                            if(mysqli_num_rows($r)){
                                             while($v = mysqli_fetch_object($r)){
 
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
@@ -294,10 +321,16 @@
                                         <?php
                                                 }
                                             }
-
+                                        }
                                         ?>
                                         </ul>
                                     </div>
+
+
+                                    <div promocao_frete style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
+                                        <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+                                    </div>
+
                                 </div>
                             </div>
 
@@ -363,14 +396,14 @@
                 <div class="card-body" dadosValores
                             valor = '<?=$d->valor?>'
                             taxa = '0'
-                            desconto = '0'
+                            desconto = '<?=($vlopcXXX?:0)?>'
                             acrescimo = '0'
                 >
                     <?php
                     $pagar = true;
                     if(!$coordenadas or !$d->nome or !$d->telefone_confirmado){
                     ?>
-                    <div class="alertas animate__animated animate__fadeIn animate__infinite animate__slower">
+                    <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">
                         Você possui pendências em seu cadastro. Verifique as notificações acima e atualize seu cadastro para concluir seu pedido.
                     </div>
                     <?php
@@ -384,10 +417,10 @@
                     <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
 
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="s" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
-                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
+                        <button <?=(($pagar)?'pagar':'disabled')?> opc="pix" blq="s" class="btn btn-info btn-lg" captcha=""><i class="fa-brands fa-pix"></i> PIX</button>
                     </h5>
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
@@ -416,34 +449,61 @@
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
-        $(".loja").html(dados);
-        $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
+        // console.log(dados);
+        if(dados && dados != undefined){
+            $(".loja").html(dados);
+            $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
-        LjVl = lj.attr("valor");
-        LjCd = lj.attr("opc");
-        LjId = lj.attr("LjId");
-        valor = $("div[dadosValores]").attr('valor');
-        taxa = $("div[dadosValores]").attr('taxa');
-        desconto = $("div[dadosValores]").attr('desconto');
-        acrescimo = $("div[dadosValores]").attr('acrescimo');
+            LjVl = lj.attr("valor");
+            LjCd = lj.attr("opc");
+            LjId = lj.attr("LjId");
+            valor = $("div[dadosValores]").attr('valor');
+            taxa = $("div[dadosValores]").attr('taxa');
+            desconto = $("div[dadosValores]").attr('desconto');
+            acrescimo = $("div[dadosValores]").attr('acrescimo');
 
-        $.ajax({
-                url:"src/produtos/pagar.php",
-                type:"POST",
-                data:{
-                    LjVl,
-                    LjCd,
-                    LjId,
-                    valor,
-                    taxa,
-                    desconto,
-                    acrescimo,
-                    acao:'loja'
-                },
-                success:function(dados){
+            $.ajax({
+                    url:"src/produtos/pagar.php",
+                    type:"POST",
+                    dataType:"JSON",
+                    data:{
+                        LjVl,
+                        LjCd,
+                        LjId,
+                        valor,
+                        taxa,
+                        desconto,
+                        acrescimo,
+                        acao:'loja'
+                    },
+                    success:function(dados){
+                        console.log(dados);
+                        if(dados.status == false){
+                            $("button[blq]").attr("blq",'s');
+                            $.alert({
+                                content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
+                                title:false,
+                                type:'red',
+                                buttons:{
+                                    'ok':{
+                                        text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
+                                        btnClass:'btn btn-primary',
+                                        action:function(){
 
-                }
-        });
+                                        }
+                                    }
+                                }
+                            })
+                        }else{
+                            $("button[blq]").attr("blq",'n');
+                        }
+                    }
+            });
+        }else{
+            $(".loja").html('Lojas indisponíveis para entrega');
+            $('.loja').removeClass('list-group-item-info');
+            $('.loja').addClass('list-group-item-danger');
+        }
 
         $("#captcha").keyup(function(){
             captcha = $(this).val();
@@ -493,6 +553,7 @@
             $.ajax({
                 url:"src/produtos/pagar.php",
                 type:"POST",
+                dataType:"JSON",
                 data:{
                     LjVl,
                     LjCd,
@@ -504,7 +565,26 @@
                     acao:'loja'
                 },
                 success:function(dados){
+                    console.log(dados);
+                    if(dados.status == false){
+                        $("button[blq]").attr("blq",'s');
+                        $.alert({
+                            content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender. Itens de sua cesta de pedidos está em falta.</p><center>',
+                            title:false,
+                            type:'red',
+                            buttons:{
+                                'ok':{
+                                    text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
+                                    btnClass:'btn btn-primary',
+                                    action:function(){
 
+                                    }
+                                }
+                            }
+                        })
+                    }else{
+                        $("button[blq]").attr("blq",'n');
+                    }
                 }
             });
 
@@ -513,6 +593,25 @@
         $("button[pagar]").click(function(){
 
             captcha = $("h5[robo]").attr("captcha");
+            bloqueio = $(this).attr("blq");
+
+            if(bloqueio == 's'){
+                $.alert({
+                    content:'<center><h1><i class="fa-solid fa-face-sad-tear" style="font-size:80px; color:#ccc;"></i></h1><p>Infelizmente não iremos poder te atender.<br><b>- Itens de sua cesta de pedidos está em falta.</b><br><b>- Ou não temos lojas disponíveis para fazer sua entrega.</b></p><center>',
+                    title:false,
+                    type:'red',
+                    buttons:{
+                        'ok':{
+                            text:'<i class="fa-regular fa-thumbs-up"></i> Entendi',
+                            btnClass:'btn btn-primary',
+                            action:function(){
+
+                            }
+                        }
+                    }
+                })
+                return false;
+            }
 
             if(captcha == 'error') return false;
 

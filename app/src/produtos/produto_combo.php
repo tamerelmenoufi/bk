@@ -106,10 +106,11 @@
         background-position: center center;
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
-        background-color:#f5ebdc;
+        /*background-color:#f5ebdc;*/
         background-repeat:no-repeat;
         height:250px;
         position:fixed;
+        z-index:2;
     }
     .foto<?=$md5?> span[sabor]{
         position:absolute;
@@ -201,13 +202,13 @@
                                     top:-10%;
                                     width:300%;
                                     height:50%;
-                                    background-color:#EBF4F1;
+                                    background-color:#aa3a15;
                                     z-index:1;
                                     border-radius:100%;
-                                    background-image:url(<?=$caminho_sis?>/painel/combos/icon/<?= $p->icon ?>);
+                                    /*background-image:url(<?=$caminho_sis?>/painel/combos/icon/<?= $p->icon ?>);*/
                                     background-size:cover;
                                     background-position:center bottom;
-                                    opacity:0.3;
+                                    /*opacity:0.3;*/
                                     filter: blur(5px);
                                     text-align:center;
                                     ">

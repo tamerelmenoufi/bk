@@ -6,6 +6,10 @@ if (!isset($_SESSION['usuario'])) {
     header("Location: ./login");
 }
 
+if($_POST['conectividade_loja']) $_SESSION['conectividade_loja'] = $_POST['conectividade_loja'];
+if($_POST['conectividade_data']) $_SESSION['conectividade_data'] = $_POST['conectividade_data'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

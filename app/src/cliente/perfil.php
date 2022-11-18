@@ -12,7 +12,7 @@
         echo json_encode([
             'status' => true,
             'msg' => 'Dados salvo com sucesso',
-            'msg' => $_POST['nome'],
+            'nome' => $_POST['nome'],
         ]);
 
         exit();
@@ -50,7 +50,7 @@
 
                 <div class="form-group">
                     <label for="nome">
-                        Telefone
+                        Telefone*
                         <?php
                         if(!$c->telefone_confirmado){
                         ?>
@@ -63,17 +63,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="nome">Nome Completo</label>
+                    <label for="nome">Nome Completo*</label>
                     <input type="text" class="form-control form-control-lg" id="nome" placeholder="Seu Nome Completo" value="<?=$c->nome?>">
                 </div>
                 <div class="form-group">
-                    <label for="nome">CPF</label>
+                    <label for="nome">CPF*</label>
                     <input type="text" class="form-control form-control-lg" id="cpf" inputmode="numeric" placeholder="CPF" value="<?=$c->cpf?>">
                 </div>
                 <div class="form-group">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail*</label>
                     <input type="email" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="<?=$c->email?>">
                 </div>
+                <div style="padding:20px; text-align:right; color:#a1a1a1; font-size:10px; width:100%;"><b>* Dados Obrigatórios</b></div>
                 <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
 
@@ -89,7 +90,6 @@
             <?php
             }
             ?>
-
         </div>
     </div>
 </div>
@@ -105,7 +105,7 @@
 
             if(!nome || !email || !cpf){
                 $.alert({
-                    content:'Preencha os campos do formulário!',
+                    content:'Preencha os campos obrigatórios(*) no formulário!',
                     title:false,
                     type: "red",
                 });

@@ -5,6 +5,10 @@ include("../lib/includes.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
 $_POST = json_decode(file_get_contents('php://input'), true);
 
+$agora = date("Y-m-d H:i:s");
+
+mysqli_query($con, "UPDATE `lojas` SET ultima_conexao = '{$agora}' WHERE codigo = '{$_POST['loja']}'");
+
 $query = "select a.*, (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt from vendas a where a.deletado != '1' and a.situacao in ('p') and a.loja = '{$_POST['loja']}' and a.operadora_situacao = 'Approved'";
 $result = mysqli_query($con, $query);
 $p = 0;

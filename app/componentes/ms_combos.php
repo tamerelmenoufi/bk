@@ -116,8 +116,9 @@
 
 </style>
 
-<?php
 
+<?php
+$i=0;
 while ($p = mysqli_fetch_object($result) ) {
 
     $icone = "{$caminho_sis}/painel/combos/icon/{$p->icon}?{$md5}";
@@ -125,6 +126,7 @@ while ($p = mysqli_fetch_object($result) ) {
     $q = "select * from produtos where codigo in ({$p->descricao})";
     $r = mysqli_query($con, $q);
     $valor_total = 0;
+
     while($v = mysqli_fetch_object($r)){
 
         $valor_total =  $valor_total + $v->valor_combo;
@@ -151,6 +153,13 @@ while ($p = mysqli_fetch_object($result) ) {
 
             list($valor,$decimal) = explode(".", $valor_total);
 
+    if($i%3 == 0){
+?>
+<div promocao_frete style="width:100%; text-align:center; margin-bottom:20px;">
+    <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+</div>
+<?php
+    }
 ?>
     <div
         abrir_combo
@@ -169,6 +178,7 @@ while ($p = mysqli_fetch_object($result) ) {
 <?php
         // }
     // }
+    $i++;
 }
 ?>
 
