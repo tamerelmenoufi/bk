@@ -155,8 +155,8 @@ while ($p = mysqli_fetch_object($result) ) {
 
     if($i%3 == 0){
 ?>
-<div promocao_frete style="width:100%; text-align:center;">
-    <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:5px;" />
+<div promocao_frete style="width:100%; text-align:center; margin-bottom:20px;">
+    <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
 </div>
 <?php
     }
