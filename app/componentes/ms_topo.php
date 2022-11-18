@@ -24,6 +24,9 @@
     div[espaco]{
         margin-top:0px;
     }
+    div[promocao_frete]{
+        display:'none';
+    }
 </style>
 <div class="row">
     <div class="col-4">
