@@ -161,6 +161,12 @@
 
     }
 
+    /* Frete Grátis */
+    .valor_frete{
+        text-decoration:line-through;
+    }
+
+
 </style>
 <div class="PedidoTopoTitulo">
     <h4>Pagar <?=$_SESSION['AppPedido']?></h4>
@@ -306,7 +312,7 @@
                                                 opc="<?=$v->codigo?>"
                                                 LjId="<?=$v->id?>"
                                                 valor="<?=$valores->deliveryFee?>"
-                                                class="opcLoja list-group-item d-flex justify-content-between align-items-center">
+                                                class="valor_frete opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
