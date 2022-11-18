@@ -116,6 +116,12 @@
 
 </style>
 
+
+<div style="padding:10px; width:100%; text-align:center;">
+    <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%" />
+</div>
+
+
 <?php
 
 while ($p = mysqli_fetch_object($result) ) {
