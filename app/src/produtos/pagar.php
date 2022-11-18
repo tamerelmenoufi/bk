@@ -390,7 +390,7 @@
                 <div class="card-body" dadosValores
                             valor = '<?=$d->valor?>'
                             taxa = '0'
-                            desconto = '<?=$vlopcXXX?>'
+                            desconto = '<?=($vlopcXXX?:0)?>'
                             acrescimo = '0'
                 >
                     <?php
