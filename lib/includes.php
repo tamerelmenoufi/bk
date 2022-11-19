@@ -19,7 +19,7 @@ date_default_timezone_set("America/Manaus");
 $inicio = strtotime(date("Y-m-d 11:00:00"));
 $final  = strtotime(date("Y-m-d 21:00:00"));
 $agora = strtotime("NOW");
-if($inicio <= $agora and $final >= $agora){
+if($inicio <= $agora and $agora <= $final){
     $StatusApp = 'a';
 }else{
     $StatusApp = 'f';
