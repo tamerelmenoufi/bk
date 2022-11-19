@@ -420,7 +420,7 @@
                     }else{
                     ?>
                     <h5 class="card-title">
-                    <button disabled class="btn btn-danger btn-lg"><i class="fa-solid fa-door-closed"></i> LOJA FECHADA</button>
+                    <button disabled class="btn btn-danger btn-lg btn-block"><i class="fa-solid fa-door-closed"></i> LOJA FECHADA</button>
                     </h5>
                     <?php
                     }
