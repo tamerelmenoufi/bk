@@ -404,7 +404,7 @@
                     Total a Pagar:
                     <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0) ,2,',','.')?></h1>
                     <?php
-                    if($StatusApp = 'a'){
+                    if($StatusApp == 'a'){
                     ?>
                     <h5 class="card-title">
 
