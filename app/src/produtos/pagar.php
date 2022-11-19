@@ -274,7 +274,7 @@
                                         </ul>
                                     </div>
 
-                                    <div id="<?=(($StatusApp == 'f' and $promocao_taxa_zero)?'collapseOne':false)?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div id="<?=(($StatusApp == 'a' and !$promocao_taxa_zero)?'collapseOne':false)?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <ul class="list-group">
                                         <?php
                                             $bee = new Bee;
