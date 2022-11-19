@@ -28,6 +28,7 @@ if($inicio <= $agora and $agora <= $final){
 
 //Promoção sem taxa de entrega
 $ini = mktime(0,0,0,11,19,2022);
+$ini = mktime(21,16,0,11,18,2022);
 $fim = mktime(23,59,59,11,20,2022);
 $now = mktime(date("H"),date("i"),date("s"),date("m"),date("d"),date("Y"));
 if($ini <= $now and $now <= $fim){
