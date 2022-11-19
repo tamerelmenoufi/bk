@@ -275,7 +275,7 @@
                                     </div>
 
                                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                                        <ul class="list-group">
+                                        <ul class="list-groupXXX">
                                         <?php
                                             $bee = new Bee;
                                             list($lat, $lng) = explode(",", $coordenadas);
