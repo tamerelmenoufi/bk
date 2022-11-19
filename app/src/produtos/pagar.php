@@ -265,7 +265,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="<?=(($promocao_taxa_zero)?'valor_frete':false)?> loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="<?=(($promocao_taxa_zero and $StatusApp == 'a')?'valor_frete':false)?> loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
