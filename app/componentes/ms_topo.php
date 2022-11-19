@@ -25,7 +25,7 @@
         margin-top:0px;
     }
     div[promocao_frete]{
-        display:none;
+        display:<?=(($promocao_taxa_zero)?'block':'none')?>;
     }
 </style>
 <div class="row">

@@ -1,18 +1,6 @@
 <?php
     include("../../../lib/includes.php");
 
-    //Verificação loja aberta
-    date_default_timezone_set("America/Manaus");
-    $inicio = strtotime(date("Y-m-d 11:00:00"));
-    $final  = strtotime(date("Y-m-d 21:45:00"));
-    $agora = strtotime("NOW");
-    if($inicio <= $agora and $final >= $agora){
-
-    }else{
-        // exit();
-    }
-    //Verificação loja aberta
-
 
     if($_POST['acao'] == 'loja'){
 
@@ -277,7 +265,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="valor_freteXXX loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="<?=(($promocao_taxa_zero)?'valor_frete':false)?> loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
@@ -396,7 +384,7 @@
                 <div class="card-body" dadosValores
                             valor = '<?=$d->valor?>'
                             taxa = '0'
-                            desconto = '<?=($vlopcXXX?:0)?>'
+                            desconto = '<?=(($promocao_taxa_zero)?$vlopc:0)?>'
                             acrescimo = '0'
                 >
                     <?php
@@ -414,9 +402,12 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
-
+                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0) ,2,',','.')?></h1>
+                    <?php
+                    if($StatusApp = 'a'){
+                    ?>
                     <h5 class="card-title">
+
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="s" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
@@ -425,6 +416,15 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
                     </h5> -->
+                    <?php
+                    }else{
+                    ?>
+                    <h5 class="card-title">
+                    <button disabled class="btn btn-danger btn-lg"><i class="fa-solid fa-door-closed"></i> LOJA FECHADA</button>
+                    </h5>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
