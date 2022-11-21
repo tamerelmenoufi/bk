@@ -9,7 +9,7 @@ $query = "SELECT
                 a.*,
                 b.categoria,
                 b.descricao,
-                c.categoria as nome_categoria,
+                concat(c.prefixo,' ',c.categoria) as nome_categoria,
                 v.situacao,
                 v.SEARCHING,
                 v.GOING_TO_ORIGIN,
