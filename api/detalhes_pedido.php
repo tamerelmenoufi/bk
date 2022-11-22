@@ -7,7 +7,7 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 
 $query = "SELECT
                 a.*,
-                concat( a.produto_nome, ' (', a.quantidade ,' x ', a.valor_unitario , ' = ' , a.valor_total, ') ' ) as produto_nome,
+                concat( a.produto_nome, ' [', a.quantidade ,' x R$', a.valor_unitario , ' = R$' , a.valor_total, '] ' ) as produto_nome,
                 b.categoria,
                 b.descricao,
                 concat(c.prefixo,' ',c.categoria) as nome_categoria,
