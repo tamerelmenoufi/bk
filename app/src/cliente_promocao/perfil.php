@@ -13,11 +13,24 @@
                                         data_promocao = NOW()";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
+        }else{
+
+            $query = "update clientes set
+                                    nome = '{$_POST['nome']}',
+                                    email = '{$_POST['email']}',
+                                    cpf = '{$_POST['cpf']}',
+                                    data_promocao = NOW()/*,
+                                    telefone_confirmado = '1'*/
+                                where telefone = '{$_POST['telefone']}'";
+            mysqli_query($con, $query);
+
         }
         $num = trim($_POST['telefone']);
         $msg = "*BKManaus Informa*: Parabéns, você está participando da promoção *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
+
+
 
         echo json_encode([
             'status' => true,
