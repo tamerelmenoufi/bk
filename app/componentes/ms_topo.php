@@ -27,6 +27,7 @@
     div[promocao_frete]{
         display:<?=(($promocao_taxa_zero)?'block':'none')?>;
         cursor:pointer;
+        opacity:0;
     }
 </style>
 <div class="row">
@@ -79,7 +80,20 @@
             }*/
         ?>
         $(document).on('click', 'div[promocao_frete]', function(){
-            $.alert('Inicío da promoção dia 24/12/2022!');
+
+            Carregando();
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:"src/cliente_promocao/perfil.php",
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
+
         })
 
     })

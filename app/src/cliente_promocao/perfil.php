@@ -15,7 +15,7 @@
             $cod = mysqli_insert_id($con);
         }
         $num = trim($_POST['telefone']);
-        $msg = "BKManaus Informa: Parabéns, você está participando da promoção #EUTÔNABKMANAUS. Sua senha de participação é: *{$cod}*";
+        $msg = "BKManaus Informa: Parabéns, você está participando da promoção #EUTONABKMANAUS. Sua senha de participação é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
@@ -51,7 +51,10 @@
 
 </style>
 <div class="PedidoTopoTitulo">
-    <h4>Perfil do Cliente</h4>
+    <h4>Promoção #EUTONABKMANAUS</h4>
+    <div promocao_frete style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
+        <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+    </div>
 </div>
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
@@ -83,6 +86,8 @@
 </div>
 <script>
     $(function(){
+
+        Carregando('none');
 
         $("#telefone").mask("(99) 9 9999-9999");
         $("#cpf").mask("999.999.999-99");
