@@ -52,13 +52,13 @@
 </style>
 <div class="PedidoTopoTitulo">
     <h4>Promoção #EUTONABKMANAUS</h4>
-    <div style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
-        <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
-    </div>
 </div>
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
             <div class="col-12">
+                <div style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
+                    <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+                </div>
 
                 <div class="form-group">
                     <label for="nome">Telefone*</label>
