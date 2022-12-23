@@ -15,7 +15,7 @@
             $cod = mysqli_insert_id($con);
         }
         $num = trim($_POST['telefone']);
-        $msg = "BKManaus Informa: Parabéns, você está participando da promoção *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
+        $msg = "*BKManaus Informa*: Parabéns, você está participando da promoção *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
