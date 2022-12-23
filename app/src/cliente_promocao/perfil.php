@@ -62,7 +62,7 @@
 
                 <div class="form-group">
                     <label for="nome">Telefone*</label>
-                    <input type="telefone" class="form-control form-control-lg" id="telefone" placeholder="Seu telefone WhatsAPp" value="">
+                    <input type="telefone" class="form-control form-control-lg" id="telefone" placeholder="Seu telefone WhatsApp" value="">
                 </div>
 
                 <div class="form-group">
