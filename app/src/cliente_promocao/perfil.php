@@ -15,7 +15,7 @@
             $cod = mysqli_insert_id($con);
         }
         $num = trim($_POST['telefone']);
-        $msg = "BKManaus Informa: Parabéns, você está participando da promoção #EUTONABKMANAUS. Sua senha de participação é: *{$cod}*";
+        $msg = "BKManaus Informa: Parabéns, você está participando da promoção *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
@@ -89,7 +89,7 @@
 
         Carregando('none');
 
-        $("#telefone").mask("(99) 9 9999-9999");
+        $("#telefone").mask("(99) 99999-9999");
         $("#cpf").mask("999.999.999-99");
 
         $("button[SalvarDados]").click(function(){
