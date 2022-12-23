@@ -31,8 +31,6 @@
 
         $result = EnviarWapp($num,$msg);
 
-
-
         echo json_encode([
             'status' => true,
             'msg' => 'Dados salvo com sucesso',
