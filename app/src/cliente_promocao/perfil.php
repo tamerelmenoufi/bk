@@ -70,7 +70,7 @@
     <div class="row">
             <div class="col-12">
                 <div style="width:100%; text-align:center;bottom margin-top:30px; margin-top:10px;">
-                    <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+                    <img src="img/promocao_sorteio.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
                 </div>
 
                 <div class="form-group">
