@@ -80,7 +80,7 @@
         ?>
 
 
-        $(".promocao_frete").click(function(){
+        $(document).on('click',function(){
             $.alert('Inicío da promoção dia 24/12/2022!');
         })
 
