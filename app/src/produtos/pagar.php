@@ -150,7 +150,7 @@
     }
 
     /* Frete Grátis */
-    .valor_frete{
+    .valor_freteXX{
         text-decoration:line-through;
     }
 
