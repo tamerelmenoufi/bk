@@ -25,6 +25,7 @@
             mysqli_query($con, $query);
 
         }
+        $cod = str_pad($cod , 4 , '0' , STR_PAD_LEFT);
         $num = trim($_POST['telefone']);
         $msg = "*BKManaus Informa*: Parabéns, você está participando da promoção *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
 
@@ -64,7 +65,7 @@
 
 </style>
 <div class="PedidoTopoTitulo">
-    <h4>Promoção #EUTONABKMANAUS</h4>
+    <h4>#EUTONABKMANAUS</h4>
 </div>
 <div class="col" style="margin-bottom:60px;">
     <div class="row">
