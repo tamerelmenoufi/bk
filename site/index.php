@@ -210,6 +210,7 @@
     <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
+    
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
