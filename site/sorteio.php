@@ -101,7 +101,7 @@ if($_GET['s']){
     mysqli_query($con, "update clientes set sorteio = '1', sorteio_data = NOW() where codigo = '{$sorteio->codigo}'");
 
 }
-    if($n == 3){
+    if($n < 3){
 ?>
     <br><br><br><br>
     <a href="?s=1" class="btn btn-success btn-lg" style="width:50%; text-align:center">SORTEAR</a>
