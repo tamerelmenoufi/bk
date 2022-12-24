@@ -26,10 +26,10 @@
 <li>Na mensagem enviada será informado o número de participação no sorteio;</li>
 <li>Os sorteados deverão comprovar em qualquer uma das lojas BKMANAUS, o seu nome completo, número de telefone WhatsApp e o código fornecido na inscrição.</li>
 </p>
-<p>Boa Sorte</p>
+<p><b>Boa Sorte</b></p>
 
 <p style="text-align:center">
-    <button class="btn btn-primary aceito_termos">Aceito</button>
+    <button class="btn btn-primary btn-lg aceito_termos">Aceito</button>
 </p>
 </div>
 
