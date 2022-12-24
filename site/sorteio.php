@@ -56,15 +56,6 @@
 
     list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes where data_promocao like '%2022-12-23%'"));
 
-
-    if($_GET['s']){
-
-        $sorteio = mysqli_fetch_object(mysqli_query($con, "select * from clientes where data_promocao like '%2022-12-23%' and sorteio != '1' order by rand() limit 1"));
-
-        mysqli_query($con, "update clientes set sorteio = '1', sorteio_data = NOW() where codigo = '{$sorteio->codigo}'");
-
-    }
-
 ?>
 
 <center>
@@ -133,23 +124,6 @@ if($_GET['s']){
 
   <script>
     $(function(){
-      $(".produtos_detalhes").click(function(){
-        codigo = $(this).attr("codigo");
-        descricao = $(this).attr("descricao");
-        $.ajax({
-          url:"src/produtos/lista.php",
-          type:"POST",
-          data:{
-            codigo,
-            descricao,
-          },
-          success:function(dados){
-            $(".popup").html(dados); //lin
-            $(".popup").css("display","block");
-            $("body").css("overflow","hidden");
-          }
-        });
-      })
 
     })
   </script>
