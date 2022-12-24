@@ -68,7 +68,7 @@
 ?>
 
 <center>
-    <br><br><br><br>
+    <br>
     <h1><span style="font-size:100px;"><?=$qt?></span> CADASTROS</h1>
 
     <?php
@@ -110,7 +110,7 @@ if($_GET['s']){
 }
     if($n < 3){
 ?>
-    <br><br><br><br>
+    <br><br>
     <a href="?s=1" class="btn btn-success btn-lg" style="width:50%; text-align:center">SORTEAR</a>
 <?php
     }
