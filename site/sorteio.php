@@ -54,7 +54,7 @@
 
 <?php
 
-    list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes where data_promocao like '%2022-12-23%'"));
+    list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes where (data_promocao like '%2022-12-23%' or data_promocao like '%2022-12-24%')"));
 
 ?>
 
@@ -64,7 +64,7 @@
 
     <?php
 
-    $query = "select * from clientes where sorteio = '1' and data_promocao like '%2022-12-23%' order by sorteio_data asc";
+    $query = "select * from clientes where sorteio = '1' and (data_promocao like '%2022-12-23%' or data_promocao like '%2022-12-24%') order by sorteio_data asc";
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
     if($n){
@@ -84,12 +84,12 @@
         echo '</div>';
     }
 
-list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes where data_promocao like '%2022-12-23%'"));
+list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes where (data_promocao like '%2022-12-23%' or data_promocao like '%2022-12-24%')"));
 
 
 if($_GET['s']){
 
-    $q = "select * from clientes where data_promocao like '%2022-12-23%' and sorteio != '1' order by rand() limit 1";
+    $q = "select * from clientes where (data_promocao like '%2022-12-23%' or data_promocao like '%2022-12-24%') and sorteio != '1' order by rand() limit 1";
     $sorteio = mysqli_fetch_object(mysqli_query($con, $q));
 
     $q = "update clientes set sorteio = '1', sorteio_data = NOW() where codigo = '{$sorteio->codigo}'";
