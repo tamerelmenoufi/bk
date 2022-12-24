@@ -152,11 +152,11 @@
   <div class="carousel-inner">
     <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-      <img src="assets/img/banners/md2.jpg" class="d-block w-100" alt="...">
+      <img src="assets/img/BK1.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
-    <div class="carousel-item">
+<div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
       </a>
@@ -201,16 +201,16 @@
   <div class="carousel-inner">
     <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-      <img src="assets/img/banners/md1.jpg" class="d-block w-100" alt="...">
+      <img src="assets/img/BK2.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
-
-    <div class="carousel-item">
+ <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
+    
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
