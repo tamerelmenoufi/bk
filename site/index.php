@@ -150,13 +150,14 @@
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
+
     <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/BK1.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
-<div class="carousel-item">
+    <!-- <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
       </a>
@@ -169,16 +170,12 @@
       </a>
     </div>
 
-   
+
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/bkbanner7.jpg" class="d-block w-100" alt="...">
       </a>
-    </div>
-    
-   
-    
-
+    </div> -->
 
 
 
@@ -210,7 +207,7 @@
     <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-    
+
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -218,7 +215,7 @@
       </a>
     </div>
 
-   
+
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -226,8 +223,8 @@
       </a>
     </div>
 
-    
-    
+
+
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -784,7 +781,7 @@
                 <a href="#" class="stretched-link">
                   <h3 style="margin-top:22px"><?=$d->categoria?></h3>
                 </a>
-                
+
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -889,13 +886,13 @@
     <!-- ======= Testimonials Section ======= -->
     <div id="pedido" class="">
       <div class="d-none d-md-block ">
-      <a target="_blank" href="http://bk.mohatron.com/app/"> 
+      <a target="_blank" href="http://bk.mohatron.com/app/">
       <img src="assets/img/banners/bn1.png" alt="" style="width:100% !important;" >
       </a>
       </div>
 
       <div class="d-block d-sm-none">
-        <a target="_blank" href="http://bk.mohatron.com/app/"> 
+        <a target="_blank" href="http://bk.mohatron.com/app/">
       <img src="assets/img/banners/bn2.jpg" alt="" style="width:100% !important;" >
       </a>
     </div>
@@ -1453,7 +1450,7 @@
 
               </div>
               <div class="member-info text-center">
-               
+
                 <!-- <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
