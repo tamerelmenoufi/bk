@@ -73,7 +73,7 @@
 
     <?php
 
-    echo $query = "select * from clientes where sorteio = '1' and data_promocao like '%2022-12-23%' order by sorteio_data asc";
+    $query = "select * from clientes where sorteio = '1' and data_promocao like '%2022-12-23%' order by sorteio_data asc";
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
     if($n){
@@ -98,11 +98,14 @@ list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes w
 
 if($_GET['s']){
 
-    echo $q = "select * from clientes where data_promocao like '%2022-12-23%' and sorteio != '1' order by rand() limit 1";
+    $q = "select * from clientes where data_promocao like '%2022-12-23%' and sorteio != '1' order by rand() limit 1";
     $sorteio = mysqli_fetch_object(mysqli_query($con, $q));
 
-    echo $q = "update clientes set sorteio = '1', sorteio_data = NOW() where codigo = '{$sorteio->codigo}'";
+    $q = "update clientes set sorteio = '1', sorteio_data = NOW() where codigo = '{$sorteio->codigo}'";
     mysqli_query($con, $q);
+
+    echo "<script>window.location.href='./sorteio.php'</script>";
+    exit();
 
 }
     if($n < 3){
