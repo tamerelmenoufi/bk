@@ -93,10 +93,10 @@ if($_GET['s']){
     $sorteio = mysqli_fetch_object(mysqli_query($con, $q));
 
     $q = "update clientes set sorteio = '1', sorteio_data = NOW() where codigo = '{$sorteio->codigo}'";
-    mysqli_query($con, $q);
+    // mysqli_query($con, $q);
 
-    $msg = "*BKManaus Informa*: Parabéns, VC FOI SORTEADO(A) *#EUTONABKMANAUS*.";
-    $result = EnviarWapp($sorteio->telefone,$msg);
+    $msg = "*BKManaus Informa*: Parabéns {$sorteio->nome}, VC FOI SORTEADO(A) *#EUTONABKMANAUS*.";
+    // $result = EnviarWapp($sorteio->telefone,$msg);
     $result = EnviarWapp('92991886570',$msg);
 
     echo "<script>window.location.href='./sorteio.php'</script>";
