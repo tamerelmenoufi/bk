@@ -110,9 +110,9 @@
             // email = $("#email").val();
             // cpf = $("#cpf").val();
 
-            if(!telefone || !nome /*|| !email || !cpf*/){
+            if(!telefone || telefone.length != 15 || !nome  /*|| !email || !cpf*/){
                 $.alert({
-                    content:'Preencha os campos obrigatórios(*) no formulário!',
+                    content:'Preencha ou confira os campos obrigatórios(*) no formulário!',
                     title:false,
                     type: "red",
                 });
