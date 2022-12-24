@@ -73,7 +73,7 @@
 
     <?php
 
-    echo $query = "select * from clientes where sorteio = '1' and data like '%2022-12-23%' order by sorteio_data asc";
+    echo $query = "select * from clientes where sorteio = '1' and data_promocao like '%2022-12-23%' order by sorteio_data asc";
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
     if($n){
