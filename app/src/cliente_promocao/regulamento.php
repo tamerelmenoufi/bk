@@ -15,16 +15,16 @@
 <div class="PedidoTopoTitulo">
     <h4>Regulamento</h4>
 </div>
-<h4>Campanha: #EUTONABKMANAUS</h4>
+<h6>Campanha: #EUTONABKMANAUS</h6>
 
 <p>
-<li>Participe do Sorteio para concorrer a 6 (seis) COMBOS WHOPPER/Q por semana;</li><br>
-<li>Os sorteios serão divulgados em eventos/shows e postagens nas mídias sociais;</li><br>
-<li>A campanha atual terá validade até o dia 24 de dezembro de 2022;</li><br>
-<li>Os participantes devem informar o nome completo e o número de telefone WhatsApp;</li><br>
-<li>A confirmação do cadastro será enviada em forma de mensagem no WhatsApp cadastrado;</li><br>
-<li>Na mensagem enviada será informado o número de participação no sorteio;</li><br>
-<li>Os sorteados deverão comprovar em qualquer uma das lojas BKMANAUS, o seu nome completo, número de telefone WhatsApp e o código fornecido na inscrição.</li><br>
+<li>Participe do Sorteio para concorrer a 6 (seis) COMBOS WHOPPER/Q por semana;</li>
+<li>Os sorteios serão divulgados em eventos/shows e postagens nas mídias sociais;</li>
+<li>A campanha atual terá validade até o dia 24 de dezembro de 2022;</li>
+<li>Os participantes devem informar o nome completo e o número de telefone WhatsApp;</li>
+<li>A confirmação do cadastro será enviada em forma de mensagem no WhatsApp cadastrado;</li>
+<li>Na mensagem enviada será informado o número de participação no sorteio;</li>
+<li>Os sorteados deverão comprovar em qualquer uma das lojas BKMANAUS, o seu nome completo, número de telefone WhatsApp e o código fornecido na inscrição.</li>
 </p>
 <p>Boa Sorte</p>
 
