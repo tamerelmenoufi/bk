@@ -77,6 +77,7 @@
     $result = mysqli_query($con, $query);
     $n = mysqli_num_rows($result);
     if($n){
+        echo "<div class='m-3 p-3'>";
         echo "<h1>SORTEADOS</h1>";
         echo '<ul class="list-group">';
     while($d = mysqli_fetch_object($result)){
@@ -89,6 +90,7 @@
 <?php
     }
         echo '</ul>';
+        echo '</div>';
     }
 
 list($qt) = mysqli_fetch_row(mysqli_query($con, "select count(*) from clientes where data_promocao like '%2022-12-23%'"));
