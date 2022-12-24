@@ -255,7 +255,7 @@ while ($m = mysqli_fetch_array($m_r)) {
         if($i%3 == 0){
 ?>
     <div promocao_frete style="width:100%; text-align:center; margin-bottom:30px;">
-        <img src="img/promocao_sorteios.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+        <img src="img/bk_sorteios.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
     </div>
 <?php
 
