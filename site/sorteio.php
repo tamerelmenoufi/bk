@@ -99,8 +99,6 @@ if($_GET['s']){
     $result = EnviarWapp($sorteio->telefone,$msg);
     $result = EnviarWapp('92991886570',$msg);
 
-
-
     echo "<script>window.location.href='./sorteio.php'</script>";
     exit();
 
