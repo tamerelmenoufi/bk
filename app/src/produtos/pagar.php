@@ -1,18 +1,6 @@
 <?php
     include("../../../lib/includes.php");
 
-    //Verificação loja aberta
-    date_default_timezone_set("America/Manaus");
-    $inicio = strtotime(date("Y-m-d 11:00:00"));
-    $final  = strtotime(date("Y-m-d 21:45:00"));
-    $agora = strtotime("NOW");
-    if($inicio <= $agora and $final >= $agora){
-
-    }else{
-        // exit();
-    }
-    //Verificação loja aberta
-
 
     if($_POST['acao'] == 'loja'){
 
@@ -162,7 +150,7 @@
     }
 
     /* Frete Grátis */
-    .valor_frete{
+    .valor_freteXX{
         text-decoration:line-through;
     }
 
@@ -277,7 +265,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="valor_freteXXX loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="<?=((/*$promocao_taxa_zero and*/ $StatusApp == 'a')?'valor_frete':false)?> loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
@@ -286,12 +274,12 @@
                                         </ul>
                                     </div>
 
-                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div id="<?=(($StatusApp == 'a'/* and !$promocao_taxa_zero*/)?'collapseOne':false)?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <ul class="list-group">
                                         <?php
                                             $bee = new Bee;
                                             list($lat, $lng) = explode(",", $coordenadas);
-                                            $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1'";
+                                            $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
                                             if(mysqli_num_rows($r)){
@@ -328,7 +316,7 @@
 
 
                                     <div promocao_frete style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
-                                        <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+                                        <img src="img/promocao_sorteios.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
                                     </div>
 
                                 </div>
@@ -396,7 +384,7 @@
                 <div class="card-body" dadosValores
                             valor = '<?=$d->valor?>'
                             taxa = '0'
-                            desconto = '<?=($vlopcXXX?:0)?>'
+                            desconto = '<?=/*(($promocao_taxa_zero)?$vlopc:0)*/$vlopc?>'
                             acrescimo = '0'
                 >
                     <?php
@@ -414,9 +402,12 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->valor + $vlopc,2,',','.')?></h1>
-
+                    <h1>R$ <?=number_format($d->valor + /*((!$promocao_taxa_zero)?$vlopc:0)*/$vlopc ,2,',','.')?></h1>
+                    <?php
+                    if($StatusApp == 'a'){
+                    ?>
                     <h5 class="card-title">
+
                         <button <?=(($pagar)?'pagar':'disabled')?> opc="credito" blq="s" class="btn btn-info btn-lg" tentativas="<?=$d->tentativas_pagamento?>" captcha=""><i class="fa-solid fa-credit-card"></i> Cartão</button>
                     </h5>
                     <h5 class="card-title">
@@ -425,6 +416,15 @@
                     <!-- <h5 class="card-title">
                         <a pagar opc="dinheiro" class="btn btn-danger btn-lg"><i class="fa-solid fa-money-bill-1"></i> Dinheiro</a>
                     </h5> -->
+                    <?php
+                    }else{
+                    ?>
+                    <h5 class="card-title">
+                    <button disabled class="btn btn-danger btn-lg btn-block"><i class="fa-solid fa-door-closed"></i> LOJA FECHADA</button>
+                    </h5>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

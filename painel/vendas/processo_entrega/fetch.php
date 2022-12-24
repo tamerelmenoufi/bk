@@ -1,7 +1,7 @@
 <?php
 include("../../../lib/includes.php");
 
-$situacao = "n";
+$situacao = "i";
 
 $column = [
     "codigo",

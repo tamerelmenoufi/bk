@@ -25,7 +25,9 @@
         margin-top:0px;
     }
     div[promocao_frete]{
-        display:none;
+        display:<?=(($promocao_taxa_zero)?'block':'none')?>;
+        cursor:pointer;
+        opacity:1;
     }
 </style>
 <div class="row">
@@ -77,6 +79,22 @@
         <?php
             }*/
         ?>
+        $(document).on('click', 'div[promocao_frete]', function(){
+
+            Carregando();
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:"src/cliente_promocao/perfil.php",
+                },
+                success:function(dados){
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
+
+        })
 
     })
 </script>

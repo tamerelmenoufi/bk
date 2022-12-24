@@ -104,6 +104,18 @@ if ($codigo) {
     </div>
     <div class="card-body">
         <form id="form-<?= $md5 ?>">
+
+            <div class="form-group">
+                <label for="prefixo">Prefixo</label>
+                <input
+                        type="text"
+                        class="form-control"
+                        id="prefixo"
+                        name="prefixo"
+                        value="<?= $d->prefixo; ?>"
+                >
+            </div>
+
             <div class="form-group">
                 <label for="categoria">Categoria <i class="text-danger">*</i></label>
                 <input
