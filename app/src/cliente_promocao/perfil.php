@@ -8,8 +8,8 @@
             $query = "insert into clientes set
                                         telefone = '{$_POST['telefone']}',
                                         nome = '{$_POST['nome']}',
-                                        email = '{$_POST['email']}',
-                                        cpf = '{$_POST['cpf']}',
+                                        /*email = '{$_POST['email']}',
+                                        cpf = '{$_POST['cpf']}',*/
                                         data_promocao = NOW()";
             mysqli_query($con, $query);
             $cod = mysqli_insert_id($con);
@@ -17,8 +17,8 @@
 
             $query = "update clientes set
                                     nome = '{$_POST['nome']}',
-                                    email = '{$_POST['email']}',
-                                    cpf = '{$_POST['cpf']}',
+                                    /*email = '{$_POST['email']}',
+                                    cpf = '{$_POST['cpf']}',*/
                                     data_promocao = NOW()/*,
                                     telefone_confirmado = '1'*/
                                 where telefone = '{$_POST['telefone']}'";
@@ -74,21 +74,21 @@
 
                 <div class="form-group">
                     <label for="nome">Telefone*</label>
-                    <input type="telefone" class="form-control form-control-lg" id="telefone" placeholder="Seu telefone WhatsApp" value="">
+                    <input type="telefone" autocomplete="off" class="form-control form-control-lg" id="telefone" placeholder="Seu telefone WhatsApp" value="">
                 </div>
 
                 <div class="form-group">
                     <label for="nome">Nome Completo*</label>
-                    <input type="text" class="form-control form-control-lg" id="nome" placeholder="Seu Nome Completo" value="">
+                    <input type="text" autocomplete="off" class="form-control form-control-lg" id="nome" placeholder="Seu Nome Completo" value="">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="nome">CPF*</label>
-                    <input type="text" class="form-control form-control-lg" id="cpf" inputmode="numeric" placeholder="CPF" value="">
+                    <input type="text" autocomplete="off" class="form-control form-control-lg" id="cpf" inputmode="numeric" placeholder="CPF" value="">
                 </div>
                 <div class="form-group">
                     <label for="email">E-mail*</label>
-                    <input type="email" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="">
-                </div>
+                    <input type="email" autocomplete="off" class="form-control form-control-lg" id="email" placeholder="seuemail@seudominio.com" value="">
+                </div> -->
                 <div style="padding:20px; text-align:right; color:#a1a1a1; font-size:10px; width:100%;"><b>* Dados Obrigatórios</b></div>
                 <button SalvarDados type="buttom" class="btn btn-secondary btn-lg">Salvar dados</button>
             </div>
@@ -107,10 +107,10 @@
         $("button[SalvarDados]").click(function(){
             telefone = $("#telefone").val();
             nome = $("#nome").val();
-            email = $("#email").val();
-            cpf = $("#cpf").val();
+            // email = $("#email").val();
+            // cpf = $("#cpf").val();
 
-            if(!telefone || !nome || !email || !cpf){
+            if(!telefone || !nome /*|| !email || !cpf*/){
                 $.alert({
                     content:'Preencha os campos obrigatórios(*) no formulário!',
                     title:false,
@@ -125,8 +125,8 @@
                 data:{
                     telefone,
                     nome,
-                    email,
-                    cpf,
+                    // email,
+                    // cpf,
                     acao:'salvar'
                 },
                 success:function(dados){
