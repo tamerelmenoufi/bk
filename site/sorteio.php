@@ -76,7 +76,7 @@
     <li class="list-group-item">
         <h4><?=str_pad($d->codigo , 4 , '0' , STR_PAD_LEFT);?></h4>
         <b><?=$d->nome?></b><br>
-        <?=substr($d->telefone,0,8).'****'.substr($d->telefone,-4)?><br><?=$d->telefone?>
+        <?=substr($d->telefone,0,8).'****'.substr($d->telefone,-4)?><br><?=$d->telefoneXX?>
     </li>
 <?php
     }
