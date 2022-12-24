@@ -157,7 +157,7 @@
       </a>
     </div> -->
 
-    <div class="carousel-item">
+    <div class="carousel-item active">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
       </a>
@@ -203,7 +203,7 @@
       </a>
     </div> -->
 
-    <div class="carousel-item">
+    <div class="carousel-item active">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
       </a>
