@@ -86,7 +86,7 @@
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
                 data:{
-                    local:"src/cliente_promocao/perfil.php",
+                    local:"src/cliente_promocao/regulamento.php",
                 },
                 success:function(dados){
                     $(".ms_corpo").append(dados);
