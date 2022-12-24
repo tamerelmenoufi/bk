@@ -24,7 +24,8 @@
 <li>Os participantes devem informar o nome completo e o número de telefone WhatsApp;</li>
 <li>A confirmação do cadastro será enviada em forma de mensagem no WhatsApp cadastrado;</li>
 <li>Na mensagem enviada será informado o número de participação no sorteio;</li>
-<li>Os sorteados deverão comprovar em qualquer uma das lojas BKMANAUS, o seu nome completo, número de telefone WhatsApp e o código fornecido na inscrição.</li>
+<li>Os sorteados deverão comprovar em qualquer uma das lojas BKMANAUS, o seu nome completo, número de telefone WhatsApp e o código fornecido na inscrição;</li>
+<li>Os sorteados poderão resgatar seus prêmios em até 7 (sete) dias corridos após a data da validade da campanha.</li>
 </p>
 <p><b>Boa Sorte</b></p>
 
