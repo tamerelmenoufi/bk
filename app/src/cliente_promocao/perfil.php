@@ -27,7 +27,7 @@
         }
         $cod = str_pad($cod , 4 , '0' , STR_PAD_LEFT);
         $num = trim($_POST['telefone']);
-        $msg = "*BKManaus Informa*: Parabéns, você está participando da promoção *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
+        $msg = "*BKManaus Informa*: Parabéns, você está participando do SORTEIO *#EUTONABKMANAUS*. Sua senha de participação é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
