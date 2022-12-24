@@ -30,7 +30,7 @@
 <p><b>Boa Sorte</b></p>
 
 <p style="text-align:center">
-    <button class="btn btn-primary btn-lg aceito_termos" style="width:100%; text-align:center;">Aceito</button>
+    <button class="btn btn-primary btn-lg aceito_termos" style="width:100%; text-align:center;"><i class="fa-solid fa-check-double"></i> Aceito</button>
 </p>
 </div>
 
