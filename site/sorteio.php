@@ -69,7 +69,7 @@
 
 <center>
     <br><br><br><br>
-    <h1><?=$qt?> CADASTROS</h1>
+    <h1><span style="font-size:25px;"><?=$qt?></span> CADASTROS</h1>
 
     <?php
 
