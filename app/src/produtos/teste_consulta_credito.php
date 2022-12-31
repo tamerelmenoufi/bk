@@ -5,10 +5,12 @@
 
     require "../../../lib/vendor/rede/Consulta.php";
 
-    echo $retorno;
+    echo "<pre>".$retorno."</pre>";
 
     echo "<hr>";
 
     $r = json_decode($retorno);
 
+    echo "<pre>";
     var_dump($r);
+    echo "</pre>";
