@@ -265,7 +265,7 @@
                                 <div class="card">
                                     <div id="headingOne">
                                         <ul class="list-group">
-                                            <li class="<?=((/*$promocao_taxa_zero and*/ $StatusApp == 'a')?'valor_frete':false)?> loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <li class="<?=(($promocao_taxa_zero and $StatusApp == 'a')?'valor_frete':false)?> loja list-group-item d-flex justify-content-between align-items-center list-group-item-info" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                                 <small></small>
                                                 <span class="badge badge-pill">
                                                     <small></small>
@@ -274,7 +274,7 @@
                                         </ul>
                                     </div>
 
-                                    <div id="<?=(($StatusApp == 'a'/* and !$promocao_taxa_zero*/)?'collapseOne':false)?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div id="<?=(($StatusApp == 'a' and !$promocao_taxa_zero)?'collapseOne':false)?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <ul class="list-group">
                                         <?php
                                             $bee = new Bee;
@@ -316,7 +316,7 @@
 
 
                                     <div promocao_frete style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
-                                        <img src="img/bk_sorteios.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
+                                        <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
                                     </div>
 
                                 </div>
@@ -402,7 +402,7 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->valor + /*((!$promocao_taxa_zero)?$vlopc:0)*/$vlopc ,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ ,2,',','.')?></h1>
                     <?php
                     if($StatusApp == 'a'){
                     ?>
