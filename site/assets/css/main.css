@@ -1182,7 +1182,7 @@ section {
     padding: 80px;
   }
   .onfocus .content .read-more:hover {
-    background: #4c332c;
+    background: #4c332c!important;
     padding-right: 19px;
 }
 }
@@ -1201,7 +1201,7 @@ section {
 .onfocus .content ul i {
   font-size: 20px;
   padding-right: 4px;
-  color: var(--color-primary);
+  color:#fdae0f!important;
 }
 .onfocus .content p:last-child {
   margin-bottom: 0;
