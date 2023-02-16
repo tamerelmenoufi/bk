@@ -264,7 +264,7 @@
 
 <!-- TESTE -->
 <!-- ======= On Focus Section ======= -->
-<section id="onfocus" class="onfocus">
+<!-- <section id="onfocus" class="onfocus">
       <div class="container-fluid p-0" data-aos="fade-up">
 
         <div class="row g-0">
@@ -289,7 +289,8 @@
         </div>
 
       </div>
-    </section><!-- End On Focus Section -->
+    </section> -->
+    <!-- End On Focus Section -->
 <!-- TESTE -->
 
 
