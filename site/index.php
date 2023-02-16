@@ -330,7 +330,7 @@
                 Periodo de 15 à 19 de Fevereiro 2023
               </p>
               <ul>
-                
+
               <p class="fst-italic">              
               Promoção disponivel para as lojas :
               </p>
@@ -339,7 +339,7 @@
                 <li><i class="bi bi-check-circle"></i>AV. DO TURISMO </li>
                 <li><i class="bi bi-check-circle"></i>STUDIO 5 </li>
               </ul>
-              <a href="#" class="read-more align-self-start"><span>Confira no App</span><i class="bi bi-arrow-right"></i></a>
+              <a href="http://bk.mohatron.com/app/" class="read-more align-self-start"><span>Confira no App</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
         </div>
