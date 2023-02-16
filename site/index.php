@@ -325,13 +325,13 @@
           </div>
           <div class="col-lg-6">
             <div class="content d-flex flex-column justify-content-center h-100">
-              <h3>OFERTA EXCLUSIVA</h3>
-              <p class="fst-italic">
+              <h3 style="font-size:50px;color: #fdae0f;font-family: Flame-Regular!important;text-shadow: 2px 2px #483737;">OFERTA EXCLUSIVA</h3>
+              <p style="text-align:center;font-size: 20px;color: #ffffff;text-shadow: 2px 2px #7c5858;border-bottom: 1px solid #ffffff4a;" class="fst-italic">
                 Periodo de 15 à 19 de Fevereiro 2023
               </p>
               <ul>
-              <p class="fst-italic">
-                Lojas :
+              <p class="fst-italic">              
+              Promoção disponivel para as lojas :
               </p>
                 <li><i class="bi bi-check-circle"></i>AV.JORN. UMBERTO CALDERARO</li>
                 <li><i class="bi bi-check-circle"></i>AV. DJALMA BATISTA</li>
