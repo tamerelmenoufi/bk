@@ -321,7 +321,7 @@
 
         <div class="row g-0">
           <div class="col-lg-6 video-play position-relative">
-            <a href="https://youtu.be/DyyLU2HVsRE" class="glightbox play-btn"></a>
+            <a href="https://youtube.com/shorts/y76A9hBnGoM?feature=share" class="glightbox play-btn"></a>
           </div>
           <div class="col-lg-6">
             <div class="content d-flex flex-column justify-content-center h-100">
