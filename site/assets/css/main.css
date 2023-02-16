@@ -1181,6 +1181,10 @@ section {
   .onfocus .content {
     padding: 80px;
   }
+  .onfocus .content .read-more:hover {
+    background: #4c332c;
+    padding-right: 19px;
+}
 }
 .onfocus .content h3 {
   font-weight: 600;
