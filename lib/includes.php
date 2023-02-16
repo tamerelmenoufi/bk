@@ -36,4 +36,4 @@ if($ini <= $now and $now <= $fim){
     $promocao_taxa_zero = false;
 }
 
-$promocao_taxa_zero = true;
+// $promocao_taxa_zero = true;
