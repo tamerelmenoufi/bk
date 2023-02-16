@@ -325,9 +325,20 @@
           </div>
           <div class="col-lg-6">
             <div class="content d-flex flex-column justify-content-center h-100">
-             
-            <img src="assets/img/banners/bks-celular.jpg" class="" alt="...">
-
+              <h3>OFERTA EXCLUSIVA</h3>
+              <p class="fst-italic">
+                Periodo de 15 à 19 de Fevereiro 2023
+              </p>
+              <ul>
+              <p class="fst-italic">
+                Lojas :
+              </p>
+                <li><i class="bi bi-check-circle"></i>AV.JORN. UMBERTO CALDERARO</li>
+                <li><i class="bi bi-check-circle"></i>AV. DJALMA BATISTA</li>
+                <li><i class="bi bi-check-circle"></i>AV. DO TURISMO </li>
+                <li><i class="bi bi-check-circle"></i>STUDIO 5 </li>
+              </ul>
+              <a href="#" class="read-more align-self-start"><span>Confira no App</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
         </div>
