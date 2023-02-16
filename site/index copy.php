@@ -145,7 +145,7 @@
     </div>
   </header><!-- End Header -->
 
-
+<!--
 <div class="d-none d-md-block">
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -157,6 +157,7 @@
       </a>
     </div>
 
+-->
 
     <!-- <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -185,7 +186,7 @@
     </div> -->
 
 
-
+<!--
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -198,7 +199,9 @@
 </div>
 
 </div>
+-->
 
+<!--
 <div class="d-block d-sm-none">
 
 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
@@ -209,6 +212,8 @@
       <img src="assets/img/bkmanaus4-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
+--->
+
 
      <!-- <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -237,7 +242,7 @@
       </a>
     </div> -->
 
-
+<!--
 
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
@@ -253,7 +258,7 @@
 </div>
 
 
-
+--->
 
 
 
