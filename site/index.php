@@ -1434,7 +1434,7 @@
                 'fachada' => 'vianorte.jpg',
               ],
               [
-                'nome' => 'Amazonas Shopping',
+                'nome' => 'Djalma Batista',
                 'endereco' => 'AV DJALMA BATISTA Nº 482 CD AMAZONAS SHOPPING LOJA 372 CEP: 69.050-902, PARQUE 10, MANAUS-AM',
                 'telefone' => '(92) 98438-8556',
                 'email' => 'ger.bkamazonas2@spgrupo.com',
