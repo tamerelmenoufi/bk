@@ -151,19 +151,19 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 
-    <div class="carousel-item active ">
+    <!-- <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/bkmanaus5-site.jpg" class="d-block w-100" alt="...">
       </a>
-    </div>
+    </div> -->
 
 
 
-    <!-- <div class="carousel-item active ">
+    <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/BK1.jpg" class="d-block w-100" alt="...">
       </a>
-    </div> -->
+    </div>
 
     <!-- <div class="carousel-item active">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -207,19 +207,19 @@
 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 
-  <div class="carousel-item active ">
+  <!-- <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/bkmanaus4-celular.jpg" class="d-block w-100" alt="...">
       </a>
-    </div>
+    </div> -->
 
 
 
-     <!-- <div class="carousel-item active ">
+     <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/BK2.jpg" class="d-block w-100" alt="...">
       </a>
-    </div> -->
+    </div>
 
     <!-- <div class="carousel-item active">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -314,7 +314,7 @@
 
         <div class="row g-0">
           <div class="col-lg-6 video-play position-relative">
-            <a href="https://youtu.be/kl3Pp4S3go8" class="glightbox play-btn"></a>
+            <a href="assets/videos/campanha.mp4" class="glightbox play-btn"></a>
           </div>
           <div class="col-lg-6">
             <div class="content d-flex flex-column justify-content-center h-100">
