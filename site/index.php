@@ -1311,7 +1311,7 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
-            <h4  class="">Navegue pelo nosso site</h4>
+            <h4 style="color:#fff"  class="">Navegue pelo nosso site</h4>
             <ul>
 
             <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
@@ -1346,8 +1346,8 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4  class="">Siga-nos nas redes sociais e fique atento as nossas promoções.</h4>
-            <p >Tenha em mãos nossos serviços, com o link da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <h4 style="color:#fff"  class="">Siga-nos nas redes sociais e fique atento as nossas promoções.</h4>
+            <p style="color:#fff" >Tenha em mãos nossos serviços, com o link da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
             <a target:_blank="" style="font-family:Flame-Regular;font-size:23px" href="https://app.bkmanaus.com.br/">https://app.bkmanaus.com.br/</a>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
@@ -1363,10 +1363,10 @@
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
-          <div class="copyright">
+          <div style="color:#fff" class="copyright">
             &copy; Copyright <strong><span>BKManaus</span></strong>. Todos os direitos reservados.
           </div>
-          <div class="credits">
+          <div style="color:#fff" class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->
