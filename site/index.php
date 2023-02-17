@@ -1313,11 +1313,22 @@
           <div class="col-lg-4 col-md-6 footer-links">
             <h4  class="">Navegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#">Principal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#servicos">Serviços</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#pedido">Fazer Pedido</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#lojas">Lojas</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#contato">Fale Conosco</a></li>
+
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" href="#">Principal</a></h4></li>
+            
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" href="#servicos">Serviços</a></h4></li>
+
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" href="#pedido">Fazer Pedido</a></h4></li>
+           
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" href="#lojas">Lojas</a></h4></li>
+
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" href="#contato">Fale Conosco</a></h4></li>
+
             </ul>
           </div>
 
