@@ -171,13 +171,13 @@
       </a>
     </div>
 
-<!--
+
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-    <img src="assets/img/banners/banner3.jpg" class="d-block w-100" alt="...">
+    <img src="assets/img/banners/bkcomer.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-
+<!--
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -221,13 +221,13 @@
       </a>
     </div>
 
-    <!-- <div class="carousel-item active">
+    <div class="carousel-item ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-    <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
+    <img src="assets/img/banners/bkcomer-celular.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
-
+<!--
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/banner3-celular.jpg" class="d-block w-100" alt="...">
