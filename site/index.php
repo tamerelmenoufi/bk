@@ -217,7 +217,7 @@
 
     <div class="carousel-item ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-      <img src="assets/img/banners/bksorvete-celular.jpg" class="d-block w-100" alt="...">
+      <img src="assets/img/banners/bksorvete-celulr.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
