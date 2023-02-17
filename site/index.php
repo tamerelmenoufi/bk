@@ -1315,19 +1315,19 @@
             <ul>
 
             <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
-            <i class="bi bi-chevron-right"></i> <a class="" href="#">Principal</a></h4></li>
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#">Principal</a></h4></li>
             
             <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
-            <i class="bi bi-chevron-right"></i> <a class="" href="#servicos">Serviços</a></h4></li>
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#servicos">Serviços</a></h4></li>
 
             <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
-            <i class="bi bi-chevron-right"></i> <a class="" href="#pedido">Fazer Pedido</a></h4></li>
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#pedido">Fazer Pedido</a></h4></li>
            
             <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
-            <i class="bi bi-chevron-right"></i> <a class="" href="#lojas">Lojas</a></h4></li>
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#lojas">Lojas</a></h4></li>
 
             <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
-            <i class="bi bi-chevron-right"></i> <a class="" href="#contato">Fale Conosco</a></h4></li>
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#contato">Fale Conosco</a></h4></li>
 
             </ul>
           </div>
