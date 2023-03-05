@@ -161,23 +161,23 @@
 
     <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-      <img src="assets/img/BK1.jpg" class="d-block w-100" alt="...">
+      <img src="assets/img/banners/bkcarnaval.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
-    <!-- <div class="carousel-item active">
+    <div class="carousel-item ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-    <img src="assets/img/banners/bks.jpg" class="d-block w-100" alt="...">
+    <img src="assets/img/banners/bksorvete.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-    <img src="assets/img/banners/banner3.jpg" class="d-block w-100" alt="...">
+    <img src="assets/img/banners/bkcomer.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
-
+<!--
 
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -209,6 +209,7 @@
 
   <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+<<<<<<< HEAD
       <img src="assets/img/bkmanaus4-celular.jpg" class="d-block w-100" alt="...">
     </a>
   </div>
@@ -218,16 +219,27 @@
      <!-- <div class="carousel-item active ">
       <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/BK2.jpg" class="d-block w-100" alt="...">
-      </a>
-    </div> -->
-
-    <!-- <div class="carousel-item active">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-    <img src="assets/img/banners/bks-celular.jpg" class="d-block w-100" alt="...">
+=======
+      <img src="assets/img/banners/bkcarnavalceluar.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
 
 
+
+    <div class="carousel-item ">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+      <img src="assets/img/banners/bksorvete-celular.jpg" class="d-block w-100" alt="...">
+>>>>>>> 2ed2a520170783a7f8f8c39f123eeeecfd9f09c3
+      </a>
+    </div>
+
+    <div class="carousel-item ">
+    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+    <img src="assets/img/banners/bkcomer-celular.jpg" class="d-block w-100" alt="...">
+      </a>
+    </div>
+
+<!--
     <div class="carousel-item">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
     <img src="assets/img/banners/banner3-celular.jpg" class="d-block w-100" alt="...">
@@ -1310,13 +1322,24 @@
           </div>
 
           <div class="col-lg-4 col-md-6 footer-links">
-            <h4  class="">Navegue pelo nosso site</h4>
+            <h4 style="color:#fff"  class="">Navegue pelo nosso site</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#">Principal</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#servicos">Serviços</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#pedido">Fazer Pedido</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#lojas">Lojas</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a  class="" href="#contato">Fale Conosco</a></li>
+
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#">Principal</a></h4></li>
+            
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#servicos">Serviços</a></h4></li>
+
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#pedido">Fazer Pedido</a></h4></li>
+           
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#lojas">Lojas</a></h4></li>
+
+            <li style="padding-bottom:5px"><h4 style="margin-bottom:0px;padding-bottom:0px">
+            <i class="bi bi-chevron-right"></i> <a class="" style="color:#fff" href="#contato">Fale Conosco</a></h4></li>
+
             </ul>
           </div>
 
@@ -1334,8 +1357,8 @@
           </div> -->
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4  class="">Siga-nos nas redes sociais e fique atento as nossas promoções.</h4>
-            <p >Tenha em mãos nossos serviços, com o link da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
+            <h4 style="color:#fff"  class="">Siga-nos nas redes sociais e fique atento as nossas promoções.</h4>
+            <p style="color:#fff" >Tenha em mãos nossos serviços, com o link da nossa aplicação. Não precisa instalar e não ocupa nenhum espaço do seu aparelho.</p>
             <a target:_blank="" style="font-family:Flame-Regular;font-size:23px" href="https://app.bkmanaus.com.br/">https://app.bkmanaus.com.br/</a>
             <!-- <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
@@ -1351,10 +1374,10 @@
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
 
         <div class="d-flex flex-column align-items-center align-items-lg-start">
-          <div class="copyright">
+          <div style="color:#fff" class="copyright">
             &copy; Copyright <strong><span>BKManaus</span></strong>. Todos os direitos reservados.
           </div>
-          <div class="credits">
+          <div style="color:#fff" class="credits">
             <!-- All the links in the footer should remain intact. -->
             <!-- You can delete the links only if you purchased the pro version. -->
             <!-- Licensing information: https://bootstrapmade.com/license/ -->

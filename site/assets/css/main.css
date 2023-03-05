@@ -2666,7 +2666,7 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: var(--font-primary);
-  color: var(--color-white);
+  color: #fff;
 }
 .footer .footer-content h4 {
   font-size: 16px;
@@ -2752,6 +2752,7 @@ section {
 .footer .footer-legal {
   padding: 30px 0;
   background: var(--color-secondary-dark);
+  color:#fff;
 }
 .footer .footer-legal .credits {
   padding-top: 4px;
