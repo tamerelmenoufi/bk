@@ -210,13 +210,13 @@
   <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/bkmanaus4-celular.jpg" class="d-block w-100" alt="...">
-      </a>
-    </div>
+    </a>
+  </div>
 
 
 
      <!-- <div class="carousel-item active ">
-    <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
+      <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/BK2.jpg" class="d-block w-100" alt="...">
       </a>
     </div> -->
@@ -243,8 +243,7 @@
     </div> -->
 
 
-
-  </div>
+</div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls1" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
