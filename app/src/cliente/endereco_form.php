@@ -44,45 +44,50 @@
 
 ?>
 
+<style>
+
+</style>
+
+
 <div class="col">
     <div class="col-12 mb-3">Cadastro/Editar Endereço</div>
 
     <div class="col-12 mb-3">
-      <label for="disabledSelect">Lista de Endereços <small>Entrega Grátis</small></label>
-      <select id="disabledSelect" class="form-control form-control-lg">
-        <option>Novo Endereço</option>
-        <option>Atlatic Tower</option>
-        <option>Milenium Shopping</option>
+      <label for="novo_endereco">Lista de Endereços <small>Entrega Grátis</small></label>
+      <select id="novo_endereco" class="form-control form-control-lg">
+        <option value="novo">Novo Endereço</option>
+        <option value="atlantic">Atlantic Tower</option>
+        <option value="milenium">Milenium Shopping</option>
       </select>
     </div>
 
     <div class="col-12 mb-3">
         <label for="rua">Nome <small>Aplelido para o endereço</small>*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg" id="nome" value="<?=$d->nome?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="nome" value="<?=$d->nome?>">
     </div>
     <div class="col-12 mb-3">
         <label for="rua">Rua*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg" id="rua" value="<?=$d->rua?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="rua" value="<?=$d->rua?>">
     </div>
     <div class="col-12 mb-3">
         <label for="numero">Número*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg" id="numero" value="<?=$d->numero?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="numero" value="<?=$d->numero?>">
     </div>
     <div class="col-12 mb-3">
         <label for="bairro">Bairro*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg" id="bairro" value="<?=$d->bairro?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="bairro" value="<?=$d->bairro?>">
     </div>
     <div class="col-12 mb-3">
         <label for="bairro">CEP*</label>
-        <input type="text" autocomplete="off" inputmode="numeric" class="form-control form-control-lg" id="cep" value="<?=$d->cep?>">
+        <input type="text" autocomplete="off" inputmode="numeric" class="form-control form-control-lg blq" id="cep" value="<?=$d->cep?>">
     </div>
     <div class="col-12 mb-3">
         <label for="complemento">Condomínio/Edifício/Complemento</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg" id="complemento" value="<?=$d->complemento?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="complemento" value="<?=$d->complemento?>">
     </div>
     <div class="col-12 mb-3">
         <label for="referencia">Ponto de Referência</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg" id="referencia" value="<?=$d->referencia?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="referencia" value="<?=$d->referencia?>">
     </div>
 
     <div class="col-12 mb-3">
@@ -95,6 +100,15 @@
 
         $("#ClienteTeleofne").mask("(99) 99999-9999");
         $("#cep").mask("99999-999");
+
+        $(".novo_endereco").change(function(){
+            opc = $(this).val();
+            if(opc == 'novo'){
+                $(".opc").removeAttr("disabled");
+            }else{
+                $(".opc").addAttr("disabled","disabled");
+            }
+        })
 
         $("button[CadastrarCliente]").click(function(){
             nome = $("#nome").val();
