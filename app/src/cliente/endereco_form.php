@@ -104,9 +104,9 @@
         $("#novo_endereco").change(function(){
             opc = $(this).val();
             if(opc == 'novo'){
-                $(".opc").removeAttr("disabled");
+                $(".blq").removeAttr("disabled");
             }else{
-                $(".opc").attr("disabled","disabled");
+                $(".blq").attr("disabled","disabled");
             }
         })
 
