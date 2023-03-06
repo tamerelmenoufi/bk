@@ -47,9 +47,9 @@
 <div class="col">
     <div class="col-12">Cadastro/Editar Endereço</div>
 
-    <div class="mb-3">
-      <label for="disabledSelect" class="form-label">Lista de Endereços <small>Entrega Grátis</small></label>
-      <select id="disabledSelect" class="form-select">
+    <div class="col-12 mb-3">
+      <label for="disabledSelect">Lista de Endereços <small>Entrega Grátis</small></label>
+      <select id="disabledSelect" class="form-control form-control-lg">
         <option>Novo Endereço</option>
         <option>Atlatic Tower</option>
         <option>Milenium Shopping</option>
