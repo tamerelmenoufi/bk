@@ -209,17 +209,6 @@
 
   <div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-<<<<<<< HEAD
-      <img src="assets/img/bkmanaus4-celular.jpg" class="d-block w-100" alt="...">
-    </a>
-  </div>
-
-
-
-     <!-- <div class="carousel-item active ">
-      <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
-      <img src="assets/img/BK2.jpg" class="d-block w-100" alt="...">
-=======
       <img src="assets/img/banners/bkcarnavalceluar.jpg" class="d-block w-100" alt="...">
       </a>
     </div>
@@ -229,7 +218,6 @@
     <div class="carousel-item ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/banners/bksorvete-celular.jpg" class="d-block w-100" alt="...">
->>>>>>> 2ed2a520170783a7f8f8c39f123eeeecfd9f09c3
       </a>
     </div>
 
