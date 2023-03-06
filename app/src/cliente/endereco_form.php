@@ -101,7 +101,7 @@
         $("#ClienteTeleofne").mask("(99) 99999-9999");
         $("#cep").mask("99999-999");
 
-        $(".novo_endereco").change(function(){
+        $("#novo_endereco").change(function(){
             opc = $(this).val();
             if(opc == 'novo'){
                 $(".opc").removeAttr("disabled");
