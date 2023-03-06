@@ -106,7 +106,7 @@
             if(opc == 'novo'){
                 $(".opc").removeAttr("disabled");
             }else{
-                $(".opc").addAttr("disabled","disabled");
+                $(".opc").attr("disabled","disabled");
             }
         })
 
