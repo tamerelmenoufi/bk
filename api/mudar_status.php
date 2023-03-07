@@ -17,7 +17,7 @@ if($_POST['pedido']){
     if($retorno->deliveryId == 9999){
         $query = "update vendas set
                                     deliveryId = '{$retorno->deliveryId}',
-                                    situacao = 'i'
+                                    situacao = 'i',
                                     ARRIVED_AT_DESTINATION = NOW(),
                                     name = 'Unidade Djalma Batista',
                                     phone = '(92) 9843-87438'
