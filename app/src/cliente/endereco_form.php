@@ -12,6 +12,7 @@
                         cep = '{$_POST['cep']}',
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}',
+                        entrega_gratis = '{$_POST['entrega_gratis']}',
                         coordenadas = ''
                         WHERE codigo = '{$_POST['codigo']}'
                         ");
@@ -26,6 +27,7 @@
                         cep = '{$_POST['cep']}',
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}',
+                        entrega_gratis = '{$_POST['entrega_gratis']}',
                         padrao = '1'
                         ");
 
@@ -78,23 +80,23 @@
     </div>
     <div class="col-12 mb-3">
         <label for="rua">Rua*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="rua" value="<?=$d->rua?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="rua" value="<?=$d->rua?>">
     </div>
     <div class="col-12 mb-3">
         <label for="numero">Número*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="numero" value="<?=$d->numero?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="numero" value="<?=$d->numero?>">
     </div>
     <div class="col-12 mb-3">
         <label for="bairro">Bairro*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="bairro" value="<?=$d->bairro?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="bairro" value="<?=$d->bairro?>">
     </div>
     <div class="col-12 mb-3">
         <label for="bairro">CEP*</label>
-        <input type="text" autocomplete="off" inputmode="numeric" class="form-control form-control-lg blq" id="cep" value="<?=$d->cep?>">
+        <input type="text" autocomplete="off" inputmode="numeric" class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="cep" value="<?=$d->cep?>">
     </div>
     <div class="col-12 mb-3">
         <label for="complemento">Condomínio/Edifício/Complemento</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="complemento" value="<?=$d->complemento?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="complemento" value="<?=$d->complemento?>">
     </div>
     <div class="col-12 mb-3">
         <label for="referencia">Ponto de Referência / Andar / Sala</label>
@@ -102,7 +104,7 @@
     </div>
 
     <div class="col-12 mb-3">
-        <input type="hidden" id="entrega_gratis" value='0' />
+        <input type="hidden" id="entrega_gratis" value='<?=(($d->entrega_gratis)?:'0')?>' />
         <button CadastrarCliente cod="<?=$d->codigo?>" class="btn btn-secondary btn-block btn-lg">Salvar</button>
     </div>
 </div>
@@ -155,6 +157,7 @@
             cep = $("#cep").val();
             complemento = $("#complemento").val();
             referencia = $("#referencia").val();
+            entrega_gratis = $("#entrega_gratis").val();
             codigo = $(this).attr("cod");
 
             if(
@@ -175,6 +178,7 @@
                         cep,
                         complemento,
                         referencia,
+                        entrega_gratis,
                         codigo,
                         acao:'salvar'
                     },
