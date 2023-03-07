@@ -126,6 +126,15 @@
                         // console.log(dados)
                         console.log(dados.codigo)
 
+                        $("#nome").val(dados.nome);
+                        $("#rua").val(dados.rua);
+                        $("#numero").val(dados.numero);
+                        $("#bairro").val(dados.bairro);
+                        $("#cep").val(dados.cep);
+                        $("#complemento").val(dados.complemento);
+                        $("#referencia").val(dados.referencia);
+
+
                     }
                 });
             }
