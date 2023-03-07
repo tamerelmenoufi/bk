@@ -65,7 +65,7 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<tr><td>".$d->name."</td><td style='text-align:right'>".($d->phone)."</td></tr>";
     }
 
-    $status .= "<tr><td colspan = '2'>".$d->endereco."</td></tr>";
+    $status .= "<tr><td colspan = '2' style='margin-top:20px;'><b>Endereço:</b>".$d->endereco."</td></tr>";
 
     $status .= '</table>';
 
