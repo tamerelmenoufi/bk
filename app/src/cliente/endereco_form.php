@@ -145,7 +145,7 @@
                         $("#complemento").val(dados.complemento);
                         $("#referencia").val(dados.referencia);
                         $("#entrega_gratis").val("1");
-                        $("#coordenadas").val(dados.referencia);
+                        $("#coordenadas").val(dados.coordenadas);
 
                     }
                 });
