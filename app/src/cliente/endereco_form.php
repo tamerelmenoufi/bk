@@ -105,6 +105,7 @@
 
     <div class="col-12 mb-3">
         <input type="hidden" id="entrega_gratis" value='<?=(($d->entrega_gratis)?:'0')?>' />
+        <input type="hidden" id="coordenadas" value='<?=(($d->coordenadas)?:'')?>' />
         <button CadastrarCliente cod="<?=$d->codigo?>" class="btn btn-secondary btn-block btn-lg">Salvar</button>
     </div>
 </div>
@@ -121,6 +122,7 @@
                 $(".blq").removeAttr("disabled");
                 $(".blq").val("");
                 $("#entrega_gratis").val("0");
+                $("#coordenadas").val("");
             }else{
                 $(".blq").attr("disabled","disabled");
                 $.ajax({
@@ -142,7 +144,7 @@
                         $("#complemento").val(dados.complemento);
                         $("#referencia").val(dados.referencia);
                         $("#entrega_gratis").val("1");
-
+                        $("#coordenadas").val(dados.referencia);
 
                     }
                 });
