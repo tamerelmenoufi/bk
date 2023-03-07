@@ -18,11 +18,13 @@ $query = "SELECT
                 v.GOING_TO_DESTINATION,
                 v.ARRIVED_AT_DESTINATION,
                 v.name,
-                v.phone
+                v.phone,
+                concat(trim(e.rua), ', ',  trim(e.numero), ', ', trim(e.bairro), ', ', trim(e.complemento)) as endereco
         FROM vendas_produtos a
             left join produtos b on a.produto = b.codigo
             left join vendas v on a.venda = v.codigo
             left join categorias c on b.categoria = c.codigo
+            left join clientes_enderecos e on v.cliente = e.cliente and e.padrao = '1'
         where a.venda = '{$_POST['pedido']}' and a.deletado != '1'";
 
 $result = mysqli_query($con, $query);
@@ -62,6 +64,8 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<tr style='margin-top:10px;'><td><b>Entregador<b></td><td style='text-align:right; padding-right:55px;'><b>Telefone</b></td></tr>";
         $status .= "<tr><td>".$d->name."</td><td style='text-align:right'>".($d->phone)."</td></tr>";
     }
+
+    $status .= "<tr><td colspan = '2'>".$d->endereco."</td></tr>";
 
     $status .= '</table>';
 
