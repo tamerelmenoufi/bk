@@ -118,6 +118,7 @@
                 $.ajax({
                     url:"src/cliente/endereco_gratis.php",
                     type:"POST",
+                    dataType:"json",
                     data:{
                         codigo:opc
                     },
