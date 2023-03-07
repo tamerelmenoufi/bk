@@ -51,7 +51,9 @@
 
 <div class="col">
     <div class="col-12 mb-3">Cadastro/Editar Endereço</div>
-
+    <?php
+    if(!$d->codigo){
+    ?>
     <div class="col-12 mb-3">
       <label for="novo_endereco">Lista de Endereços <small>Entrega Grátis</small></label>
       <select id="novo_endereco" class="form-control form-control-lg">
@@ -67,7 +69,9 @@
         ?>
       </select>
     </div>
-
+    <?php
+    }
+    ?>
     <div class="col-12 mb-3">
         <label for="rua">Nome <small>Aplelido para o endereço</small>*</label>
         <input type="text" autocomplete="off" class="form-control form-control-lg" id="nome" value="<?=$d->nome?>">
