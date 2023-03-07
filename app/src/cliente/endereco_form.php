@@ -28,6 +28,7 @@
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}',
                         entrega_gratis = '{$_POST['entrega_gratis']}',
+                        coordenadas = '{$_POST['coordenadas']}',
                         padrao = '1'
                         ");
 
@@ -160,6 +161,7 @@
             complemento = $("#complemento").val();
             referencia = $("#referencia").val();
             entrega_gratis = $("#entrega_gratis").val();
+            coordenadas = $("#coordenadas").val();
             codigo = $(this).attr("cod");
 
             if(
@@ -181,6 +183,7 @@
                         complemento,
                         referencia,
                         entrega_gratis,
+                        coordenadas,
                         codigo,
                         acao:'salvar'
                     },
