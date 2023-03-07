@@ -70,7 +70,7 @@
 
     <div class="col-12 mb-3">
         <label for="rua">Nome <small>Aplelido para o endereço</small>*</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="nome" value="<?=$d->nome?>">
+        <input type="text" autocomplete="off" class="form-control form-control-lg" id="nome" value="<?=$d->nome?>">
     </div>
     <div class="col-12 mb-3">
         <label for="rua">Rua*</label>
@@ -93,8 +93,8 @@
         <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="complemento" value="<?=$d->complemento?>">
     </div>
     <div class="col-12 mb-3">
-        <label for="referencia">Ponto de Referência</label>
-        <input type="text" autocomplete="off" class="form-control form-control-lg blq" id="referencia" value="<?=$d->referencia?>">
+        <label for="referencia">Ponto de Referência / Andar / Sala</label>
+        <input type="text" autocomplete="off" class="form-control form-control-lg" id="referencia" value="<?=$d->referencia?>">
     </div>
 
     <div class="col-12 mb-3">
