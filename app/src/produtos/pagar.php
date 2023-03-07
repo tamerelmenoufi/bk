@@ -75,7 +75,8 @@
                 c.cep,
                 c.numero,
                 c.rua,
-                c.bairro
+                c.bairro,
+                c.entrega_gratis
             from vendas a
                  left join clientes b on a.cliente = b.codigo
                  left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
@@ -86,6 +87,8 @@
     $d = mysqli_fetch_object($result);
 
     if(!$d->valor) $_SESSION['AppCarrinho'] = false;
+
+    if($d->entrega_gratis) $promocao_taxa_zero = true;
 
 ?>
 <style>
