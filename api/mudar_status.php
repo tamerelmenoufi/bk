@@ -13,7 +13,7 @@ if($_POST['pedido']){
     $BEE = new Bee;
     $retorno = $BEE->NovaEntrega($_POST['pedido']);
     $retorno = json_decode($retorno);
-    file_put_contents("log.txt", "TESTE2: ".$retorno->deliveryId);
+    // file_put_contents("log.txt", "TESTE2: ".$retorno->deliveryId);
     if($retorno->deliveryId == 9999){
         $query = "update vendas set
                                     deliveryId = '{$retorno->deliveryId}',
@@ -22,6 +22,7 @@ if($_POST['pedido']){
                                     name = 'Unidade Djalma Batista',
                                     phone = '(92) 9843-87438'
                 where codigo = '{$_POST['pedido']}'";
+        file_put_contents("log.txt", "TESTE3: ".$query);
         mysqli_query($con, $query);
     }else if($retorno->deliveryId){
         $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'i' where codigo = '{$_POST['pedido']}'";
