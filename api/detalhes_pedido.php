@@ -19,7 +19,7 @@ $query = "SELECT
                 v.ARRIVED_AT_DESTINATION,
                 v.name,
                 v.phone,
-                concat(trim(e.rua), ', ',  trim(e.numero), ', ', trim(e.bairro), ', ', trim(e.complemento)) as endereco
+                concat(trim(e.rua), ', ',  trim(e.numero), ', ', trim(e.bairro), ', ', trim(e.complemento), ', ', trim(e.referencia)) as endereco
         FROM vendas_produtos a
             left join produtos b on a.produto = b.codigo
             left join vendas v on a.venda = v.codigo
