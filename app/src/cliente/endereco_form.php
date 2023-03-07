@@ -122,7 +122,9 @@
                         codigo:opc
                     },
                     success:function(dados){
-                        console.log(dados)
+                        // console.log(dados)
+                        console.log(dados.codigo)
+
                     }
                 });
             }
