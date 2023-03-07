@@ -67,7 +67,7 @@ while($d = mysqli_fetch_object($result)){
 
     $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px;'><b>Endereço:</b><br style='margin-bottom:5px;'>".$d->endereco."</td></tr>";
     $status .= "<tr><td colspan = '2' style='margin-top:20px; margin-bottom:5px; text-align:center;'>
-    <a href='https://bkmanaus.com.br' target='_blank'>FECHAR PEDIDO</a>
+    <a href='https://bkmanaus.com.br' target='_blank' style='background-color:green; padding:10px; color:#fff; text-align:center;'>CONCLUIR PEDIDO</a>
     </td></tr>";
 
     $status .= '</table>';
