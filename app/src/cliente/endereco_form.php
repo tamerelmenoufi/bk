@@ -57,11 +57,11 @@
       <select id="novo_endereco" class="form-control form-control-lg">
         <option value="novo">Novo Endereço</option>
         <?php
-            $query = "select * from clientes_enderecos where cliente = '0' and deletado != '1'";
-            $result = mysqli_query($con, $query);
-            while($d = mysqli_fetch_object($result)){
+            $q = "select * from clientes_enderecos where cliente = '0' and deletado != '1'";
+            $r = mysqli_query($con, $q);
+            while($s = mysqli_fetch_object($r)){
         ?>
-        <option value="<?=$d->codigo?>"><?=$d->complemento?></option>
+        <option value="<?=$s->codigo?>"><?=$s->complemento?></option>
         <?php
             }
         ?>
