@@ -13,7 +13,7 @@ if($_POST['pedido']){
     $BEE = new Bee;
     $retorno = $BEE->NovaEntrega($_POST['pedido']);
     $retorno = json_decode($retorno);
-    file_put_contents("log.txt", $retorno);
+    file_put_contents("log.txt", "TESTE: ".$retorno);
     if($retorno->deliveryId == 9999){
         $query = "update vendas set
                                     deliveryId = '{$retorno->deliveryId}',
