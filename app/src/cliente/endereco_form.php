@@ -61,7 +61,7 @@
             $result = mysqli_query($con, $query);
             while($d = mysqli_fetch_object($result)){
         ?>
-        <option value="atlantic" <?=$d->codigo?>><?=$d->complemento?></option>
+        <option value="<?=$d->codigo?>"><?=$d->complemento?></option>
         <?php
             }
         ?>
@@ -112,8 +112,19 @@
             opc = $(this).val();
             if(opc == 'novo'){
                 $(".blq").removeAttr("disabled");
+                $(".blq").val("");
             }else{
                 $(".blq").attr("disabled","disabled");
+                $.ajax({
+                    url:"src/cliente/endereco_gratis.php",
+                    type:"POST",
+                    data:{
+                        codigo:opc
+                    },
+                    success:function(dados){
+                        console.log(dados)
+                    }
+                });
             }
         })
 
