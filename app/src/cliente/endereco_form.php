@@ -56,8 +56,15 @@
       <label for="novo_endereco">Lista de Endereços <small>Entrega Grátis</small></label>
       <select id="novo_endereco" class="form-control form-control-lg">
         <option value="novo">Novo Endereço</option>
-        <option value="atlantic">Atlantic Tower</option>
-        <option value="milenium">Milenium Shopping</option>
+        <?php
+            $query = "select * from clientes_enderecos where cliente = '0' and deletado != '1'";
+            $result = mysqli_query($con, $query);
+            while($d = mysqli_fetch_object($result)){
+        ?>
+        <option value="atlantic" <?=$d->codigo?>><?=$d->complemento?></option>
+        <?php
+            }
+        ?>
       </select>
     </div>
 
