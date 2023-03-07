@@ -84,7 +84,7 @@
 
             if($d->entrega_gratis == '1'){
 
-                return $response = ['deliveryId' => 9999];
+                return $response = json_encode(['deliveryId' => 9999]);
 
             }else{
 
