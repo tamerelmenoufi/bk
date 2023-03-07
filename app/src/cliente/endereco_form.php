@@ -38,7 +38,7 @@
         exit();
     }
 
-    echo $query = "select * from clientes_enderecos where codigo = '{$_POST['cod']}'";
+    $query = "select * from clientes_enderecos where codigo = '{$_POST['cod']}'";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
@@ -102,6 +102,7 @@
     </div>
 
     <div class="col-12 mb-3">
+        <input type="hidden" id="entrega_gratis" value='0' />
         <button CadastrarCliente cod="<?=$d->codigo?>" class="btn btn-secondary btn-block btn-lg">Salvar</button>
     </div>
 </div>
@@ -117,6 +118,7 @@
             if(opc == 'novo'){
                 $(".blq").removeAttr("disabled");
                 $(".blq").val("");
+                $("#entrega_gratis").val("0");
             }else{
                 $(".blq").attr("disabled","disabled");
                 $.ajax({
@@ -128,7 +130,7 @@
                     },
                     success:function(dados){
                         // console.log(dados)
-                        console.log(dados.codigo)
+                        // console.log(dados.codigo)
 
                         $("#nome").val(dados.nome);
                         $("#rua").val(dados.rua);
@@ -137,6 +139,7 @@
                         $("#cep").val(dados.cep);
                         $("#complemento").val(dados.complemento);
                         $("#referencia").val(dados.referencia);
+                        $("#entrega_gratis").val("1");
 
 
                     }
