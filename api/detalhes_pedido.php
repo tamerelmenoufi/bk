@@ -19,12 +19,16 @@ $query = "SELECT
                 v.ARRIVED_AT_DESTINATION,
                 v.name,
                 v.phone,
+                v.loja,
                 e.entrega_gratis,
+                cl.nome as cliente_nome,
+                cl.telefone as cliente_telefone,
                 concat(trim(e.rua), ', ',  trim(e.numero), ', ', trim(e.bairro), ', ', trim(e.complemento), ', ', trim(e.referencia)) as endereco
         FROM vendas_produtos a
             left join produtos b on a.produto = b.codigo
             left join vendas v on a.venda = v.codigo
             left join categorias c on b.categoria = c.codigo
+            left join clientes cl on v.cliente = cl.codigo
             left join clientes_enderecos e on v.cliente = e.cliente and e.padrao = '1'
         where a.venda = '{$_POST['pedido']}' and a.deletado != '1'";
 
@@ -66,13 +70,15 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<tr><td>".$d->name."</td><td style='text-align:right'>".($d->phone)."</td></tr>";
     }
 
+    $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff;'><b>Cliente:</b> ".$d->cliente_nome." (".$d->cliente_telefone.")</td></tr>";
+
     if($d->entrega_gratis){
         $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff;'><b>Entrega Grátis para o Endereço:</b><br style='margin-bottom:5px;'>".$d->endereco."</td></tr>";
-        // $status .= "<tr><td colspan = '2' style='margin-top:20px; margin-bottom:5px; text-align:center;'>
-        // <a href='https://bkmanaus.com.br' target='_blank' style='background-color:green; padding:10px; color:#fff; text-align:center; border-radius:20px;'>CONCLUIR PEDIDO</a>
-        // </td></tr>";
-    }
 
+    }
+        $status .= "<tr><td colspan = '2' style='margin-top:20px; margin-bottom:5px; text-align:center;'>
+        <a href='https://app.bkmanaus.com.br/app.php?l={$d->loja}' target='_blank' style='background-color:green; padding:10px; color:#fff; text-align:center; border-radius:20px;'>CONCLUIR PEDIDO</a>
+        </td></tr>";
     $status .= '</table>';
 
     $d->status_pedido = $status;
