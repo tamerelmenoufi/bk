@@ -24,7 +24,7 @@
 <?php
     echo $query = "select * from vendas where loja = '{$_GET['l']}'";
     $result = mysqli_query($con, $query);
-    while($d = mysql_fetch_object($result)){
+    while($d = mysqli_fetch_object($result)){
 ?>
 Lista: <?=$d->codigo?><br>
 <?php
