@@ -177,7 +177,7 @@
                     }
                 }";
 
-                file_put_contents("log2.txt", $Log);
+                file_put_contents("log2.txt", $Log."\n\n\n".$query);
 
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 "Content-Type: application/json",
