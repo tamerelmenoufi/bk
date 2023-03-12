@@ -112,7 +112,7 @@
                     var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
                     marker<?=$md5?>.setPosition(location<?=$md5?>);
                     map<?=$md5?>.setCenter(location<?=$md5?>);
-                    map<?=$md5?>.setZoom(16);
+                    map<?=$md5?>.setZoom(18);
 
                     $(".ConfirmaCoordenadas").attr("coordenadas",`${latitude<?=$md5?>},${longitude<?=$md5?>}`);
 
