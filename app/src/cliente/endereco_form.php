@@ -12,8 +12,8 @@
                         cep = '{$_POST['cep']}',
                         complemento = '{$_POST['complemento']}',
                         referencia = '{$_POST['referencia']}',
-                        entrega_gratis = '{$_POST['entrega_gratis']}',
-                        coordenadas = ''
+                        entrega_gratis = '{$_POST['entrega_gratis']}'/*,
+                        coordenadas = ''*/
                         WHERE codigo = '{$_POST['codigo']}'
                         ");
         } else {

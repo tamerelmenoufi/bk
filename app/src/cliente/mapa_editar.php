@@ -115,6 +115,23 @@
                     map<?=$md5?>.setZoom(16);
 
                     $(".ConfirmaCoordenadas").attr("coordenadas",`${latitude<?=$md5?>},${longitude<?=$md5?>}`);
+
+
+                    coordenadas = `${latitude<?=$md5?>},${longitude<?=$md5?>}`;
+                    $.ajax({
+                        url:"src/cliente/mapa_editar.php",
+                        type:"POST",
+                        data:{
+                            coordenadas,
+                            codigo:'<?=$d->codigo?>',
+                            acao:'coordenadas'
+                        },
+                        success:function(dados){
+
+                        }
+                    });
+
+
                 }
             }
         });
