@@ -93,7 +93,7 @@
                     acao:'coordenadas'
                 },
                 success:function(dados){
-
+                    concole.log('ok atualizado 2')
                 }
             });
         });
@@ -127,7 +127,7 @@
                             acao:'coordenadas'
                         },
                         success:function(dados){
-
+                            concole.log('ok atualizado 1')
                         }
                     });
 
