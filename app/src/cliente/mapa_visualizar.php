@@ -78,10 +78,28 @@
                     var latitude<?=$md5?> = results[0].geometry.location.lat();
                     var longitude<?=$md5?> = results[0].geometry.location.lng();
 
+                    coordenadas = `${latitude<?=$md5?>},${longitude<?=$md5?>}`;
                     var location<?=$md5?> = new google.maps.LatLng(latitude<?=$md5?>, longitude<?=$md5?>);
                     marker<?=$md5?>.setPosition(location<?=$md5?>);
                     map<?=$md5?>.setCenter(location<?=$md5?>);
                     map<?=$md5?>.setZoom(18);
+
+
+                    // Inclusão automática das coordenadas antes da confirmação pelo cliente
+                    $.ajax({
+                        url:"src/cliente/mapa_editar.php",
+                        type:"POST",
+                        data:{
+                            coordenadas,
+                            codigo:'<?=$d->codigo?>',
+                            acao:'coordenadas'
+                        },
+                        success:function(dados){
+                            console.log('ok atualizado 4')
+                            console.log(coordenadas)
+                        }
+                    });
+                    // Inclusão automática das coordenadas antes da confirmação pelo cliente
 
                 }
             }
