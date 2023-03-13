@@ -15,8 +15,10 @@
         mysqli_query($con, $query);
 
         if($_POST['padrao']){
+            $x = "select max(codigo) from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}'";
             list($codigo) = mysqli_fetch_row(mysqli_query($con, "select max(codigo) from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}'"));
             mysqli_query($con, "update clientes_enderecos set padrao = '1' where codigo = '{$codigo}'");
+            $y = "update clientes_enderecos set padrao = '1' where codigo = '{$codigo}'";
         }
 
         //exit();
@@ -74,6 +76,9 @@
     <div class="row">
         <div class="col-12">
             <?php
+
+                echo "X: ".$x."<br>Y: ".$y."<br><br>";
+
                 $query = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc";
                 $result = mysqli_query($con, $query);
                 $n = mysqli_num_rows($result);
@@ -133,7 +138,7 @@
                                     <div class="col-11">Definir endereço para entrega</div>
                                 </div>
                             </li>
-                            <li excluir cod="<?=$d->codigo?>" padrao="<?=$d->padrao?>" class="list-group-item text-danger">
+                            <li excluir<?=$md5?> cod="<?=$d->codigo?>" padrao="<?=$d->padrao?>" class="list-group-item text-danger">
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-trash-can"></i></div>
                                     <div class="col-11">Excluir Endereço</div>
@@ -249,7 +254,7 @@
         });
 
 
-        $("li[excluir]").click(function(){
+        $("li[excluir<?=$md5?>]").click(function(){
             cod = $(this).attr("cod");
             padrao = $(this).attr("padrao");
             $.confirm({
