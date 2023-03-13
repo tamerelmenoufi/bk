@@ -84,6 +84,7 @@
             var latLng = marker.latLng;
             //alert(`Lat ${latLng.lat()} & Lng ${latLng.lng()}`)
             coordenadas = `${latLng.lat()},${latLng.lng()}`;
+            $(".ConfirmaCoordenadas").attr("coordenadas",coordenadas);
             $.ajax({
                 url:"src/cliente/mapa_editar.php",
                 type:"POST",
