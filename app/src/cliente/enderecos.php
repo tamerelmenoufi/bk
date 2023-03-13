@@ -14,6 +14,11 @@
         $query = "update clientes_enderecos set deletado = '1' where codigo = '{$_POST['cod']}'";
         mysqli_query($con, $query);
 
+        if($_POST['padrao']){
+            list($codigo) = mysqli_fetch_row(mysqli_query($con, "select max(codigo) from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}'"));
+            mysqli_query($con, "update clientes_enderecos set padrao = '1' where codigo = '{$codigo}'");
+        }
+
         //exit();
     }
 
@@ -128,7 +133,7 @@
                                     <div class="col-11">Definir endereço para entrega</div>
                                 </div>
                             </li>
-                            <li excluir cod="<?=$d->codigo?>" class="list-group-item text-danger">
+                            <li excluir cod="<?=$d->codigo?>" padrao="<?=$d->padrao?>" class="list-group-item text-danger">
                                 <div class="row">
                                     <div class="col-1"><i class="fa-solid fa-trash-can"></i></div>
                                     <div class="col-11">Excluir Endereço</div>
@@ -246,6 +251,7 @@
 
         $("li[excluir]").click(function(){
             cod = $(this).attr("cod");
+            padrao = $(this).attr("padrao");
             $.confirm({
                 content:"Deseja realmente excluir o endereço?",
                 title:false,
@@ -258,6 +264,7 @@
                             data:{
                                 local:`src/cliente/enderecos.php`,
                                 cod,
+                                padrao,
                                 acao:'excluir'
                             },
                             success:function(dados){
