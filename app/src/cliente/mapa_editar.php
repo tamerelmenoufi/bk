@@ -150,6 +150,9 @@
                 },
                 success:function(dados){
 
+                    console.log('coordenadas 3')
+                    console.log(coordenadas)
+
                     $.alert('Endereço Confirmado.');
 
                     local = $("body").attr("retorno");
