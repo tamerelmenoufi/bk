@@ -16,7 +16,7 @@
 
         if($_POST['padrao']){
             $x = "select max(codigo) from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}'";
-            list($codigo) = mysqli_fetch_row(mysqli_query($con, "select max(codigo) from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}'"));
+            list($codigo) = mysqli_fetch_row(mysqli_query($con, "select max(codigo) from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1'"));
             mysqli_query($con, "update clientes_enderecos set padrao = '1' where codigo = '{$codigo}'");
             $y = "update clientes_enderecos set padrao = '1' where codigo = '{$codigo}'";
         }
