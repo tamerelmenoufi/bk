@@ -94,6 +94,7 @@
                 },
                 success:function(dados){
                     console.log('ok atualizado 2')
+                    console.log(coordenadas)
                 }
             });
         });
@@ -128,9 +129,9 @@
                         },
                         success:function(dados){
                             console.log('ok atualizado 1')
+                            console.log(coordenadas)
                         }
                     });
-
 
                 }
             }
