@@ -38,7 +38,7 @@
 
     <div id="map<?=$md5?>"></div>
 
-    <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenada="<?=$d->coordenadas?>">Confirmar a Localização</button>
+    <button class="ConfirmaCoordenadas btn btn-success btn-block" coordenadas="<?=$d->coordenadas?>">Confirmar a Localização</button>
 
 
     <script>
