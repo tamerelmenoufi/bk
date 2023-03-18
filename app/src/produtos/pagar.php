@@ -213,6 +213,11 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-12">
+                            <span style="opacity:0.3">RETIRADA NO LOCAL</span>
+                        </div>
+
+
+                        <div class="col-12">
                             <?php
                                 $coordenadas = false;
                                 $query1 = "select * from clientes_enderecos where cliente = '{$_SESSION['AppCliente']}' and deletado != '1' order by padrao desc limit 1";
