@@ -213,9 +213,12 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <!-- <div class="col-12">
-                            <span style="opacity:0.3">RETIRADA NO LOCAL</span>
-                        </div> -->
+                        <div class="col-12">
+                            <div style="opacity:0.3" class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Vou retirar meu pedido na loja</label>
+                            </div>
+                        </div>
 
 
                         <div class="col-12">
