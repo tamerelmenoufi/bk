@@ -459,7 +459,7 @@
 
         $("#captcha").mask("99999");
 
-        $("#retirada_local").click(function(){
+        $("#retirada_local").change(function(){
             if($(this).prop("checkbok") == true){
                 $("#dadosLoja").css("display","none");
             }else{
