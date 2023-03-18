@@ -205,16 +205,24 @@
         $(".mais").click(function () {
             obj = $(this).parent("div");
             codigo = obj.attr('cod');
-            quantidade = obj.find(".quantidade").html();
-            atual = obj.find("span[valor]").attr("atual");
+            // quantidade = obj.find(".quantidade").html();
+            quantidade = obj.children("div.quantidade").html();
+
+            // atual = obj.find("span[valor]").attr("atual");
+            atual = obj.children("span[valor]").attr("atual");
+
             quantidade = (quantidade * 1 + 1);
             valortotal = $("span[pedido_valor_toal]").attr("valor");
-            obj.find(".quantidade").html(quantidade*1);
+
+            // obj.find(".quantidade").html(quantidade*1);
+            obj.children("div.quantidade").html(quantidade*1);
+
             valor = (atual*1) * (quantidade*1);
             valortotal = (valortotal*1 + atual*1);
             $("span[pedido_valor_toal]").attr("valor", valortotal);
             $("span[pedido_valor_toal]").text(valortotal.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-            obj.find("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            // obj.find("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            obj.children("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
             $.ajax({
                 url:"src/produtos/pedido.php",
@@ -235,9 +243,14 @@
         $(".menos").click(function () {
             obj = $(this).parent("div");
             codigo = obj.attr('cod');
-            quantidade = obj.find(".quantidade").html();
+
+            // quantidade = obj.find(".quantidade").html();
+            quantidade = obj.children("div.quantidade").html();
+
             valortotal = $("span[pedido_valor_toal]").attr("valor");
-            atual = obj.find("span[valor]").attr("atual");
+
+            // atual = obj.find("span[valor]").attr("atual");
+            atual = obj.children("span[valor]").attr("atual");
 
             if(quantidade*1 > 1){
 
@@ -249,9 +262,13 @@
 
             quantidade = ((quantidade * 1 > 1) ? (quantidade * 1 - 1) : 1);
 
-            obj.find(".quantidade").html(quantidade);
+            // obj.find(".quantidade").html(quantidade);
+            obj.children("div.quantidade").html(quantidade);
+
+
             valor = (atual*1) * (quantidade*1);
-            obj.find("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            // obj.find("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            obj.children("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
             //if(quantidade > 1){
                 $.ajax({
@@ -369,8 +386,10 @@
             codigo = $(this).attr('codigo');
             obj = $(this).parent("div").parent("div");
 
-            quantidade = obj.find(".quantidade").html();
-            atual = obj.find("span[valor]").attr("atual");
+            // quantidade = obj.find(".quantidade").html();
+            quantidade = obj.children("div.quantidade").html();
+            // atual = obj.find("span[valor]").attr("atual");
+            atual = obj.children("span[valor]").attr("atual");
             desconto = (quantidade * atual);
             valortotal = $("span[pedido_valor_toal]").attr("valor");
             valortotal = (valortotal*1 - desconto*1);
