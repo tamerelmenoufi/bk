@@ -2,6 +2,14 @@
     include("../../../lib/includes.php");
 
 
+    if($_POST['acao'] == 'retirada_local'){
+        $query = "update vendas set
+                                    retirada_local = '{$_POST['retirada_local']}'
+                where codigo = '{$_SESSION['AppVenda']}'";
+        mysqli_query($con, $query);
+        exit();
+    }
+
     if($_POST['acao'] == 'loja'){
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
@@ -88,7 +96,7 @@
 
     if(!$d->valor) $_SESSION['AppCarrinho'] = false;
 
-    if($d->entrega_gratis) $promocao_taxa_zero = true;
+    if($d->entrega_gratis or $d->retirada_local) $promocao_taxa_zero = true;
 
 ?>
 <style>
@@ -230,7 +238,7 @@
                                 $d1 = mysqli_fetch_object($result1);
                                 $coordenadas = $d1->coordenadas;
                             ?>
-                            <div id="dadosLoja">
+                            <div id="dadosLoja" style="<?=(($d->retirada_local == '1')?"display:none":false)?>">
                                 <b><?=$d1->nome?></b>
                                 <h5 class="card-title">
                                     <small><i class="fa-solid fa-map-pin"></i> Endereço</small>
@@ -460,12 +468,24 @@
         $("#captcha").mask("99999");
 
         $("#retirada_local").change(function(){
-            console.log($(this).prop("checked"));
             if($(this).prop("checked") == true){
                 $("#dadosLoja").css("display","none");
+                retirada_local = '1';
             }else{
                 $("#dadosLoja").css("display","block");
+                retirada_local = '0';
             }
+            $.ajax({
+                url:"src/produtos/pagar.php",
+                type:"POST",
+                data:{
+                    retirada_local,
+                    acao:'retirada_local'
+                },
+                success:function(dados){
+
+                }
+            });
         });
 
         lj = $('li[opc="<?=$opc?>"]');
