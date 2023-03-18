@@ -279,7 +279,7 @@
                             <?php
                             if($coordenadas){
                             ?>
-                            Pedido atendido pela Loja: <?=(($promocao_taxa_zero)?' (Entrega Grátis)':false)?>
+                            Pedido atendido pela Loja: <?=(($promocao_taxa_zero)?' (sem custo de entrega)':false)?>
 
                             <div id="accordion">
                                 <div class="card">
