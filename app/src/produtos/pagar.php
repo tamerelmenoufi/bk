@@ -215,8 +215,8 @@
 
                         <div class="col-12">
                             <div style="opacity:0.3" class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Vou retirar meu pedido na loja</label>
+                                <input type="checkbox" class="form-check-input" id="retirada_local">
+                                <label class="form-check-label" for="retirada_local">Vou retirar meu pedido na loja</label>
                             </div>
                         </div>
 
@@ -230,43 +230,43 @@
                                 $d1 = mysqli_fetch_object($result1);
                                 $coordenadas = $d1->coordenadas;
                             ?>
+                            <div id="dadosLoja">
+                                <b><?=$d1->nome?></b>
+                                <h5 class="card-title">
+                                    <small><i class="fa-solid fa-map-pin"></i> Endereço</small>
+                                    <div><?=trim($d1->rua).", ".trim($d1->numero).", ".trim($d1->bairro).
+                                    (($d1->complemento)?', '.$d1->complemento:false).
+                                    (($d1->referencia)?', '.$d1->referencia:false)?></div>
 
-                            <b><?=$d1->nome?></b>
-                            <h5 class="card-title">
-                                <small><i class="fa-solid fa-map-pin"></i> Endereço</small>
-                                <div><?=trim($d1->rua).", ".trim($d1->numero).", ".trim($d1->bairro).
-                                (($d1->complemento)?', '.$d1->complemento:false).
-                                (($d1->referencia)?', '.$d1->referencia:false)?></div>
+                                    <?php
+                                    if(!$coordenadas){
+                                    ?>
+                                    <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">Endereço Pendente de validação.</div>
+                                    <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
+                                    <?php
+                                    }
+                                    ?>
 
+
+
+                                </h5>
                                 <?php
-                                if(!$coordenadas){
+                                }else{
                                 ?>
-                                <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">Endereço Pendente de validação.</div>
-                                <button endereco="<?=$d1->codigo?>" class="ConfirmaEndereco btn btn-danger btn-block">Validar Endereço</button>
+                                <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">
+                                    Você não possui endereço cadastrado, utilize o linque abaixo para cadastrar seu(s) endereço(s).
+                                </div>
                                 <?php
                                 }
                                 ?>
 
-
-
-                            </h5>
-                            <?php
-                            }else{
-                            ?>
-                            <div class="alertas animate__animated animate__fadeIn animate__infiniteX animate__fasterX">
-                                Você não possui endereço cadastrado, utilize o linque abaixo para cadastrar seu(s) endereço(s).
+                                <div style="width:100%; text-align:right; margin-top:20px; margin-bottom:20px;">
+                                    <span class='alterar_endereco'>
+                                        <i class="fa-solid fa-repeat"></i>
+                                        Trocar/Cadastrar Endereço
+                                    </span>
+                                </div>
                             </div>
-                            <?php
-                            }
-                            ?>
-
-                            <div style="width:100%; text-align:right; margin-top:20px; margin-bottom:20px;">
-                                <span class='alterar_endereco'>
-                                    <i class="fa-solid fa-repeat"></i>
-                                    Trocar/Cadastrar Endereço
-                                </span>
-                            </div>
-
 
                             <?php
                             if($coordenadas){
@@ -458,6 +458,14 @@
     $(function(){
 
         $("#captcha").mask("99999");
+
+        $("#retirada_local").click(function(){
+            if($(this).prop("checkbok") == true){
+                $("#dadosLoja").css("display","none");
+            }else{
+                $("#dadosLoja").css("display","block");
+            }
+        });
 
         lj = $('li[opc="<?=$opc?>"]');
         dados = lj.html();
