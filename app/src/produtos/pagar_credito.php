@@ -59,6 +59,31 @@
 
             if($r->authorization->status == 'Approved'){
                 //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
+
+
+
+                // DADOS DE SOLICITAÇÃO DA ENTREGA
+                /*
+                $BEE = new Bee;
+                $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
+                $retorno = json_decode($retorno);
+                if($retorno->deliveryId == 9999){
+                    $query = "update vendas set
+                                                deliveryId = '{$retorno->deliveryId}',
+                                                situacao = 'p',
+                                                GOING_TO_DESTINATION = NOW(),
+                                                name = 'Unidade Djalma Batista',
+                                                phone = '(92) 9843-87438'
+                            where codigo = '{$_SESSION['AppVenda']}'";
+                    mysqli_query($con, $query);
+                }else if($retorno->deliveryId){
+                    $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_POST['pedido']}'";
+                    mysqli_query($con, $query);
+                }
+                //*/
+                // DADOS DE SOLICITAÇÃO DA ENTREGA
+
+
                 $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
                 $_SESSION['AppPedido'] = false;
                 $_SESSION['AppCarrinho'] = false;

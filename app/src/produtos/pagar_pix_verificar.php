@@ -24,6 +24,28 @@
                         where operadora_id = '{$_POST['id']}'
                     ");
 
+        // DADOS DE SOLICITAÇÃO DA ENTREGA
+        /*
+        $BEE = new Bee;
+        $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
+        $retorno = json_decode($retorno);
+        if($retorno->deliveryId == 9999){
+            $query = "update vendas set
+                                        deliveryId = '{$retorno->deliveryId}',
+                                        situacao = 'p',
+                                        GOING_TO_DESTINATION = NOW(),
+                                        name = 'Unidade Djalma Batista',
+                                        phone = '(92) 9843-87438'
+                    where codigo = '{$_SESSION['AppVenda']}'";
+            mysqli_query($con, $query);
+        }else if($retorno->deliveryId){
+            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_POST['pedido']}'";
+            mysqli_query($con, $query);
+        }
+        //*/
+        // DADOS DE SOLICITAÇÃO DA ENTREGA
+
+
         $_SESSION['AppVenda'] = false;
         $_SESSION['AppPedido'] = false;
         $_SESSION['AppCarrinho'] = false;

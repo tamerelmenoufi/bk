@@ -7,9 +7,15 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 $dados = [];
 
 if($_POST['pedido']){
-    // $query = "UPDATE vendas set situacao = 'i' where codigo = '{$_POST['pedido']}'";
-    // $result = mysqli_query($con, $query);
-    //ESSAS DUAS LINHAS SÃO PARA A SOLICITAÇÃO DA ENTREGA BEE
+    //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
+    /*
+    $query = "UPDATE vendas set situacao = 'i' where codigo = '{$_POST['pedido']}'";
+    $result = mysqli_query($con, $query);
+    //*/
+    //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
+
+    //SOLICITAÇÃO DA ENTREGA BEE
+    //*
     $BEE = new Bee;
     $retorno = $BEE->NovaEntrega($_POST['pedido']);
     $retorno = json_decode($retorno);
@@ -28,7 +34,8 @@ if($_POST['pedido']){
         $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'i' where codigo = '{$_POST['pedido']}'";
         mysqli_query($con, $query);
     }
-
+    //*/
+    // SOLICITAÇÃO DA ENTREGA BEE
     //////////////////////////////////////////////////////////
 
     $dados = ['status' => true];
