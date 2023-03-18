@@ -267,7 +267,7 @@
                             <?php
                             if($coordenadas){
                             ?>
-                            Taxa de Entrega <?=(($promocao_taxa_zero)?' (Entrega Grátis)':false)?>
+                            Pedido atendido pela Loja: <?=(($promocao_taxa_zero)?' (Entrega Grátis)':false)?>
 
                             <div id="accordion">
                                 <div class="card">
