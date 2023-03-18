@@ -475,18 +475,22 @@
                 $("#dadosLoja").css("display","block");
                 retirada_local = '0';
             }
+
             $.ajax({
-                url:"src/produtos/pagar.php",
+                url:"componentes/ms_popup_100.php",
                 type:"POST",
                 data:{
+                    local:'src/produtos/pagar.php',
                     retirada_local,
                     acao:'retirada_local'
                 },
                 success:function(dados){
-                    PageClose(1);
+                    PageClose();
                     $(".ms_corpo").append(dados);
                 }
             });
+
+
         });
 
         lj = $('li[opc="<?=$opc?>"]');
