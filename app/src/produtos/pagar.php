@@ -7,7 +7,7 @@
                                     retirada_local = '{$_POST['retirada_local']}'
                 where codigo = '{$_SESSION['AppVenda']}'";
         mysqli_query($con, $query);
-        exit();
+        // exit();
     }
 
     if($_POST['acao'] == 'loja'){
@@ -489,7 +489,6 @@
                     $(".ms_corpo").append(dados);
                 }
             });
-
 
         });
 
