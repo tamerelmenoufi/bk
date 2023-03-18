@@ -223,7 +223,7 @@
 
                         <div class="col-12">
                             <div style="opacity:0.3" class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="retirada_local">
+                                <input type="checkbox" <?=(($d->retirada_local == '1')?"checked":false)?> class="form-check-input" id="retirada_local">
                                 <label class="form-check-label" for="retirada_local">Vou retirar meu pedido na loja</label>
                             </div>
                         </div>
