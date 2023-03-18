@@ -483,7 +483,8 @@
                     acao:'retirada_local'
                 },
                 success:function(dados){
-
+                    PageClose();
+                    $(".ms_corpo").append(dados);
                 }
             });
         });
