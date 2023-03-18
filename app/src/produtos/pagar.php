@@ -460,7 +460,7 @@
         $("#captcha").mask("99999");
 
         $("#retirada_local").change(function(){
-            console.log('entrou');
+            console.log($(this).prop("checkbox"));
             if($(this).prop("checkbox") == true){
                 $("#dadosLoja").css("display","none");
             }else{
