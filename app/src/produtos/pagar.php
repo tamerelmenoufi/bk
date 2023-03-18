@@ -212,9 +212,10 @@
                 <div class="card-header"><i class="fa-solid fa-location-dot"></i> Endereço para Entrega</div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12">
+
+                        <!-- <div class="col-12">
                             <span style="opacity:0.3">RETIRADA NO LOCAL</span>
-                        </div>
+                        </div> -->
 
 
                         <div class="col-12">
