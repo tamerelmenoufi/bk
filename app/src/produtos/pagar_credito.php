@@ -63,7 +63,7 @@
 
 
                 // DADOS DE SOLICITAÇÃO DA ENTREGA
-                /*
+                //*
                 $BEE = new Bee;
                 $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
                 $retorno = json_decode($retorno);
@@ -80,6 +80,7 @@
                     $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_POST['pedido']}'";
                     mysqli_query($con, $query);
                 }
+                EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 //*/
                 // DADOS DE SOLICITAÇÃO DA ENTREGA
 

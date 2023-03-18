@@ -8,14 +8,16 @@ $dados = [];
 
 if($_POST['pedido']){
     //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
-    /*
+    //*
     $query = "UPDATE vendas set situacao = 'i' where codigo = '{$_POST['pedido']}'";
     $result = mysqli_query($con, $query);
+
+    EnviarWapp('92991886570',"VENDA - pedido *{$_SESSION['AppVenda']}* em produção.");
     //*/
     //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
 
     //SOLICITAÇÃO DA ENTREGA BEE
-    //*
+    /*
     $BEE = new Bee;
     $retorno = $BEE->NovaEntrega($_POST['pedido']);
     $retorno = json_decode($retorno);
