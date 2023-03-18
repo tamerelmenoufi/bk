@@ -82,7 +82,7 @@
             $d = mysqli_fetch_object($result);
 
 
-            if($d->entrega_gratis == '1'){
+            if($d->entrega_gratis == '1' or $d->retirada_local == '1'){
 
                 return $response = '{"deliveryId":9999}';
 

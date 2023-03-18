@@ -20,6 +20,7 @@ $query = "SELECT
                 v.name,
                 v.phone,
                 v.loja,
+                v.retirada_local,
                 e.entrega_gratis,
                 cl.nome as cliente_nome,
                 cl.telefone as cliente_telefone,
@@ -76,6 +77,12 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff;'><b>Entrega Grátis para o Endereço:</b><br style='margin-bottom:5px;'>".$d->endereco."</td></tr>";
 
     }
+
+    if($d->retirada_local){
+        $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff; text-align:center'><b>PEDIDO SERÁ RETIRADO PELO CLIENTE</b></td></tr>";
+
+    }
+
         $status .= "<tr><td colspan = '2' style='margin-top:20px; margin-bottom:5px; text-align:center;'>
         <a href='https://app.bkmanaus.com.br/app.php?l={$d->loja}' target='_blank' style='background-color:green; padding:10px; color:#fff; text-align:center; border-radius:20px;'>CONCLUIR PEDIDO</a>
         </td></tr>";
