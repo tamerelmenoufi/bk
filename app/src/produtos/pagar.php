@@ -461,7 +461,7 @@
 
         $("#retirada_local").change(function(){
             console.log('entrou');
-            if($(this).prop("checkbok") == true){
+            if($(this).prop("checkbox") == true){
                 $("#dadosLoja").css("display","none");
             }else{
                 $("#dadosLoja").css("display","block");
