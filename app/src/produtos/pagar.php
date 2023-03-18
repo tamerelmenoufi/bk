@@ -460,8 +460,8 @@
         $("#captcha").mask("99999");
 
         $("#retirada_local").change(function(){
-            console.log($(this).props("checkbox"));
-            if($(this).props("checkbox") == true){
+            console.log($(this).prop("checked"));
+            if($(this).prop("checked") == true){
                 $("#dadosLoja").css("display","none");
             }else{
                 $("#dadosLoja").css("display","block");
