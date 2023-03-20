@@ -39,10 +39,10 @@
                     where codigo = '{$_SESSION['AppVenda']}'";
             mysqli_query($con, $query);
         }else if($retorno->deliveryId){
-            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_POST['pedido']}'";
+            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
             mysqli_query($con, $query);
         }
-        EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
+        EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$_SESSION['AppVenda']}*");
         //*/
         // DADOS DE SOLICITAÇÃO DA ENTREGA
 
