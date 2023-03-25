@@ -6,6 +6,9 @@
         'approved' => '<span style="color:green">Aprovado</span>',
     ];
 
+    list($codVenda) = mysqli_fetch_row(mysqli_query($con, "select codigo from vendas where operadora_id = '{$_POST['id']}'"));
+
+
     $PIX = new MercadoPago;
     $retorno = $PIX->ObterPagamento($_POST['id']);
     $operadora_retorno = $retorno;
@@ -27,7 +30,7 @@
         // DADOS DE SOLICITAÇÃO DA ENTREGA
         //*
         $BEE = new Bee;
-        $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
+        $retorno = $BEE->NovaEntrega($codVenda);
         $retorno = json_decode($retorno);
         if($retorno->deliveryId == 9999){
             $query = "update vendas set
@@ -36,13 +39,13 @@
                                         GOING_TO_DESTINATION = NOW(),
                                         name = 'Unidade Djalma Batista',
                                         phone = '(92) 9843-87438'
-                    where codigo = '{$_SESSION['AppVenda']}'";
+                    where codigo = '{$codVenda}'";
             mysqli_query($con, $query);
         }else if($retorno->deliveryId){
-            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
+            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$codVenda}'";
             mysqli_query($con, $query);
         }
-        EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$_SESSION['AppVenda']}*");
+        EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$codVenda}*");
         //*/
         // DADOS DE SOLICITAÇÃO DA ENTREGA
 
