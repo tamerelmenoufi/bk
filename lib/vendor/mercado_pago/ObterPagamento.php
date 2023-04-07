@@ -38,11 +38,15 @@
                                         phone = '(92) 9843-87438'
                     where codigo = '{$codVenda}'";
             mysqli_query($con, $query);
+            EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}*");
         }else if($retorno->deliveryId){
             $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$codVenda}'";
             mysqli_query($con, $query);
+            EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}*");
+        }else{
+          EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}* não gerou entrega.");
         }
-        EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}*");
+
         //*/
         // DADOS DE SOLICITAÇÃO DA ENTREGA
 
