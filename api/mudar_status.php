@@ -38,7 +38,7 @@ if($_POST['pedido']){
         mysqli_query($con, $query);
         EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* em produção.");
     }else{
-        EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* não gerou entrega 2.");
+        EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* não gerou entrega 3.");
     }
     //*/
     // SOLICITAÇÃO DA ENTREGA BEE
