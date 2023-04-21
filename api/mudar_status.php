@@ -12,7 +12,7 @@ if($_POST['pedido']){
     // $query = "UPDATE vendas set situacao = 'i' where codigo = '{$_POST['pedido']}'";
     // $result = mysqli_query($con, $query);
 
-    EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* em produção.");
+    // EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* em produção.");
     //*/
     //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
 
