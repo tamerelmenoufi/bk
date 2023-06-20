@@ -305,7 +305,7 @@
                                             if(mysqli_num_rows($r)){
                                             while($v = mysqli_fetch_object($r)){
 
-                                                $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
+                                                // $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
                                                 $json = "{
                                                     \"previewDeliveryTime\": true,
