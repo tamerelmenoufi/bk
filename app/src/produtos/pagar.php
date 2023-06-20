@@ -299,15 +299,16 @@
                                         <?php
                                             $mottu = new mottu;
                                             list($lat, $lng) = explode(",", $coordenadas);
-                                            $q = "select * from lojas where situacao = '1' /*and online='1'*/ and deletado != '1'/* and (time(NOW()) between hora_ini and hora_fim)*/";
+                                            // $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
+                                            $q = "select * from lojas where situacao = '1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
                                             if(mysqli_num_rows($r)){
                                             while($v = mysqli_fetch_object($r)){
 
-                                                $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
+                                                // $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
-                                                $json = "{
+                                                echo $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
                                                     \"store\": {
@@ -323,7 +324,7 @@
                                                           \"neighborhood\": \"{$d1->bairro}\",
                                                           \"city\": \"Manaus\",
                                                           \"state\": \"Amazonas\",
-                                                          \"zipCode\": \"{".str_replace(array(' ','-'), false, $d1->cep)."}\"
+                                                          \"zipCode\": \"".str_replace(array(' ','-'), false, $d1->cep)."\"
                                                         },
                                                         \"onlinePayment\": true
                                                       }
@@ -332,10 +333,10 @@
 
 
                                                 $valores = json_decode($mottu->calculaFrete($json));
+                                                var_dump($valores);
 
-                                                print_r($valores);
 
-                                                if($valores->deliveryFee > 1){
+                                                if($valores->deliveryFee > 1 or 1 == 1){
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
                                                     $vlopc = $valores->deliveryFee;
@@ -354,6 +355,7 @@
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
                                                 </span>
+
                                             </li>
                                         <?php
                                                 }
