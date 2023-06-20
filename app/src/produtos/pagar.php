@@ -308,7 +308,7 @@
 
                                                 // $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
-                                                $json = "{
+                                                echo $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
                                                     \"store\": {
