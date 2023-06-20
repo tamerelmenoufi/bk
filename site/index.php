@@ -159,11 +159,11 @@
 
 
 
-    <div class="carousel-item active ">
+    <!--<div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/banners/bkcarnaval.jpg" class="d-block w-100" alt="...">
       </a>
-    </div>
+    </div>--->
 
     <div class="carousel-item ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
@@ -207,11 +207,11 @@
 <div id="carouselExampleControls1" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
 
-  <div class="carousel-item active ">
+  <!--<div class="carousel-item active ">
     <a href="https://app.bkmanaus.com.br" target="_blank" class="btn-get-started scrollto">
       <img src="assets/img/banners/bkcarnavalceluar.jpg" class="d-block w-100" alt="...">
       </a>
-    </div>
+    </div>--->
 
 
 
