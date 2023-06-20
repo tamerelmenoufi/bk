@@ -336,7 +336,7 @@
 
                                                 print_r($valores);
 
-                                                if($valores->deliveryFee > 1){
+                                                if($valores->deliveryFee > 1 or 1 == 1){
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
                                                     $vlopc = $valores->deliveryFee;
