@@ -311,9 +311,7 @@
                                                 echo $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
-                                                    \"store\": {
-                                                        \"document\": {$v->cnpj}
-                                                    },
+
                                                     \"deliveries\": [
                                                       {
                                                         \"orderRoute\": {$v->id},
