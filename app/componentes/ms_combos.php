@@ -162,7 +162,7 @@ while ($p = mysqli_fetch_object($result) ) {
     }
 ?>
     <div
-        abrir_combo
+        abrir_combo<?=$md5?>
         local="src/produtos/produto_combo.php"
         produto="<?=$p->codigo?>"
         janela="ms_popup_100"
@@ -185,7 +185,7 @@ while ($p = mysqli_fetch_object($result) ) {
 <script>
     $(function(){
 
-        $("div[abrir_combo]").click(function(){
+        $("div[abrir_combo<?=$md5?>]").click(function(){
             local = $(this).attr("local");
             janela = $(this).attr("janela");
             produto = $(this).attr("produto");
