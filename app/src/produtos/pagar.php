@@ -316,7 +316,7 @@
                                                     },
                                                     \"deliveries\": [
                                                       {
-                                                        \"orderRoute\": {$v->id},
+                                                        \"orderRoute\": {$_SESSION['AppVenda']},
                                                         \"address\": {
                                                           \"street\": \"{$d1->rua}\",
                                                           \"number\": \"{$d1->numero}\",
@@ -334,7 +334,7 @@
 
                                                 $valores = json_decode($mottu->calculaFrete($json));
 
-
+                                                var_dump($valores);
                                                 if($valores->deliveryFee > 1 or 1 == 1){
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
