@@ -308,7 +308,7 @@
 
                                                 // $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
-                                                echo $json = "{
+                                                $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
                                                     \"store\": {
@@ -332,7 +332,7 @@
                                                   }";
 
 
-                                                $valores = json_decode($mottu->calculaFrete($json));
+                                                echo $valores = json_decode($mottu->calculaFrete($json));
 
 
 
