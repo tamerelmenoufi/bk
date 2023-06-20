@@ -9,6 +9,27 @@
     list($codVenda) = mysqli_fetch_row(mysqli_query($con, "select codigo from vendas where operadora_id = '{$_POST['id']}'"));
 
 
+    $query = "select
+                    a.*,
+                    d.id as id_loja,
+                    b.nome,
+                    b.cpf,
+                    b.telefone,
+                    b.email,
+                    c.cep,
+                    c.numero,
+                    c.rua,
+                    c.bairro,
+                    c.referencia
+                from vendas a
+                     left join clientes b on a.cliente = b.codigo
+                     left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                     left join lojas d on a.loja = d.codigo
+                where a.codigo = '{$codVenda}'";
+
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
     $PIX = new MercadoPago;
     $retorno = $PIX->ObterPagamento($_POST['id']);
     $operadora_retorno = $retorno;
@@ -29,26 +50,62 @@
 
         // DADOS DE SOLICITAÇÃO DA ENTREGA
         //*
-        $BEE = new Bee;
-        $retorno = $BEE->NovaEntrega($codVenda);
-        $retorno = json_decode($retorno);
-        if($retorno->deliveryId == 9999){
-            $query = "update vendas set
-                                        deliveryId = '{$retorno->deliveryId}',
-                                        situacao = 'p',
-                                        GOING_TO_DESTINATION = NOW(),
-                                        name = 'Unidade Djalma Batista',
-                                        phone = '(92) 9843-87438'
-                    where codigo = '{$codVenda}'";
-            mysqli_query($con, $query);
-        }else if($retorno->deliveryId){
-            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$codVenda}'";
-            mysqli_query($con, $query);
-        }
+        // $BEE = new Bee;
+        // $retorno = $BEE->NovaEntrega($codVenda);
+        // $retorno = json_decode($retorno);
+        // if($retorno->deliveryId == 9999){
+        //     $query = "update vendas set
+        //                                 deliveryId = '{$retorno->deliveryId}',
+        //                                 situacao = 'p',
+        //                                 GOING_TO_DESTINATION = NOW(),
+        //                                 name = 'Unidade Djalma Batista',
+        //                                 phone = '(92) 9843-87438'
+        //             where codigo = '{$codVenda}'";
+        //     mysqli_query($con, $query);
+        // }else if($retorno->deliveryId){
+        //     $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$codVenda}'";
+        //     mysqli_query($con, $query);
+        // }
+
+        $json = "{
+            \"code\": \"{$d->codigo}\",
+            \"preparationTime\": 0,
+            \"previewDeliveryTime\": false,
+            \"sortByBestRoute\": false,
+            \"deliveries\": [
+              {
+                \"code\": \"{$d->codigo}\",
+                \"confirmation\": {
+                  \"mottu\": true
+                },
+                \"name\": \"{$d->nome}\",
+                \"phone\": \"{$d->telefone}\",
+                \"observation\": \"{$d->observacoes}\",
+                \"address\": {
+                  \"street\": \"{$d->rua}\",
+                  \"number\": \"{$$d->numero}\",
+                  \"complement\": \"{$d->referencia}\",
+                  \"neighborhood\": \"{$d->bairro}\",
+                  \"city\": \"Manaus\",
+                  \"state\": \"AM\",
+                  \"zipCode\": \"{$d->cep}\"
+                },
+                \"onlinePayment\": true,
+                \"productValue\": {$d->total}
+              }
+            ]
+          }";
+
+        $mottu = new mottu;
+
+        $retorno = $mottu->NovoPedido($json);
+
+        $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$codVenda}'";
+        mysqli_query($con, $query);
+
         EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$codVenda}*");
         //*/
         // DADOS DE SOLICITAÇÃO DA ENTREGA
-
 
         $_SESSION['AppVenda'] = false;
         $_SESSION['AppPedido'] = false;

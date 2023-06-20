@@ -25,7 +25,9 @@
                     b.email,
                     c.cep,
                     c.numero,
-                    c.rua, bairro
+                    c.rua,
+                    c.bairro,
+                    c.referencia
                 from vendas a
                      left join clientes b on a.cliente = b.codigo
                      left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
@@ -148,24 +150,58 @@
 
                                 if($operadora_id){
 
-                                    //////////////////////API DELIVERY////////////////////////////
+                                    // //////////////////////API DELIVERY////////////////////////////
 
-                                    $content = http_build_query(array(
-                                        'pedido' => $d->codigo,
-                                        'empresa' => $d->id_loja,
-                                    ));
+                                    // // $content = http_build_query(array(
+                                    // //     'pedido' => $d->codigo,
+                                    // //     'empresa' => $d->id_loja,
+                                    // // ));
 
-                                    $context = stream_context_create(array(
-                                        'http' => array(
-                                            'method'  => 'POST',
-                                            'content' => $content,
-                                            'header' => "Content-Type: application/x-www-form-urlencoded",
-                                        )
-                                    ));
+                                    // // $context = stream_context_create(array(
+                                    // //     'http' => array(
+                                    // //         'method'  => 'POST',
+                                    // //         'content' => $content,
+                                    // //         'header' => "Content-Type: application/x-www-form-urlencoded",
+                                    // //     )
+                                    // // ));
 
-                                    $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
-                                    $result = json_decode($result);
-                                    $api_delivery = $result->codigo;
+                                    // // $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
+                                    // // $result = json_decode($result);
+
+                                    // $json = "{
+                                    //     \"code\": \"{$d->codigo}\",
+                                    //     \"preparationTime\": 0,
+                                    //     \"previewDeliveryTime\": false,
+                                    //     \"sortByBestRoute\": false,
+                                    //     \"deliveries\": [
+                                    //       {
+                                    //         \"code\": \"{$d->codigo}\",
+                                    //         \"confirmation\": {
+                                    //           \"mottu\": true
+                                    //         },
+                                    //         \"name\": \"{$d->nome}\",
+                                    //         \"phone\": \"{$d->telefone}\",
+                                    //         \"observation\": \"{$d->observacoes}\",
+                                    //         \"address\": {
+                                    //           \"street\": \"{$d->rua}\",
+                                    //           \"number\": \"{$$d->numero}\",
+                                    //           \"complement\": \"{$d->referencia}\",
+                                    //           \"neighborhood\": \"{$d->bairro}\",
+                                    //           \"city\": \"Manaus\",
+                                    //           \"state\": \"AM\",
+                                    //           \"zipCode\": \"{$d->cep}\"
+                                    //         },
+                                    //         \"onlinePayment\": true,
+                                    //         \"productValue\": {$d->total}
+                                    //       }
+                                    //     ]
+                                    //   }";
+
+                                    // $mottu = new mottu;
+
+                                    // $retorno = $mottu->NovoPedido($json);
+
+                                    // $api_delivery = $result->id;
 
 
                                     //////////////////////API DELIVERY////////////////////////////
