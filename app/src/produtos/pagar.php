@@ -299,7 +299,8 @@
                                         <?php
                                             $mottu = new mottu;
                                             list($lat, $lng) = explode(",", $coordenadas);
-                                            $q = "select * from lojas where situacao = '1' /*and online='1'*/ and deletado != '1'/* and (time(NOW()) between hora_ini and hora_fim)*/";
+                                            // $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
+                                            $q = "select * from lojas where situacao = '1' and deletado != '1'";
                                             $r = mysqli_query($con, $q);
                                             $vlopc = 0;
                                             if(mysqli_num_rows($r)){
