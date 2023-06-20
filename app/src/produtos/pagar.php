@@ -332,8 +332,8 @@
                                                   }";
 
 
-                                                echo $valores = json_decode($mottu->calculaFrete($json));
-
+                                                $valores = json_decode($mottu->calculaFrete($json));
+                                                var_dump($valores);
 
 
                                                 if($valores->deliveryFee > 1 or 1 == 1){
