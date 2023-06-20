@@ -308,7 +308,7 @@
 
                                                 // $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
-                                                $json = "{
+                                                echo $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
                                                     \"store\": {
@@ -355,7 +355,7 @@
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
                                                 </span>
-                                                <?=print_r($valores);?>
+
                                             </li>
                                         <?php
                                                 }
