@@ -321,7 +321,7 @@
                                                           \"complement\": \"{$d1->complemento}\",
                                                           \"neighborhood\": \"{$d1->bairro}\",
                                                           \"city\": \"Manaus\",
-                                                          \"state\": \"Amazonas\",
+                                                          \"state\": \"AM\",
                                                           \"zipCode\": \"".str_replace(array(' ','-'), false, $d1->cep)."\"
                                                         },
                                                         \"onlinePayment\": true
