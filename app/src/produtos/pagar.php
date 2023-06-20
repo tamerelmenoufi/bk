@@ -314,7 +314,7 @@
 
                                                     \"deliveries\": [
                                                       {
-                                                        \"orderRoute\": {$v->id},
+                                                        \"orderRoute\": {$_SESSION['AppVenda']},
                                                         \"address\": {
                                                           \"street\": \"{$d1->rua}\",
                                                           \"number\": \"{$d1->numero}\",
