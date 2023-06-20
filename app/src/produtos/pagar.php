@@ -334,7 +334,7 @@
 
                                                 $valores = json_decode($mottu->calculaFrete($json));
 
-                                                print_r($valores);
+
 
                                                 if($valores->deliveryFee > 1 or 1 == 1){
 
@@ -355,6 +355,7 @@
                                                 <span class="badge badge-pill">
                                                     <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
                                                 </span>
+                                                <?=print_r($valores);?>
                                             </li>
                                         <?php
                                                 }
