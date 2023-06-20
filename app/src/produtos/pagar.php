@@ -324,7 +324,7 @@
                                                           \"neighborhood\": \"{$d1->bairro}\",
                                                           \"city\": \"Manaus\",
                                                           \"state\": \"Amazonas\",
-                                                          \"zipCode\": \"{".str_replace(array(' ','-'), false, $d1->cep)."}\"
+                                                          \"zipCode\": \"".str_replace(array(' ','-'), false, $d1->cep)."\"
                                                         },
                                                         \"onlinePayment\": true
                                                       }
