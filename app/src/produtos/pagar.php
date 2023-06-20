@@ -297,7 +297,7 @@
                                     <div id="<?=(($StatusApp == 'a' and !$promocao_taxa_zero)?'collapseOne':false)?>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                         <ul class="list-group">
                                         <?php
-                                            $bee = new Bee;
+                                            $mottu = new mottu;
                                             list($lat, $lng) = explode(",", $coordenadas);
                                             $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
                                             $r = mysqli_query($con, $q);
@@ -306,6 +306,35 @@
                                             while($v = mysqli_fetch_object($r)){
 
                                                 $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
+
+                                                $json = "{
+                                                    \"previewDeliveryTime\": true,
+                                                    \"sortByBestRoute\": false,
+                                                    \"store\": {
+                                                        \"document\": {$v->cnpj}
+                                                    },
+                                                    \"deliveries\": [
+                                                      {
+                                                        \"orderRoute\": {$v->id},
+                                                        \"address\": {
+                                                          \"street\": \"{$d1->rua}\",
+                                                          \"number\": \"{$d1->numero}\",
+                                                          \"complement\": \"{$d1->complemento}\",
+                                                          \"neighborhood\": \"{$d1->bairro}\",
+                                                          \"city\": \"Manaus\",
+                                                          \"state\": \"Amazonas\",
+                                                          \"zipCode\": \"{".str_replace(array(' ','-'), false, $d1->cep)."}\"
+                                                        },
+                                                        \"onlinePayment\": true
+                                                      }
+                                                    ]
+                                                  }";
+
+
+                                                $valores = json_decode($mottu->calculaFrete($json));
+
+                                                print_r($valores);
+
                                                 if($valores->deliveryFee > 1){
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
@@ -329,7 +358,7 @@
                                         <?php
                                                 }
                                             }
-                                        }
+                                            }
                                         ?>
                                         </ul>
                                     </div>

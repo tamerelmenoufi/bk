@@ -112,6 +112,7 @@ while ($m = mysqli_fetch_array($m_r)) {
 <script>
 
 $(function(){
+
     $.ajax({
         url:"componentes/ms_combos.php",
         success:function(dados){
