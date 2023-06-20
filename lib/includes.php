@@ -8,6 +8,7 @@ include "fn.php";
 include "vendor/rede/classes.php";
 include "vendor/mercado_pago/classes.php";
 include "vendor/bee/classes.php";
+include "vendor/mottu/classes.php";
 include "AppWapp.php";
 $md5 = md5(date("YmdHis"));
 if($_SESSION['usuario']){
