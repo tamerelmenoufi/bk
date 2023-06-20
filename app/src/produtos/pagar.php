@@ -308,12 +308,15 @@
 
                                                 // $valores = json_decode($bee->ValorViagem($v->id, $lat, $lng));
 
+                                                //    \"store\": {
+                                                //         \"document\": {$v->cnpj}
+                                                //     },
+
+
                                                 $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
-                                                    \"store\": {
-                                                        \"document\": {$v->cnpj}
-                                                    },
+
                                                     \"deliveries\": [
                                                       {
                                                         \"orderRoute\": {$_SESSION['AppVenda']},
@@ -334,7 +337,7 @@
 
                                                 $valores = json_decode($mottu->calculaFrete($json));
 
-                                                var_dump($valores);
+                                                // var_dump($valores);
                                                 if($valores->deliveryFee > 1 or 1 == 1){
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
