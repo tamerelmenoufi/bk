@@ -30,19 +30,19 @@
 
 
         #############################################################################
-        $content = http_build_query(array(
-            'pedido' => $_SESSION['AppVenda'],
-            'empresa' => $_POST['LjId'],
-        ));
+        // $content = http_build_query(array(
+        //     'pedido' => $_SESSION['AppVenda'],
+        //     'empresa' => $_POST['LjId'],
+        // ));
 
-        $context = stream_context_create(array(
-            'http' => array(
-                'method'  => 'POST',
-                'content' => $content,
-            )
-        ));
+        // $context = stream_context_create(array(
+        //     'http' => array(
+        //         'method'  => 'POST',
+        //         'content' => $content,
+        //     )
+        // ));
 
-        $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
+        // $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
         #############################################################################
 
         echo json_encode(VerificarProdutos($_POST['LjCd']));
