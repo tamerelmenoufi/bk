@@ -25,7 +25,6 @@
         //////////////////////API DELIVERY////////////////////////////
         if($_POST['hom']){
 
-
                 $query = "select
                     a.*,
                     d.id as id_loja,
@@ -98,8 +97,6 @@
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
-                    $query = "update vendas set operadora_retorno = '{$retorno1}' where codigo = '{$_SESSION['AppVenda']}'";
-                    mysqli_query($con, $query);
                 }
 
                 //*/
@@ -454,7 +451,7 @@
                 success:function(dados){
 
                     let retorno = JSON.parse(dados);
-                    $.alert(retorno);
+                    $.alert(retorno.msg);
                     tentativa = (tentativas*1-1);
                     $("#Pagar").attr("tentativas", tentativa);
                     $(".alertas").css("display","block");
