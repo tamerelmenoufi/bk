@@ -228,7 +228,7 @@
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else if($retorno->id){
-                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
+                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'c' where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
