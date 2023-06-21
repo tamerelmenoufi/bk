@@ -214,12 +214,12 @@
 
                 $mottu = new mottu;
 
-                $retorno = $mottu->NovoPedido($json);
-                $retorno = json_decode($retorno);
+                $retorno1 = $mottu->NovoPedido($json);
+                $retorno = json_decode($retorno1);
 
                 if($retorno->id == 9999){
                     $query = "update vendas set
-                                                deliveryId = '{$retorno->deliveryId}',
+                                                deliveryId = '{$retorno->id}',
                                                 situacao = 'p',
                                                 GOING_TO_DESTINATION = NOW(),
                                                 name = 'Unidade Djalma Batista',
@@ -233,6 +233,8 @@
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
+                    $query = "update vendas set operadora_retorno = '{$retorno1}' where codigo = '{$_SESSION['AppVenda']}'";
+                    mysqli_query($con, $query);
                 }
 
                 //*/
