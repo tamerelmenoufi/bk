@@ -445,8 +445,7 @@
                     securityCode,
                     loja,
                     captcha,
-                    acao:'pagar',
-                    hom
+                    acao:'pagar'
                 },
                 success:function(dados){
 
