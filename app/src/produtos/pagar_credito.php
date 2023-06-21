@@ -115,7 +115,7 @@
 
 
 
-        }else if($_SESSION["palavra"] == $_POST['captcha']){
+        }else if($_SESSION["palavra"] == $_POST['captcha'] and !$_POST['hom']){
 
             require "../../../lib/vendor/rede/Transacao.php";
 
