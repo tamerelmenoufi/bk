@@ -431,6 +431,11 @@
                 return false;
             }
 
+
+            console.log(hom);
+
+            return;
+
             $.ajax({
                 url:"src/produtos/pagar_credito.php",
                 type:"POST",
