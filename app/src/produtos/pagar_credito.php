@@ -60,7 +60,7 @@
                           \"mottu\": true
                         },
                         \"name\": \"{$d->nome}\",
-                        \"phone\": \"{$d->telefone}\",
+                        \"phone\": \"".trim(str_replace(array(' ','-'), false, $d->telefone))."\",
                         \"observation\": \"{$d->observacoes}\",
                         \"address\": {
                           \"street\": \"{$d->rua}\",
@@ -197,7 +197,7 @@
                           \"mottu\": true
                         },
                         \"name\": \"{$d->nome}\",
-                        \"phone\": \"{$d->telefone}\",
+                        \"phone\": \"".trim(str_replace(array(' ','-'), false, $d->telefone))."\",
                         \"observation\": \"{$d->observacoes}\",
                         \"address\": {
                           \"street\": \"{$d->rua}\",
