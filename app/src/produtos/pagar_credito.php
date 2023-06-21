@@ -449,6 +449,11 @@
                     hom
                 },
                 success:function(dados){
+
+                    console.log(dados);
+
+                    return false;
+
                     let retorno = JSON.parse(dados);
                     $.alert(retorno.msg);
                     tentativa = (tentativas*1-1);
@@ -460,6 +465,7 @@
                         window.localStorage.removeItem('AppPedido');
                         PageClose(2);
                     }
+
                 }
             });
 
