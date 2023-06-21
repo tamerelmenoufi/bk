@@ -23,7 +23,7 @@
         // $api_delivery = $result->codigo;
 
         //////////////////////API DELIVERY////////////////////////////
-        if($_POST['homologacao']){
+        if($_POST['hom']){
 
 
                 $query = "select
@@ -116,7 +116,7 @@
 
 
 
-        }else if($_SESSION["palavra"] == $_POST['captcha'] and !$_POST['homologacao']){
+        }else if($_SESSION["palavra"] == $_POST['captcha'] and !$_POST['hom']){
 
             require "../../../lib/vendor/rede/Transacao.php";
 
