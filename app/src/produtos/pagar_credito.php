@@ -5,25 +5,117 @@
 
         //////////////////////API DELIVERY////////////////////////////
 
-        $content = http_build_query(array(
-            'pedido' => $_POST['reference'],
-            'empresa' => $_POST['loja'],
-        ));
+        // $content = http_build_query(array(
+        //     'pedido' => $_POST['reference'],
+        //     'empresa' => $_POST['loja'],
+        // ));
 
-        $context = stream_context_create(array(
-            'http' => array(
-                'method'  => 'POST',
-                'content' => $content,
-                'header' => "Content-Type: application/x-www-form-urlencoded",
-            )
-        ));
+        // $context = stream_context_create(array(
+        //     'http' => array(
+        //         'method'  => 'POST',
+        //         'content' => $content,
+        //         'header' => "Content-Type: application/x-www-form-urlencoded",
+        //     )
+        // ));
 
-        $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
-        $result = json_decode($result);
-        $api_delivery = $result->codigo;
+        // $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
+        // $result = json_decode($result);
+        // $api_delivery = $result->codigo;
 
         //////////////////////API DELIVERY////////////////////////////
-        if($_SESSION["palavra"] == $_POST['captcha']){
+        if($_SESSION["palavra"] == $_POST['captcha'] and $_POST['hom']){
+
+
+                $query = "select
+                    a.*,
+                    d.id as id_loja,
+                    b.nome,
+                    b.cpf,
+                    b.telefone,
+                    b.email,
+                    c.cep,
+                    c.numero,
+                    c.rua,
+                    c.bairro,
+                    c.referencia
+                from vendas a
+                    left join clientes b on a.cliente = b.codigo
+                    left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                    left join lojas d on a.loja = d.codigo
+                where a.codigo = '{$_POST['reference']}'";
+
+                $result = mysqli_query($con, $query);
+                $d = mysqli_fetch_object($result);
+
+                $json = "{
+                    \"code\": \"{$d->codigo}\",
+                    \"fullCode\": \"bk-{$d->codigo}\",
+                    \"preparationTime\": 0,
+                    \"previewDeliveryTime\": false,
+                    \"sortByBestRoute\": false,
+                    \"deliveries\": [
+                      {
+                        \"code\": \"{$d->codigo}\",
+                        \"confirmation\": {
+                          \"mottu\": true
+                        },
+                        \"name\": \"{$d->nome}\",
+                        \"phone\": \"{$d->telefone}\",
+                        \"observation\": \"{$d->observacoes}\",
+                        \"address\": {
+                          \"street\": \"{$d->rua}\",
+                          \"number\": \"{$$d->numero}\",
+                          \"complement\": \"{$d->referencia}\",
+                          \"neighborhood\": \"{$d->bairro}\",
+                          \"city\": \"Manaus\",
+                          \"state\": \"AM\",
+                          \"zipCode\": \"{$d->cep}\"
+                        },
+                        \"onlinePayment\": true,
+                        \"productValue\": {$d->total}
+                      }
+                    ]
+                  }";
+
+                $mottu = new mottu;
+
+                $retorno = $mottu->NovoPedido($json);
+                $retorno = json_decode($retorno);
+
+                if($retorno->deliveryId == 9999){
+                    $query = "update vendas set
+                                                deliveryId = '{$retorno->deliveryId}',
+                                                situacao = 'p',
+                                                GOING_TO_DESTINATION = NOW(),
+                                                name = 'Unidade Djalma Batista',
+                                                phone = '(92) 9843-87438'
+                            where codigo = '{$_SESSION['AppVenda']}'";
+                    mysqli_query($con, $query);
+                    EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
+                }else if($retorno->deliveryId){
+                    $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
+                    mysqli_query($con, $query);
+                    EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
+                }else{
+                    EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
+                }
+
+                //*/
+                // DADOS DE SOLICITAÇÃO DA ENTREGA
+
+
+                $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
+                $_SESSION['AppPedido'] = false;
+                $_SESSION['AppCarrinho'] = false;
+                echo json_encode([
+                    'status' => $r->authorization->status,
+                    'msg' => 'Operação realizada com sucesso!',
+                    //'AppVenda' => $_SESSION['AppVenda'],
+                ]);
+
+
+
+        }else if($_SESSION["palavra"] == $_POST['captcha']){
 
             require "../../../lib/vendor/rede/Transacao.php";
 
@@ -64,9 +156,66 @@
 
                 // DADOS DE SOLICITAÇÃO DA ENTREGA
                 //*
-                $BEE = new Bee;
-                $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
+                // $BEE = new Bee;
+                // $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
+                // $retorno = json_decode($retorno);
+
+                $query = "select
+                    a.*,
+                    d.id as id_loja,
+                    b.nome,
+                    b.cpf,
+                    b.telefone,
+                    b.email,
+                    c.cep,
+                    c.numero,
+                    c.rua,
+                    c.bairro,
+                    c.referencia
+                from vendas a
+                    left join clientes b on a.cliente = b.codigo
+                    left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                    left join lojas d on a.loja = d.codigo
+                where a.codigo = '{$_POST['reference']}'";
+
+                $result = mysqli_query($con, $query);
+                $d = mysqli_fetch_object($result);
+
+                $json = "{
+                    \"code\": \"{$d->codigo}\",
+                    \"fullCode\": \"bk-{$d->codigo}\",
+                    \"preparationTime\": 0,
+                    \"previewDeliveryTime\": false,
+                    \"sortByBestRoute\": false,
+                    \"deliveries\": [
+                      {
+                        \"code\": \"{$d->codigo}\",
+                        \"confirmation\": {
+                          \"mottu\": true
+                        },
+                        \"name\": \"{$d->nome}\",
+                        \"phone\": \"{$d->telefone}\",
+                        \"observation\": \"{$d->observacoes}\",
+                        \"address\": {
+                          \"street\": \"{$d->rua}\",
+                          \"number\": \"{$$d->numero}\",
+                          \"complement\": \"{$d->referencia}\",
+                          \"neighborhood\": \"{$d->bairro}\",
+                          \"city\": \"Manaus\",
+                          \"state\": \"AM\",
+                          \"zipCode\": \"{$d->cep}\"
+                        },
+                        \"onlinePayment\": true,
+                        \"productValue\": {$d->total}
+                      }
+                    ]
+                  }";
+
+                $mottu = new mottu;
+
+                $retorno = $mottu->NovoPedido($json);
                 $retorno = json_decode($retorno);
+
                 if($retorno->deliveryId == 9999){
                     $query = "update vendas set
                                                 deliveryId = '{$retorno->deliveryId}',
@@ -224,7 +373,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" tentativas="<?=$d->tentativas_pagamento?>" loja="<?=$d->id_loja?>">
+                <button class="btn btn-secondary btn-block btn-lg" id="Pagar" hom="1" tentativas="<?=$d->tentativas_pagamento?>" loja="<?=$d->id_loja?>">
                     <i class="fa fa-calculator" aria-hidden="true"></i>
                     PAGAR R$ <?=number_format($d->total, 2, ',','.')?>
                 </button>
@@ -258,6 +407,8 @@
             tentativas = $(this).attr("tentativas");
             loja = $(this).attr("loja");
             captcha = '<?=$_POST['captcha']?>';
+
+            hom = $(this).attr("hom");
 
             if(tentativas == 0){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
@@ -294,7 +445,8 @@
                     securityCode,
                     loja,
                     captcha,
-                    acao:'pagar'
+                    acao:'pagar',
+                    hom
                 },
                 success:function(dados){
                     let retorno = JSON.parse(dados);
