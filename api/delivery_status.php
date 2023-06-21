@@ -9,7 +9,7 @@ $dados = json_encode($_POST);
 if($_POST['CodigoExterno']){
 
         $query = "insert into status_delivery set
-                                    venda = '{$_POST['pedido']}',
+                                    venda = '{$_POST['CodigoExterno']}',
                                     operadora = 'mottu',
                                     data = NOW(),
                                     retorno = '{$dados}'";
