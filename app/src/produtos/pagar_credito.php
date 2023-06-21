@@ -79,8 +79,8 @@
 
                 $mottu = new mottu;
 
-                $retorno = $mottu->NovoPedido($json);
-                $retorno = json_decode($retorno);
+                $retorno1 = $mottu->NovoPedido($json);
+                $retorno = json_decode($retorno1);
 
                 if($retorno->id == 9999){
                     $query = "update vendas set
