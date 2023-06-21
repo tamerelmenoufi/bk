@@ -108,7 +108,7 @@
                 $_SESSION['AppCarrinho'] = false;
 
                 echo json_encode([
-                    'status' => 'approved',
+                    'status' => 'Approved',
                     'msg' => 'Operação realizada com sucesso!',
                     //'AppVenda' => $_SESSION['AppVenda'],
                 ]);
