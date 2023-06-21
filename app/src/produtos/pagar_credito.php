@@ -82,9 +82,9 @@
                 $retorno = $mottu->NovoPedido($json);
                 $retorno = json_decode($retorno);
 
-                if($retorno->deliveryId == 9999){
+                if($retorno->id == 9999){
                     $query = "update vendas set
-                                                deliveryId = '{$retorno->deliveryId}',
+                                                deliveryId = '{$retorno->id}',
                                                 situacao = 'p',
                                                 GOING_TO_DESTINATION = NOW(),
                                                 name = 'Unidade Djalma Batista',
@@ -92,12 +92,14 @@
                             where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
-                }else if($retorno->deliveryId){
-                    $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
+                }else if($retorno->id){
+                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
+                    $query = "update vendas set operadora_retorno = '{$retorno1}' where codigo = '{$_SESSION['AppVenda']}'";
+                    mysqli_query($con, $query);
                 }
 
                 //*/
@@ -199,7 +201,7 @@
                         \"observation\": \"{$d->observacoes}\",
                         \"address\": {
                           \"street\": \"{$d->rua}\",
-                          \"number\": \"{$$d->numero}\",
+                          \"number\": \"{$d->numero}\",
                           \"complement\": \"{$d->referencia}\",
                           \"neighborhood\": \"{$d->bairro}\",
                           \"city\": \"Manaus\",
@@ -233,8 +235,6 @@
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
-                    $query = "update vendas set operadora_retorno = '{$retorno1}' where codigo = '{$_SESSION['AppVenda']}'";
-                    mysqli_query($con, $query);
                 }
 
                 //*/
