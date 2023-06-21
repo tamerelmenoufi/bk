@@ -23,7 +23,7 @@
         // $api_delivery = $result->codigo;
 
         //////////////////////API DELIVERY////////////////////////////
-        if($_SESSION["palavra"] == $_POST['captcha'] and $_POST['hom']){
+        if($_POST['hom']){
 
 
                 $query = "select
