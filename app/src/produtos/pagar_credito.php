@@ -446,7 +446,7 @@
                     securityCode,
                     loja,
                     captcha,
-                    homologacao,
+                    hom:homologacao,
                     acao:'pagar'
                 },
                 success:function(dados){
