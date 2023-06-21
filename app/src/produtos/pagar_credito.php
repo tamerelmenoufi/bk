@@ -69,7 +69,7 @@
                           \"neighborhood\": \"{$d->bairro}\",
                           \"city\": \"Manaus\",
                           \"state\": \"AM\",
-                          \"zipCode\": \"{$d->cep}\"
+                          \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
                         },
                         \"onlinePayment\": true,
                         \"productValue\": {$d->total}
@@ -206,7 +206,7 @@
                           \"neighborhood\": \"{$d->bairro}\",
                           \"city\": \"Manaus\",
                           \"state\": \"AM\",
-                          \"zipCode\": \"{$d->cep}\"
+                          \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
                         },
                         \"onlinePayment\": true,
                         \"productValue\": {$d->total}
