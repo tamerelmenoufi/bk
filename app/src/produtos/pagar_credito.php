@@ -450,12 +450,8 @@
                 },
                 success:function(dados){
 
-                    console.log(dados);
-
-                    return false;
-
                     let retorno = JSON.parse(dados);
-                    $.alert(retorno.msg);
+                    $.alert(retorno);
                     tentativa = (tentativas*1-1);
                     $("#Pagar").attr("tentativas", tentativa);
                     $(".alertas").css("display","block");
