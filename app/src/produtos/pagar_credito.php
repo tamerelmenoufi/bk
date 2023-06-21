@@ -23,7 +23,7 @@
         // $api_delivery = $result->codigo;
 
         //////////////////////API DELIVERY////////////////////////////
-        if($_POST['hom']){
+        if($_POST['homologacao']){
 
 
                 $query = "select
@@ -115,7 +115,7 @@
 
 
 
-        }else if($_SESSION["palavra"] == $_POST['captcha'] and !$_POST['hom']){
+        }else if($_SESSION["palavra"] == $_POST['captcha'] and !$_POST['homologacao']){
 
             require "../../../lib/vendor/rede/Transacao.php";
 
@@ -408,7 +408,7 @@
             loja = $(this).attr("loja");
             captcha = '<?=$_POST['captcha']?>';
 
-            hom = $(this).attr("hom");
+            homologacao = $(this).attr("hom");
 
             if(tentativas == 0){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Você passou de três tentativas de pagamento com cartão de crédito. Favor selecionar outra forma de pagamento!</center></div>';
@@ -431,11 +431,6 @@
                 return false;
             }
 
-
-            console.log(hom);
-
-            return;
-
             $.ajax({
                 url:"src/produtos/pagar_credito.php",
                 type:"POST",
@@ -450,7 +445,7 @@
                     securityCode,
                     loja,
                     captcha,
-                    hom,
+                    homologacao,
                     acao:'pagar'
                 },
                 success:function(dados){
