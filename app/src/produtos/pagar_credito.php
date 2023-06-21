@@ -107,8 +107,9 @@
                 $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
                 $_SESSION['AppPedido'] = false;
                 $_SESSION['AppCarrinho'] = false;
+
                 echo json_encode([
-                    'status' => $r->authorization->status,
+                    'status' => 'approved',
                     'msg' => 'Operação realizada com sucesso!',
                     //'AppVenda' => $_SESSION['AppVenda'],
                 ]);
