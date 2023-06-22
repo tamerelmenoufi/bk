@@ -12,11 +12,19 @@ class mottu {
         }
     }
 
-    public function apiKey(){
-        return 'F74C23D9DF05489E9A5185EB5F7DEE28';
+    public function apiKey($opc, $loja){
+        if($opc == 'homologacao'){
+            return 'F74C23D9DF05489E9A5185EB5F7DEE28';
+        }else{
+            $Lojas = [
+                '813416' => '8C0CC3BEBE314FD1830520A2A09AC8F8', //Humberto Calderaro
+                '813383' => 'A150C55FB8434331BE8EE44BAB9A7BA7', //Djalma Batista
+            ];
+            return $Lojas[$loja];
+        }
     }
 
-    public function NovoPedido($json){
+    public function NovoPedido($json, $loja = false){
 
         $curl = curl_init();
 
@@ -32,7 +40,7 @@ class mottu {
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey(),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -40,12 +48,12 @@ class mottu {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
 
-    public function ConsultarPedido($pedido){
+    public function ConsultarPedido($pedido, $loja = false){
 
         $curl = curl_init();
 
@@ -60,7 +68,7 @@ class mottu {
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey(),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -68,12 +76,12 @@ class mottu {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
 
-    public function cancelarPedido($json){
+    public function cancelarPedido($json, $loja = false){
 
         $curl = curl_init();
 
@@ -89,7 +97,7 @@ class mottu {
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey(),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -98,10 +106,10 @@ class mottu {
 
         curl_close($curl);
 
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
     }
 
-    public function calculaFrete($json){
+    public function calculaFrete($json, $loja = false){
 
         $curl = curl_init();
 
@@ -117,7 +125,7 @@ class mottu {
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey(),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -125,11 +133,11 @@ class mottu {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
-    public function webhook($json){
+    public function webhook($json, $loja = false){
 
         $curl = curl_init();
 
@@ -145,7 +153,7 @@ class mottu {
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey(),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -153,7 +161,7 @@ class mottu {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
