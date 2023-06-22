@@ -1,7 +1,7 @@
 <?php
     include("../../../lib/includes.php");
 
-    $query1 = "select * from clientes_enderecos where cliente = '2' and deletado != '1' order by padrao desc limit 1";
+    echo $query1 = "select * from clientes_enderecos where cliente = '2' and deletado != '1' order by padrao desc limit 1";
     $result1 = mysqli_query($con, $query1);
     $d1 = mysqli_fetch_object($result1);
 
