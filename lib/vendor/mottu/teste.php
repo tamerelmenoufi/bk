@@ -8,7 +8,7 @@
     $mottu = new mottu;
     list($lat, $lng) = explode(",", $coordenadas);
     // $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
-    echo $q = "select * from lojas where situacao = '1' and deletado != '1'";
+    echo $q = "select * from lojas where codigo in(1,10)";
     $r = mysqli_query($con, $q);
     $vlopc = 0;
     if(mysqli_num_rows($r)){
