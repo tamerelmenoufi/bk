@@ -8,13 +8,13 @@
     $mottu = new mottu;
     list($lat, $lng) = explode(",", $coordenadas);
     // $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
-    echo $q = "select * from lojas where codigo in(1,10)";
+    $q = "select * from lojas where codigo in(1,10)";
     $r = mysqli_query($con, $q);
     $vlopc = 0;
     if(mysqli_num_rows($r)){
         while($v = mysqli_fetch_object($r)){
 
-            echo $json = "{
+            $json = "{
                 \"previewDeliveryTime\": true,
                 \"sortByBestRoute\": false,
 
@@ -36,7 +36,7 @@
                 }";
 
 
-            $valores = json_decode($mottu->calculaFrete($json, $v->mottu));
+            $valores = ($mottu->calculaFrete($json, $v->mottu));
 
             var_dump($valores);
         }
