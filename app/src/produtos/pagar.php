@@ -338,7 +338,7 @@
 
                                                 $valores = json_decode($mottu->calculaFrete($json, $v->mottu));
 
-                                                // var_dump($valores);
+                                                var_dump($valores);
                                                 if($valores->deliveryFee > 1 or 1 == 1){
 
                                                 if($valores->deliveryFee <= $vlopc || $vlopc == 0) {
