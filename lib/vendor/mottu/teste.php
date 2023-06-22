@@ -20,7 +20,7 @@
 
                 \"deliveries\": [
                     {
-                    \"orderRoute\": {$_SESSION['AppVenda']},
+                    \"orderRoute\": 112233,
                     \"address\": {
                         \"street\": \"{$d1->rua}\",
                         \"number\": \"{$d1->numero}\",
