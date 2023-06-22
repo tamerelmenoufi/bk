@@ -35,7 +35,7 @@
                 ]
                 }";
 
-
+            echo "<pre>{$json}</pre>";
             $valores = ($mottu->calculaFrete($json, $v->mottu));
 
             var_dump($valores);
