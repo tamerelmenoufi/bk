@@ -75,6 +75,7 @@
                 a.*,
                 (select sum(valor_total) from vendas_produtos where venda = a.codigo and deletado != '1') as valor,
                 d.id as id_loja,
+                d.mottu as id_mottu,
                 b.nome,
                 b.cpf,
                 b.telefone,
@@ -335,7 +336,7 @@
                                                   }";
 
 
-                                                $valores = json_decode($mottu->calculaFrete($json));
+                                                $valores = json_decode($mottu->calculaFrete($json, $v->mottu));
 
                                                 // var_dump($valores);
                                                 if($valores->deliveryFee > 1 or 1 == 1){
