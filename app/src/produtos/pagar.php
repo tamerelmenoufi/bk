@@ -314,7 +314,7 @@
                                                 //     },
 
 
-                                                echo $json = "{
+                                                $json = "{
                                                     \"previewDeliveryTime\": true,
                                                     \"sortByBestRoute\": false,
 
@@ -334,7 +334,7 @@
                                                       }
                                                     ]
                                                   }";
-
+                                                  echo "Mottu: ".$v->mottu;
 
                                                 $valores = json_decode($mottu->calculaFrete($json, $v->mottu));
 
