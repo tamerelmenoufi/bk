@@ -1,7 +1,7 @@
 <?php
     include("../../../lib/includes.php");
 
-    echo $query1 = "select * from clientes_enderecos where cliente = '2' and deletado != '1' order by padrao desc limit 1";
+    $query1 = "select * from clientes_enderecos where cliente = '2' and deletado != '1' order by padrao desc limit 1";
     $result1 = mysqli_query($con, $query1);
     $d1 = mysqli_fetch_object($result1);
 
@@ -14,7 +14,7 @@
     if(mysqli_num_rows($r)){
         while($v = mysqli_fetch_object($r)){
 
-            $json = "{
+            echo $json = "{
                 \"previewDeliveryTime\": true,
                 \"sortByBestRoute\": false,
 
