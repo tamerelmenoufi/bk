@@ -4,13 +4,6 @@
 
     $cod_pedido = 33;
 
-    $origem_rua = 'Rua Bruxelas';
-    $origem_numero = '15';
-    $origem_complemento = 'Em frente ao PAC';
-    $origem_bairro = 'Planalto';
-    $origem_cidade = 'Manaus';
-    $origem_estado = 'AM';
-    $origem_cep = '69045260';
 
     $endereco_rua = 'Rua Monsenhor Coutinho';
     $endereco_numero = '600';
@@ -20,40 +13,6 @@
     $endereco_estado = 'AM';
     $endereco_cep = '69010110';
 
-/*
-    $json = "{
-      \"previewDeliveryTime\": false,
-      \"sortByBestRoute\": false,
-      \"store\": {
-        \"userMottuId\": 0,
-        \"document\": \"60110970225\"
-      },
-      \"pickupAddress\": {
-        \"street\": \"{$origem_rua}\",
-        \"number\": \"{$origem_numero}\",
-        \"complement\": \"{$origem_complemento}\",
-        \"neighborhood\": \"{$endereco_bairro}\",
-        \"city\": \"{$origem_cidade}\",
-        \"state\": \"{$origem_estado}\",
-        \"zipCode\": \"{$origem_cep}\"
-      },
-      \"deliveries\": [
-        {
-          \"orderRoute\": {$cod_pedido},
-          \"address\": {
-            \"street\": \"{$endereco_rua}\",
-            \"number\": \"{$endereco_numero}\",
-            \"complement\": \"{$endereco_complemento}\",
-            \"neighborhood\": \"{$endereco_bairro}\",
-            \"city\": \"{$endereco_cidade}\",
-            \"state\": \"{$endereco_estado}\",
-            \"zipCode\": \"{$endereco_cep}\"
-          },
-          \"onlinePayment\": true
-        }
-      ]
-    }";
-//*/
 
     $json = "{
       \"previewDeliveryTime\": true,
