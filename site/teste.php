@@ -4,7 +4,7 @@
 
 print_r($_GET);
 
-    $cod_pedido = 33;
+    $cod_pedido = date("His");
 
 
     $endereco_rua = 'Rua Monsenhor Coutinho';
