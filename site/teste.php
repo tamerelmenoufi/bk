@@ -2,6 +2,8 @@
     include("../lib/includes.php");
 
 
+print_r($_GET);
+
     $cod_pedido = 33;
 
 
