@@ -32,11 +32,11 @@ class mottu {
         curl_setopt_array($curl, array(
         CURLOPT_URL => $this->Ambiente($this->ambiente).'/orders',
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        // CURLOPT_ENCODING => '',
+        // CURLOPT_MAXREDIRS => 10,
+        // CURLOPT_TIMEOUT => 0,
+        // CURLOPT_FOLLOWLOCATION => true,
+        // CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
@@ -117,11 +117,11 @@ class mottu {
         curl_setopt_array($curl, array(
         CURLOPT_URL => $this->Ambiente($this->ambiente)."/orders/preview",
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => '',
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 0,
-        CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        // CURLOPT_ENCODING => '',
+        // CURLOPT_MAXREDIRS => 10,
+        // CURLOPT_TIMEOUT => 0,
+        // CURLOPT_FOLLOWLOCATION => true,
+        // CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'POST',
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
