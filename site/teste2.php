@@ -61,6 +61,6 @@
         )
     ));
 
-    $result = file_get_contents($p['url'], null, $context);
+    $result = file_get_contents_ssl($p['url'], null, $context);
     $result = json_decode($result);
     var_dump($result);
