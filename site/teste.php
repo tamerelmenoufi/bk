@@ -3,7 +3,7 @@
 
 
 
-    $cod_pedido = 33;
+    $cod_pedido = (date("His")*1);
     echo $cod_pedido."<br>";
 
     $endereco_rua = 'Rua Monsenhor Coutinho';
