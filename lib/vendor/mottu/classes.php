@@ -2,7 +2,7 @@
 
 class mottu {
 
-    public $ambiente = 'homologacao'; //homologacao ou producao
+    public $ambiente = 'producao'; //homologacao ou producao
 
     public function Ambiente($opc){
         if($opc == 'homologacao'){
