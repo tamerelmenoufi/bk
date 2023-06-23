@@ -80,6 +80,6 @@ exit();
             $mottu = new mottu;
             $valores = ($mottu->calculaFrete($json, $v->id_mottu));
 
-            var_dump($valores);
+            echo $valores;
         }
     }
