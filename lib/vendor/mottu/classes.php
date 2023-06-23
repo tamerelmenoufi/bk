@@ -12,8 +12,8 @@ class mottu {
         }
     }
 
-    public function apiKey($opc, $loja){
-        if($opc == 'homologacao'){
+    public function apiKey($opc, $loja, $a = 'producao'){
+        if($opc == 'homologacao' and $a == 'homologacao'){
             return 'F74C23D9DF05489E9A5185EB5F7DEE28';
         }else{
             $Lojas = [
@@ -68,7 +68,7 @@ class mottu {
         CURLOPT_CUSTOMREQUEST => 'GET',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja, $a),
             'accept: application/json'
         ),
         ));
