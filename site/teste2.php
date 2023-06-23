@@ -41,13 +41,13 @@
 
     $h = [
             'c' => 'F74C23D9DF05489E9A5185EB5F7DEE28',
-            'url' => 'https://integrations.mottu.io/delivery'
+            'url' => 'https://integrations.mottu.io/delivery/orders/preview'
     ];
 
 
     $p = [
             'c' => '8C0CC3BEBE314FD1830520A2A09AC8F8',
-            'url' => 'https://integrations.mottu.cloud/delivery'
+            'url' => 'https://integrations.mottu.cloud/delivery/orders/preview'
     ];
 
     $context = stream_context_create(array(
