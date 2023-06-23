@@ -131,7 +131,7 @@ class mottu {
         $response = curl_exec($curl);
 
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
+        return $response."\n".$this->Ambiente($this->ambiente)."\n".$this->apikey()."\n";
 
     }
 
