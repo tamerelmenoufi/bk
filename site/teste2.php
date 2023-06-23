@@ -2,7 +2,7 @@
 
 class mottu {
 
-    public $ambiente = 'homologacao'; //homologação ou producao
+    public $ambiente = 'producao'; //homologação ou producao
 
     public function Ambiente($opc){
         if($opc == 'homologacao'){
@@ -16,7 +16,7 @@ class mottu {
 
         if($opc == 'producao'){
             $Lojas = [
-                'hc' => '8C0CC3BEBE314FD1830520A2A09AC8F8',
+                'hc' => '8C0CC3BEBE314FD1830520A2A09AC8F8XXXXX',
             ];
             return $Lojas[$loja];
         }else{
