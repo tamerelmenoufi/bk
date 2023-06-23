@@ -5,7 +5,7 @@ class mottu {
     public $ambiente = 'producao'; //homologacao ou producao
 
     public function Ambiente($opc, $a = 'producao'){
-        if($opc == 'homologacao'){
+        if($opc == 'homologacao' and $a == 'homologacao'){
             return 'https://integrations.mottu.io/delivery';
         }else{
             return 'https://integrations.mottu.cloud/delivery';
