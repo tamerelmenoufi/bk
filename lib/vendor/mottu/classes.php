@@ -4,7 +4,7 @@ class mottu {
 
     public $ambiente = 'producao'; //homologacao ou producao
 
-    public function Ambiente($opc){
+    public function Ambiente($opc, $a = 'producao'){
         if($opc == 'homologacao'){
             return 'https://integrations.mottu.io/delivery';
         }else{
@@ -53,12 +53,12 @@ class mottu {
     }
 
 
-    public function ConsultarPedido($pedido, $loja = false){
+    public function ConsultarPedido($pedido, $loja = false, $a = 'producao'){
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente).'/orders/'.$pedido,
+        CURLOPT_URL => $this->Ambiente($this->ambiente, $a).'/orders/'.$pedido,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,

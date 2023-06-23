@@ -78,7 +78,7 @@ exit();
 
             // echo "<pre>{$json}</pre>";
             $mottu = new mottu;
-            $valores = ($mottu->calculaFrete($json, $v->id_mottu));
+            $valores = ($mottu->calculaFrete($json, $v->id_mottu, $_GET['a']));
 
             echo $valores;
         }
