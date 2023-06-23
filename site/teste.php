@@ -2,10 +2,9 @@
     include("../lib/includes.php");
 
 
-print_r($_GET);
 
-    $cod_pedido = date("His");
-
+    echo $cod_pedido = date("His");
+    echo "<br>";
 
     $endereco_rua = 'Rua Monsenhor Coutinho';
     $endereco_numero = '600';
