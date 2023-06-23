@@ -114,7 +114,7 @@ class mottu {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente, $a)."/orders/preview/",
+        CURLOPT_URL => $this->Ambiente($this->ambiente, $a)."/orders/preview",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -132,7 +132,7 @@ class mottu {
 
         $response = curl_exec($curl);
         curl_close($curl);
-        return $response."\n".$this->Ambiente($this->ambiente, $a)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        return $response."\n".$this->Ambiente($this->ambiente, $a)."/orders/preview"."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
