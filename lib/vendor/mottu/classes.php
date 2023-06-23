@@ -109,12 +109,12 @@ class mottu {
         return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
     }
 
-    public function calculaFrete($json, $loja = false){
+    public function calculaFrete($json, $loja = false, $a){
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-        CURLOPT_URL => $this->Ambiente($this->ambiente)."/orders/preview",
+        CURLOPT_URL => $this->Ambiente($this->ambiente, $a)."/orders/preview",
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
@@ -132,7 +132,7 @@ class mottu {
 
         $response = curl_exec($curl);
         curl_close($curl);
-        return $response."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        return $response."\n".$this->Ambiente($this->ambiente, $a)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
