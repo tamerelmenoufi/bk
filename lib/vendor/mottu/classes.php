@@ -125,7 +125,7 @@ class mottu {
         CURLOPT_POSTFIELDS =>$json,
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-api-token: '.$this->apiKey($this->ambiente, $loja, $a),
             'accept: application/json'
         ),
         ));
