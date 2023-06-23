@@ -106,7 +106,7 @@ class mottu {
 
         curl_close($curl);
 
-        return $response."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
     }
 
     public function calculaFrete($json, $loja = false){
@@ -132,7 +132,7 @@ class mottu {
 
         $response = curl_exec($curl);
         curl_close($curl);
-        return $response; //."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
+        return $response."\n".$this->Ambiente($this->ambiente)."\n".$this->apiKey($this->ambiente, $loja)."\n";
 
     }
 
