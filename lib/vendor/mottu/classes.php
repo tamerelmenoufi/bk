@@ -8,7 +8,7 @@ class mottu {
         if($opc == 'homologacao' and $a == 'homologacao'){
             return 'https://integrations.mottu.io/delivery';
         }else{
-            return 'https://integrations.mottu.cloud/delivery';
+            return 'https://integrations.mottu.cloud/mottu';
         }
     }
 
