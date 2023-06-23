@@ -56,11 +56,11 @@
             'content' => $json,
             'header' => array(
                 "Content-Type: application/json",
-                "x-api-token: {$h['c']}"
+                "x-api-token: {$p['c']}"
             )
         )
     ));
 
-    $result = file_get_contents($h['url'], null, $context);
+    $result = file_get_contents($p['url'], null, $context);
     $result = json_decode($result);
     var_dump($result);
