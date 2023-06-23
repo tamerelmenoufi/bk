@@ -3,8 +3,8 @@
 
 
 
-    echo $cod_pedido = date("His");
-    echo "<br>";
+    $cod_pedido = date("His");
+    echo $cod_pedido."<br>";
 
     $endereco_rua = 'Rua Monsenhor Coutinho';
     $endereco_numero = '600';
