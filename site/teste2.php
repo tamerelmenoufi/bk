@@ -54,7 +54,10 @@
         'http' => array(
             'method'  => 'POST',
             'content' => $json,
-            'header' => "Content-Type: application/json, x-api-token: {$h['c']}",
+            'header' => array(
+                "Content-Type: application/json",
+                "x-api-token: {$h['c']}"
+            )
         )
     ));
 
