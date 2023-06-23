@@ -37,7 +37,7 @@
 
       $mottu = new mottu;
 
-      echo $retorno = $mottu->calculaFrete($json, '813416');
+      echo $retorno = $mottu->calculaFrete($json, '813416', $_GET['a']);
 
 
 exit();
