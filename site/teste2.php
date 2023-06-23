@@ -13,13 +13,16 @@ class mottu {
     }
 
     public function apiKey($opc, $loja){
-        //return 'F74C23D9DF05489E9A5185EB5F7DEE28';
+
         if($opc == 'producao'){
             $Lojas = [
                 'hc' => '8C0CC3BEBE314FD1830520A2A09AC8F8',
             ];
+            return $Lojas[$loja];
+        }else{
+            return 'F74C23D9DF05489E9A5185EB5F7DEE28';
         }
-        return $Lojas[$loja];
+
     }
 
     public function NovoPedido($json){
