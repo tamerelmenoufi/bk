@@ -5,7 +5,7 @@
     $result1 = mysqli_query($con, $query1);
     $d1 = mysqli_fetch_object($result1);
 
-    $mottu = new mottu;
+
     list($lat, $lng) = explode(",", $coordenadas);
     // $q = "select * from lojas where situacao = '1' and online='1' and deletado != '1' and (time(NOW()) between hora_ini and hora_fim)";
     $q = "select *, mottu as id_mottu from lojas where codigo in(1,10)";
@@ -36,6 +36,7 @@
                 }";
 
             // echo "<pre>{$json}</pre>";
+            $mottu = new mottu;
             $valores = ($mottu->calculaFrete($json, $v->id_mottu));
 
             var_dump($valores);

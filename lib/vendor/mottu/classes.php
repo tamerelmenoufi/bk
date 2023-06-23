@@ -2,7 +2,7 @@
 
 class mottu {
 
-    public $ambiente = 'producao'; //homologacao ou producao
+    public $ambiente = 'homologacao'; //homologacao ou producao
 
     public function Ambiente($opc){
         if($opc == 'homologacao'){
@@ -20,7 +20,7 @@ class mottu {
                 '813416' => '8C0CC3BEBE314FD1830520A2A09AC8F8', //Humberto Calderaro
                 '813383' => 'A150C55FB8434331BE8EE44BAB9A7BA7', //Djalma Batista
             ];
-            return '8C0CC3BEBE314FD1830520A2A09AC8F8';
+            return $Lojas[$loja];
         }
     }
 
