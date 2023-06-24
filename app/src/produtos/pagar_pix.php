@@ -19,6 +19,7 @@
     $query = "select
                     a.*,
                     d.id as id_loja,
+                    d.mottu as id_mottu,
                     b.nome,
                     b.cpf,
                     b.telefone,

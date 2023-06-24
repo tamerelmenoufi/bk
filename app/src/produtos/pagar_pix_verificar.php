@@ -12,6 +12,7 @@
     $query = "select
                     a.*,
                     d.id as id_loja,
+                    d.mottu as id_mottu,
                     b.nome,
                     b.cpf,
                     b.telefone,
@@ -80,7 +81,7 @@
                   \"mottu\": true
                 },
                 \"name\": \"{$d->nome}\",
-                \"phone\": \"{$d->telefone}\",
+                \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
                 \"observation\": \"{$d->observacoes}\",
                 \"address\": {
                   \"street\": \"{$d->rua}\",
@@ -89,7 +90,7 @@
                   \"neighborhood\": \"{$d->bairro}\",
                   \"city\": \"Manaus\",
                   \"state\": \"AM\",
-                  \"zipCode\": \"{$d->cep}\"
+                  \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
                 },
                 \"onlinePayment\": true,
                 \"productValue\": {$d->total}
@@ -99,7 +100,8 @@
 
         $mottu = new mottu;
 
-        $retorno = $mottu->NovoPedido($json);
+        $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
+        $retorno = json_decode($retorno1);
 
         $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$codVenda}'";
         mysqli_query($con, $query);

@@ -28,6 +28,7 @@
                 $query = "select
                     a.*,
                     d.id as id_loja,
+                    d.mottu as id_mottu,
                     b.nome,
                     b.cpf,
                     b.telefone,
@@ -78,7 +79,7 @@
 
                 $mottu = new mottu;
 
-                $retorno1 = $mottu->NovoPedido($json);
+                $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
                 $retorno = json_decode($retorno1);
 
                 if($retorno->id == 9999){
@@ -108,7 +109,6 @@
 
                 //*/
                 // DADOS DE SOLICITAÇÃO DA ENTREGA
-
 
                 $_SESSION['AppVenda'] = false; //mysqli_insert_id($con);
                 $_SESSION['AppPedido'] = false;
