@@ -168,42 +168,43 @@
 
                                     // // $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
                                     // // $result = json_decode($result);
+                                    if($dados->status == 'approved'){
+                                        $json = "{
+                                            \"code\": \"{$d->codigo}\",
+                                            \"preparationTime\": 0,
+                                            \"previewDeliveryTime\": false,
+                                            \"sortByBestRoute\": false,
+                                            \"deliveries\": [
+                                            {
+                                                \"code\": \"{$d->codigo}\",
+                                                \"confirmation\": {
+                                                \"mottu\": true
+                                                },
+                                                \"name\": \"{$d->nome}\",
+                                                \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
+                                                \"observation\": \"{$d->observacoes}\",
+                                                \"address\": {
+                                                \"street\": \"{$d->rua}\",
+                                                \"number\": \"{$$d->numero}\",
+                                                \"complement\": \"{$d->referencia}\",
+                                                \"neighborhood\": \"{$d->bairro}\",
+                                                \"city\": \"Manaus\",
+                                                \"state\": \"AM\",
+                                                \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
+                                                },
+                                                \"onlinePayment\": true,
+                                                \"productValue\": {$d->total}
+                                            }
+                                            ]
+                                        }";
 
-                                    // $json = "{
-                                    //     \"code\": \"{$d->codigo}\",
-                                    //     \"preparationTime\": 0,
-                                    //     \"previewDeliveryTime\": false,
-                                    //     \"sortByBestRoute\": false,
-                                    //     \"deliveries\": [
-                                    //       {
-                                    //         \"code\": \"{$d->codigo}\",
-                                    //         \"confirmation\": {
-                                    //           \"mottu\": true
-                                    //         },
-                                    //         \"name\": \"{$d->nome}\",
-                                    //         \"phone\": \"{$d->telefone}\",
-                                    //         \"observation\": \"{$d->observacoes}\",
-                                    //         \"address\": {
-                                    //           \"street\": \"{$d->rua}\",
-                                    //           \"number\": \"{$$d->numero}\",
-                                    //           \"complement\": \"{$d->referencia}\",
-                                    //           \"neighborhood\": \"{$d->bairro}\",
-                                    //           \"city\": \"Manaus\",
-                                    //           \"state\": \"AM\",
-                                    //           \"zipCode\": \"{$d->cep}\"
-                                    //         },
-                                    //         \"onlinePayment\": true,
-                                    //         \"productValue\": {$d->total}
-                                    //       }
-                                    //     ]
-                                    //   }";
+                                        $mottu = new mottu;
 
-                                    // $mottu = new mottu;
+                                        $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
+                                        $retorno = json_decode($retorno1);
 
-                                    // $retorno = $mottu->NovoPedido($json);
-
-                                    // $api_delivery = $result->id;
-
+                                        $api_delivery = $retorno->id;
+                                    }
 
                                     //////////////////////API DELIVERY////////////////////////////
 
