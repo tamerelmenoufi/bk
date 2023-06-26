@@ -78,7 +78,7 @@
                                                 data_finalizacao = NOW(),
                                                 forma_pagamento = 'credito',
                                                 deliveryId = '{$retorno->id}',
-                                                situacao = 'c'
+                                                situacao = 'p'
                                 where codigo = '13740'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *13740*");
