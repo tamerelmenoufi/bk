@@ -1,6 +1,8 @@
 <?php
     include("../lib/includes.php");
 
+    echo "Estou no teste!";
+
     $query = "select
                     a.*,
                     d.id as id_loja,
