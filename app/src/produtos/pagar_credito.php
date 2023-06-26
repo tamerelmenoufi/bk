@@ -453,7 +453,7 @@
                     securityCode,
                     loja,
                     captcha,
-                    hom:homologacao,
+                    // hom:homologacao,
                     acao:'pagar'
                 },
                 success:function(dados){
