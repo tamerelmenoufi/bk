@@ -11,6 +11,7 @@ if($_POST['CodigoExterno']){
         $query = "insert into status_delivery set
                                     venda = '{$_POST['CodigoExterno']}',
                                     operadora = 'mottu',
+                                    tipo = '{$_POST['Tipo']}',
                                     data = NOW(),
                                     retorno = '{$dados}'";
 
