@@ -11,8 +11,6 @@
     <?php include("../lib/header.php"); ?>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/app.css">
-
-
 </head>
 <body>
 <div class="Carregando">
