@@ -91,7 +91,7 @@
                                                 phone = '(92) 9843-87438'
                             where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
-                    EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
+                    EnviarWapp('92991886570',"VENDA COM 9999 - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else if($retorno->id){
                     $query = "update vendas set
                                                 operadora = 'rede',
@@ -102,9 +102,9 @@
                                                 situacao = 'c'
                                 where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
-                    EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
+                    EnviarWapp('92991886570',"VENDA com ID Positivo - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
-                    EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
+                    EnviarWapp('92991886570',"VENDA ELSE - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
                 }
 
                 //*/
