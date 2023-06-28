@@ -103,7 +103,7 @@
         $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
         $retorno = json_decode($retorno1);
 
-        $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$codVenda}'";
+        $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$codVenda}'";
         mysqli_query($con, $query);
 
         EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$codVenda}*");

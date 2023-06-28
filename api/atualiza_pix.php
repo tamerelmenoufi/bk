@@ -89,16 +89,12 @@ include("../lib/includes.php");
             $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
             $retorno = json_decode($retorno1);
 
-            $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$d->codigo}'";
+            $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
             mysqli_query($con, $query);
 
             EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}*");
             //*/
             // DADOS DE SOLICITAÇÃO DA ENTREGA
-
-            $_SESSION['AppVenda'] = false;
-            $_SESSION['AppPedido'] = false;
-            $_SESSION['AppCarrinho'] = false;
 
         }else{
             mysqli_query($con, "update vendas set
@@ -108,6 +104,5 @@ include("../lib/includes.php");
             ");
             EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* status *{$retorno->status}*");
         }
-
 
     }

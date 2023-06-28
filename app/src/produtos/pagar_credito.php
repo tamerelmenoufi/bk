@@ -148,7 +148,6 @@
                                         acrescimo = '{$_POST['acrescimo']}',
                                         total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
                                         observacoes = '{$_POST['observacoes']}',*/
-                                        data_finalizacao = NOW(),
                                         api_delivery = '{$api_delivery}',
                                         ".(($r->authorization->status == 'Approved')?"situacao = 'p',":false)."
                                         forma_pagamento = 'credito'
@@ -228,6 +227,7 @@
                     $query = "update vendas set
                                                 deliveryId = '{$retorno->id}',
                                                 situacao = 'p',
+                                                data_finalizacao = NOW(),
                                                 GOING_TO_DESTINATION = NOW(),
                                                 name = 'Unidade Djalma Batista',
                                                 phone = '(92) 9843-87438'
@@ -235,7 +235,7 @@
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else if($retorno->id){
-                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p' where codigo = '{$_SESSION['AppVenda']}'";
+                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
