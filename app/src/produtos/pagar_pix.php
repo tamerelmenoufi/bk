@@ -147,7 +147,7 @@
                                 $operadora_situacao = $dados->status;
                                 $qrcode = $dados->point_of_interaction->transaction_data->qr_code;
                                 $qrcode_img = $dados->point_of_interaction->transaction_data->qr_code_base64;
-
+                                $api_delivery = false;
 
                                 if($operadora_id){
 
@@ -222,8 +222,8 @@
                                                                 forma_pagamento = '{$forma_pagamento}',
                                                                 operadora = 'mercadopago',
                                                                 operadora_situacao = '{$operadora_situacao}',
-                                                                operadora_retorno = '{$retorno}',
-                                                                api_delivery = '{$api_delivery}'
+                                                                operadora_retorno = '{$retorno}'
+                                                                ".(($api_delivery)?", api_delivery = '{$api_delivery}'":false)."
                                                         where codigo = '{$d->codigo}'
                                                 ");
 
