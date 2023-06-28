@@ -223,7 +223,7 @@
                                                                 operadora = 'mercadopago',
                                                                 operadora_situacao = '{$operadora_situacao}',
                                                                 operadora_retorno = '{$retorno}'
-                                                                ".(($api_delivery)?", api_delivery = '{$api_delivery}'":false)."
+                                                                ".(($api_delivery)?", api_delivery = '{$api_delivery}', situacao = 'p'":false)."
                                                         where codigo = '{$d->codigo}'
                                                 ");
 
