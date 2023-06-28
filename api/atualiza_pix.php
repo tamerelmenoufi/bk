@@ -100,6 +100,13 @@ include("../lib/includes.php");
             $_SESSION['AppPedido'] = false;
             $_SESSION['AppCarrinho'] = false;
 
+        }else{
+            mysqli_query($con, "update vendas set
+                operadora_situacao = '{$retorno->status}',
+                operadora_retorno = '{$operadora_retorno}'
+                where codigo = '{$d->codigo}'
+            ");
+            EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* status *{$retorno->status}*");
         }
 
 
