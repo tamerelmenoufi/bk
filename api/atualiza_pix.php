@@ -30,6 +30,11 @@ include("../lib/includes.php");
 
     while($d = mysqli_fetch_object($result)){
 
+        echo "<pre>";
+        var_dump($d);
+        echo "</pre>";
+        echo "<hr>";
+
         $PIX = new MercadoPago;
         $retorno = $PIX->ObterPagamento($d->operadora_id);
         $operadora_retorno = $retorno;
