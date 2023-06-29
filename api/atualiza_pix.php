@@ -89,7 +89,7 @@ include("../lib/includes.php");
             $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
             $retorno = json_decode($retorno1);
 
-            var_dump($retorno);
+            var_dump($retorno1);
 
             $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
             mysqli_query($con, $query);
