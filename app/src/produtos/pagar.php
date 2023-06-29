@@ -440,7 +440,7 @@
 
 <!-- CUPOM PROMOCIONAL -->
 <?php
-if($d->codigo == 2){
+if($d->cliente == 2){
 ?>
 <div class="row">
         <div class="col-12">
