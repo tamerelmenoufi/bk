@@ -155,7 +155,7 @@
                     where codigo = '{$_POST['reference']}'";
             mysqli_query($con, $query);
 
-            if($r->authorization->status == 'Approved'){
+            if($r->authorization->status == 'Approved' and $d->retirada_local != '1'){
                 //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
 
 
@@ -254,8 +254,16 @@
                     'msg' => 'Operação realizada com sucesso!',
                     //'AppVenda' => $_SESSION['AppVenda'],
                 ]);
+            }else if($r->authorization->status == 'Approved')
+                {
+
+                $query = "update vendas set situacao = 'p', data_finalizacao = NOW() where codigo = '{$_SESSION['AppVenda']}'";
+                mysqli_query($con, $query);
+                EnviarWapp('92991886570',"VENDA - Venda do pedido (Retirada no local Crédito) *{$_SESSION['AppVenda']}*");
+
+
             }else if($r->authorization->status == 'Denied')
-            {
+                {
                 echo json_encode([
                     'status' => $r->authorization->status,
                     'msg' => 'Operação Negada, consulte os dados do Cartão ou entre em contato com sua operadora!',

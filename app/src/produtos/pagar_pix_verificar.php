@@ -48,26 +48,7 @@
                             situacao = 'p'
                         where operadora_id = '{$_POST['id']}'
                     ");
-
-        // DADOS DE SOLICITAÇÃO DA ENTREGA
-        //*
-        // $BEE = new Bee;
-        // $retorno = $BEE->NovaEntrega($codVenda);
-        // $retorno = json_decode($retorno);
-        // if($retorno->deliveryId == 9999){
-        //     $query = "update vendas set
-        //                                 deliveryId = '{$retorno->deliveryId}',
-        //                                 situacao = 'p',
-        //                                 GOING_TO_DESTINATION = NOW(),
-        //                                 name = 'Unidade Djalma Batista',
-        //                                 phone = '(92) 9843-87438'
-        //             where codigo = '{$codVenda}'";
-        //     mysqli_query($con, $query);
-        // }else if($retorno->deliveryId){
-        //     $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$codVenda}'";
-        //     mysqli_query($con, $query);
-        // }
-
+        if($d->retirada_local != '1'){
         $json = "{
             \"code\": \"{$d->codigo}\",
             \"fullCode\": \"bk-{$d->codigo}\",
@@ -107,6 +88,12 @@
         mysqli_query($con, $query);
 
         EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$codVenda}*");
+        }else{
+        $query = "update vendas set situacao = 'p', data_finalizacao = NOW() where codigo = '{$codVenda}'";
+        mysqli_query($con, $query);
+
+        EnviarWapp('92991886570',"VENDA - Código do pedido (Retirada do pedido na loja - PIX) *{$codVenda}*");
+        }
         //*/
         // DADOS DE SOLICITAÇÃO DA ENTREGA
 

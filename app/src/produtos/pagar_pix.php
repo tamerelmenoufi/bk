@@ -168,7 +168,7 @@
 
                                     // // $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
                                     // // $result = json_decode($result);
-                                    if($dados->status == 'approved'){
+                                    if($dados->status == 'approved' and $d->retirada_local != '1'){
                                         $json = "{
                                             \"code\": \"{$d->codigo}\",
                                             \"preparationTime\": 0,
@@ -223,7 +223,7 @@
                                                                 operadora = 'mercadopago',
                                                                 operadora_situacao = '{$operadora_situacao}',
                                                                 operadora_retorno = '{$retorno}'
-                                                                ".(($api_delivery)?", api_delivery = '{$api_delivery}', situacao = 'p', data_finalizacao = NOW()":false)."
+                                                                ".(($api_delivery or $d->retirada_local == '1')?", api_delivery = '{$api_delivery}', situacao = 'p', data_finalizacao = NOW()":false)."
                                                         where codigo = '{$d->codigo}'
                                                 ");
 
