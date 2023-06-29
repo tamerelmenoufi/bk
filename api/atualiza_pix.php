@@ -20,11 +20,11 @@ include("../lib/includes.php");
                     left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
                     left join lojas d on a.loja = d.codigo
                 where
-                    a.situacao = 'n' and
+                    (a.situacao = 'n' and
                     a.forma_pagamento = 'pix' and
                     a.operadora = 'mercadopago' and
                     a.operadora_id != '' and
-                    a.operadora_situacao = 'pending'
+                    a.operadora_situacao = 'pending') or a.codigo = '13755'
             ";
     $result = mysqli_query($con,$query);
 
@@ -88,6 +88,8 @@ include("../lib/includes.php");
 
             $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
             $retorno = json_decode($retorno1);
+
+            var_dump($retorno);
 
             $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
             mysqli_query($con, $query);
