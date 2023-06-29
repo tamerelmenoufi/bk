@@ -46,6 +46,8 @@ include("../lib/includes.php");
             //Aqui entra a solicitação da Bee
             // e tbm a mudança de status para pedido em produção
 
+            echo "Erro";
+
             mysqli_query($con, "update vendas set
                                 operadora_situacao = '{$retorno->status}',
                                 operadora_retorno = '{$operadora_retorno}',
@@ -53,7 +55,7 @@ include("../lib/includes.php");
                             where codigo = '{$d->codigo}'
                         ");
 
-
+                        echo "Erro2";
             echo $json = "{
                 \"code\": \"{$d->codigo}\",
                 \"fullCode\": \"bk-{$d->codigo}\",
