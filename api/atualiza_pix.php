@@ -92,10 +92,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
             // var_dump($retorno1);
 
-            $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
+            $query = "update vendas set deliveryId = '{$retorno['id']}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
             mysqli_query($con, $query);
 
-            EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}*");
+            EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID: {$retorno['id']}");
             //*/
             // DADOS DE SOLICITAÇÃO DA ENTREGA
 
