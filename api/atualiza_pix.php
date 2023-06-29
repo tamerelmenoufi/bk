@@ -2,7 +2,7 @@
 
 include("../lib/includes.php");
 
-    $query = "select
+    echo $query = "select
                     a.*,
                     d.id as id_loja,
                     d.mottu as id_mottu,
