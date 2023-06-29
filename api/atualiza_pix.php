@@ -50,8 +50,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
             mysqli_query($con, "update vendas set
                                 operadora_situacao = '{$retorno->status}',
-                                operadora_retorno = '{$operadora_retorno}',
-                                situacao = 'p'
+                                operadora_retorno = '{$operadora_retorno}'
                             where codigo = '{$d->codigo}'
                         ");
 
@@ -86,13 +85,12 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
               }';
 
 
-              echo 'json';
             $mottu = new mottu;
 
             $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
             $retorno = json_decode($retorno1);
 
-            var_dump($retorno1);
+            // var_dump($retorno1);
 
             $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
             mysqli_query($con, $query);
