@@ -438,6 +438,52 @@
     ?>
 
 
+<!-- CUPOM PROMOCIONAL -->
+<?php
+if($d->codigo == 2){
+?>
+<div class="row">
+        <div class="col-12">
+            <div class="card bg-light mb-3">
+                <div class="card-header"><i class="fa-solid fa-receipt"></i> Cupom Promocional</div>
+                <div class="card-body">
+                    <h5 robo class="card-title" captcha="error">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col">
+                                <small>
+                                    Digite no campo os números da Iamgem
+                                </small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="imagemCaptcha col">
+                                <img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
+                            </div>
+                            <div class="col">
+                                <input id="captcha" type="text" inputmode="numeric" class="form-control form-control-lg" style="text-align:center; font-weight:bold, font-size:9px;" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:10px;">
+                            <div class="col atualizarCaptcha">
+                                <i class="fa-solid fa-rotate"></i> Atualizar Imagem
+                            </div>
+                        </div>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+}
+?>
+<!-- CUPOM PROMOCIONAL -->
+
+
+
+
+
+
+
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
