@@ -17,6 +17,30 @@ if($_POST['CodigoExterno']){
 
     mysqli_query($con, $query);
 
+    if($_POST['Tipo'] == 'bkmanaus'){
+        $status = mysqli_fetch_object(mysqli_query($con, "select * from status_mottu where cod = '{$_POST['Situacao']}'"));
+        if($status->campo == 'reset'){
+            $query = "update vendas
+                                    SEARCHING = NOW(),
+                                    GOING_TO_ORIGIN = 0,
+                                    ARRIVED_AT_ORIGIN = 0,
+                                    GOING_TO_DESTINATION = 0,
+                                    ARRIVED_AT_DESTINATION = 0,
+                                    RETURNING = 0,
+                                    COMPLETED = 0,
+                                    CANCELED = 0,
+                                    name = '',
+                                    phone = ''
+                where codigo = '{$_POST['CodigoExterno']}'
+            ";
+        }else if($status->campo){
+            $query = "update vendas $status->campo = NOW() where codigo = '{$_POST['CodigoExterno']}'";
+        }
+
+        if($query) mysqli_query($con, $query);
+
+    }
+
     EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
     //*/
     // SOLICITAÇÃO DA ENTREGA BEE
