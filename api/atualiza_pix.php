@@ -1,6 +1,6 @@
 <?php
 
-error_reporting(0);
+error_reporting(9);
 
 include("'../lib/includes.php");
 
