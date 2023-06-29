@@ -38,5 +38,3 @@ if($ini <= $now and $now <= $fim){
 }
 
 // $promocao_taxa_zero = true;
-
-echo "Includes";

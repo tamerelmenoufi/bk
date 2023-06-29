@@ -1,8 +1,9 @@
 <?php
 
 error_reporting(9);
-
+echo "local:".$_SERVER['DOCUMENT_ROOT'];
 include("'../lib/includes.php");
+// include("{$_SERVER['DOCUMENT_ROOT']}/app/projectBarbearia/painel/lib/includes.php");
 
     echo $query = "select
                     a.*,
