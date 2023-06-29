@@ -37,7 +37,12 @@ if($_POST['CodigoExterno']){
             $query = "update vendas $status->campo = NOW() where codigo = '{$_POST['CodigoExterno']}'";
         }
 
-        if($query) mysqli_query($con, $query);
+        if($query){
+            mysqli_query($con, $query);
+            if($_POST['CodigoExterno'] = 13755 ){
+                EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
+            }
+        }
 
     }
 
