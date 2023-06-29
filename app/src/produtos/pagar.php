@@ -27,30 +27,38 @@
 
         mysqli_query($con, $query);
 
-
-
-        #############################################################################
-        // $content = http_build_query(array(
-        //     'pedido' => $_SESSION['AppVenda'],
-        //     'empresa' => $_POST['LjId'],
-        // ));
-
-        // $context = stream_context_create(array(
-        //     'http' => array(
-        //         'method'  => 'POST',
-        //         'content' => $content,
-        //     )
-        // ));
-
-        // $result = file_get_contents("http://bee.mohatron.com/pedido.php", null, $context);
-        #############################################################################
-
         echo json_encode(VerificarProdutos($_POST['LjCd']));
         // echo json_encode(VerificarProdutos());
         }else{
             echo json_encode(['status' => true]);
         }
         exit();
+
+    }
+
+
+
+    if($_POST['acao'] == 'cupom'){
+
+        $q = "select * from cupom where chave = '{$_POST['cupom']}' and situacao = '1'";
+        $cupom = mysqli_fetch_object(mysqli_query($con, $q));
+
+        if($cupom->codigo){
+
+            if($cupom->tipo == 'taxa_entrega'){
+                $acao = ",valor_cupom = taxa_entrega";
+            }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'v'){
+                $acao = ",valor_cupom = '{$cupom->valor}'";
+            }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'p'){
+                $acao = ",valor_cupom = (valor/100*".(($cupom->valor > 0)?$cupom->valor:1).")";
+            }
+            $query = "update vendas set
+                                        cupom = '{$cupom->codigo}'
+                                        {$acao}
+                    where codigo = '{$_SESSION['AppVenda']}'";
+            mysqli_query($con, $query);
+
+        }
 
     }
 
@@ -455,7 +463,7 @@
                         <a pagar opc="debito" class="btn btn-danger btn-lg"><i class="fa-solid fa-credit-card"></i> Débito</a>
                     </h5> -->
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ ,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')?></h1>
                     <?php
                     if($StatusApp == 'a'){
                     ?>
