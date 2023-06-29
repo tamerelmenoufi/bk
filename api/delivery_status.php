@@ -20,7 +20,7 @@ if($_POST['CodigoExterno']){
     if($_POST['Tipo'] == 'bkmanaus'){
         $status = mysqli_fetch_object(mysqli_query($con, "select * from status_mottu where cod = '{$_POST['Situacao']}'"));
         if($status->campo == 'reset'){
-            $query = "update vendas
+            $query = "update vendas set
                                     SEARCHING = NOW(),
                                     GOING_TO_ORIGIN = 0,
                                     ARRIVED_AT_ORIGIN = 0,
@@ -34,7 +34,7 @@ if($_POST['CodigoExterno']){
                 where codigo = '{$_POST['CodigoExterno']}'
             ";
         }else if($status->campo){
-            $query = "update vendas $status->campo = NOW() where codigo = '{$_POST['CodigoExterno']}'";
+            $query = "update vendas set $status->campo = NOW() where codigo = '{$_POST['CodigoExterno']}'";
         }
 
         if($query){
