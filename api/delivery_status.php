@@ -41,7 +41,7 @@ if($_POST['CodigoExterno']){
 
     }
 
-    EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
+    // EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
     //*/
     // SOLICITAÇÃO DA ENTREGA BEE
     //////////////////////////////////////////////////////////
