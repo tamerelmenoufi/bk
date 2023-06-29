@@ -46,8 +46,6 @@ include("../lib/includes.php");
             //Aqui entra a solicitação da Bee
             // e tbm a mudança de status para pedido em produção
 
-            echo "Erro";
-
             mysqli_query($con, "update vendas set
                                 operadora_situacao = '{$retorno->status}',
                                 operadora_retorno = '{$operadora_retorno}',
@@ -55,38 +53,38 @@ include("../lib/includes.php");
                             where codigo = '{$d->codigo}'
                         ");
 
-                        echo "Erro2";
-            $json = "{
-                \"code\": \"{$d->codigo}\",
-                \"fullCode\": \"bk-{$d->codigo}\",
-                \"preparationTime\": 0,
-                \"previewDeliveryTime\": false,
-                \"sortByBestRoute\": false,
-                \"deliveries\": [
-                  {
-                    \"code\": \"{$d->codigo}\",
-                    \"confirmation\": {
-                      \"mottu\": true
-                    },
-                    \"name\": \"{$d->nome}\",
-                    \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
-                    \"observation\": \"{$d->observacoes}\",
-                    \"address\": {
-                      \"street\": \"{$d->rua}\",
-                      \"number\": \"{$$d->numero}\",
-                      \"complement\": \"{$d->referencia}\",
-                      \"neighborhood\": \"{$d->bairro}\",
-                      \"city\": \"Manaus\",
-                      \"state\": \"AM\",
-                      \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
-                    },
-                    \"onlinePayment\": true,
-                    \"productValue\": {$d->total}
-                  }
-                ]
-              }";
+            // $json = "{
+            //     \"code\": \"{$d->codigo}\",
+            //     \"fullCode\": \"bk-{$d->codigo}\",
+            //     \"preparationTime\": 0,
+            //     \"previewDeliveryTime\": false,
+            //     \"sortByBestRoute\": false,
+            //     \"deliveries\": [
+            //       {
+            //         \"code\": \"{$d->codigo}\",
+            //         \"confirmation\": {
+            //           \"mottu\": true
+            //         },
+            //         \"name\": \"{$d->nome}\",
+            //         \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
+            //         \"observation\": \"{$d->observacoes}\",
+            //         \"address\": {
+            //           \"street\": \"{$d->rua}\",
+            //           \"number\": \"{$$d->numero}\",
+            //           \"complement\": \"{$d->referencia}\",
+            //           \"neighborhood\": \"{$d->bairro}\",
+            //           \"city\": \"Manaus\",
+            //           \"state\": \"AM\",
+            //           \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
+            //         },
+            //         \"onlinePayment\": true,
+            //         \"productValue\": {$d->total}
+            //       }
+            //     ]
+            //   }";
 
-              echo $json;
+            echo "TESTE";
+            exit();
 
             $mottu = new mottu;
 
