@@ -28,7 +28,7 @@ include("'../lib/includes.php");
                     a.operadora_id != '' and
                     a.operadora_situacao = 'pending') or a.codigo = '13755'
             ";
-    $result = mysqli_query($con,$query);
+    $result = mysqli_query($con, $query);
 
     while($d = mysqli_fetch_object($result)){
 
