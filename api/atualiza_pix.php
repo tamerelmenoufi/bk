@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 include("../lib/includes.php");
 
     echo $query = "select
@@ -53,38 +55,37 @@ include("../lib/includes.php");
                             where codigo = '{$d->codigo}'
                         ");
 
-            // $json = "{
-            //     \"code\": \"{$d->codigo}\",
-            //     \"fullCode\": \"bk-{$d->codigo}\",
-            //     \"preparationTime\": 0,
-            //     \"previewDeliveryTime\": false,
-            //     \"sortByBestRoute\": false,
-            //     \"deliveries\": [
-            //       {
-            //         \"code\": \"{$d->codigo}\",
-            //         \"confirmation\": {
-            //           \"mottu\": true
-            //         },
-            //         \"name\": \"{$d->nome}\",
-            //         \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
-            //         \"observation\": \"{$d->observacoes}\",
-            //         \"address\": {
-            //           \"street\": \"{$d->rua}\",
-            //           \"number\": \"{$$d->numero}\",
-            //           \"complement\": \"{$d->referencia}\",
-            //           \"neighborhood\": \"{$d->bairro}\",
-            //           \"city\": \"Manaus\",
-            //           \"state\": \"AM\",
-            //           \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
-            //         },
-            //         \"onlinePayment\": true,
-            //         \"productValue\": {$d->total}
-            //       }
-            //     ]
-            //   }";
+            $json = "{
+                \"code\": \"{$d->codigo}\",
+                \"fullCode\": \"bk-{$d->codigo}\",
+                \"preparationTime\": 0,
+                \"previewDeliveryTime\": false,
+                \"sortByBestRoute\": false,
+                \"deliveries\": [
+                  {
+                    \"code\": \"{$d->codigo}\",
+                    \"confirmation\": {
+                      \"mottu\": true
+                    },
+                    \"name\": \"{$d->nome}\",
+                    \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
+                    \"observation\": \"{$d->observacoes}\",
+                    \"address\": {
+                      \"street\": \"{$d->rua}\",
+                      \"number\": \"{$$d->numero}\",
+                      \"complement\": \"{$d->referencia}\",
+                      \"neighborhood\": \"{$d->bairro}\",
+                      \"city\": \"Manaus\",
+                      \"state\": \"AM\",
+                      \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
+                    },
+                    \"onlinePayment\": true,
+                    \"productValue\": {$d->total}
+                  }
+                ]
+              }";
 
-            echo "TESTE";
-            exit();
+
 
             $mottu = new mottu;
 
