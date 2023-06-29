@@ -4,7 +4,7 @@ error_reporting(9);
 
 include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
-    echo $query = "select
+    $query = "select
                     a.*,
                     d.id as id_loja,
                     d.mottu as id_mottu,
@@ -32,17 +32,17 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
     while($d = mysqli_fetch_object($result)){
 
-        echo "<pre>";
-        var_dump($d);
-        echo "</pre>";
-        echo "<hr>";
+        // echo "<pre>";
+        // var_dump($d);
+        // echo "</pre>";
+        // echo "<hr>";
 
         $PIX = new MercadoPago;
         $retorno = $PIX->ObterPagamento($d->operadora_id);
         $operadora_retorno = $retorno;
         $retorno = json_decode($retorno);
 
-        echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$retorno->status."</p>";
+        // echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$retorno->status."</p>";
 
         if($retorno->status == 'approved'){
             //Aqui entra a solicitação da Bee
@@ -92,10 +92,16 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
             // var_dump($retorno1);
 
-            $query = "update vendas set deliveryId = '{$retorno['id']}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$d->codigo}'";
-            mysqli_query($con, $query);
+            if($retorno['id']){
+              $query = "update vendas set deliveryId = '{$retorno['id']}', situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$d->codigo}'";
+              mysqli_query($con, $query);
+              EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID: {$retorno['id']}");
+            }else{
 
-            EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID: {$retorno['id']}");
+              EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID não foi gerado");
+
+            }
+
             //*/
             // DADOS DE SOLICITAÇÃO DA ENTREGA
 
