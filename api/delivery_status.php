@@ -39,9 +39,9 @@ if($_POST['CodigoExterno']){
 
         if($query){
             mysqli_query($con, $query);
-            if($_POST['CodigoExterno'] = 13755 ){
-                EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
-            }
+            // if($_POST['CodigoExterno'] = 13755 ){
+            //     EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
+            // }
         }
 
     }
