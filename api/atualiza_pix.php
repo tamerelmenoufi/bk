@@ -54,7 +54,7 @@ include("../lib/includes.php");
                         ");
 
 
-            $json = "{
+            echo $json = "{
                 \"code\": \"{$d->codigo}\",
                 \"fullCode\": \"bk-{$d->codigo}\",
                 \"preparationTime\": 0,
