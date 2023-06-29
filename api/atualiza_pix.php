@@ -97,9 +97,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
               mysqli_query($con, $query);
               EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID: {$retorno['id']}");
             }else{
-
               EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID não foi gerado");
-
             }
 
             //*/
