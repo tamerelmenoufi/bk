@@ -34,7 +34,7 @@ if($_POST['CodigoExterno']){
                 where codigo = '{$_POST['CodigoExterno']}'
             ";
         }else if($status->campo){
-            $query = "update vendas set $status->campo = NOW() where codigo = '{$_POST['CodigoExterno']}'";
+            $query = "update vendas set $status->campo = NOW()".(($_POST['Situacao'] == 30)?", situacao = 'c'":false)." where codigo = '{$_POST['CodigoExterno']}'";
         }
 
         if($query){
