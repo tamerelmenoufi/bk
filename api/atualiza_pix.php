@@ -55,7 +55,7 @@ include("'../lib/includes.php");
                             where codigo = '{$d->codigo}'
                         ");
 
-            echo $json = '{
+            $json = '{
                 "code": "'.$d->codigo.'",
                 "fullCode": "bk-{'.$d->codigo.'",
                 "preparationTime": 0,
@@ -86,7 +86,7 @@ include("'../lib/includes.php");
               }';
 
 
-
+              echo 'json';
             $mottu = new mottu;
 
             $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
