@@ -451,7 +451,7 @@ if($d->cliente == 2){
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
-                                    Digite no campo os números da Iamgem
+                                    Digite no campo abaixo o seu código de promoção para ativar na sua compra
                                 </small>
                             </div>
                         </div>
