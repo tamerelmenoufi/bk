@@ -707,6 +707,9 @@ if($d->cliente == 2){
                         PageClose();
                         $(".ms_corpo").append(dados);
                     }
+                },
+                error:function(){
+                    $.alert('Erro de carregamento!');
                 }
             });
 
