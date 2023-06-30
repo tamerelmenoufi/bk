@@ -42,7 +42,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         $operadora_retorno = $retorno;
         $retorno = json_decode($retorno);
 
-        // echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$retorno->status."</p>";
+        echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$retorno->status."</p>";
 
         if($retorno->status == 'approved'){
             //Aqui entra a solicitação da Bee
