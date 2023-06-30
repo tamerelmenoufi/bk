@@ -10,6 +10,35 @@
         // exit();
     }
 
+    if($_POST['acao'] == 'cupom'){
+
+        $q = "select * from cupom where chave = '{$_POST['codigo_promocao']}' and situacao = '1'";
+        $cupom = mysqli_fetch_object(mysqli_query($con, $q));
+
+        if(!$cupom->codigo){
+            echo json_encode(['status' => false]);
+            exit();
+        }
+
+        if($cupom->tipo == 'taxa_entrega'){
+            $acao = ",valor_cupom = taxa_entrega";
+        }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'v'){
+            $acao = ",valor_cupom = '{$cupom->valor}'";
+        }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'p'){
+            $acao = ",valor_cupom = (valor/100*".(($cupom->valor > 0)?$cupom->valor:1).")";
+        }
+        $query = "update vendas set
+                                    cupom = '{$cupom->codigo}'
+                                    {$acao}
+                where codigo = '{$_SESSION['AppVenda']}'";
+        mysqli_query($con, $query);
+
+
+    }
+
+
+
+
     if($_POST['acao'] == 'loja'){
 
         $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
@@ -33,32 +62,6 @@
             echo json_encode(['status' => true]);
         }
         exit();
-
-    }
-
-
-
-    if($_POST['acao'] == 'cupom'){
-
-        $q = "select * from cupom where chave = '{$_POST['cupom']}' and situacao = '1'";
-        $cupom = mysqli_fetch_object(mysqli_query($con, $q));
-
-        if($cupom->codigo){
-
-            if($cupom->tipo == 'taxa_entrega'){
-                $acao = ",valor_cupom = taxa_entrega";
-            }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'v'){
-                $acao = ",valor_cupom = '{$cupom->valor}'";
-            }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'p'){
-                $acao = ",valor_cupom = (valor/100*".(($cupom->valor > 0)?$cupom->valor:1).")";
-            }
-            $query = "update vendas set
-                                        cupom = '{$cupom->codigo}'
-                                        {$acao}
-                    where codigo = '{$_SESSION['AppVenda']}'";
-            mysqli_query($con, $query);
-
-        }
 
     }
 
@@ -447,6 +450,22 @@ if($d->cliente == 2){
             <div class="card bg-light mb-3">
                 <div class="card-header"><i class="fa-solid fa-receipt"></i> Cupom Promocional</div>
                 <div class="card-body">
+                    <?php
+                    if($d->cupom){
+                    ?>
+                    <h5 robo class="card-title" captcha="error">
+                        <div class="row" style="margin-bottom:10px;">
+                            <div class="col">
+                                <small>
+                                    Promoção <b><?=$d->cupom_nome?></b>: <?=$d->cupom_descricao?><br>
+                                    Você acaba de ter um desconto de <b>R$ <?=number_format($d->cupom_descricao,2,',','.')?></b> na sua compra.
+                                </small>
+                            </div>
+                        </div>
+                    </h5>
+                    <?php
+                    }else{
+                    ?>
                     <h5 robo class="card-title" captcha="error">
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
@@ -459,13 +478,16 @@ if($d->cliente == 2){
                     <div class="row">
                         <div class="col-md-12">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Digite código aqui" >
+                                <input type="text" class="form-control codigo_promocao" placeholder="Digite código aqui" >
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                                    <button class="btn btn-outline-secondary ativar_promocao" type="button" id="button-addon2">Ativar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -660,6 +682,34 @@ if($d->cliente == 2){
         });
         $(".atualizarCaptcha").click(function(){
             $(".imagemCaptcha").html('<img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">');
+        });
+
+        $(".ativar_promocao").click(function(){
+            codigo_promocao = $(".codigo_promocao").val();
+            if(!codigo_promocao){
+                $.alert('Informe o código da promoção');
+                return false;
+            }
+            Carregando();
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                dataType:"JSON",
+                data:{
+                    local:'src/produtos/pagar.php',
+                    codigo_promocao,
+                    acao:'cupom'
+                },
+                success:function(dados){
+                    if(dados.status == false){
+                        $.alert('O código informado não foi identificado ou está fora da promoção!');
+                        return false;
+                    }
+                    PageClose();
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
         });
 
         $(".opcLoja").click(function(){
