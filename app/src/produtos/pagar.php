@@ -703,6 +703,7 @@ if($d->cliente == 2){
                 success:function(dados){
                     if(dados.status == false){
                         $.alert('O código informado não foi identificado ou está fora da promoção!');
+                        Carregando('none');
                         return false;
                     }
 
