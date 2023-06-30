@@ -203,7 +203,7 @@
                                         $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
                                         $retorno = json_decode($retorno1);
 
-                                        $api_delivery = $retorno->id;
+                                        $api_delivery = $retorno['id'];
                                     }
 
                                     //////////////////////API DELIVERY////////////////////////////

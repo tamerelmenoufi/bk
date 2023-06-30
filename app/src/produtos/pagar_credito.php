@@ -223,9 +223,9 @@
                 $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
                 $retorno = json_decode($retorno1);
 
-                if($retorno->id == 9999){
+                if($retorno['id'] == 9999){
                     $query = "update vendas set
-                                                deliveryId = '{$retorno->id}',
+                                                deliveryId = '{$retorno['id']}',
                                                 situacao = 'p',
                                                 data_finalizacao = NOW(),
                                                 GOING_TO_DESTINATION = NOW(),
@@ -234,8 +234,8 @@
                             where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
-                }else if($retorno->id){
-                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$_SESSION['AppVenda']}'";
+                }else if($retorno['id']){
+                    $query = "update vendas set deliveryId = '{$retorno['id']}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
