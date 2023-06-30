@@ -33,6 +33,8 @@
                 where codigo = '{$_SESSION['AppVenda']}'";
         mysqli_query($con, $query);
 
+        exit();
+
 
     }
 
