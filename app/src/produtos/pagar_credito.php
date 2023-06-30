@@ -147,26 +147,16 @@
                                         desconto = '{$_POST['desconto']}',
                                         acrescimo = '{$_POST['acrescimo']}',
                                         total = '".($_POST['amount'] + $_POST['taxa'] + $_POST['taxa_entrega'] - $_POST['desconto'] + $_POST['acrescimo'])."',
-                                        observacoes = '{$_POST['observacoes']}',*/
+                                        observacoes = '{$_POST['observacoes']}',
                                         api_delivery = '{$api_delivery}',
-                                        ".(($r->authorization->status == 'Approved')?"situacao = 'p',":false)."
+                                        ".(($r->authorization->status == 'Approved')?"situacao = 'p',":false)."*/
                                         forma_pagamento = 'credito'
 
                     where codigo = '{$_POST['reference']}'";
             mysqli_query($con, $query);
 
-            if($r->authorization->status == 'Approved' and $d->retirada_local != '1'){
-                //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
 
-
-
-                // DADOS DE SOLICITAÇÃO DA ENTREGA
-                //*
-                // $BEE = new Bee;
-                // $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
-                // $retorno = json_decode($retorno);
-
-                $query = "select
+            $query = "select
                     a.*,
                     d.id as id_loja,
                     d.mottu as id_mottu,
@@ -185,45 +175,56 @@
                     left join lojas d on a.loja = d.codigo
                 where a.codigo = '{$_POST['reference']}'";
 
-                $result = mysqli_query($con, $query);
-                $d = mysqli_fetch_object($result);
+            $result = mysqli_query($con, $query);
+            $d = mysqli_fetch_object($result);
 
-                $json = "{
-                    \"code\": \"{$d->codigo}\",
-                    \"fullCode\": \"bk-{$d->codigo}\",
-                    \"preparationTime\": 0,
-                    \"previewDeliveryTime\": false,
-                    \"sortByBestRoute\": false,
-                    \"deliveries\": [
+            if($r->authorization->status == 'Approved' and $d->retirada_local != '1'){
+                //mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', mesa = '{$_SESSION['AppPedido']}'");
+
+
+
+                // DADOS DE SOLICITAÇÃO DA ENTREGA
+                //*
+                // $BEE = new Bee;
+                // $retorno = $BEE->NovaEntrega($_SESSION['AppVenda']);
+                // $retorno = json_decode($retorno);
+
+                $json = '{
+                    "code": "'.$d->codigo.'",
+                    "fullCode": "bk-{'.$d->codigo.'",
+                    "preparationTime": 0,
+                    "previewDeliveryTime": false,
+                    "sortByBestRoute": false,
+                    "deliveries": [
                       {
-                        \"code\": \"{$d->codigo}\",
-                        \"confirmation\": {
-                          \"mottu\": true
+                        "code": "'.$d->codigo.'",
+                        "confirmation": {
+                          "mottu": true
                         },
-                        \"name\": \"{$d->nome}\",
-                        \"phone\": \"".trim(str_replace(array(' ','-','(',')'), false, $d->telefone))."\",
-                        \"observation\": \"{$d->observacoes}\",
-                        \"address\": {
-                          \"street\": \"{$d->rua}\",
-                          \"number\": \"{$d->numero}\",
-                          \"complement\": \"{$d->referencia}\",
-                          \"neighborhood\": \"{$d->bairro}\",
-                          \"city\": \"Manaus\",
-                          \"state\": \"AM\",
-                          \"zipCode\": \"".trim(str_replace(array(' ','-'), false, $d->cep))."\"
+                        "name": "'.$d->nome.'",
+                        "phone": "'.trim(str_replace(array(' ','-','(',')'), false, $d->telefone)).'",
+                        "observation": "'.$d->observacoes.'",
+                        "address": {
+                          "street": "'.$d->rua.'",
+                          "number": "'.$d->numero.'",
+                          "complement": "'.$d->referencia.'",
+                          "neighborhood": "'.$d->bairro.'",
+                          "city": "Manaus",
+                          "state": "AM",
+                          "zipCode": "'.trim(str_replace(array(' ','-'), false, $d->cep)).'"
                         },
-                        \"onlinePayment\": true,
-                        \"productValue\": {$d->total}
+                        "onlinePayment": true,
+                        "productValue": '.$d->total.'
                       }
                     ]
-                  }";
+                  }';
 
                 $mottu = new mottu;
 
                 $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
                 $retorno = json_decode($retorno1);
 
-                if($retorno['id'] == 9999){
+                if($retorno->id == 9999){
                     $query = "update vendas set
                                                 deliveryId = '{$retorno->id}',
                                                 situacao = 'p',
@@ -235,7 +236,7 @@
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* ID: {$retorno->id}");
                 }else if($retorno->id){
-                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW() where codigo = '{$_SESSION['AppVenda']}'";
+                    $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* ID: {$retorno->id}");
                 }else{
@@ -257,7 +258,7 @@
             }else if($r->authorization->status == 'Approved')
                 {
 
-                $query = "update vendas set situacao = 'p', data_finalizacao = NOW() where codigo = '{$_SESSION['AppVenda']}'";
+                $query = "update vendas set situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$_SESSION['AppVenda']}'";
                 mysqli_query($con, $query);
                 EnviarWapp('92991886570',"VENDA - Venda do pedido (Retirada no local Crédito) *{$_SESSION['AppVenda']}*");
 
