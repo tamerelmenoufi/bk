@@ -693,7 +693,7 @@ if($d->cliente == 2){
             Carregando();
 
              $.ajax({
-                url:"componentes/ms_popup_100.php",
+                url:"src/produtos/pagar.php",
                 type:"POST",
                 dataType:"JSON",
                 data:{
