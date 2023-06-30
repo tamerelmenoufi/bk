@@ -451,16 +451,16 @@ if($d->cliente == 2){
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
-                                    Digite no campo abaixo o seu código de promoção para ativar na sua compra
+                                    Digite no campo abaixo o seu código de promoção para ativar na sua compra.
                                 </small>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="imagemCaptcha col">
-                                <img style="border-radius:5px;" src="src/produtos/captcha.php?l=150&a=45&tf=20&ql=5">
-                            </div>
                             <div class="col">
-                                <input id="captcha" type="text" inputmode="numeric" class="form-control form-control-lg" style="text-align:center; font-weight:bold, font-size:9px;" />
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                                </div>
                             </div>
                         </div>
                         <div class="row" style="margin-top:10px;">
