@@ -703,10 +703,10 @@ if($d->cliente == 2){
                 success:function(dados){
                     if(dados.status == false){
                         $.alert('O código informado não foi identificado ou está fora da promoção!');
-                        return false;
+                    }else{
+                        PageClose();
+                        $(".ms_corpo").append(dados);
                     }
-                    PageClose();
-                    $(".ms_corpo").append(dados);
                 }
             });
 
