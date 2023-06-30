@@ -16,7 +16,7 @@
         $cupom = mysqli_fetch_object(mysqli_query($con, $q));
 
         if(!$cupom->codigo){
-            echo json_encode(['status' => false]);
+            echo 'error';
             exit();
         }
 
@@ -694,14 +694,13 @@ if($d->cliente == 2){
             $.ajax({
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
-                dataType:"JSON",
                 data:{
                     local:'src/produtos/pagar.php',
                     codigo_promocao,
                     acao:'cupom'
                 },
                 success:function(dados){
-                    if(dados.status == false){
+                    if(dados == 'error'){
                         $.alert('O código informado não foi identificado ou está fora da promoção!');
                     }else{
                         PageClose();
