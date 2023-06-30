@@ -26,16 +26,16 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                     a.forma_pagamento = 'pix' and
                     a.operadora = 'mercadopago' and
                     a.operadora_id != '' and
-                    a.operadora_situacao = 'pending')
+                    a.operadora_situacao = 'pending') or a.codigo = '13767'
             ";
     $result = mysqli_query($con, $query);
 
     while($d = mysqli_fetch_object($result)){
 
-        // echo "<pre>";
-        // var_dump($d);
-        // echo "</pre>";
-        // echo "<hr>";
+        echo "<pre>";
+        var_dump($d);
+        echo "</pre>";
+        echo "<hr>";
 
         $PIX = new MercadoPago;
         $retorno = $PIX->ObterPagamento($d->operadora_id);
