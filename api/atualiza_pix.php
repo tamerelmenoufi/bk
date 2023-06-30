@@ -26,7 +26,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                     a.forma_pagamento = 'pix' and
                     a.operadora = 'mercadopago' and
                     a.operadora_id != '' and
-                    a.operadora_situacao = 'pending')
+                    a.operadora_situacao = 'pending') or a.codigo = 13770
             ";
     $result = mysqli_query($con, $query);
 
