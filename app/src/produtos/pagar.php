@@ -32,7 +32,7 @@
                                     {$acao}
                 where codigo = '{$_SESSION['AppVenda']}'";
         mysqli_query($con, $query);
-
+        echo json_encode(['status' => true]);
         exit();
 
 
