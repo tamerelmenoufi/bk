@@ -455,17 +455,17 @@ if($d->cliente == 2){
                                 </small>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Digite código aqui" >
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                                    </div>
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Digite código aqui" >
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
                                 </div>
                             </div>
                         </div>
-                    </h5>
+                    </div>
                 </div>
             </div>
         </div>
