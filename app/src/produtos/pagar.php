@@ -456,18 +456,13 @@ if($d->cliente == 2){
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-md-12">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                    <input type="text" class="form-control" placeholder="Digite código aqui" >
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="row" style="margin-top:10px;">
-                            <div class="col atualizarCaptcha">
-                                <i class="fa-solid fa-rotate"></i> Atualizar Imagem
                             </div>
                         </div>
                     </h5>
