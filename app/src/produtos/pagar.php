@@ -16,7 +16,7 @@
         $cupom = mysqli_fetch_object(mysqli_query($con, $q));
 
         if(!$cupom->codigo){
-            echo 'error';
+            echo json_encode(['status' => false]);
             exit();
         }
 
@@ -691,26 +691,38 @@ if($d->cliente == 2){
                 return false;
             }
             Carregando();
-            $.ajax({
+
+             $.ajax({
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
+                dataType:"JSON",
                 data:{
-                    local:'src/produtos/pagar.php',
                     codigo_promocao,
                     acao:'cupom'
                 },
                 success:function(dados){
-                    if(dados == 'error'){
+                    if(dados.status == false){
                         $.alert('O código informado não foi identificado ou está fora da promoção!');
-                    }else{
-                        PageClose();
-                        $(".ms_corpo").append(dados);
+                        return false;
                     }
-                },
-                error:function(){
-                    $.alert('Erro de carregamento!');
+
+                    $.ajax({
+                        url:"componentes/ms_popup_100.php",
+                        type:"POST",
+                        data:{
+                            local:'src/produtos/pagar.php'
+                        },
+                        success:function(dados){
+                            PageClose();
+                            $(".ms_corpo").append(dados);
+                        }
+                    });
+
                 }
-            });
+            })
+
+
+
 
         });
 
