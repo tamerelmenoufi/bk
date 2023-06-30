@@ -1,6 +1,6 @@
 <?php
 
-  if(!$_POST['id']) exit();
+  exit();
 
   include("../../includes.php");
 
@@ -24,31 +24,7 @@
         list($codVenda) = mysqli_fetch_row(mysqli_query($con, "select codigo from vendas where operadora_id = '{$operadora_id}'"));
 
 
-        // DADOS DE SOLICITAÇÃO DA ENTREGA
-        //*
-        $BEE = new Bee;
-        $retorno = $BEE->NovaEntrega($codVenda);
-        $retorno = json_decode($retorno);
-        if($retorno->deliveryId == 9999){
-            $query = "update vendas set
-                                        deliveryId = '{$retorno->deliveryId}',
-                                        situacao = 'p',
-                                        GOING_TO_DESTINATION = NOW(),
-                                        name = 'Unidade Djalma Batista',
-                                        phone = '(92) 9843-87438'
-                    where codigo = '{$codVenda}'";
-            mysqli_query($con, $query);
-            EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}*");
-        }else if($retorno->deliveryId){
-            $query = "update vendas set deliveryId = '{$retorno->deliveryId}', situacao = 'p' where codigo = '{$codVenda}'";
-            mysqli_query($con, $query);
-            EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}*");
-        }else{
-          EnviarWapp('92991886570',"VENDA - Código do pedido (ObterPagamento) *{$codVenda}* não gerou entrega.");
-        }
 
-        //*/
-        // DADOS DE SOLICITAÇÃO DA ENTREGA
 
       }
 
