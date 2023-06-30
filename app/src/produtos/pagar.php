@@ -98,11 +98,17 @@
                 c.numero,
                 c.rua,
                 c.bairro,
-                c.entrega_gratis
+                c.entrega_gratis,
+                e.chave as cupom_chave,
+                e.tipo as cupom_tipo,
+                e.tipo_desconto as cupom_tipo_desconto,
+                e.valor as cupom_valor,
+                e.descricao as cupon_descricao
             from vendas a
                  left join clientes b on a.cliente = b.codigo
                  left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
                  left join lojas d on a.loja = d.codigo
+                 left join cupom e on a.cupom = e.codigo
             where a.codigo = '{$_SESSION['AppVenda']}'";
 
     $result = mysqli_query($con, $query);
@@ -459,8 +465,8 @@ if($d->cliente == 2){
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
-                                    Promoção <b><?=$d->cupom_nome?></b>: <?=$d->cupom_descricao?><br>
-                                    Você acaba de ter um desconto de <b>R$ <?=number_format($d->cupom_descricao,2,',','.')?></b> na sua compra.
+                                    Promoção <b><?=$d->cupom_chave?></b>: <?=$d->cupom_descricao?><br>
+                                    Você acaba de ter um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
                                 </small>
                             </div>
                         </div>
