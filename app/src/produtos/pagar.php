@@ -188,7 +188,7 @@
 
 </style>
 <div class="PedidoTopoTitulo">
-    <h4>Pagar <?=$_SESSION['AppPedido'].' TZ: '.$promocao_taxa_zero?></h4>
+    <h4>Pagar <?=$_SESSION['AppPedido']?></h4>
 </div>
 
 <div class="col" style="margin-bottom:60px; display:<?=(($d->valor)?'block':'none')?>">
