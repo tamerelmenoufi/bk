@@ -405,6 +405,7 @@
 </div>
 <script>
     $(function(){
+
         $("#cartao_numero").mask("9999 9999 9999 9999");
         $("#cartao_validade_mes").mask("99");
         $("#cartao_validade_ano").mask("9999");
@@ -446,7 +447,7 @@
                 $.alert('Preenche os dados do cartão corretamente!');
                 return false;
             }
-
+            Carregando();
             $.ajax({
                 url:"src/produtos/pagar_credito.php",
                 type:"POST",
@@ -465,7 +466,7 @@
                     acao:'pagar'
                 },
                 success:function(dados){
-
+                    Carregando('none');
                     let retorno = JSON.parse(dados);
                     $.alert(retorno.msg);
                     tentativa = (tentativas*1-1);
