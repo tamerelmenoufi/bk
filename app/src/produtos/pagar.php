@@ -476,7 +476,7 @@ if($d->cliente == 2){
                     <?php
                     }else{
                     ?>
-                    <h5 robo class="card-title" captcha="error">
+                    <h5 class="card-title">
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
                                 <small>
