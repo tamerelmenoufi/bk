@@ -103,7 +103,7 @@
                 e.tipo as cupom_tipo,
                 e.tipo_desconto as cupom_tipo_desconto,
                 e.valor as cupom_valor,
-                e.descricao as cupon_descricao
+                e.descricao as cupom_descricao
             from vendas a
                  left join clientes b on a.cliente = b.codigo
                  left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
@@ -466,7 +466,7 @@ if($d->cliente == 2){
                             <div class="col">
                                 <small>
                                     Promoção <b><?=$d->cupom_chave?></b>: <?=$d->cupom_descricao?><br>
-                                    Você acaba de ter um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
+                                    Você acaba de ganhar um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
                                 </small>
                             </div>
                         </div>
