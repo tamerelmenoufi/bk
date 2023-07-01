@@ -26,7 +26,7 @@
                 $result = mysqli_query($con, $query);
                 $d = mysqli_fetch_object($result);
 
-                $json = "{
+                echo $json = "{
                     \"code\": \"{$d->codigo}\",
                     \"fullCode\": \"bk-{$d->codigo}\",
                     \"preparationTime\": 0,
