@@ -116,7 +116,7 @@
 
     if(!$d->valor) $_SESSION['AppCarrinho'] = false;
 
-    if(($d->entrega_gratis or $d->retirada_local) and $d->cupom_tipo != 'taxa_entrega') $promocao_taxa_zero = true;
+    if($d->entrega_gratis or $d->retirada_local) $promocao_taxa_zero = true;
 
 ?>
 <style>
@@ -541,7 +541,7 @@ if($d->cliente == 2){
                     <?php
                         // echo "$d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')";
                     ?>
-                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->desconto - $d->valor_cupom ,2,',','.')?></h1>
                     <?php
                     if($StatusApp == 'a'){
                     ?>
