@@ -30,7 +30,7 @@ $dados = [];
 while($d = mysqli_fetch_object($result)){
     if($d->qt > 0){
         $pedido = '#'.str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT);
-        $dados[] = ['codigo'=> $d->codigo, 'pedido' => $pedido, 'cliente' => $d->nome. ' Cod Retirada: 16612', 'situacao' => $d->situacao];
+        $dados[] = ['codigo'=> $d->codigo, 'pedido' => $pedido, 'cliente' => $d->nome. ' - (Cod Retirada: 16612)', 'situacao' => $d->situacao];
     }
 }
 
