@@ -539,7 +539,7 @@ if($d->cliente == 2){
                     </h5> -->
                     Total a Pagar:
                     <?php
-                        echo "$d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')";
+                        // echo "$d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')";
                     ?>
                     <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')?></h1>
                     <?php
