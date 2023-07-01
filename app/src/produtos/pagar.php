@@ -416,7 +416,7 @@
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header"><i class="fa-solid fa-receipt"></i> Não Sou Robô</div>
+                <div class="card-header"><i class="fa-solid fa-robot"></i> Não Sou Robô</div>
                 <div class="card-body">
                     <h5 robo class="card-title" captcha="error">
                         <div class="row" style="margin-bottom:10px;">
@@ -456,7 +456,7 @@ if($d->cliente == 2){
 <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header"><i class="fa-solid fa-receipt"></i> Cupom Promocional</div>
+                <div class="card-header"><i class="fa-solid fa-receipt"></i> Possui Cupom Promocional?</div>
                 <div class="card-body">
                     <?php
                     if($d->cupom){
