@@ -1,8 +1,8 @@
 <?php
     include("../lib/includes.php");
 
-    echo "Estou no teste!";
-    exit();
+    // echo "Estou no teste!";
+    // exit();
 
     // $query = "select
     //                 a.*,
