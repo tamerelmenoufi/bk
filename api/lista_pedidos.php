@@ -9,6 +9,7 @@ $query = "SELECT
                 a.codigo,
                 a.situacao,
                 c.nome,
+                c.telefone,
                 (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt
         FROM vendas a
         left join clientes c on a.cliente = c.codigo
@@ -30,7 +31,7 @@ $dados = [];
 while($d = mysqli_fetch_object($result)){
     if($d->qt > 0){
         $pedido = '#'.str_pad($d->codigo , 5 , '0' , STR_PAD_LEFT);
-        $dados[] = ['codigo'=> $d->codigo, 'pedido' => $pedido, 'cliente' => $d->nome. ' - (Cod Retirada: 16612)', 'situacao' => $d->situacao];
+        $dados[] = ['codigo'=> $d->codigo, 'pedido' => $pedido, 'cliente' => $d->nome. ' - '. $d->telefone . ' (Retirada: 16612)', 'situacao' => $d->situacao];
     }
 }
 
