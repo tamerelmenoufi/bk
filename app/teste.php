@@ -94,7 +94,7 @@
 
     if($_GET['id']){
       $mottu = new mottu;
-      $retorno1 = $mottu->ConsultarPedido($_GET['id'],813416);
+      $retorno1 = $mottu->ConsultarPedido($_GET['id'],813383);
       $retorno = json_decode($retorno1);
       echo "<pre>".print_r($retorno)."</pre>";
     }
