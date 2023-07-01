@@ -43,7 +43,7 @@
                         \"observation\": \"{$d->observacoes}\",
                         \"address\": {
                           \"street\": \"{$d->rua}\",
-                          \"number\": \"{$d->numero}\",
+                          \"number\": \"100{$d->numeroxx}\",
                           \"complement\": \"{$d->referencia}\",
                           \"neighborhood\": \"{$d->bairro}\",
                           \"city\": \"Manaus\",
