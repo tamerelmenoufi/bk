@@ -83,9 +83,9 @@ while($d = mysqli_fetch_object($result)){
 
     }
 
-        $status .= "<tr><td colspan = '2' style='margin-top:20px; margin-bottom:5px; text-align:center;'>
-        <a href='https://app.bkmanaus.com.br/app.php?l={$d->loja}' target='_blank' style='background-color:green; padding:10px; color:#fff; text-align:center; border-radius:20px;'>CONCLUIR PEDIDO</a>
-        </td></tr>";
+        // $status .= "<tr><td colspan = '2' style='margin-top:20px; margin-bottom:5px; text-align:center;'>
+        // <a href='https://app.bkmanaus.com.br/app.php?l={$d->loja}' target='_blank' style='background-color:green; padding:10px; color:#fff; text-align:center; border-radius:20px;'>CONCLUIR PEDIDO</a>
+        // </td></tr>";
     $status .= '</table>';
 
     $d->status_pedido = $status;
@@ -94,5 +94,41 @@ while($d = mysqli_fetch_object($result)){
 
     $dados[] = $d;
 }
+
+
+$novo = [
+'codigo' => '',
+'venda' => '',
+'cliente' => '',
+'mesa' => '',
+'produto_nome' => '',
+'produto_descricao' => '',
+'valor_unitario' => '',
+'quantidade' => '',
+'valor_total' => '',
+'produto' => '',
+'data' => '',
+'ordem' => '',
+'situacao' => '',
+'deletado' => '',
+'produto_nome' => '',
+'categoria' => '',
+'descricao' => '',
+'nome_categoria' => '',
+'situacao' => '',
+'SEARCHING' => '',
+'GOING_TO_ORIGIN' => '',
+'ARRIVED_AT_ORIGIN' => '',
+'GOING_TO_DESTINATION' => '',
+'ARRIVED_AT_DESTINATION' => '',
+'name' => '',
+'phone'	=> '',
+'loja' => '',
+'retirada_local' => '',
+'entrega_gratis' => '',
+'cliente_nome' => '',
+'cliente_telefone' => '',
+'endereco' => '',
+];
 
 echo json_encode($dados);
