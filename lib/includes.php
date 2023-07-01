@@ -17,7 +17,7 @@ if($_SESSION['usuario']){
 
 //Verificação loja aberta
 date_default_timezone_set("America/Manaus");
-$inicio = strtotime(date("Y-m-d 11:00:00"));
+$inicio = strtotime(date("Y-m-d 10:00:00"));
 $final  = strtotime(date("Y-m-d 23:59:59"));
 $agora = strtotime("NOW");
 if($inicio <= $agora and $agora <= $final){
