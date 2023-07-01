@@ -99,6 +99,10 @@
       $retorno = json_decode($retorno1);
       // echo "<pre>".var_dump($retorno)."</pre>";
       echo "codigo:".$retorno->code;
+
+      $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
+      mysqli_query($con,$query);
+
       echo "<hr>";
       echo "DJ<br>";
       $mottu = new mottu;
