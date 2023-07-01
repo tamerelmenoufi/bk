@@ -61,6 +61,8 @@
                 $retorno1 = $mottu->NovoPedido($json, $d->id_mottu);
                 $retorno = json_decode($retorno1);
 
+                print_r($retorno);
+
                 if($retorno->id == 9999){
                     $query = "update vendas set
                                                 deliveryId = '{$retorno->id}',
