@@ -97,14 +97,14 @@
       $mottu = new mottu;
       $retorno1 = $mottu->ConsultarPedido($_GET['id'],813416);
       $retorno = json_decode($retorno1);
-      echo "<pre>".print_r($retorno)."</pre>";
+      echo "<pre>".var_dump($retorno)."</pre>";
 
       echo "<hr>";
       echo "DJ";
       $mottu = new mottu;
       $retorno1 = $mottu->ConsultarPedido($_GET['id'],813383);
       $retorno = json_decode($retorno1);
-      echo "<pre>".print_r($retorno)."</pre>";
+      echo "<pre>".var_dump($retorno)."</pre>";
     }
 
 
