@@ -171,7 +171,7 @@
                                     if($dados->status == 'approved' and $d->retirada_local != '1'){
                                         $json = '{
                                             "code": "'.$d->codigo.'",
-                                            "fullCode": "bk-{'.$d->codigo.'",
+                                            "fullCode": "bk-'.$d->codigo.'",
                                             "preparationTime": 0,
                                             "previewDeliveryTime": false,
                                             "sortByBestRoute": false,

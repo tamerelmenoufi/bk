@@ -56,7 +56,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
             $json = '{
                 "code": "'.$d->codigo.'",
-                "fullCode": "bk-{'.$d->codigo.'",
+                "fullCode": "bk-'.$d->codigo.'",
                 "preparationTime": 0,
                 "previewDeliveryTime": false,
                 "sortByBestRoute": false,
