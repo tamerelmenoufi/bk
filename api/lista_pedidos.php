@@ -10,7 +10,7 @@ $query = "SELECT
                 a.situacao,
                 c.nome,
                 c.telefone,
-                a.delivery_retorno.'$->>pickupCode' as cod_retirada,
+                a.delivery_retorno->>'$.pickupCode' as cod_retirada,
                 (select count(*) from vendas_produtos where venda = a.codigo and deletado != '1') as qt
         FROM vendas a
         left join clientes c on a.cliente = c.codigo
