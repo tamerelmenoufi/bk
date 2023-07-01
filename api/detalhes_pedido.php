@@ -71,7 +71,7 @@ while($d = mysqli_fetch_object($result)){
         $status .= "<tr><td>".$d->name."</td><td style='text-align:right'>".($d->phone)."</td></tr>";
     }
 
-    $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff;'><b>Cliente:</b> ".$d->cliente_nome." - ".$d->cliente_telefone."</td></tr>";
+    // $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff;'><b>Cliente:</b> ".$d->cliente_nome." - ".$d->cliente_telefone."</td></tr>";
 
     if($d->entrega_gratis){
         $status .= "<tr><td colspan = '2' style='margin-top:10px; margin-bottom:5px; background-color:green; color:#fff;'><b>Entrega Grátis para o Endereço:</b><br style='margin-bottom:5px;'>".$d->endereco."</td></tr>";
