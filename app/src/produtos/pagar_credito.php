@@ -116,7 +116,7 @@
 
                 echo json_encode([
                     'status' => 'Approved',
-                    'msg' => 'Operação realizada com sucesso!',
+                    'msg' => 'O pagamento foi concluído com sucesso!<br>O seu pedido está sendo preparado!',
                     //'AppVenda' => $_SESSION['AppVenda'],
                 ]);
 
