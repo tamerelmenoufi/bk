@@ -464,12 +464,12 @@ if($d->cliente == 2){
                     <h5 robo class="card-title" captcha="error">
                         <div class="row" style="margin-bottom:10px;">
                             <div class="col">
-                                <div class="p-3 mb-2 bg-info text-white">
-                                    <small>
-                                        Promoção <b><?=$d->cupom_chave?></b>: <?=$d->cupom_descricao?><br>
-                                        Você acaba de ganhar um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
-                                    </small>
-                                </div>
+                                <small>
+                                    Promoção <b><?=$d->cupom_chave?></b>: <?=$d->cupom_descricao?>
+                                    <div class="p-3 mb-2 bg-info text-white">
+                                    Você acaba de ganhar um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
+                                    </div>
+                                </small>
                             </div>
                         </div>
                     </h5>
