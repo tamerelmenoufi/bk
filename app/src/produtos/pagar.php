@@ -43,7 +43,7 @@
 
     if($_POST['acao'] == 'loja'){
 
-        $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto']);
+        $total = ($_POST['valor'] + $_POST['acrescimo'] + $_POST['taxa'] + $_POST['LjVl'] - $_POST['desconto'] - $_POST['cupom']);
 
         if($_POST['LjCd'] > 0){
         $query = "update vendas set
@@ -622,6 +622,7 @@ if($d->cliente == 2){
             taxa = $("div[dadosValores]").attr('taxa');
             desconto = $("div[dadosValores]").attr('desconto');
             acrescimo = $("div[dadosValores]").attr('acrescimo');
+            cupom = '<?=$d->valor_cupom?>';
 
             $.ajax({
                     url:"src/produtos/pagar.php",
@@ -635,6 +636,7 @@ if($d->cliente == 2){
                         taxa,
                         desconto,
                         acrescimo,
+                        cupom,
                         acao:'loja'
                     },
                     success:function(dados){
