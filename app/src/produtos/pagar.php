@@ -466,7 +466,7 @@ if($d->cliente == 2){
                             <div class="col">
                                 <small>
                                     Promoção <b><?=$d->cupom_chave?></b>: <?=$d->cupom_descricao?>
-                                    <div class="p-3 mb-2 bg-info text-white">
+                                    <div class="p-3 mb-2 bg-info text-white mt-3">
                                     Você acaba de ganhar um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
                                     </div>
                                 </small>
