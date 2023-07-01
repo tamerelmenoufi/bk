@@ -85,7 +85,7 @@
     </div>
     <div class="col-12 mb-3">
         <label for="numero">Número*</label>
-        <input type="text" autocomplete="off" inputmode="numeric" class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="numero" value="<?=$d->numero?>">
+        <input type="text" autocomplete="off" inputmode="numeric" maxlength='8' class="form-control form-control-lg blq" <?=(($d->entrega_gratis)?'disabled':false)?> id="numero" value="<?=$d->numero?>">
     </div>
     <div class="col-12 mb-3">
         <label for="bairro">Bairro*</label>
