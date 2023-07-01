@@ -262,7 +262,6 @@
                 mysqli_query($con, $query);
                 EnviarWapp('92991886570',"VENDA - Venda do pedido (Retirada no local Crédito) *{$_SESSION['AppVenda']}*");
 
-
             }else if($r->authorization->status == 'Denied')
                 {
                 echo json_encode([
