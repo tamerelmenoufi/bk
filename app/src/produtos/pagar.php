@@ -516,7 +516,7 @@ if($d->cliente == 2){
     <div class="row">
         <div class="col-12">
             <div class="card bg-light mb-3">
-                <div class="card-header"><i class="fa-solid fa-receipt"></i> Formas de Pagamento</div>
+                <div class="card-header"><i class="fa-solid fa-cash-register"></i> Formas de Pagamento</div>
                 <div class="card-body" dadosValores
                             valor = '<?=$d->valor?>'
                             taxa = '0'
