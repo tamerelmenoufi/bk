@@ -116,7 +116,7 @@
 
     if(!$d->valor) $_SESSION['AppCarrinho'] = false;
 
-    if($d->entrega_gratis or $d->retirada_local) $promocao_taxa_zero = true;
+    if($d->entrega_gratis or $d->retirada_local or $d->cupom_tipo == 'taxa_entrega') $promocao_taxa_zero = true;
 
 ?>
 <style>
@@ -188,7 +188,7 @@
 
 </style>
 <div class="PedidoTopoTitulo">
-    <h4>Pagar <?=$_SESSION['AppPedido']?></h4>
+    <h4>Pagar <?=$_SESSION['AppPedido'].' TZ: '.$promocao_taxa_zero?></h4>
 </div>
 
 <div class="col" style="margin-bottom:60px; display:<?=(($d->valor)?'block':'none')?>">
