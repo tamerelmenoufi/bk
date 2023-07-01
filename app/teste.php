@@ -21,7 +21,7 @@
                     left join clientes b on a.cliente = b.codigo
                     left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
                     left join lojas d on a.loja = d.codigo
-                where a.codigo = '13803'";
+                where a.codigo = '{$venda}'";
 
                 $result = mysqli_query($con, $query);
                 $d = mysqli_fetch_object($result);
