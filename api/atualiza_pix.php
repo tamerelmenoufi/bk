@@ -104,12 +104,15 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
             // DADOS DE SOLICITAÇÃO DA ENTREGA
 
         }else{
+          if($d->tentativas_pagamento <= 4){
             mysqli_query($con, "update vendas set
                 operadora_situacao = '{$retorno->status}',
-                operadora_retorno = '{$operadora_retorno}'
+                operadora_retorno = '{$operadora_retorno}',
+                tentativas_pagamento = (tentativas_pagamento + 1)
                 where codigo = '{$d->codigo}'
             ");
             EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* status *{$retorno->status}*");
+          }
         }
 
     }
