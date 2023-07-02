@@ -9,10 +9,14 @@ $dados = [];
 if($_POST['pedido']){
     //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
     //*
-    $query = "UPDATE vendas set situacao = 'i' where codigo = '{$_POST['pedido']}'";
-    $result = mysqli_query($con, $query);
 
-    EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* em produção.");
+    list($situacao) = mysqli_fetch_row(mysqli_query($con, "select situacao from vendas where codigo = '{$_POST['pedido']}'"));
+
+    if($situacao != 'i'){
+        $query = "UPDATE vendas set situacao = 'i' where codigo = '{$_POST['pedido']}'";
+        $result = mysqli_query($con, $query);
+        EnviarWapp('92991886570',"VENDA - pedido *{$_POST['pedido']}* em produção.");
+    }
     //*/
     //PRODUÇÃO SEM SOLICITAÇÂO DE ENTREGA
 
