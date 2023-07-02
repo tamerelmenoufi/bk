@@ -74,7 +74,7 @@
                 $bordas = true;
             }
             if($d->ARRIVED_AT_DESTINATION > 0){
-                echo EventoEntrega($d->ARRIVED_AT_DESTINATION,'Entrega realizada');
+                echo EventoEntrega($d->ARRIVED_AT_DESTINATION,'Pedido no local da entrega');
                 $bordas = true;
             }
             // if($d->RETURNING > 0){
