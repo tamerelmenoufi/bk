@@ -370,6 +370,7 @@
                                             <li
                                                 opc="<?=$v->codigo?>"
                                                 LjId="<?=$v->id?>"
+                                                endereco="<?=$v->endereco?>"
                                                 valor="<?=$valores->deliveryFee?>"
                                                 class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
@@ -384,6 +385,10 @@
                                             }
                                         ?>
                                         </ul>
+                                    </div>
+
+                                    <div class="bg-info w-100 m-2 p-2 text-center endereco_loja">
+
                                     </div>
 
 
@@ -750,6 +755,7 @@ if($d->cliente == 2){
             obj.addClass('list-group-item-info');
             $("#collapseOne").removeClass('show');
 
+            $(".endereco_loja").html(obj.attr("endereco"));
 
             LjVl = obj.attr("valor");
             LjCd = obj.attr("opc");
