@@ -387,16 +387,14 @@
                                         </ul>
                                     </div>
 
-                                    <div class="bg-info w-100 m-2 p-2 text-center endereco_loja">
-
-                                    </div>
-
-
                                     <div promocao_frete style="width:100%; text-align:center;bottom margin-top:10px; margin-top:30px;">
                                         <img src="img/promocao_frete_gratis.gif" alt="Promoção Frete Grátis" style="width:100%; border-radius:10px;" />
                                     </div>
 
                                 </div>
+
+                                <div class="bg-info w-100 m-2 p-2 text-center endereco_loja"></div>
+
                             </div>
 
 
