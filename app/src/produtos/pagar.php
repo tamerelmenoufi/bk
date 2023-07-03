@@ -621,6 +621,8 @@ if($d->cliente == 2){
             $(".loja").html(dados);
             $('li[opc="<?=$opc?>"]').addClass('list-group-item-info');
 
+            $(".endereco_loja").html(obj.attr("endereco"));
+
             LjVl = lj.attr("valor");
             LjCd = lj.attr("opc");
             LjId = lj.attr("LjId");
