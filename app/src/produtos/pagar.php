@@ -393,7 +393,7 @@
 
                                 </div>
 
-                                <div class="bg-info w-100 m-2 p-2 text-center endereco_loja"></div>
+                                <div class="bg-info w-100 p-2 text-center endereco_loja"></div>
 
                             </div>
 
