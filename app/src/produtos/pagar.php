@@ -241,12 +241,12 @@
                 <div class="card-body">
                     <div class="row">
 
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                             <div class="mb-3 form-check">
                                 <input type="checkbox" <?=(($d->retirada_local == '1')?"checked":false)?> class="form-check-input" id="retirada_local">
                                 <label class="form-check-label" for="retirada_local">Vou retirar meu pedido na loja</label>
                             </div>
-                        </div>
+                        </div> -->
 
 
                         <div class="col-12">
