@@ -38,7 +38,7 @@
     <div class="row">
         <div class='col'>
             <div class="LojaTitulo">Selecione a Loja se sua preferência</div>
-            <img class="topoImgLoja" src="img/logo.svg?<?=$md5?>" />
+            <img class="topoImgLoja" src="img/logo.svg" />
             <?php
                 $query = "select * from lojas where situacao = '1' order by nome";
                 $result = mysqli_query($con, $query);

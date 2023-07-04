@@ -243,7 +243,7 @@
                         <div class="status_pagamento"></div>
                     </div>
                     Total a Pagar:
-                    <h1>R$ <?=number_format($d->total,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->total,2,'.',false)?></h1>
                     <p style="text-align:center; font-size:12px;">Clique no botão abaixo para copiar o Código PIX de sua compra.</p>
                     <!-- <p style="text-align:center; font-size:16px;"><?=$qrcode?></p> -->
                     <button copiar="<?=$qrcode?>" class="btn btn-secondary btn-lg btn-block"><i class="fa-solid fa-copy"></i> <span>Copiar Código PIX</span></button>

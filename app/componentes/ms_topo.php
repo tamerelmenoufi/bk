@@ -32,7 +32,7 @@
 </style>
 <div class="row">
     <div class="col-4">
-        <img class="topoImg" src="img/logo.svg?<?=$md5?>" />
+        <img class="topoImg" src="img/logo.svg" />
     </div>
     <div class="col-8">
         <?php

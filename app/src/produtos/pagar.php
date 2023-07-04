@@ -207,7 +207,7 @@
                         <div class="col-6">
                             <h5 class="card-title">
                                 <small>Valor</small>
-                                <div style="font-size:20px; color:#502314;">R$ <?=number_format($d->valor,2,',','.')?></div>
+                                <div style="font-size:20px; color:#502314;">R$ <?=number_format($d->valor,2,'.',false)?></div>
                             </h5>
                         </div>
                     </div>
@@ -375,7 +375,7 @@
                                                 class="opcLoja list-group-item d-flex justify-content-between align-items-center">
                                                 <small><?=$v->nome?></small>
                                                 <span class="badge badge-pill">
-                                                    <small>R$ <?=number_format($valores->deliveryFee,2,',','.')?></small>
+                                                    <small>R$ <?=number_format($valores->deliveryFee,2,'.',false)?></small>
                                                 </span>
 
                                             </li>
@@ -470,7 +470,7 @@ if($d->cliente == 2){
                                 <small>
                                     Promoção <b><?=$d->cupom_chave?></b>: <?=$d->cupom_descricao?>
                                     <div class="p-3 mb-2 bg-info text-white mt-3 text-center">
-                                    Você acaba de ganhar um desconto de <b>R$ <?=number_format($d->valor_cupom,2,',','.')?></b> na sua compra.
+                                    Você acaba de ganhar um desconto de <b>R$ <?=number_format($d->valor_cupom,2,'.',false)?></b> na sua compra.
                                     </div>
                                 </small>
                             </div>
@@ -542,9 +542,9 @@ if($d->cliente == 2){
                     </h5> -->
                     Total a Pagar:
                     <?php
-                        // echo "$d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')";
+                        // echo "$d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,'.',false)";
                     ?>
-                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,',','.')?></h1>
+                    <h1>R$ <?=number_format($d->valor + ((!$promocao_taxa_zero)?$vlopc:0)/*$vlopc*/ - $d->valor_cupom ,2,'.',false)?></h1>
                     <?php
                     if($StatusApp == 'a'){
                     ?>
