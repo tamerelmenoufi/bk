@@ -17,8 +17,8 @@
     .alerta{
         position:fixed;
         width:auto;
-        height:50px;
-        left:10px;
+        height:65px;
+        left:60px;
         top:10px;
         padding:10px;
         border-radius:7px;
