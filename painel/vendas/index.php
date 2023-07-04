@@ -48,7 +48,7 @@ $result = mysqli_query($con, $query);
                     <tr id="linha-<?= $d->codigo; ?>">
                         <td><?= $d->cliente_nome ?: $d->telefone; ?></td>
                         <td>
-                            <?= number_format($d->total, 2, ',', '.'); ?>
+                            <?= number_format($d->total, 2, '.', false); ?>
                         </td>
                         <td><?= $d->mesa_descricao; ?></td>
                         <td><?= formata_datahora($d->data_pedido, DATA_HM); ?></td>

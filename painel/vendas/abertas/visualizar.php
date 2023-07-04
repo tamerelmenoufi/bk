@@ -197,11 +197,11 @@ $isProdutos = empty($dados);
                 valor_total_produto = (valor_total * 1 - valor_unitario * 1);
 
                 $(`span[valor_total_${codigo}]`)
-                    .text(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                    .text(valor.toFixed(2));
 
                 $("span[valor_total]")
                     .attr("valor_total", valor_total)
-                    .text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                    .text(valor_total.toFixed(2));
             }
 
 
@@ -242,10 +242,10 @@ $isProdutos = empty($dados);
             valor_total = (valor_total * 1 + valor_unitario * 1);
             valor_total_produto = (valor_unitario * quantidade);
 
-            $(`span[valor_total_${codigo}]`).text(valor_total_produto.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $(`span[valor_total_${codigo}]`).text(valor_total_produto.toFixed(2));
 
             $("span[valor_total]").attr("valor_total", valor_total)
-            $("span[valor_total]").text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[valor_total]").text(valor_total.toFixed(2));
             // @formatter:off
 
             $.ajax({
@@ -288,7 +288,7 @@ $isProdutos = empty($dados);
                         action: function () {
                             $(`span[valor_total]`)
                                 .attr("valor_total", valor_total)
-                                .text(valor_total.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                                .text(valor_total.toFixed(2));
 
                             $.ajax({
                                 url: "<?= $UrlScript?>visualizar.php",

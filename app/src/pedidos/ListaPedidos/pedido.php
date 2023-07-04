@@ -99,7 +99,7 @@
                     <small class="text-muted"><?=$sabores?></small>
                 </p> -->
                 <p class="card-text" style="padding:0; margin:0; text-align:right">
-                    R$ <?= number_format($d->valor_unitario, 2, ',', '.') ?>
+                    R$ <?= number_format($d->valor_unitario, 2, '.', false) ?>
                 </p>
                 <p class="card-text" style="padding:0; margin:0; color:red; font-size:10px;">
                     <?= $d->produto_descricao?>

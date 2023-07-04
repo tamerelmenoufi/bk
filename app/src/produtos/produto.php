@@ -227,7 +227,7 @@
                                     <button observacoes class="btn btn-warning btn-block"><i class="fa-solid fa-pencil"></i> Recomendações</button>
                                 </div>
                                 <div class="col-4">
-                                    <div style="text-align:right;"><small>R$</small> <small valor_atual><?= number_format($_POST['valor'], 2, ',', '.') ?></small></div>
+                                    <div style="text-align:right;"><small>R$</small> <small valor_atual><?= number_format($_POST['valor'], 2, '.', false) ?></small></div>
                                     <div style="font-size:10px; text-align:right;">Valor Cobrado</div>
                                 </div>
                                 </div>
@@ -282,7 +282,7 @@
                                     class="btn btn-primaryX text-primary"
                                     id="rotulo_valor">
                                 R$ <span valor atual="<?=$valor?>" aditivo="0">
-                                    <?= number_format($valor, 2, ',', '.') ?>
+                                    <?= number_format($valor, 2, '.', false) ?>
                                 </span>
                             </span>
                         </div>
@@ -318,7 +318,7 @@
             $("#quantidade").html(quantidade*1);
             valor = (atual*1 + aditivo*1) * (quantidade*1);
             console.log(valor)
-            $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[valor]").html(valor.toFixed(2));
 
         });
 
@@ -331,7 +331,7 @@
             $("#quantidade").html(quantidade*1);
 
             valor = (atual*1 + aditivo*1) * ((quantidade*1)?(quantidade*1):1);
-            $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[valor]").html(valor.toFixed(2));
 
         });
 
@@ -376,7 +376,7 @@
             for(i=0; i < Add.length; i++){
                 // console.log(Add[i].codigo)
                 valor_unitario = ( (valor_unitario*1) + (Add[i].valor * Add[i].quantidade));
-                VlItem = (Add[i].valor * Add[i].quantidade).toLocaleString('pt-br', {minimumFractionDigits: 2});
+                VlItem = (Add[i].valor * Add[i].quantidade).toFixed(2);
                 obsAdd += `- ${Add[i].quantidade} x ${Add[i].descricao} + (R$ ${VlItem})<br>`;
             }
 

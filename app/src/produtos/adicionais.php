@@ -141,7 +141,7 @@ $m = mysqli_fetch_object(mysqli_query($con, "SELECT * FROM categoria_medidas WHE
             if (qt >= 1) {
                 //$("small[valor_atual]").addClass('linha_atraves');
                 v_produto_com_sabores += valor_sabor;
-                $("small[valor_novo]").text(`R$ ${v_produto_com_sabores.toLocaleString('pt-br', {minimumFractionDigits: 2})}`);
+                $("small[valor_novo]").text(`R$ ${v_produto_com_sabores.toFixed(2)}`);
                 $("small[valor_novo]").fadeIn(300);
             } else {
                 //$('small[valor_atual]').removeClass('linha_atraves');
@@ -164,7 +164,7 @@ $m = mysqli_fetch_object(mysqli_query($con, "SELECT * FROM categoria_medidas WHE
                 Lista += '<div class="list-group grupo" style="margin-bottom:5px;" cod="' + codigo_produto + '" nome="' + nome_produto + '" valor="' + valor_produto + '">' +
                     '<div class="d-flex">' +
                     '<div class="p-2"><i class="fa-solid fa-check-double text-success"></i> ' + nome_produto + '</div>' +
-                    //'<div class="ml-auto p-2">R$ '+ valor_produto.toLocaleString('pt-br', {minimumFractionDigits: 2}) +'</div>' +
+                    //'<div class="ml-auto p-2">R$ '+ valor_produto.toFixed(2) +'</div>' +
                     '</div>' +
                     '</div>';
 
@@ -173,8 +173,8 @@ $m = mysqli_fetch_object(mysqli_query($con, "SELECT * FROM categoria_medidas WHE
             $("span[valor]").attr("atual", ValorMaior);
             quantidade = $("#quantidade").html();
             valor = ValorMaior * quantidade;
-            $("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-            $("small[valor_atual]").html(ValorMaior.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[valor]").html(valor.toFixed(2));
+            $("small[valor_atual]").html(ValorMaior.toFixed(2));
             $(".ListaSabores").html(Lista);
 
         });

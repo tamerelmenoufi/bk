@@ -126,7 +126,7 @@ $on = number_format(($connectLoja[1] * 100)/$conectividade,0);
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Faturamento
                         </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">R$ <?=number_format($dadosCount->faturamento, 2, ',', '.') ?></div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">R$ <?=number_format($dadosCount->faturamento, 2, '.', false) ?></div>
                     </div>
                     <div class="col-auto">
                         <i class="fa-solid fa-user fa-2x text-gray-300"></i>

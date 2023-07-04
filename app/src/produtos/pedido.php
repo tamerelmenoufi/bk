@@ -132,7 +132,7 @@
                     <small class="text-muted"><?=$sabores?></small>
                 </p> -->
                 <p class="card-text" style="padding:0; margin:0; text-align:right">
-                    R$ <?= number_format($d->valor_unitario, 2, ',', '.') ?>
+                    R$ <?= number_format($d->valor_unitario, 2, '.', false) ?>
                 </p>
                 <p class="card-text" style="padding:0; margin:0; color:red; font-size:10px;">
                     <?= $d->produto_descricao?>
@@ -161,7 +161,7 @@
                                 class="btn text-warning rotulo_valor"
                         >
                             R$ <span valor atual="<?=$d->valor_unitario?>">
-                                <?= number_format($d->valor_total, 2, ',', '.') ?>
+                                <?= number_format($d->valor_total, 2, '.', false) ?>
                             </span>
                         </span>
 
@@ -190,7 +190,7 @@
             </button>
         </div>
         <div class="col-8 PedidoBottomItens">
-            <button <?=((!$valor_total)?'disabled':false)?> class="btn btn-secondary" pagar>Pagar <b>R$  <span pedido_valor_toal valor="<?=$valor_total?>"><?= number_format($valor_total, 2, ',', '.') ?></span></b></button>
+            <button <?=((!$valor_total)?'disabled':false)?> class="btn btn-secondary" pagar>Pagar <b>R$  <span pedido_valor_toal valor="<?=$valor_total?>"><?= number_format($valor_total, 2, '.', false) ?></span></b></button>
         </div>
     </div>
 </div>
@@ -220,9 +220,9 @@
             valor = (atual*1) * (quantidade*1);
             valortotal = (valortotal*1 + atual*1);
             $("span[pedido_valor_toal]").attr("valor", valortotal);
-            $("span[pedido_valor_toal]").text(valortotal.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-            obj.find("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-            // obj.children("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            $("span[pedido_valor_toal]").text(valortotal.toFixed(2));
+            obj.find("span[valor]").html(valor.toFixed(2));
+            // obj.children("span[valor]").html(valor.toFixed(2));
 
             $.ajax({
                 url:"src/produtos/pedido.php",
@@ -256,7 +256,7 @@
 
                 valortotal = (valortotal*1 - atual*1);
                 $("span[pedido_valor_toal]").attr("valor", valortotal);
-                $("span[pedido_valor_toal]").text(valortotal.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                $("span[pedido_valor_toal]").text(valortotal.toFixed(2));
 
             }
 
@@ -267,8 +267,8 @@
 
 
             valor = (atual*1) * (quantidade*1);
-            obj.find("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-            // obj.children("span[valor]").html(valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+            obj.find("span[valor]").html(valor.toFixed(2));
+            // obj.children("span[valor]").html(valor.toFixed(2));
 
             //if(quantidade > 1){
                 $.ajax({
@@ -410,7 +410,7 @@
                         }
 
                         $("span[pedido_valor_toal]").attr("valor", valortotal);
-                        $("span[pedido_valor_toal]").text(valortotal.toLocaleString('pt-br', {minimumFractionDigits: 2}));
+                        $("span[pedido_valor_toal]").text(valortotal.toFixed(2));
 
                         $.ajax({
                             url:"src/produtos/pedido.php",
