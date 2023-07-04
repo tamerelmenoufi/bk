@@ -50,7 +50,7 @@
         ?>
     </div>
 </div>
-<div class="alerta"></div>
+<div class="alerta animate__animated animate__shakeY"></div>
 <script>
 
     setInterval(() => {
