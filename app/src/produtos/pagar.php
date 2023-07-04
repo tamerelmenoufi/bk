@@ -58,21 +58,21 @@
 
         mysqli_query($con, $query);
 
-        ValidarPromocoes();
-
         echo json_encode(VerificarProdutos($_POST['LjCd']));
 
         // echo json_encode(VerificarProdutos());
         }else{
             echo json_encode(['status' => true]);
         }
+
+        ValidarPromocoes();
+
         exit();
 
     }
 
-
-    VerificarVendaApp();
     ValidarPromocoes();
+    VerificarVendaApp();
 
     $query = "select
                     sum(a.valor_total) as total,
