@@ -671,6 +671,7 @@ if($d->cliente == 2){
                         }else{
                             $("button[blq]").attr("blq",'n');
                         }
+
                     }
             });
         }else{
