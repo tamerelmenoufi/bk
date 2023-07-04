@@ -29,7 +29,7 @@
     }
 </style>
 <div style="d-flex justify-content-between align-items-center">
-    <i class="fa-brands fa-pix"></i> <span>Pedido <b><?=$d->codigo?></b><br>Em andamento<br>Acompanhe aqui</span>;
+    <div><i class="fa-brands fa-pix"></i></div><div>Pedido <b><?=$d->codigo?></b><br>Em andamento<br>Acompanhe aqui</div>;
 </div>
 <?php
     }
