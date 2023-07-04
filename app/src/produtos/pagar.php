@@ -73,7 +73,7 @@
 
     ////Verificar promoção/////////////
 
-        echo $q = "select * from cupom where chave = (select chave form vendas where codigo = '{$_SESSION['AppVenda']}')";
+        echo $q = "select * from cupom where chave = (select cupom from vendas where codigo = '{$_SESSION['AppVenda']}')";
         $cupom = mysqli_fetch_object(mysqli_query($con, $q));
 
         if($cupom->codigo and $cupom->chave){
