@@ -17,7 +17,7 @@
     .alerta{
         position:fixed;
         width:auto;
-        height:55px;
+        height:50px;
         left:80px;
         top:5px;
         padding:10px;
@@ -29,7 +29,7 @@
     }
 </style>
 <div style="d-flex justify-content-between align-items-center">
-    <span><i class="fa-brands fa-pix"></i></span><span>Pedido <b><?=$d->codigo?></b><br>Em andamento</span>;
+    <span><i class="fa-brands fa-pix"></i></span><span>Pedido <b><?=$d->codigo?></b><br>Em andamento</span>
 </div>
 <?php
     }
