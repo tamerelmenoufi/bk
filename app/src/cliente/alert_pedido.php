@@ -1,7 +1,7 @@
 <?php
     include("../../../lib/includes.php");
 
-    echo $query = "select * from vendas where
+    $query = "select * from vendas where
                                     cliente = '{$_SESSION['AppCliente']}' and
                                     situacao in ('p','i') and
                                     deletado != '1'
@@ -27,7 +27,7 @@
         z-index:10;
     }
 </style>
-<i class="fa-brands fa-pix"></i> Você possui <?=$n?> pagamento(s) pendente(s);
+    <i class="fa-brands fa-pix"></i> Você possui <?=$n?> pagamento(s) pendente(s);
 <?php
     }
 ?>

@@ -50,7 +50,7 @@
         ?>
     </div>
 </div>
-
+<div class="alerta"></div>
 <script>
 
     setInterval(() => {
