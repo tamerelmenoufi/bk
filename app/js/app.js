@@ -196,6 +196,6 @@ var BoqueaTraducao = function (){
 
     for(i=0;i<tags.length;i++){
         console.log(tags[i]);
-        // $(`${tags[i]}`).attr("translate","no");
+        $(`${tags[i]}`).attr("translate","no");
     }
 }
