@@ -119,7 +119,7 @@
 
     if(!$d->valor) $_SESSION['AppCarrinho'] = false;
 
-    if($d->entrega_gratis or $d->retirada_local or $d->cupom_tipo == 'taxa_entrega') $promocao_taxa_zero = true;
+    if(/*$d->entrega_gratis or $d->retirada_local or */$d->cupom_tipo == 'taxa_entrega') $promocao_taxa_zero = true;
 
 ?>
 <style>
