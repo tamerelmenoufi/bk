@@ -28,7 +28,9 @@
         font-size:10px;
     }
 </style>
-    <i class="fa-brands fa-pix"></i> Pedido <?=$d->codigo?><br>Em andamento<br>Acompanhe aqui;
+<div style="d-flex justify-content-between align-items-center">
+    <i class="fa-brands fa-pix"></i> <span>Pedido <b><?=$d->codigo?></b><br>Em andamento<br>Acompanhe aqui</span>;
+</div>
 <?php
     }
 ?>
