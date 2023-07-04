@@ -58,7 +58,10 @@
 
         mysqli_query($con, $query);
 
+        ValidarPromocoes();
+
         echo json_encode(VerificarProdutos($_POST['LjCd']));
+
         // echo json_encode(VerificarProdutos());
         }else{
             echo json_encode(['status' => true]);
@@ -69,30 +72,7 @@
 
 
     VerificarVendaApp();
-
-
-    ////Verificar promoção/////////////
-
-        $q = "select * from cupom where codigo = (select cupom from vendas where codigo = '{$_SESSION['AppVenda']}')";
-        $cupom = mysqli_fetch_object(mysqli_query($con, $q));
-
-        if($cupom->codigo and $cupom->chave){
-
-            if($cupom->tipo == 'taxa_entrega'){
-                $acao = ",valor_cupom = taxa_entrega";
-            }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'v'){
-                $acao = ",valor_cupom = '{$cupom->valor}'";
-            }else if($cupom->tipo == 'desconto' and $cupom->tipo_desconto == 'p'){
-                $acao = ",valor_cupom = (valor/100*".(($cupom->valor > 0)?$cupom->valor:1).")";
-            }
-            $query = "update vendas set
-                                        cupom = '{$cupom->codigo}'
-                                        {$acao}
-                    where codigo = '{$_SESSION['AppVenda']}'";
-            mysqli_query($con, $query);
-        }
-
-    ////Verificar promoção/////////////
+    ValidarPromocoes();
 
     $query = "select
                     sum(a.valor_total) as total,
