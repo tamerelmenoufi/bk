@@ -55,6 +55,7 @@
 <div class="col">
     <div class="col-12 mb-3">Cadastro/Editar Endereço</div>
     <?php
+    /*
     if(!$d->codigo){
     ?>
     <div class="col-12 mb-3">
@@ -74,6 +75,7 @@
     </div>
     <?php
     }
+    //*/
     ?>
     <div class="col-12 mb-3">
         <label for="rua">Nome <small>Aplelido para o endereço</small>*</label>
