@@ -180,6 +180,8 @@ RenovaSessao = () =>{
 
 var BoqueaTraducao = function (){
     tags = [
+        'html',
+        'body',
         'div',
         'h1',
         'h2',
