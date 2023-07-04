@@ -190,7 +190,8 @@ var BoqueaTraducao = function (){
         'span',
         'title',
         'label',
-        'p'
+        'p',
+        'button'
     ];
 
     for(i=0;i<tags.length;i++){
