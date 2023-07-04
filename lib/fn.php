@@ -219,7 +219,7 @@ function ValidarPromocoes(){
     global $con;
     global $_SESSION;
 
-    echo $q = "select * from cupom where codigo = (select cupom from vendas where codigo = '{$_SESSION['AppVenda']}')";
+    $q = "select * from cupom where codigo = (select cupom from vendas where codigo = '{$_SESSION['AppVenda']}')";
     $cupom = mysqli_fetch_object(mysqli_query($con, $q));
 
     if($cupom->codigo and $cupom->chave){
