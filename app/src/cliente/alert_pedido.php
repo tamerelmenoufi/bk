@@ -8,7 +8,7 @@
                 order by codigo desc limit 1
                                     ";
     $result = mysqli_query($con, $query);
-    // $d = mysqli_fetch_object($result);
+    $d = mysqli_fetch_object($result);
     $n = mysqli_num_rows($result);
     if($n){
 
@@ -25,9 +25,10 @@
         border:solid 1px #333;
         background-color:#ccc;
         z-index:10;
+        font-size:10px;
     }
 </style>
-    <i class="fa-brands fa-pix"></i> Você possui <?=$n?> pagamento(s) pendente(s);
+    <i class="fa-brands fa-pix"></i> Pedido <?=$d->codigo?><br>Em andamento<br>Acompanhe aqui;
 <?php
     }
 ?>
