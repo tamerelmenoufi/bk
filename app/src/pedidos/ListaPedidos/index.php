@@ -187,7 +187,7 @@
                 url:"componentes/ms_popup_100.php",
                 type:"POST",
                 data:{
-                    local:`src/pedidos/ListaPedidos/pedido.php`,
+                    local:`src/pedidos/ListaPedidos/pedido.php?<?=$md5?>`,
                     pedido,
                 },
                 success:function(dados){

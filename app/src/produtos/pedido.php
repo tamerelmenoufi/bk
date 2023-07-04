@@ -225,7 +225,7 @@
             // obj.children("span[valor]").html(valor.toFixed(2));
 
             $.ajax({
-                url:"src/produtos/pedido.php",
+                url:"src/produtos/pedido.php?<?=$md5?>",
                 type:"POST",
                 data:{
                     quantidade,
@@ -272,7 +272,7 @@
 
             //if(quantidade > 1){
                 $.ajax({
-                    url:"src/produtos/pedido.php",
+                    url:"src/produtos/pedido.php?<?=$md5?>",
                     type:"POST",
                     data:{
                         quantidade,
@@ -311,7 +311,7 @@
                     'SIM':function(){
 
                         $.ajax({
-                            url:"src/produtos/pedido.php",
+                            url:"src/produtos/pedido.php?<?=$md5?>",
                             type:"POST",
                             data:{
                                 acao:'SairPedido',
@@ -351,7 +351,7 @@
                     'SIM':function(){
 
                         $.ajax({
-                            url:"src/produtos/pedido.php",
+                            url:"src/produtos/pedido.php?<?=$md5?>",
                             type:"POST",
                             data:{
                                 acao:'ExcluirPedido',
@@ -413,7 +413,7 @@
                         $("span[pedido_valor_toal]").text(valortotal.toFixed(2));
 
                         $.ajax({
-                            url:"src/produtos/pedido.php",
+                            url:"src/produtos/pedido.php?<?=$md5?>",
                             type:"POST",
                             data:{
                                 acao:'Excluirproduto',

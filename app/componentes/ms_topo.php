@@ -55,7 +55,7 @@
 
     setInterval(() => {
         $.ajax({
-            url:"src/cliente/alert_pedido.php",
+            url:"src/cliente/alert_pedido.php?<?=$md5?>",
             success:function(dados){
                 $(".alerta").html(dados);
             }

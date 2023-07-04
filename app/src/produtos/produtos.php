@@ -308,7 +308,7 @@ while ($m = mysqli_fetch_array($m_r)) {
             url: "componentes/ms_popup_100.php",
             type: "POST",
             data: {
-                local: "src/produtos/produto.php",
+                local: "src/produtos/produto.php?<?=$md5?>",
                 categoria,
                 produto,
                 valor
@@ -325,7 +325,7 @@ while ($m = mysqli_fetch_array($m_r)) {
             url: "componentes/ms_popup_100.php",
             type: "POST",
             data: {
-                local: "src/produtos/pedido.php",
+                local: "src/produtos/pedido.php?<?=$md5?>",
             },
             success: function (dados) {
                 PageClose();

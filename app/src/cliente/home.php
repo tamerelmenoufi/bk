@@ -85,7 +85,7 @@
                     'SIM':function(){
 
                         $.ajax({
-                            url:"src/produtos/pedido.php",
+                            url:"src/produtos/pedido.php?<?=$md5?>",
                             type:"POST",
                             data:{
                                 acao:'SairPedido',

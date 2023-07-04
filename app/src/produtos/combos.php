@@ -126,7 +126,7 @@ $(function(){
             url: "componentes/ms_popup_100.php",
             type: "POST",
             data: {
-                local: "src/produtos/pedido.php",
+                local: "src/produtos/pedido.php?<?=$md5?>",
             },
             success: function (dados) {
                 PageClose();

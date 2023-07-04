@@ -415,7 +415,7 @@
 
             $(".IconePedidos, .MensagemAddProduto").css("display","none");
             $.ajax({
-                url:"src/produtos/produto.php",
+                url:"src/produtos/produto.php?<?=$md5?>",
                 type:"POST",
                 data:{
                     produto,
