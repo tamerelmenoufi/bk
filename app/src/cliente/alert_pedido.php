@@ -1,7 +1,7 @@
 <?php
     include("../../../lib/includes.php");
 
-    $query = "select * from vendas where
+    echo $query = "select * from vendas where
                                     cliente = '{$_SESSION['AppCliente']}' and
                                     situacao in ('p','i') and
                                     deletado != '1'
