@@ -130,8 +130,21 @@
         <?php
         }else{
         ?>
-            $.alert('Pagamento Confirmado.<br>Seu pedido está em preparo!')
-            PageClose(2);
+
+            Carregando();
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:`src/cliente/pedidos.php`,
+                },
+                success:function(dados){
+                    $.alert('Pagamento Confirmado.<br>Seu pedido está sendo preparado!');
+                    PageClose(2);
+                    $(".ms_corpo").append(dados);
+                }
+            });
+
         <?php
         }
         ?>
