@@ -26,6 +26,7 @@
         background-color:#ccc;
         z-index:10;
         font-size:10px;
+        cursor:pointer;
     }
 </style>
 <div style="d-flex justify-content-between align-items-center">

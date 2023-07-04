@@ -79,6 +79,22 @@
         <?php
             }*/
         ?>
+
+        $(".alerta").click(function(){
+            Carregando();
+            $.ajax({
+                url:"componentes/ms_popup_100.php",
+                type:"POST",
+                data:{
+                    local:`src/cliente/pedidos.php`,
+                },
+                success:function(dados){
+                    //PageClose();
+                    $(".ms_corpo").append(dados);
+                }
+            });
+        });
+
         $(document).on('click', 'div[promocao_frete]', function(){
 
             Carregando();
