@@ -18,8 +18,8 @@
         position:fixed;
         width:auto;
         height:65px;
-        left:60px;
-        top:10px;
+        left:80px;
+        top:5px;
         padding:10px;
         border-radius:7px;
         border:solid 1px #333;
