@@ -51,6 +51,7 @@ Carregando = (opc) => {
         $(".Carregando").css("display","block");
     }
     RenovaSessao();
+    BoqueaTraducao();
 }
 
 PageBack = () => {
@@ -175,3 +176,24 @@ RenovaSessao = () =>{
         $txt.remove();
     }
 };
+
+
+var BoqueaTraducao = function (){
+    tags = [
+        'div',
+        'h1',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
+        'h6',
+        'span',
+        'title',
+        'label',
+        'p'
+    ];
+
+    for(i=0;i<tags.length;i++){
+        console.log(tags[i]);
+    }
+}
