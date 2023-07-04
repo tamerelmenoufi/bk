@@ -1,8 +1,11 @@
 <?php
     include("../../../lib/includes.php");
 
+    $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
+
     $query = "select * from vendas where
                                     cliente = '{$_SESSION['AppCliente']}' and
+                                    data_finalizacao >= '{$tempo}' and
                                     situacao in ('p','i') and
                                     deletado != '1'
                 order by codigo desc limit 1
