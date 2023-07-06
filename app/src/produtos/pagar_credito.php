@@ -380,10 +380,6 @@
                                 <div class="col">
                                     <h2>
                                         <i class="fa-brands fa-cc-mastercard"></i>
-                                    </h2>
-                                </div>
-                                <div class="col">
-                                    <h2>
                                         <i class="fa-brands fa-cc-visa"></i>
                                     </h2>
                                 </div>
