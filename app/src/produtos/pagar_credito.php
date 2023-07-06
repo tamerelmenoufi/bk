@@ -325,7 +325,7 @@
         color:#333;
         font-size:20px;
         text-align:center;
-        margin-bottom:15px;
+        margin-bottom:5px;
         width:100%;
         text-transform:uppercase;
     }
