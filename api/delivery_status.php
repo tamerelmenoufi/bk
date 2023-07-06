@@ -8,12 +8,12 @@ $dados = json_encode($_POST);
 
 if($_POST['CodigoExterno']){
 
-        $query = "insert into status_delivery set
-                                    venda = '{$_POST['CodigoExterno']}',
-                                    operadora = 'mottu',
-                                    tipo = '{$_POST['Tipo']}',
-                                    data = NOW(),
-                                    retorno = '{$dados}'";
+    $query = "insert into status_delivery set
+                                venda = '{$_POST['CodigoExterno']}',
+                                operadora = 'mottu',
+                                tipo = '{$_POST['Tipo']}',
+                                data = NOW(),
+                                retorno = '{$dados}'";
 
     mysqli_query($con, $query);
 
@@ -41,11 +41,43 @@ if($_POST['CodigoExterno']){
             mysqli_query($con, $query);
         }
 
+
+
     }
 
     // EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
     //*/
     // SOLICITAÇÃO DA ENTREGA BEE
     //////////////////////////////////////////////////////////
+
+    $query = "select
+                    a.*,
+                    d.id as id_loja,
+                    d.mottu as id_mottu,
+                    b.nome,
+                    b.cpf,
+                    b.telefone,
+                    b.email,
+                    c.cep,
+                    c.numero,
+                    c.rua,
+                    c.bairro,
+                    c.referencia
+                from vendas a
+                    left join clientes b on a.cliente = b.codigo
+                    left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                    left join lojas d on a.loja = d.codigo
+                where a.codigo = '{$_POST['CodigoExterno']}'";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    $mottu = new mottu;
+    $retorno1 = $mottu->ConsultarPedido($d->deliveryId,$d->id_mottu);
+    $retorno = json_decode($retorno1);
+
+    if($retorno->code){
+    $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
+    mysqli_query($con,$query);
+    }
 
 }
