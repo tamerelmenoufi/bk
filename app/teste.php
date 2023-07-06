@@ -101,12 +101,12 @@
       $mottu = new mottu;
       $retorno1 = $mottu->ConsultarPedido($_GET['id'],813416);
       $retorno = json_decode($retorno1);
-      // echo "<pre>".var_dump($retorno)."</pre>";
+      echo "<pre>".var_dump($retorno)."</pre>";
       echo "codigo:".$retorno->code;
 
       if($retorno->code){
       $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
-      mysqli_query($con,$query);
+      // mysqli_query($con,$query);
       }
 
       echo "<hr>";
@@ -119,7 +119,7 @@
       echo "codigo:".$retorno->code;
       if($retorno->code){
       $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
-      mysqli_query($con,$query);
+      // mysqli_query($con,$query);
       }
     }
 
