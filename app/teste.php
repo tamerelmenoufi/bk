@@ -92,37 +92,43 @@
 
 
 
-    /////////////////////// consulta ///////////////////////////
 
+
+
+    $query = "select * from vendas_ifood where retorno = null limit 1";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+
+  /////////////////////// consulta ///////////////////////////
 
 
     if($_GET['id']){
       echo "HC<br>";
       $mottu = new mottu;
-      $retorno1 = $mottu->ConsultarPedido($_GET['id'],813416);
+      $retorno1 = $mottu->ConsultarPedido($d->deliveryId,813416);
       $retorno = json_decode($retorno1);
       echo "<pre>".var_dump($retorno)."</pre>";
       echo "codigo:".$retorno->code;
 
       if($retorno->code){
-      $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
-      // mysqli_query($con,$query);
+      $query = "replace into vendas_ifood set venda = '{$retorno->code}' retorno = '{$retorno1}'";
+      mysqli_query($con,$query);
       }
 
       echo "<hr>";
       echo "DJ<br>";
       $mottu = new mottu;
-      $retorno1 = $mottu->ConsultarPedido($_GET['id'],813383);
+      $retorno1 = $mottu->ConsultarPedido($d->deliveryId,813383);
       $retorno = json_decode($retorno1);
       echo "<pre>".var_dump($retorno)."</pre>";
 
       echo "codigo:".$retorno->code;
       if($retorno->code){
-      $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
-      // mysqli_query($con,$query);
+        $query = "replace into vendas_ifood set venda = '{$retorno->code}' retorno = '{$retorno1}'";
+        mysqli_query($con,$query);
       }
     }
-
 
 
 ?>
