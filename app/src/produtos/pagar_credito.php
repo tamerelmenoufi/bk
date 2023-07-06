@@ -361,6 +361,20 @@
                     <input inputmode="numeric" maxlength='19' type="text" id="cartao_numero" placeholder="0000 0000 0000 0000" value='' />
                     <div class="row">
                         <div class="col-4">
+                            <small>MM</small>
+                            <input inputmode="numeric" maxlength='2' type="text" id="cartao_validade_mes" placeholder="00" value='' />
+                        </div>
+                        <div class="col-4">
+                            <small>AAAA</small>
+                            <input inputmode="numeric" maxlength='4' type="text" id="cartao_validade_ano" placeholder="0000" value='' />
+                        </div>
+                        <div class="col-4">
+                            <small>CVV</small>
+                            <input inputmode="numeric" maxlength='4' type="text" id="cartao_ccv" placeholder="0000" value='' />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
                             <small>BANDEIRAS</small>
                             <div class="row">
                                 <div class="col">
@@ -374,18 +388,6 @@
                                     </h2>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-2">
-                            <small>MM</small>
-                            <input inputmode="numeric" maxlength='2' type="text" id="cartao_validade_mes" placeholder="00" value='' />
-                        </div>
-                        <div class="col-3">
-                            <small>AAAA</small>
-                            <input inputmode="numeric" maxlength='4' type="text" id="cartao_validade_ano" placeholder="0000" value='' />
-                        </div>
-                        <div class="col-3">
-                            <small>CVV</small>
-                            <input inputmode="numeric" maxlength='4' type="text" id="cartao_ccv" placeholder="0000" value='' />
                         </div>
                     </div>
                 </div>
