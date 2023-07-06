@@ -95,7 +95,7 @@
 
 
 
-    $query = "select * from vendas_ifood where retorno = null limit 1";
+    echo $query = "select * from vendas_ifood where retorno = null limit 1";
     $result = mysqli_query($con, $query);
     $d = mysqli_fetch_object($result);
 
