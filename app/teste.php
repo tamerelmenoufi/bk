@@ -103,7 +103,7 @@
   /////////////////////// consulta ///////////////////////////
 
 
-    if($_GET['id']){
+    if($d->deliveryId){
       echo "HC<br>";
       $mottu = new mottu;
       $retorno1 = $mottu->ConsultarPedido($d->deliveryId,813416);
