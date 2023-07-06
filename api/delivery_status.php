@@ -87,7 +87,7 @@ if($_POST['CodigoExterno']){
             echo "codigo:".$retorno->code;
 
             if($retorno->code){
-            $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+            $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, data = NOW(), retorno = '{$retorno1}'";
             mysqli_query($con,$query);
             }
 
@@ -100,7 +100,7 @@ if($_POST['CodigoExterno']){
 
             echo "codigo:".$retorno->code;
             if($retorno->code){
-              $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+              $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, data = NOW(), retorno = '{$retorno1}'";
               mysqli_query($con,$query);
             }
         }
