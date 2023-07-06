@@ -41,43 +41,70 @@ if($_POST['CodigoExterno']){
             mysqli_query($con, $query);
         }
 
+        // EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
+        //*/
+        // SOLICITAÇÃO DA ENTREGA BEE
+        //////////////////////////////////////////////////////////
 
+        $query = "select
+                        a.*,
+                        d.id as id_loja,
+                        d.mottu as id_mottu,
+                        b.nome,
+                        b.cpf,
+                        b.telefone,
+                        b.email,
+                        c.cep,
+                        c.numero,
+                        c.rua,
+                        c.bairro,
+                        c.referencia
+                    from vendas a
+                        left join clientes b on a.cliente = b.codigo
+                        left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
+                        left join lojas d on a.loja = d.codigo
+                    where a.codigo = '{$_POST['CodigoExterno']}'";
+        $result = mysqli_query($con, $query);
+        $d = mysqli_fetch_object($result);
 
-    }
+        $mottu = new mottu;
+        $retorno1 = $mottu->ConsultarPedido($d->deliveryId,$d->id_mottu);
+        $retorno = json_decode($retorno1);
 
-    // EnviarWapp('92991886570',"VENDA - pedido *{$_POST['CodigoExterno']}* com alteração status *{$_POST['Situacao']}*.");
-    //*/
-    // SOLICITAÇÃO DA ENTREGA BEE
-    //////////////////////////////////////////////////////////
+        if($retorno->code){
+        $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
+        mysqli_query($con,$query);
+        }
 
-    $query = "select
-                    a.*,
-                    d.id as id_loja,
-                    d.mottu as id_mottu,
-                    b.nome,
-                    b.cpf,
-                    b.telefone,
-                    b.email,
-                    c.cep,
-                    c.numero,
-                    c.rua,
-                    c.bairro,
-                    c.referencia
-                from vendas a
-                    left join clientes b on a.cliente = b.codigo
-                    left join clientes_enderecos c on c.cliente = b.codigo and c.padrao = '1'
-                    left join lojas d on a.loja = d.codigo
-                where a.codigo = '{$_POST['CodigoExterno']}'";
-    $result = mysqli_query($con, $query);
-    $d = mysqli_fetch_object($result);
+    }else{
 
-    $mottu = new mottu;
-    $retorno1 = $mottu->ConsultarPedido($d->deliveryId,$d->id_mottu);
-    $retorno = json_decode($retorno1);
+        if($_POST['PedidoId']){
+            echo "HC<br>";
+            $mottu = new mottu;
+            $retorno1 = $mottu->ConsultarPedido($_POST['PedidoId'],813416);
+            $retorno = json_decode($retorno1);
+            echo "<pre>".var_dump($retorno)."</pre>";
+            echo "codigo:".$retorno->code;
 
-    if($retorno->code){
-    $query = "update vendas set delivery_retorno = '{$retorno1}' where codigo = '{$retorno->code}'";
-    mysqli_query($con,$query);
+            if($retorno->code){
+            $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+            mysqli_query($con,$query);
+            }
+
+            echo "<hr>";
+            echo "DJ<br>";
+            $mottu = new mottu;
+            $retorno1 = $mottu->ConsultarPedido($_POST['PedidoId'],813383);
+            $retorno = json_decode($retorno1);
+            echo "<pre>".var_dump($retorno)."</pre>";
+
+            echo "codigo:".$retorno->code;
+            if($retorno->code){
+              $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+              mysqli_query($con,$query);
+            }
+        }
+
     }
 
 }
