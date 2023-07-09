@@ -32,21 +32,33 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
     while($d = mysqli_fetch_object($result)){
 
-        echo "<pre>";
-        var_dump($d);
-        echo "</pre>";
-        echo "<hr>";
+        // Verificar o tempo
+        // list($dpData, $dpHora) = explode(" ",$d->data_pedido);
+        // list($dpY,$dpM, $dpD) = explode("")
+        // list($dpY,$dpM, $dpD, $dpH, $dpI, $dpS)
+        $agora = time();
+        $limite = mktime(
+                        date("H",$data_pedido),
+                        date("i",$data_pedido) + 30,
+                        date("s",$data_pedido),
+                        date("m",$data_pedido),
+                        date("d",$data_pedido),
+                        date("Y",$data_pedido)
+                      );
+        if($agora > $limite){
+          echo $d->codigo."<br>";
+        }else{
 
-        $PIX = new MercadoPago;
-        $retorno = $PIX->ObterPagamento($d->operadora_id);
-        $operadora_retorno = $retorno;
-        $retorno = json_decode($retorno);
+          $PIX = new MercadoPago;
+          $retorno = $PIX->ObterPagamento($d->operadora_id);
+          $operadora_retorno = $retorno;
+          $retorno = json_decode($retorno);
 
-        echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$retorno->status."</p>";
+          echo "<p>".date("d/m/Y H:i:s")."<br>Pagamento: ".$retorno->status."</p>";
 
-        if($retorno->status == 'approved'){
-            //Aqui entra a solicitação da Bee
-            // e tbm a mudança de status para pedido em produção
+          if($retorno->status == 'approved'){
+              //Aqui entra a solicitação da Bee
+              // e tbm a mudança de status para pedido em produção
 
             mysqli_query($con, "update vendas set
                                 operadora_situacao = '{$retorno->status}',
@@ -114,5 +126,6 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
             EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* status *{$retorno->status}*");
           }
         }
+      }
 
     }
