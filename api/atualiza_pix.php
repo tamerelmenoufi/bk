@@ -45,6 +45,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                         date("d",$data_pedido),
                         date("Y",$data_pedido)
                       );
+        echo "$agora > $limite<br>";
         if($agora > $limite){
           echo $d->codigo."<br>";
         }else{
