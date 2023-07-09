@@ -37,14 +37,14 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         // list($dpY,$dpM, $dpD) = explode("")
         // list($dpY,$dpM, $dpD, $dpH, $dpI, $dpS)
         $agora = time();
-        $limite = strtotime(date("Y-m-d H:i:s", mktime(
-                        date("H",$d->data_pedido),
-                        date("i",$d->data_pedido) + 30,
-                        date("s",$d->data_pedido),
-                        date("m",$d->data_pedido),
-                        date("d",$d->data_pedido),
-                        date("Y",$d->data_pedido)
-                      )));
+        $limite = mktime(
+                        date("H",strtotime($d->data_pedido)),
+                        date("i",strtotime($d->data_pedido)) + 30,
+                        date("s",strtotime($d->data_pedido)),
+                        date("m",strtotime($d->data_pedido)),
+                        date("d",strtotime($d->data_pedido)),
+                        date("Y",strtotime($d->data_pedido))
+                      );
         echo "$d->data_pedido - $agora > $limite<br>";
         if($agora > $limite){
           echo $d->codigo."<br>";
