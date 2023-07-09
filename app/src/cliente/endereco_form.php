@@ -3,10 +3,12 @@
 
     if($_POST['acao'] == 'salvar'){
 
+        $rua = str_replace(array('&','/','\\','?'), false, $_POST['rua']);
+
         if ($_POST['codigo']) {
             mysqli_query($con, "UPDATE clientes_enderecos SET
                         nome = '{$_POST['nome']}',
-                        rua = '{$_POST['rua']}',
+                        rua = '{$rua}',
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
                         cep = '{$_POST['cep']}',
@@ -21,7 +23,7 @@
             mysqli_query($con, "INSERT INTO clientes_enderecos SET
                         cliente = '{$_SESSION['AppCliente']}',
                         nome = '{$_POST['nome']}',
-                        rua = '{$_POST['rua']}',
+                        rua = '{$rua}',
                         numero = '{$_POST['numero']}',
                         bairro = '{$_POST['bairro']}',
                         cep = '{$_POST['cep']}',
