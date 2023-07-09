@@ -48,6 +48,19 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         echo "$d->data_pedido - $agora > $limite<br>";
         if($agora > $limite){
           echo $d->codigo."<br>";
+          $PIX = new MercadoPago;
+          $retorno = $PIX->CancelarPagamento($d->operadora_id);
+          $operadora_retorno = $retorno;
+          $retorno = json_decode($retorno);
+
+          echo $q = "update vendas set
+                  operadora_situacao = '{$retorno->status}',
+                  operadora_retorno = '{$operadora_retorno}'
+              where codigo = '{$d->codigo}'
+          ";
+          echo "<br>";
+          mysqli_query($con, $q);
+
         }else{
 
           $PIX = new MercadoPago;
