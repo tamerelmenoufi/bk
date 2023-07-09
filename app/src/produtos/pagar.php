@@ -843,7 +843,7 @@ if($d->cliente == 2){
                 $.alert(msg);
                 return false;
             }
-            testeValorEntrega = <?=$vlopc?>;
+            testeValorEntrega = <?=(($vlopc)?:0)?>;
             if(!testeValorEntrega){
                 msg = '<div style="color:red"><center><h2><i class="fa-solid fa-ban"></i></h2>Ocorreu um erro para identificar o seu endereço.<br>Não conseguimos gerar o valor da entrega.<br>Favor edite seu endereço e preencha corretamente!</center></div>';
                 $.alert(msg);
