@@ -58,6 +58,8 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
           // echo "<br>";
           mysqli_query($con, $q);
 
+          EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* PIX CANCELADO!");
+
         }else{
 
           $PIX = new MercadoPago;
