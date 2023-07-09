@@ -32,10 +32,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
     while($d = mysqli_fetch_object($result)){
 
-        // Verificar o tempo
-        // list($dpData, $dpHora) = explode(" ",$d->data_pedido);
-        // list($dpY,$dpM, $dpD) = explode("")
-        // list($dpY,$dpM, $dpD, $dpH, $dpI, $dpS)
+
         $agora = time();
         $limite = mktime(
                         date("H",strtotime($d->data_pedido)),
@@ -45,20 +42,20 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                         date("d",strtotime($d->data_pedido)),
                         date("Y",strtotime($d->data_pedido))
                       );
-        echo "$d->data_pedido - $agora > $limite<br>";
+        // echo "$d->data_pedido - $agora > $limite<br>";
         if($agora > $limite){
-          echo $d->codigo."<br>";
+          // echo $d->codigo."<br>";
           $PIX = new MercadoPago;
           $retorno = $PIX->CancelarPagamento($d->operadora_id);
           $operadora_retorno = $retorno;
           $retorno = json_decode($retorno);
 
-          echo $q = "update vendas set
+          $q = "update vendas set
                   operadora_situacao = '{$retorno->status}',
                   operadora_retorno = '{$operadora_retorno}'
               where codigo = '{$d->codigo}'
           ";
-          echo "<br>";
+          // echo "<br>";
           mysqli_query($con, $q);
 
         }else{
