@@ -39,7 +39,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         $agora = time();
         $limite = mktime(
                         date("H",$d->data_pedido),
-                        date("i",$d->data_pedido) + 30,
+                        date("i",$d->data_pedido),
                         date("s",$d->data_pedido),
                         date("m",$d->data_pedido),
                         date("d",$d->data_pedido),
