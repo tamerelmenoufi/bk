@@ -36,7 +36,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         // list($dpData, $dpHora) = explode(" ",$d->data_pedido);
         // list($dpY,$dpM, $dpD) = explode("")
         // list($dpY,$dpM, $dpD, $dpH, $dpI, $dpS)
-        $agora = time();
+        $agora = mktime();
         $limite = mktime(
                         date("H",$data_pedido),
                         date("i",$data_pedido) + 30,
