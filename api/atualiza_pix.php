@@ -36,10 +36,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         $agora = time();
         $limite = mktime(
                         date("H",strtotime($d->data_pedido)),
-                        date("i",strtotime($d->data_pedido)) + 30,
+                        date("i",strtotime($d->data_pedido)),
                         date("s",strtotime($d->data_pedido)),
                         date("m",strtotime($d->data_pedido)),
-                        date("d",strtotime($d->data_pedido)),
+                        date("d",strtotime($d->data_pedido)) + 1,
                         date("Y",strtotime($d->data_pedido))
                       );
         // echo "$d->data_pedido - $agora > $limite<br>";
