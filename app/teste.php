@@ -148,7 +148,6 @@
     $d = mysqli_fetch_object($result);
 
     echo "<hr>";
-    echo "DJ<br>";
     $mottu = new mottu;
     $retorno1 = $mottu->ConsultarPedido($d->deliveryId,$d->mottu);
     $retorno = json_decode($retorno1);
