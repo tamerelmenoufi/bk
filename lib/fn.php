@@ -35,7 +35,7 @@ function exclusao($tabela, $codigo, $fisica = false)
 function ListaLogs($tabela, $registro){
     global $con;
     $Query = [];
-    $query = "select a.*, b.nome from sis_logs a left join usuarios b on a.usuario=b.codigo where a.tabela = '{$tabela}' and a.registro = '{$registro}' order by a.codigo asc";
+    $query = "select a.*, b.nome, c.venda as notificacao from sis_logs a left join usuarios b on a.usuario=b.codigo left join notificacoes c on a.codigo = b.venda where a.tabela = '{$tabela}' and a.registro = '{$registro}' order by a.codigo asc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
@@ -102,8 +102,9 @@ function VerificarVendaApp(){
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
         // if(mysqli_fetch_object($r)->atualiza == 'u'){
         mysqli_query($con, "UPDATE vendas SET data_pedido = NOW() where codigo = '{$_SESSION['AppVenda']}'");
-        mysqli_query($con, "replace into notificacoes set venda = '{$_SESSION['AppVenda']}', telefone = '".$d->telefone."'");
-
+        if(!$d->notificacao){
+            mysqli_query($con, "replace into notificacoes set venda = '{$_SESSION['AppVenda']}', telefone = '".$d->telefone."'");
+        }
         // }
         //echo "<h1>TESTE 2</h1>";
     }
