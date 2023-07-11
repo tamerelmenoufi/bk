@@ -95,7 +95,7 @@
 
 
 
-    echo $query = "select * from vendas_ifood where retorno < 0 limit 10";
+    echo $query = "select * from vendas_ifood where retorno < 0 limit 5";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
