@@ -42,7 +42,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                 from vendas a
                      left join clientes b on a.cliente = b.codigo
                 where
-                     data_pedido > DATE_SUB(NOW(), INTERVAL 10 MINUTE) and
+                     data_pedido > DATE_SUB(NOW(), INTERVAL 90 MINUTE) and
                      valor > 0 and
                      a.operadora_situacao != '' and
                      a.operadora_situacao != 'approved' and
