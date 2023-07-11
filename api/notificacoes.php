@@ -13,7 +13,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                 where
                      data_pedido > DATE_SUB(NOW(), INTERVAL 60 MINUTE) and
                      valor = 0 and
-                     a.clicente > 0
+                     a.cliente > 0
             ";
     $result = mysqli_query($con, $query);
     while($d = mysql_fetch_object($result)){
