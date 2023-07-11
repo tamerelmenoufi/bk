@@ -23,6 +23,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer as mesmas vantagens nas lojas físicas e sem precisar sair do conforto de sua casa. *Estamos aguardando seu pedido*";
         echo "<br>{$d->telefone} - {$mensagem}";
         $msg[] = [
+            'telefone' => $d->telefone,
+            'mensagem' => $mensagem
+        ];
+        $msg[] = [
             'telefone' => '92991886570', //$d->telefone,
             'mensagem' => $mensagem
         ];
@@ -54,6 +58,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
     while($d = mysqli_fetch_object($result)){
         $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer as mesmas vantagens nas lojas físicas e sem precisar sair do conforto de sua casa. Falta pouco para finalizar sua compra. *Aguardamos seu pedido*";
         echo "<br>{$d->telefone} - {$mensagem}";
+        $msg[] = [
+            'telefone' => $d->telefone,
+            'mensagem' => $mensagem
+        ];
         $msg[] = [
             'telefone' => '92991886570', //$d->telefone,
             'mensagem' => $mensagem
