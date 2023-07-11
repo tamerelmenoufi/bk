@@ -111,7 +111,7 @@
       echo "codigo:".$retorno->code;
 
       if($retorno->code){
-      echo $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+      echo $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '".addslashes($retorno1)."'";
       mysqli_query($con,$query);
       }
 
@@ -124,7 +124,7 @@
 
       echo "codigo:".$retorno->code;
       if($retorno->code){
-        echo $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+        echo $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '".addslashes($retorno1)."'";
         mysqli_query($con,$query);
       }
     }
