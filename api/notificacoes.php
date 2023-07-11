@@ -42,7 +42,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                 from vendas a
                      left join clientes b on a.cliente = b.codigo
                 where
-                     data_pedido > DATE_SUB(NOW(), INTERVAL 120 MINUTE) and
+                     data_pedido > DATE_SUB(NOW(), INTERVAL 10 MINUTE) and
                      valor > 0 and
                      a.operadora_situacao != '' and
                      a.operadora_situacao != 'approved' and
@@ -58,9 +58,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
             'telefone' => '92991886570', //$d->telefone,
             'mensagem' => $mensagem
         ];
-        // mysqli_query($con, "update vendas set notificacoes = JSON_SET(if(notificacoes > 0,notificacoes,'{}'), '$.n1', '1') where codigo = '{$d->codigo}'");
+        mysqli_query($con, "update vendas set notificacoes = JSON_SET(if(notificacoes > 0,notificacoes,'{}'), '$.n2', '1') where codigo = '{$d->codigo}'");
     }
 
     foreach($msg as $ind => $val){
-        // EnviarWapp($val['telefone'], $val['mensagem']);
+        EnviarWapp($val['telefone'], $val['mensagem']);
     }
