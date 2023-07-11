@@ -14,7 +14,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                      data_pedido > DATE_SUB(NOW(), INTERVAL 60 MINUTE) and
                      valor = 0 and
                      a.cliente > 0 and
-                     a.notificacoes->'$.n1' != '1'
+                     a.notificacoes->'$.n1' IS NULL
             ";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
