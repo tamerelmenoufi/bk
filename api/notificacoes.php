@@ -20,7 +20,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
     $result = mysqli_query($con, $query);
     $msg = [];
     while($d = mysqli_fetch_object($result)){
-        $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer a mesmas vantagens da loja física e sem precisar sair do conforto de sua casa. *Estamos aguardando seu pedido*";
+        $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer as mesmas vantagens nas lojas físicas e sem precisar sair do conforto de sua casa. *Estamos aguardando seu pedido*";
         echo "<br>{$d->telefone} - {$mensagem}";
         $msg[] = [
             'telefone' => '92991886570', //$d->telefone,
@@ -52,7 +52,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
     $result = mysqli_query($con, $query);
     $msg = [];
     while($d = mysqli_fetch_object($result)){
-        $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer a mesmas vantagens da loja física e sem precisar sair do conforto de sua casa. Falta pouco para finalizar sua compra. *Aguardamos seu pedido*";
+        $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer as mesmas vantagens nas lojas físicas e sem precisar sair do conforto de sua casa. Falta pouco para finalizar sua compra. *Aguardamos seu pedido*";
         echo "<br>{$d->telefone} - {$mensagem}";
         $msg[] = [
             'telefone' => '92991886570', //$d->telefone,
