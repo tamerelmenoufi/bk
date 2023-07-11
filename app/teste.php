@@ -157,7 +157,7 @@
     if($retorno->code){
       echo $query = "update vendas set delivery_retorno = '".addslashes($retorno1)."' where codigo = '{$retorno->code}'";
       mysqli_query($con,$query);
-    }else{
+    }else if($d->codigo){
       echo $query = "update vendas set delivery_retorno = '{\"erro\":true}' where codigo = '{$d->codigo}'";
       mysqli_query($con,$query);
     }
