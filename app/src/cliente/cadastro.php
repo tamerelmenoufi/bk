@@ -153,7 +153,7 @@
             cod_confirm = $(this).attr("chave");
 
             if(telefone.length === 15){
-
+                Carregando();
                 $.ajax({
                     url:"src/cliente/cadastro.php",
                     type:"POST",
@@ -169,7 +169,7 @@
 
                         if(dados.status){
 
-
+                            Carregando('none');
                             //////////////////////////////////////////////////////
 
 
