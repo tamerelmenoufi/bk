@@ -107,11 +107,11 @@
       $mottu = new mottu;
       $retorno1 = $mottu->ConsultarPedido($d->deliveryId,813416);
       $retorno = json_decode($retorno1);
-      echo "<pre>".var_dump($retorno)."</pre>";
+      // echo "<pre>".var_dump($retorno)."</pre>";
       echo "codigo:".$retorno->code;
 
       if($retorno->code){
-      $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+      echo $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
       mysqli_query($con,$query);
       }
 
@@ -120,11 +120,11 @@
       $mottu = new mottu;
       $retorno1 = $mottu->ConsultarPedido($d->deliveryId,813383);
       $retorno = json_decode($retorno1);
-      echo "<pre>".var_dump($retorno)."</pre>";
+      // echo "<pre>".var_dump($retorno)."</pre>";
 
       echo "codigo:".$retorno->code;
       if($retorno->code){
-        $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
+        echo $query = "replace into vendas_ifood set venda = '{$retorno->code}', deliveryId={$retorno->id}, retorno = '{$retorno1}'";
         mysqli_query($con,$query);
       }
     }
