@@ -16,6 +16,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                      a.cliente > 0
             ";
     $result = mysqli_query($con, $query);
+    echo "<br>";
     while($d = mysql_fetch_object($result)){
         $mensagem = "*BK MANAUS* - Olá {$d->nome}, ficamos muito felizes com a sua visita em nossa aplicação bkmanaus.com.br. Criamos esta plataforma para lhe oferecer a mesmas vantagens da loja física e sem precisar sair do conforto de sua casa. *Estamos aguardando seu pedido*";
         echo "{$d->telefone} - {$mensagem}<br>";
