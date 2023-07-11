@@ -1,6 +1,6 @@
 <?php
     include("../lib/includes.php");
-    EnviarWapp('92991886570',"Novo acesso no aplicativo");
+    // EnviarWapp('92991886570',"Novo acesso no aplicativo");
 
 ?><!DOCTYPE html>
 <html lang="en">
