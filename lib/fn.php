@@ -35,7 +35,7 @@ function exclusao($tabela, $codigo, $fisica = false)
 function ListaLogs($tabela, $registro){
     global $con;
     $Query = [];
-    $query = "select a.*, b.nome, c.venda as notificacao from sis_logs a left join usuarios b on a.usuario=b.codigo left join notificacoes c on a.codigo = b.venda where a.tabela = '{$tabela}' and a.registro = '{$registro}' order by a.codigo asc";
+    $query = "select a.*, b.nome from sis_logs a left join usuarios b on a.usuario=b.codigo where a.tabela = '{$tabela}' and a.registro = '{$registro}' order by a.codigo asc";
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
 
@@ -80,7 +80,7 @@ function VerificarVendaApp(){
     $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
 
 
-    $r = mysqli_query($con, "SELECT a.*, b.telefone FROM vendas a left join clientes b on a.cliente = b.codigo WHERE a.cliente = '{$_SESSION['AppCliente']}' AND a.deletado != '1' AND a.operadora_situacao = '' LIMIT 1");
+    $r = mysqli_query($con, "SELECT a.*, b.telefone, c.venda as notificacao FROM vendas a left join clientes b on a.cliente = b.codigo left join notificacoes c on a.codigo = b.venda WHERE a.cliente = '{$_SESSION['AppCliente']}' AND a.deletado != '1' AND a.operadora_situacao = '' LIMIT 1");
     $n = mysqli_num_rows($r);
 
     if(!$n){
