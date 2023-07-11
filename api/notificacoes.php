@@ -4,7 +4,7 @@ error_reporting(9);
 
 include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
 
-    $query = "select
+    echo $query = "select
                     a.*,
                     b.nome,
                     b.telefone
