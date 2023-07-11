@@ -79,17 +79,14 @@ function VerificarVendaApp(){
 
     $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
 
-    $r = mysqli_query($con, "SELECT a.*, b.telefone, c.venda as notificacao FROM vendas a left join clientes b on a.cliente = b.codigo left join notificacoes c on a.codigo = c.venda WHERE a.cliente = '{$_SESSION['AppCliente']}' AND a.deletado != '1' AND a.operadora_situacao = '' LIMIT 1");
+
+    $r = mysqli_query($con, "SELECT * FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
     $n = mysqli_num_rows($r);
 
     if(!$n){
 
-        $c = mysqli_fetch_object(mysqli_query("select * from clientes where codigo = '{$_SESSION['AppCliente']}'"));
-
         mysqli_query($con, "INSERT INTO vendas SET cliente = '{$_SESSION['AppCliente']}', data_pedido = NOW()");
         $_SESSION['AppVenda'] = mysqli_insert_id($con);
-
-        mysqli_query($con, "replace into notificacoes SET venda = '{$_SESSION['AppVenda']}', telefone = '{$c->telefone}'");
 
         //$_SESSION = [];
         // header("location:./?s=1");
@@ -97,14 +94,10 @@ function VerificarVendaApp(){
         //echo "<h1>TESTE 1</h1>";
         //exit();
     }else{
-        $d = mysqli_fetch_object($r);
-        $_SESSION['AppVenda'] = $d->codigo;
+        $_SESSION['AppVenda'] = mysqli_fetch_object($r)->codigo;
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
         // if(mysqli_fetch_object($r)->atualiza == 'u'){
             mysqli_query($con, "UPDATE vendas SET data_pedido = NOW() where codigo = '{$_SESSION['AppVenda']}'");
-            if(!$d->notificacao){
-                mysqli_query($con, "replace into notificacoes SET venda = '{$_SESSION['AppVenda']}', telefone = '{$d->telefone}'");
-            }
         // }
         //echo "<h1>TESTE 2</h1>";
     }
