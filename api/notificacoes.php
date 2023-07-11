@@ -12,6 +12,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                      left join clientes b on a.cliente = b.codigo
                 where
                      (NOW() >= DATE_ADD(data_pedido, INTERVAL 20 MINUTE)) and
+                     NOW() >= data_pedido and
                      valor = 0
             ";
     $result = mysqli_query($con, $query);
