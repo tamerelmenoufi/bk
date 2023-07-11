@@ -97,11 +97,12 @@ function VerificarVendaApp(){
         //echo "<h1>TESTE 1</h1>";
         //exit();
     }else{
-        $_SESSION['AppVenda'] = mysqli_fetch_object($r)->codigo;
+        $d = mysqli_fetch_object($r);
+        $_SESSION['AppVenda'] = $d->codigo;
         echo "<script>window.localStorage.setItem('AppVenda','{$_SESSION['AppVenda']}');</script>";
         // if(mysqli_fetch_object($r)->atualiza == 'u'){
         mysqli_query($con, "UPDATE vendas SET data_pedido = NOW() where codigo = '{$_SESSION['AppVenda']}'");
-        mysqli_query($con, "replace into notificacoes set venda = '{$_SESSION['AppVenda']}', telefone = '".mysqli_fetch_object($r)->telefone."'");
+        mysqli_query($con, "replace into notificacoes set venda = '{$_SESSION['AppVenda']}', telefone = '".$d->telefone."'");
 
         // }
         //echo "<h1>TESTE 2</h1>";
