@@ -79,8 +79,7 @@ function VerificarVendaApp(){
 
     $tempo = date("Y-m-d H:i:s", mktime((date("H") - 12), date("i"), date("s"), date("m"), date("d"), date("Y")));
 
-
-    $r = mysqli_query($con, "SELECT * FROM vendas WHERE cliente = '{$_SESSION['AppCliente']}' AND deletado != '1' AND operadora_situacao = '' LIMIT 1");
+    $r = mysqli_query($con, "SELECT a.*, b.telefone, c.venda as notificacao FROM vendas a left join clientes b on a.cliente = b.codigo left join notificacoes c on a.codigo = c.venda WHERE a.cliente = '{$_SESSION['AppCliente']}' AND a.deletado != '1' AND a.operadora_situacao = '' LIMIT 1");
     $n = mysqli_num_rows($r);
 
     if(!$n){
