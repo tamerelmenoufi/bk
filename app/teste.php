@@ -130,4 +130,22 @@
     }
 
 
+
+
+    $query = "SELECT a.deliveryId, b.mottu FROM vendas a left join lojas b on a.loja = b.codigo where a.deliveryId > 0 and a.delivery_retorno < 0 and b.mottu > 0 AND a.deliveryId != 9999 and a.data_pedido >= '2023-06-01 00:00:00' limit 1";
+    $result = mysqli_query($con, $query);
+    $d = mysqli_fetch_object($result);
+
+    echo "<hr>";
+    echo "DJ<br>";
+    $mottu = new mottu;
+    $retorno1 = $mottu->ConsultarPedido($d->deliveryId,$d->mottu);
+    $retorno = json_decode($retorno1);
+    // echo "<pre>".var_dump($retorno)."</pre>";
+
+    echo "codigo:".$retorno->code;
+    if($retorno->code){
+      echo $query = "update vendas set delivery_retorno = '".addslashes($retorno1)."' where codigo = '{$retorno->code}'";
+      mysqli_query($con,$query);
+    }
 ?>
