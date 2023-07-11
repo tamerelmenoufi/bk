@@ -11,9 +11,9 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                 from vendas a
                      left join clientes b on a.cliente = b.codigo
                 where
-                     (NOW() >= DATE_ADD(data_pedido, INTERVAL 20 MINUTE)) and
-                     NOW() >= data_pedido and
-                     valor = 0
+                     data_pedido > DATE_SUB(NOW(), INTERVAL 30 MINUTE) and
+                     valor = 0 and
+                     a.clicente > 0
             ";
     $result = mysqli_query($con, $query);
     while($d = mysql_fetch_object($result)){
