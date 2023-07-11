@@ -44,6 +44,8 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                 where
                      data_pedido > DATE_SUB(NOW(), INTERVAL 90 MINUTE) and
                      valor > 0 and
+                     a.operadora_situacao != '' and
+                     a.operadora_situacao != 'approved' and
                      a.cliente > 0 and
                      a.notificacoes->'$.n2' IS NULL
             ";
