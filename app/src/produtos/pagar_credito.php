@@ -92,6 +92,7 @@
                             where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA COM 9999 - Venda do pedido *{$_SESSION['AppVenda']}*");
+                    EnviarWapp('92981829506',"VENDA COM 9999 - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else if($retorno->id){
                     $query = "update vendas set
                                                 operadora = 'rede',
@@ -103,8 +104,10 @@
                                 where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA com ID Positivo - Venda do pedido *{$_SESSION['AppVenda']}*");
+                    EnviarWapp('92981829506',"VENDA com ID Positivo - Venda do pedido *{$_SESSION['AppVenda']}*");
                 }else{
                     EnviarWapp('92991886570',"VENDA ELSE - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
+                    EnviarWapp('92981829506',"VENDA ELSE - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
                 }
 
                 //*/
@@ -235,12 +238,15 @@
                             where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* ID: {$retorno->id}");
+                    EnviarWapp('92981829506',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* ID: {$retorno->id}");
                 }else if($retorno->id){
                     $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$_SESSION['AppVenda']}'";
                     mysqli_query($con, $query);
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* ID: {$retorno->id}");
+                    EnviarWapp('92981829506',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* ID: {$retorno->id}");
                 }else{
                     EnviarWapp('92991886570',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
+                    EnviarWapp('92981829506',"VENDA - Venda do pedido *{$_SESSION['AppVenda']}* não gerou entrega.");
                 }
 
                 //*/
@@ -261,6 +267,7 @@
                 $query = "update vendas set situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$_SESSION['AppVenda']}'";
                 mysqli_query($con, $query);
                 EnviarWapp('92991886570',"VENDA - Venda do pedido (Retirada no local Crédito) *{$_SESSION['AppVenda']}*");
+                EnviarWapp('92981829506',"VENDA - Venda do pedido (Retirada no local Crédito) *{$_SESSION['AppVenda']}*");
 
             }else if($r->authorization->status == 'Denied')
                 {

@@ -59,6 +59,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
           mysqli_query($con, $q);
 
           EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* PIX CANCELADO!");
+          EnviarWapp('92981829506',"VENDA - Código do pedido (CRON) *{$d->codigo}* PIX CANCELADO!");
 
         }else{
 
@@ -121,8 +122,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
               $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$d->codigo}'";
               mysqli_query($con, $query);
               EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID: {$retorno->id}");
+              EnviarWapp('92981829506',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID: {$retorno->id}");
             }else{
               EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID não foi gerado");
+              EnviarWapp('92981829506',"VENDA - Código do pedido (CRON) *{$d->codigo}* ID não foi gerado");
             }
 
             //*/
@@ -137,6 +140,7 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
                 where codigo = '{$d->codigo}'
             ");
             EnviarWapp('92991886570',"VENDA - Código do pedido (CRON) *{$d->codigo}* status *{$retorno->status}*");
+            EnviarWapp('92981829506',"VENDA - Código do pedido (CRON) *{$d->codigo}* status *{$retorno->status}*");
           }
         }
       }

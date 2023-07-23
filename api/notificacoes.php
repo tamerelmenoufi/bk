@@ -30,6 +30,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
             'telefone' => '92991886570', //$d->telefone,
             'mensagem' => $mensagem." - {$d->codigo}"
         ];
+        $msg[] = [
+            'telefone' => '92981829506', //$d->telefone,
+            'mensagem' => $mensagem." - {$d->codigo}"
+        ];
         mysqli_query($con, "update vendas set notificacoes = JSON_SET(if(notificacoes > 0,notificacoes,'{}'), '$.n1', '1') where codigo = '{$d->codigo}'");
     }
 
@@ -66,6 +70,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
             'telefone' => '92991886570', //$d->telefone,
             'mensagem' => $mensagem." - {$d->codigo}"
         ];
+        $msg[] = [
+            'telefone' => '92981829506', //$d->telefone,
+            'mensagem' => $mensagem." - {$d->codigo}"
+        ];
         mysqli_query($con, "update vendas set notificacoes = JSON_SET(if(notificacoes > 0,notificacoes,'{}'), '$.n2', '1') where codigo = '{$d->codigo}'");
     }
 
@@ -100,6 +108,10 @@ include("{$_SERVER['DOCUMENT_ROOT']}/bk/lib/includes.php");
         ];
         $msg[] = [
             'telefone' => '92991886570', //$d->telefone,
+            'mensagem' => $mensagem
+        ];
+        $msg[] = [
+            'telefone' => '92981829506', //$d->telefone,
             'mensagem' => $mensagem
         ];
         mysqli_query($con, "update vendas set notificacoes = JSON_SET(if(notificacoes > 0,notificacoes,'{}'), '$.n3', '1') where codigo = '{$d->codigo}'");

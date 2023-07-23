@@ -87,12 +87,14 @@
             $query = "update vendas set deliveryId = '{$retorno->id}', situacao = 'p', data_finalizacao = NOW(), SEARCHING = NOW() where codigo = '{$codVenda}'";
             mysqli_query($con, $query);
             EnviarWapp('92991886570',"VENDA - Código do pedido (Verificar) *{$codVenda}* ID mottu: {$retorno->id}");
+            EnviarWapp('92981829506',"VENDA - Código do pedido (Verificar) *{$codVenda}* ID mottu: {$retorno->id}");
         }
         }else{
         $query = "update vendas set situacao = 'p', data_finalizacao = NOW() where codigo = '{$codVenda}'";
         mysqli_query($con, $query);
 
         EnviarWapp('92991886570',"VENDA - Código do pedido (Retirada do pedido na loja - PIX) *{$codVenda}*");
+        EnviarWapp('92981829506',"VENDA - Código do pedido (Retirada do pedido na loja - PIX) *{$codVenda}*");
         }
         //*/
         // DADOS DE SOLICITAÇÃO DA ENTREGA
