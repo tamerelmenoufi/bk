@@ -2,7 +2,7 @@
 
     include("../lib/includes.php");
     
-    $query = "select a.codigo as venda, b.nome, b.telefone, a.data_pedido, a.forma_pagamento, a.operadora_situacao  from vendas a left join clientes b on a.cliente = b.codigo order by data_pedido desc limit 200";
+    $query = "select a.codigo as venda, b.nome, b.telefone, a.data_pedido, a.forma_pagamento, a.operadora_situacao  from vendas a left join clientes b on a.cliente = b.codigo where b.telefone != '' order by data_pedido desc limit 200";
 ?>
 
 
