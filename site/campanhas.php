@@ -2,7 +2,7 @@
 
     include("../lib/includes.php");
     
-    $query = "select a.codigo as venda, b.nome, b.telefone, a.data_pedido, a.forma_pagamento, a.operadora_situacao  from vendas a left join clientes b on a.cliente = b.codigo where b.telefone != '' order by data_pedido desc limit 200";
+    $query = "select a.codigo as venda, b.nome, b.telefone, a.valor, a.data_pedido, a.forma_pagamento, a.operadora_situacao  from vendas a left join clientes b on a.cliente = b.codigo where b.telefone != '' order by data_pedido desc limit 200";
 ?>
 
 
@@ -13,8 +13,9 @@
     <td>NOME</td>
     <td>TELEFONE</td>
     <td>DATA</td>
+    <td>VALOR</td>
     <td>PAGAMENTO</td>
-    <td>SITUACAO</td>
+    <td>SITUAÇÃO</td>
 </tr>
 
 <?php
@@ -28,6 +29,7 @@
     <td><?=$d->nome?></td>
     <td><?=$d->telefone?></td>
     <td><?=$d->data_pedido?></td>
+    <td><?=$d->valor?></td>
     <td><?=$d->forma_pagamento?></td>
     <td><?=$d->operadora_situacao?></td>
 </tr>
