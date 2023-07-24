@@ -30,7 +30,7 @@
 <tr>
     <td><?=$d->venda?></td>
     <td><?=$d->nome?></td>
-    <td><a href="https://api.whatsapp.com/send?phone=55<?=$fone?>&text=Olá <?=$nome[0]?>, \n É da equipe Burguer King Manaus \n Podemos ajudar na finalização do seu pedido?"><?=$d->telefone?></a></td>
+    <td><a href="https://api.whatsapp.com/send?phone=55<?=$fone?>&text=Olá <?=$nome[0]?>, é da equipe Burguer King Manaus. Podemos ajudar na finalização do seu pedido?"><?=$d->telefone?></a></td>
     <td><?=$d->data_pedido?></td>
     <td><?=$d->valor?></td>
     <td><?=$d->forma_pagamento?></td>
