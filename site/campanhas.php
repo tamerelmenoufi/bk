@@ -23,11 +23,14 @@
 
     $result = mysqli_query($con, $query);
     while($d = mysqli_fetch_object($result)){
+
+        $nome = explode(" ",trim($d->nome));
+        $fone = str_replace(array(' ','(',')','-'), false, $d->telefone);
 ?>
 <tr>
     <td><?=$d->venda?></td>
     <td><?=$d->nome?></td>
-    <td><?=$d->telefone?></td>
+    <td><a href="https://api.whatsapp.com/send?phone=55<?=$fone?>&text=Olá <?=$nome[0]?>,\nÉ da equipe Burguer King Manaus\nPodemos ajudar na finalização do seu pedido?"><?=$d->telefone?></a></td>
     <td><?=$d->data_pedido?></td>
     <td><?=$d->valor?></td>
     <td><?=$d->forma_pagamento?></td>
