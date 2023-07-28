@@ -13,6 +13,7 @@
     <?php include("../lib/header.php"); ?>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/app.css">
+    <link href="img/logo.svg" rel="icon">
 </head>
 <body>
 <div class="Carregando">
