@@ -11,7 +11,7 @@
         $content = http_build_query(array(
 
             'num' => '55'.str_replace(array(' ','(',')','-'), false, trim($c->telefone)),
-            'msg' => "BKManaus Informa: Seu codido de confirmacao e {$cod}.",
+            'msg' => "BKManaus Informa: Seu codigo de confirmacao e {$cod}.",
 
         ));
 
@@ -36,7 +36,7 @@
 
         $cod = strtoupper(substr(md5($_SESSION['AppCliente']),0,6));
         $num = trim($c->telefone);
-        $msg = "BKManaus Informa: Seu codido de confirmacao é: *{$cod}*";
+        $msg = "BKManaus Informa: Seu codigo de confirmacao é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
