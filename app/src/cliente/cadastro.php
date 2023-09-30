@@ -70,7 +70,7 @@
 
         $cod = $_POST['cod_confirm'];
         $num = trim($_POST['telefone']);
-        $msg = "BKManaus Informa: Seu codido de confirmacao é: *{$cod}*";
+        $msg = "BKManaus Informa: Seu codigo de confirmacao é: *{$cod}*";
 
         $result = EnviarWapp($num,$msg);
 
