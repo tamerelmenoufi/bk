@@ -24,6 +24,18 @@ class mottu {
         }
     }
 
+    public function integradora($opc, $loja){
+        if($opc == 'homologacao'){
+            return '';
+        }else{
+            $Lojas = [
+                '813416' => '87D8D360FFB64F64A88CEBD055EFD656', //Humberto Calderaro
+                '813383' => '87D8D360FFB64F64A88CEBD055EFD656', //Djalma Batista
+            ];
+            return $Lojas[$loja];
+        }
+    }
+
     public function NovoPedido($json, $loja = false){
 
         $curl = curl_init();
@@ -42,6 +54,7 @@ class mottu {
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-integrator-token: '.$this->integradora($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -71,6 +84,7 @@ class mottu {
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-integrator-token: '.$this->integradora($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -101,6 +115,7 @@ class mottu {
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-integrator-token: '.$this->integradora($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -130,6 +145,7 @@ class mottu {
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-integrator-token: '.$this->integradora($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
@@ -158,6 +174,7 @@ class mottu {
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
             'x-api-token: '.$this->apiKey($this->ambiente, $loja),
+            'x-integrator-token: '.$this->integradora($this->ambiente, $loja),
             'accept: application/json'
         ),
         ));
