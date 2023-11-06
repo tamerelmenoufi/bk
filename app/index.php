@@ -2,7 +2,7 @@
     include("../lib/includes.php");
     // EnviarWapp('92991886570',"Novo acesso no aplicativo");
 
-    exit();
+    // exit();
 
 ?><!DOCTYPE html>
 <html lang="en">
