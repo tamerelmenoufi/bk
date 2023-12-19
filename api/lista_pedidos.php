@@ -7,7 +7,7 @@ $_POST = json_decode(file_get_contents('php://input'), true);
 
 if($_GET) $_POST = $_GET;
 
-echo $query = "SELECT
+$query = "SELECT
                 a.codigo,
                 a.situacao,
                 c.nome,
