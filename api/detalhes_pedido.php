@@ -5,6 +5,8 @@ include("../lib/includes.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && empty($_POST))
 $_POST = json_decode(file_get_contents('php://input'), true);
 
+if($_GET) $_POST = $_GET;
+
 $query = "SELECT
                 a.*,
                 concat( a.produto_nome, ' [', a.quantidade ,' x R$', a.valor_unitario , ' = R$' , a.valor_total, '] ' ) as produto_nome,
