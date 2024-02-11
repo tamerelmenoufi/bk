@@ -1,6 +1,4 @@
 <?php
-  header("location:https://app.bkmanaus.com.br/");
-  exit();
   include("../lib/includes.php");
 ?>
 <!DOCTYPE html>
