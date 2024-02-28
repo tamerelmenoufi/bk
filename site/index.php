@@ -1,5 +1,7 @@
 <?php
   include("../lib/includes.php");
+  header("location:https://painel.bkmanaus.com.br/app/");
+    exit();
 ?>
 <!DOCTYPE html>
 <html lang="en">
