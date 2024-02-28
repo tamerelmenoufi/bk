@@ -1,5 +1,7 @@
 <?php
     include("../lib/includes.php");
+    header("location:https://painel.bkmanaus.com.br/app/");
+    exit();
     // EnviarWapp('92991886570',"Novo acesso no aplicativo");
 
     // exit();
